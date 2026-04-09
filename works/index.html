@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Works - UEL Feminist Legal Theory Project</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../header-footer.css">
+    <style>
+        .placeholder-img {
+            background-color: rgba(20, 78, 140, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #144e8c;
+            font-size: 0.95em;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px dashed rgba(20, 78, 140, 0.25);
+            font-weight: bold;
+        }
+
+        .placeholder-img-dark {
+            background-color: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95em;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px dashed rgba(255, 255, 255, 0.25);
+            font-weight: bold;
+        }
+
+        .method-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .method-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(20, 78, 140, 0.1);
+            font-size: 1.0em;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        .method-list li:last-child {
+            border-bottom: none;
+        }
+
+        .method-list li strong {
+            color: var(--dark-blue);
+        }
+
+        .sig-number {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: var(--pink);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-weight: bold;
+            font-size: 0.85em;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .sig-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .sig-card h4 {
+            margin: 0 0 6px;
+            color: var(--dark-blue);
+            font-size: 1.05em;
+        }
+
+        .sig-card p {
+            margin: 0;
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .video-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 16px;
+            border-radius: 8px;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .video-pill:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        .video-pill .play {
+            color: var(--pink);
+            font-size: 1.1em;
+        }
+
+        .link-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.92em;
+            padding: 8px 0;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+
+        .link-arrow:hover {
+            opacity: 1;
+            color: var(--white);
+        }
+
+        .book-meta {
+            font-size: 0.85em;
+            list-style: none;
+            padding: 0;
+            color: var(--dark-navy);
+            line-height: 2;
+        }
+
+        .book-meta strong {
+            color: var(--dark-blue);
+        }
+
+        .works-page {
+            --font-heading: Cambria, serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        .works-page :where(.works-hero, .works-section) :is(
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p,
+            li,
+            a,
+            button,
+            span,
+            strong,
+            small
+        ) {
+            letter-spacing: 0.01em !important;
+        }
+
+        .works-page :where(.works-hero, .works-section) :is(
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            .works-title-vibe,
+            .works-moot-h,
+            .works-moot-elig-h,
+            .works-db-ac-h,
+            .works-moot-item-title,
+            .edition-title,
+            .edition-year
+        ) {
+            font-family: Cambria, serif;
+        }
+
+        .works-page :where(.works-hero, .works-section) :is(
+            p,
+            li,
+            a,
+            button,
+            input,
+            textarea,
+            select,
+            .section-note,
+            .works-section-note,
+            .works-moot-body,
+            .works-moot-item-sub,
+            .book-meta,
+            .edition-summary,
+            .edition-status,
+            .edition-chip,
+            .edition-index,
+            .edition-cta
+        ) {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .edition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 26px;
+            margin-bottom: 50px;
+            align-items: stretch;
+        }
+
+        .edition-card,
+        .edition-card summary,
+        .works-edition-draft {
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .edition-card {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .edition-card-link,
+        .edition-card summary,
+        .works-edition-draft {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 24px;
+            min-height: 290px;
+            padding: 30px;
+            text-decoration: none;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            box-shadow: 0 20px 44px rgba(3, 15, 35, 0.18);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .edition-card-link:hover,
+        .edition-card summary:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 52px rgba(3, 15, 35, 0.24);
+            border-color: rgba(255,255,255,0.22);
+        }
+
+        .edition-card summary {
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .edition-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .edition-card-link::before,
+        .works-edition-draft::before {
+            content: "";
+            position: absolute;
+            inset: 20px auto 20px 0;
+            width: 5px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, var(--edition-accent), rgba(255,255,255,0));
+            opacity: 0.95;
+            z-index: 0;
+        }
+
+        .edition-card-link::after,
+        .works-edition-draft::after {
+            content: "";
+            position: absolute;
+            right: -26px;
+            top: 34px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 68%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .edition-top,
+        .edition-footer {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .edition-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.08);
+            color: var(--edition-accent-soft);
+            font-size: 0.74em;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+
+        .edition-index {
+            color: rgba(255,255,255,0.48);
+            font-size: 0.82em;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .edition-main {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            gap: 12px;
+            max-width: 34ch;
+        }
+
+        .edition-year {
+            color: var(--white);
+            font-weight: 700;
+            font-size: clamp(4.4rem, 6vw, 5.8rem);
+            letter-spacing: -0.07em;
+            line-height: 0.88;
+            margin: 0;
+            text-shadow: 0 12px 24px rgba(0,0,0,0.16);
+        }
+
+        .edition-title {
+            color: var(--white);
+            font-family: Cambria, serif;
+            font-size: 1.6em;
+            margin: 0;
+        }
+
+        .edition-summary {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.98em;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .edition-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.66);
+            font-size: 0.78em;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .edition-status::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--edition-accent);
+            box-shadow: 0 0 0 6px var(--edition-ring);
+        }
+
+        .edition-cta {
+            color: var(--edition-accent-soft);
+            font-size: 0.92em;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .edition-card--2024 {
+            --edition-accent: #ffc2dd;
+            --edition-accent-soft: #ffd7e9;
+            --edition-ring: rgba(255, 194, 221, 0.18);
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03)),
+                linear-gradient(135deg, rgba(255,182,217,0.16), rgba(255,255,255,0.03) 42%, rgba(5, 26, 55, 0.06));
+        }
+
+        .edition-card--2021 {
+            --edition-accent: #b9ddff;
+            --edition-accent-soft: #dff0ff;
+            --edition-ring: rgba(185, 221, 255, 0.16);
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.03)),
+                linear-gradient(135deg, rgba(144,197,255,0.16), rgba(255,255,255,0.03) 42%, rgba(5, 26, 55, 0.06));
+        }
+
+        .edition-card--upcoming {
+            --edition-accent: #e2e8f0;
+            --edition-accent-soft: rgba(255,255,255,0.76);
+            --edition-ring: rgba(226, 232, 240, 0.12);
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03)),
+                linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02) 42%, rgba(5, 26, 55, 0.05));
+        }
+
+        .edition-card--upcoming .edition-year {
+            color: rgba(255,255,255,0.82);
+        }
+
+        .edition-card--upcoming .edition-title {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .edition-card--upcoming .edition-summary,
+        .edition-card--upcoming .edition-status,
+        .edition-card--upcoming .edition-cta,
+        .edition-card--upcoming .edition-index {
+            color: rgba(255,255,255,0.68);
+        }
+
+        .works-icfgl-edition-year {
+            font-weight: 800;
+            font-size: 3.4rem;
+            margin: 0;
+            line-height: 1;
+            font-family: Cambria, serif;
+            letter-spacing: -1px;
+        }
+
+        .works-icfgl-edition-line {
+            width: 32px;
+            height: 2px;
+            margin: 14px 0 10px;
+            border-radius: 2px;
+        }
+
+        .works-icfgl-edition-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        .edition-submenu {
+            padding: 0 22px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .edition-submenu a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 12px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .edition-submenu a:hover {
+            background: rgba(255,255,255,0.16);
+            color: var(--white);
+        }
+
+        .works-page {
+            background: linear-gradient(180deg, #f6fbff 0%, #fff7fa 38%, #f6fbff 100%);
+        }
+
+        .works-icfgl-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 50px rgba(3, 15, 35, 0.32) !important;
+            background: rgba(255,255,255,0.15) !important;
+        }
+
+        .works-hero {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at top left, rgba(222, 79, 122, 0.12), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(20, 78, 140, 0.12), transparent 34%),
+                linear-gradient(135deg, #eef6ff 0%, #fff6fa 100%);
+            padding: 40px 5% 84px;
+        }
+
+        .works-kicker {
+            display: inline-block;
+            margin: 0;
+            color: var(--pink);
+            font: 700 0.82rem/1 'Lato', sans-serif;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .works-title {
+            font-family: Cambria, serif;
+            font-size: 2.3em;
+            font-weight: 700;
+            line-height: 1.04;
+            margin: 0;
+            color: var(--dark-navy);
+            text-transform: uppercase;
+            letter-spacing: 0;
+        }
+
+        .works-lead {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin: 0;
+            text-align: justify;
+            max-width: none;
+        }
+
+        .works-hero-copy {
+            display: grid;
+            align-content: start;
+            gap: 16px;
+            padding-top: 12px;
+        }
+
+        .works-placeholder-hero {
+            min-height: 360px;
+            margin-top: 32px;
+            border-radius: 8px;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.7)),
+                radial-gradient(circle at top left, rgba(222, 79, 122, 0.16), transparent 34%),
+                radial-gradient(circle at bottom right, rgba(20, 78, 140, 0.16), transparent 34%);
+            border: 1px solid rgba(20, 78, 140, 0.08);
+            box-shadow: 0 14px 28px rgba(20, 78, 140, 0.08);
+        }
+
+        .works-section {
+            padding: 42px 5% 40px 5%;
+        }
+
+        .works-section--pink {
+            background: linear-gradient(180deg, #fff3f7 0%, #ffebf2 100%);
+        }
+
+        .works-section--blue {
+            background: linear-gradient(180deg, #f7fbff 0%, #edf6ff 100%);
+        }
+
+        .works-section--dark {
+            background:
+                radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 24%),
+                linear-gradient(180deg, #1b4b84 0%, #144e8c 100%);
+        }
+
+        .works-section-head {
+            margin-bottom: 34px;
+            max-width: none;
+        }
+
+        .works-section-head h2 {
+            font-size: clamp(2rem, 3.1vw, 2.7rem);
+            margin-bottom: 12px;
+        }
+
+        .works-section-note {
+            margin: 0;
+            color: rgba(47,47,47,0.85);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .works-section--dark .works-section-note {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .works-story-grid {
+            align-items: stretch !important;
+            gap: 38px !important;
+        }
+
+        .works-copy-panel,
+        .works-image-panel {
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(20, 78, 140, 0.06);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.03),
+                0 2px 4px rgba(0, 0, 0, 0.01);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .works-copy-panel {
+            background: linear-gradient(to bottom right, #ffffff, #fcfdff);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .works-copy-panel--even {
+            gap: 16px;
+        }
+        .works-copy-panel--even .works-moot-h,
+        .works-copy-panel--even .works-title-vibe {
+            margin: 0;
+        }
+        .works-copy-panel--even p {
+            margin-top: 0 !important;
+        }
+        .works-copy-panel::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--pink);
+            opacity: 0.8;
+        }
+        .works-copy-panel--no-accent::before {
+            display: none;
+        }
+
+        .works-image-panel {
+            background: #ffffff;
+            padding: 12px;
+        }
+
+        .works-image-panel--full-view {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+        }
+
+        .works-image-panel--full-view img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-height: 860px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 14px;
+        }
+
+        .works-image-panel .placeholder-img,
+        .works-image-panel .placeholder-img-dark {
+            height: 100% !important;
+            min-height: 340px;
+            border-radius: 14px;
+        }
+
+        .works-method-card {
+            background:
+                radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 28%),
+                linear-gradient(135deg, #214f8f 0%, #173f76 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px !important;
+            box-shadow: 0 14px 30px rgba(7, 35, 74, 0.16) !important;
+            padding: 42px !important;
+        }
+
+        .works-method-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr);
+            gap: 30px;
+            align-items: start;
+        }
+
+        .works-method-intro {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            color: var(--white);
+        }
+
+        .works-method-intro h3 {
+            margin: 0;
+            color: var(--white);
+            font-size: 2em;
+            line-height: 1.1;
+        }
+
+        .works-method-intro p {
+            margin: 0;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.85;
+        }
+
+        .works-method-note {
+            padding: 18px 20px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .works-method-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        .works-method-principle {
+            display: grid;
+            grid-template-columns: 68px minmax(0, 1fr);
+            gap: 18px;
+            align-items: start;
+            padding: 24px 26px !important;
+            border-radius: 6px !important;
+            background: rgba(255,255,255,0.1) !important;
+            border: 1px solid rgba(255,255,255,0.09);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+        }
+
+        .works-method-index {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 68px;
+            height: 68px;
+            border-radius: 6px;
+            background: rgba(255, 182, 217, 0.16);
+            color: #FFB6D9;
+            font: 800 1.2rem/1 'Lato', sans-serif;
+            letter-spacing: 0.04em;
+        }
+
+        .works-method-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-top: 4px;
+        }
+
+        .works-method-content h4 {
+            margin: 0;
+            color: #FFB6D9;
+            font-size: 1.22em;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .works-method-content p {
+            margin: 0;
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        .works-compare-grid {
+            gap: 24px !important;
+        }
+
+        .works-compare-grid .comparison-card {
+            border-radius: 8px;
+            box-shadow: 0 10px 22px rgba(20, 78, 140, 0.06) !important;
+            padding: 36px 32px !important;
+        }
+
+        .works-db-card {
+            --db-shell-gap: 24px;
+            padding: var(--db-shell-gap) !important;
+            overflow: hidden;
+            border-radius: 8px !important;
+            border: 1px solid rgba(20, 78, 140, 0.08) !important;
+            box-shadow: 0 26px 54px rgba(20, 78, 140, 0.08) !important;
+            background:
+                radial-gradient(circle at top right, rgba(20, 78, 140, 0.05), transparent 24%),
+                linear-gradient(180deg, rgba(255,255,255,0.98), rgba(252,248,251,0.98)) !important;
+        }
+
+        .works-db-shell {
+            display: grid;
+            gap: 34px;
+            padding: 42px 44px;
+        }
+
+        .works-db-top {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .works-db-intro {
+            display: grid;
+            grid-template-columns: 92px minmax(0, 1fr);
+            gap: 22px;
+            align-items: start;
+        }
+
+        .works-db-icon {
+            width: 92px;
+            height: 92px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background: linear-gradient(135deg, var(--dark-blue), #3d6bb2);
+            box-shadow: 0 18px 34px rgba(20, 78, 140, 0.2);
+        }
+
+        .works-db-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--pink);
+        }
+
+        .works-db-kicker::after {
+            content: "";
+            width: 30px;
+            height: 2px;
+            border-radius: 999px;
+            background: currentColor;
+            opacity: 0.45;
+        }
+
+        .works-db-title {
+            margin: 0 0 18px;
+            color: var(--dark-blue);
+            font-size: clamp(2rem, 3vw, 2.55rem);
+            line-height: 0.98;
+            font-family: Cambria, serif;
+            letter-spacing: -0.02em;
+        }
+
+        .works-db-lead {
+            margin: 0;
+            max-width: 860px;
+            color: #55657f;
+            font-size: 1.08rem;
+            line-height: 1.9;
+        }
+
+        .works-db-side {
+            display: grid;
+            gap: 14px;
+        }
+
+        .works-db-stat {
+            padding: 18px 20px;
+            border-radius: 22px;
+            background: rgba(20, 78, 140, 0.045);
+            border: 1px solid rgba(20, 78, 140, 0.08);
+        }
+
+        .works-db-stat-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: rgba(20, 78, 140, 0.58);
+        }
+
+        .works-db-stat strong {
+            display: block;
+            color: var(--dark-blue);
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+
+        .works-db-lower {
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) auto;
+            gap: 24px;
+            align-items: end;
+        }
+
+        .works-db-note {
+            display: grid;
+            grid-template-columns: 54px minmax(0, 1fr);
+            gap: 18px;
+            padding: 26px 28px;
+            border-radius: 26px;
+            border: 1px solid rgba(246, 65, 131, 0.12);
+            background: linear-gradient(180deg, rgba(255,245,249,0.92), rgba(255,255,255,0.96));
+        }
+
+        .works-db-note-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pink);
+            background: rgba(246, 65, 131, 0.1);
+        }
+
+        .works-db-note h5 {
+            margin: 0 0 8px;
+            color: var(--pink);
+            font-size: 1.36rem;
+            font-family: Cambria, serif;
+        }
+
+        .works-db-note p {
+            margin: 0;
+            color: #6b7690;
+            font-size: 1rem;
+            line-height: 1.82;
+            font-family: 'Lato', sans-serif;
+            font-style: italic;
+        }
+
+        .works-db-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: flex-end;
+        }
+
+        .works-db-actions .btn-pink,
+        .works-db-actions .btn-dark {
+            min-width: 220px;
+            padding: 16px 26px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: none !important;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .works-db-actions .btn-dark {
+            background: var(--dark-blue);
+        }
+
+        @media (max-width: 980px) {
+            .works-db-shell {
+                padding: 34px 28px;
+            }
+
+            .works-db-top,
+            .works-db-lower {
+                grid-template-columns: 1fr;
+            }
+
+            .works-db-actions {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .works-db-intro,
+            .works-db-note {
+                grid-template-columns: 1fr;
+            }
+
+            .works-db-icon,
+            .works-db-note-icon {
+                width: 72px;
+                height: 72px;
+            }
+
+            .works-db-actions .btn-pink,
+            .works-db-actions .btn-dark {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+
+        .works-edition-card {
+            display: block !important;
+            border-radius: 20px !important;
+            box-shadow: none;
+        }
+
+        .works-edition-draft {
+            border-radius: 20px !important;
+            height: 100%;
+        }
+
+        .works-workshop-grid {
+            gap: 24px !important;
+        }
+
+        .works-workshop-item {
+            border-radius: 8px !important;
+            box-shadow: 0 10px 20px rgba(20, 78, 140, 0.06) !important;
+            padding: 28px !important;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .works-workshop-item h4 {
+            min-height: 64px;
+            margin: 0 0 14px;
+        }
+
+        .works-workshop-thumb {
+            width: 100%;
+            height: 205px;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .works-book-card {
+            background: rgba(255,255,255,0.74);
+            border: 1px solid rgba(20, 78, 140, 0.08);
+            border-radius: 8px;
+            box-shadow: 0 10px 24px rgba(20, 78, 140, 0.06);
+            padding: 30px;
+            gap: 34px !important;
+        }
+
+        .works-book-card .placeholder-img {
+            min-height: 380px;
+            border-radius: 6px;
+        }
+
+        .works-publications-band {
+            border-radius: 8px !important;
+            box-shadow: 0 12px 24px rgba(20, 78, 140, 0.06);
+            padding: 34px !important;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55)),
+                var(--light-blue) !important;
+        }
+
+        .works-publications-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .works-publication-column {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .works-publication-column h3 {
+            margin: 0;
+            color: var(--dark-blue);
+            font-size: 1.4em;
+        }
+
+        .works-publication-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 28px 30px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.92);
+            box-shadow: 0 8px 18px rgba(20, 78, 140, 0.05);
+        }
+
+        .works-publication-card--article {
+            border-top: 4px solid var(--dark-blue);
+        }
+
+        .works-publication-card--report {
+            border-top: 4px solid var(--pink);
+        }
+
+        .works-publication-card h4 {
+            margin: 0;
+            color: var(--dark-navy);
+            font-size: 1.15em;
+        }
+
+        .works-publication-card p {
+            margin: 0;
+            color: var(--text-dark);
+            line-height: 1.72;
+        }
+
+        .works-publication-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            margin-top: auto;
+            padding: 10px 16px;
+            border-radius: 4px;
+            background: rgba(222, 79, 122, 0.12);
+            color: var(--pink);
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .works-publication-link:hover {
+            background: rgba(222, 79, 122, 0.18);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 900px) {
+            .works-hero {
+                padding-top: 72px;
+                padding-bottom: 70px;
+            }
+
+            .works-copy-panel,
+            .works-image-panel,
+            .works-book-card,
+            .works-publications-band,
+            .works-method-card {
+                padding: 24px !important;
+            }
+
+            .works-publications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .works-method-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .works-method-principle {
+                grid-template-columns: 58px minmax(0, 1fr);
+                padding: 22px !important;
+            }
+
+            .works-method-index {
+                width: 58px;
+                height: 58px;
+                border-radius: 6px;
+            }
+
+            .works-placeholder-hero {
+                margin-top: 0;
+            }
+
+            .edition-card-link,
+            .edition-card summary,
+            .works-edition-draft {
+                min-height: 250px;
+                padding: 24px;
+            }
+
+            .edition-year {
+                font-size: 4rem;
+            }
+
+            .edition-title {
+                font-size: 1.35em;
+            }
+
+            .edition-footer {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .works-workshop-item h4 {
+                min-height: auto;
+            }
+
+            .works-workshop-thumb {
+                height: 180px;
+            }
+        }
+        /* Wide immersive container for core sections */
+        .container-immersive {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* =============================================
+           REDESIGNED v5: Case Database (Immersive Pink Card)
+           ============================================= */
+        .works-section--db {
+            background: #ffebf2;
+            padding: 42px 0 56px;
+            border-top: 1px solid rgba(246,65,131,0.08);
+            position: relative;
+        }
+        #feminist-judgments {
+            padding-bottom: 0;
+        }
+        #case-database {
+            padding: 42px 5% 56px;
+        }
+        .works-db-card {
+            max-width: none;
+            margin: 0;
+            background:
+                radial-gradient(circle at top right, rgba(246,65,131,0.05), transparent 30%),
+                linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,248,251,0.96));
+            padding: 42px !important;
+            border-radius: 8px !important;
+            box-shadow: 0 12px 26px rgba(20,78,140,0.06) !important;
+            border: none;
+        }
+        .works-db-ac {
+            --db-panel-radius: 6px;
+            --db-panel-gap: var(--db-shell-gap);
+            display: block;
+        }
+        .works-db-ac-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-height: 100%;
+            padding: 0;
+            border-radius: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            text-align: left;
+        }
+        .works-db-ac-kicker {
+            color: var(--pink);
+            background: #ffebf2;
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin: 0 0 18px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-self: flex-start;
+            border: 1px solid rgba(246,65,131,0.12);
+        }
+        .works-db-ac-h {
+            font-family: Cambria, serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--dark-navy);
+            line-height: 1.04;
+            letter-spacing: 0;
+            margin: 0 0 16px;
+            max-width: none;
+        }
+        .works-db-ac-h span { color: var(--pink); }
+        .works-db-ac-desc {
+            color: rgba(47, 47, 47, 0.86);
+            line-height: 1.76;
+            margin: 0 0 24px;
+            font-size: 1rem;
+            max-width: none;
+            width: 100%;
+        }
+        .works-db-ac-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 0;
+            justify-content: flex-start;
+        }
+        .works-db-ac-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 0;
+            padding: 11px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            font-size: var(--font-size-sm);
+        }
+        .works-db-ac-btn-a {
+            background: var(--dark-navy);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(20,78,140,0.15);
+        }
+        .works-db-ac-btn-a:hover {
+            background: #173b6e;
+            transform: translateY(-2px);
+        }
+        .works-db-ac-btn-b {
+            background: #fff;
+            color: var(--dark-navy);
+            border: 1.5px solid rgba(20,78,140,0.15);
+        }
+        .works-db-ac-btn-b:hover {
+            background: var(--dark-navy);
+            color: #fff;
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 900px) {
+            .works-section--db { padding: 44px 0; }
+            #case-database { padding: 42px 5% 44px; }
+            .works-db-card {
+                --db-shell-gap: 20px;
+                padding: 24px !important;
+                border-radius: 8px !important;
+            }
+            .works-db-ac {
+                --db-panel-radius: 6px;
+                --db-panel-gap: var(--db-shell-gap);
+            }
+            .works-db-ac-content {
+                padding: 0;
+                border-radius: 0;
+                align-items: flex-start;
+                text-align: left;
+            }
+            .works-db-ac-h { max-width: none; }
+            .works-db-ac-desc {
+                max-width: none;
+                width: 100%;
+            }
+            .works-db-ac-btn { width: 100%; min-width: 0; }
+        }
+
+        /* =============================================
+           REDESIGNED v5: Moot Court (Immersive Pink)
+           ============================================= */
+        .works-section--moot {
+            background: linear-gradient(180deg, #f3f8ff 0%, #edf5ff 100%);
+            padding: 42px 0 80px;
+            border-top: 1px solid rgba(20,78,140,0.05);
+            position: relative;
+        }
+        .works-moot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: stretch;
+            padding-left: 18px;
+            box-sizing: border-box;
+        }
+        .works-moot-col-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-height: 100%;
+        }
+        .works-moot-col-info > .works-moot-elig-kicker {
+            margin-top: 0;
+        }
+        .works-moot-col-eligibility {
+            padding-left: 50px;
+            border-left: 1px solid rgba(20,78,140,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            min-height: 100%;
+        }
+        .works-title-vibe {
+            font-family: Cambria, serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            line-height: 1.04;
+            letter-spacing: 0;
+            margin: 0 0 12px;
+        }
+        .works-title-vibe--pink {
+            color: var(--pink);
+        }
+        .works-title-vibe--navy {
+            color: var(--dark-navy);
+        }
+        .works-title-vibe--light {
+            color: #FFB6D9;
+        }
+        .works-title-vibe--white {
+            color: var(--white);
+        }
+        .works-moot-h {
+            font-family: Cambria, serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--dark-navy);
+            line-height: 1.04;
+            letter-spacing: 0;
+            margin: 0;
+            white-space: nowrap;
+        }
+        .works-moot-h,
+        .works-moot-h span,
+        .works-moot-elig-h,
+        .works-moot-elig-h span {
+            font-family: Cambria, serif !important;
+            font-weight: 700 !important;
+            letter-spacing: 0 !important;
+        }
+        .works-moot-h span { color: var(--pink); }
+        .works-moot-h .works-title-primary {
+            color: var(--dark-navy);
+        }
+        .works-moot-body {
+            color: var(--text-dark);
+            line-height: var(--line-height-base);
+            font-size: 1.05rem;
+            margin: 0;
+            text-align: justify;
+        }
+        .works-moot-elig-header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 0;
+        }
+        .works-moot-elig-kicker {
+            color: var(--pink);
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .works-moot-elig-h {
+            font-family: Cambria, serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--dark-navy);
+            line-height: 1.04;
+            letter-spacing: 0;
+            margin: 0;
+        }
+        .works-moot-elig-h span { color: var(--pink); }
+        .works-moot-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .works-moot-item {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            padding: 2px 0;
+        }
+        .works-moot-num {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--pink);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #fff;
+            border: 1px solid rgba(222,79,122,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+            box-shadow: 0 4px 10px rgba(222,79,122,0.08);
+        }
+        .works-moot-item-copy {
+            display: flex;
+            flex-direction: column;
+        }
+        .works-moot-item-title {
+            color: var(--dark-navy);
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 1.3;
+            margin: 0;
+        }
+        .works-moot-item-sub {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            margin: 6px 0 0;
+            line-height: 1.65;
+        }
+        .works-moot-item-sub--nowrap {
+            white-space: nowrap;
+        }
+        .works-moot-btn-group {
+            display: flex;
+            gap: 14px;
+            margin-top: 10px;
+        }
+        .works-moot-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            font-size: var(--font-size-sm);
+        }
+        .works-moot-btn-primary {
+            background: var(--dark-navy);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(20,78,140,0.15);
+        }
+        .works-moot-btn-primary:hover {
+            background: #173b6e;
+            transform: translateY(-2px);
+        }
+        .works-moot-btn-secondary {
+            background: #fff;
+            color: var(--dark-navy);
+            border: 1.5px solid rgba(20,78,140,0.15);
+        }
+        .works-moot-btn-secondary:hover {
+            background: var(--dark-navy);
+            color: #fff;
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+        .works-title-primary {
+            color: var(--dark-navy);
+        }
+
+        @media (max-width: 900px) {
+            .works-moot-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding-left: 0;
+            }
+            .works-moot-col-eligibility { padding-left: 0; border-left: none; border-top: 1px solid rgba(20,78,140,0.08); padding-top: 30px; }
+            .works-moot-list { justify-content: flex-start; }
+            .works-moot-h { white-space: normal; }
+            .works-moot-btn-group { flex-direction: column; }
+            .works-moot-btn { width: 100%; justify-content: center; }
+        }
+
+    </style>
+</head>
+
+<body class="works-page">
+    <div id="global-header"></div>
+
+    <br/>
+    <!-- ════════════════ HERO ════════════════ -->
+    <section class="works-hero">
+        <div class="container two-col-grid" style="align-items: center;">
+            
+            <div class="works-hero-copy">
+                
+                <span class="works-kicker">Academic Archive</span>
+                <h1 class="works-title">Our Works</h1>
+                <p class="works-lead">
+                   We are committed to open and lasting access to the intellectual outputs of the project. This section brings together the full range of project materials, including publications, teaching resources, feminist judgments, and academic activities. It is structured as a long-term academic archive that preserves research materials, conference records, and legal knowledge assets developed through the UEL Feminist Legal Theory Project. The design aligns with the project's broader approach of promoting feminist legal theory through publications, workshops, conferences, and research capacity-building.
+                </p>
+
+                <!-- Section Navigation -->
+                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;">
+                    <a href="#feminist-judgments" style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:6px;border:1.5px solid rgba(20,78,140,0.18);color:var(--dark-navy);font-size:0.78rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;transition:all 0.2s ease;background:rgba(255,255,255,0.7);" onmouseover="this.style.background='var(--dark-navy)';this.style.color='#fff';this.style.borderColor='var(--dark-navy)'" onmouseout="this.style.background='rgba(255,255,255,0.7)';this.style.color='var(--dark-navy)';this.style.borderColor='rgba(20,78,140,0.18)'">Feminist Judgments</a>
+                    <a href="#icfgl" style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:6px;border:1.5px solid rgba(20,78,140,0.18);color:var(--dark-navy);font-size:0.78rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;transition:all 0.2s ease;background:rgba(255,255,255,0.7);" onmouseover="this.style.background='var(--dark-navy)';this.style.color='#fff';this.style.borderColor='var(--dark-navy)'" onmouseout="this.style.background='rgba(255,255,255,0.7)';this.style.color='var(--dark-navy)';this.style.borderColor='rgba(20,78,140,0.18)'">ICFGL</a>
+                    <a href="#workshops" style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:6px;border:1.5px solid rgba(20,78,140,0.18);color:var(--dark-navy);font-size:0.78rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;transition:all 0.2s ease;background:rgba(255,255,255,0.7);" onmouseover="this.style.background='var(--dark-navy)';this.style.color='#fff';this.style.borderColor='var(--dark-navy)'" onmouseout="this.style.background='rgba(255,255,255,0.7)';this.style.color='var(--dark-navy)';this.style.borderColor='rgba(20,78,140,0.18)'">Workshops &amp; Seminars</a>
+                    <a href="#moot-court" style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:6px;border:1.5px solid rgba(20,78,140,0.18);color:var(--dark-navy);font-size:0.78rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;transition:all 0.2s ease;background:rgba(255,255,255,0.7);" onmouseover="this.style.background='var(--dark-navy)';this.style.color='#fff';this.style.borderColor='var(--dark-navy)'" onmouseout="this.style.background='rgba(255,255,255,0.7)';this.style.color='var(--dark-navy)';this.style.borderColor='rgba(20,78,140,0.18)'">Moot Court</a>
+                    <a href="#publications" style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:6px;border:1.5px solid rgba(20,78,140,0.18);color:var(--dark-navy);font-size:0.78rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;transition:all 0.2s ease;background:rgba(255,255,255,0.7);" onmouseover="this.style.background='var(--dark-navy)';this.style.color='#fff';this.style.borderColor='var(--dark-navy)'" onmouseout="this.style.background='rgba(255,255,255,0.7)';this.style.color='var(--dark-navy)';this.style.borderColor='rgba(20,78,140,0.18)'">Publications</a>
+                </div>
+            </div>
+            <img src="../images/common/ourwork.jpg" alt="Our Works Archive" class="works-placeholder-hero" style="width: 100%; object-fit: cover; margin-left: auto; display: block; border: none; padding: 0;">
+        </div>
+    </section>
+
+    <!-- ════════════════ FEMINIST JUDGMENTS ════════════════ -->
+    <section id="feminist-judgments" class="works-section works-section--pink">
+        <div class="container">
+            <div class="works-section-head">
+                <p
+                    style="color: var(--pink); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85em; margin-bottom: 8px;">
+                    Knowledge Assets</p>
+                <h2 class="works-title-vibe works-title-vibe--navy">Feminist Judgments</h2>
+                <p class="works-section-note" style="width: 100%; max-width: 100%; display: block;">A flagship stream of the project that adapts feminist judgment methodology to the Vietnamese legal context. Explore rewritten judicial decisions that highlight gendered perspectives and structural inequalities.</p>
+
+            </div>
+
+            <div class="two-col-grid works-story-grid" style="margin-bottom: 50px;">
+                <div class="works-copy-panel works-copy-panel--no-accent works-copy-panel--even">
+                    <p
+                        style="font-size: 1.0em; line-height: 1.8; color: var(--text-dark); text-align: justify; margin-bottom: 15px;">
+                        In 2022, we began a new project called "Feminist Judgments" with the expectation of publishing a
+                        book to contribute to the global discourse on feminist legal research. We were fortunate to
+                        receive the support of Professor Rosemary Hunter, arguably one of the pioneers of this research
+                        area. We had a seminar with her to receive guidance on the methodology and philosophy of the
+                        feminist judgments project. As a result, the book <b>"Towards a Vietnamese Feminist Judgment"</b> was
+                        published at the end of 2023. We are expecting volume II of the book in 2026.
+                    </p>
+                    <p
+                        style="font-size: 1.0em; line-height: 1.8; color: var(--text-dark); text-align: justify; margin-bottom: 15px;">
+                        The Vietnamese edition is titled "Towards a Vietnamese Feminist Judgment" because it represents
+                        an adaptation of the global project to a specific local context, where the core methodology of
+                        alternative judgment writing faces unique challenges.
+                    </p>
+                    <p style="font-size: 1.0em; line-height: 1.8; color: var(--text-dark); text-align: justify;">
+                        While international projects pair a judge (to write the alternative verdict) with an academic(to provide commentary), the Vietnamese legal landscape makes it difficult to recruit sitting judges. Consequently, Vietnamese scholars must bridge this gap by performing both roles. However, because not all contributors feel comfortable adopting the judicial mantle—some preferring critical discussion over drafting a formal verdict—the project is a journey "towards" the ideal rather than a complete mirror of the original format.
+
+                    </p>
+                </div>
+                <div class="works-image-panel works-image-panel--full-view">
+                    <img src="../images/common/7.jpg" alt="Feminist Judgments">
+                </div>
+            </div>
+
+            <!-- Methodological Approach -->
+            <div class="works-method-card" style="color: var(--white);">
+                <div class="works-method-layout">
+                    <div class="works-method-intro">
+                        <h3 class="works-title-vibe works-title-vibe--white" style="font-size: 2em; margin-bottom: 0;">Methodological Approach</h3>
+                        <p style="text-align: justify;">
+                            The project does not seek to revolutionise legal theory or fuel a social movement. Instead, it aims to:
+                        </p>
+                        <div class="works-method-note">
+                            <p style="text-align: justify;">
+                            Using desk-based research, authors work strictly within the boundaries of the original facts. They do not invent new evidence but instead use <b style="color: #FFB6D9;">"fact-telling"</b> to offer a different narrative. By re-organizing and re-prioritizing which facts are deemed relevant, the authors create a "feminist space" to settle cases differently without stepping outside the bounds of established statutes and case law.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="works-method-grid">
+                        <div class="overview-box works-method-principle" style="margin: 0;">
+                            <div class="works-method-index">01</div>
+                            <div class="works-method-content">
+                                <h4>Demonstrate Application</h4>
+                                <p>Show how feminist legal theory functions in practice within the existing legal framework.</p>
+                            </div>
+                        </div>
+                        <div class="overview-box works-method-principle" style="margin: 0;">
+                            <div class="works-method-index">02</div>
+                            <div class="works-method-content">
+                                <h4>Adhere to Form</h4>
+                                <p>Maintain the formal writing style of the judiciary.</p>
+                            </div>
+                        </div>
+                        <div class="overview-box works-method-principle" style="margin: 0;">
+                            <div class="works-method-index">03</div>
+                            <div class="works-method-content">
+                                <h4>Uncover Gendered Logic</h4>
+                                <p>Reveal the hidden gender biases in original court decisions and offer reasoning that fills those gaps.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════ CASE DATABASE ═══════════════ -->
+    <section id="case-database" class="works-section works-section--db">
+        <div class="container-immersive">
+            <div class="works-db-card">
+                <div class="works-db-ac">
+                    <div class="works-db-ac-content">
+                        <h2 class="works-db-ac-h">Case Database &amp; Comparison</h2>
+                        <p class="works-db-ac-desc">
+                            Navigate through the collection by case name, legal field, or year. Each record brings together case metadata, original judicial summaries, rewritten feminist judgments, and supporting academic resources in one searchable archive.
+                        </p>
+                        <div class="works-db-ac-actions">
+                            <a href="feminist-judgments/" class="works-db-ac-btn works-db-ac-btn-a">Open the Archive &rarr;</a>
+                            <a href="feminist-judgments/detail.html?id=1" class="works-db-ac-btn works-db-ac-btn-b">View Sample Record</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════ MOOT COURT ════════════════ -->
+    <section id="moot-court" class="works-section works-section--moot">
+        <div class="container-immersive">
+            <div class="works-moot-grid">
+                <!-- Col 1: Project Info -->
+                <div class="works-moot-col-info">
+                    <p class="works-moot-elig-kicker">National Student Competition</p>
+                 
+                    <h2 class="works-moot-h">Gender Justice <span>Moot Court</span></h2>
+                    <p class="works-moot-body">
+                        The Gender Justice Moot Court is a national-level competition for undergraduate law students across Vietnam. It provides a structured and practice-oriented platform for developing legal research, written advocacy, and oral argumentation skills, while integrating gender justice principles into legal reasoning.
+                    </p>
+                    <div class="works-moot-btn-group">
+                        <a href="moot-court/" class="works-moot-btn works-moot-btn-primary">Explore Moot Court &rarr;</a>
+                        <a href="moot-court/" class="works-moot-btn works-moot-btn-secondary">Technical Rules &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Eligibility -->
+                <div class="works-moot-col-eligibility">
+                    <div class="works-moot-elig-header">
+                        <p class="works-moot-elig-kicker">Eligibility</p>
+                        <h3 class="works-moot-elig-h">Who can <span>join?</span></h3>
+                    </div>
+                    <ul class="works-moot-list">
+                        <li class="works-moot-item">
+                            <div class="works-moot-num">01</div>
+                            <div class="works-moot-item-copy">
+                                <p class="works-moot-item-title">Undergraduate law students</p>
+                                <p class="works-moot-item-sub">Open to all years and disciplines within legal studies.</p>
+                            </div>
+                        </li>
+                        <li class="works-moot-item">
+                            <div class="works-moot-num">02</div>
+                            <div class="works-moot-item-copy">
+                                <p class="works-moot-item-title">University Teams</p>
+                                <p class="works-moot-item-sub works-moot-item-sub--nowrap">Formed by undergraduate students representing their institutions.</p>
+                            </div>
+                        </li>
+                        <li class="works-moot-item">
+                            <div class="works-moot-num">03</div>
+                            <div class="works-moot-item-copy">
+                                <p class="works-moot-item-title">Nationwide Participation</p>
+                                <p class="works-moot-item-sub">No geographic restrictions for institutions across Vietnam.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="icfgl" class="section-dark-blue works-section works-section--dark">
+        <div class="container">
+            <div class="works-section-head">
+                <p class="works-moot-elig-kicker" style="margin-bottom: 8px; color: var(--white);">International Conference</p>
+                <h2 class="works-title-vibe works-title-vibe--light" style="font-size: 2.5em; line-height: 1.02;">International Conference on
+                    Feminism, Gender and Law </h2>
+                <p class="works-section-note">A recurring scholarly platform that documents conference editions, related materials, and access points for public-facing resources.</p>
+            </div>
+
+            <div class="two-col-grid works-story-grid" style="align-items: center; margin-bottom: 50px;">
+                <div class="works-copy-panel works-copy-panel--no-accent" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.08);">
+                    <p
+                        style="font-size: 1.0em; line-height: 1.8; color: var(--white); text-align: justify; margin-bottom: 15px;">
+                        The <b>International Conference on Feminism, Gender and Law (ICFGL)</b> is a biennial academic forum
+                        hosted by the University of Economics and Law (UEL) in collaboration with international
+                        partners. The conference brings together scholars, practitioners, and policymakers to engage
+                        with contemporary developments in feminist legal theory and its application across diverse areas
+                        of law.
+                    </p>
+                    <p
+                        style="font-size: 1.0em; line-height: 1.8; color: var(--white); text-align: justify; margin-bottom: 25px;">
+                        Since its inaugural edition in 2021, followed by the 2024 conference and the upcoming 2026
+                        edition, ICFGL has developed into a sustained platform for scholarly exchange and collaboration.
+                        It supports the dissemination of research, fosters critical dialogue, and contributes to the
+                        advancement of feminist jurisprudence in Vietnam and beyond.
+                    </p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="icfgl/" class="btn-pink">Open the ICFGL Archive &rarr;</a>
+                    </div>
+                </div>
+                <div class="works-image-panel" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08);">
+                    <img src="../images/common/8.jpg" alt="ICFGL Event" style="width: 100%; height: 100%; min-height: 340px; object-fit: cover; border-radius: 6px; display: block;">
+                </div>
+            </div>
+
+            <!-- ICFGL Editions -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 0;">
+
+                <div style="display:flex;flex-direction:column;justify-content:center;min-height:180px;padding:36px 32px;background:rgba(255,255,255,0.03);border-radius:16px;border:1px dashed rgba(255,255,255,0.12);">
+                    <p class="works-icfgl-edition-year" style="color:rgba(255,255,255,0.25);">2026</p>
+                    <div class="works-icfgl-edition-line" style="background:rgba(255,255,255,0.15);"></div>
+                    <p class="works-icfgl-edition-label" style="color:rgba(255,255,255,0.2);">Coming soon</p>
+                </div>
+
+                <a href="icfgl-2024.html" style="display:flex;flex-direction:column;justify-content:center;min-height:180px;padding:36px 32px;text-decoration:none;background:rgba(255,255,255,0.07);border-radius:16px;border:1px solid rgba(255,255,255,0.1);transition:background 0.2s ease,transform 0.2s ease,border-color 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.12)';this.style.transform='translateY(-4px)';this.style.borderColor='rgba(246,65,131,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.07)';this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.1)'">
+                    <p class="works-icfgl-edition-year" style="color:#ffc2dd;">2024</p>
+                    <div class="works-icfgl-edition-line" style="background:#f64183;"></div>
+                    <p class="works-icfgl-edition-label" style="color:rgba(255,194,221,0.6);">ICFGL 2024 &rarr;</p>
+                </a>
+
+                <a href="icfgl-2021.html" style="display:flex;flex-direction:column;justify-content:center;min-height:180px;padding:36px 32px;text-decoration:none;background:rgba(255,255,255,0.07);border-radius:16px;border:1px solid rgba(255,255,255,0.1);transition:background 0.2s ease,transform 0.2s ease,border-color 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.12)';this.style.transform='translateY(-4px)';this.style.borderColor='rgba(246,65,131,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.07)';this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.1)'">
+                    <p class="works-icfgl-edition-year" style="color:#ffc2dd;">2021</p>
+                    <div class="works-icfgl-edition-line" style="background:#f64183;"></div>
+                    <p class="works-icfgl-edition-label" style="color:rgba(255,194,221,0.6);">ICFGL 2021 &rarr;</p>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ════════════════ WORKSHOPS & SEMINARS ════════════════ -->
+    <section id="workshops" class="works-section" style="background-color: #f4f8ff; border-top: 1px solid rgba(20,78,140,0.05); padding: 42px 0 80px;">
+        <div class="container">
+            <div class="two-col-grid works-story-grid" style="align-items: center; margin-bottom: 50px;">
+                <div class="works-copy-panel works-copy-panel--no-accent">
+                    <p
+                        style="color: var(--pink); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85em; margin-bottom: 8px;">
+                        Academic Exchange</p>
+                    <h2 class="works-moot-h" style="margin-bottom: 0; color: var(--dark-navy);"><span class="works-title-primary">Workshops</span> <span style="color: var(--dark-navy);">&amp; Seminars</span></h2>
+                    <p
+                        style="font-size: 1.0em; line-height: 1.8; color: var(--text-dark); text-align: justify; margin-bottom: 0;">
+                        In addition to the ICFGL conference series, the project also organises a range of academic
+                        workshops, seminars, and lecture-based activities. These initiatives provide a complementary
+                        platform for scholarly exchange, capacity building, and the development of feminist legal theory
+                        in both research and teaching contexts.
+                    </p>
+                    <br/>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="workshops/" class="btn-pink">Open the Workshops &amp; Seminars Archive &rarr;</a>
+                    </div>
+                </div>
+                <div class="works-image-panel works-image-panel--full-view">
+                    <img src="../images/common/9.jpg" alt="Workshops &amp; Seminars" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                </div>
+            </div>
+
+            <!-- Highlighted Events -->
+            <div class="works-workshop-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                <div class="works-workshop-item" style="background: #fff; border-radius: 16px; border: 1px solid rgba(246,65,131,0.12); padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                    <h4 >UEL Special Lecture Series 2022</h4>
+                    <img src="../images/common/12.jpg" alt="UEL Special Lecture Series" class="works-workshop-thumb" style="border-radius: 8px; margin-bottom: 15px;">
+                    <a href="#" style="color: var(--pink); font-weight: 700; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Details &rarr;</a>
+                </div>
+                <div class="works-workshop-item" style="background: #fff; border-radius: 16px; border: 1px solid rgba(246,65,131,0.12); padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                    <h4 >Summer School on Feminism and Law 2022</h4>
+                    <img src="../images/common/11.jpg" alt="Summer School on Feminism and Law 2022" class="works-workshop-thumb" style="border-radius: 8px; margin-bottom: 15px;">
+                    <a href="#" style="color: var(--pink); font-weight: 700; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Details &rarr;</a>
+                </div>
+                <div class="works-workshop-item" style="background: #fff; border-radius: 16px; border: 1px solid rgba(246,65,131,0.12); padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                    <h4 >Feminist Judgments Manuscript Workshop</h4>
+                    <img src="../images/common/10.JPG" alt="Feminist Judgments Manuscript Workshop" class="works-workshop-thumb" style="border-radius: 8px; margin-bottom: 15px;">
+                    <a href="#" style="color: var(--pink); font-weight: 700; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Details &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════ PUBLICATIONS ════════════════ -->
+    <section id="publications" class="works-section works-section--pink">
+        <div class="container">
+            <div class="works-section-head">
+                <p class="works-moot-elig-kicker" style="margin-bottom: 8px;">Academic Outputs</p>
+                <h2 class="works-title-vibe works-title-vibe--navy">Publications</h2>
+                <p class="works-section-note">
+                This section brings together the project’s research and publication outputs, including books, journal articles, book chapters, conference proceedings, reports, and other materials developed within the broader framework of the UEL Feminist Legal Theory Project.
+
+                </p>
+            </div>
+
+            <!-- Books -->
+            <h3
+                style="color: var(--dark-blue); font-size: 1.6em; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 2px solid var(--light-pink);">
+                Books</h3>
+
+            <!-- Book 1 -->
+            <div class="two-col-grid works-book-card" style="align-items: start; margin-bottom: 50px;">
+                <div style="width: 92%; margin-right: auto;">
+                    <img src="../images/publications/books-vfj.jpg" alt="Towards Vietnamese Feminist Judgments book cover" style="display: block; width: 100%; height: auto; max-height: 520px; object-fit: contain; border-radius: 6px;">
+                </div>
+                <div>
+                    <h4 style="color: var(--pink); font-size: 1.3em; margin-bottom: 15px;">Towards Vietnamese Feminist
+                        Judgments</h4>
+                    <p
+                        style="font-size: 1.0em; line-height: 1.8; color: var(--text-dark); text-align: justify; margin-bottom: 15px;">
+                        This book explores how feminist legal theory can be applied to judicial reasoning in Vietnam.
+                        Covering areas such as criminal law, criminal procedure, marriage and family law, and labour
+                        law, it shows how feminist perspectives can broaden legal interpretation and enrich written
+                        judgments.
+                    </p>
+                    <p
+                        style="font-size: 1.0em; line-height: 1.8; color: var(--text-dark); text-align: justify; margin-bottom: 20px;">
+                        As a key output of the <b>Feminist Legal Theory in Vietnam</b> project, the volume is published in both
+                        Vietnamese and English to engage local readers while contributing to the global feminist
+                        judgments movement.
+                    </p>
+                    <ul class="book-meta">
+                        <li><strong>Publisher:</strong> Vietnam National University Ho Chi Minh Publishing House</li>
+                        <li><strong>Editor:</strong> Trịnh Thục Hiền</li>
+                        <li><strong>Date:</strong> 2024 &nbsp;|&nbsp; <strong>Pages:</strong> 375</li>
+                        <li><strong>ISBN:</strong> 9788-604-479-308-5</li>
+                    </ul>
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <a href="https://drive.google.com/uc?export=download&id=1MUqudousf1mqTGVUYdyKWrBQOJmHH1Hh" target="_blank" rel="noopener noreferrer" class="btn-pink" style="font-size: 0.9em;">PDF version</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book 2 -->
+            <div class="two-col-grid works-book-card" style="align-items: start; margin-bottom: 60px;">
+                <div style="width: 92%; margin-right: auto;">
+                    <img src="../images/publications/opac-image (1).png" alt="The Ashgate Research Companion to Feminist Legal Theory book cover" style="display: block; width: 100%; height: auto; max-height: 520px; object-fit: contain; border-radius: 6px;">
+                </div>
+                <div>
+                    <h4 style="color: var(--pink); font-size: 1.3em; margin-bottom: 15px;">The Ashgate Research
+                        Companion to Feminist Legal Theory <span
+                            style="font-size: 0.7em; font-weight: normal; color: var(--text-dark);">(Vietnamese
+                            Translation)</span></h4>
+                    <p
+                        style="font-size: 1.0em; line-height: 1.8; color: var(--text-dark); text-align: justify; margin-bottom: 15px;">
+                        This volume provides a comprehensive overview of feminist legal theory, bringing together key
+                        concepts, debates, and methodological approaches from leading international scholars. It serves
+                        as a foundational resource for understanding how feminist perspectives critique and reshape
+                        legal systems.
+                    </p>
+                    <p
+                        style="font-size: 1.0em; line-height: 1.8; color: var(--text-dark); text-align: justify; margin-bottom: 20px;">
+                        As part of <b>the Feminist Legal Theory in Vietnam</b> project, the Vietnamese translation makes global
+                        scholarship more accessible to local audiences and supports the integration of feminist legal
+                        theory into teaching and research in Vietnam.
+                    </p>
+                    <ul class="book-meta">
+                        <li><strong>Publisher:</strong> Vietnam National University Ho Chi Minh Publishing House</li>
+                        <li><strong>Language:</strong> Vietnamese (translation)</li>
+                        <li><strong>Date:</strong> 2023</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Book 3 -->
+            <div class="two-col-grid works-book-card" style="align-items: start; margin-bottom: 60px;">
+                <div style="width: 92%; margin-right: auto;">
+                    <img src="../images/publications/ICFGL 2024.jpg" alt="Feminism, Gender and Law: International Conference Proceedings 2024 book cover" style="display: block; width: 100%; height: auto; max-height: 520px; object-fit: contain; border-radius: 6px;">
+                </div>
+                <div>
+                    <h4 style="color: var(--pink); font-size: 1.3em; margin-bottom: 15px;">Feminism, Gender and Law: International Conference Proceedings 2024 <span
+                            style="font-size: 0.7em; font-weight: normal; color: var(--text-dark);">(ICFGL 2024)</span></h4>
+                    <p
+                        style="font-size: 1.0em; line-height: 1.8; color: var(--text-dark); text-align: justify; margin-bottom: 15px;">
+                        This edited volume brings together selected papers presented at the 2024 International Conference on Feminism, Gender and Law, held within the broader Feminist Legal Theory Project at the University of Economics and Law (UEL). The proceedings examine how feminist legal theory can be used to critique formal assumptions of neutrality in law and to advance more substantive approaches to gender justice in Vietnam.
+                    </p>
+                    <p
+                        style="font-size: 1.0em; line-height: 1.8; color: var(--text-dark); text-align: justify; margin-bottom: 20px;">
+                        Across contributions on legislation, access to justice, labour, digital inclusion, reproductive rights, intellectual property, and transgender discrimination, the collection highlights the gap between formal legal equality and substantive gender equality while calling for stronger enforcement and more gender-sensitive legal analysis.
+                    </p>
+                    <ul class="book-meta">
+                        <li><strong>Publisher:</strong> Vietnam National University Ho Chi Minh City Press (VNUHCM Press), Ho Chi Minh City</li>
+                        <li><strong>Editor:</strong> Editorial Board; Editor-in-chief: Trịnh Thục Hiền</li>
+                        <li><strong>Date:</strong> 2025 &nbsp;|&nbsp; <strong>Pages:</strong> 456</li>
+                        <li><strong>ISBN:</strong> 978-632-608-376-7</li>
+                    </ul>
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <a href="https://drive.google.com/uc?export=download&id=180EN1OtbAwiWM8McVYCkFzQHFBEYIiDX" target="_blank" rel="noopener noreferrer" class="btn-pink" style="font-size: 0.9em;">PDF version</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Journal Articles + Reports -->
+            <div class="works-publications-band"
+                style="background: var(--light-blue); margin-top: 10px; border: 1px solid rgba(20, 78, 140, 0.12);">
+                <div style="margin-bottom: 22px; max-width: 720px;">
+                    <p style="margin: 0 0 8px; color: var(--pink); font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; font-size: 0.8em;">Research Outputs</p>
+                    <p style="margin: 0; color: var(--text-dark); line-height: 1.75;">
+                        Selected publication outputs and public-facing materials are organised here as a compact archive of journal-based scholarship and project reports.
+                    </p>
+                </div>
+                <div class="works-publications-grid">
+                    <div class="works-publication-column">
+                        <h3>Journal Articles</h3>
+                        <div class="works-publication-card works-publication-card--article">
+                            <h4>Special issue: Feminism, Gender and Law</h4>
+                            <p>Published in the UEL Journal of Economics, Business and Law.</p>
+                            <a href="https://ebl.vnuhcmjournal.com.vn/index.php/ebl/issue/view/84" target="_blank" class="works-publication-link">View Issue Online &nearr;</a>
+                        </div>
+                    </div>
+                    <div class="works-publication-column">
+                        <h3>Reports</h3>
+                        <div class="works-publication-card works-publication-card--report">
+                            <h4>Reports and Policy Briefs</h4>
+                            <p>
+                                This section includes quarterly reports, where publicly available, as well as policy briefs
+                                and other research-based documents produced within the framework of the project. The archive
+                                remains open for the addition of further public-facing reports and related outputs in the
+                                future.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════ FOOTER ════════════════ -->
+            <div id="global-footer"></div>
+    <script src="../js/components.js"></script>
+</body>
+
+</html>

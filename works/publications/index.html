@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - UEL Feminist Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../header-footer.css">
+    <style>
+    :root {
+        --pink: #f64183;
+        --dark-blue: #2c4a86;
+        --grad-start: #fdf2f5; 
+        --grad-end: #f5e3e8;
+    }
+
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        background: linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%);
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Khung màu trắng phía trên */
+    .archive-hero {
+        background: #fff;
+        margin: 20px;
+        padding: 60px 50px 30px 50px; 
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        position: relative; /* Đảm bảo lớp nền nằm dưới */
+    }
+
+    .archive-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+        gap: 40px;
+        align-items: center;
+    }
+
+    .archive-hero-art {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .archive-hero-art img {
+        width: min(100%, 360px);
+        height: auto;
+        display: block;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0 14px 30px rgba(44, 74, 134, 0.08);
+    }
+
+    .archive-eyebrow {
+        color: var(--pink);
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        font-size: var(--font-size-xs);
+        margin-bottom: 15px;
+    }
+
+    .archive-main-title {
+        font-family: 'Cambria', Georgia, serif;
+        color: var(--dark-blue);
+        font-size: 4rem;
+        margin: 0 0 25px 0;
+    }
+
+    .archive-hero .archive-title {
+        font-size: 2.85rem !important;
+    }
+
+    .archive-intro {
+        color: #555;
+        max-width: 850px;
+        line-height: 1.7;
+        font-size: 1.1rem;
+    }
+
+    /* SỬA LỖI BUTTON: Hiệu ứng đè lên ranh giới */
+     .pub-tabs {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 20px; /* Kéo tabs lên phía trên đè lên khung trắng */
+        margin-bottom: 60px;
+        position: relative;
+        z-index: 10; /* Đảm bảo nút luôn nằm trên cùng */
+    }
+
+
+    .pub-tab {
+        background: #fff; /* Nền trắng mặc định */
+        border: 2px solid var(--pink);
+        color: var(--pink);
+        padding: 14px 35px;
+        border-radius: 6px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 600;
+        font-size: var(--font-size-base);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .pub-tab.is-active, .pub-tab:hover {
+        background: var(--pink);
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(214, 97, 126, 0.3);
+    }
+
+    /* Tiêu đề mục bên dưới */
+    .pub-section {
+        padding: 0 50px;
+        margin-bottom: 60px;
+    }
+
+    .section-kicker {
+        color: var(--pink);
+        text-transform: uppercase;
+        font-size: var(--font-size-xs);
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    .section-title {
+        color: var(--dark-blue);
+        font-size: 2rem;
+        margin-top: 0;
+    }
+
+    /* Book Card & Covers */
+    .book-card {
+        display: grid;
+        grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+        gap: 42px;
+        align-items: start;
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        margin-bottom: 50px;
+        border-top: 4px solid var(--pink);
+    }
+
+    .book-cover {
+        width: 92%;
+        margin-right: auto;
+    }
+    .book-cover img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 520px;
+        object-fit: contain;
+        border-radius: 6px;
+    }
+
+    .book-card--proceedings {
+        grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+        gap: 36px;
+    }
+
+    .book-card--proceedings .book-cover {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .book-card--proceedings .book-cover img {
+        max-height: 560px;
+    }
+
+    .book-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        justify-content: flex-start;
+        min-width: 0;
+    }
+
+    .book-title {
+        font-family: 'Cambria', Georgia, serif;
+        color: var(--pink);
+        font-size: 1.3em;
+        font-weight: 700;
+        line-height: 1.3;
+        margin: 0 0 15px 0;
+    }
+
+    .book-meta {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 0.9em;
+        color: var(--text-dark);
+    }
+
+    .book-meta li {
+        margin-bottom: 5px;
+    }
+
+    .book-meta strong {
+        color: var(--dark-blue);
+    }
+
+    .pub-abstract {
+        margin-bottom: 30px;
+    }
+
+    .pub-abstract-label {
+        display: block;
+        color: var(--pink);
+        text-transform: uppercase;
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 12px;
+    }
+
+    .pub-abstract-copy {
+        color: #4a4a4a;
+        line-height: 1.8;
+        font-size: 1.05rem;
+        text-align: justify;
+        margin: 0 0 15px 0;
+    }
+    
+    .pub-citation {
+        background: transparent;
+        padding: 0;
+        border-left: none;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+
+    .pub-info-label {
+        display: inline-block;
+        color: var(--dark-blue);
+        font-family: 'Cambria', Georgia, serif;
+        font-size: var(--font-size-base);
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+
+    .pub-info-list {
+        display: grid;
+        gap: 10px;
+    }
+
+    .pub-info-row {
+        display: grid;
+        grid-template-columns: 108px minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        padding-top: 10px;
+        border-top: 1px solid rgba(20, 78, 140, 0.08);
+    }
+
+    .pub-info-row:first-child {
+        padding-top: 0;
+        border-top: none;
+    }
+
+    .pub-info-row--download {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 6px;
+        padding: 16px 0 0;
+        border-top: 1px solid rgba(20, 78, 140, 0.08);
+        background: transparent;
+        border-radius: 0;
+    }
+
+    .pub-info-term {
+        color: rgba(20, 78, 140, 0.72);
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .pub-info-value {
+        color: var(--text-dark);
+        font-size: 1rem;
+        line-height: var(--line-height-base);
+        min-width: 0;
+    }
+
+    .pub-download-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .pub-download-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 22px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        background: var(--pink);
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+        box-shadow: none;
+    }
+
+    .pub-download-link::before {
+        content: "↓";
+        font-size: 0.95em;
+        line-height: 1;
+    }
+
+    .pub-download-link--primary {
+        background: linear-gradient(135deg, var(--pink), #f7799c);
+        color: #fff;
+        box-shadow: 0 14px 26px rgba(246, 65, 131, 0.22);
+    }
+
+    .pub-download-link--secondary {
+        background: #f5f8ff;
+        border-color: rgba(20, 78, 140, 0.12);
+    }
+
+    .pub-download-link:hover {
+        color: var(--pink);
+        border-color: rgba(246, 65, 131, 0.2);
+        background: #fff0f6;
+        box-shadow: 0 14px 28px rgba(20, 78, 140, 0.12);
+        transform: translateY(-2px);
+    }
+
+    .pub-download-link--primary:hover {
+        color: #fff;
+        background: linear-gradient(135deg, #ec4a86, #f98aac);
+        box-shadow: 0 16px 30px rgba(246, 65, 131, 0.28);
+    }
+
+    .pub-download-link.is-disabled {
+        color: rgba(20, 78, 140, 0.45);
+        background: #f3f5f8;
+        border-color: rgba(20, 78, 140, 0.06);
+        box-shadow: none;
+        pointer-events: none;
+        font-weight: 600;
+    }
+
+    /* Align the Books section with the calmer presentation on the Our Works page. */
+    .book-card:hover .book-cover img {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .pub-download-link::before {
+        content: none;
+    }
+
+    .pub-download-link--primary,
+    .pub-download-link--secondary,
+    .pub-download-link:hover,
+    .pub-download-link--primary:hover,
+    .pub-download-link--secondary:hover {
+        background: var(--pink);
+        color: #fff;
+        border-color: transparent;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .pub-download-link.is-disabled {
+        color: rgba(255,255,255,0.7);
+    }
+
+    .empty-state {
+        padding: 40px;
+        background: rgba(255,255,255,0.5);
+        border: 2px dashed #ccc;
+        border-radius: 12px;
+        text-align: center;
+        color: #777;
+    }
+
+    .article-card {
+        background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 100%);
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 14px 40px rgba(31, 42, 68, 0.05);
+        margin-bottom: 30px;
+        border: 1px solid rgba(20, 78, 140, 0.05);
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 30px;
+        align-items: center;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .article-card:hover {
+        box-shadow: 0 20px 50px rgba(222, 79, 122, 0.08);
+    }
+
+    .article-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 6px; height: 100%;
+        background: linear-gradient(180deg, var(--pink), #f98aac);
+        border-radius: 6px 0 0 6px;
+    }
+
+    .article-copy {
+        position: relative;
+        z-index: 1;
+        padding-left: 10px;
+    }
+
+    .article-kicker {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 16px;
+        border-radius: 6px;
+        background: linear-gradient(135deg, rgba(246, 65, 131, 0.08), rgba(246, 65, 131, 0.03));
+        border: 1px solid rgba(246, 65, 131, 0.15);
+        color: var(--pink);
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .article-title {
+        color: var(--dark-blue);
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 0 0 12px 0;
+        font-family: 'Cambria', Georgia, serif;
+        line-height: 1.18;
+    }
+
+    .article-summary {
+        color: rgba(47, 47, 47, 0.86);
+        font-size: 1rem;
+        line-height: var(--line-height-base);
+        margin: 0;
+        max-width: 54ch;
+    }
+
+    .article-actions {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        align-self: end;
+    }
+
+    .article-link-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-width: 160px;
+        padding: 16px 28px;
+        border-radius: 6px;
+        background: linear-gradient(135deg, var(--dark-blue), #3a5c9f);
+        color: #fff;
+        font-weight: 700;
+        font-size: var(--font-size-sm);
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        box-shadow: 0 10px 24px rgba(44, 74, 134, 0.2);
+        transition: box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .article-link-btn::after {
+        content: "↗";
+        font-size: 1.1rem;
+        line-height: 1;
+    }
+
+    .article-link-btn:hover {
+        color: #fff;
+        background: linear-gradient(135deg, #1f3661, var(--dark-blue));
+        box-shadow: 0 14px 30px rgba(44, 74, 134, 0.3);
+    }
+
+    @media(max-width: 900px) {
+        .archive-hero { padding: 40px 25px 60px 25px; }
+        .archive-hero-grid { grid-template-columns: 1fr; gap: 24px; }
+        .archive-hero-art { justify-content: flex-start; }
+        .archive-hero-art img { width: min(100%, 300px); }
+        .archive-main-title { font-size: 2.5rem; }
+        .book-card {
+            grid-template-columns: 1fr;
+            padding: 30px;
+            gap: 30px;
+        }
+        .book-cover {
+            margin: 0 auto;
+            width: min(100%, 320px);
+            min-height: 0;
+            padding: 0;
+        }
+        .book-cover img {
+            max-height: 420px;
+        }
+        .book-title { font-size: 1.5rem; }
+        .pub-info-row { grid-template-columns: 1fr; gap: 4px; }
+        .pub-info-row--download { padding: 16px 0 0; }
+        .pub-download-link { width: 100%; }
+        .article-card { grid-template-columns: 1fr; padding: 24px; gap: 18px; }
+        .article-title { font-size: 1.6rem; max-width: none; }
+        .article-summary { max-width: none; }
+        .article-link-btn { width: 100%; }
+    }
+</style>
+ 
+</head>
+<body class="archive-page">
+    <div id="global-header"></div>
+
+    <div class="breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../">Our Works</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Publications</span>
+    </div>
+
+    <main class="archive-shell">
+    <section class="archive-hero">
+        <div class="archive-hero-grid">
+        <div class="archive-hero-copy">
+            <p class="archive-eyebrow">Academic Outputs</p>
+            <h1 class="archive-title">Publications</h1>
+            <p class="archive-intro">This section brings together the project’s research and publication outputs, including books, journal articles, book chapters, conference proceedings, reports, and other materials developed within the broader framework of the UEL Feminist Legal Theory Project.</p>
+        </div>
+        <div class="archive-hero-art">
+            <img src="../../images/common/6.png" alt="Decorative publication illustration">
+        </div>
+        </div>
+    </section>
+
+    <!-- Phần Tab điều hướng -->
+    <div class="pub-tabs-container">
+        <div class="pub-tabs">
+            <button class="pub-tab is-active" data-tab="tab-books">Books</button>
+            <button class="pub-tab" data-tab="tab-journal">Journal Articles</button>
+        </div>
+    </div>
+
+    <!-- Nội dung Tab Books -->
+    <div id="tab-books" class="pub-section">
+        <div class="section-heading">
+            <p class="section-kicker">Monographs & Conference Proceedings</p>
+            <h2>Books</h2>
+        </div>
+        <div id="books-container">
+            <div class="empty-state">Đang tải dữ liệu...</div>
+        </div>
+    </div>
+
+    <!-- Nội dung Tab Journal Articles -->
+    <div id="tab-journal" class="pub-section" hidden>
+        <div class="section-heading">
+            <p class="section-kicker">Academic Journals</p>
+            <h2>Journal Articles</h2>
+        </div>
+        <div class="icfgl-about-content" id="journal-overview">
+            <!-- JS sẽ render nội dung vào đây -->
+        </div>
+        <div id="journal-container"></div>
+    </div>
+</main>
+
+            <div id="global-footer"></div>
+
+    <script>
+        // Tab switching logic
+        const tabs = document.querySelectorAll('.pub-tab');
+        const sections = document.querySelectorAll('.pub-section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab button
+                tabs.forEach(t => t.classList.remove('is-active'));
+                tab.classList.add('is-active');
+
+                // Hide all sections, display the target one
+                const targetId = tab.getAttribute('data-tab');
+                sections.forEach(sec => {
+                    if (sec.id === targetId) {
+                        sec.removeAttribute('hidden');
+                        sec.style.display = '';
+                    } else {
+                        sec.setAttribute('hidden', '');
+                        sec.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Check hash on load
+        if (window.location.hash) {
+            const hash = window.location.hash.replace('#', '');
+            const targetTab = document.querySelector(`.pub-tab[data-tab="tab-${hash}"]`);
+            if (targetTab) {
+                targetTab.click();
+            }
+        }
+
+        const data = {
+            books: [
+                {
+                    id: 'towards-vietnamese-feminist-judgments',
+                    title: 'Towards Vietnamese Feminist Judgments',
+                    cover: '../../images/publications/books-vfj.jpg',
+                    abstract: 'This book explores how feminist legal theory can be applied to judicial reasoning in Vietnam. Covering areas such as criminal law, criminal procedure, marriage and family law, and labour law, it shows how feminist perspectives can broaden legal interpretation and enrich written judgments.\n\nAs a key output of the Feminist Legal Theory in Vietnam project, the volume is published in both Vietnamese and English to engage local readers while contributing to the global feminist judgments movement.',
+                    publisher: 'Vietnam National University Ho Chi Minh Publishing House',
+                    editor: 'Tr\u1ecbnh Th\u1ee5c Hi\u1ec1n',
+                    date: '2024',
+                    pages: '375',
+                    isbn: '9788-604-479-308-5',
+                    downloads: [
+                        { label: 'PDF version', url: 'https://drive.google.com/uc?export=download&id=1MUqudousf1mqTGVUYdyKWrBQOJmHH1Hh' }
+                    ]
+                },
+                {
+                    id: 'ashgate-research-companion-vietnamese',
+                    title: 'The Ashgate Research Companion to Feminist Legal Theory (Vietnamese Translation)',
+                    cover: '../../images/publications/opac-image (1).png',
+                    abstract: 'This volume provides a comprehensive overview of feminist legal theory, bringing together key concepts, debates, and methodological approaches from leading international scholars. It serves as a foundational resource for understanding how feminist perspectives critique and reshape legal systems.\n\nAs part of the Feminist Legal Theory in Vietnam project, the Vietnamese translation makes global scholarship more accessible to local audiences and supports the integration of feminist legal theory into teaching and research in Vietnam.',
+                    publisher: 'Vietnam National University Ho Chi Minh Publishing House',
+                    language: 'Vietnamese (translation)',
+                    date: '2023'
+                },
+                {
+                    id: 'icfgl-2024-proceedings',
+                    title: 'Feminism, Gender and Law: International Conference Proceedings 2024 (ICFGL 2024)',
+                    cover: '../../images/publications/ICFGL 2024.jpg',
+                    abstract: 'This edited volume brings together selected papers presented at the 2024 International Conference on Feminism, Gender and Law, held within the broader Feminist Legal Theory Project at the University of Economics and Law (UEL). The proceedings examine how feminist legal theory can be used to critique formal assumptions of neutrality in law and to advance more substantive approaches to gender justice in Vietnam. The collection situates feminist jurisprudence within Vietnam\'s historical, constitutional, and socio-legal development, while also highlighting the need for deeper institutional, educational, and interpretive reform.\n\nThe volume covers a wide range of topics, including women\'s rights through legislation, access to justice, credit and digital financial inclusion, rural women\'s rights, intellectual property, access to medicines under TRIPS, marriage and family law, reproductive rights, labour protections for female migrant workers, employment in the digital economy, discrimination against transgender women, prostitution law reform, and the evolution of feminist thought in colonial Vietnam. Across these contributions, the proceedings emphasize the persistent gap between formal legal equality and substantive gender equality, and call for stronger enforcement, gender-sensitive legal analysis, and more intersectional responses in Vietnamese law and policy.',
+                    publisher: 'Vietnam National University Ho Chi Minh City Press (VNUHCM Press), Ho Chi Minh City',
+                    editor: 'Editorial Board; Editor-in-chief: Trịnh Thục Hiền',
+                    date: '2025',
+                    pages: '456',
+                    isbn: '978-632-608-376-7',
+                    downloads: [
+                        { label: 'PDF version', url: 'https://drive.google.com/uc?export=download&id=180EN1OtbAwiWM8McVYCkFzQHFBEYIiDX' }
+                    ]
+                }
+            ],
+            journalArticles: {
+                intro: '',
+                items: [
+                    {
+                        title: 'Special issue: Feminism, Gender and Law',
+                        url: 'https://ebl.vnuhcmjournal.com.vn/index.php/ebl/issue/view/84',
+                        description: 'Published in the UEL Journal of Economics, Business and Law.'
+                    }
+                ]
+            }
+        };
+
+        try {
+                const highlightAbstract = (text) => {
+                    if (!text) return '';
+                    return text
+                        .replace(/\n\n/g, '</p><p class="pub-abstract-copy">')
+                        .replace(/feminist legal theory/gi, '<span class="pub-highlight">feminist legal theory</span>');
+                };
+
+                // --- Render Books ---
+                const booksContainer = document.getElementById('books-container');
+                if (data.books && data.books.length > 0) {
+                    booksContainer.innerHTML = data.books.map(book => `
+                        <article class="book-card ${book.id === 'icfgl-2024-proceedings' ? 'book-card--proceedings' : ''}">
+                            <div class="book-cover ${book.id === 'icfgl-2024-proceedings' ? 'book-cover--proceedings' : ''}">
+                                <img src="${book.cover}" alt="Cover of ${book.title}" loading="lazy">
+                            </div>
+                            <div class="book-details">
+                                <h4 style="color: var(--pink); font-size: 1.3em; margin-bottom: 15px;">${book.title}</h4>
+                                <p
+                                    style="font-size: 1.0em; line-height: 1.8; color: var(--text-dark); text-align: justify; margin-bottom: 15px;">
+                                    ${highlightAbstract(book.abstract)}
+                                </p>
+                                <ul class="book-meta">
+                                    ${book.publisher ? `<li><strong>Publisher:</strong> ${book.publisher}</li>` : ''}
+                                    ${book.editor ? `<li><strong>Editor:</strong> ${book.editor}</li>` : ''}
+                                    ${book.language ? `<li><strong>Language:</strong> ${book.language}</li>` : ''}
+                                    ${book.date ? `<li><strong>Date:</strong> ${book.date}</li>` : ''}
+                                    ${book.pages ? `<li><strong>Pages:</strong> ${book.pages}</li>` : ''}
+                                    ${book.isbn ? `<li><strong>ISBN:</strong> ${book.isbn}</li>` : ''}
+                                </ul>
+                                ${book.downloads && book.downloads.length ? `
+                                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                                    ${book.downloads.map((download, index) => `
+                                        <a href="${download.url}" target="_blank" rel="noopener noreferrer" class="btn-pink" style="font-size: 0.9em;">${download.label}</a>
+                                    `).join('')}
+                                </div>
+                                ` : ''}
+                            </div>
+                        </article>
+                    `).join('');
+                } else {
+                    booksContainer.innerHTML = `<div class="empty-state">Hi?n t?i chua c� d? li?u s�ch.</div>`;
+                }
+
+                // --- Render Journal Articles ---
+                document.getElementById('journal-overview').innerHTML = data.journalArticles.intro ? `<p>${data.journalArticles.intro}</p>` : '';
+
+                const renderArticle = (item) => `
+                    <article class="article-card">
+                        <div class="article-copy">
+                            <span class="article-kicker">Journal Feature</span>
+                            <h4 class="article-title">${item.title}</h4>
+                            ${item.description ? `<p class="article-summary">${item.description}</p>` : ''}
+                        </div>
+                        <div class="article-actions">
+                            <a href="${item.url}" class="article-link-btn" target="_blank" rel="noopener">Open Journal</a>
+                        </div>
+                    </article>
+                `;
+
+                const journalContainer = document.getElementById('journal-container');
+                if (data.journalArticles.items && data.journalArticles.items.length > 0) {
+                    journalContainer.innerHTML = data.journalArticles.items.map(renderArticle).join('');
+                } else {
+                    journalContainer.innerHTML = `<div class="empty-state">Journal articles are being updated...</div>`;
+                }
+        } catch (err) {
+            console.error('Error rendering publications data:', err);
+            document.getElementById('books-container').innerHTML = `<div class="empty-state" style="color:red;">L?i t?i d? li?u. Vui l�ng th? l?i sau.</div>`;
+        }
+    </script>
+    <script src="../../js/components.js"></script>
+</body>
+</html>
+
+

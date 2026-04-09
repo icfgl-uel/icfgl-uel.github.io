@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - UEL Feminist Project</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../header-footer.css">
+    <style>
+        :root {
+            --about-media-radius: 14px;
+        }
+
+        .placeholder-img {
+            background-color: rgba(20, 78, 140, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #144e8c;
+            font-size: 1.1em;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px dashed rgba(20, 78, 140, 0.3);
+            font-weight: bold;
+        }
+
+        .about-animate {
+            opacity: 0;
+            animation: sitePageEnter 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            will-change: transform, opacity;
+        }
+
+        .about-animate-delay-1 { animation-delay: 0.08s; }
+        .about-animate-delay-2 { animation-delay: 0.16s; }
+        .about-animate-delay-3 { animation-delay: 0.24s; }
+        .about-animate-delay-4 { animation-delay: 0.32s; }
+
+        .about-media-reveal {
+            opacity: 0;
+            animation: sitePageEnter 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation-delay: 0.14s;
+        }
+
+        .about-media-column {
+            display: grid;
+            gap: 18px;
+            margin-top: 68px;
+            margin-left: 34px;
+        }
+
+        .about-media-column .video-responsive,
+        .about-media-column .about-placeholder-card--mini,
+        .about-media-column .about-placeholder-card--mini img {
+            border-radius: var(--about-media-radius);
+        }
+
+        .about-media-column .video-responsive,
+        .about-media-column .about-placeholder-card--mini {
+            overflow: hidden;
+            box-shadow: 0 14px 32px rgba(20, 78, 140, 0.1);
+        }
+
+        .about-mini-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .about-phase-section {
+            background: linear-gradient(180deg, #eef5fb 0%, #f5f8fc 100%);
+            padding: 40px 5% 72px;
+        }
+
+        .about-phase-layout {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.06fr) minmax(340px, 0.94fr);
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .about-phase-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            align-items: start;
+            height: 100%;
+        }
+
+        .about-phase-stack {
+            display: grid;
+            gap: 18px;
+            margin-top: 0;
+        }
+
+        .about-placeholder-card {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(255, 235, 242, 0.92));
+            border: 2px dashed rgba(20, 78, 140, 0.28);
+            border-radius: var(--about-media-radius);
+            overflow: hidden;
+            color: #144e8c;
+            box-shadow: 0 18px 36px rgba(20, 78, 140, 0.08);
+        }
+
+        .about-placeholder-card::before {
+            content: "";
+            position: absolute;
+            inset: 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(20, 78, 140, 0.14);
+            pointer-events: none;
+        }
+
+        .about-placeholder-card--portrait {
+            aspect-ratio: 340 / 340;
+        }
+
+        .about-placeholder-card--tall {
+            aspect-ratio: 336 / 698;
+            min-height: 100%;
+        }
+
+        .about-placeholder-card--landscape {
+            aspect-ratio: 10 / 7;
+        }
+
+        .about-placeholder-card--poster {
+            padding: 0;
+            background: #fff;
+            border: 1px solid rgba(20, 78, 140, 0.08);
+            box-shadow: 0 15px 35px rgba(20, 78, 140, 0.1);
+            border-radius: var(--about-media-radius);
+        }
+
+        .about-placeholder-card--poster::before {
+            display: none;
+        }
+
+        .about-placeholder-card--poster img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: var(--about-media-radius);
+        }
+
+
+
+        .about-placeholder-card--tall.about-placeholder-card--poster {
+            padding: 0;
+        }
+
+        .about-placeholder-card--video {
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            margin: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .about-placeholder-card--video::before {
+            display: none;
+        }
+
+        .about-placeholder-card--video video {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--about-media-radius);
+            background: #000;
+        }
+
+        .about-placeholder-card--video iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: var(--about-media-radius);
+            background: #000;
+        }
+
+        .about-poster-image--green {
+            object-position: center 0%;
+        }
+
+        .about-poster-image--blue {
+            object-position: center 0%;
+        }
+
+        .about-placeholder-card--mini {
+            aspect-ratio: 1 / 1;
+            min-height: 220px;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .about-placeholder-card--mini::before {
+            display: none;
+        }
+
+        .about-placeholder-card--mini img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            object-fit: cover;
+            object-position: center;
+            border-radius: var(--about-media-radius);
+        }
+
+        .about-placeholder-label {
+            position: relative;
+            z-index: 1;
+            font-family: Cambria, Georgia, serif;
+            font-size: 1.28rem;
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+        }
+
+        .about-placeholder-label span {
+            display: block;
+            margin-top: 8px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            opacity: 0.75;
+        }
+
+        .about-phase-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: minmax(0, 1fr) auto;
+            gap: 22px;
+            align-content: stretch;
+            align-items: stretch;
+            height: 100%;
+        }
+
+        .about-phase-content > .about-placeholder-card--video {
+            aspect-ratio: auto;
+            min-height: 0;
+            height: 100%;
+            align-self: stretch;
+        }
+
+        .about-phase-copy {
+            display: grid;
+            align-content: start;
+            gap: 24px;
+            padding: 10px 8px 0;
+            margin-top: 0;
+            min-height: 100%;
+        }
+
+        .about-phase-copy p {
+            margin: 0;
+            font-size: 1.04rem;
+            line-height: 1.65;
+            color: var(--text-dark);
+            text-align: justify;
+            font-family: Cambria, Georgia, serif;
+        }
+
+        .about-phase-copy strong {
+            color: var(--primary);
+        }
+
+        .about-footer-wrap {
+            margin-top: 0;
+        }
+
+        .about-section-intro {
+            line-height: 1.72 !important;
+            margin-bottom: 24px !important;
+            color: var(--text-dark);
+        }
+
+        .about-footer {
+            margin-top: 0;
+            background:
+                radial-gradient(circle at 86% 18%, rgba(255,255,255,0.08), transparent 18%),
+                linear-gradient(135deg, #173a69 0%, #1d4d85 52%, #14345c 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-footer-inner {
+            width: min(100%, 1360px);
+            margin: 0 auto;
+        }
+
+        .about-footer-top {
+            display: grid;
+            grid-template-columns: minmax(280px, 1.2fr) minmax(180px, 0.8fr) minmax(280px, 1fr);
+            gap: 72px;
+            padding: 72px 6% 62px;
+            align-items: start;
+        }
+
+        .about-footer-col h4 {
+            margin: 0 0 26px;
+            font-size: 0.98rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 18px;
+        }
+
+        .about-footer-brand p,
+        .about-footer-contact p,
+        .about-footer-links a {
+            font-size: 1rem;
+            line-height: 1.88;
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .about-footer-brand p {
+            max-width: 430px;
+            margin: 0 0 32px;
+        }
+
+        .about-footer-brand img {
+            display: block;
+            height: 88px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .about-footer-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 16px;
+        }
+
+        .about-footer-links a {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            transition: color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .about-footer-links a:hover {
+            color: #fff;
+            opacity: 1;
+        }
+
+        .about-footer-contact {
+            max-width: 420px;
+        }
+
+        .about-footer-contact p {
+            margin: 0;
+        }
+
+        .about-footer-contact p + p {
+            margin-top: 20px;
+        }
+
+        .about-footer-title {
+            font-size: 1.04rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .about-footer-email {
+            color: #ffb8d0;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+            font-weight: 700;
+        }
+
+        .about-footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.09);
+            background: rgba(11, 25, 49, 0.26);
+        }
+
+        .about-footer-bottom-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+            padding: 24px 6% 26px;
+            font-size: 0.94rem;
+            color: rgba(255, 255, 255, 0.68);
+        }
+
+        .about-footer-bottom-grid p {
+            margin: 0;
+        }
+
+        @media (max-width: 1180px) {
+            .about-phase-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .about-phase-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-phase-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 42px;
+            }
+
+            .about-footer-col:last-child {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .about-mini-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .about-media-column {
+                margin-top: 28px;
+                margin-left: 0;
+            }
+
+            .about-phase-section {
+                padding: 56px 5%;
+            }
+
+            .about-phase-layout {
+                gap: 24px;
+            }
+
+            .about-phase-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .about-phase-copy {
+                padding: 0;
+            }
+
+            .about-footer-top {
+                grid-template-columns: 1fr;
+                gap: 34px;
+                padding: 42px 5% 34px;
+            }
+
+            .about-footer-col:last-child {
+                grid-column: auto;
+            }
+
+            .about-footer-bottom-grid {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .overview-box,
+        .work-card,
+        .partner-card,
+        .video-responsive,
+        .about-feature-image {
+            transition: transform 0.28s ease, box-shadow 0.28s ease;
+        }
+
+        .video-responsive,
+        .about-feature-image {
+            border-radius: var(--about-media-radius);
+            overflow: hidden;
+        }
+
+        .overview-box:hover,
+        .work-card:hover,
+        .partner-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .about-feature-image:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .about-animate,
+            .about-media-reveal {
+                opacity: 1;
+                animation: none;
+            }
+
+            .overview-box,
+            .work-card,
+            .partner-card,
+            .video-responsive,
+            .about-feature-image {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="global-header"></div>
+    <section style="background-color: #ffebf2; padding: 30px 5% 30px 5%;">
+        <div class="container two-col-grid about-animate" style="align-items: center;">
+            <div class="about-animate about-animate-delay-1">
+                <h2 class="heading-pink">ABOUT US</h2>
+                <p
+                    style="font-size: 1.0em; line-height: 1.7; color: var(--text-dark); margin-bottom: 20px; text-align: justify;">
+                   The Feminist Legal Theory Project at the University of Economics and Law (UEL) is a multi-year academic initiative dedicated to advancing feminist jurisprudence in Vietnam. Since its launch in 2021, with the support of the Rosa Luxemburg Stiftung Hanoi Office (RLS), the project has introduced feminist legal theory into Vietnamese legal education, research, and professional dialogue, helping to expand legal discourse beyond formal equality toward more substantive understandings of gender justice. 
+
+                </p>
+                <p style="line-height: 1.75; color: var(--text-dark); margin-bottom: 20px; text-align: justify;">
+                    Over time, the project has developed through conferences, workshops, student-focused activities, and publications, creating a growing platform for scholarly exchange and capacity building. 
+
+                </p>
+                <p style="line-height: 1.75; color: var(--text-dark); text-align: justify;">
+                   Its major activities have included the International Conference on Feminism, Gender and Law (ICFGL), feminist judgment workshops, publication projects, and, in 2026, a strategic shift toward more applied and institutional forms of impact through the Gender Justice Moot Court, ICFGL 2026 on Feminist Law-making and Judgments, and an international academic study mission to Germany.
+
+                </p>
+            </div>
+            <div class="about-media-column">
+                    <div class="video-responsive about-media-reveal" style="margin-top: 0; box-shadow: 0 14px 32px rgba(20, 78, 140, 0.1);">
+                        <iframe src="https://www.youtube.com/embed/Z24G7jYzK7o" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="about-mini-gallery">
+                        <div class="about-placeholder-card about-placeholder-card--mini about-media-reveal" style="animation-delay: 0.2s;">
+                            <img src="../images/aboutus/ab1.jpg" alt="Image Frame 01">
+                        </div>
+                        <div class="about-placeholder-card about-placeholder-card--mini about-media-reveal" style="animation-delay: 0.26s;">
+                            <img src="../images/aboutus/ab2.jpg" alt="Image Frame 02">
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="about-phase-section">
+        <div class="about-phase-layout">
+            <div class="about-phase-gallery">
+                <div class="about-phase-stack about-media-reveal">
+                    <div class="about-placeholder-card about-placeholder-card--portrait about-placeholder-card--poster">
+                        <img src="../images/aboutus/mc2.jpg" alt="Moot Court poster 1" class="about-poster-image--green">
+                    </div>
+                    <div class="about-placeholder-card about-placeholder-card--portrait about-placeholder-card--poster">
+                        <img src="../images/aboutus/mc1.jpg" alt="Moot Court poster 2" class="about-poster-image--blue">
+                    </div>
+                </div>
+                <div class="about-media-reveal" style="animation-delay: 0.2s;">
+                    <div class="about-placeholder-card about-placeholder-card--tall about-placeholder-card--poster">
+                        <img src="../images/aboutus/mc3.png" alt="Moot Court poster 3">
+                    </div>
+                </div>
+            </div>
+            <div class="about-phase-content">
+                <div class="about-placeholder-card about-placeholder-card--landscape about-placeholder-card--video about-media-reveal"
+                    style="animation-delay: 0.26s;">
+                    <iframe src="https://drive.google.com/file/d/14s7lSE2X_NXPrYYAeiTg_Tw294GkWDhf/preview"
+                        title="Project video"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="about-phase-copy about-animate about-animate-delay-2">
+                    <p><strong>The next phase of the project (2027-2030)</strong>  will build on these foundations by moving toward a more practice-oriented, policy-relevant, and public-facing agenda. </p>
+
+                    <p>Its strategy includes sustaining the ICFGL as a recurring academic forum, institutionalising the Gender Justice Moot Court, producing policy-oriented outputs, and developing a bilingual digital platform on gender equality and law as a long-term repository, teaching resource, and public knowledge hub linked to UEL’s Law and Technology bachelor programme.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark-blue" style="padding-top: 42px; padding-bottom: 30px;">
+        <div class="container overview-flex about-animate about-animate-delay-1">
+            <div class="overview-flex-left">
+                
+                    <h2 class="heading-white">WHERE WE LEAD</h2>
+                    <img src="../images/common/4.jpg" alt="Project Overview" class="about-feature-image about-media-reveal"
+                        style="display: block; width: 100%; height: 650px; margin-top: 20px; object-fit: cover; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                </div>
+            <div class="overview-flex-right" style="padding-top: 60px;">
+                <div class="overview-box about-animate about-animate-delay-2">
+                    <div class="overview-row">
+                        <h4 style="color: #ffebf2;">Objectives</h4>
+                        <div class="overview-content">
+                            <p style="margin-bottom:15px;">Promote the understanding and application of Feminist Legal
+                                Theory in Vietnam.</p>
+                            <p style="margin-bottom:15px;">Integrate feminist perspectives into legal education,
+                                research, and practice.</p>
+                            <p style="margin-bottom:15px;">Foster a dynamic academic community through dialogue,
+                                collaboration, and knowledge exchange.</p>
+                            <p>Support the development of gender-responsive legal frameworks and social justice.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="overview-box about-animate about-animate-delay-3">
+                    <div class="overview-row bottom-border">
+                        <h4 style="color: #ffebf2;">Our<br>Approach</h4>
+                        <div class="overview-content">
+                            <p style="margin-bottom:15px;"><b>Integrating theory and practice:</b> Linking feminist legal
+                                theory with real-world legal issues through teaching, research, and applied activities.
+                            </p>
+                            <p style="margin-bottom:15px;"><b>Interdisciplinary and critical:</b> Engaging diverse perspectives
+                                to examine law in its broader social and institutional context.</p>
+                            <p style="margin-bottom:15px;"><b>Collaborative and international:</b> Building networks among
+                                scholars, practitioners, and institutions in Vietnam and beyond.</p>
+                            <p><b>Capacity-building oriented:</b> Supporting students and researchers to develop skills in
+                                gender-sensitive legal analysis and advocacy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pink-bg" style="background-color: #f3f9ff; padding-top: 34px;">
+        <div class="container about-animate about-animate-delay-2">
+            <h2 class="heading-pink">WHAT WE DO</h2>
+            <p class="about-section-intro">We focus on advancing Feminist Legal Theory in Vietnam through research, teaching, academic dialogue, and collaborative initiatives. It brings together scholars, students, and practitioners to develop feminist legal scholarship, strengthen gender-sensitive legal education, and promote more inclusive and socially responsive approaches to law.</p>
+
+            <div class="work-grid">
+                <div class="work-card about-animate about-animate-delay-1">
+                    <h3>International Conference on Feminism, Gender and Law</h3>
+                    <img src="../images/common/3.JPG" alt="International Conference on Feminism, Gender and Law" style="height: 180px; width: 100%; object-fit: cover; border-radius: 8px;">
+                    <p style="margin-top: 15px; color:#144e8c">Forums gather practitioners and researchers for intensive dialogue on methodology, case selection, and the politics of legal reform in contexts where feminist theory still meets institutional resistance.
+
+                    </p>
+                    <div style="display: flex; gap: 10px; margin-top:20px;">
+                        <a href="../works/icfgl/" class="btn-pink" style="flex:1; text-align:center;">ICFGL 2026</a>
+                        <a href="../works/icfgl/" class="btn-dark" style="flex:1; text-align:center;">Past ICFGL</a>
+                    </div>
+                </div>
+                <div class="work-card about-animate about-animate-delay-2">
+                    <h3>Feminist Judgments</h3>
+                    <img src="../images/common/6.png" alt="Feminist Judgments" style="height: 180px; width: 100%; object-fit: cover; border-radius: 8px;">
+                    <p style="margin-top: 15px; color:#144e8c">Through the selection and rewriting of judgments, contributing authors
+                        offer alternative interpretations of the law, highlighting the role of gender, women's
+                        experiences, and broader social factors in judicial reasoning and legal application.</p>
+                </div>
+                <div class="work-card about-animate about-animate-delay-3">
+                    <h3>Gender Justice Moot Court</h3>
+                    <img src="../images/mootcourt/1.jpg" alt="Gender Justice Moot Court" style="height: 180px; width: 100%; object-fit: cover; border-radius: 8px;">
+                    <p style="margin-top: 15px; color:#144e8c">Through a hybrid E-Court model combining virtual hearings and a live Grand Finale, the programme equips law students with practical, digital, and analytical competencies for modern legal practice.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #ffebf2; padding: 42px 5% 30px 5%;">
+        <div class="container about-animate about-animate-delay-3">
+            <h2 class="heading-pink" style="margin-bottom: 20px;">WHO WE ARE</h2>
+            <p class="about-section-intro">
+                The Rosa Luxemburg Stiftung (RLS) and the University of Economics and Law (UEL) have established a
+                long-term academic partnership aimed at introducing and institutionalizing Feminist Legal Theory in
+                Vietnam.</p>
+
+            <div class="two-col-grid partner-grid">
+                <div class="partner-card about-animate about-animate-delay-1">
+                    <h3 style="color: var(--dark-blue); margin-bottom: 15px;">Rosa Luxemburg Stiftung Southeast Asia, Hanoi office</h3>
+                    <div class="video-responsive">
+                        <iframe src="https://www.youtube.com/embed/Q1MxYmkIDUc" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p style="line-height: 1.75; color: var(--text-dark);">RLS plays a central role as an international partner and funding institution, providing financial support, academic exchange opportunities, and strategic guidance. Through its commitment to social justice, political education, and international solidarity, RLS facilitates connections between Vietnamese scholars and global feminist legal scholarship.</p>
+
+                </div>
+                <div class="partner-card about-animate about-animate-delay-2">
+                    <h3 style="color: var(--dark-blue); margin-bottom: 15px;">University of Economics and Law (UEL)</h3>
+                    <div class="video-responsive">
+                        <iframe src="https://www.youtube.com/embed/UiH8nccHQTA" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p style="font-size: 0.95em; line-height: 1.6; color: var(--text-dark);">The UEL team serves as the core academic driver of the project, leading its design, implementation, and long-term development. UEL lecturers and researchers, as project members, are responsible for developing academic content, integrating Feminist Legal Theory into legal education and research, and organizing the project’s key scholarly activities. </p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div id="global-footer"></div>
+    <script src="../js/components.js"></script>
+</body>
+
+</html>

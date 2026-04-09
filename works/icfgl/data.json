@@ -1,0 +1,56 @@
+{
+  "icfgl": {
+    "title": "International Conference on Feminism, Gender and Law",
+    "shortName": "ICFGL",
+    "organizer": "University of Economics and Law (UEL), VNU-HCM",
+    "partner": "Rosa-Luxemburg-Stiftung",
+    "editions": [
+      {
+        "year": 2024,
+        "type": "On-site Conference",
+        "date": "27/09/2024",
+        "time": "08:00 – 17:00",
+        "location": "University of Economics and Law, Thu Duc City, Ho Chi Minh City, Vietnam",
+        "registerLink": "https://forms.gle/v1bUhEZgMxWymLsN7",
+        "website": "https://lkt.uel.edu.vn/icfgl-2024",
+        "sections": {
+          "conceptNote": "Hội thảo quốc tế \"Feminism, Gender and Law 2024 (ICFGL 2024)\" được tổ chức như một diễn đàn học thuật nhằm thúc đẩy đối thoại về lý thuyết pháp luật nữ quyền trong bối cảnh đương đại. Hội thảo hướng tới việc kết nối các học giả Việt Nam và quốc tế, tạo không gian trao đổi tri thức và chia sẻ nghiên cứu liên quan đến mối quan hệ giữa giới, pháp luật và công bằng xã hội.",
+          "programme": "Chương trình hội thảo diễn ra trong ngày 27/09/2024, bao gồm các phiên thảo luận học thuật tập trung vào lý thuyết pháp luật nữ quyền, các vấn đề về giới trong pháp luật và đối thoại học thuật giữa các học giả trong nước và quốc tế.",
+          "speakers": "Hội thảo quy tụ các học giả, nhà nghiên cứu và chuyên gia đến từ Việt Nam và quốc tế, tham gia chia sẻ chuyên môn và đóng góp vào các thảo luận học thuật về nữ quyền, giới và pháp luật.",
+          "proceedings": "Các tham luận tại hội thảo phản ánh các tiếp cận đa chiều về lý thuyết pháp luật nữ quyền và các vấn đề pháp lý liên quan đến giới, góp phần hình thành nguồn tài liệu phục vụ nghiên cứu và giảng dạy.",
+          "photos": "Hình ảnh hội thảo ghi lại các phiên làm việc trực tiếp, sự tham gia của diễn giả và đại biểu, cũng như không gian học thuật của chương trình.",
+          "videos": []
+        }
+      },
+      {
+        "year": 2021,
+        "type": "Virtual Conference",
+        "date": "29/10/2021",
+        "time": "08:00 – 17:00 (Hanoi time)",
+        "location": "Online (Zoom)",
+        "registerLink": "https://forms.gle/BCGSaTMDrQwjScCk8",
+        "website": "https://fgl2021.uel.edu.vn/",
+        "sections": {
+          "conceptNote": "Hội thảo được xây dựng dựa trên lý thuyết pháp luật nữ quyền, nhằm xem xét pháp luật như một hiện tượng xã hội gắn với các quan hệ quyền lực, đặc biệt là quan hệ giới. Hội thảo đặt ra các câu hỏi về ảnh hưởng của các quan điểm gia trưởng trong việc hình thành chuẩn mực pháp lý và mức độ mà pháp luật phản ánh kinh nghiệm của phụ nữ.",
+          "programme": "Chương trình hội thảo diễn ra trong ngày 29/10/2021 với các phiên thảo luận học thuật xoay quanh lý thuyết pháp luật nữ quyền, mối quan hệ giữa pháp luật và quyền lực giới, và trao đổi giữa các học giả và người tham dự.",
+          "speakers": "Hội thảo quy tụ các học giả, nhà nghiên cứu, nhà hoạch định chính sách và người quan tâm đến lĩnh vực nữ quyền, giới và pháp luật từ Việt Nam và quốc tế.",
+          "proceedings": "Các tham luận tại hội thảo tập trung vào việc phân tích pháp luật dưới góc nhìn giới và góp phần hình thành nguồn tài liệu học thuật phục vụ nghiên cứu và giảng dạy.",
+          "photos": "Hình ảnh hội thảo ghi lại các phiên làm việc trực tuyến và sự tham gia của các diễn giả và người tham dự.",
+          "videos": [
+            "https://www.youtube.com/watch?v=JjtnSJ__4WM",
+            "https://www.youtube.com/watch?v=vm0J2Fb2-Rk",
+            "https://www.youtube.com/watch?v=WYrxRKikrGw",
+            "https://www.youtube.com/watch?v=_F8ydLwcfO0",
+            "https://www.youtube.com/watch?v=nycmOEGvPio",
+            "https://www.youtube.com/watch?v=HRCZPVE-UBs",
+            "https://www.youtube.com/watch?v=vQJVBQLCJj0",
+            "https://www.youtube.com/watch?v=VknFxSVSsTA",
+            "https://www.youtube.com/watch?v=1qq_fhNLPiw",
+            "https://www.youtube.com/watch?v=u1FfWsmYQgM"
+          ]
+        }
+      }
+    ]
+  }
+}
+

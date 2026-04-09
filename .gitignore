@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor / IDE
+*.swp
+*.swo
+*~
+.idea/
+
+# Logs and temp
+*.log
+*.tmp
+*.temp
+.cache/
+
+# Optional: if you add Node tooling (build, linters, etc.)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local env / secrets (if you add server-side or deploy scripts)
+.env
+.env.local
+.env.*.local

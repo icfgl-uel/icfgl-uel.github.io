@@ -1,0 +1,58 @@
+{
+  "books": [
+    {
+      "id": "towards-vietnamese-feminist-judgments",
+      "title": "Towards Vietnamese Feminist Judgments",
+      "cover": "../../images/publications/books-vfj.jpg",
+      "abstract": "This book explores how feminist legal theory can be applied to judicial reasoning in Vietnam. Covering areas such as criminal law, criminal procedure, marriage and family law, and labour law, it shows how feminist perspectives can broaden legal interpretation and enrich written judgments.\n\nAs a key output of the Feminist Legal Theory in Vietnam project, the volume is published in both Vietnamese and English to engage local readers while contributing to the global feminist judgments movement.",
+      "publisher": "Vietnam National University Ho Chi Minh Publishing House",
+      "editor": "Tr\u1ecbnh Th\u1ee5c Hi\u1ec1n",
+      "date": "2024",
+      "pages": "375",
+      "isbn": "9788-604-479-308-5",
+      "downloads": [
+        {
+          "label": "PDF version",
+          "url": "https://drive.google.com/uc?export=download&id=1MUqudousf1mqTGVUYdyKWrBQOJmHH1Hh"
+        }
+      ]
+    },
+    {
+      "id": "ashgate-research-companion-vietnamese",
+      "title": "The Ashgate Research Companion to Feminist Legal Theory (Vietnamese Translation)",
+      "cover": "../../images/publications/opac-image (1).png",
+      "abstract": "This volume provides a comprehensive overview of feminist legal theory, bringing together key concepts, debates, and methodological approaches from leading international scholars. It serves as a foundational resource for understanding how feminist perspectives critique and reshape legal systems.\n\nAs part of the Feminist Legal Theory in Vietnam project, the Vietnamese translation makes global scholarship more accessible to local audiences and supports the integration of feminist legal theory into teaching and research in Vietnam.",
+      "publisher": "Vietnam National University Ho Chi Minh Publishing House",
+      "language": "Vietnamese (translation)",
+      "date": "2023"
+    },
+    {
+      "id": "icfgl-2024-proceedings",
+      "title": "Feminism, Gender and Law: International Conference Proceedings 2024 (ICFGL 2024)",
+      "cover": "../../images/publications/ICFGL 2024.jpg",
+      "abstract": "This edited volume brings together selected papers presented at the 2024 International Conference on Feminism, Gender and Law, held within the broader Feminist Legal Theory Project at the University of Economics and Law (UEL). The proceedings examine how feminist legal theory can be used to critique formal assumptions of neutrality in law and to advance more substantive approaches to gender justice in Vietnam. The collection situates feminist jurisprudence within Vietnam's historical, constitutional, and socio-legal development, while also highlighting the need for deeper institutional, educational, and interpretive reform.\n\nThe volume covers a wide range of topics, including women's rights through legislation, access to justice, credit and digital financial inclusion, rural women's rights, intellectual property, access to medicines under TRIPS, marriage and family law, reproductive rights, labour protections for female migrant workers, employment in the digital economy, discrimination against transgender women, prostitution law reform, and the evolution of feminist thought in colonial Vietnam. Across these contributions, the proceedings emphasize the persistent gap between formal legal equality and substantive gender equality, and call for stronger enforcement, gender-sensitive legal analysis, and more intersectional responses in Vietnamese law and policy.",
+      "publisher": "Vietnam National University Ho Chi Minh City Press (VNUHCM Press), Ho Chi Minh City",
+      "editor": "Editorial Board; Editor-in-chief: Trịnh Thục Hiền",
+      "date": "2025",
+      "pages": "456",
+      "isbn": "978-632-608-376-7",
+      "downloads": [
+        {
+          "label": "PDF version",
+          "url": "https://drive.google.com/uc?export=download&id=180EN1OtbAwiWM8McVYCkFzQHFBEYIiDX"
+        }
+      ]
+    }
+  ],
+  "journalArticles": {
+    "intro": "Special issue: Feminism, Gender and Law. Published in the UEL Journal of Economics, Business and Law.",
+    "items": [
+      {
+        "title": "Special issue: Feminism, Gender and Law",
+        "url": "https://ebl.vnuhcmjournal.com.vn/index.php/ebl/issue/view/84",
+        "description": "Published in the UEL Journal of Economics, Business and Law."
+      }
+    ]
+  }
+}
+
