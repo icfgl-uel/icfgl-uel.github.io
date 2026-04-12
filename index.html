@@ -7,26 +7,168 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="header-footer.css">
     <style>
-        .placeholder-img {
-            background-color: rgba(20, 78, 140, 0.1); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: #144e8c; 
-            font-size: 1.1em; 
-            text-align: center;
-            border-radius: 8px;
-            border: 2px dashed rgba(20, 78, 140, 0.3);
-            font-weight: bold;
+        /* ── SLIDER / HIGHLIGHTS ─────────────────────────── */
+        .highlights-section {
+            background: var(--dark-blue);
+            padding: 0;
+            overflow: hidden;
         }
 
+        .highlights-slider-wrap {
+            position: relative;
+            width: 100%;
+            height: clamp(260px, 38vw, 480px);
+            overflow: hidden;
+        }
+
+        .highlights-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        .highlights-slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .highlights-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0 !important;
+            display: block;
+        }
+
+        /* Gradient overlay at bottom */
+        .highlights-slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 38%,
+                rgba(10, 28, 60, 0.82) 100%
+            );
+        }
+
+        .highlights-slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            padding: 24px 5% 28px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .highlights-slide-caption h3 {
+            color: #fff;
+            font-family: var(--font-heading);
+            font-size: clamp(1.1rem, 2vw, 1.55rem);
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .highlights-slide-caption a.hl-btn {
+            flex-shrink: 0;
+            background: var(--pink);
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 8px 18px;
+            border-radius: 4px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+
+        .highlights-slide-caption a.hl-btn:hover {
+            background: #b3355d;
+            color: #fff;
+        }
+
+        /* Navigation dots */
+        .highlights-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .highlights-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .highlights-dot.active {
+            background: #fff;
+            transform: scale(1.25);
+        }
+
+        /* Arrow buttons */
+        .hl-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(4px);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: background 0.2s;
+        }
+        .hl-arrow:hover { background: rgba(255,255,255,0.3); }
+        .hl-arrow-prev { left: 16px; }
+        .hl-arrow-next { right: 16px; }
+
+        /* ── ABOUT US section ────────────────────────────── */
+        .section-hero {
+            background-color: var(--light-blue);
+            padding: 32px 5% 40px 5%;
+        }
+
+        /* ── OUR WORK section ────────────────────────────── */
         .home-work-grid {
             margin-top: 12px;
         }
 
-        .home-work-heading {
-            line-height: 1;
-            margin: 0 auto 1px !important;
+        /* work card title as link */
+        .work-card-title-link {
+            color: var(--dark-blue);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-family: var(--font-heading) !important;
+        }
+        .work-card-title-link:hover {
+            color: var(--pink);
         }
 
         .home-work-grid .work-card h3 {
@@ -34,23 +176,104 @@
             align-items: flex-end;
             margin-bottom: 12px;
         }
+
+        /* heading-pink for HOME: no redundant underline bar */
+        .section-pink-bg .heading-pink {
+            /* colour + uppercase already handled by .heading-pink */
+            padding-bottom: 0;
+        }
+        .section-pink-bg .heading-pink::after {
+            display: none;
+        }
+
+        /* Typography hierarchy: keep section headings a bit smaller on home */
+        .section-hero .heading-pink {
+            font-size: 2.5rem !important;
+            margin-bottom: 12px !important;
+        }
+        .section-hero a.heading-pink {
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        }
+        .section-hero a.heading-pink:hover,
+        .section-hero a.heading-pink:focus-visible {
+            color: var(--dark-blue) !important;
+            text-decoration: none;
+        }
+        .section-pink-bg > .container > .heading-pink {
+            font-size: 2.5rem !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* Banner bottom */
+        .section-full img {
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
     <div id="global-header"></div>
-    
+
+    <!-- ════════════════════════════════════════════════
+         HIGHLIGHTS SLIDER  (before About Us)
+    ════════════════════════════════════════════════ -->
+    <section class="highlights-section" aria-label="Highlights">
+        <div class="highlights-slider-wrap" id="hlSlider">
+
+            <!-- Slide 1 – ICFGL -->
+            <div class="highlights-slide active" role="group" aria-label="Slide 1 of 3">
+                <img src="images/common/3.JPG" alt="International Conference on Feminism, Gender and Law">
+                <div class="highlights-slide-caption">
+                    <h3>International Conference on Feminism, Gender & Law</h3>
+                    <a href="works/icfgl/" class="hl-btn">Explore ICFGL</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 – Feminist Books / Judgments -->
+            <div class="highlights-slide" role="group" aria-label="Slide 2 of 3">
+                <img src="images/workshops/opentalk-2024/1.jpg" alt="Workshops & Seminars">
+                <div class="highlights-slide-caption">
+                    <h3>Workshops & Seminars</h3>
+                    <a href="works/workshops/index.html" class="hl-btn">Explore Workshops & Seminars</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 – Moot Court -->
+            <div class="highlights-slide" role="group" aria-label="Slide 3 of 3">
+                <img src="images/mootcourt/1.jpg" alt="Gender Justice Moot Court">
+                <div class="highlights-slide-caption">
+                    <h3>Gender Justice Moot Court</h3>
+                    <a href="works/moot-court/" class="hl-btn">Explore Moot Court</a>
+                </div>
+            </div>
+
+            <!-- Arrows -->
+            <button class="hl-arrow hl-arrow-prev" id="hlPrev" aria-label="Previous slide">&#8592;</button>
+            <button class="hl-arrow hl-arrow-next" id="hlNext" aria-label="Next slide">&#8594;</button>
+
+            <!-- Dots -->
+            <div class="highlights-dots" id="hlDots">
+                <button class="highlights-dot active" aria-label="Slide 1"></button>
+                <button class="highlights-dot" aria-label="Slide 2"></button>
+                <button class="highlights-dot" aria-label="Slide 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+         ABOUT US  (light blue)
+    ════════════════════════════════════════════════ -->
     <section class="section-hero">
         <div class="container hero-flex">
             <div class="hero-flex-img">
-                <!-- Hero Image -->
-                <img src="images/common/hero.png" alt="Hero Image" style="width: 100%; height: 500px; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: block;">
+                <img src="images/common/hero.png" alt="Hero Image"
+                     style="width: 100%; height: 420px; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: block;">
             </div>
             <div class="hero-flex-text">
-                <h2 class="heading-pink">ABOUT US</h2>
+                <h1><a href="about/about.html" class="heading-pink">ABOUT US</a></h1>
                 <p style="line-height: 1.75; margin-bottom: 20px; color: var(--text-dark);">
                     Feminist Legal Theory Project at the University of Economics and Law (UEL) is a multi-year initiative aimed at advancing feminist jurisprudence in Vietnam. Implemented since 2021 with the support of the Rosa Luxemburg Stiftung Hanoi Office (RLS), the project marked a pivotal step in raising awareness of feminist legal theory, fostering scholarly engagement, and expanding the boundaries of Vietnamese legal discourse.
                 </p>
-                <p style="line-height: 1.75; margin-bottom: 30px; color: var(--text-dark);">
+                <p style="line-height: 1.75; margin-bottom: 28px; color: var(--text-dark);">
                     It contributed significantly to the growth of academic publications in this field and to the introduction of feminist perspectives into legal education, research, and practice.
                 </p>
                 <a href="about/about.html" class="btn-pink">Explore more ➔</a>
@@ -58,14 +281,18 @@
         </div>
     </section>
 
+    <!-- ════════════════════════════════════════════════
+         OUR WORK  (light pink)
+    ════════════════════════════════════════════════ -->
     <section class="section-pink-bg">
         <div class="container">
             <br/>
-            <h2 class="heading-pink home-work-heading" style="text-align: center;">OUR WORK</h2>
+            <h1 class="heading-pink home-work-heading" style="text-align: center;">OUR WORK</h1>
             <div class="work-grid home-work-grid">
+
+                <!-- Card 1 – ICFGL -->
                 <div class="work-card">
-                    <h3 style="color: var(--dark-blue);">International Conference on Feminism, Gender and Law</h3>
-                    <!-- Card 1 Placeholder -->
+                    <h3><a href="works/icfgl/" class="work-card-title-link">International Conference on Feminism, Gender and Law</a></h3>
                     <img src="images/common/3.JPG" alt="International Conference on Feminism, Gender and Law" style="height: 180px; width: 100%; object-fit: cover; border-radius: 8px;">
                     <p style="margin-top: 15px; color:#144e8c">Forums gather practitioners and researchers for intensive dialogue on methodology, case selection, and the politics of legal reform in contexts where feminist theory still meets institutional resistance.</p>
                     <div style="display: flex; gap: 10px; margin-top:20px;">
@@ -73,29 +300,69 @@
                         <a href="works/icfgl/" class="btn-dark" style="flex:1; text-align:center;">Past ICFGL</a>
                     </div>
                 </div>
+
+                <!-- Card 2 – Feminist Judgments -->
                 <div class="work-card">
-                    <h3 style="color: var(--dark-blue);">Feminist Judgments</h3>
-                    <!-- Card 2 Placeholder -->
+                    <h3><a href="works/feminist-judgments/" class="work-card-title-link">Feminist Judgments</a></h3>
                     <img src="images/common/6.png" alt="International Conference on Feminism, Gender and Law" style="height: 180px; width: 100%; object-fit: cover; border-radius: 8px;">
-                    <p style="margin-top: 15px;color:#144e8c">Through the selection and rewriting of judgments, contributing authors offer alternative interpretations of the law, highlighting the role of gender, women’s experiences, and broader social factors in judicial reasoning and legal application.</p>
+                    <p style="margin-top: 15px;color:#144e8c">Through the selection and rewriting of judgments, contributing authors offer alternative interpretations of the law, highlighting the role of gender, women's experiences, and broader social factors in judicial reasoning and legal application.</p>
                 </div>
+
+                <!-- Card 3 – Moot Court -->
                 <div class="work-card">
-                    <h3 style="color: var(--dark-blue);">Gender Justice Moot Court</h3>
-                    <!-- Card 3 Placeholder -->
+                    <h3><a href="works/moot-court/" class="work-card-title-link">Gender Justice Moot Court</a></h3>
                     <img src="images/mootcourt/1.jpg" alt="International Conference on Feminism, Gender and Law" style="height: 180px; width: 100%; object-fit: cover; border-radius: 8px;">
                     <p style="margin-top: 15px; color:#144e8c">Through a hybrid E-Court model combining virtual hearings and a live Grand Finale, the programme equips law students with practical, digital, and analytical competencies for modern legal practice.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- ════════════════════════════════════════════════
+         BANNER
+    ════════════════════════════════════════════════ -->
     <section class="section-full">
-        <!-- Banner Image -->
-        <img src="images/common/5.png" alt="Banner" style="width: 100%; height: 600px; display: block;">
+        <img src="images/common/5.png" alt="Banner" style="width: 100%; height: 500px; display: block;">
     </section>
 
-            <div id="global-footer"></div>
+    <div id="global-footer"></div>
     <script src="js/components.js"></script>
+    <script>
+        // ── Highlights Slider ────────────────────────────────
+        (function () {
+            const slides = document.querySelectorAll('#hlSlider .highlights-slide');
+            const dots   = document.querySelectorAll('#hlDots .highlights-dot');
+            let current  = 0;
+            let timer;
+
+            function goTo(n) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (n + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+
+            function next() { goTo(current + 1); }
+            function prev() { goTo(current - 1); }
+
+            function start() {
+                timer = setInterval(next, 4500);
+            }
+            function reset() {
+                clearInterval(timer);
+                start();
+            }
+
+            document.getElementById('hlNext').addEventListener('click', function () { next(); reset(); });
+            document.getElementById('hlPrev').addEventListener('click', function () { prev(); reset(); });
+            dots.forEach(function (dot, i) {
+                dot.addEventListener('click', function () { goTo(i); reset(); });
+            });
+
+            start();
+        })();
+    </script>
 </body>
 </html>
-

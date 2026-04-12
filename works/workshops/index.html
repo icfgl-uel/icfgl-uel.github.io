@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -415,11 +415,149 @@
             padding-top: 28px !important;
         }
 
+        .workshops-fgl-programme-section .workshops-fgl-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+
+        .workshops-fgl-programme-section .workshops-fgl-card {
+            grid-template-rows: auto minmax(4.6em, auto) minmax(7.2em, 1fr);
+            gap: 14px;
+        }
+
+        .workshops-fgl-programme-section .workshops-fgl-card h4 {
+            font-size: 1.08em;
+            line-height: 1.32;
+            text-wrap: balance;
+            align-self: start;
+        }
+
+        .workshops-fgl-programme-section .workshops-fgl-card-title--single-line {
+            white-space: nowrap;
+            text-wrap: nowrap;
+            font-size: 0.96em;
+            letter-spacing: -0.02em;
+        }
+
+        .workshops-fgl-programme-section .workshops-fgl-card:nth-child(1) h4,
+        .workshops-fgl-programme-section .workshops-fgl-card:nth-child(2) h4 {
+            padding-top: 1.08em;
+        }
+
+        .workshops-fgl-programme-section .workshops-fgl-card p:last-child {
+            min-height: 7.2em;
+            line-height: 1.68;
+            align-self: start;
+        }
+
+        .workshops-poster-gallery {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 24px !important;
+        }
+
+        .workshops-poster-card {
+            padding: 0 !important;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(20,78,140,0.09);
+            background: #fff;
+        }
+
+        .workshops-poster-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            background: #fff;
+            display: block;
+        }
+
+        .workshops-opentalk-gallery-section {
+            background-color: var(--light-blue);
+            padding: 52px 5% 64px;
+        }
+
+        .workshops-opentalk-gallery-shell {
+            max-width: 1220px !important;
+        }
+
+        .workshops-opentalk-gallery {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            grid-auto-rows: clamp(180px, 19vw, 250px);
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .workshops-opentalk-gallery-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 24px rgba(20, 78, 140, 0.12);
+            background: #fff;
+            min-height: 0;
+        }
+
+        .workshops-opentalk-gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.35s ease;
+        }
+
+        .workshops-opentalk-gallery-card:hover img {
+            transform: scale(1.02);
+        }
+
+        .workshops-opentalk-gallery-card--wide {
+            grid-column: span 8;
+        }
+
+        .workshops-opentalk-gallery-card--tall {
+            grid-column: span 4;
+            grid-row: span 2;
+        }
+
+        .workshops-opentalk-gallery-card--compact {
+            grid-column: span 4;
+        }
+
+        @media (max-width: 1100px) {
+            .workshops-opentalk-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-auto-rows: 240px;
+            }
+
+            .workshops-opentalk-gallery-card--wide,
+            .workshops-opentalk-gallery-card--tall,
+            .workshops-opentalk-gallery-card--compact {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .workshops-fgl-programme-section .workshops-fgl-card-title--single-line {
+                white-space: normal;
+                font-size: 1.01em;
+            }
+        }
+
         @media (max-width: 900px) {
             .workshops-programme-grid,
             .workshops-fgl-grid,
             .workshops-fgl-info {
                 grid-template-columns: 1fr !important;
+            }
+
+            .workshops-fgl-programme-section .workshops-fgl-card {
+                grid-template-rows: auto auto auto;
+                gap: 10px;
+            }
+
+            .workshops-fgl-programme-section .workshops-fgl-card p:last-child {
+                min-height: 0;
+            }
+
+            .workshops-fgl-programme-section .workshops-fgl-card:nth-child(1) h4,
+            .workshops-fgl-programme-section .workshops-fgl-card:nth-child(2) h4 {
+                padding-top: 0;
             }
 
             .workshops-fgl-head {
@@ -449,6 +587,22 @@
             .workshops-fgl-info {
                 max-width: 100%;
             }
+
+            .workshops-poster-gallery,
+            .workshops-opentalk-gallery {
+                grid-template-columns: 1fr !important;
+            }
+
+            .workshops-opentalk-gallery-card--wide {
+                grid-column: span 1;
+            }
+
+            .workshops-poster-card img,
+            .workshops-opentalk-gallery-card img,
+            .workshops-opentalk-gallery-card--wide img,
+            .workshops-opentalk-gallery-card--tall img {
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -456,9 +610,9 @@
     <div id="global-header"></div>
     <div class="breadcrumb">
         <a href="../../index.html">Home</a>
-        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-separator">&rsaquo;</span>
         <a href="../index.html">Our Works</a>
-        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-separator">&rsaquo;</span>
         <span>Workshops & Seminars</span>
     </div>
 
@@ -483,23 +637,23 @@
         <div class="container" style="max-width: 1000px;">
             <h2 class="heading-pink workshops-section-title-center" style="margin-bottom: 10px;">UEL Special Lecture Series 2022</h2>
             <h3 class="workshops-lecture-title" style="color: var(--dark-blue); margin-bottom: 40px; text-align: center;">Women in the Law: The Law of Gender Equality in the United States</h3>
-            
+
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 50px;">
                 <div class="info-card" style="background: white; padding: 28px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(20, 78, 140, 0.04); border-top: 3px solid var(--dark-blue); text-align: center;">
                     <p >
-                        <span>📅</span> Dates
+                        <span>&#128197;</span> Dates
                     </p>
-                    <p style="color: var(--text-dark); font-size: 1.1em; font-weight: 600; margin: 0; display: block;">01–04 August 2022</p>
+                    <p style="color: var(--text-dark); font-size: 1.1em; font-weight: 600; margin: 0; display: block;">01&ndash;04 August 2022</p>
                 </div>
                 <div class="info-card" style="background: white; padding: 28px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(20, 78, 140, 0.04); border-top: 3px solid var(--dark-blue); text-align: center;">
                     <p >
-                        <span>📍</span> Location
+                        <span>&#128205;</span> Location
                     </p>
                     <p style="color: var(--text-dark); font-size: 1.1em; font-weight: 600; margin: 0; display: block;">UEL, Thu Duc City & Can Gio District</p>
                 </div>
                 <div class="info-card" style="background: white; padding: 28px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(20, 78, 140, 0.04); border-top: 3px solid var(--dark-blue); text-align: center;">
                     <p >
-                        <span>📖</span> Format
+                        <span>&#128214;</span> Format
                     </p>
                     <p style="color: var(--text-dark); font-size: 1.1em; font-weight: 600; margin: 0; display: block;">On-site Lectures & Online Seminar</p>
                 </div>
@@ -522,35 +676,35 @@
                 <div class="work-card" style="background-color: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
                     <h4 style="color: var(--pink); border-bottom: 2px solid var(--pink); padding-bottom: 10px; margin-bottom: 15px;">01 August 2022</h4>
                     <p style="font-size: 1.1em; color: var(--dark-blue);"><strong>Session 1</strong></p>
-                    <p style="color: var(--text-dark);">Prof. Elizabeth Porter — Introduction to Women in the Law</p>
+                    <p style="color: var(--text-dark);">Prof. Elizabeth Porter &mdash; Introduction to Women in the Law</p>
                 </div>
                 <!-- Day 2 AM -->
                 <div class="work-card" style="background-color: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <h4 style="color: var(--pink); border-bottom: 2px solid var(--pink); padding-bottom: 10px; margin-bottom: 15px;">02 August 2022 — AM</h4>
+                    <h4 style="color: var(--pink); border-bottom: 2px solid var(--pink); padding-bottom: 10px; margin-bottom: 15px;">02 August 2022 &mdash; AM</h4>
                     <p style="font-size: 1.1em; color: var(--dark-blue);"><strong>Session 2</strong></p>
-                    <p style="color: var(--text-dark);">Prof. Elizabeth Porter — The Law of Gender Equality in the U.S.</p>
+                    <p style="color: var(--text-dark);">Prof. Elizabeth Porter &mdash; The Law of Gender Equality in the U.S.</p>
                 </div>
                 <!-- Day 2 PM -->
                 <div class="work-card" style="background-color: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <h4 style="color: var(--pink); border-bottom: 2px solid var(--pink); padding-bottom: 10px; margin-bottom: 15px;">02 August 2022 — PM</h4>
+                    <h4 style="color: var(--pink); border-bottom: 2px solid var(--pink); padding-bottom: 10px; margin-bottom: 15px;">02 August 2022 &mdash; PM</h4>
                     <p style="font-size: 1.1em; color: var(--dark-blue);"><strong>Online Seminar</strong></p>
-                    <p style="color: var(--text-dark);">Elena Caruso (University of Kent, UK) — Feminist Legal Theory</p>
+                    <p style="color: var(--text-dark);">Elena Caruso (University of Kent, UK) &mdash; Feminist Legal Theory</p>
                 </div>
                 <!-- Day 3 -->
                 <div class="work-card" style="background-color: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
                     <h4 style="color: var(--pink); border-bottom: 2px solid var(--pink); padding-bottom: 10px; margin-bottom: 15px;">03 August 2022</h4>
                     <p style="font-size: 1.1em; color: var(--dark-blue);"><strong>Session 3</strong></p>
-                    <p style="color: var(--text-dark);">Prof. Elizabeth Porter — Constitutional Rights and Gender</p>
+                    <p style="color: var(--text-dark);">Prof. Elizabeth Porter &mdash; Constitutional Rights and Gender</p>
                 </div>
                 <!-- Day 4 -->
                 <div class="work-card" style="background-color: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
                     <h4 style="color: var(--pink); border-bottom: 2px solid var(--pink); padding-bottom: 10px; margin-bottom: 15px;">04 August 2022</h4>
                     <p style="font-size: 1.1em; color: var(--dark-blue);"><strong>Field Activity</strong></p>
-                    <p style="color: var(--text-dark);">Can Gio study visit — Mangrove Protection and Women’s Livelihood Development</p>
+                    <p style="color: var(--text-dark);">Can Gio study visit &mdash; Mangrove Protection and Women&rsquo;s Livelihood Development</p>
                 </div>
                 <!-- Day 5 (Closing) -->
                 <div class="work-card" style="background-color: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <h4 style="color: var(--pink); border-bottom: 2px solid var(--pink); padding-bottom: 10px; margin-bottom: 15px;">04 August 2022 — PM</h4>
+                    <h4 style="color: var(--pink); border-bottom: 2px solid var(--pink); padding-bottom: 10px; margin-bottom: 15px;">04 August 2022 &mdash; PM</h4>
                     <p style="font-size: 1.1em; color: var(--dark-blue);"><strong>Closing Session</strong></p>
                     <p style="color: var(--text-dark);">Programme Review, Participant Feedback & Certificate Awarding</p>
                 </div>
@@ -575,7 +729,7 @@
                     <h3 style="color: var(--dark-blue); font-size: 1.4em; margin-bottom: 5px;">Ms. Elena Caruso</h3>
                     <p style="color: var(--pink); font-style: italic; margin-bottom: 20px;">PhD Candidate in Law, University of Kent, UK</p>
                     <img src="../../images/workshops/workshops-elena-caruso.jpg" alt="Ms. Elena Caruso" class="speaker-profile-image">
-                    <p style="color: var(--text-dark); line-height: 1.6;">Elena Caruso’s research focuses on reproductive rights, social movements, and the civil law tradition, drawing on feminist legal scholarship and the sociology of law. She has held visiting positions at Osgoode Hall Law School, Cardiff School of Law and Politics, and the University of Bonn.</p>
+                    <p style="color: var(--text-dark); line-height: 1.6;">Elena Caruso&rsquo;s research focuses on reproductive rights, social movements, and the civil law tradition, drawing on feminist legal scholarship and the sociology of law. She has held visiting positions at Osgoode Hall Law School, Cardiff School of Law and Politics, and the University of Bonn.</p>
                 </div>
             </div>
         </div>
@@ -627,7 +781,7 @@
         <div class="container hero-flex workshops-field-grid" style="margin-bottom: 0;">
             <div class="hero-flex-text workshops-field-copy">
                 <h3 style="color: var(--pink); font-family: 'Lato', sans-serif !important; font-size: 0.98em; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;">Field Activity</h3>
-                <h2 class="heading-pink" style="margin-bottom: 20px; font-size: 2em; line-height: 1.3;">Mangrove Protection and Women’s Livelihood Development</h2>
+                <h2 class="heading-pink" style="margin-bottom: 20px; font-size: 2em; line-height: 1.3;">Mangrove Protection and Women&rsquo;s Livelihood Development</h2>
                 <p style="font-size: 1.1em; line-height: 1.8; color: var(--text-dark); margin-bottom: 20px;">
                     On 04 August 2022, the programme included a field visit to Can Gio District, connecting academic discussion with practice through engagement with the mangrove ecosystem, the lives of local women, and exchanges with local authorities and social organizations.
                 </p>
@@ -648,15 +802,15 @@
         <div class="work-grid">
             <div class="work-card">
                     <img src="../../images/workshops/workshops-recap.jpg" alt="Lecture Series 2022 Recap" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; display: block;">
-                <p style="text-align: center; font-style: italic; color: var(--text-dark); font-size: 0.9em;">Lecture Series 2022 — Prof. Elizabeth Porter with UEL representatives</p>
+                <p style="text-align: center; font-style: italic; color: var(--text-dark); font-size: 0.9em;">Lecture Series 2022 &mdash; Prof. Elizabeth Porter with UEL representatives</p>
             </div>
             <div class="work-card">
                     <img src="../../images/workshops/1.jpg" alt="Field Activity Can Gio" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; display: block;">
-                <p style="text-align: center; font-style: italic; color: var(--text-dark); font-size: 0.9em;">Field Activity — Participants at Can Gio Protection Forest</p>
+                <p style="text-align: center; font-style: italic; color: var(--text-dark); font-size: 0.9em;">Field Activity &mdash; Participants at Can Gio Protection Forest</p>
             </div>
             <div class="work-card">
-                    <img src="../../images/workshops/workshops-elizabeth-publications.jpg" alt="Academic Resources" style="width: 100%; height: 250px; object-fit: cover; object-position: center top; border-radius: 12px; margin-bottom: 15px; display: block;">
-                <p style="text-align: center; font-style: italic; color: var(--text-dark); font-size: 0.9em;">Academic Resources — Prof. Elizabeth Porter's Publications</p>
+                    <img src="../../images/workshops/recap.jpg" alt="Academic Resources" style="width: 100%; height: 250px; object-fit: cover; object-position: center top; border-radius: 12px; margin-bottom: 15px; display: block;">
+                <p style="text-align: center; font-style: italic; color: var(--text-dark); font-size: 0.9em;">The Recap Of UEL Special Lecture Series 2022 On Woman In The Law  &mdash;  The Law Of Gender Equality In The U.S</p>
             </div>
         </div>
         </div>
@@ -693,13 +847,13 @@
             <h2 class="heading-pink workshops-mid-title" style="margin-bottom: 30px;">Featured Speakers</h2>
             <div class="work-grid workshops-fgl-grid">
                 <div class="workshops-fgl-card">
-                    <img src="../../images/talkshow/TS Phạm Quốc Lộc.png" alt="Dr. Pham Quoc Loc">
+                    <img src="../../images/talkshow/TS Phạm Quốc Lộc.png" alt="Dr. Pham Quoc Loc">
                     <p class="workshops-fgl-meta">Speaker 01</p>
                     <h4>Dr. Pham Quoc Loc</h4>
                     <p>Rector, Thai Binh Duong University.</p>
                 </div>
                 <div class="workshops-fgl-card">
-                    <img src="../../images/talkshow/TS. Bùi Trân Phượng.jpg" alt="Dr. Bui Tran Phuong">
+                    <img src="../../images/talkshow/TS. Bùi Trân Phượng.jpg" alt="Dr. Bui Tran Phuong">
                     <p class="workshops-fgl-meta">Speaker 02</p>
                     <h4>Dr. Bui Tran Phuong</h4>
                     <p>Former President, Hoa Sen University.</p>
@@ -726,7 +880,7 @@
                 </div>
                 <div class="workshops-fgl-card">
                     <p class="workshops-fgl-meta">25 September | 7:45 - 9:45</p>
-                    <h4>Towards Vietnamese Feminist Judgments</h4>
+                    <h4 class="workshops-fgl-card-title--single-line">Towards Vietnamese Feminist Judgments</h4>
                     <p>Session led by Dr. Trinh Thuc Hien, exploring the feminist judgments methodology in the Vietnamese legal context.</p>
                 </div>
                 <div class="workshops-fgl-card">
@@ -738,8 +892,124 @@
         </div>
     </section>
 
+    <!-- 2021 Feminist Legal Theory Workshop -->
+    <section class="workshops-section-rhythm" style="background-color: #f3f9ff; padding: 64px 5%;">
+        <div class="container" style="max-width: 1000px;">
+            <h2 class="heading-pink workshops-section-title-center" style="margin-bottom: 10px;">Academic Exchange 2021</h2>
+            <h3 class="workshops-lecture-title" style="color: var(--dark-blue); margin-bottom: 36px; text-align: center;">2021 Feminist Legal Theory Workshop</h3>
+
+            <div style="background: white; padding: 36px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 5px solid var(--pink); margin-bottom: 40px;">
+                <p style="font-size: 1.05em; line-height: 1.85; color: var(--text-dark); margin: 0; text-align: justify;">
+                    The 2021 Feminist Legal Theory Workshop was an early academic activity of the project, bringing together scholars, researchers, and practitioners to explore the theoretical foundations of feminist legal thought and its emerging applications within the Vietnamese legal context. The workshop provided a space for participants to engage with international feminist legal scholarship and to connect its frameworks with the realities of Vietnamese law and gender equality.
+                </p>
+            </div>
+
+            <h2 class="heading-pink workshops-mid-title" style="margin-bottom: 28px;">Gallery</h2>
+            <div class="work-grid workshops-poster-gallery">
+                <div class="work-card workshops-poster-card">
+                    <img src="../../images/workshops/Toạ đàm 2021_FGL.jpg"
+                         alt="2021 Feminist Legal Theory Workshop">
+                </div>
+                <div class="work-card workshops-poster-card">
+                    <img src="../../images/workshops/Toạ đàm 2021_FGL(2).jpg"
+                         alt="2021 Feminist Legal Theory Workshop">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Talk 2024: Toward Vietnamese Feminist Judgments -->
+    <!-- Overview -->
+    <section class="workshops-section-rhythm" style="background-color: #fff6fa; padding: 64px 5% 50px;">
+        <div class="container" style="max-width: 1000px;">
+            <h2 class="heading-pink workshops-section-title-center" style="margin-bottom: 10px;">Open Talk 2024</h2>
+            <h3 class="workshops-lecture-title" style="color: var(--dark-blue); margin-bottom: 40px; text-align: center;">Toward Vietnamese Feminist Judgments</h3>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 48px;">
+                <div class="info-card" style="background: white; padding: 28px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(20,78,140,0.04); border-top: 3px solid var(--dark-blue); text-align: center;">
+                    <p style="color: var(--pink); font-weight: 700; font-size: 0.8em; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;">Date</p>
+                    <p style="color: var(--text-dark); font-size: 1.05em; font-weight: 600; margin: 0;">10 April 2024</p>
+                </div>
+                <div class="info-card" style="background: white; padding: 28px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(20,78,140,0.04); border-top: 3px solid var(--dark-blue); text-align: center;">
+                    <p style="color: var(--pink); font-weight: 700; font-size: 0.8em; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;">Organiser</p>
+                    <p style="color: var(--text-dark); font-size: 1.05em; font-weight: 600; margin: 0;">Faculty of Economic Law, UEL</p>
+                </div>
+                <div class="info-card" style="background: white; padding: 28px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(20,78,140,0.04); border-top: 3px solid var(--dark-blue); text-align: center;">
+                    <p style="color: var(--pink); font-weight: 700; font-size: 0.8em; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;">Format</p>
+                    <p style="color: var(--text-dark); font-size: 1.05em; font-weight: 600; margin: 0;">Open Lecture &amp; Roundtable</p>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 5px solid var(--pink);">
+                <p style="font-size: 1.05em; line-height: 1.85; color: var(--text-dark); margin: 0; text-align: justify;">
+                    On the afternoon of 10 April 2024, the Faculty of Economic Law organized an open talk entitled <em>&ldquo;Toward Vietnamese Feminist Judgments.&rdquo;</em> The open talk was delivered by <strong>Assoc.&nbsp;Prof.&nbsp;Dr.&nbsp;Nguyen Thi Hong Nhung</strong> (Dean of the Faculty of Law) and <strong>Dr.&nbsp;Trinh Thuc Hien</strong> (Vice Dean of the Faculty of Economic Law), with a roundtable discussion held thereafter with the participation of <strong>Ms.&nbsp;Katja Kipping</strong> and <strong>Ms.&nbsp;Wenke Christoph</strong>. The event was also attended by Mr.&nbsp;Stefan Mentchel, Director, and members of the Rosa-Luxemburg-Stiftung Southeast Asia Office, Hanoi, as well as undergraduate and postgraduate students at UEL.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content highlights (dark panel) -->
+    <section class="section-dark-blue workshops-section-rhythm" style="padding: 56px 5%;">
+        <div class="container" style="max-width: 900px;">
+            <h2 class="heading-white workshops-mid-title" style="margin-bottom: 40px;">Programme Highlights</h2>
+            <div style="display: flex; flex-direction: column; gap: 28px;">
+                <div class="overview-box" style="display: flex; gap: 20px; align-items: flex-start; background: rgba(255,255,255,0.05); padding: 22px; border-radius: 12px; margin: 0;">
+                    <div style="flex: 0 0 40px; height: 40px; background-color: var(--pink); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 50%; font-size: 1.1em; flex-shrink: 0;">1</div>
+                    <div>
+                        <h4 style="color: var(--white); font-size: 1.15em; margin-bottom: 8px; border: none; padding: 0;">Feminist Legal Theory &amp; Feminist Judgments</h4>
+                        <p style="color: rgba(255,255,255,0.82); line-height: 1.65; margin: 0;">Dr.&nbsp;Trinh Thuc Hien introduced the concepts of feminism, the historical development of feminist movements, feminist legal theory, Vietnamese law and gender equality, and the feminist judgment methodology.</p>
+                    </div>
+                </div>
+                <div class="overview-box" style="display: flex; gap: 20px; align-items: flex-start; background: rgba(255,255,255,0.05); padding: 22px; border-radius: 12px; margin: 0;">
+                    <div style="flex: 0 0 40px; height: 40px; background-color: var(--pink); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 50%; font-size: 1.1em; flex-shrink: 0;">2</div>
+                    <div>
+                        <h4 style="color: var(--white); font-size: 1.15em; margin-bottom: 8px; border: none; padding: 0;">Judgment Commentary from the Monograph</h4>
+                        <p style="color: rgba(255,255,255,0.82); line-height: 1.65; margin: 0;">Assoc.&nbsp;Prof.&nbsp;Dr.&nbsp;Nguyen Thi Hong Nhung introduced and analyzed a commentary on a judgment featured in the monograph <em>Toward Vietnamese Feminist Judgments</em>, illustrating how feminist legal theory can reframe judicial reasoning.</p>
+                    </div>
+                </div>
+                <div class="overview-box" style="display: flex; gap: 20px; align-items: flex-start; background: rgba(255,255,255,0.05); padding: 22px; border-radius: 12px; margin: 0;">
+                    <div style="flex: 0 0 40px; height: 40px; background-color: var(--pink); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 50%; font-size: 1.1em; flex-shrink: 0;">3</div>
+                    <div>
+                        <h4 style="color: var(--white); font-size: 1.15em; margin-bottom: 8px; border: none; padding: 0;">Roundtable: Gender Equality Perspectives from Germany</h4>
+                        <p style="color: rgba(255,255,255,0.82); line-height: 1.65; margin: 0;">Ms.&nbsp;Katja Kipping and Ms.&nbsp;Wenke Christoph shared perspectives on feminism and gender equality, covering the actual division of household labour and Germany&rsquo;s experience in regulating unpaid care work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="workshops-section-rhythm workshops-opentalk-gallery-section">
+        <div class="container workshops-opentalk-gallery-shell">
+            <h2 class="heading-pink workshops-mid-title" style="margin-bottom: 28px;">Gallery</h2>
+            <div class="workshops-opentalk-gallery">
+                <div class="workshops-opentalk-gallery-card workshops-opentalk-gallery-card--wide">
+                    <img src="../../images/workshops/opentalk-2024/1.jpg"
+                         alt="Open Talk 2024 &mdash; Toward Vietnamese Feminist Judgments">
+                </div>
+                
+                <div class="workshops-opentalk-gallery-card workshops-opentalk-gallery-card--tall">
+                    <img src="../../images/workshops/opentalk-2024/3.jpg"
+                         alt="Open Talk 2024 &mdash; Speakers">
+                </div>
+                <div class="workshops-opentalk-gallery-card workshops-opentalk-gallery-card--compact">
+                    <img src="../../images/workshops/opentalk-2024/2.jpg"
+                         alt="Open Talk 2024 &mdash; Participants">
+                </div>
+                <div class="workshops-opentalk-gallery-card workshops-opentalk-gallery-card--compact">
+                    <img src="../../images/workshops/opentalk-2024/5.jpg"
+                         alt="Open Talk 2024 &mdash; Rosa-Luxemburg-Stiftung Representatives">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
+
             <div id="global-footer"></div>
     <script src="../../js/components.js"></script>
 </body>
 </html>
+
+
+

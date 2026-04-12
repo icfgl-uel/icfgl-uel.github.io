@@ -31,6 +31,7 @@
 
         .edition-card--2024:hover { border-color: var(--pink); }
         .edition-card--2021:hover { border-color: var(--pink); }
+        .edition-card--vfj:hover  { border-color: var(--dark-navy); }
 
         .edition-card-link {
             display: flex;
@@ -75,6 +76,11 @@
         .edition-card--2021 .edition-divider { background: var(--dark-navy); }
         .edition-card--2021 .edition-label { color: rgba(20, 78, 140, 0.72); }
 
+        /* VFJ 2025 – green accent */
+        .edition-card--vfj .edition-year { color: var(--dark-navy); font-size: 3.4rem; }
+        .edition-card--vfj .edition-divider { background: var(--dark-navy); }
+        .edition-card--vfj .edition-label { color: rgba(20, 78, 140, 0.72); }
+
         /* Coming soon */
         .edition-card--draft {
             background: rgba(20, 78, 140, 0.03);
@@ -88,6 +94,44 @@
 
         @media (max-width: 768px) {
             .edition-grid { grid-template-columns: 1fr; }
+
+            .related-conference-grid {
+                width: 100%;
+            }
+        }
+
+        .related-conference-section {
+            margin-bottom: 72px !important;
+        }
+
+        .related-conference-heading {
+            margin-bottom: 24px;
+        }
+
+        .related-conference-title {
+            color: var(--dark-navy) !important;
+            margin-bottom: 0 !important;
+        }
+
+        .related-conference-grid {
+            grid-template-columns: minmax(0, 1fr);
+            width: min(100%, calc((100% - 32px) / 3));
+            margin-bottom: 0;
+        }
+
+        .related-conference-grid .edition-card {
+            border-color: rgba(20, 78, 140, 0.1);
+            box-shadow: none;
+        }
+
+        .related-conference-grid .edition-card:hover,
+        .related-conference-grid .edition-card:focus-within {
+            border-color: var(--dark-navy);
+            box-shadow: 0 12px 30px rgba(20, 78, 140, 0.1);
+        }
+
+        .related-conference-grid .edition-label {
+            line-height: 1.6;
         }
 
         .icfgl-highlight-section {
@@ -242,6 +286,11 @@
             .unified-hero-grid h2 {
                 font-size: 1.95rem !important;
             }
+
+            .related-conference-grid {
+                grid-template-columns: 1fr;
+            }
+
         }
     </style>
 </head>
@@ -265,7 +314,7 @@
                 <!-- Left: Copy & Text -->
                 <div style="display: flex; flex-direction: column; justify-content: center;">
                     <p class="archive-eyebrow" style="color: var(--pink); font-size: 0.8rem; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 16px; text-transform: uppercase;"> International Conference</p>
-                    <h2 >International Conference on Feminism, Gender and Law</h2>
+                    <h2>International Conference on Feminism, Gender and Law</h2>
                     
                     <p style="color: var(--dark-navy); font-weight: 600; margin-bottom: 24px; line-height: 1.75;">
                         A recurring scholarly platform that documents conference editions, related materials, and access points for public-facing resources.
@@ -299,9 +348,10 @@
             </div>
         </section>
 
+        <!-- ICFGL Editions -->
         <section class="archive-section">
             <div class="section-heading">
-                <p class="section-kicker">Conference Editions </p>
+                <p class="section-kicker">Conference Editions</p>
                 <h2 style="color: var(--dark-navy);">Chronological Archive</h2>
             </div>
 
@@ -314,14 +364,14 @@
                     </div>
                 </div>
                 <div class="edition-card edition-card--2024">
-                    <a href="../icfgl-2024.html" class="edition-card-link">
+                    <a href="icfgl-2024/icfgl-2024.html" class="edition-card-link">
                         <p class="edition-year">2024</p>
                         <div class="edition-divider"></div>
                         <p class="edition-label">ICFGL 2024 &rarr;</p>
                     </a>
                 </div>
                 <div class="edition-card edition-card--2021">
-                    <a href="../icfgl-2021.html" class="edition-card-link">
+                    <a href="./icfgl-2021/icfgl-2021.html" class="edition-card-link">
                         <p class="edition-year">2021</p>
                         <div class="edition-divider"></div>
                         <p class="edition-label">ICFGL 2021 &rarr;</p>
@@ -329,9 +379,27 @@
                 </div>
             </div>
         </section>
+
+        <!-- VFJ 2025 -->
+        <section class="archive-section related-conference-section">
+            <div class="section-heading related-conference-heading">
+                <p class="section-kicker">Related Conference</p>
+                <h2 class="related-conference-title">Vietnamese Feminist Judgments</h2>
+            </div>
+            <div class="edition-grid related-conference-grid">
+                <div class="edition-card edition-card--vfj">
+                    <a href="vfj-2025/index.html" class="edition-card-link">
+                        <p class="edition-year">VFJ 2025</p>
+                        <div class="edition-divider"></div>
+                        <p class="edition-label">Toward Vietnamese Feminist Judgments &rarr;</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-        <div id="global-footer"></div>
+    <div id="global-footer"></div>
     <script src="../../js/components.js"></script>
 </body>
 </html>
