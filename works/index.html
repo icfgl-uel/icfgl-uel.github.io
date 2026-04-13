@@ -508,13 +508,13 @@
 
         .works-title {
             font-family: Cambria, serif;
-            font-size: 2.3em;
+            font-size: clamp(2.8rem, 5.2vw, 4rem);
             font-weight: 700;
-            line-height: 1.04;
+            line-height: 0.96;
             margin: 0;
             color: var(--dark-navy);
             text-transform: uppercase;
-            letter-spacing: 0;
+            letter-spacing: -0.02em;
         }
 
         .works-lead {
@@ -1760,11 +1760,11 @@
             <!-- ICFGL Editions -->
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 0;">
 
-                <div style="display:flex;flex-direction:column;justify-content:center;min-height:180px;padding:36px 32px;background:rgba(255,255,255,0.03);border-radius:16px;border:1px dashed rgba(255,255,255,0.12);">
-                    <p class="works-icfgl-edition-year" style="color:rgba(255,255,255,0.25);">2026</p>
-                    <div class="works-icfgl-edition-line" style="background:rgba(255,255,255,0.15);"></div>
-                    <p class="works-icfgl-edition-label" style="color:rgba(255,255,255,0.2);">Coming soon</p>
-                </div>
+                <a href="icfgl/icfgl-2026/icfgl-2026.html" style="display:flex;flex-direction:column;justify-content:center;min-height:180px;padding:36px 32px;text-decoration:none;background:rgba(255,255,255,0.07);border-radius:16px;border:1px solid rgba(255,255,255,0.1);transition:background 0.2s ease,transform 0.2s ease,border-color 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.12)';this.style.transform='translateY(-4px)';this.style.borderColor='rgba(246,65,131,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.07)';this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.1)'">
+                    <p class="works-icfgl-edition-year" style="color:#ffc2dd;">2026</p>
+                    <div class="works-icfgl-edition-line" style="background:#f64183;"></div>
+                    <p class="works-icfgl-edition-label" style="color:rgba(255,194,221,0.6);">ICFGL 2026 &rarr;</p>
+                </a>
 
                 <a href="icfgl/icfgl-2024/icfgl-2024.html" style="display:flex;flex-direction:column;justify-content:center;min-height:180px;padding:36px 32px;text-decoration:none;background:rgba(255,255,255,0.07);border-radius:16px;border:1px solid rgba(255,255,255,0.1);transition:background 0.2s ease,transform 0.2s ease,border-color 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.12)';this.style.transform='translateY(-4px)';this.style.borderColor='rgba(246,65,131,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.07)';this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.1)'">
                     <p class="works-icfgl-edition-year" style="color:#ffc2dd;">2024</p>
