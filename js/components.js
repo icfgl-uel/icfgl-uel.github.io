@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="site-footer-col site-footer-contact">
                         <h4>Contact Information</h4>
                         <p class="site-footer-title">University of Economics and Law (UEL), <span style="white-space: nowrap;">VNU-HCM</span><br>Feminist Legal Theory Project</p>
-                        <p>669 National Highway 1, Linh Xuan Ward, Thu Duc City, Ho Chi Minh City, Vietnam</p>
+                        <p>669 Do Muoi Street, Quarter 6 (formerly Quarter 3), Linh Xuan Ward, Ho Chi Minh City, Vietnam</p>
                         <p><span class="site-footer-title">Email Inquiries</span><br><a href="mailto:feminist.project@uel.edu.vn" class="site-footer-email">feminist.project@uel.edu.vn</a></p>
                     </div>
                 </div>

@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="../../../header-footer.css">
     <style>
         :root {
-            --primary-blue: #0f3a6e;
-            --accent-pink: #DE4F7A;
-            --glass-bg: rgba(255, 255, 255, 0.9);
+            --primary-blue: #144e8c;
+            --accent-pink: #F64183
+;
+            --glass-bg: #ffebf2;
             --glass-border: rgba(255, 255, 255, 0.2);
         }
 
@@ -320,31 +321,86 @@
         /* Logistics Section */
         .logistics-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+            gap: 48px;
+            align-items: start;
+        }
+
+        .logistics-grid h3 {
+            font-family: 'Cambria', Georgia, serif;
+            color: var(--primary-blue);
+            font-size: 1.6rem;
+            margin: 0 0 24px;
+        }
+
+        .logistics-column {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .logistics-intro {
+            padding: 0 4px;
+        }
+
+        .logistics-intro p {
+            line-height: 1.85;
+            color: #444;
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .logistics-box {
+            background: #fff;
+            padding: 34px 36px;
+            border-radius: 24px;
+            border: 2px dotted rgba(20, 78, 140, 0.35);
+            box-shadow: 0 18px 40px rgba(20, 78, 140, 0.05);
+        }
+
+        .logistics-box h4 {
+            font-family: 'Cambria', Georgia, serif;
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+            margin: 0 0 18px;
+        }
+
+        .logistics-box p {
+            line-height: 1.75;
+            color: #444;
+            font-size: 1.02rem;
+            margin: 0;
         }
 
         .transport-list {
             list-style: none;
             padding: 0;
+            display: grid;
+            gap: 20px;
         }
 
         .transport-item {
-            margin-bottom: 30px;
-            padding-left: 20px;
-            border-left: 3px solid var(--accent-pink);
+            margin: 0;
+            padding: 24px 28px 24px 26px;
+            border-left: 4px solid var(--accent-pink);
+            border-radius: 0 20px 20px 0;
+            background: #fff;
+            box-shadow: 0 16px 36px rgba(20, 78, 140, 0.05);
         }
 
         .transport-item h4 {
+            font-family: 'Cambria', Georgia, serif;
             color: var(--primary-blue);
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+            margin: 0 0 12px;
+            font-size: 1.18rem;
+            line-height: 1.35;
         }
 
         .transport-item p {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: #555;
-            line-height: 1.5;
+            line-height: 1.8;
+            margin: 0;
         }
 
         @media (max-width: 992px) {
@@ -353,6 +409,9 @@
             }
             .output-row {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .logistics-column {
+                gap: 24px;
             }
         }
 
@@ -368,6 +427,10 @@
             }
             .icfgl2026-hero-meta {
                 justify-content: center;
+            }
+            .logistics-box,
+            .transport-item {
+                padding: 22px 20px;
             }
         }
     </style>
@@ -404,8 +467,8 @@
                 </div>
             </div>
             <div class="icfgl2026-hero-actions">
-                <a href="#" class="btn-primary">Submit Abstract</a>
-                <a href="#" class="btn-outline">Register Now</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoxG324zijQqY5rvDXM8fgdgiUOex_SMqmlchd49Ms8sfaKw/viewform" class="btn-primary">Submit Abstract</a>
+                <!-- <a href="#" class="btn-outline">Register Now</a> -->
             </div>
             <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">Hosted by: University of Economics and Law (UEL) & Rosa-Luxemburg-Stiftung (RLS)</p>
         </div>
@@ -435,7 +498,7 @@
         </div>
     </section>
 
-    <section class="page-section" style="background: linear-gradient(135deg, rgba(222, 79, 122, 0.05) 0%, rgba(222, 79, 122, 0.1) 100%);">
+    <section class="page-section" style="background:#ffebf2">
         <div class="section-shell">
             <div class="section-heading">
                 <h2>Call for Abstracts</h2>
@@ -502,7 +565,7 @@
             <div class="activity-grid">
                 <div class="activity-card">
                     <div class="activity-card-header">
-                        <h3 style="color:#ffebf2 ">The Main Conference</h3>
+                        <h3 style="color:#FFEBF2 ">The Main Conference</h3>
                         <div class="activity-meta">18 September 2026 | Ho Chi Minh City</div>
                     </div>
                     <div class="activity-card-body">
@@ -511,7 +574,7 @@
                 </div>
                 <div class="activity-card">
                     <div class="activity-card-header">
-                        <h3 style="color:#ffebf2 ">Side Event: Capacity Building</h3>
+                        <h3 style="color:#FFEBF2">Side Event: Capacity Building</h3>
                         <div class="activity-meta">17 September 2026 | Ho Chi Minh City</div>
                     </div>
                     <div class="activity-card-body">
@@ -553,34 +616,48 @@
                 <hr>
             </div>
             <div class="logistics-grid">
-                <div>
-                    <h3 style="color: var(--primary-blue); margin-bottom: 20px;">The Host City: Ho Chi Minh City</h3>
-                    <p style="line-height: 1.8; color: #444; margin-bottom: 30px;">
-                        Welcome to Ho Chi Minh City, the vibrant economic and cultural hub of Vietnam. Known for its dynamic energy, rich history, and world-renowned culinary scene, the city provides an inspiring backdrop for our international gathering.
-                    </p>
-                    <div style="background: #fff; padding: 30px; border-radius: 20px; border: 1px dashed var(--primary-blue);">
-                        <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Conference Venue</h4>
-                        <p>University of Economics and Law (UEL)<br>Vietnam National University, Ho Chi Minh City<br>[Specific Building/Hall TBC]</p>
+                <div class="logistics-column">
+                    <div class="logistics-intro">
+                        <h3>The Host City: Ho Chi Minh City</h3>
+                        <p>
+                            Welcome to Ho Chi Minh City, the vibrant economic and cultural hub of Vietnam. Known for its dynamic energy, rich history, and world-renowned culinary scene, the city provides an inspiring backdrop for our international gathering.
+                        </p>
+                    </div>
+                    <div class="logistics-box">
+                        <h4>Conference Venue</h4>
+                        <p>University of Economics and Law (UEL)<br>Vietnam National University, Ho Chi Minh City<br><b>[669 Do Muoi Street, Quarter 6 (formerly Quarter 3), Linh Xuan Ward, Ho Chi Minh City, Vietnam]</b></p>
                     </div>
                 </div>
-                <div>
-                    <h3 style="color: var(--primary-blue); margin-bottom: 20px;">Getting There: Local Transportation</h3>
+                <div class="logistics-column">
+                    <h3>Getting There: Local Transportation</h3>
                     <div class="transport-list">
                         <div class="transport-item">
-                            <h4>HCMC Metro Line 1 (Recommended)</h4>
-                            <p>Fast, traffic-free route from downtown to VNU-HCM Station (Ga Đại học Quốc gia).</p>
+                            <h4>HCMC Metro Line 1 (Bến Thành – Suối Tiên)  (Recommended)</h4>
+                            <p>Fast, traffic-free route from downtown to VNU-HCM Station (Ga Đại học Quốc gia) or High Tech Park Station (Ga Khu công nghệ cao), which is just a short taxi or Bus 170  ride away from the UEL campus.
+.</p>
                         </div>
                         <div class="transport-item">
                             <h4>Complimentary UEL Shuttle Bus</h4>
-                            <p>Dedicated service from downtown pickup locations directly to the venue.</p>
+                            <p>UEL will organize a dedicated shuttle bus service to transport participants directly to and from the conference venue. Official pickup locations in downtown Ho Chi Minh City and departure schedules will be emailed to registered attendees closer to the event.
+</p>
                         </div>
                         <div class="transport-item">
-                            <h4>Ride-Hailing & Taxis</h4>
-                            <p>Grab, Be, Xanh SM (Electric), Vinasun, and Mai Linh are widely available.</p>
+                            <h4>Taxis & Ride-Hailing Apps</h4>
+                            <p><b>Ride-Hailing Apps:</b> Applications such as Grab, Be, and Xanh SM (Vietnam’s premier fleet of eco-friendly electric vehicles) are widely used, offering transparent pricing and convenient booking. We highly recommend downloading these apps prior to arrival.
+                            <br/>
+<b>Traditional Taxis:</b> Reliable, metered taxi brands like Vinasun (white cars) and Mai Linh (green cars) are abundant throughout the city and can be easily hailed from hotels or the airport.
+
+</p>
+                        </div>
+                        <div class="transport-item">
+                            <h4>Public City Buses</h4>
+                            <p>For an authentic local experience, HCMC operates an extensive public bus network. Several routes connect the city center directly to the VNU-HCM University Village area, including Routes 8, 19, 33, and 52. Fares are highly affordable (typically under 10,000 VND) and are paid in cash upon boarding.
+</p>
                         </div>
                         <div class="transport-item">
                             <h4>Air Travel</h4>
-                            <p>Arrive at Tan Son Nhat International Airport (SGN), 30-45 mins from the venue.</p>
+                            <p>Participants traveling by air will arrive at Tan Son Nhat International Airport (SGN). The airport is well-connected to the city center via taxis, ride-hailing services, and the specialized Airport Bus (Route 109 or 152).
+</p>
                         </div>
                     </div>
                 </div>
