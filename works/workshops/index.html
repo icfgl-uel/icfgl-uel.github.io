@@ -157,6 +157,91 @@
             color: #ff8fbc !important;
         }
 
+        .workshops-vfj-section {
+            padding: 28px 5% 12px;
+            background: #fff;
+        }
+
+        .workshops-vfj-feature {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+            background: rgba(255, 255, 255, 0.98);
+            border: 1px solid rgba(20, 78, 140, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 16px 40px rgba(20, 78, 140, 0.08);
+        }
+
+        .workshops-vfj-feature-side {
+            background: linear-gradient(180deg, rgba(20, 78, 140, 0.96) 0%, rgba(20, 78, 140, 0.88) 100%);
+            color: #fff;
+            padding: 34px 28px;
+            display: grid;
+            align-content: center;
+            gap: 14px;
+        }
+
+        .workshops-vfj-feature-kicker {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .workshops-vfj-feature-year {
+            margin: 0;
+            font-family: Cambria, serif;
+            font-size: 3rem;
+            line-height: 1;
+            letter-spacing: -0.04em;
+        }
+
+        .workshops-vfj-feature-divider {
+            width: 42px;
+            height: 3px;
+            border-radius: 999px;
+            background: rgba(246, 65, 131, 0.9);
+        }
+
+        .workshops-vfj-feature-copy {
+            padding: 34px 38px;
+            display: grid;
+            gap: 16px;
+            align-content: center;
+        }
+
+        .workshops-vfj-feature-copy h2,
+        .workshops-vfj-feature-copy p {
+            margin: 0;
+        }
+
+        .workshops-vfj-feature-copy .section-kicker {
+            margin: 0;
+        }
+
+        .workshops-vfj-feature-title {
+            color: var(--dark-blue);
+            font-family: Cambria, serif;
+            font-size: 2rem;
+            line-height: 1.12;
+        }
+
+        .workshops-vfj-feature-text {
+            color: var(--text-dark);
+            line-height: 1.78;
+        }
+
+        .workshops-vfj-feature-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-top: 4px;
+        }
+
         .workshops-lecture-title {
             font-family: Cambria, serif !important;
             font-size: 1.7em !important;
@@ -566,6 +651,15 @@
                 max-width: 100%;
             }
 
+            .workshops-vfj-feature {
+                grid-template-columns: 1fr;
+            }
+
+            .workshops-vfj-feature-side,
+            .workshops-vfj-feature-copy {
+                padding: 28px 24px;
+            }
+
             .workshops-fgl-head-copy {
                 padding-left: 0;
             }
@@ -628,6 +722,26 @@
                 <p style="font-size: 1.1em; line-height: 1.6; color: rgba(255,255,255,0.9); margin-bottom: 20px;">
                     Workshops, seminars, and lecture-based activities form an important part of the project. Through these academic programmes, the project seeks to create a space for exchange, discussion, and the development of feminist approaches to law, gender, and social justice in both Vietnamese and international contexts.
                 </p>
+            </div>
+        </div>
+    </section>
+    <!-- VFJ 2025 -->
+    <section class="workshops-vfj-section">
+        <div class="workshops-vfj-feature">
+            <div class="workshops-vfj-feature-side">
+                <p class="workshops-vfj-feature-kicker">Featured Archive</p>
+                <p class="workshops-vfj-feature-year">VFJ 2025</p>
+                <div class="workshops-vfj-feature-divider"></div>
+            </div>
+            <div class="workshops-vfj-feature-copy">
+                <p class="section-kicker">Within Workshops & Seminars</p>
+                <h2 class="workshops-vfj-feature-title">Vietnamese Feminist Judgments</h2>
+                <p class="workshops-vfj-feature-text">
+                    Access the 2025 Vietnamese Feminist Judgments archive, including the conference overview, participation materials, and supporting resources now grouped under the broader Workshops & Seminars stream.
+                </p>
+                <div class="workshops-vfj-feature-actions">
+                    <a href="vfj-2025/index.html" class="btn-pink">Open VFJ 2025 &rarr;</a>
+                </div>
             </div>
         </div>
     </section>

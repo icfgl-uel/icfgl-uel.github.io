@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="header-footer.css">
     <style>
-        /* ── SLIDER / HIGHLIGHTS ─────────────────────────── */
+        /* ── SLIDER / HIGHLIGHTS - CINEMATIC HERO ── */
         .highlights-section {
-            background: var(--dark-blue);
+            background: #fff;
             padding: 0;
             overflow: hidden;
         }
@@ -17,137 +17,175 @@
         .highlights-slider-wrap {
             position: relative;
             width: 100%;
-            height: clamp(260px, 38vw, 480px);
+            height: calc(100vh - 74px);
+            min-height: 600px;
             overflow: hidden;
+            background: #111;
         }
 
         .highlights-slide {
             position: absolute;
             inset: 0;
             opacity: 0;
-            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
             pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 1;
         }
 
         .highlights-slide.active {
             opacity: 1;
             pointer-events: auto;
+            z-index: 2;
         }
 
-        .highlights-slide img {
+        .slide-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .slide-bg img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 0 !important;
-            display: block;
+            object-position: center;
+            transform: scale(1.05);
+            transition: transform 7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* Gradient overlay at bottom */
-        .highlights-slide::after {
-            content: '';
+        .highlights-slide.active .slide-bg img {
+            transform: scale(1);
+        }
+
+        .slide-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                to bottom,
-                transparent 38%,
-                rgba(10, 28, 60, 0.82) 100%
-            );
+            background: rgba(20, 32, 44, 0.65); /* Cinematic academic dark tint */
+            z-index: 1;
         }
 
-        .highlights-slide-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 2;
-            padding: 24px 5% 28px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .highlights-slide-caption h3 {
+        .slide-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 0 5%;
             color: #fff;
-            font-family: var(--font-heading);
-            font-size: clamp(1.1rem, 2vw, 1.55rem);
-            font-weight: 700;
-            margin: 0;
-            line-height: 1.2;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease forwards, transform 0.8s ease forwards;
+            transition-delay: 0.2s;
         }
 
-        .highlights-slide-caption a.hl-btn {
-            flex-shrink: 0;
+        .highlights-slide.active .slide-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-title-main {
+            font-family: var(--font-heading), 'Cambria', serif !important;
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 700 !important;
+            color: #f8efe6;
+            line-height: 1.1;
+            margin: 0 0 1.25rem 0;
+        }
+
+        .hero-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.5;
+            margin: 0 0 2.5rem 0;
+            max-width: 700px;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background: var(--pink);
             color: #fff;
-            font-family: var(--font-body);
-            font-size: 0.82rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 8px 18px;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 14px 40px;
             border-radius: 4px;
             text-decoration: none;
-            white-space: nowrap;
-            transition: background 0.2s;
+            transition: all 0.3s ease;
         }
 
-        .highlights-slide-caption a.hl-btn:hover {
+        .hero-btn:hover {
             background: #b3355d;
-            color: #fff;
+            transform: scale(1.05);
         }
 
-        /* Navigation dots */
+        /* Nav lines */
         .highlights-dots {
             position: absolute;
-            bottom: 10px;
+            bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 8px;
+            gap: 12px;
             z-index: 10;
         }
 
         .highlights-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
+            width: 40px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
             border: none;
             cursor: pointer;
             padding: 0;
-            transition: background 0.3s, transform 0.3s;
+            transition: all 0.4s ease;
         }
 
         .highlights-dot.active {
-            background: #fff;
-            transform: scale(1.25);
+            background: var(--pink);
+            box-shadow: 0 0 8px rgba(222, 79, 122, 0.4);
         }
 
-        /* Arrow buttons */
+        /* Arrows */
         .hl-arrow {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             z-index: 10;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(4px);
-            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 54px;
+            height: 54px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             color: #fff;
-            font-size: 1.2rem;
-            transition: background 0.2s;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
         }
-        .hl-arrow:hover { background: rgba(255,255,255,0.3); }
-        .hl-arrow-prev { left: 16px; }
-        .hl-arrow-next { right: 16px; }
+        .hl-arrow:hover { 
+            background: var(--pink);
+            border-color: var(--pink);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .hl-arrow-prev { left: 40px; }
+        .hl-arrow-next { right: 40px; }
+
+        @media (max-width: 900px) {
+            .hero-title-main { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+            .hero-subtitle { font-size: 1.1rem; margin-bottom: 2rem; }
+            .highlights-dot { width: 30px; }
+            .hl-arrow { display: none; }
+        }
 
         /* ── ABOUT US section ────────────────────────────── */
         .section-hero {
@@ -199,6 +237,14 @@
             color: var(--dark-blue) !important;
             text-decoration: none;
         }
+        .home-work-heading a.heading-pink {
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        }
+        .home-work-heading a.heading-pink:hover,
+        .home-work-heading a.heading-pink:focus-visible {
+            color: var(--dark-blue) !important;
+            text-decoration: none;
+        }
         .section-pink-bg > .container > .heading-pink {
             font-size: 2.5rem !important;
             margin-bottom: 0 !important;
@@ -221,28 +267,40 @@
 
             <!-- Slide 1 – ICFGL -->
             <div class="highlights-slide active" role="group" aria-label="Slide 1 of 3">
-                <img src="images/common/3.JPG" alt="International Conference on Feminism, Gender and Law">
-                <div class="highlights-slide-caption">
-                    <h3>International Conference on Feminism, Gender & Law</h3>
-                    <a href="works/icfgl/" class="hl-btn">Explore ICFGL</a>
+                <div class="slide-bg">
+                    <img src="images/common/13.JPG" alt="International Conference on Feminism, Gender and Law">
+                    <div class="slide-overlay"></div>
+                </div>
+                <div class="slide-content">
+                    <h2 class="hero-title-main">International Conference<br>on Feminism & Law</h2>
+                    <p class="hero-subtitle">A premier biennial hub for global scholars to dissect evolving legal frameworks through a rigorous, gender-sensitive lens.</p>
+                    <a href="works/icfgl/" class="hero-btn">Explore Archive</a>
                 </div>
             </div>
 
-            <!-- Slide 2 – Feminist Books / Judgments -->
+            <!-- Slide 2 – Workshops -->
             <div class="highlights-slide" role="group" aria-label="Slide 2 of 3">
-                <img src="images/workshops/opentalk-2024/1.jpg" alt="Workshops & Seminars">
-                <div class="highlights-slide-caption">
-                    <h3>Workshops & Seminars</h3>
-                    <a href="works/workshops/index.html" class="hl-btn">Explore Workshops & Seminars</a>
+                <div class="slide-bg">
+                    <img src="images/workshops/opentalk-2024/1.jpg" alt="Workshops & Seminars">
+                    <div class="slide-overlay"></div>
+                </div>
+                <div class="slide-content">
+                    <h2 class="hero-title-main">Workshops & Seminars</h2>
+                    <p class="hero-subtitle">Intensive sessions designed for capacity building, peer-reviewing, and collaborative legal drafting among scholars.</p>
+                    <a href="works/workshops/index.html" class="hero-btn">View Sessions</a>
                 </div>
             </div>
 
             <!-- Slide 3 – Moot Court -->
             <div class="highlights-slide" role="group" aria-label="Slide 3 of 3">
-                <img src="images/mootcourt/1.jpg" alt="Gender Justice Moot Court">
-                <div class="highlights-slide-caption">
-                    <h3>Gender Justice Moot Court</h3>
-                    <a href="works/moot-court/" class="hl-btn">Explore Moot Court</a>
+                <div class="slide-bg">
+                    <img src="images/mootcourt/1.jpg" alt="Gender Justice Moot Court">
+                    <div class="slide-overlay"></div>
+                </div>
+                <div class="slide-content">
+                    <h2 class="hero-title-main">Gender Justice<br>National Moot Court</h2>
+                    <p class="hero-subtitle">Empowering the next generation of law students to challenge structural inequalities through oral arguments and advocacy.</p>
+                    <a href="works/moot-court/" class="hero-btn">Explore Moot Court</a>
                 </div>
             </div>
 
@@ -262,7 +320,9 @@
     <!-- ════════════════════════════════════════════════
          ABOUT US  (light blue)
     ════════════════════════════════════════════════ -->
-    <section class="section-hero">
+    <br/>
+    <section class="section-hero">   
+
         <div class="container hero-flex">
             <div class="hero-flex-img">
                 <img src="images/common/hero.png" alt="Hero Image"
@@ -280,6 +340,7 @@
             </div>
         </div>
     </section>
+    <br/>
 
     <!-- ════════════════════════════════════════════════
          OUR WORK  (light pink)
@@ -287,7 +348,7 @@
     <section class="section-pink-bg">
         <div class="container">
             <br/>
-            <h1 class="heading-pink home-work-heading" style="text-align: center;">OUR WORK</h1>
+            <h1 class="heading-pink home-work-heading" style="text-align: center;"><a href="works/index.html" class="heading-pink">OUR WORK</a></h1>
             <div class="work-grid home-work-grid">
 
                 <!-- Card 1 – ICFGL -->

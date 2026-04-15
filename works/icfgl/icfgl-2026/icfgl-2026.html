@@ -76,7 +76,7 @@
             flex-wrap: wrap;
             gap: 20px;
             margin-bottom: 40px;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             color: rgba(255, 255, 255, 0.9);
         }
 
@@ -321,8 +321,8 @@
         /* Logistics Section */
         .logistics-grid {
             display: grid;
-            grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
-            gap: 48px;
+            grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+            gap: 32px 40px;
             align-items: start;
         }
 
@@ -334,13 +334,21 @@
         }
 
         .logistics-column {
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
+            display: contents;
+        }
+
+        .logistics-column--city {
+            display: contents;
         }
 
         .logistics-intro {
             padding: 0 4px;
+        }
+
+        .logistics-intro--transport {
+            grid-column: 1 / -1;
+            max-width: 920px;
+            margin-top: 4px;
         }
 
         .logistics-intro p {
@@ -356,6 +364,14 @@
             border-radius: 24px;
             border: 2px dotted rgba(20, 78, 140, 0.35);
             box-shadow: 0 18px 40px rgba(20, 78, 140, 0.05);
+        }
+
+        .logistics-box--city {
+            padding: 38px 38px 40px;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .logistics-box h4 {
@@ -376,7 +392,10 @@
             list-style: none;
             padding: 0;
             display: grid;
+            grid-column: 1 / -1;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 20px;
+            align-items: start;
         }
 
         .transport-item {
@@ -386,6 +405,10 @@
             border-radius: 0 20px 20px 0;
             background: #fff;
             box-shadow: 0 16px 36px rgba(20, 78, 140, 0.05);
+        }
+
+        .transport-item--wide {
+            grid-column: 1 / -1;
         }
 
         .transport-item h4 {
@@ -412,6 +435,14 @@
             }
             .logistics-column {
                 gap: 24px;
+            }
+            .transport-list {
+                grid-template-columns: 1fr;
+            }
+            .logistics-intro--transport,
+            .transport-list,
+            .transport-item--wide {
+                grid-column: auto;
             }
         }
 
@@ -459,7 +490,7 @@
             <div class="icfgl2026-hero-meta">
                 <div class="icfgl2026-meta-item">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    18 September 2026
+                   18 September 2026
                 </div>
                 <div class="icfgl2026-meta-item">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -565,7 +596,7 @@
             <div class="activity-grid">
                 <div class="activity-card">
                     <div class="activity-card-header">
-                        <h3 style="color:#FFEBF2 ">The Main Conference</h3>
+                        <h3 style="color:#feb3ce ">The Main Conference</h3>
                         <div class="activity-meta">18 September 2026 | Ho Chi Minh City</div>
                     </div>
                     <div class="activity-card-body">
@@ -574,11 +605,11 @@
                 </div>
                 <div class="activity-card">
                     <div class="activity-card-header">
-                        <h3 style="color:#FFEBF2">Side Event: Capacity Building</h3>
+                        <h3 style="color:#feb3ce">Side Event: Capacity Building</h3>
                         <div class="activity-meta">17 September 2026 | Ho Chi Minh City</div>
                     </div>
                     <div class="activity-card-body">
-                        <h4 style="color: var(--primary-blue); margin-bottom: 10px;">"Navigating the Field: How to Publish in Feminist Jurisprudence"</h4>
+                        <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Seminar: "Navigating the Field: How to Publish in Feminist Jurisprudence"</h4>
                         <p>Led by Prof. Rosemary Hunter, this seminar aims to equip participants with the skills and strategic knowledge required to structure, write, and successfully submit papers to top-tier international journals.</p>
                     </div>
                 </div>
@@ -616,49 +647,61 @@
                 <hr>
             </div>
             <div class="logistics-grid">
-                <div class="logistics-column">
+                <div class="logistics-column logistics-column--city">
                     <div class="logistics-intro">
                         <h3>The Host City: Ho Chi Minh City</h3>
                         <p>
-                            Welcome to Ho Chi Minh City, the vibrant economic and cultural hub of Vietnam. Known for its dynamic energy, rich history, and world-renowned culinary scene, the city provides an inspiring backdrop for our international gathering.
+                            Welcome to Ho Chi Minh City, the vibrant economic and cultural hub of Vietnam. Known for its dynamic energy, rich history, and world-renowned culinary scene, the city provides an inspiring and lively backdrop for our international gathering at ICFGL 2026.
                         </p>
                     </div>
-                    <div class="logistics-box">
+                    <div class="logistics-box logistics-box--city">
                         <h4>Conference Venue</h4>
-                        <p>University of Economics and Law (UEL)<br>Vietnam National University, Ho Chi Minh City<br><b>[669 Do Muoi Street, Quarter 6 (formerly Quarter 3), Linh Xuan Ward, Ho Chi Minh City, Vietnam]</b></p>
+                        <p>
+                            University of Economics and Law (UEL)<br>
+                            Vietnam National University, Ho Chi Minh City (VNU-HCM)<br>
+                            <strong>[669 Do Muoi Street, Quarter 6 (formerly Quarter 3), Linh Xuan Ward, Ho Chi Minh City, Vietnam]</strong>
+                        </p>
                     </div>
                 </div>
-                <div class="logistics-column">
-                    <h3>Getting There: Local Transportation</h3>
+                <div class="logistics-column logistics-column--transport">
+                    <div class="logistics-intro logistics-intro--transport">
+                        <h3>Getting There: Local Transportation</h3>
+                        <p>
+                            To ensure a seamless and stress-free experience for all our international and domestic guests, navigating Ho Chi Minh City is easier than ever with the following options:
+                        </p>
+                    </div>
                     <div class="transport-list">
                         <div class="transport-item">
-                            <h4>HCMC Metro Line 1 (Bến Thành – Suối Tiên)  (Recommended)</h4>
-                            <p>Fast, traffic-free route from downtown to VNU-HCM Station (Ga Đại học Quốc gia) or High Tech Park Station (Ga Khu công nghệ cao), which is just a short taxi or Bus 170  ride away from the UEL campus.
-.</p>
-                        </div>
-                        <div class="transport-item">
-                            <h4>Complimentary UEL Shuttle Bus</h4>
-                            <p>UEL will organize a dedicated shuttle bus service to transport participants directly to and from the conference venue. Official pickup locations in downtown Ho Chi Minh City and departure schedules will be emailed to registered attendees closer to the event.
-</p>
-                        </div>
-                        <div class="transport-item">
-                            <h4>Taxis & Ride-Hailing Apps</h4>
-                            <p><b>Ride-Hailing Apps:</b> Applications such as Grab, Be, and Xanh SM (Vietnam’s premier fleet of eco-friendly electric vehicles) are widely used, offering transparent pricing and convenient booking. We highly recommend downloading these apps prior to arrival.
-                            <br/>
-<b>Traditional Taxis:</b> Reliable, metered taxi brands like Vinasun (white cars) and Mai Linh (green cars) are abundant throughout the city and can be easily hailed from hotels or the airport.
-
-</p>
+                            <h4>HCMC Metro Line 1 (Recommended)</h4>
+                            <p>
+                                Ho Chi Minh City’s modern Metro Line 1 (Bến Thành – Suối Tiên) offers a fast, traffic-free, and air-conditioned route directly from the downtown city center to Thu Duc City. Participants can disembark at the VNU-HCM Station (Ga Đại học Quốc gia) or High Tech Park Station (Ga Khu công nghệ cao), which is just a short taxi or Bus 170 ride away from the UEL campus.
+                            </p>
                         </div>
                         <div class="transport-item">
                             <h4>Public City Buses</h4>
-                            <p>For an authentic local experience, HCMC operates an extensive public bus network. Several routes connect the city center directly to the VNU-HCM University Village area, including Routes 8, 19, 33, and 52. Fares are highly affordable (typically under 10,000 VND) and are paid in cash upon boarding.
-</p>
+                            <p>
+                                For an authentic local experience, Ho Chi Minh City operates an extensive public bus network. Several routes connect the city center directly to the VNU-HCM University Village area, including Routes 8, 19, 33, and 52. Fares are highly affordable (typically under 10,000 VND) and are paid in cash upon boarding.
+                            </p>
                         </div>
                         <div class="transport-item">
                             <h4>Air Travel</h4>
-                            <p>Participants traveling by air will arrive at Tan Son Nhat International Airport (SGN). The airport is well-connected to the city center via taxis, ride-hailing services, and the specialized Airport Bus (Route 109 or 152).
-</p>
+                            <p>
+Participants traveling by air will arrive at Tan Son Nhat International Airport (SGN). The airport is well-connected to the city center via taxis, ride-hailing services, and the specialized Airport Bus (Route 109 or 152), offering convenient and affordable options for reaching your accommodation.                            </p>
                         </div>
+                        <div class="transport-item">
+                            <h4>Complimentary UEL Shuttle Bus</h4>
+                            <p>
+                                UEL will organize a dedicated shuttle bus service to transport participants directly to and from the conference venue. Official pickup locations in downtown HCMC and departure schedules will be emailed to registered attendees closer to the event.
+                            </p>
+                        </div>
+                        <div class="transport-item transport-item--wide">
+                            <h4>Taxis & Ride-Hailing Apps</h4>
+                            <p>
+                                <strong>Ride-Hailing:</strong> Applications such as Grab, Be, and Xanh SM (Vietnam’s premier fleet of eco-friendly electric vehicles) are widely used, offering transparent pricing and convenient booking. We highly recommend downloading these apps prior to arrival.<br><br>
+                                <strong>Traditional Taxis:</strong> Reliable, metered taxi brands like Vinasun (white cars) and Mai Linh (green cars) are abundant throughout the city and can be easily hailed from hotels or the airport.
+                            </p>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

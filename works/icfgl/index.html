@@ -31,7 +31,6 @@
 
         .edition-card--2024:hover { border-color: var(--pink); }
         .edition-card--2021:hover { border-color: var(--pink); }
-        .edition-card--vfj:hover  { border-color: var(--dark-navy); }
 
         .edition-card-link {
             display: flex;
@@ -76,10 +75,6 @@
         .edition-card--2021 .edition-divider { background: var(--dark-navy); }
         .edition-card--2021 .edition-label { color: rgba(20, 78, 140, 0.72); }
 
-        /* VFJ 2025 – green accent */
-        .edition-card--vfj .edition-year { color: var(--dark-navy); font-size: 3.4rem; }
-        .edition-card--vfj .edition-divider { background: var(--dark-navy); }
-        .edition-card--vfj .edition-label { color: rgba(20, 78, 140, 0.72); }
 
         /* Coming soon */
         .edition-card--draft {
@@ -95,43 +90,6 @@
         @media (max-width: 768px) {
             .edition-grid { grid-template-columns: 1fr; }
 
-            .related-conference-grid {
-                width: 100%;
-            }
-        }
-
-        .related-conference-section {
-            margin-bottom: 72px !important;
-        }
-
-        .related-conference-heading {
-            margin-bottom: 24px;
-        }
-
-        .related-conference-title {
-            color: var(--dark-navy) !important;
-            margin-bottom: 0 !important;
-        }
-
-        .related-conference-grid {
-            grid-template-columns: minmax(0, 1fr);
-            width: min(100%, calc((100% - 32px) / 3));
-            margin-bottom: 0;
-        }
-
-        .related-conference-grid .edition-card {
-            border-color: rgba(20, 78, 140, 0.1);
-            box-shadow: none;
-        }
-
-        .related-conference-grid .edition-card:hover,
-        .related-conference-grid .edition-card:focus-within {
-            border-color: var(--dark-navy);
-            box-shadow: 0 12px 30px rgba(20, 78, 140, 0.1);
-        }
-
-        .related-conference-grid .edition-label {
-            line-height: 1.6;
         }
 
         .icfgl-highlight-section {
@@ -287,10 +245,6 @@
                 font-size: 1.95rem !important;
             }
 
-            .related-conference-grid {
-                grid-template-columns: 1fr;
-            }
-
         }
     </style>
 </head>
@@ -380,23 +334,7 @@
             </div>
         </section>
 
-        <!-- VFJ 2025 -->
-        <section class="archive-section related-conference-section">
-            <div class="section-heading related-conference-heading">
-                <p class="section-kicker">Related Conference</p>
-                <h2 class="related-conference-title">Vietnamese Feminist Judgments</h2>
-            </div>
-            <div class="edition-grid related-conference-grid">
-                <div class="edition-card edition-card--vfj">
-                    <a href="vfj-2025/index.html" class="edition-card-link">
-                        <p class="edition-year">VFJ 2025</p>
-                        <div class="edition-divider"></div>
-                        <p class="edition-label">Toward Vietnamese Feminist Judgments &rarr;</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
+        
     </main>
 
     <div id="global-footer"></div>

@@ -1,402 +1,428 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Works | UEL Feminist Legal Theory Project</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --uel-blue: #144e8c;
-            --uel-pink: #DE4F7A;
-            /* Pastel Palette */
-            --pastel-blue: #f0f7ff;
-            --pastel-pink: #fff1f2;
+<!-- 
+  Yêu cầu: Đảm bảo bạn đã nhúng Tailwind CSS.
+  Style: International Editorial / Academic Seamless 
+  Font: Cambria (Authoritative Serif) & Inter (Modern Sans).
+  Update: Giảm độ chói (Anti-glare/Muted tones)
+-->
+
+<style>
+    :root {
+        --uel-blue: #144e8c;
+        --uel-pink: #DE4F7A;
+        --uel-dark: #0f172a;
+        --bg-muted: #f1f5f9; /* Màu nền giảm chói */
+        --wrap-bg: #f8fafc;  /* Màu nền slide dịu */
+    }
+
+    .font-cambria { font-family: 'Cambria', 'Georgia', serif; }
+
+    .highlights-section {
+        padding: 6rem 1.5rem;
+        background-color: var(--bg-muted); /* Chuyển từ trắng sang xám nhạt dịu mắt */
+        overflow: hidden;
+    }
+
+    .highlights-slider-wrap {
+        position: relative;
+        max-width: 90rem;
+        margin: 0 auto;
+        min-height: 650px;
+        background: var(--wrap-bg);
+        border-radius: 3rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        /* Đổ bóng sâu hơn để tách biệt với nền xám */
+        box-shadow: 0 40px 100px -30px rgba(15, 23, 42, 0.1);
+    }
+
+    /* Editorial Background Number - Blends behind everything */
+    .bg-number {
+        position: absolute;
+        top: 50%;
+        left: 2%;
+        transform: translateY(-50%);
+        font-family: 'Cambria', serif;
+        font-size: 30vw;
+        font-weight: 900;
+        color: rgba(20, 78, 140, 0.03); /* Tăng độ đậm nhẹ để thấy rõ trên nền xám */
+        line-height: 1;
+        z-index: 0;
+        pointer-events: none;
+        user-select: none;
+        transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* Slide Logic */
+    .highlights-slide {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 1s ease-in-out, visibility 1s;
+        z-index: 1;
+    }
+
+    @media (min-width: 1024px) {
+        .highlights-slide { grid-template-columns: 1fr 1fr; }
+    }
+
+    .highlights-slide.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 10;
+    }
+
+    /* Content Styling */
+    .slide-content {
+        position: relative;
+        padding: 4rem 5% 4rem 12%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 30;
+    }
+
+    .hero-eyebrow {
+        color: var(--uel-pink);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5em;
+        font-size: 0.75rem;
+        margin-bottom: 2rem;
+        display: block;
+        transform: translateX(-20px);
+        opacity: 0;
+        transition: all 0.8s 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .hero-title-line {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--uel-blue);
+        font-weight: 300;
+        margin-bottom: 0.5rem;
+        font-style: italic;
+    }
+
+    .hero-title-strong {
+        font-family: 'Cambria', serif;
+        color: var(--uel-blue);
+        font-size: clamp(2.8rem, 5vw, 4.2rem);
+        line-height: 1.05;
+        font-weight: bold;
+        margin-bottom: 2.5rem;
+        transform: translateX(-30px);
+        opacity: 0;
+        transition: all 0.8s 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .slide-desc {
+        color: #475569; /* Màu chữ Slate-600 đậm hơn chút để dễ đọc trên nền slide */
+        font-size: 1.15rem;
+        max-width: 500px;
+        line-height: 1.9;
+        margin-bottom: 3.5rem;
+        transform: translateX(-30px);
+        opacity: 0;
+        transition: all 0.8s 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .highlights-slide.active .hero-eyebrow,
+    .highlights-slide.active .hero-title-strong,
+    .highlights-slide.active .slide-desc,
+    .highlights-slide.active .hl-btn {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    /* Image Media with Seamless Blend */
+    .slide-image-wrap {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        background-color: #000; /* Nền đen để ảnh có chiều sâu hơn */
+    }
+
+    /* Mask gradient match with var(--wrap-bg) to avoid "glare" lines */
+    .slide-image-wrap::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 20;
+        background: linear-gradient(to right, var(--wrap-bg) 0%, rgba(248, 250, 252, 0.7) 20%, transparent 50%);
+    }
+
+    @media (max-width: 1023px) {
+        .slide-image-wrap::before {
+            background: linear-gradient(to bottom, var(--wrap-bg) 0%, transparent 40%);
         }
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            color: #1e293b;
-        }
+    .slide-image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.1);
+        transition: transform 10s ease-out;
+        opacity: 0.9; /* Giảm độ sáng của ảnh gốc */
+    }
 
-        .serif {
-            font-family: 'Playfair Display', serif;
-        }
+    .highlights-slide.active .slide-image-wrap img {
+        transform: scale(1);
+    }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: var(--uel-blue); border-radius: 4px; }
+    /* Navigation Controls */
+    .slider-nav {
+        position: absolute;
+        bottom: 3.5rem;
+        left: 12%;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        z-index: 100;
+    }
 
-        /* Hero Glassmorphism */
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(20, 78, 140, 0.95) 0%, rgba(20, 78, 140, 0.75) 100%);
-        }
+    .nav-numbers {
+        display: flex;
+        gap: 2rem;
+    }
 
-        /* Sticky Nav Enhancement */
-        .pill-nav-active {
-            background-color: var(--uel-blue);
-            color: white !important;
-            box-shadow: 0 4px 12px rgba(20, 78, 140, 0.2);
-        }
+    .nav-num-item {
+        font-family: 'Cambria', serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: rgba(20, 78, 140, 0.3);
+        cursor: pointer;
+        transition: all 0.4s;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        /* Publication Card Hover */
-        .publication-card:hover .book-image {
-            transform: translateY(-12px) rotate(-2deg);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-        }
+    .nav-num-item::after {
+        content: '';
+        width: 0;
+        height: 2px;
+        background: var(--uel-pink);
+        margin-top: 4px;
+        transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    }
 
-        /* Smooth Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .nav-num-item.active {
+        color: var(--uel-blue);
+        transform: translateY(-5px);
+    }
 
-        /* Soft Textures */
-        .pastel-pattern {
-            background-image: radial-gradient(rgba(20, 78, 140, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
+    .nav-num-item.active::after {
+        width: 100%;
+    }
 
-        /* Hero Decorative Blobs */
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            z-index: 1;
-            opacity: 0.4;
-        }
-    </style>
-</head>
-<body class="bg-white">
+    .nav-arrows {
+        display: flex;
+        gap: 0.75rem;
+    }
 
-    <!-- Header -->
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-100 py-4 px-6 flex justify-between items-center sticky top-0 z-[1000]">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-[#144e8c] rounded-lg flex items-center justify-center text-white font-bold">FLT</div>
-            <span class="font-bold text-slate-800 tracking-tight hidden md:block text-sm">UEL Feminist Legal Theory</span>
-        </div>
-        <nav class="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-slate-600">
-            <a href="#" class="hover:text-[#144e8c] transition-colors">Home</a>
-            <a href="#" class="text-[#144e8c]">Our Works</a>
-            <a href="#" class="hover:text-[#144e8c] transition-colors">Projects</a>
-            <a href="#" class="hover:text-[#144e8c] transition-colors">Contact</a>
-        </nav>
-        <button class="bg-[#DE4F7A] text-white px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-[#c43e66] transition-all shadow-md shadow-pink-100">Contribute</button>
-    </header>
+    .nav-arrow-btn {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        border: 1px solid rgba(20, 78, 140, 0.1);
+        background: rgba(255, 255, 255, 0.5); /* Kính mờ nhẹ */
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--uel-blue);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
 
-    <!-- Breadcrumb -->
-    <nav class="max-w-7xl mx-auto px-6 py-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
-        <a href="#" class="hover:text-slate-600 transition-colors">Home</a>
-        <span class="mx-2 text-slate-200">/</span>
-        <span class="text-slate-800 tracking-widest uppercase">Our Works</span>
-    </nav>
+    .nav-arrow-btn:hover {
+        background: var(--uel-blue);
+        color: #fff;
+        border-color: var(--uel-blue);
+        transform: scale(1.1);
+    }
 
-    <!-- Hero Section -->
-    <section class="relative min-h-[650px] flex items-center overflow-hidden mx-4 md:mx-6 rounded-[2.5rem] mb-12 shadow-2xl">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=2000" alt="Hero Background" class="w-full h-full object-cover grayscale-[20%]">
-            <div class="absolute inset-0 hero-gradient"></div>
-        </div>
+    /* CTA Button */
+    .hl-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 1.25rem 3.5rem;
+        background: var(--uel-blue);
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.25em;
+        border-radius: 0.5rem;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        opacity: 0;
+        transform: translateY(20px);
+        width: fit-content;
+        box-shadow: 0 10px 30px rgba(20, 78, 140, 0.15);
+    }
 
-        <div class="blob w-96 h-96 bg-pink-500 top-[-10%] right-[-5%] animate-pulse"></div>
-        <div class="blob w-80 h-80 bg-blue-400 bottom-[-10%] left-[5%]"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-8 md:px-20 py-12">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <span class="inline-block px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] text-pink-200 mb-8 uppercase">Knowledge Repository</span>
-                    <h1 class="serif text-6xl md:text-8xl mb-8 leading-[1.1] text-white italic">Our <br><span class="text-pink-300 not-italic uppercase tracking-tighter">Works</span></h1>
-                    <p class="text-lg md:text-xl text-slate-200 leading-relaxed max-w-xl font-light italic mb-12">
-                        Preserving the intellectual legacy of the UEL Feminist Legal Theory Project through research, advocacy, and global scholarly engagement.
-                    </p>
-                    
-                    <div class="grid grid-cols-3 gap-8 pt-8 border-t border-white/10 max-w-lg">
-                        <div class="text-white italic">
-                            <span class="block text-3xl font-bold mb-1">200+</span>
-                            <span class="text-[9px] uppercase tracking-widest text-slate-400 font-bold">Archived Cases</span>
-                        </div>
-                        <div class="text-white italic">
-                            <span class="block text-3xl font-bold mb-1">15+</span>
-                            <span class="text-[9px] uppercase tracking-widest text-slate-400 font-bold">Publications</span>
-                        </div>
-                        <div class="text-white italic">
-                            <span class="block text-3xl font-bold mb-1">03</span>
-                            <span class="text-[9px] uppercase tracking-widest text-slate-400 font-bold">Conferences</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hidden lg:block">
-                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-10 rounded-[3rem] shadow-2xl relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 p-8">
-                            <svg class="w-12 h-12 text-pink-300 opacity-20 group-hover:opacity-40 transition-opacity" fill="currentColor" viewBox="0 0 24 24"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4zm-13 0c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4z"/></svg>
-                        </div>
-                        <h3 class="serif text-2xl text-white mb-6 italic leading-snug">"Empowering the legal landscape through critical <span class="text-pink-300">gender-sensitive</span> analysis."</h3>
-                        <p class="text-slate-400 text-sm italic font-light">— Project Mission Statement</p>
-                    </div>
-                </div>
+    .hl-btn:hover {
+        background: var(--uel-pink);
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(222, 79, 122, 0.25);
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 1023px) {
+        .highlights-slider-wrap { min-height: 850px; }
+        .slide-content { padding: 4rem 2rem; order: 2; }
+        .slide-image-wrap { height: 400px; order: 1; }
+        .slider-nav { left: 2rem; bottom: 2rem; width: calc(100% - 4rem); justify-content: space-between; }
+        .bg-number { font-size: 60vw; left: 50%; top: 30%; transform: translate(-50%, -50%); opacity: 0.02; }
+    }
+</style>
+
+<section class="highlights-section" aria-label="Project Highlights">
+    <div class="highlights-slider-wrap" id="hlSlider">
+        <!-- Editorial Background Number -->
+        <div class="bg-number" id="bgNum">01</div>
+
+        <!-- Slide 1: ICFGL -->
+        <div class="highlights-slide active" data-index="01">
+            <div class="slide-content">
+                <span class="hero-eyebrow">Academic Forums</span>
+                <h2 class="hero-title-strong">
+                    <span class="hero-title-line">International Conference on</span>
+                    Feminism, Gender <br>& Law
+                </h2>
+                <p class="slide-desc italic font-light">
+                    A premier biennial hub for global scholars to dissect evolving legal frameworks through a rigorous, gender-sensitive lens.
+                </p>
+                <a href="works/icfgl/" class="hl-btn">Explore Archive &rarr;</a>
+            </div>
+            <div class="slide-image-wrap">
+                <img src="images/common/3.JPG" alt="ICFGL Highlights">
             </div>
         </div>
-    </section>
 
-    <!-- Navigation -->
-    <div class="sticky top-[73px] z-50 mb-12">
-        <div class="max-w-fit mx-auto bg-white/80 backdrop-blur-xl border border-white/50 p-1.5 rounded-full shadow-lg shadow-slate-200/40 flex flex-wrap justify-center gap-1">
-            <a href="#feminist-judgments" class="px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500 hover:text-[#144e8c] transition-all nav-link">Feminist Judgments</a>
-            <a href="#moot-court" class="px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500 hover:text-[#144e8c] transition-all nav-link">Moot Court</a>
-            <a href="#icfgl" class="px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500 hover:text-[#144e8c] transition-all nav-link">ICFGL Conference</a>
-            <a href="#workshops" class="px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500 hover:text-[#144e8c] transition-all nav-link">Workshops</a>
-            <a href="#publications" class="px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500 hover:text-[#144e8c] transition-all nav-link">Publications</a>
+        <!-- Slide 2: Workshops -->
+        <div class="highlights-slide" data-index="02">
+            <div class="slide-content">
+                <span class="hero-eyebrow">Knowledge Sharing</span>
+                <h2 class="hero-title-strong">
+                    <span class="hero-title-line">Our Signature</span>
+                    Workshops <br>& Seminars
+                </h2>
+                <p class="slide-desc italic font-light">
+                    Intensive sessions designed for capacity building, peer-reviewing, and collaborative legal drafting among global scholars.
+                </p>
+                <a href="works/workshops/" class="hl-btn">View Sessions &rarr;</a>
+            </div>
+            <div class="slide-image-wrap">
+                <img src="images/workshops/opentalk-2024/1.jpg" alt="Workshop Events">
+            </div>
+        </div>
+
+        <!-- Slide 3: Moot Court -->
+        <div class="highlights-slide" data-index="03">
+            <div class="slide-content">
+                <span class="hero-eyebrow">Future Advocates</span>
+                <h2 class="hero-title-strong">
+                    <span class="hero-title-line">Gender Justice</span>
+                    National <br>Moot Court
+                </h2>
+                <p class="slide-desc italic font-light">
+                    Empowering the next generation of law students to challenge structural inequalities through oral arguments and written advocacy.
+                </p>
+                <a href="works/moot-court/" class="hl-btn">Explore Season &rarr;</a>
+            </div>
+            <div class="slide-image-wrap">
+                <img src="images/mootcourt/1.jpg" alt="Moot Court Participation">
+            </div>
+        </div>
+
+        <!-- Minimalist Navigation UI -->
+        <div class="slider-nav">
+            <div class="nav-numbers" id="hlNavNums">
+                <div class="nav-num-item active" onclick="jumpToSlide(0)">01</div>
+                <div class="nav-num-item" onclick="jumpToSlide(1)">02</div>
+                <div class="nav-num-item" onclick="jumpToSlide(2)">03</div>
+            </div>
+            <div class="nav-arrows">
+                <button class="nav-arrow-btn" id="hlPrev" title="Previous">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button class="nav-arrow-btn" id="hlNext" title="Next">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
         </div>
     </div>
+</section>
 
-    <!-- Main Content -->
-    <main class="space-y-0">
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.highlights-slide');
+    const nums = document.querySelectorAll('.nav-num-item');
+    const bgNum = document.getElementById('bgNum');
+    let autoPlayTimer;
 
-        <!-- 1. Section: Feminist Judgments (Pastel Blue) -->
-        <section id="feminist-judgments" class="reveal bg-[#f0f9ff] py-32 px-6">
-            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-                <div class="order-2 lg:order-1">
-                    <div class="mb-10">
-                        <span class="text-blue-600 font-bold text-[10px] uppercase tracking-[0.3em] mb-4 block italic">Flagship Stream</span>
-                        <h2 class="serif text-4xl md:text-6xl text-slate-800 mb-8 italic">Towards a Vietnamese <br>Feminist Judgment</h2>
-                        <div class="w-20 h-1.5 bg-blue-600 rounded-full mb-8"></div>
-                    </div>
-                    <div class="space-y-6 text-slate-600 leading-relaxed text-base italic text-justify">
-                        <p>
-                            A flagship stream of the project that adapts feminist judgment methodology to the Vietnamese legal context. This initiative explores rewritten judicial decisions that highlight gendered perspectives and structural inequalities.
-                        </p>
-                        <p>
-                            In 2022, we launched the <strong>"Feminist Judgments"</strong> project with the goal of contributing to the global discourse on feminist legal research. We were privileged to receive the mentorship of <strong>Professor Rosemary Hunter</strong>, a pioneer in this field. Through seminars and guidance on methodology and philosophy, we published the foundational book <em>"Towards a Vietnamese Feminist Judgment"</em> in late 2023, with Volume II expected in 2026.
-                        </p>
-                        <p>
-                            The project represents a crucial adaptation to a local context where alternative judgment writing faces unique challenges. While international projects often pair a judge with an academic, the Vietnamese landscape requires scholars to bridge this gap by performing both roles.
-                        </p>
-                        <div class="pt-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <a href="#" class="bg-[#144e8c] text-white py-5 px-8 rounded-2xl text-center font-bold text-xs uppercase tracking-widest hover:shadow-xl transition-all">Open Case Archive &rarr;</a>
-                            <a href="#" class="bg-white border-2 border-slate-100 text-slate-700 py-5 px-8 rounded-2xl text-center font-bold text-xs uppercase tracking-widest hover:border-blue-200 transition-all">Sample Record</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 lg:order-2 relative group">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1000" alt="Legal Research" class="relative z-10 w-full h-[700px] object-cover rounded-[3rem] shadow-2xl transition-transform duration-1000 group-hover:scale-[1.02]">
-                    <div class="absolute -inset-4 bg-blue-200/30 rounded-[3.5rem] -rotate-2 z-0"></div>
-                </div>
-            </div>
-        </section>
+    function updateSlider(index) {
+        if (index === currentSlide) return;
 
-        <!-- 2. Section: Moot Court (Pastel Pink Redesign) -->
-        <section id="moot-court" class="reveal bg-[#fff1f2] py-32 px-6 relative overflow-hidden">
-            <!-- Decorative Graphics -->
-            <div class="absolute inset-0 opacity-10 pointer-events-none">
-                <div class="absolute top-0 right-0 w-1/2 h-full border-l border-pink-400"></div>
-                <div class="absolute top-1/2 left-0 w-full h-px bg-pink-400"></div>
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border-4 border-pink-400 rounded-full"></div>
-            </div>
+        // Remove active states
+        slides[currentSlide].classList.remove('active');
+        nums[currentSlide].classList.remove('active');
 
-            <div class="max-w-7xl mx-auto relative z-10">
-                <div class="grid lg:grid-cols-2 gap-20 items-center">
-                    <div>
-                        <span class="text-pink-600 font-bold text-[10px] uppercase tracking-[0.4em] mb-6 block italic uppercase">National Student Competition</span>
-                        <h2 class="serif text-5xl md:text-7xl mb-10 italic leading-[1.1] text-slate-800">Gender Justice <br><span class="text-pink-500 not-italic">Moot Court</span></h2>
-                        <p class="text-slate-600 text-lg leading-relaxed mb-12 italic text-justify pr-6">
-                            The Gender Justice Moot Court is a national-level competition for undergraduate law students across Vietnam. It provides a structured and practice-oriented platform for developing legal research, written advocacy, and oral argumentation skills, while integrating gender justice principles into legal reasoning.
-                        </p>
-                        <div class="flex flex-wrap gap-4">
-                            <a href="#" class="bg-pink-500 text-white py-4 px-10 rounded-2xl font-bold text-[10px] uppercase tracking-widest shadow-lg shadow-pink-200 hover:-translate-y-1 transition-transform">Explore Moot Court &rarr;</a>
-                            <a href="#" class="bg-white border-2 border-slate-100 text-slate-600 py-4 px-10 rounded-2xl font-bold text-[10px] uppercase tracking-widest hover:border-pink-200 transition-all">Technical Rules</a>
-                        </div>
-                    </div>
-                    
-                    <div class="relative">
-                        <div class="bg-white/80 backdrop-blur-md border border-pink-100 p-12 rounded-[3.5rem] shadow-2xl shadow-pink-200/50">
-                            <h3 class="serif text-3xl text-slate-800 mb-10 italic border-b border-pink-100 pb-4"><span class="text-pink-500">Who can join?</span></h3>
-                            <div class="space-y-10">
-                                <div class="flex gap-8 group">
-                                    <div class="w-14 h-14 rounded-2xl bg-pink-500 text-white flex items-center justify-center font-bold text-xl italic shadow-lg group-hover:scale-110 transition-transform">01</div>
-                                    <div>
-                                        <h5 class="text-slate-800 font-bold italic text-lg mb-1">Undergraduate law students</h5>
-                                        <p class="text-sm text-slate-500 italic leading-relaxed">Open to all years and disciplines within legal studies across Vietnam.</p>
-                                    </div>
-                                </div>
-                                <div class="flex gap-8 group">
-                                    <div class="w-14 h-14 rounded-2xl bg-[#144e8c] text-white flex items-center justify-center font-bold text-xl italic shadow-lg group-hover:scale-110 transition-transform">02</div>
-                                    <div>
-                                        <h5 class="text-slate-800 font-bold italic text-lg mb-1">University Teams</h5>
-                                        <p class="text-sm text-slate-500 italic leading-relaxed">Formed by undergraduate students representing their academic institutions.</p>
-                                    </div>
-                                </div>
-                                <div class="flex gap-8 group">
-                                    <div class="w-14 h-14 rounded-2xl bg-slate-800 text-white flex items-center justify-center font-bold text-xl italic shadow-lg group-hover:scale-110 transition-transform">03</div>
-                                    <div>
-                                        <h5 class="text-slate-800 font-bold italic text-lg mb-1">Nationwide Participation</h5>
-                                        <p class="text-sm text-slate-500 italic leading-relaxed">No geographic restrictions for public and private law faculties in Vietnam.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        // Set current
+        currentSlide = index;
 
-        <!-- 3. Section: ICFGL (Pastel Blue) -->
-        <section id="icfgl" class="reveal bg-[#f0f9ff] py-32 px-6 pastel-pattern">
-            <div class="max-w-7xl mx-auto text-center">
-                <span class="text-blue-600 font-bold text-[10px] uppercase tracking-[0.4em] mb-6 block italic uppercase">International Forum</span>
-                <h2 class="serif text-4xl md:text-6xl text-slate-800 mb-8 italic">Conference on Feminism, <br>Gender and Law (ICFGL)</h2>
-                <p class="text-slate-500 text-lg leading-relaxed italic max-w-3xl mx-auto mb-20 font-light">The definitive biennial scholarly dialogue documenting the evolution of feminist jurisprudence since 2021.</p>
+        // Add active states
+        slides[currentSlide].classList.add('active');
+        nums[currentSlide].classList.add('active');
+        
+        // Update background number with a fade transition
+        const displayNum = (currentSlide + 1).toString().padStart(2, '0');
+        bgNum.style.opacity = '0';
+        bgNum.style.transform = 'translateY(-50%) scale(0.8)';
+        
+        setTimeout(() => {
+            bgNum.innerText = displayNum;
+            bgNum.style.opacity = '0.03';
+            bgNum.style.transform = 'translateY(-50%) scale(1)';
+        }, 400);
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                    <a href="#" class="group bg-white p-12 rounded-[3rem] text-center hover:shadow-2xl hover:shadow-blue-200/50 transition-all border border-blue-100">
-                        <span class="serif text-6xl font-bold block mb-6 text-slate-800 italic group-hover:scale-110 transition-transform">2026</span>
-                        <div class="w-12 h-1 bg-pink-400 mx-auto mb-8"></div>
-                        <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-600">Explore ICFGL 2026 &rarr;</span>
-                    </a>
-                    <a href="#" class="group bg-white p-12 rounded-[3rem] text-center hover:shadow-2xl hover:shadow-blue-200/50 transition-all border border-blue-100">
-                        <span class="serif text-6xl font-bold block mb-6 text-slate-800 italic group-hover:scale-110 transition-transform">2024</span>
-                        <div class="w-12 h-1 bg-pink-400 mx-auto mb-8"></div>
-                        <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-600">Explore ICFGL 2024 &rarr;</span>
-                    </a>
-                    <a href="#" class="group bg-white p-12 rounded-[3rem] text-center hover:shadow-2xl hover:shadow-blue-200/50 transition-all border border-blue-100">
-                        <span class="serif text-6xl font-bold block mb-6 text-slate-800 italic group-hover:scale-110 transition-transform">2021</span>
-                        <div class="w-12 h-1 bg-pink-400 mx-auto mb-8"></div>
-                        <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-600">Explore ICFGL 2021 &rarr;</span>
-                    </a>
-                </div>
-            </div>
-        </section>
+        resetAutoPlay();
+    }
 
-        <!-- 4. Section: Workshops (Pastel Pink) -->
-        <section id="workshops" class="reveal bg-[#fff1f2] py-32 px-6">
-            <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-16 items-start">
-                <div class="lg:col-span-2 sticky top-40">
-                    <span class="text-pink-600 font-bold text-[10px] uppercase tracking-[0.3em] mb-4 block italic uppercase">Academic Exchange</span>
-                    <h2 class="serif text-4xl md:text-5xl text-slate-800 mb-8 italic">Workshops & <br>Special Seminars</h2>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-10 italic">Advancing feminist legal theory through collaborative drafting, peer review, and intensive training.</p>
-                </div>
-                <div class="lg:col-span-3 grid sm:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-[2.5rem] p-8 border border-pink-50 shadow-sm group hover:shadow-xl transition-all">
-                        <img src="https://images.unsplash.com/photo-1524178232363-1fb280714553?auto=format&fit=crop&q=80&w=800" alt="Seminar" class="w-full h-40 object-cover rounded-2xl mb-6">
-                        <h4 class="font-bold text-lg text-slate-800 mb-3 italic">UEL Special Lecture Series</h4>
-                        <p class="text-xs text-slate-500 italic leading-relaxed">International perspectives on gender-sensitive legal frameworks.</p>
-                    </div>
-                    <div class="bg-white rounded-[2.5rem] p-8 border border-pink-50 shadow-sm group hover:shadow-xl transition-all">
-                        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800" alt="Training" class="w-full h-40 object-cover rounded-2xl mb-6">
-                        <h4 class="font-bold text-lg text-slate-800 mb-3 italic">Feminism & Law Summer School</h4>
-                        <p class="text-xs text-slate-500 italic leading-relaxed">Empowering graduate students through rigorous critical legal analysis.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    function nextSlide() {
+        let next = (currentSlide + 1) % slides.length;
+        updateSlider(next);
+    }
 
-        <!-- 5. Section: Publications (Pastel Blue) -->
-        <section id="publications" class="reveal bg-[#f0f9ff] py-32 px-6">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-24">
-                    <span class="text-blue-600 font-bold text-[10px] uppercase tracking-[0.4em] mb-6 block italic uppercase">Intellectual Outputs</span>
-                    <h2 class="serif text-5xl md:text-6xl text-slate-800 italic">Academic Publications</h2>
-                    <div class="w-28 h-1.5 bg-blue-600 mx-auto mt-8 rounded-full"></div>
-                </div>
+    function prevSlide() {
+        let prev = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlider(prev);
+    }
 
-                <div class="publication-card grid md:grid-cols-12 gap-16 items-center">
-                    <div class="md:col-span-5 flex justify-center">
-                        <div class="book-image transition-all duration-700 w-full max-w-[320px]">
-                            <img src="https://placehold.co/400x600/144e8c/white?text=Towards+Vietnamese+Feminist+Judgments" alt="Book Cover" class="w-full rounded-2xl shadow-2xl border border-slate-100">
-                        </div>
-                    </div>
-                    <div class="md:col-span-7">
-                        <h4 class="serif text-4xl text-[#144e8c] leading-tight italic mb-8">Towards Vietnamese <br>Feminist Judgments</h4>
-                        <p class="text-slate-600 text-lg leading-relaxed mb-10 italic font-light">A foundational volume applying feminist legal theory to Vietnamese criminal, family, and labor law, published in 2023.</p>
-                        <a href="#" class="inline-flex items-center gap-4 bg-[#DE4F7A] text-white px-10 py-5 rounded-2xl font-bold text-[10px] uppercase tracking-widest italic shadow-xl">Download PDF <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg></a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    function jumpToSlide(index) {
+        updateSlider(index);
+    }
 
-    </main>
+    function startAutoPlay() {
+        autoPlayTimer = setInterval(nextSlide, 8000);
+    }
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-24 px-8">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-20">
-            <div class="md:col-span-2">
-                <div class="flex items-center gap-4 mb-10">
-                    <div class="w-14 h-14 bg-[#144e8c] rounded-2xl flex items-center justify-center text-white font-bold text-2xl italic shadow-2xl">FLT</div>
-                    <span class="font-bold text-2xl tracking-tight italic">UEL Feminist Legal Theory</span>
-                </div>
-                <p class="text-slate-400 max-w-sm text-sm leading-relaxed italic font-light">
-                    An academic initiative from the University of Economics and Law (VNU-HCM), bridging the gap between theory and judicial practice.
-                </p>
-            </div>
-            <div>
-                <h5 class="font-bold mb-8 uppercase text-[10px] tracking-[0.4em] text-slate-500 italic">Navigation</h5>
-                <ul class="space-y-6 text-sm text-slate-400 italic">
-                    <li><a href="#feminist-judgments" class="hover:text-pink-400 transition-colors">Judgments Project</a></li>
-                    <li><a href="#moot-court" class="hover:text-pink-400 transition-colors">Moot Court Hub</a></li>
-                    <li><a href="#icfgl" class="hover:text-pink-400 transition-colors">ICFGL Archive</a></li>
-                    <li><a href="#workshops" class="hover:text-pink-400 transition-colors">Workshops</a></li>
-                    <li><a href="#publications" class="hover:text-pink-400 transition-colors">Publications</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-bold mb-8 uppercase text-[10px] tracking-[0.4em] text-slate-500 italic">Contact</h5>
-                <p class="text-sm text-slate-400 leading-relaxed italic">Ho Chi Minh City, Vietnam<br>Email: flt-project@uel.edu.vn</p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-24 pt-10 border-t border-slate-800 text-center text-[10px] text-slate-600 uppercase tracking-[0.4em] italic font-medium">
-            &copy; 2024 UEL Feminist Legal Theory Project.
-        </div>
-    </footer>
+    function resetAutoPlay() {
+        clearInterval(autoPlayTimer);
+        startAutoPlay();
+    }
 
-    <script>
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        window.addEventListener("load", reveal);
+    document.getElementById('hlNext').addEventListener('click', nextSlide);
+    document.getElementById('hlPrev').addEventListener('click', prevSlide);
 
-        window.addEventListener('scroll', () => {
-            let current = "";
-            const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll(".nav-link");
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 250) {
-                    current = section.getAttribute("id");
-                }
-            });
-            navLinks.forEach((link) => {
-                link.classList.remove("pill-nav-active");
-                if (link.getAttribute("href").includes(current)) {
-                    link.classList.add("pill-nav-active");
-                }
-            });
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+    // Start auto-play on load
+    document.addEventListener('DOMContentLoaded', startAutoPlay);
+</script>

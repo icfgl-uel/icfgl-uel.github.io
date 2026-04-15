@@ -28,15 +28,15 @@
         /* Hero Section - Redesigned Premium */
         .academic-hero {
             position: relative;
-            min-height: calc(100vh - 120px);
+            min-height: calc(100vh - 74px);
+            min-height: calc(100svh - 74px);
             display: flex;
             align-items: center;
             margin: 0;
             background: #0f1c2d url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=2000') no-repeat center center / cover;
-            padding: 72px 0 126px;
+            padding: clamp(64px, 8vh, 96px) 0 clamp(132px, 15vh, 168px);
             color: #fff;
             overflow: hidden;
-            border-bottom: 4px solid var(--accent-pink);
         }
 
         .hero-gradient {
@@ -74,19 +74,20 @@
         .hero-shell {
             position: relative;
             z-index: 10;
-            max-width: 1400px;
             width: 100%;
             margin: 0 auto;
-            padding: 0 48px;
+            padding: 0 clamp(16px, 2.4vw, 32px);
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 0.85fr;
+            grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
             grid-template-areas:
                 "copy quote"
                 "description quote";
-            column-gap: 72px;
+            max-width: 1680px;
+            margin: 0 auto;
+            column-gap: clamp(32px, 4vw, 72px);
             row-gap: 12px;
             align-items: center;
         }
@@ -94,6 +95,7 @@
         .hero-copy {
             grid-area: copy;
             align-self: end;
+            padding-left: clamp(12px, 2vw, 28px);
         }
 
         .hero-eyebrow {
@@ -156,6 +158,7 @@
             grid-area: description;
             max-width: 95%;
             margin: -6px 0 0;
+            padding-left: clamp(12px, 2vw, 28px);
             color: rgba(255, 255, 255, 0.85);
             font-family: 'Lato', sans-serif;
             font-size: clamp(1.05rem, 1.4vw, 1.15rem);
@@ -339,31 +342,62 @@
         }
 
         .feature-card {
+            position: relative;
+            overflow: hidden;
             background: #fff;
-            padding: 40px;
-            border-radius: 24px;
+            padding: 38px 36px 34px;
+            border-radius: 28px;
             border: 1px solid var(--border-light);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 16px 36px rgba(9, 29, 56, 0.05);
             transition: all 0.3s ease;
         }
 
         .feature-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent-pink);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            border-color: rgba(246, 65, 131, 0.22);
+            box-shadow: 0 22px 46px rgba(9, 29, 56, 0.08);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            inset: 0 auto auto 0;
+            width: 100%;
+            height: 84px;
+            background: linear-gradient(180deg, rgba(20, 78, 140, 0.045) 0%, rgba(20, 78, 140, 0) 100%);
+            pointer-events: none;
         }
 
         .card-number {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-blue);
-            color: #fff;
-            border-radius: 10px;
-            display: flex;
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            width: 62px;
+            height: 62px;
+            background: rgba(20, 78, 140, 0.08);
+            color: var(--primary-blue);
+            border: 1px solid rgba(20, 78, 140, 0.12);
+            border-radius: 50%;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85), 0 10px 24px rgba(20, 78, 140, 0.08);
             font-weight: 800;
+            font-size: 1.2rem;
+            line-height: 1;
+            letter-spacing: -0.03em;
             margin-bottom: 24px;
+        }
+
+        .feature-card:nth-child(2) .card-number {
+            background: rgba(246, 65, 131, 0.08);
+            color: var(--accent-pink);
+            border-color: rgba(246, 65, 131, 0.14);
+        }
+
+        .feature-card:nth-child(3) .card-number {
+            background: rgba(20, 78, 140, 0.1);
+            color: #2b4f90;
+            border-color: rgba(43, 79, 144, 0.14);
         }
 
         /* Book & Publication Treatment */
@@ -826,23 +860,24 @@
 
         .moot-eligibility-item {
             display: grid;
-            grid-template-columns: 72px 1fr;
+            grid-template-columns: 76px 1fr;
             gap: 22px;
             align-items: start;
         }
 
         .moot-eligibility-index {
-            width: 60px;
-            height: 60px;
-            border-radius: 18px;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             font-family: Cambria, Georgia, serif;
-            font-size: 1rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
             color: #fff;
-            box-shadow: 0 12px 24px rgba(20, 78, 140, 0.18);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 10px 24px rgba(20, 78, 140, 0.16);
         }
 
         .moot-eligibility-index--pink {
@@ -1056,8 +1091,8 @@
 
         @media (max-width: 1024px) {
             .academic-hero {
-                min-height: 760px;
-                padding-bottom: 112px;
+                min-height: calc(100svh - 74px);
+                padding-bottom: 120px;
             }
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -1069,6 +1104,7 @@
             }
             .hero-description {
                 max-width: 100%;
+                padding-left: 0;
             }
             .publication-row, .feature-grid, .archive-box-grid, .compact-publication-grid {
                 grid-template-columns: 1fr;
@@ -1127,12 +1163,12 @@
 
         @media (max-width: 640px) {
             .academic-hero {
-                min-height: 560px;
+                min-height: calc(100svh - 64px);
                 border-bottom: 3px solid var(--accent-pink);
                 padding: 44px 0 96px;
             }
             .hero-shell {
-                padding: 0 24px;
+                padding: 0 16px;
             }
             .hero-eyebrow {
                 margin-bottom: 16px;
@@ -1163,6 +1199,9 @@
             }
             .hero-grid {
                 gap: 24px;
+            }
+            .hero-copy {
+                padding-left: 0;
             }
             .pill-nav-container {
                 margin-top: -32px;
@@ -1224,12 +1263,7 @@
 <body>
     <div id="global-header"></div>
 
-    <div class="breadcrumb" style="padding: 20px 5%; background: var(--bg-light);">
-        <a href="../index.html">Home</a>
-        <span class="breadcrumb-separator">&rsaquo;</span>
-        <span>Our Works</span>
-    </div>
-
+    
     <section class="academic-hero" aria-label="Our Works hero banner">
         <div class="hero-gradient"></div>
         <div class="hero-blob hero-blob--pink"></div>
@@ -1319,7 +1353,7 @@ This section provides open and lasting access to the project’s key outputs, in
                         <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">Feminist theory in existing legal framework.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="card-number" style="background: #fff1f7; color: var(--accent-pink);">02</div>
+                        <div class="card-number">02</div>
                         <h3 style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">Adhere to Form</h3>
                         <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">Maintain formal judicial writing style.</p>
                     </div>

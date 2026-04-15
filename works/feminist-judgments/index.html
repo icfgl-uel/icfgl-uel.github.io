@@ -27,109 +27,254 @@
                 padding-top: 0;
             }
 
-            .fj-hero-modern {
-                background:
-                    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.72), transparent 18%),
-                    linear-gradient(135deg, #f7fbff 0%, #edf4fb 52%, #fceef4 100%);
+            .academic-hero {
+                position: relative;
+                min-height: calc(100svh - 126px);
+                display: flex;
+                align-items: center;
                 width: 100vw;
                 margin-left: calc(50% - 50vw);
                 margin-right: calc(50% - 50vw);
-                border-radius: 0;
-                padding: 42px max(5vw, 32px);
-                box-shadow: none;
-                margin-bottom: 80px;
-                border: 0;
-                position: relative;
+                background: #0f1c2d url('../../images/icfgl/2.JPG') no-repeat center center / cover;
+                padding: clamp(42px, 6vh, 72px) 0 clamp(56px, 8vh, 88px);
+                box-sizing: border-box;
+                color: #fff;
                 overflow: hidden;
             }
-            .fj-hero-grid {
-                display: grid;
-                grid-template-columns: minmax(260px, 330px) minmax(0, 1fr);
-                gap: 44px;
-                align-items: center;
-                width: min(92%, 1160px);
+
+            .hero-gradient {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(135deg, rgba(24, 61, 108, 0.74) 0%, rgba(61, 110, 183, 0.62) 100%);
+                z-index: 1;
+            }
+
+            .hero-blob {
+                position: absolute;
+                border-radius: 50%;
+                filter: blur(90px);
+                z-index: 2;
+                opacity: 0.6;
+                pointer-events: none;
+            }
+
+            .hero-blob--pink {
+                top: -10%;
+                right: 0%;
+                width: 35rem;
+                height: 35rem;
+                background: rgba(246, 65, 131, 0.55);
+            }
+
+            .hero-blob--blue {
+                bottom: -20%;
+                left: -10%;
+                width: 35rem;
+                height: 35rem;
+                background: rgba(96, 165, 250, 0.4);
+            }
+
+            .hero-shell {
+                position: relative;
+                z-index: 10;
+                width: 100%;
                 margin: 0 auto;
+                padding: 0 clamp(10px, 1.6vw, 20px);
+                min-height: inherit;
+                display: flex;
+                align-items: center;
+            }
+
+            .hero-grid {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
+                grid-template-areas:
+                    "copy quote"
+                    "description quote";
+                width: 100%;
+                margin: 0 auto;
+                column-gap: clamp(24px, 3vw, 56px);
+                row-gap: 12px;
+                align-items: center;
+            }
+
+            .hero-copy {
+                grid-area: copy;
+                align-self: end;
+                padding-left: clamp(12px, 2vw, 28px);
+            }
+
+            .archive-eyebrow {
+                display: inline-block;
+                padding: 8px 18px;
+                margin-bottom: 24px;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(4px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 999px;
+                color: #fdf2f8;
+                font: 700 0.85rem/1 'Lato', sans-serif;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .hero-title {
+                font-family: 'Cambria', Georgia, serif !important;
+                font-size: clamp(3.2rem, 6vw, 5.5rem);
+                line-height: 1.1;
+                font-weight: 700;
+                margin: 0 0 32px 0;
+                color: #fff;
+            }
+
+            .hero-description {
+                grid-area: description;
+                font-size: clamp(1.05rem, 1.5vw, 1.15rem);
+                line-height: 1.8;
+                color: rgba(255, 255, 255, 0.9);
+                padding-left: clamp(12px, 2vw, 28px);
+                max-width: 920px;
+                margin: 0;
+            }
+
+            .fj-hero-cta {
+                display: inline-block;
+                margin-top: 32px;
+                background: var(--pink);
+                color: #fff;
+                font-size: 0.95rem;
+                font-weight: 700;
+                padding: 16px 42px;
+                border-radius: 4px;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                transition: all 0.3s ease;
+            }
+            .fj-hero-cta:hover {
+                background: #b3355d;
+                transform: translateY(-2px);
+            }
+
+            .hero-quote-wrap {
+                grid-area: quote;
+                position: relative;
+            }
+
+            .hero-quote-card {
+                background: rgba(255, 255, 255, 0.06);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 20px;
+                padding: 40px 48px;
+                box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+                position: relative;
+            }
+
+            .hero-quote-icon {
+                position: absolute;
+                top: 24px;
+                right: 24px;
+                color: rgba(246, 65, 131, 0.2);
+            }
+
+            .hero-quote-icon svg {
+                width: 80px;
+                height: 80px;
+            }
+
+            .hero-quote-text {
+                font-family: 'Cambria', Georgia, serif;
+                font-size: 1.7rem;
+                line-height: 1.5;
+                font-style: italic;
+                color: #fff;
+                margin: 0 0 24px 0;
                 position: relative;
                 z-index: 2;
             }
-            .fj-hero-art {
-                max-width: 330px;
-                width: 100%;
+            .hero-quote-text span {
+                color: var(--pink);
             }
-            .fj-hero-art img {
-                display: block;
-                width: 100%;
-                height: 350px;
-                object-fit: cover;
-                border-radius: 12px;
-                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
-            }
-            .fj-hero-text {
-                max-width: 720px;
-                display: grid;
-                gap: 16px;
-            }
-            .fj-hero-text h1 {
-                font-family: Cambria, serif;
-                color: var(--dark-navy);
-                font-size: 2.85rem;
-                line-height: 1.04;
-                margin: 0;
-            }
-            .fj-hero-desc {
-                line-height: 1.7;
-                color: var(--text-dark);
-                margin: 0;
-                max-width: 100%;
-            }
-            .fj-hero-cta {
-                background: var(--dark-navy);
-                color: var(--white);
-                text-transform: uppercase;
+            .hero-quote-source {
                 font-weight: 700;
-                letter-spacing: 0.05em;
-                font-size: 0.9em;
-                padding: 14px 28px;
-                border-radius: 6px;
-                display: inline-block;
-                text-decoration: none;
-                box-shadow: 0 8px 20px rgba(20, 78, 140, 0.16);
-                justify-self: start;
+                color: rgba(255, 255, 255, 0.6);
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 0.85rem;
+                margin: 0;
             }
-            @media (max-width: 960px) {
-                .fj-hero-modern { padding: 28px 0; }
-                .fj-hero-grid {
+
+            @media (max-width: 1024px) {
+                .hero-grid {
                     grid-template-columns: 1fr;
+                    grid-template-areas:
+                        "copy"
+                        "description"
+                        "quote";
+                    gap: 32px;
+                }
+                .hero-description, .hero-copy {
+                    padding-left: 0;
+                }
+                .academic-hero {
+                    min-height: calc(100svh - 118px);
+                    padding: 40px 0 56px;
+                }
+                .hero-title {
+                    font-size: clamp(2.8rem, 10vw, 4rem);
+                }
+                .hero-quote-card {
+                    padding: 32px 36px;
+                }
+                .hero-quote-text {
+                    font-size: 1.4rem;
+                }
+            }
+
+            @media (max-width: 640px) {
+                .academic-hero {
+                    min-height: calc(100svh - 104px);
+                    padding: 32px 0 44px;
+                }
+                .hero-shell {
+                    padding: 0 12px;
+                }
+                .hero-grid {
                     gap: 24px;
-                    width: min(90%, 640px);
-                }
-                .fj-hero-art {
-                    max-width: 100%;
-                    order: 1;
-                }
-                .fj-hero-art img {
-                    height: 260px;
-                }
-                .fj-hero-text {
-                    order: 2;
-                }
-                .fj-hero-text h1 {
-                    font-size: 2.5rem;
                 }
             }
         </style>
-        <section class="fj-hero-modern">
-            <div class="fj-hero-grid">
-                <div class="fj-hero-art">
-                    <img src="../../images/icfgl/4.jpg" alt="Feminist Judgments Group">
-                </div>
-                <div class="fj-hero-text">
-                    <p class="archive-eyebrow" style="color: var(--pink); margin: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85em;">Knowledge Assets</p>
-                    <h1>Feminist Judgments</h1>
-                    <p class="fj-hero-desc">
-                        A flagship stream of the project that adapts feminist judgment methodology to the Vietnamese legal context. Explore rewritten judicial decisions that highlight gendered perspectives and structural inequalities.
-                    </p>
-                    <a href="#case-database" class="fj-hero-cta">Explore Database</a>
+        <section class="academic-hero" aria-label="Feminist Judgments hero banner">
+            <div class="hero-gradient"></div>
+            <div class="hero-blob hero-blob--pink"></div>
+            <div class="hero-blob hero-blob--blue"></div>
+            
+            <div class="hero-shell">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <span class="archive-eyebrow">Knowledge Assets</span>
+                        <h1 class="hero-title">Feminist Judgments</h1>
+                    </div>
+
+                    <div class="hero-quote-wrap">
+                        <div class="hero-quote-card">
+                            <div class="hero-quote-icon" aria-hidden="true">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4zm-13 0c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4z"/></svg>
+                            </div>
+                            <p class="hero-quote-text">"Adapting methodology to rewrite judicial decisions and highlight <span>structural inequalities</span> in the Vietnamese context."</p>
+                            <p class="hero-quote-source">Project Mission</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-description">
+                        <p style="margin: 0;">
+                            A flagship stream of the project creating a bridge between theoretical feminist legal frameworks and practical judicial outcomes. Explore rewriting sessions, published judgments, and deep academic analyses.
+                        </p>
+                        <a href="#case-database" class="fj-hero-cta">Explore Database &rarr;</a>
+                    </div>
                 </div>
             </div>
         </section>
