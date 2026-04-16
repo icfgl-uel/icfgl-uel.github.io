@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VFJ 2025 - Vietnamese Feminist Judgments Conference</title>
+    <meta name="description" content="Conference on Vietnamese Feminist Judgments 2025 (VFJ 2025) — organized by the University of Economics and Law, Ho Chi Minh City.">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../header-footer.css">
+    <style>
+        .vfj-hero {
+            background: linear-gradient(135deg, #f3f9ff 0%, #eef5ff 58%, #ffebf2 100%);
+            padding: 56px 5%;
+        }
+        .vfj-hero-shell {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .vfj-hero-copy {
+            background: rgba(255,255,255,0.82);
+            border: 1px solid rgba(20,78,140,0.1);
+            border-radius: 12px;
+            padding: 34px;
+            box-shadow: 0 18px 36px rgba(20,78,140,0.08);
+        }
+        .vfj-kicker {
+            margin: 0 0 10px;
+            color: var(--pink);
+            font: 700 var(--font-size-xs)/1 'Lato', sans-serif;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+        .vfj-hero-copy h1 {
+            margin: 0 0 16px;
+            color: var(--dark-blue);
+            font-size: clamp(2.1rem, 4vw, 3.2rem);
+            line-height: 1.1;
+        }
+        .vfj-hero-copy p {
+            margin: 0;
+            color: var(--text-dark);
+            line-height: 1.75;
+            font-size: 1rem;
+        }
+        .vfj-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px 24px;
+            margin-top: 24px;
+            border-top: 1px solid rgba(20,78,140,0.12);
+            padding-top: 22px;
+        }
+        .vfj-meta-item {
+            border-left: 3px solid var(--pink);
+            padding-left: 14px;
+            font-size: 0.9rem;
+        }
+        .vfj-meta-item strong { display: block; font-weight: 700; color: var(--dark-blue); margin-bottom: 3px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; }
+        .vfj-meta-item span { color: var(--text-dark); line-height: 1.5; }
+        @media (max-width: 560px) { .vfj-meta { grid-template-columns: 1fr; } }
+
+        /* Resource section */
+        .vfj-section {
+            background: var(--light-blue);
+            padding: 64px 5% 72px;
+        }
+        .vfj-section-shell {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+        .vfj-section-head {
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .vfj-section-head h2 {
+            margin: 0 0 12px;
+            color: var(--dark-blue);
+            font-size: clamp(1.9rem, 3vw, 2.5rem);
+        }
+        .vfj-section-head p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: var(--text-dark);
+            line-height: 1.75;
+        }
+
+        /* Card grid */
+        .vfj-resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+        @media (max-width: 992px) { .vfj-resource-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px)  { .vfj-resource-grid { grid-template-columns: 1fr; } }
+
+        .vfj-resource-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 220px;
+            padding: 28px;
+            text-decoration: none;
+            background: rgba(255,255,255,0.88);
+            border: 1px solid rgba(20,78,140,0.11);
+            border-top: 5px solid var(--dark-blue);
+            border-radius: 18px;
+            box-shadow: 0 14px 30px rgba(20,78,140,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .vfj-resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 38px rgba(20,78,140,0.13);
+            background: #fff;
+        }
+        .vfj-resource-card:hover h3 { color: var(--pink); }
+        .vfj-resource-card:hover .vfj-resource-arrow { color: var(--dark-blue); transform: translateX(4px); }
+        .vfj-resource-card.is-pink { border-top-color: var(--pink); }
+        .vfj-resource-index {
+            margin-bottom: 18px;
+            color: var(--pink);
+            font: 700 var(--font-size-xs)/1 'Lato', sans-serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .vfj-resource-card h3 {
+            margin: 0 0 14px;
+            color: var(--dark-blue);
+            font-size: 1.2rem;
+            line-height: var(--line-height-tight);
+            transition: color 0.2s;
+        }
+        .vfj-resource-card p {
+            margin: 0;
+            color: var(--text-dark);
+            line-height: var(--line-height-base);
+            font-size: 0.95rem;
+        }
+        .vfj-resource-arrow {
+            margin-top: auto;
+            padding-top: 20px;
+            color: var(--pink);
+            font-weight: 700;
+            font-size: var(--font-size-sm);
+            transition: color 0.2s, transform 0.2s;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="global-header"></div>
+
+    <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <a href="../../index.html">Our Works</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <a href="../index.html">ICFGL</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <span>VFJ 2025</span>
+    </div>
+
+    <!-- Hero -->
+    <section class="vfj-hero">
+        <div class="vfj-hero-shell">
+            <div class="vfj-hero-copy">
+                <p class="vfj-kicker">Conference on Vietnamese Feminist Judgments</p>
+                <h1>VFJ 2025</h1>
+                <p>
+                    The Conference on Vietnamese Feminist Judgments 2025 (VFJ 2025) is a national academic event
+                    organized by the University of Economics and Law (UEL), Vietnam National University
+                    Ho Chi Minh City, within the framework of the project <em>Integrating Feminist Legal Theory into
+                    Legal Education, Research and Practice</em>, funded by Rosa-Luxemburg-Stiftung Hanoi Office.
+                </p>
+                <div class="vfj-meta">
+                    <div class="vfj-meta-item">
+                        <strong>Date &amp; Time</strong>
+                        <span>01 August 2025 &nbsp;&mdash;&nbsp; 08:00–16:30</span>
+                    </div>
+                    <div class="vfj-meta-item">
+                        <strong>Venue</strong>
+                        <span>Room A114, University of Economics and Law</span>
+                    </div>
+                    <div class="vfj-meta-item">
+                        <strong>Organiser</strong>
+                        <span>UEL, Vietnam National University Ho Chi Minh City</span>
+                    </div>
+                    <div class="vfj-meta-item">
+                        <strong>Funder</strong>
+                        <span>Rosa-Luxemburg-Stiftung Hanoi Office</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource cards -->
+    <section class="vfj-section">
+        <div class="vfj-section-shell">
+            <div class="vfj-section-head">
+                <h2>VFJ 2025 Resources</h2>
+                <p>
+                    Browse conference materials, submission guidelines, and reference documents below.
+                </p>
+            </div>
+
+            <div class="vfj-resource-grid">
+
+                <!-- 01 Photos -->
+                <a class="vfj-resource-card" href="https://drive.google.com/drive/u/0/folders/1T861r9XDZCZFkxKNyDw1t8kCwd0Cothu" target="_blank" rel="noopener noreferrer">
+                    <div class="vfj-resource-index">01</div>
+                    <h3>Conference Photos</h3>
+                    <p>Open the shared photo folder documenting conference moments, participants, and activities from VFJ 2025.</p>
+                    <span class="vfj-resource-arrow">Open Folder &rarr;</span>
+                </a>
+
+                <!-- 02 Programme -->
+                <a class="vfj-resource-card is-pink" href="https://lkt.uel.edu.vn/Resources/Docs/SubDomain/lkt/H%E1%BB%99i%20th%E1%BA%A3o/Final_Tentative%20agenda_VFJ2025.pdf" target="_blank" rel="noopener noreferrer">
+                    <div class="vfj-resource-index">02</div>
+                    <h3>Conference Programme</h3>
+                    <p>Download the final tentative agenda for VFJ 2025, including session details and schedule.</p>
+                    <span class="vfj-resource-arrow">Open PDF &rarr;</span>
+                </a>
+
+                <!-- 03 Abstract Proceedings -->
+                <a class="vfj-resource-card" href="https://lkt.uel.edu.vn/Resources/Docs/SubDomain/lkt/H%E1%BB%99i%20th%E1%BA%A3o/Ky%CC%89%20ye%CC%82%CC%81u%20To%CC%81m%20ta%CC%86%CC%81t_VFJ2025.pdf" target="_blank" rel="noopener noreferrer">
+                    <div class="vfj-resource-index">03</div>
+                    <h3>Abstract Proceedings</h3>
+                    <p>Access the abstract proceedings volume containing summaries of papers presented at VFJ 2025.</p>
+                    <span class="vfj-resource-arrow">Open PDF &rarr;</span>
+                </a>
+
+                <!-- 04 Invitation to Attend -->
+                <a class="vfj-resource-card is-pink" href="invitation-to-attend.html">
+                    <div class="vfj-resource-index">04</div>
+                    <h3>Invitation to Attend</h3>
+                    <p>Read the official invitation to participate in VFJ 2025, including logistics and registration details.</p>
+                    <span class="vfj-resource-arrow">Open Page &rarr;</span>
+                </a>
+
+                <!-- 05 Reference Materials -->
+                <a class="vfj-resource-card" href="reference-materials.html">
+                    <div class="vfj-resource-index">05</div>
+                    <h3>Reference Materials</h3>
+                    <p>Access reference judgments and books recommended for conference participants and contributors.</p>
+                    <span class="vfj-resource-arrow">Open Page &rarr;</span>
+                </a>
+
+                <!-- 06 Full Paper Rules -->
+                <a class="vfj-resource-card is-pink" href="full-paper-rules.html">
+                    <div class="vfj-resource-index">06</div>
+                    <h3>Full Paper Submission Rules</h3>
+                    <p>Review the guidelines for submitting full papers, including content requirements and two authorial approaches.</p>
+                    <span class="vfj-resource-arrow">Open Page &rarr;</span>
+                </a>
+
+                <!-- 07 Conference Info -->
+                <a class="vfj-resource-card" href="conference-info.html">
+                    <div class="vfj-resource-index">07</div>
+                    <h3>Conference Information</h3>
+                    <p>Learn about the conference background, format, outputs, and key timeline milestones.</p>
+                    <span class="vfj-resource-arrow">Open Page &rarr;</span>
+                </a>
+
+                <!-- 08 Abstract Rules -->
+                <a class="vfj-resource-card is-pink" href="abstract-rules.html">
+                    <div class="vfj-resource-index">08</div>
+                    <h3>Abstract Submission Rules</h3>
+                    <p>Read the submission guidelines for abstracts, including format, language, and deadline requirements.</p>
+                    <span class="vfj-resource-arrow">Open Page &rarr;</span>
+                </a>
+
+                <!-- 09 Invitation for Abstracts -->
+                <a class="vfj-resource-card" href="invitation-abstracts.html">
+                    <div class="vfj-resource-index">09</div>
+                    <h3>Invitation for Abstract Submission</h3>
+                    <p>Read the formal call inviting researchers, academics, and practitioners to submit abstracts for VFJ 2025.</p>
+                    <span class="vfj-resource-arrow">Open Page &rarr;</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="global-footer"></div>
+    <script src="../../../js/components.js"></script>
+</body>
+</html>

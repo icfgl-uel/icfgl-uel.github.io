@@ -291,8 +291,74 @@
 
         .about-section-intro {
             line-height: 1.72 !important;
-            margin-bottom: 24px !important;
+            margin-bottom: 10px !important;
             color: var(--text-dark);
+        }
+
+        .about-work-links {
+            margin-top: -6px;
+        }
+
+        .who-we-are-intro {
+            margin-bottom: 28px !important;
+        }
+
+        .partner-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: clamp(56px, 7vw, 120px);
+            row-gap: 28px;
+            align-items: start;
+        }
+
+        .partner-card {
+            gap: 14px;
+        }
+
+        .partner-card .partner-title {
+            margin: 0;
+            min-height: 2.4em;
+            color: var(--dark-blue);
+            font-size: clamp(1.55rem, 1.7vw, 1.85rem);
+            line-height: 1.16;
+            text-wrap: pretty;
+        }
+
+        .partner-card--rls .partner-title {
+            max-width: 420px;
+        }
+
+        .partner-card--uel .partner-title {
+            max-width: 560px;
+            padding-top: 0.72em;
+        }
+
+        .partner-card .video-responsive,
+        .partner-card p {
+            margin-top: 0;
+        }
+
+        .about-work-links .work-card h3 a {
+            color: var(--dark-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-family: Cambria, Georgia, serif !important;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+        }
+
+        .about-work-links .work-card h3 a:hover,
+        .about-work-links .work-card h3 a:focus-visible {
+            color: var(--pink);
+        }
+
+        a.heading-pink {
+            transition: color 0.2s ease;
+        }
+
+        a.heading-pink:hover,
+        a.heading-pink:focus-visible {
+            color: var(--dark-blue) !important;
         }
 
         .about-footer {
@@ -480,6 +546,27 @@
             }
         }
 
+        @media (max-width: 900px) {
+            .who-we-are-intro {
+                margin-bottom: 22px !important;
+            }
+
+            .partner-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .partner-card .partner-title {
+                min-height: 0;
+                max-width: none;
+                font-size: 1.45rem;
+            }
+
+            .partner-card--uel .partner-title {
+                padding-top: 0;
+            }
+        }
+
         .overview-box,
         .work-card,
         .partner-card,
@@ -527,7 +614,7 @@
     <section style="background-color: #ffebf2; padding: 30px 5% 30px 5%;">
         <div class="container two-col-grid about-animate" style="align-items: center;">
             <div class="about-animate about-animate-delay-1">
-                <h2 class="heading-pink">ABOUT US</h2>
+                <h2><a href="about.html" class="heading-pink">ABOUT US</a></h2>
                 <p
                     style="font-size: 1.0em; line-height: 1.7; color: var(--text-dark); margin-bottom: 20px; text-align: justify;">
                    The Feminist Legal Theory Project at the University of Economics and Law (UEL) is a multi-year academic initiative dedicated to advancing feminist jurisprudence in Vietnam. Since its launch in 2021, with the support of the Rosa Luxemburg Stiftung Hanoi Office (RLS), the project has introduced feminist legal theory into Vietnamese legal education, research, and professional dialogue, helping to expand legal discourse beyond formal equality toward more substantive understandings of gender justice. 
@@ -637,14 +724,15 @@
         </div>
     </section>
 
-    <section class="section-pink-bg" style="background-color: #f3f9ff; padding-top: 34px;">
+    <section class="section-pink-bg" style="background-color: #f3f9ff; padding-top: 14px;">
         <div class="container about-animate about-animate-delay-2">
-            <h2 class="heading-pink">WHAT WE DO</h2>
+            <br/>
+            <h2 class="heading-pink" style="margin-bottom: 12px;">WHAT WE DO</h2>
             <p class="about-section-intro">We focus on advancing Feminist Legal Theory in Vietnam through research, teaching, academic dialogue, and collaborative initiatives. It brings together scholars, students, and practitioners to develop feminist legal scholarship, strengthen gender-sensitive legal education, and promote more inclusive and socially responsive approaches to law.</p>
 
-            <div class="work-grid">
+            <div class="work-grid about-work-links">
                 <div class="work-card about-animate about-animate-delay-1">
-                    <h3>International Conference on Feminism, Gender and Law</h3>
+                    <h3><a href="../works/icfgl/">International Conference on Feminism, Gender and Law</a></h3>
                     <img src="../images/common/3.JPG" alt="International Conference on Feminism, Gender and Law" style="height: 180px; width: 100%; object-fit: cover; border-radius: 8px;">
                     <p style="margin-top: 15px; color:#144e8c">Forums gather practitioners and researchers for intensive dialogue on methodology, case selection, and the politics of legal reform in contexts where feminist theory still meets institutional resistance.
 
@@ -655,14 +743,14 @@
                     </div>
                 </div>
                 <div class="work-card about-animate about-animate-delay-2">
-                    <h3>Feminist Judgments</h3>
+                    <h3><a href="../works/feminist-judgments/">Feminist Judgments</a></h3>
                     <img src="../images/common/6.png" alt="Feminist Judgments" style="height: 180px; width: 100%; object-fit: cover; border-radius: 8px;">
                     <p style="margin-top: 15px; color:#144e8c">Through the selection and rewriting of judgments, contributing authors
                         offer alternative interpretations of the law, highlighting the role of gender, women's
                         experiences, and broader social factors in judicial reasoning and legal application.</p>
                 </div>
                 <div class="work-card about-animate about-animate-delay-3">
-                    <h3>Gender Justice Moot Court</h3>
+                    <h3><a href="../works/moot-court/">Gender Justice Moot Court</a></h3>
                     <img src="../images/mootcourt/1.jpg" alt="Gender Justice Moot Court" style="height: 180px; width: 100%; object-fit: cover; border-radius: 8px;">
                     <p style="margin-top: 15px; color:#144e8c">Through a hybrid E-Court model combining virtual hearings and a live Grand Finale, the programme equips law students with practical, digital, and analytical competencies for modern legal practice.</p>
 
@@ -674,14 +762,14 @@
     <section style="background-color: #ffebf2; padding: 42px 5% 30px 5%;">
         <div class="container about-animate about-animate-delay-3">
             <h2 class="heading-pink" style="margin-bottom: 20px;">WHO WE ARE</h2>
-            <p class="about-section-intro">
+            <p class="about-section-intro who-we-are-intro">
                 The Rosa Luxemburg Stiftung (RLS) and the University of Economics and Law (UEL) have established a
                 long-term academic partnership aimed at introducing and institutionalizing Feminist Legal Theory in
                 Vietnam.</p>
 
             <div class="two-col-grid partner-grid">
-                <div class="partner-card about-animate about-animate-delay-1">
-                    <h3 style="color: var(--dark-blue); margin-bottom: 15px;">Rosa Luxemburg Stiftung Southeast Asia, Hanoi office</h3>
+                <div class="partner-card partner-card--rls about-animate about-animate-delay-1">
+                    <h3 class="partner-title">Rosa Luxemburg Stiftung<br>Southeast Asia, Hanoi office</h3>
                     <div class="video-responsive">
                         <iframe src="https://www.youtube.com/embed/Q1MxYmkIDUc" title="YouTube video player"
                             frameborder="0"
@@ -691,8 +779,8 @@
                     <p style="line-height: 1.75; color: var(--text-dark);">RLS plays a central role as an international partner and funding institution, providing financial support, academic exchange opportunities, and strategic guidance. Through its commitment to social justice, political education, and international solidarity, RLS facilitates connections between Vietnamese scholars and global feminist legal scholarship.</p>
 
                 </div>
-                <div class="partner-card about-animate about-animate-delay-2">
-                    <h3 style="color: var(--dark-blue); margin-bottom: 15px;">University of Economics and Law (UEL)</h3>
+                <div class="partner-card partner-card--uel about-animate about-animate-delay-2">
+                    <h3 class="partner-title">University of Economics and Law (UEL)</h3>
                     <div class="video-responsive">
                         <iframe src="https://www.youtube.com/embed/UiH8nccHQTA" title="YouTube video player"
                             frameborder="0"

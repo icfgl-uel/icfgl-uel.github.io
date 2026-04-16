@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UEL Special Lecture Series 2022 - UEL Feminist Legal Theory Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../header-footer.css">
+    <style>
+        :root {
+            --primary-blue: #144e8c;
+            --accent-pink: #F64183;
+            --bg-light: #f8faff;
+            --section-heading-size: clamp(2.3rem, 4.2vw, 3rem);
+        }
+
+        .subpage-hero {
+            padding: 120px 5% 80px;
+            background: url('../../images/workshops/UELSpecialSeries-2022/1.jpg') no-repeat center center/cover;
+            color: #fff;
+            position: relative;
+            text-align: center;
+        }
+
+        .subpage-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 58, 110, 0.85);
+            z-index: 1;
+        }
+
+        .hero-shell {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-kicker {
+            display: block;
+            margin-bottom: 20px;
+            color: #feb3ce;
+            font: 700 1rem/1 'Lato', sans-serif;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+
+        .subpage-hero h1 {
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #ffffff !important;
+        }
+
+        .page-content {
+            padding: 80px 5%;
+            background: #fff;
+        }
+
+        .content-shell {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Cambria', Georgia, serif;
+            font-size: var(--section-heading-size);
+            color: var(--primary-blue);
+            margin: 60px 0 30px;
+            text-align: center;
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 50px;
+            text-align: justify;
+        }
+
+        .lecture-overview {
+            margin: 24px 0 70px;
+        }
+
+        .lecture-overview-title {
+            margin: 0 0 20px;
+            text-align: center;
+            color: var(--accent-pink);
+            font-family: 'Cambria', Georgia, serif;
+            font-size: var(--section-heading-size);
+            line-height: 1.06;
+            text-transform: uppercase;
+        }
+
+        .lecture-overview-subtitle {
+            margin: 0 auto 40px;
+            max-width: 1080px;
+            text-align: center;
+            color: var(--primary-blue);
+            font-family: 'Cambria', Georgia, serif;
+            font-size: var(--section-heading-size);
+            line-height: 1.18;
+        }
+
+        .lecture-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            max-width: 1020px;
+            margin: 0 auto 38px;
+        }
+
+        .lecture-meta-card {
+            padding: 26px 28px;
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: 0 18px 42px rgba(20, 78, 140, 0.08);
+            border-top: 4px solid var(--primary-blue);
+            text-align: center;
+        }
+
+        .lecture-meta-card strong {
+            display: block;
+            margin-bottom: 14px;
+            color: #555;
+            font-size: 1.02rem;
+            font-weight: 400;
+        }
+
+        .lecture-meta-card span {
+            display: block;
+            color: #2f3f58;
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.55;
+        }
+
+        .lecture-meta-card--pink {
+            border-top-color: var(--accent-pink);
+        }
+
+        .lecture-overview-note {
+            max-width: 1020px;
+            margin: 0 auto;
+            padding: 34px 40px;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 18px 42px rgba(20, 78, 140, 0.07);
+            border-left: 5px solid var(--accent-pink);
+            color: #303d53;
+            font-size: 1.06rem;
+            line-height: 1.9;
+        }
+
+        /* Speaker Bio Treatment */
+        .speaker-box {
+            display: grid;
+            grid-template-columns: minmax(300px, 0.88fr) minmax(0, 1.12fr);
+            gap: 42px;
+            background: var(--bg-light);
+            padding: 42px 46px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .speaker-photo-frame {
+            max-width: 360px;
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            background: #fff;
+            border: 1px solid rgba(20, 78, 140, 0.1);
+        }
+
+        .speaker-photo-frame img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .speaker-bio h3 {
+            font-family: 'Cambria', Georgia, serif;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .speaker-bio h4 {
+            color: var(--accent-pink);
+            font-size: 1.02rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 22px;
+        }
+
+        .speaker-bio p {
+            line-height: 1.78;
+            color: #555;
+            font-size: 1.08rem;
+            text-align: left;
+            margin: 0;
+        }
+
+        .page-content .content-shell > .intro-text:first-of-type,
+        .page-content .content-shell > .section-title:first-of-type,
+        .page-content .content-shell > .speaker-box {
+            display: none;
+        }
+
+        .speakers-showcase {
+            margin: 20px 0 10px;
+        }
+
+        .speakers-title {
+            margin: 0 0 22px;
+            text-align: center;
+            color: var(--accent-pink);
+            font-family: 'Cambria', Georgia, serif;
+            font-size: var(--section-heading-size);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .speakers-lead {
+            max-width: 980px;
+            margin: 0 auto 48px;
+            text-align: center;
+            font-size: 1.08rem;
+            line-height: 1.9;
+            color: #303d53;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 46px;
+        }
+
+        .speaker-showcase-card {
+            padding: 28px 30px 30px;
+            border-radius: 24px;
+            background: linear-gradient(180deg, rgba(235, 244, 255, 0.88) 0%, rgba(240, 246, 255, 0.96) 100%);
+            box-shadow: 0 18px 42px rgba(20, 78, 140, 0.08);
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .speaker-showcase-card--pink {
+            background: linear-gradient(180deg, rgba(255, 244, 249, 0.86) 0%, rgba(248, 244, 255, 0.94) 100%);
+            border-top-color: var(--accent-pink);
+        }
+
+        .speaker-showcase-card h3 {
+            margin: 0 0 14px;
+            font-family: 'Cambria', Georgia, serif;
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            line-height: 1.15;
+        }
+
+        .speaker-showcase-role {
+            margin: 0 0 24px;
+            color: var(--accent-pink);
+            font-size: 0.98rem;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .speaker-showcase-media {
+            margin: 0 0 24px;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 14px 32px rgba(20, 78, 140, 0.08);
+        }
+
+        .speaker-showcase-media img {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .speaker-showcase-copy {
+            margin: 0;
+            color: #2f3f58;
+            font-size: 1.02rem;
+            line-height: 1.88;
+        }
+
+        .speakers-showcase {
+            margin: 70px 0 10px;
+        }
+
+        .speakers-title {
+            margin: 0 0 22px;
+            text-align: center;
+            color: var(--accent-pink);
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .speakers-lead {
+            max-width: 980px;
+            margin: 0 auto 48px;
+            text-align: center;
+            font-size: 1.08rem;
+            line-height: 1.9;
+            color: #303d53;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 46px;
+        }
+
+        .speaker-showcase-card {
+            padding: 28px 30px 30px;
+            border-radius: 24px;
+            background: linear-gradient(180deg, rgba(235, 244, 255, 0.88) 0%, rgba(240, 246, 255, 0.96) 100%);
+            box-shadow: 0 18px 42px rgba(20, 78, 140, 0.08);
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .speaker-showcase-card--pink {
+            background: linear-gradient(180deg, rgba(255, 244, 249, 0.86) 0%, rgba(248, 244, 255, 0.94) 100%);
+            border-top-color: var(--accent-pink);
+        }
+
+        .speaker-showcase-card h3 {
+            margin: 0 0 14px;
+            font-family: 'Cambria', Georgia, serif;
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            line-height: 1.15;
+        }
+
+        .speaker-showcase-role {
+            margin: 0 0 24px;
+            color: var(--accent-pink);
+            font-size: 0.98rem;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .speaker-showcase-media {
+            margin: 0 0 24px;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 14px 32px rgba(20, 78, 140, 0.08);
+        }
+
+        .speaker-showcase-media img {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .speaker-showcase-copy {
+            margin: 0;
+            color: #2f3f58;
+            font-size: 1.02rem;
+            line-height: 1.88;
+        }
+
+        /* Program Table */
+        .program-table {
+            width: min(1020px, 100%);
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .program-table th {
+            background: var(--primary-blue);
+            color: #fff;
+            padding: 20px;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        .program-table td {
+            padding: 25px 20px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .program-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .date-col { width: 180px; font-weight: 700; color: var(--accent-pink); }
+        .session-col { width: 150px; font-weight: 600; color: var(--primary-blue); }
+
+        /* Themes Grid */
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .theme-card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            display: flex;
+            gap: 20px;
+        }
+
+        .theme-icon {
+            font-size: 2rem;
+            color: #f64183;
+            
+            font-weight: 800;
+        }
+
+        .theme-card h4 {
+            font-family: 'Cambria', Georgia, serif;
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .theme-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Field Activity Section */
+        .activity-banner {
+            background:#ffebf2;
+            color: #2f3f58;
+            padding: 52px;
+            border-radius: 34px;
+            margin-top: 80px;
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .activity-kicker {
+            display: inline-block;
+            margin-bottom: 18px;
+            color: var(--accent-pink);
+            font: 700 0.9rem/1 'Lato', sans-serif;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .activity-banner h2 {
+            font-family: 'Cambria', Georgia, serif;
+            font-size: var(--section-heading-size);
+            line-height: 1.12;
+            color: var(--primary-blue);
+            margin-bottom: 24px;
+        }
+
+        .activity-banner p {
+            line-height: 1.82;
+            color: #303d53;
+            text-align: left;
+            margin: 0 0 22px;
+        }
+
+        .activity-banner img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(20, 78, 140, 0.16);
+        }
+
+        /* Gallery Row */
+        .gallery-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .gallery-card {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            display: block;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 20px;
+            background: #fff;
+            color: var(--primary-blue);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        @media (max-width: 992px) {
+            .speaker-box, .activity-banner, .gallery-row {
+                grid-template-columns: 1fr;
+            }
+            .themes-grid {
+                grid-template-columns: 1fr;
+            }
+            .lecture-meta-grid {
+                grid-template-columns: 1fr;
+            }
+            .speaker-box {
+                padding: 32px 24px;
+                gap: 28px;
+            }
+            .speaker-photo-frame {
+                max-width: 420px;
+            }
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="global-header"></div>
+
+    <div class="breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <a href="../index.html">Our Works</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <a href="index.html">Workshops</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <span>UEL Special Lecture Series 2022</span>
+    </div>
+
+    <section class="subpage-hero">
+        <div class="hero-shell">
+            <span class="hero-kicker">Special Academic Event</span>
+            <h1>Women in the Law: The Law of Gender Equality in the United States</h1>
+            <p style="font-size: 1.25rem;">01–04 August 2022 | UEL, Ho Chi Minh City</p>
+        </div>
+    </section>
+
+    <div class="page-content">
+        <div class="content-shell">
+            <section class="lecture-overview">
+                <h2 class="lecture-overview-title">UEL Special Lecture Series 2022</h2>
+<br/>
+                <div class="lecture-meta-grid">
+                    <div class="lecture-meta-card">
+                        <strong>🗓 Dates</strong>
+                        <span>01-04 August 2022</span>
+                    </div>
+                    <div class="lecture-meta-card">
+                        <strong>📍 Location</strong>
+                        <span>UEL, Thu Duc City &amp; Can Gio District</span>
+                    </div>
+                    <div class="lecture-meta-card lecture-meta-card--pink">
+                        <strong>📖 Format</strong>
+                        <span>On-site Lectures &amp; Online Seminar</span>
+                    </div>
+                </div>
+
+                <div class="lecture-overview-note">
+                    The 2022 Special Lecture Series was organized within the framework of the project by the University
+                    of Economics and Law (UEL), VNU-HCM, in collaboration with the Rosa Luxemburg Stiftung Southeast Asia
+                    Office. The programme introduced key issues concerning women in law and the law of gender equality in
+                    the United States, while also creating an academic space for discussion on feminist legal theory and
+                    interdisciplinary approaches to legal research.
+                </div>
+            </section>
+
+            <p class="intro-text">
+                The 2022 Special Lecture Series was organized within the framework of the project by the University of Economics and Law (UEL), VNU-HCM, in collaboration with the Rosa Luxemburg Stiftung Southeast Asia Office. The programme introduced key issues concerning women in law and the law of gender equality in the United States, while also creating an academic space for discussion on feminist legal theory and interdisciplinary approaches to legal research.
+            </p>
+
+            <section class="speakers-showcase">
+                <h2 class="speakers-title">Speakers</h2>
+                <p class="speakers-lead">
+                    The programme brought together legal scholars and gender experts, with participation from lecturers,
+                    doctoral researchers, postgraduate students, and law students from different legal education institutions
+                    in Vietnam.
+                </p>
+
+                <div class="speakers-grid">
+                    <article class="speaker-showcase-card">
+                        <h3>Prof. Elizabeth Porter</h3>
+                        <p class="speaker-showcase-role">Interim Dean, Law School, University of Washington</p>
+                        <figure class="speaker-showcase-media">
+                            <img src="../../images/workshops/UELSpecialSeries-2022/workshops-elizabeth-porter.jpg" alt="Prof. Elizabeth Porter">
+                        </figure>
+                        <p class="speaker-showcase-copy">
+                            Prof. Porter is an Associate Professor and Charles I. Stone Professor of Law. Her research,
+                            published in leading journals including the Columbia Law Review, New York University Law Review,
+                            and Cornell Law Review, focuses on civil litigation. She teaches Civil Procedure, Complex Litigation,
+                            Torts, and Federal Courts, and received a University-wide Distinguished Teaching Award in 2014.
+                        </p>
+                    </article>
+
+                    <article class="speaker-showcase-card speaker-showcase-card--pink">
+                        <h3>Ms. Elena Caruso</h3>
+                        <p class="speaker-showcase-role">PhD Candidate in Law, University of Kent, UK</p>
+                        <figure class="speaker-showcase-media">
+                            <img src="../../images/workshops/UELSpecialSeries-2022/workshops-elena-caruso.jpg" alt="Elena Caruso">
+                        </figure>
+                        <p class="speaker-showcase-copy">
+                            Elena Caruso's research focuses on reproductive rights, social movements, and the civil law
+                            tradition, drawing on feminist legal scholarship and the sociology of law. She has held visiting
+                            positions at Osgoode Hall Law School, Cardiff School of Law and Politics, and the University of Bonn.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <h2 class="section-title">Distinguished Speakers</h2>
+            
+            <!-- Speaker Porter -->
+            <div class="speaker-box">
+                <div class="speaker-photo-frame">
+                    <img src="../../images/workshops/UELSpecialSeries-2022/workshops-elizabeth-porter.jpg" alt="Prof. Elizabeth Porter">
+                </div>
+                <div class="speaker-bio">
+                    <h3>Prof. Elizabeth Porter</h3>
+                    <h4>Interim Dean, Law School, University of Washington</h4>
+                    <p>Prof. Porter is an Associate Professor and Charles I. Stone Professor of Law. Her research, published in leading journals including the Columbia Law Review, New York University Law Review, and Cornell Law Review, focuses on civil litigation. She teaches Civil Procedure, Complex Litigation, Torts, and Federal Courts, and received a University-wide Distinguished Teaching Award in 2014.</p>
+                </div>
+            </div>
+
+            <!-- Speaker Elena -->
+            <div class="speaker-box">
+                <div class="speaker-photo-frame">
+                    <img src="../../images/workshops/UELSpecialSeries-2022/workshops-elena-caruso.jpg" alt="Elena Caruso">
+                </div>
+                <div class="speaker-bio">
+                    <h3>Ms. Elena Caruso</h3>
+                    <h4>PhD Candidate in Law, University of Kent, UK</h4>
+                    <p>Elena Caruso’s research focuses on reproductive rights, social movements, and the civil law tradition, drawing on feminist legal scholarship and the sociology of law. She has held visiting positions at Osgoode Hall Law School, Cardiff School of Law and Politics, and the University of Bonn.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Lecture Programme</h2>
+            <table class="program-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Session</th>
+                        <th>Theme & Activity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-col">01 August 2022</td>
+                        <td class="session-col">Session 1</td>
+                        <td><strong>Prof. Elizabeth Porter</strong> — Introduction to Women in the Law</td>
+                    </tr>
+                    <tr>
+                        <td class="date-col" rowspan="2">02 August 2022</td>
+                        <td class="session-col">Session 2 (AM)</td>
+                        <td><strong>Prof. Elizabeth Porter</strong> — The Law of Gender Equality in the U.S.</td>
+                    </tr>
+                    <tr>
+                        <td class="session-col">Seminar (PM)</td>
+                        <td><strong>Elena Caruso (University of Kent, UK)</strong> — Feminist Legal Theory (Online)</td>
+                    </tr>
+                    <tr>
+                        <td class="date-col">03 August 2022</td>
+                        <td class="session-col">Session 3</td>
+                        <td><strong>Prof. Elizabeth Porter</strong> — Constitutional Rights and Gender</td>
+                    </tr>
+                    <tr>
+                        <td class="date-col" rowspan="2">04 August 2022</td>
+                        <td class="session-col">Field (AM)</td>
+                        <td><strong>Can Gio Study Visit</strong> — Mangrove Protection and Women’s Livelihood Development</td>
+                    </tr>
+                    <tr>
+                        <td class="session-col">Closing (PM)</td>
+                        <td>Programme Review, Participant Feedback & Certificate Awarding</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="section-title">Proceedings & Core Themes</h2>
+            <div class="themes-grid">
+                <div class="theme-card">
+                    <div class="theme-icon">01</div>
+                    <div>
+                        <h4>History of feminist movements</h4>
+                        <p>An overview of the development of feminist movements across different legal and historical periods in the U.S.</p>
+                    </div>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-icon">02</div>
+                    <div>
+                        <h4>U.S. Supreme Court decisions</h4>
+                        <p>Case studies on key judgments addressing gender equality within the U.S. legal system.</p>
+                    </div>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-icon">03</div>
+                    <div>
+                        <h4>Civil rights & constitutional law</h4>
+                        <p>Examination of constitutional issues and fundamental rights from a gender and equality perspective.</p>
+                    </div>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-icon">04</div>
+                    <div>
+                        <h4>Legal methodology</h4>
+                        <p>Application of feminist legal theory to legal research methodology and the interpretation of law.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-banner">
+                <div>
+                    <span class="activity-kicker">Field Activity</span>
+                    <h2>Mangrove Protection and Women's Livelihood Development</h2>
+                    <p>On 04 August 2022, the programme included a field visit to Can Gio District, connecting academic discussion with practice through engagement with the mangrove ecosystem, the lives of local women, and exchanges with local authorities and social organizations.</p>
+                    <p>The visit brought together scholars, experts, and more than 20 participants from various law schools and legal education institutions across Vietnam.</p>
+                </div>
+                <img src="../../images/workshops/UELSpecialSeries-2022/workshops-cangio.jpg" alt="Can Gio Visit">
+            </div>
+
+            <h2 class="section-title">Visual Archive</h2>
+            <div class="gallery-row">
+                <div class="gallery-card">
+                    <img src="../../images/workshops/UELSpecialSeries-2022/workshops-recap.jpg" alt="Recap 1">
+                    <div class="gallery-caption">Prof. Elizabeth Porter with UEL representatives</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="../../images/workshops/UELSpecialSeries-2022/1.jpg" alt="Recap 2">
+                    <div class="gallery-caption">Field Activity — Participants at Can Gio Protection Forest</div>
+                </div>
+                <div class="gallery-card" style="grid-column: 1 / -1;">
+                    <img src="../../images/workshops/UELSpecialSeries-2022/recap.jpg" alt="Recap 3" style="height: 500px;">
+                    <div class="gallery-caption">The Recap Of UEL Special Lecture Series 2022</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="global-footer"></div>
+    <script src="../../js/components.js"></script>
+</body>
+
+</html>

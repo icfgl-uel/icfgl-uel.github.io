@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="site-footer-col site-footer-contact">
                         <h4>Contact Information</h4>
                         <p class="site-footer-title">University of Economics and Law (UEL), <span style="white-space: nowrap;">VNU-HCM</span><br>Feminist Legal Theory Project</p>
-                        <p>669 National Highway 1, Linh Xuan Ward, Thu Duc City, Ho Chi Minh City, Vietnam</p>
+                        <p>669 Do Muoi Street, Quarter 6 (formerly Quarter 3), Linh Xuan Ward, Ho Chi Minh City, Vietnam</p>
                         <p><span class="site-footer-title">Email Inquiries</span><br><a href="mailto:feminist.project@uel.edu.vn" class="site-footer-email">feminist.project@uel.edu.vn</a></p>
                     </div>
                 </div>
@@ -71,23 +71,41 @@ document.addEventListener("DOMContentLoaded", () => {
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = headerHTML;
         
-        // Highlight active nav link
-        const currentPath = window.location.pathname;
+        // Highlight active nav link without marking every nested Works item.
+        const normalizePath = (path) => {
+            let normalized = path.replace(/\\/g, "/").replace(/\/index\.html$/, "/");
+            if (!normalized.endsWith("/") && !normalized.split("/").pop().includes(".")) {
+                normalized += "/";
+            }
+            return normalized;
+        };
+
+        const currentPath = normalizePath(window.location.pathname);
+        const siteRootPath = normalizePath(new URL(rootPath || "./", window.location.href).pathname);
+        const toSiteRelative = (path) => {
+            const normalized = normalizePath(path);
+            return normalized.startsWith(siteRootPath)
+                ? normalized.slice(siteRootPath.length)
+                : normalized.replace(/^\/+/, "");
+        };
+        const currentRelativePath = toSiteRelative(currentPath);
         const navLinks = headerPlaceholder.querySelectorAll('.nav-links a');
         navLinks.forEach(link => {
             const linkHref = link.getAttribute('href');
-            if (linkHref && linkHref !== "#") {
-                // Determine if this link represents the current page directory
-                // It's a simple match for the directory name
-                const linkDir = linkHref.replace(rootPath, "").split('/')[0];
-                const currentPageMatches = currentPath.includes(linkDir) && linkDir !== "";
-                
-                // Very basic active state matching
-                if (link.href === window.location.href || 
-                   (currentPageMatches && linkDir !== "index.html") || 
-                   (currentPath.endsWith('index.html') && linkDir === "index.html" && currentPath.split('/').slice(-2)[0] === "rls") ) {
-                    link.classList.add("nav-current");
-                }
+            if (!linkHref || linkHref === "#") return;
+
+            const linkPath = normalizePath(new URL(linkHref, window.location.href).pathname);
+            const linkRelativePath = toSiteRelative(linkPath);
+            const isDropdownToggle = link.classList.contains("nav-dropdown-toggle");
+            const isHome = linkRelativePath === "" || linkRelativePath === "index.html";
+            const isCurrent =
+                (isHome && currentRelativePath === "") ||
+                (!isHome && currentRelativePath === linkRelativePath) ||
+                (!isHome && !isDropdownToggle && currentRelativePath.startsWith(linkRelativePath)) ||
+                (isDropdownToggle && currentRelativePath.startsWith("works/"));
+
+            if (isCurrent) {
+                link.classList.add("nav-current");
             }
         });
     }

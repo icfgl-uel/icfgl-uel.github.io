@@ -98,15 +98,19 @@ img, video, iframe, .video-responsive {
 .page-main-title,
 .heading-pink,
 .heading-white,
-.archive-hero h1,
-.moot-hero h1 {
+.archive-hero h1 {
+
+
+
+
     font-family: var(--font-heading) !important;
     font-size: 2.5rem !important; /* Chỉnh lại kích thước chuẩn giống trang About Us, không để chữ tự phình to */
     line-height: 1.15 !important;
-    letter-spacing: -0.01em !important;
+    letter-spacing: 0 !important;
     margin-bottom: 24px !important;
     font-weight: 700 !important;
     text-align: left !important;
+    text-wrap: balance;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -114,6 +118,45 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--dark-navy);
     line-height: var(--line-height-tight);
     margin-top: 0;
+    letter-spacing: 0;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: 2.75rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.45rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 900px) {
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.28rem;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+    }
 }
 
 a {
@@ -2620,3 +2663,7 @@ nav::after {
     line-height: var(--line-height-base);
     color: var(--white);
 }
+
+/* --- Section Color Utilities --- */
+.section-ice { background-color: #f3f9ff !important; }
+.section-rose { background-color: #ffebf2 !important; }
