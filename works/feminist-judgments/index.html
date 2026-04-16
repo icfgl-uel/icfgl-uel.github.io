@@ -29,14 +29,14 @@
 
             .academic-hero {
                 position: relative;
-                min-height: calc(100svh - 126px);
+                min-height: calc(100svh - 74px);
                 display: flex;
                 align-items: center;
                 width: 100vw;
                 margin-left: calc(50% - 50vw);
                 margin-right: calc(50% - 50vw);
                 background: #0f1c2d url('../../images/icfgl/2.JPG') no-repeat center center / cover;
-                padding: clamp(42px, 6vh, 72px) 0 clamp(56px, 8vh, 88px);
+                padding: clamp(32px, 5vh, 56px) 0;
                 box-sizing: border-box;
                 color: #fff;
                 overflow: hidden;
@@ -79,8 +79,7 @@
                 z-index: 10;
                 width: 100%;
                 margin: 0 auto;
-                padding: 0 clamp(10px, 1.6vw, 20px);
-                min-height: inherit;
+                padding: 0 clamp(28px, 4vw, 72px);
                 display: flex;
                 align-items: center;
             }
@@ -120,14 +119,23 @@
             }
 
             .hero-title {
-                font-family: 'Cambria', Georgia, serif !important;
+                font-family: Cambria, serif !important;
                 font-size: clamp(3.2rem, 6vw, 5.5rem);
                 line-height: 1.1;
                 font-weight: 700;
                 margin: 0 0 32px 0;
                 color: #fff;
             }
-
+            .hero-title span {
+                display: block;
+                font-family: Cambria, serif !important;
+                font-size: inherit;
+                font-weight: inherit;
+                font-style: inherit;
+                line-height: inherit;
+                letter-spacing: inherit;
+                color: #f9a8d4;
+            }
             .hero-description {
                 grid-area: description;
                 font-size: clamp(1.05rem, 1.5vw, 1.15rem);
@@ -195,16 +203,28 @@
                 position: relative;
                 z-index: 2;
             }
-            .hero-quote-text span {
-                color: var(--pink);
+                .hero-quote-text span {
+                    color: #f9a8d4;
+                    font-weight: 700;
             }
             .hero-quote-source {
+                display: flex;
+                align-items: center;
+                gap: 10px;
                 font-weight: 700;
                 color: rgba(255, 255, 255, 0.6);
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
                 font-size: 0.85rem;
                 margin: 0;
+            }
+            .hero-quote-source::before {
+                content: "";
+                width: 42px;
+                height: 2px;
+                border-radius: 999px;
+                background: var(--pink);
+                flex: 0 0 auto;
             }
 
             @media (max-width: 1024px) {
@@ -220,8 +240,8 @@
                     padding-left: 0;
                 }
                 .academic-hero {
-                    min-height: calc(100svh - 118px);
-                    padding: 40px 0 56px;
+                    min-height: calc(100svh - 74px);
+                    padding: 36px 0;
                 }
                 .hero-title {
                     font-size: clamp(2.8rem, 10vw, 4rem);
@@ -236,8 +256,8 @@
 
             @media (max-width: 640px) {
                 .academic-hero {
-                    min-height: calc(100svh - 104px);
-                    padding: 32px 0 44px;
+                    min-height: calc(100svh - 74px);
+                    padding: 28px 0;
                 }
                 .hero-shell {
                     padding: 0 12px;
@@ -256,7 +276,8 @@
                 <div class="hero-grid">
                     <div class="hero-copy">
                         <span class="archive-eyebrow">Knowledge Assets</span>
-                        <h1 class="hero-title">Feminist Judgments</h1>
+                        <h1 class="hero-title"><i class="fas fa-gavel">Feminist </i> 
+                           <span>Judgments</span></h1>
                     </div>
 
                     <div class="hero-quote-wrap">
@@ -889,8 +910,5 @@
     <script src="../../js/components.js"></script>
 </body>
 </html>
-
-
-
 
 

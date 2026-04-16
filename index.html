@@ -18,7 +18,9 @@
             position: relative;
             width: 100%;
             height: calc(100vh - 74px);
-            min-height: 600px;
+            height: calc(100dvh - 74px);
+            min-height: 560px;
+            max-height: 860px;
             overflow: hidden;
             background: #111;
         }
@@ -64,7 +66,9 @@
         .slide-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(20, 32, 44, 0.65); /* Cinematic academic dark tint */
+            background:
+                linear-gradient(135deg, rgba(20, 58, 103, 0.48) 0%, rgba(58, 111, 184, 0.34) 52%, rgba(246, 65, 131, 0.26) 100%),
+                rgba(13, 28, 48, 0.28);
             z-index: 1;
         }
 
@@ -90,19 +94,42 @@
 
         .hero-title-main {
             font-family: var(--font-heading), 'Cambria', serif !important;
-            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-size: clamp(3.8rem, 6vw, 6.4rem);
             font-weight: 700 !important;
             color: #f8efe6;
-            line-height: 1.1;
+            line-height: 1;
             margin: 0 0 1.25rem 0;
+        }
+
+        .hero-title-nowrap {
+            white-space: nowrap;
+        }
+
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            min-height: 38px;
+            padding: 0 24px;
+            margin: 0 0 24px;
+            border-radius: 999px;
+            background: rgba(134, 58, 110, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-family: 'Lato', sans-serif !important;
+            font-size: 0.82rem;
+            font-weight: 700;
+            line-height: 1 !important;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .hero-subtitle {
             font-family: 'Lato', sans-serif;
-            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-size: clamp(1.1rem, 1.4vw, 1.35rem);
             font-weight: 300;
             color: rgba(255, 255, 255, 0.95);
-            line-height: 1.5;
+            line-height: 1.65;
             margin: 0 0 2.5rem 0;
             max-width: 700px;
         }
@@ -111,19 +138,191 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: var(--pink);
+            background: linear-gradient(135deg, var(--pink), #c23366);
             color: #fff;
             font-size: 1rem;
-            font-weight: 600;
-            padding: 14px 40px;
-            border-radius: 4px;
+            font-weight: 700;
+            padding: 16px 44px;
+            border-radius: 12px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(179, 53, 93, 0.3);
         }
 
         .hero-btn:hover {
             background: #b3355d;
             transform: scale(1.05);
+        }
+
+        .hero-btn--raise {
+            margin-top: -14px;
+        }
+
+        .hero-divider {
+            width: 65px;
+            height: 4px;
+            background: var(--pink);
+            margin-bottom: 30px;
+        }
+
+        .hero-btn-arrow {
+            margin-left: 18px;
+            font-size: 1.45em;
+            line-height: 1;
+            transform: translateY(-1px);
+        }
+
+        .highlights-slide--icfgl {
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+        .highlights-slide--icfgl .slide-bg img {
+            object-position: center 44%;
+        }
+
+        .highlights-slide--icfgl .slide-overlay {
+            background:
+                linear-gradient(90deg, rgba(3, 13, 31, 0.82) 0%, rgba(8, 26, 55, 0.68) 30%, rgba(12, 43, 76, 0.28) 58%, rgba(12, 43, 76, 0) 100%),
+                linear-gradient(180deg, rgba(3, 13, 31, 0.14) 0%, rgba(3, 13, 31, 0) 48%, rgba(3, 13, 31, 0.24) 100%);
+        }
+
+        .highlights-slide--icfgl .slide-content {
+            align-items: flex-start;
+            width: min(760px, 58vw);
+            max-width: none;
+            margin-left: clamp(48px, 8.5vw, 130px);
+            padding: 0;
+        }
+
+        .highlights-slide--icfgl.active .slide-content {
+            transform: translateY(clamp(-10px, -2vh, 0px));
+        }
+
+        .highlights-slide--icfgl .hero-title-main {
+            font-family: var(--font-heading), Cambria, Georgia, serif !important;
+            font-size: clamp(3.8rem, 6vw, 6.4rem);
+            font-weight: 700 !important;
+            line-height: 1;
+            text-transform: none;
+            color: rgba(255, 250, 244, 0.97);
+            margin-bottom: 24px;
+        }
+
+        .highlights-slide--icfgl .hero-title-nowrap {
+            display: block;
+            margin-top: 20px;
+            color: #f9a8d4;
+            font-family: var(--font-heading), Cambria, Georgia, serif !important;
+            font-size: clamp(1.75rem, 2.55vw, 2.65rem);
+            font-weight: 700;
+            line-height: 1.1;
+            text-transform: none;
+            white-space: normal;
+        }
+
+        .highlights-slide--icfgl .hero-subtitle {
+            position: relative;
+            font-family: 'Lato', sans-serif !important;
+            max-width: 560px;
+            margin: 0 0 34px;
+            padding-top: 30px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+            line-height: 1.65 !important;
+        }
+
+        .highlights-slide--icfgl .hero-subtitle::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--pink);
+        }
+
+        .highlights-slide--icfgl .hero-btn {
+            min-width: 280px;
+            justify-content: space-between;
+            padding: 17px 28px 17px 44px;
+            border-radius: 7px;
+            background: var(--pink);
+            font-size: 1.16rem;
+            font-weight: 700;
+            box-shadow: 0 20px 42px rgba(9, 17, 40, 0.32);
+        }
+
+        .highlights-slide--icfgl .hero-btn:hover {
+            background: #d93670;
+        }
+
+        .highlights-slide--icfgl .hero-btn--raise {
+            margin-top: 0;
+        }
+
+        .highlights-slide--workshops {
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+        .highlights-slide--workshops::before {
+            display: none;
+        }
+
+        .highlights-slide--workshops .slide-bg img {
+            object-position: right center;
+        }
+
+        .highlights-slide--workshops .slide-overlay {
+            background:
+                linear-gradient(90deg, rgba(3, 13, 31, 0.82) 0%, rgba(8, 26, 55, 0.68) 30%, rgba(12, 43, 76, 0.28) 58%, rgba(12, 43, 76, 0) 100%),
+                linear-gradient(180deg, rgba(3, 13, 31, 0.14) 0%, rgba(3, 13, 31, 0) 48%, rgba(3, 13, 31, 0.24) 100%);
+            z-index: 2;
+        }
+
+        .highlights-slide--workshops .slide-scrim {
+            display: none;
+        }
+
+        .highlights-slide--workshops .slide-content {
+            align-items: flex-start;
+            width: min(640px, 50vw);
+            max-width: none;
+            margin-left: clamp(48px, 8.5vw, 130px);
+            margin-right: 0;
+            padding: 0;
+        }
+
+        .highlights-slide--workshops.active .slide-content {
+            transform: translateY(clamp(-10px, -2vh, 0px));
+        }
+
+        .highlights-slide--workshops .hero-title-main {
+            font-family: var(--font-heading), Cambria, Georgia, serif !important;
+            font-size: clamp(3.8rem, 6vw, 6.4rem);
+            font-weight: 700 !important;
+            line-height: 1;
+            color: rgba(255, 250, 244, 0.97);
+            margin-bottom: 24px;
+        }
+
+        .highlights-slide--workshops .hero-subtitle {
+            position: relative;
+            font-family: 'Lato', sans-serif !important;
+            max-width: 440px;
+            margin: 0 0 38px;
+            padding-top: 0;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+            line-height: 1.65 !important;
+        }
+
+        .highlights-slide--workshops .hero-btn {
+            min-width: 250px;
+            justify-content: space-between;
+            padding: 17px 32px 17px 44px;
+            margin-left: 0;
         }
 
         /* Nav lines */
@@ -180,11 +379,136 @@
         .hl-arrow-prev { left: 40px; }
         .hl-arrow-next { right: 40px; }
 
+        .highlights-slide--mootcourt {
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+        .highlights-slide--mootcourt .slide-bg img {
+            object-position: 15% center;
+        }
+
+        .highlights-slide--mootcourt .slide-overlay {
+            background:
+                linear-gradient(90deg, rgba(3, 13, 31, 0.82) 0%, rgba(8, 26, 55, 0.68) 30%, rgba(12, 43, 76, 0.28) 58%, rgba(12, 43, 76, 0) 100%),
+                linear-gradient(180deg, rgba(3, 13, 31, 0.14) 0%, rgba(3, 13, 31, 0) 48%, rgba(3, 13, 31, 0.24) 100%);
+            z-index: 2;
+        }
+
+        .highlights-slide--mootcourt .slide-content {
+            align-items: flex-start;
+            width: min(680px, 50vw);
+            max-width: none;
+            margin-left: clamp(48px, 8.5vw, 130px);
+            padding: 0;
+        }
+
+        .highlights-slide--mootcourt.active .slide-content {
+            transform: translateY(clamp(-10px, -2vh, 0px));
+        }
+
         @media (max-width: 900px) {
+            .highlights-slider-wrap {
+                height: calc(100svh - 64px);
+                min-height: 560px;
+                max-height: none;
+            }
             .hero-title-main { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+            .hero-title-nowrap { white-space: normal; }
             .hero-subtitle { font-size: 1.1rem; margin-bottom: 2rem; }
             .highlights-dot { width: 30px; }
             .hl-arrow { display: none; }
+            .highlights-slide--icfgl {
+                align-items: flex-end;
+            }
+            .highlights-slide--icfgl .slide-overlay {
+                background:
+                    linear-gradient(180deg, rgba(10, 18, 39, 0.22) 0%, rgba(10, 18, 39, 0.58) 36%, rgba(10, 18, 39, 0.96) 100%),
+                    linear-gradient(90deg, rgba(10, 18, 39, 0.42), rgba(10, 18, 39, 0.16));
+            }
+            .highlights-slide--icfgl .slide-bg img {
+                object-position: 58% center;
+            }
+            .highlights-slide--icfgl .slide-content {
+                width: auto;
+                margin: 0;
+                padding: 0 28px 92px;
+            }
+            .highlights-slide--icfgl.active .slide-content {
+                transform: translateY(0);
+            }
+            .highlights-slide--icfgl .hero-kicker {
+                min-height: 34px;
+                padding: 0 18px;
+                margin-bottom: 20px;
+                font-size: 0.72rem;
+            }
+            .highlights-slide--icfgl .hero-title-main {
+                font-size: clamp(3.1rem, 15vw, 5rem);
+                line-height: 0.9;
+                margin-bottom: 20px;
+            }
+            .highlights-slide--icfgl .hero-title-nowrap {
+                margin-top: 14px;
+                font-size: clamp(1.35rem, 6vw, 2rem);
+            }
+            .highlights-slide--icfgl .hero-subtitle {
+                max-width: 100%;
+                padding-top: 22px;
+                margin-bottom: 28px;
+                font-size: 1rem;
+            }
+            .highlights-slide--icfgl .hero-btn {
+                width: min(100%, 280px);
+                min-width: 0;
+                padding: 15px 24px 15px 32px;
+                font-size: 1rem;
+            }
+            .highlights-slide--workshops {
+                align-items: flex-end;
+            }
+            .highlights-slide--workshops .slide-overlay {
+                background: rgba(3, 13, 31, 0.08);
+            }
+            .highlights-slide--workshops::before {
+                background:
+                    linear-gradient(180deg, rgba(10, 18, 39, 0.18) 0%, rgba(10, 18, 39, 0.55) 38%, rgba(10, 18, 39, 0.96) 100%),
+                    linear-gradient(90deg, rgba(10, 18, 39, 0.38), rgba(10, 18, 39, 0.12));
+            }
+            .highlights-slide--workshops .slide-scrim {
+                background:
+                    linear-gradient(180deg, rgba(10, 18, 39, 0.16) 0%, rgba(10, 18, 39, 0.5) 38%, rgba(10, 18, 39, 0.94) 100%),
+                    linear-gradient(90deg, rgba(10, 18, 39, 0.34), rgba(10, 18, 39, 0.1));
+            }
+            .highlights-slide--workshops .slide-bg img {
+                object-position: 64% center;
+            }
+            .highlights-slide--workshops .slide-content {
+                width: auto;
+                margin: 0;
+                padding: 0 28px 92px;
+            }
+            .highlights-slide--workshops.active .slide-content {
+                transform: translateY(0);
+            }
+            .highlights-slide--workshops .hero-title-main {
+                font-size: clamp(3rem, 14vw, 4.8rem);
+                line-height: 1;
+                margin-bottom: 20px;
+            }
+            .highlights-slide--workshops .hero-subtitle {
+                max-width: 100%;
+                padding-top: 22px;
+                margin-bottom: 28px;
+                font-size: 1rem;
+                line-height: 1.6 !important;
+            }
+            .highlights-slide--workshops .hero-btn {
+                width: min(100%, 245px);
+                min-width: 0;
+                padding: 15px 24px 15px 30px;
+                font-size: 1rem;
+            }
         }
 
         /* ── ABOUT US section ────────────────────────────── */
@@ -266,41 +590,47 @@
         <div class="highlights-slider-wrap" id="hlSlider">
 
             <!-- Slide 1 – ICFGL -->
-            <div class="highlights-slide active" role="group" aria-label="Slide 1 of 3">
+            <div class="highlights-slide highlights-slide--icfgl active" role="group" aria-label="Slide 1 of 3">
                 <div class="slide-bg">
-                    <img src="images/common/13.JPG" alt="International Conference on Feminism, Gender and Law">
+                    <img src="images/common/icfgl_banner.JPG" alt="International Conference on Feminism, Gender and Law">
                     <div class="slide-overlay"></div>
                 </div>
                 <div class="slide-content">
-                    <h2 class="hero-title-main">International Conference<br>on Feminism & Law</h2>
-                    <p class="hero-subtitle">A premier biennial hub for global scholars to dissect evolving legal frameworks through a rigorous, gender-sensitive lens.</p>
-                    <a href="works/icfgl/" class="hero-btn">Explore Archive</a>
+                    <p class="hero-kicker">UEL Feminist Legal Theory Project</p>
+                    <h2 class="hero-title-main">International<br>Conference<br><span class="hero-title-nowrap">on Feminism & Law</span></h2>
+                    <p class="hero-subtitle">A global platform for feminist legal scholarship.</p>
+                    <a href="works/icfgl/" class="hero-btn hero-btn--raise">Explore Archive <span class="hero-btn-arrow" aria-hidden="true">&#8594;</span></a>
                 </div>
             </div>
 
             <!-- Slide 2 – Workshops -->
-            <div class="highlights-slide" role="group" aria-label="Slide 2 of 3">
+            <div class="highlights-slide highlights-slide--workshops" role="group" aria-label="Slide 2 of 3">
                 <div class="slide-bg">
-                    <img src="images/workshops/opentalk-2024/1.jpg" alt="Workshops & Seminars">
+                    <img src="images/common/ws_banner.jpg" alt="Workshops & Seminars">
                     <div class="slide-overlay"></div>
                 </div>
+                <div class="slide-scrim" aria-hidden="true"></div>
                 <div class="slide-content">
-                    <h2 class="hero-title-main">Workshops & Seminars</h2>
+                    <p class="hero-kicker">UEL Feminist Legal Theory Project</p>
+                    <h2 class="hero-title-main">Workshops &<br>Seminars</h2>
+                    <div class="hero-divider"></div>
                     <p class="hero-subtitle">Intensive sessions designed for capacity building, peer-reviewing, and collaborative legal drafting among scholars.</p>
-                    <a href="works/workshops/index.html" class="hero-btn">View Sessions</a>
+                    <a href="works/workshops/index.html" class="hero-btn hero-btn--raise">View Sessions <span class="hero-btn-arrow" aria-hidden="true">&#8594;</span></a>
                 </div>
             </div>
 
             <!-- Slide 3 – Moot Court -->
-            <div class="highlights-slide" role="group" aria-label="Slide 3 of 3">
+            <div class="highlights-slide highlights-slide--mootcourt" role="group" aria-label="Slide 3 of 3">
                 <div class="slide-bg">
                     <img src="images/mootcourt/1.jpg" alt="Gender Justice Moot Court">
                     <div class="slide-overlay"></div>
                 </div>
                 <div class="slide-content">
-                    <h2 class="hero-title-main">Gender Justice<br>National Moot Court</h2>
+                    <p class="hero-kicker">UEL Feminist Legal Theory Project</p>
+                    <h2 class="hero-title-main">Gender Justice<br> Moot Court</h2>
+                    <div class="hero-divider"></div>
                     <p class="hero-subtitle">Empowering the next generation of law students to challenge structural inequalities through oral arguments and advocacy.</p>
-                    <a href="works/moot-court/" class="hero-btn">Explore Moot Court</a>
+                    <a href="works/moot-court/" class="hero-btn">Explore Moot Court <span class="hero-btn-arrow" aria-hidden="true">&#8594;</span></a>
                 </div>
             </div>
 
@@ -357,7 +687,7 @@
                     <img src="images/common/3.JPG" alt="International Conference on Feminism, Gender and Law" style="height: 180px; width: 100%; object-fit: cover; border-radius: 8px;">
                     <p style="margin-top: 15px; color:#144e8c">Forums gather practitioners and researchers for intensive dialogue on methodology, case selection, and the politics of legal reform in contexts where feminist theory still meets institutional resistance.</p>
                     <div style="display: flex; gap: 10px; margin-top:20px;">
-                        <a href="works/icfgl/" class="btn-pink" style="flex:1; text-align:center;">ICFGL 2026</a>
+                        <a href="works/icfgl/icfgl-2026/icfgl-2026.html" class="btn-pink" style="flex:1; text-align:center;">ICFGL 2026</a>
                         <a href="works/icfgl/" class="btn-dark" style="flex:1; text-align:center;">Past ICFGL</a>
                     </div>
                 </div>

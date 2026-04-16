@@ -132,12 +132,7 @@
 
         /* Section Styling */
         .page-section {
-            padding: 100px 5%;
-            background: #fff;
-        }
-
-        .page-section:nth-child(even) {
-            background: #f8faff;
+            padding: 80px 5%;
         }
 
         .section-shell {
@@ -226,9 +221,17 @@
             height: 150px;
             border-radius: 50%;
             margin: 0 auto 20px;
-            object-fit: cover;
             border: 5px solid #f8faff;
             background: #eee;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .speaker-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .speaker-card h3 {
@@ -505,7 +508,7 @@
         </div>
     </section>
 
-    <section class="page-section">
+    <section class="page-section section-ice">
         <div class="section-shell">
             <div class="section-heading">
                 <h2>About the Conference</h2>
@@ -529,7 +532,7 @@
         </div>
     </section>
 
-    <section class="page-section" style="background:#ffebf2">
+    <section class="page-section section-rose">
         <div class="section-shell">
             <div class="section-heading">
                 <h2>Call for Abstracts</h2>
@@ -552,7 +555,7 @@
         </div>
     </section>
 
-    <section class="page-section">
+    <section class="page-section section-ice">
         <div class="section-shell">
             <div class="section-heading">
                 <h2>Featured Keynote Speakers</h2>
@@ -560,34 +563,34 @@
             </div>
             <div class="speaker-grid">
                 <div class="speaker-card">
-                    <div class="speaker-img"></div>
+                    <div class="speaker-img">
+                        <img src="../../../images/icfgl/Bản sao của Prof Hunter_photo.jpeg" alt="Prof. Rosemary Hunter">
+                    </div>
                     <h3>Prof. Rosemary Hunter</h3>
                     <p>Loughborough University, UK</p>
                     <p style="margin-top: 10px; font-size: 0.85rem; color: #888;">A pioneer and leading global voice in the Feminist Judgments movement.</p>
                 </div>
                 <div class="speaker-card">
-                    <div class="speaker-img"></div>
+                    <div class="speaker-img">
+                        <img src="../../../images/icfgl/icfgl2026/Prof Aoife O’Donoghue.jpg" alt="Prof. Aoife O’Donoghue">
+                    </div>
                     <h3>Prof. Aoife O’Donoghue</h3>
                     <p>Queen's University Belfast, UK</p>
                     <p style="margin-top: 10px; font-size: 0.85rem; color: #888;">Expert in feminist constitutionalism and international law.</p>
                 </div>
                 <div class="speaker-card">
-                    <div class="speaker-img"></div>
+                    <div class="speaker-img">
+                        <img src="../../../images/icfgl/icfgl2026/Becky.jpg" alt="A/Prof. Becky Batagol">
+                    </div>
                     <h3>A/Prof. Becky Batagol</h3>
                     <p>Monash University, Australia</p>
                     <p style="margin-top: 10px; font-size: 0.85rem; color: #888;">Lead editor of the Feminist Legislation Project.</p>
-                </div>
-                <div class="speaker-card">
-                    <div class="speaker-img"></div>
-                    <h3>Prof. Dr. Susanne Baer</h3>
-                    <p>Humboldt University, Germany</p>
-                    <p style="margin-top: 10px; font-size: 0.85rem; color: #888;">Former Judge of the German Federal Constitutional Court.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="page-section">
+    <section class="page-section section-rose">
         <div class="section-shell">
             <div class="section-heading">
                 <h2>Program & Activities</h2>
@@ -617,7 +620,7 @@
         </div>
     </section>
 
-    <section class="page-section" style="background: linear-gradient(rgba(15, 58, 110, 0.05), rgba(15, 58, 110, 0.1));">
+    <section class="page-section section-ice">
         <div class="section-shell">
             <div class="section-heading">
                 <h2>Expected Outputs & Impact</h2>
@@ -640,7 +643,7 @@
         </div>
     </section>
 
-    <section class="page-section">
+    <section class="page-section section-rose">
         <div class="section-shell">
             <div class="section-heading">
                 <h2>Venue & Logistics</h2>

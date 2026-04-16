@@ -2,220 +2,178 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us - UEL Feminist Project</title>
+    <title>Contact Us - UEL Feminist Legal Theory Project</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../header-footer.css">
     <style>
-        .contact-page-bg {
-            min-height: calc(100vh - 80px);
-            background: linear-gradient(180deg, #fff5f9 0%, #f4f8ff 100%);
+        .contact-page-wrapper {
+            min-height: calc(100vh - 74px);
+            display: flex;
+            flex-direction: column;
         }
 
-        .contact-shell {
-            padding: 18px 0 64px;
+        .contact-main {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 5%;
         }
 
-        .contact-form-card {
-            max-width: 560px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.96);
-            border: 1px solid rgba(20, 78, 140, 0.08);
-            border-radius: 18px;
-            box-shadow: 0 16px 36px rgba(20, 78, 140, 0.08);
-            padding: 30px 30px 26px;
-            display: grid;
-            gap: 18px;
-        }
-
-        .contact-kicker {
-            margin: 0 0 8px;
-            color: #f64183 !important;
-            font-family: 'Lato', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        .contact-form-head {
-            display: grid;
-            gap: 10px;
-            text-align: center;
-        }
-
-        .contact-form-head h1 {
-            margin: 0;
-            color: var(--dark-navy);
-            font-family: Cambria, serif;
-            font-size: clamp(2rem, 3vw, 2.45rem);
-            font-weight: 700;
-            line-height: 1.04;
-        }
-
-        .contact-form-head p {
-            margin: 0;
-            color: var(--text-dark);
-            font-size: 0.98rem;
-            line-height: 1.7;
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 14px;
-        }
-
-        .contact-field {
-            display: grid;
-            gap: 8px;
-        }
-
-        .contact-field label {
-            color: var(--dark-blue);
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-        }
-
-        .contact-form-card input,
-        .contact-form-card textarea,
-        .contact-form-card button {
-            font-family: 'Lato', sans-serif;
+        .contact-card {
+            max-width: 850px;
             width: 100%;
-            box-sizing: border-box;
-        }
-
-        .contact-form-card input,
-        .contact-form-card textarea {
-            padding: 13px 16px;
-            border: 1.5px solid rgba(85, 101, 127, 0.52);
-            border-radius: 12px;
-            font-size: 0.98rem;
-            color: var(--dark-navy);
-            background: rgba(255, 255, 255, 0.96);
-            outline: none;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-        }
-
-        .contact-form-card input:focus,
-        .contact-form-card textarea:focus {
-            border-color: var(--dark-blue);
-            box-shadow: 0 0 0 4px rgba(20, 78, 140, 0.1);
-            transform: translateY(-1px);
-        }
-
-        .contact-form-card textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        .contact-form-card input::placeholder,
-        .contact-form-card textarea::placeholder {
-            color: #7a869a;
-        }
-
-        .contact-form-footnote {
-            margin: -2px 0 0;
-            color: #6c7990;
-            font-size: 0.88rem;
-            line-height: 1.6;
+            background: #ffffff;
+            padding: clamp(40px, 8vw, 80px) clamp(24px, 6vw, 60px);
+            border-radius: 32px;
             text-align: center;
+            box-shadow: 0 32px 80px rgba(15, 58, 110, 0.08);
+            border: 1px solid rgba(20, 78, 140, 0.05);
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-form-footnote a {
-            color: var(--dark-blue);
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--pink), #144e8c);
+        }
+
+        .contact-eyebrow {
+            display: inline-block;
+            color: var(--pink);
             font-weight: 700;
-            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.85rem;
+            margin-bottom: 24px;
         }
 
-        .contact-form-footnote a:hover {
+        .contact-card h1 {
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            color: var(--dark-navy);
+            margin: 0 0 28px;
+            line-height: 1.1;
+        }
+
+        .contact-description {
+            font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+            color: #55657f;
+            line-height: 1.8;
+            max-width: 640px;
+            margin: 0 auto 48px;
+        }
+
+        .contact-email-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-email-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #94a3b8;
+            font-weight: 700;
+        }
+
+        .contact-email-link {
+            font-family: 'Cambria', serif;
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            color: #f64183;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .contact-email-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 40px;
+            height: 3px;
+            background: var(--pink);
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .contact-email-link:hover {
             color: var(--pink);
         }
 
-        .contact-form-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+        .contact-email-link:hover::after {
             width: 100%;
-            background: linear-gradient(135deg, var(--dark-blue), #1a3f74);
-            color: #ffffff;
-            border: none;
-            padding: 14px 18px;
-            border-radius: 12px;
-            font-size: 0.94rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-            box-shadow: 0 12px 24px rgba(20, 78, 140, 0.18);
         }
 
-        .contact-form-btn:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.03);
-            box-shadow: 0 16px 32px rgba(20, 78, 140, 0.22);
+        .contact-office {
+            margin-top: 56px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(20, 78, 140, 0.08);
+            font-size: 1rem;
+            color: #64748b;
         }
 
-        @media (max-width: 768px) {
-            .contact-shell {
-                padding: 14px 0 56px;
+        .contact-office strong {
+            color: var(--dark-navy);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 640px) {
+            .contact-card {
+                padding: 48px 24px;
+                border-radius: 24px;
             }
-
-            .contact-form-card {
-                padding: 24px 20px 22px;
+            .contact-main {
+                padding: 40px 16px;
             }
         }
     </style>
 </head>
-<body class="contact-page-bg">
-    <div id="global-header"></div>
-    <div class="breadcrumb">
-        <a href="../index.html">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <span>Contact Us</span>
-    </div>
+<body class="section-ice">
+    <div class="contact-page-wrapper">
+        <div id="global-header"></div>
+        
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="breadcrumb-separator">›</span>
+            <span>Contact Us</span>
+        </div>
 
-    <section class="contact-shell">
-        <div class="container">
-            <div class="contact-form-card">
-                <div class="contact-form-head">
-                    <p class="contact-kicker">Get In Touch</p>
-                    <h1>Contact Us</h1>
-                    <p>
-                        If you would like to reach the project team, please leave your message below.
-                    </p>
+        <main class="contact-main">
+            <div class="contact-card">
+                <span class="contact-eyebrow">Get In Touch</span>
+                <h1>Contact the Project</h1>
+                <p class="contact-description">
+                    For inquiries regarding research collaborations, conference details, or academic resources, please reach out to the project coordination team via email.
+                </p>
+
+                <div class="contact-email-wrap">
+                    <span class="contact-email-label">Official Project Email</span>
+                    <a href="mailto:feminist.project@uel.edu.vn" class="contact-email-link">feminist.project@uel.edu.vn</a>
                 </div>
 
-                <form class="contact-form">
-                    <div class="contact-field">
-                        <label for="contact-name">Your Name</label>
-                        <input id="contact-name" type="text" placeholder="Your Name">
-                    </div>
-
-                    <div class="contact-field">
-                        <label for="contact-email">Your Email</label>
-                        <input id="contact-email" type="email" placeholder="Your Email">
-                    </div>
-
-                    <div class="contact-field">
-                        <label for="contact-message">Your Message</label>
-                        <textarea id="contact-message" placeholder="Your Message"></textarea>
-                    </div>
-
-                    <button type="button" class="contact-form-btn">Submit</button>
-                </form>
-
-                <p class="contact-form-footnote">
-                    You can also contact the project directly at
-                    <a href="mailto:feminist.project@uel.edu.vn">feminist.project@uel.edu.vn</a>.
-                </p>
+                <div class="contact-office">
+                    <strong>University of Economics and Law (VNU-HCM)</strong>
+                    Faculty of Economic Law
+                </div>
             </div>
-        </div>
-    </section>
+        </main>
 
-    <div id="global-footer"></div>
+        <div id="global-footer"></div>
+    </div>
+
     <script src="../js/components.js"></script>
 </body>
 </html>

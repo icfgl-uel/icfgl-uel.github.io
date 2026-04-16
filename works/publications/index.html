@@ -24,6 +24,10 @@
         padding: 0;
     }
 
+    .archive-shell {
+        padding-top: 0;
+    }
+
     /* Khung màu trắng phía trên */
     .archive-hero {
         background: #fff;
@@ -81,6 +85,197 @@
         max-width: 850px;
         line-height: 1.7;
         font-size: 1.1rem;
+    }
+
+    /* Publications hero aligned with the Our Works banner */
+    .archive-hero {
+        position: relative;
+        min-height: calc(100vh - 74px);
+        min-height: calc(100svh - 74px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        margin: 0 calc(50% - 50vw);
+        padding: clamp(64px, 8vh, 96px) clamp(24px, 4vw, 72px) clamp(116px, 13vh, 148px);
+        overflow: hidden;
+        color: #fff;
+        background: #0f1c2d url('../../images/common/6.png') no-repeat center center / cover;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .archive-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background:
+            linear-gradient(135deg, rgba(24, 61, 108, 0.78) 0%, rgba(61, 110, 183, 0.6) 48%, rgba(246, 65, 131, 0.42) 100%);
+    }
+
+    .archive-hero::after {
+        content: "";
+        position: absolute;
+        top: -18%;
+        right: -8%;
+        z-index: 1;
+        width: 42rem;
+        height: 42rem;
+        border-radius: 999px;
+        background: rgba(246, 65, 131, 0.34);
+        filter: blur(90px);
+        pointer-events: none;
+    }
+
+    .archive-hero-grid {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 860px;
+        min-height: calc(100svh - 74px - 180px);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: clamp(32px, 4vw, 72px);
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .archive-hero-copy {
+        width: min(100%, 760px);
+        max-width: 760px;
+        margin: 0 auto;
+        padding: clamp(28px, 4vw, 46px) clamp(26px, 4vw, 52px);
+        border: 1px solid rgba(255, 255, 255, 0.58);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.64);
+        box-shadow: 0 24px 60px rgba(7, 24, 51, 0.18);
+        backdrop-filter: blur(12px);
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .archive-hero-art {
+        justify-content: stretch;
+    }
+
+    .archive-quote-card {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: clamp(28px, 4vw, 44px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 24px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.05) 100%);
+        box-shadow: 0 24px 60px rgba(5, 16, 33, 0.26);
+        backdrop-filter: blur(14px);
+    }
+
+    .archive-quote-card::after {
+        content: "\201C";
+        position: absolute;
+        top: -18px;
+        right: 26px;
+        font-family: Cambria, Georgia, serif;
+        font-size: 8rem;
+        line-height: 1;
+        color: rgba(249, 168, 212, 0.2);
+        pointer-events: none;
+    }
+
+    .archive-quote-text {
+        position: relative;
+        z-index: 1;
+        margin: 0 0 24px;
+        font-family: Cambria, Georgia, serif;
+        font-size: clamp(1.55rem, 2.3vw, 2.4rem);
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1.35;
+        color: #fff;
+    }
+
+    .archive-quote-text span {
+        color: #f9a8d4;
+    }
+
+    .archive-quote-source {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.9rem;
+        font-style: italic;
+    }
+
+    .archive-quote-source::before {
+        content: "";
+        width: 42px;
+        height: 2px;
+        border-radius: 999px;
+        background: #f9a8d4;
+    }
+
+    .archive-eyebrow {
+        display: inline-block;
+        padding: 8px 18px;
+        margin: 0 0 24px;
+        color: var(--pink);
+        background: rgba(255, 235, 242, 0.92);
+        border: 1px solid rgba(246, 65, 131, 0.16);
+        border-radius: 999px;
+        letter-spacing: 0.3em;
+        font-size: 0.72rem;
+        line-height: 1;
+    }
+
+    .archive-hero .archive-title {
+        margin: 0 0 28px;
+        font-family: Cambria, Georgia, serif !important;
+        color: var(--dark-blue);
+        font-size: clamp(3.6rem, 6.6vw, 5.8rem) !important;
+        font-weight: 700;
+        line-height: 1.03;
+        letter-spacing: -0.045em;
+        text-align: center;
+        transform: translateX(22px);
+        text-shadow: none;
+    }
+
+    .archive-title-rule {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        width: min(100%, 620px);
+        margin: -12px auto 24px;
+        color: rgba(32, 54, 93, 0.86);
+        font-size: clamp(0.9rem, 1.3vw, 1.08rem);
+        font-weight: 500;
+        letter-spacing: 0.02em;
+    }
+
+    .archive-title-rule::before,
+    .archive-title-rule::after {
+        content: "";
+        flex: 1 1 120px;
+        height: 2px;
+        background: rgba(32, 54, 93, 0.72);
+    }
+
+    .archive-intro {
+        max-width: 920px;
+        margin: 0 auto;
+        color: rgba(32, 54, 93, 0.9);
+        line-height: 1.75;
+        font-size: clamp(0.98rem, 1.12vw, 1.08rem);
+        text-align: center;
+        text-shadow: none;
     }
 
     /* SỬA LỖI BUTTON: Hiệu ứng đè lên ranh giới */
@@ -497,10 +692,30 @@
     }
 
     @media(max-width: 900px) {
-        .archive-hero { padding: 40px 25px 60px 25px; }
-        .archive-hero-grid { grid-template-columns: 1fr; gap: 24px; }
+        .archive-hero {
+            min-height: auto;
+            padding: 58px 24px 92px;
+        }
+        .archive-hero-grid {
+            min-height: auto;
+            grid-template-columns: 1fr;
+            gap: 28px;
+        }
+        .archive-hero-copy {
+            padding: 28px 20px;
+            border-radius: 12px;
+        }
         .archive-hero-art { justify-content: flex-start; }
-        .archive-hero-art img { width: min(100%, 300px); }
+        .archive-quote-card { max-width: 620px; }
+        .archive-hero .archive-title {
+            font-size: clamp(3.4rem, 14vw, 5rem) !important;
+            transform: none;
+        }
+        .archive-title-rule {
+            gap: 12px;
+            margin-top: -8px;
+            font-size: 0.86rem;
+        }
         .archive-main-title { font-size: 2.5rem; }
         .book-card {
             grid-template-columns: 1fr;
@@ -542,14 +757,12 @@
     <main class="archive-shell">
     <section class="archive-hero">
         <div class="archive-hero-grid">
-        <div class="archive-hero-copy">
-            <p class="archive-eyebrow">Academic Outputs</p>
-            <h1 class="archive-title">Publications</h1>
-            <p class="archive-intro">This section brings together the project’s research and publication outputs, including books, journal articles, book chapters, conference proceedings, reports, and other materials developed within the broader framework of the UEL Feminist Legal Theory Project.</p>
-        </div>
-        <div class="archive-hero-art">
-            <img src="../../images/common/6.png" alt="Decorative publication illustration">
-        </div>
+            <div class="archive-hero-copy">
+                <p class="archive-eyebrow">Academic Outputs</p>
+                <h1 class="archive-title">Publications</h1>
+                <div class="archive-title-rule">Publication Archive</div>
+                <p class="archive-intro">This section brings together the project&rsquo;s research and publication outputs, including books, journal articles, book chapters, conference proceedings, reports, and other materials developed within the broader framework of the UEL Feminist Legal Theory Project.</p>
+            </div>
         </div>
     </section>
 
