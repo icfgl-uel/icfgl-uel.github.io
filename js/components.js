@@ -9,6 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
         rootPath = styleLink.getAttribute("href").replace("style.css", "");
     }
 
+    // Inject favicon globally
+    if (!document.querySelector('link[rel="icon"]')) {
+        const favicon = document.createElement('link');
+        favicon.rel = 'icon';
+        favicon.type = 'image/png';
+        favicon.href = rootPath + 'images/common/UEL_Logo final-09.png';
+        document.head.appendChild(favicon);
+    }
+
     const headerHTML = `
     <nav>
         <a href="${rootPath}index.html" class="logo"><img src="${rootPath}images/common/uel_logo.png" alt="UEL & RLS"><span class="logo-text">Feminist Legal Theory Project</span></a>
