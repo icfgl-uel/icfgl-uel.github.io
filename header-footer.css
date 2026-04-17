@@ -125,6 +125,10 @@ nav::after {
     background: rgba(222, 79, 122, 0.08);
     color: var(--primary, #f64183);
 }
+.nav-dropdown-menu a.nav-current {
+    background: rgba(246, 65, 131, 0.1);
+    color: var(--primary, #f64183) !important;
+}
 .nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown:focus-within .nav-dropdown-menu {
     opacity: 1;

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,16 +24,16 @@
             font-family: 'Lato', sans-serif;
         }
 
-        /* Hero Section - Redesigned Premium */
+        /* Hero Section - synced with home Workshops & Seminars banner */
         .workshops-hero {
             position: relative;
             min-height: calc(100vh - 74px);
             min-height: calc(100svh - 74px);
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             margin: 0;
-            background: #0f1c2d url('../../images/workshops/UELSpecialSeries-2022/1.jpg') no-repeat center center / cover;
-            padding: clamp(100px, 14vh, 140px) 0 clamp(80px, 10vh, 120px);
+            background: #0f1c2d url('../../images/workshops/banner.JPG') no-repeat right center / cover;
+            padding: 0;
             color: #fff;
             overflow: hidden;
         }
@@ -41,182 +41,105 @@
         .hero-gradient {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(24, 61, 108, 0.74) 0%, rgba(61, 110, 183, 0.62) 100%);
+            background:
+                linear-gradient(90deg, rgba(3, 13, 31, 0.82) 0%, rgba(8, 26, 55, 0.68) 30%, rgba(12, 43, 76, 0.28) 58%, rgba(12, 43, 76, 0) 100%),
+                linear-gradient(180deg, rgba(3, 13, 31, 0.14) 0%, rgba(3, 13, 31, 0) 48%, rgba(3, 13, 31, 0.24) 100%);
             z-index: 1;
-        }
-
-        .hero-blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(90px);
-            z-index: 2;
-            opacity: 0.6;
-            pointer-events: none;
-        }
-
-        .hero-blob--pink {
-            top: -10%;
-            right: 0%;
-            width: 35rem;
-            height: 35rem;
-            background: rgba(246, 65, 131, 0.55);
-        }
-
-        .hero-blob--blue {
-            bottom: -20%;
-            left: -10%;
-            width: 35rem;
-            height: 35rem;
-            background: rgba(96, 165, 250, 0.4);
         }
 
         .hero-shell {
             position: relative;
             z-index: 10;
             width: 100%;
+            max-width: none;
             margin: 0 auto;
-            padding: 0 clamp(16px, 2.4vw, 32px);
+            padding: 0;
         }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
-            grid-template-areas:
-                "copy quote"
-                "description quote";
-            max-width: 1680px;
-            margin: 0 auto;
-            column-gap: clamp(32px, 4vw, 72px);
-            row-gap: 12px;
-            align-items: center;
-        }
-
-        .hero-copy {
-            grid-area: copy;
-            align-self: end;
-            padding-left: clamp(12px, 2vw, 28px);
-        }
-
-        .hero-title {
-            font-family: 'Cambria', Georgia, serif !important;
-            font-size: clamp(3.8rem, 7.4vw, 6.1rem);
-            line-height: 1.1;
-            font-weight: 700;
-            margin: 0 0 32px 0;
-            color: #fff;
-            font-style: normal;
-            letter-spacing: -0.02em;
-            text-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        }
-
-        .hero-title-line {
-            display: block;
-        }
-
-        .hero-title-line--top {
-            font-size: 1em;
-            font-family: 'Cambria', Georgia, serif !important;
-            font-weight: inherit;
-            font-style: normal;
-            color: #ffffff;
-            margin-bottom: 0;
-            letter-spacing: -0.01em;
-            text-transform: none;
-        }
-
-        .hero-title-strong {
-            font-family: 'Cambria', Georgia, serif !important;
-            font-style: normal;
-            font-weight: inherit;
-            text-transform: uppercase;
-            letter-spacing: -0.05em;
-            color: #f9a8d4;
-        }
-
-        .hero-description {
-            grid-area: description;
-            max-width: 95%;
-            margin: -6px 0 0;
-            padding-left: clamp(12px, 2vw, 28px);
-            color: rgba(255, 255, 255, 0.85);
-            font-family: 'Lato', sans-serif;
-            font-size: clamp(1.05rem, 1.4vw, 1.15rem);
-            line-height: 1.7;
-            font-weight: 400;
-            align-self: start;
-        }
-
-        .hero-quote-wrap {
-            grid-area: quote;
-            align-self: center;
-            justify-self: end;
-            width: 100%;
-        }
-
-        .hero-quote-card {
-            position: relative;
-            overflow: hidden;
-            padding: 32px 36px;
-            border-radius: 20px;
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255,255,255,0.2);
-        }
-
-        .hero-quote-icon {
-            position: absolute;
-            top: 10px;
-            right: 14px;
-            color: rgba(249, 168, 212, 0.15);
-            z-index: 0;
-        }
-
-        .hero-quote-icon svg {
-            width: 70px;
-            height: 70px;
-            display: block;
-        }
-
-        .hero-quote-text {
-            position: relative;
-            z-index: 1;
-            margin: 0 0 20px;
-            font-family: 'Cambria', Georgia, serif;
-            font-size: clamp(1.2rem, 1.7vw, 1.6rem);
-            line-height: 1.45;
-            color: #fff;
-            font-style: italic;
-            font-weight: 400;
-        }
-
-        .hero-quote-text span {
-            color: #f9a8d4;
-            font-weight: 700;
-            font-style: normal;
-        }
-
-        .hero-quote-source {
-            position: relative;
-            z-index: 1;
-            margin: 0;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        .hero-content {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            width: min(640px, 50vw);
+            max-width: none;
+            margin-left: clamp(48px, 8.5vw, 130px);
         }
 
-        .hero-quote-source::before {
-            content: '';
-            display: inline-block;
-            width: 32px;
-            height: 2px;
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            min-height: 38px;
+            padding: 0 24px;
+            margin: 0 0 24px;
+            border-radius: 999px;
+            background: rgba(134, 58, 110, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-family: 'Lato', sans-serif !important;
+            font-size: 0.82rem;
+            font-weight: 700;
+            line-height: 1 !important;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-title-main {
+            font-family: 'Cambria', Georgia, serif !important;
+            font-size: clamp(3.8rem, 6vw, 6.4rem);
+            font-weight: 700 !important;
+            line-height: 1;
+            color: rgba(255, 250, 244, 0.97);
+            margin: 0 0 24px 0;
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 4px;
             background: var(--accent-pink);
-            margin-right: 16px;
+            margin-bottom: 30px;
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            position: relative;
+            max-width: 440px;
+            margin: 0 0 38px;
+            color: rgba(255, 255, 255, 0.88);
+            font-family: 'Lato', sans-serif !important;
+            font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+            font-weight: 300;
+            line-height: 1.65 !important;
+            text-align: left !important;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 250px;
+            padding: 17px 32px 17px 44px;
+            background: linear-gradient(135deg, var(--accent-pink), #c23366);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(179, 53, 93, 0.3);
+        }
+
+        .hero-btn:hover {
+            background: #b3355d;
+            transform: scale(1.05);
+        }
+
+        .hero-btn-arrow {
+            margin-left: 18px;
+            font-size: 1.45em;
+            line-height: 1;
+            transform: translateY(-1px);
         }
 
         /* Sections */
@@ -850,6 +773,32 @@
         }
 
         @media (max-width: 900px) {
+            .workshops-hero {
+                min-height: calc(100svh - 64px);
+                align-items: center;
+                background-position: center;
+                padding: 88px 24px 72px;
+            }
+            .hero-gradient {
+                background:
+                    linear-gradient(90deg, rgba(3, 13, 31, 0.88) 0%, rgba(8, 26, 55, 0.72) 54%, rgba(12, 43, 76, 0.24) 100%),
+                    linear-gradient(180deg, rgba(3, 13, 31, 0.2) 0%, rgba(3, 13, 31, 0) 48%, rgba(3, 13, 31, 0.26) 100%);
+            }
+            .hero-content {
+                width: min(100%, 520px);
+                margin-left: 0;
+            }
+            .hero-title-main {
+                font-size: clamp(3rem, 11vw, 4rem);
+            }
+            .hero-subtitle {
+                max-width: 100%;
+                font-size: 1.08rem;
+            }
+            .hero-btn {
+                min-width: 230px;
+                padding: 16px 28px 16px 34px;
+            }
             .split-layout, .split-layout.reverse {
                 grid-template-columns: 1fr;
             }
@@ -917,49 +866,39 @@
 
 <body>
     <div id="global-header"></div>
-
-    <div class="breadcrumb">
+    
+    <div class="breadcrumb archive-breadcrumb">
         <a href="../../index.html">Home</a>
-        <span class="breadcrumb-separator">&rsaquo;</span>
-        <a href="../index.html">Our Works</a>
-        <span class="breadcrumb-separator">&rsaquo;</span>
-        <span>Workshops & Seminars</span>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../">Our Works</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Academic Workshops</span>
     </div>
 
     <!-- Hero Section -->
     <section class="workshops-hero">
         <div class="hero-gradient"></div>
-        <div class="hero-blob hero-blob--pink"></div>
-        <div class="hero-blob hero-blob--blue"></div>
         <div class="hero-shell">
-            <div class="hero-grid">
-                <div class="hero-copy">
-                    <span class="hero-eyebrow" style="display: inline-block; padding: 8px 18px; margin-bottom: 24px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 999px; color: #fdf2f8; font: 700 0.75rem/1 'Lato', sans-serif; letter-spacing: 0.25em; text-transform: uppercase;">Academic Archive</span>
-                    <h1 class="hero-title">
-                        <span class="hero-title-line hero-title-line--top"><i>Academic</i></span>
-                        <span class="hero-title-line hero-title-strong">WORKSHOPS</span>
-                    </h1>
-                </div>
+            <div class="hero-content">
+                <p class="hero-kicker">Academic Exchange</p>
+                <h1 class="hero-title-main">Workshops &<br>Seminars</h1>
 
-                <div class="hero-quote-wrap">
-                    <div class="hero-quote-card">
-                        <div class="hero-quote-icon" aria-hidden="true">
-                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4zm-13 0c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4z"/></svg>
-                        </div>
-                        <p class="hero-quote-text">"Feminist methodology is not just about what we study, but <span>how</span> we study and apply the law."</p>
-                        <p class="hero-quote-source">Project Methodology</p>
-                    </div>
-                </div>
+                <div class="hero-divider"></div>
 
-                <p class="hero-description">
-                    A comprehensive archive of specialized workshops, seminars, and training sessions advancing Feminist Legal Theory in the Vietnamese legal community.
+                <p class="hero-subtitle">
+                    Intensive sessions designed for capacity building, peer-reviewing, and collaborative legal drafting among scholars.
                 </p>
+
+                <a href="#section1" class="hero-btn">
+                    <span>View Sessions</span>
+                    <span class="hero-btn-arrow" aria-hidden="true">&#8594;</span>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- SECTION 1: VFJ 2025 -->
-    <section class="page-section section-ice">
+    <section class="page-section section-ice" id="section1">
         <div class="section-shell">
             <div class="split-layout">
                 <div class="split-content">
