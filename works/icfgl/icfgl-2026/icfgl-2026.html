@@ -429,6 +429,102 @@
             margin: 0;
         }
 
+        .icfgl-travel-grant {
+            border-top: 1px solid rgba(20, 78, 140, 0.06);
+        }
+
+        .travel-grant-panel {
+            background: #fff;
+            border: 1px solid rgba(20, 78, 140, 0.1);
+            border-radius: 18px;
+            box-shadow: 0 14px 32px rgba(20, 78, 140, 0.06);
+            padding: clamp(24px, 4vw, 40px);
+        }
+
+        .travel-grant-panel h2 {
+            color: var(--primary-blue);
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(1.75rem, 3vw, 2.35rem);
+            line-height: 1.2;
+            margin: 0 0 22px;
+            text-align: center;
+        }
+
+        .travel-grant-copy {
+            color: #444;
+            font-size: 1.06rem;
+            line-height: 1.72;
+        }
+
+        .travel-grant-copy p {
+            margin: 0 0 20px;
+            text-align: left;
+        }
+
+        .travel-grant-lead {
+            max-width: none;
+            text-align: justify !important;
+            text-align-last: left;
+            text-justify: inter-word;
+        }
+
+        .travel-grant-table-wrap {
+            margin: 24px 0 20px;
+            overflow-x: auto;
+            border: 1px solid rgba(20, 78, 140, 0.16);
+            border-radius: 12px;
+        }
+
+        .travel-grant-table {
+            width: 100%;
+            min-width: 660px;
+            border-collapse: collapse;
+            background: #fff;
+        }
+
+        .travel-grant-table th,
+        .travel-grant-table td {
+            border: 1px solid rgba(20, 78, 140, 0.16);
+            padding: 16px 18px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .travel-grant-table th {
+            background: #f8faff;
+            color: var(--primary-blue);
+            font-size: 0.92rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .travel-grant-table td {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+
+        .travel-grant-table td:nth-child(2) {
+            color: var(--accent-pink);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .travel-grant-note {
+            margin: 18px 0 0;
+            padding-top: 18px;
+            border-top: 1px solid rgba(20, 78, 140, 0.1);
+            color: #666;
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .travel-grant-note-label {
+            color: var(--accent-pink);
+            font-style: normal;
+            font-weight: 700;
+        }
+
         @media (max-width: 992px) {
             .about-grid, .activity-grid, .logistics-grid {
                 grid-template-columns: 1fr;
@@ -706,6 +802,48 @@ Participants traveling by air will arrive at Tan Son Nhat International Airport 
                         </div>
                         
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section section-ice icfgl-travel-grant">
+        <div class="section-shell">
+            <div class="travel-grant-panel">
+                <h2>The ICFGL Excellence Travel Grant</h2>
+                <div class="travel-grant-copy">
+                    <p class="travel-grant-lead">
+                        The International Conference on Feminism, Gender and Law (ICFGL) welcomes outstanding and impactful scholarship for its 2026 conference in Ho Chi Minh City. To support participation from a diverse and global community of scholars, the Conference is pleased to offer the ICFGL Excellence Travel Grant for authors of selected high-quality final manuscripts.
+                    </p>
+                    <p>
+                        A total of <strong>19 authors</strong> will receive full travel support, including <strong>12 domestic participants</strong> and <strong>7 international participants</strong>, based on the quality of their final paper submissions.
+                    </p>
+                    <div class="travel-grant-table-wrap">
+                        <table class="travel-grant-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Number of Awards</th>
+                                    <th>Coverage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>International</td>
+                                    <td>7</td>
+                                    <td>Round-trip international airfare and 1 night of hotel accommodation</td>
+                                </tr>
+                                <tr>
+                                    <td>Domestic (outside Ho Chi Minh City)</td>
+                                    <td>12</td>
+                                    <td>Round-trip domestic travel and 2 nights of hotel accommodation</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="travel-grant-note">
+                        <span class="travel-grant-note-label">Note:</span> Domestic travel support includes two nights of accommodation to enable participation in both the Pre-Conference Seminar and the Main Conference.
+                    </p>
                 </div>
             </div>
         </div>
