@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -836,6 +836,226 @@
                 padding: 22px 20px;
             }
         }
+
+
+        .editorial-board-header {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+            padding: 0 0 36px;
+            border-bottom: 2px solid rgba(246, 65, 131, 0.1);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .editorial-board-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .editorial-logo-card {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+        }
+
+        .editorial-logo-card img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .editorial-logo-card--uel img {
+            width: 105%;
+            height: 105%;
+        }
+
+        .editorial-board-title {
+            margin: 0;
+            font-family: var(--font-heading) !important;
+            font-weight: 700;
+            color: var(--dark-navy);
+            font-size: 2.85rem;
+            line-height: 1.08;
+            text-align: center;
+        }
+
+        .editorial-board-band {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .editorial-board-band h2 {
+            margin: 0;
+            font-family: var(--font-heading) !important;
+            font-weight: 700;
+            color: var(--pink);
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .editorial-board-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            column-gap: 40px;
+            row-gap: 56px;
+            padding: 0 24px;
+        }
+
+        .editorial-member {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .editorial-photo-wrap {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 24px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--light-blue);
+            box-shadow: 0 12px 28px rgba(31, 42, 68, 0.08);
+            border: 4px solid var(--white);
+            position: relative;
+        }
+
+        .editorial-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.4s ease;
+        }
+
+        .editorial-photo-wrap:hover img {
+            transform: scale(1.05);
+        }
+
+        .editorial-member:nth-child(1) img { object-position: center 18%; }
+        .editorial-member:nth-child(2) img { object-position: center 12%; }
+        .editorial-member:nth-child(3) img { object-position: center 10%; }
+        .editorial-member:nth-child(4) img { object-position: center 10%; }
+        .editorial-member:nth-child(5) img { object-position: center 10%; }
+        
+        .editorial-member:nth-child(6) .editorial-photo-wrap {
+            background-color: var(--light-blue);
+        }
+        .editorial-member:nth-child(6) img { 
+            object-position: 15% 42%;
+            transform: scale(1.28);
+        }
+        .editorial-member:nth-child(6) .editorial-photo-wrap:hover img {
+            transform: scale(1.35);
+        }
+
+        .editorial-name {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 30px;
+            background: var(--light-pink);
+            color: var(--pink);
+            font-weight: 700;
+            font-size: 1.05rem;
+            line-height: 1.2;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 12px rgba(246, 65, 131, 0.1);
+            text-align: center;
+        }
+
+        .editorial-role {
+            margin: 0;
+            color: var(--dark-navy);
+            font-size: 1rem;
+            line-height: 1.5;
+            font-weight: 600;
+            max-width: 280px;
+        }
+
+        .editorial-board-contact {
+            margin-top: 60px;
+            padding: 24px;
+            background: var(--light-blue);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            color: var(--dark-navy);
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            border: 1px solid rgba(20,78,140,0.05);
+        }
+
+        .editorial-board-contact svg {
+            flex: 0 0 auto;
+            color: var(--pink);
+            width: 28px;
+            height: 28px;
+        }
+
+        @media (max-width: 900px) {
+            .unified-hero-section {
+                padding: 32px 24px;
+                border-radius: 28px;
+            }
+            .unified-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+            .unified-hero-grid .archive-eyebrow {
+                font-size: 0.85rem !important;
+            }
+            .unified-hero-grid h2 {
+                font-size: 1.95rem !important;
+            }
+
+            .editorial-board-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 40px 24px;
+                padding: 0;
+            }
+
+            .editorial-board-header {
+                padding-bottom: 28px;
+                margin-bottom: 32px;
+            }
+
+            .editorial-board-contact {
+                margin-top: 48px;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+                font-size: 1.05rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            .editorial-board-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .editorial-photo-wrap {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    </style>
     </style>
 </head>
 
@@ -877,7 +1097,7 @@
         </div>
     </section>
 
-    <section class="page-section section-ice">
+<section class="page-section section-ice">
         <div class="section-shell">
             <div class="section-heading">
                 <h2>About the Conference</h2>
@@ -972,6 +1192,68 @@
             </div>
         </div>
     </section>
+
+<section class="page-section" style="background: #f3f9ff;">
+        <div class="section-shell">
+            <div class="section-heading">
+                <h2>Editorial Board</h2>
+                <hr>
+            </div>
+            <div class="editorial-board-grid">
+                <article class="editorial-member">
+                    <div class="editorial-photo-wrap">
+                        <img src="../../../images/icfgl/EditorBoard/Dr.Hien.jpg" alt="Dr. Trinh Thuc Hien">
+                    </div>
+                    <div class="editorial-name">Dr. Trinh Thuc Hien</div>
+                    <p class="editorial-role">UEL FLT Project Director,<br>UEL, VNU-HCM</p>
+                </article>
+
+                <article class="editorial-member">
+                    <div class="editorial-photo-wrap">
+                        <img src="../../../images/icfgl/EditorBoard/Dr.Nhung.jpg" alt="A/Prof. Dr. Nguyen Thi Hong Nhung">
+                    </div>
+                    <div class="editorial-name">A/Prof. Dr. Nguyen Thi Hong Nhung</div>
+                    <p class="editorial-role">Dean of Faculty of Law,<br>UEL, VNU-HCM</p>
+                </article>
+
+                <article class="editorial-member">
+                    <div class="editorial-photo-wrap">
+                        <img src="../../../images/icfgl/EditorBoard/Dr.Diep.jpg" alt="A/Prof. Dr. Doan Thi Phuong Diep">
+                    </div>
+                    <div class="editorial-name">A/Prof. Dr. Doan Thi Phuong Diep</div>
+                    <p class="editorial-role">Head of Academic Affairs,<br>UEL, VNU-HCM</p>
+                </article>
+
+                <article class="editorial-member">
+                    <div class="editorial-photo-wrap">
+                        <img src="../../../images/icfgl/EditorBoard/Prof.Long.jpg" alt="A/Prof. Tran Thang Long">
+                    </div>
+                    <div class="editorial-name">A/Prof. Tran Thang Long</div>
+                    <p class="editorial-role">Dean of Faculty of Legal Foreign Languages,<br>HCMC University of Law</p>
+                </article>
+
+                <article class="editorial-member">
+                    <div class="editorial-photo-wrap">
+                        <img src="../../../images/icfgl/EditorBoard/Prof.Huong.jpg" alt="A/Prof. Phan Thi Lan Huong">
+                    </div>
+                    <div class="editorial-name">A/Prof. Phan Thi Lan Huong</div>
+                    <p class="editorial-role">Head of International Office,<br>Hanoi Law University</p>
+                </article>
+
+                <article class="editorial-member">
+                    <div class="editorial-photo-wrap">
+                        <img src="../../../images/icfgl/EditorBoard/Dr.Cham.jpg" alt="Dr. Nguyen Thi Phuong Cham">
+                    </div>
+                    <div class="editorial-name">Dr. Nguyen Thi Phuong Cham</div>
+                    <p class="editorial-role">Faculty of Private Law,<br>University of Law, VNU-HN</p>
+                </article>
+            </div>
+
+            
+        </div>
+    </section>
+
+
 
     <section class="page-section section-rose">
         <div class="section-shell">

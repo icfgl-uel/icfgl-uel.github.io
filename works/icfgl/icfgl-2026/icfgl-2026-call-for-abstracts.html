@@ -338,6 +338,134 @@
             margin-bottom: 10px;
         }
 
+        /* Featured keynote speakers */
+        .featured-speakers-section {
+            background: #ffe8f1;
+        }
+
+        .featured-speakers-shell {
+            position: relative;
+            z-index: 1;
+            padding: 40px 0;
+            max-width: 1200px;
+        }
+
+        .speaker-heading {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .speaker-heading h2 {
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary-blue);
+            margin: 0 0 16px;
+        }
+
+        .speaker-heading hr {
+            width: 80px;
+            height: 4px;
+            background: var(--accent-pink);
+            border: none;
+            margin: 0 auto;
+        }
+
+        .speaker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .speaker-card {
+            background: #fff;
+            border: 1px solid #eef2f6;
+            border-radius: 4px;
+            padding: 50px 35px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(20, 78, 140, 0.07);
+            border-color: var(--accent-pink);
+        }
+
+        .speaker-img-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .speaker-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+            background: #fff;
+            box-sizing: border-box;
+            transition: transform 0.4s ease;
+        }
+
+        .speaker-card:hover .speaker-img {
+            transform: scale(1.04);
+        }
+
+        .speaker-img img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 50%;
+        }
+
+        .speaker-card h3 {
+            font-family: 'Cambria', Georgia, serif;
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            margin: 0 0 10px;
+            font-weight: 700;
+        }
+
+        .speaker-affiliation {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #5b6e8a;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .speaker-divider {
+            width: 40px;
+            height: 2px;
+            background: #eef2f6;
+            margin: 0 auto 20px;
+            transition: width 0.3s ease, background 0.3s ease;
+        }
+
+        .speaker-card:hover .speaker-divider {
+            width: 60px;
+            background: var(--accent-pink);
+        }
+
+        .speaker-bio {
+            font-size: 0.95rem;
+            color: #6a7485;
+            line-height: 1.6;
+            margin: 0;
+            max-width: 280px;
+        }
+
         /* Submission Hub CTA */
         .submission-hub {
             margin-top: 40px;
@@ -605,6 +733,7 @@
             .themes-grid { grid-template-columns: 1fr; }
             .abstract-hero h1 { font-size: 2.2rem; }
             .abstract-hero-meta { flex-direction: column; gap: 15px; }
+            .featured-speakers-shell { padding: 40px 28px; }
             .methodology-brief,
             .methodology-position {
                 grid-template-columns: 1fr;
@@ -619,6 +748,15 @@
         }
 
         @media (max-width: 600px) {
+            .featured-speakers-shell {
+                padding: 32px 20px;
+            }
+
+            .speaker-img {
+                width: 148px;
+                height: 148px;
+            }
+
             .abstract-hero-shell {
                 text-align: center;
             }
@@ -672,6 +810,52 @@
                 <a href="icfgl-2026.html" class="abstract-btn-outline">Back to ICFGL 2026</a>
             </div>
             <p class="abstract-hosted">Hosted by: University of Economics and Law (UEL) & Rosa-Luxemburg-Stiftung (RLS)</p>
+        </div>
+    </section>
+
+    <section class="content-section featured-speakers-section" id="featured-keynote-speakers">
+        <div class="section-shell featured-speakers-shell">
+            <div class="speaker-heading">
+                <h2>Featured Keynote Speakers</h2>
+                <hr>
+            </div>
+            <div class="speaker-grid">
+                <div class="speaker-card">
+                    <div class="speaker-img-container">
+                        <div class="speaker-img">
+                            <img src="../../../images/icfgl/icfgl2026/Prof Hunter_photo.jpeg" alt="Prof. Rosemary Hunter">
+                        </div>
+                    </div>
+                    <h3>Prof. Rosemary Hunter</h3>
+                    <div class="speaker-affiliation">Loughborough University, UK</div>
+                    <div class="speaker-divider"></div>
+                    <p class="speaker-bio">A pioneer and leading global voice in the Feminist Judgments movement.</p>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-img-container">
+                        <div class="speaker-img">
+                            <img src="../../../images/icfgl/icfgl2026/Prof Aoife O’Donoghue.jpg" alt="Prof. Aoife O'Donoghue">
+                        </div>
+                    </div>
+                    <h3>Prof. Aoife O'Donoghue</h3>
+                    <div class="speaker-affiliation">Queen's University Belfast, UK</div>
+                    <div class="speaker-divider"></div>
+                    <p class="speaker-bio">Expert in feminist constitutionalism and international law.</p>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-img-container">
+                        <div class="speaker-img">
+                            <img src="../../../images/icfgl/icfgl2026/Becky.jpg" alt="A/Prof. Becky Batagol">
+                        </div>
+                    </div>
+                    <h3>A/Prof. Becky Batagol</h3>
+                    <div class="speaker-affiliation">Monash University, Australia</div>
+                    <div class="speaker-divider"></div>
+                    <p class="speaker-bio">Lead editor of the Feminist Legislation Project.</p>
+                </div>
+            </div>
         </div>
     </section>
 
