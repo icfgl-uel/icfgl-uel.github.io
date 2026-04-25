@@ -88,14 +88,16 @@
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 18px;
-            align-items: start;
+            align-items: stretch;
             height: 100%;
         }
 
         .about-phase-stack {
             display: grid;
+            grid-template-rows: repeat(2, minmax(0, 1fr));
             gap: 18px;
             margin-top: 0;
+            height: 100%;
         }
 
         .about-placeholder-card {
@@ -123,12 +125,15 @@
         }
 
         .about-placeholder-card--portrait {
-            aspect-ratio: 340 / 340;
+            aspect-ratio: auto;
+            min-height: 0;
+            height: 100%;
         }
 
         .about-placeholder-card--tall {
-            aspect-ratio: 336 / 698;
-            min-height: 100%;
+            aspect-ratio: auto;
+            min-height: 0;
+            height: 100%;
         }
 
         .about-placeholder-card--landscape {
@@ -194,6 +199,89 @@
             background: #000;
         }
 
+        .about-drive-video-wrap {
+            display: grid;
+            align-content: start;
+            min-height: 0;
+            height: 100%;
+        }
+
+        .about-drive-video-frame {
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--about-media-radius);
+            background: transparent;
+        }
+
+        .about-drive-video-frame video,
+        .about-drive-video-frame iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: var(--about-media-radius);
+            background: #0f1724;
+        }
+
+        .about-drive-youtube-card {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            color: #fff;
+            text-decoration: none;
+            border-radius: var(--about-media-radius);
+            background: #0f1724;
+        }
+
+        .about-drive-youtube-card img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--about-media-radius);
+        }
+
+        .about-drive-youtube-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(15, 28, 45, 0.12), rgba(15, 28, 45, 0.42));
+        }
+
+        .about-drive-youtube-play {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            display: grid;
+            place-items: center;
+            width: 76px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(246, 65, 131, 0.94);
+            font-size: 1.7rem;
+            line-height: 1;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 14px 28px rgba(15, 28, 45, 0.24);
+        }
+
+        .about-drive-video-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            color: var(--dark-blue);
+            font-size: 0.94rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+        }
+
+        .about-drive-video-link:hover {
+            color: var(--pink);
+        }
+
         .about-poster-image--green {
             object-position: center 0%;
         }
@@ -254,13 +342,15 @@
             align-content: stretch;
             align-items: stretch;
             height: 100%;
+            min-height: 100%;
         }
 
         .about-phase-content > .about-placeholder-card--video {
-            aspect-ratio: auto;
+            aspect-ratio: 16 / 9;
             min-height: 0;
-            height: 100%;
-            align-self: stretch;
+            height: auto;
+            width: 100%;
+            align-self: center;
         }
 
         .about-phase-copy {
@@ -269,7 +359,7 @@
             gap: 24px;
             padding: 10px 8px 0;
             margin-top: 0;
-            min-height: 100%;
+            min-height: 0;
         }
 
         .about-phase-copy p {
@@ -330,6 +420,111 @@
         .partner-card--uel .partner-title {
             max-width: 560px;
             padding-top: 0.72em;
+        }
+
+        .managing-team-section {
+            background: linear-gradient(180deg, #f7fbff 0%, #eef5fb 100%);
+            padding: 54px 5% 72px;
+            border-top: 1px solid rgba(20, 78, 140, 0.08);
+        }
+
+        .managing-team-shell {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .managing-team-header {
+            margin-bottom: 34px;
+        }
+
+        .managing-team-title {
+            margin: 0 0 16px;
+            color: var(--pink);
+            font-family: Cambria, Georgia, serif;
+            font-size: 2.5rem !important;
+            line-height: 1.15;
+            font-weight: 700;
+        }
+
+        .managing-team-intro {
+            margin: 0;
+            color: var(--text-dark);
+            font-size: 1.04rem;
+            line-height: 1.76;
+            text-align: justify;
+        }
+
+        .managing-team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .managing-team-card {
+            display: grid;
+            grid-template-columns: minmax(220px, 0.78fr) minmax(0, 1.22fr);
+            align-items: stretch;
+            background: #fff;
+            border: 1px solid rgba(20, 78, 140, 0.1);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 18px 34px rgba(20, 78, 140, 0.07);
+        }
+
+        .managing-team-photo {
+            min-height: 100%;
+            background: #dfeaf5;
+        }
+
+        .managing-team-photo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .managing-team-card--hien .managing-team-photo img {
+            object-position: center 18%;
+        }
+
+        .managing-team-card--trang .managing-team-photo img {
+            object-position: center 12%;
+        }
+
+        .managing-team-body {
+            display: grid;
+            align-content: start;
+            gap: 12px;
+            padding: 28px 28px 30px;
+            border-top: 4px solid rgba(246, 65, 131, 0.18);
+        }
+
+        .managing-team-role {
+            margin: 0;
+            color: var(--pink);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .managing-team-name {
+            margin: 0;
+            color: var(--dark-blue);
+            font-family: Cambria, Georgia, serif;
+            font-size: clamp(1.35rem, 1.6vw, 1.7rem);
+            line-height: 1.2;
+        }
+
+        .managing-team-copy {
+            margin: 0;
+            color: var(--text-dark);
+            font-size: 0.98rem;
+            line-height: 1.72;
+            text-align: left;
         }
 
         .partner-card .video-responsive,
@@ -526,6 +721,21 @@
                 grid-template-columns: 1fr;
             }
 
+            .about-phase-stack {
+                grid-template-rows: none;
+                height: auto;
+            }
+
+            .about-placeholder-card--portrait {
+                aspect-ratio: 340 / 340;
+                height: auto;
+            }
+
+            .about-placeholder-card--tall {
+                aspect-ratio: 336 / 698;
+                height: auto;
+            }
+
             .about-phase-copy {
                 padding: 0;
             }
@@ -551,6 +761,10 @@
                 margin-bottom: 22px !important;
             }
 
+            .managing-team-grid {
+                grid-template-columns: 1fr;
+            }
+
             .partner-grid {
                 grid-template-columns: 1fr;
                 gap: 24px;
@@ -564,6 +778,20 @@
 
             .partner-card--uel .partner-title {
                 padding-top: 0;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .managing-team-section {
+                padding: 48px 5% 58px;
+            }
+
+            .managing-team-card {
+                grid-template-columns: 1fr;
+            }
+
+            .managing-team-photo {
+                aspect-ratio: 4 / 3;
             }
         }
 
@@ -613,7 +841,7 @@
     <div id="global-header"></div>
     <section style="background-color: #ffebf2; padding: 30px 5% 30px 5%;">
         <div class="container two-col-grid about-animate" style="align-items: center;">
-            <div class="about-animate about-animate-delay-1">
+            <div class="about-animate about-animate-delay-1" style="margin-top: 18px;">
                 <h2><a href="about.html" class="heading-pink">ABOUT US</a></h2>
                 <p
                     style="font-size: 1.0em; line-height: 1.7; color: var(--text-dark); margin-bottom: 20px; text-align: justify;">
@@ -665,12 +893,9 @@
                 </div>
             </div>
             <div class="about-phase-content">
-                <div class="about-placeholder-card about-placeholder-card--landscape about-placeholder-card--video about-media-reveal"
-                    style="animation-delay: 0.26s;">
-                    <iframe src="https://drive.google.com/file/d/14s7lSE2X_NXPrYYAeiTg_Tw294GkWDhf/preview"
-                        title="Project video"
-                        allow="autoplay; fullscreen"
-                        allowfullscreen></iframe>
+                <div class="about-placeholder-card about-placeholder-card--video about-media-reveal" style="animation-delay: 0.26s; padding: 0; border: none; background: #0f1724;">
+                    <iframe src="https://drive.google.com/file/d/14s7lSE2X_NXPrYYAeiTg_Tw294GkWDhf/preview" title="Video player" frameborder="0"
+                        allow="autoplay; fullscreen" allowfullscreen style="display: block; width: 100%; height: 100%; border: 0; border-radius: var(--about-media-radius);"></iframe>
                 </div>
                 <div class="about-phase-copy about-animate about-animate-delay-2">
                     <p><strong>The next phase of the project (2027-2030)</strong>  will build on these foundations by moving toward a more practice-oriented, policy-relevant, and public-facing agenda. </p>
@@ -738,7 +963,7 @@
 
                     </p>
                     <div style="display: flex; gap: 10px; margin-top:20px;">
-                        <a href="../works/icfgl/" class="btn-pink" style="flex:1; text-align:center;">ICFGL 2026</a>
+                        <a href="../works/icfgl/icfgl-2026/icfgl-2026.html" class="btn-pink" style="flex:1; text-align:center;">ICFGL 2026</a>
                         <a href="../works/icfgl/" class="btn-dark" style="flex:1; text-align:center;">Past ICFGL</a>
                     </div>
                 </div>
@@ -790,6 +1015,71 @@
                     <p style="font-size: 0.95em; line-height: 1.6; color: var(--text-dark);">The UEL team serves as the core academic driver of the project, leading its design, implementation, and long-term development. UEL lecturers and researchers, as project members, are responsible for developing academic content, integrating Feminist Legal Theory into legal education and research, and organizing the project’s key scholarly activities. </p>
                     
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="managing-team-section">
+        <div class="managing-team-shell">
+            <div class="managing-team-header about-animate">
+                <h2 class="managing-team-title">OUR MANAGEMENT TEAM</h2>
+                <p class="managing-team-intro">
+                    The project is guided by a managing team responsible for academic leadership, institutional coordination, financial stewardship, and day-to-day administration. Together, they ensure that the project develops with intellectual rigor, operational continuity, and long-term strategic direction.
+                </p>
+            </div>
+
+            <div class="managing-team-grid">
+                <article class="managing-team-card managing-team-card--hinh about-animate about-animate-delay-1">
+                    <div class="managing-team-photo">
+                        <img src="../images/aboutus/Dr.LeVanHinh.jpg" alt="Portrait of Dr. Le Van Hinh">
+                    </div>
+                    <div class="managing-team-body">
+                        <p class="managing-team-role">Project Coordinator</p>
+                        <h3 class="managing-team-name">Dr. Le Van Hinh</h3>
+                        <p class="managing-team-copy">
+                            Responsible for overall project governance and serving as the primary liaison between the project and the sponsoring organizations.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="managing-team-card managing-team-card--hien about-animate about-animate-delay-2">
+                    <div class="managing-team-photo">
+                        <img src="../images/aboutus/Dr.TrinhThucHien.jpg" alt="Portrait of Dr. Trinh Thuc Hien">
+                    </div>
+                    <div class="managing-team-body">
+                        <p class="managing-team-role">Project Director</p>
+                        <h3 class="managing-team-name">Dr. Trinh Thuc Hien</h3>
+                        <p class="managing-team-copy">
+                            Responsible for the conceptual design and implementation of the project’s research, framework development, and core activities.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="managing-team-card managing-team-card--thanh about-animate about-animate-delay-3">
+                    <div class="managing-team-photo">
+                        <img src="../images/aboutus/Dr.LoiMinhThanh.jpg" alt="Portrait of Dr. Loi Minh Thanh">
+                    </div>
+                    <div class="managing-team-body">
+                        <p class="managing-team-role">Financial Manager</p>
+                        <h3 class="managing-team-name">Dr. Loi Minh Thanh</h3>
+                        <p class="managing-team-copy">
+                            Responsible for fiscal oversight, budget planning, and ensuring all project expenditures align with financial compliance and reporting standards.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="managing-team-card managing-team-card--trang about-animate about-animate-delay-4">
+                    <div class="managing-team-photo">
+                        <img src="../images/aboutus/Ms.MacThiDieuTrang.jpg" alt="Portrait of Ms. Mac Thi Dieu Trang">
+                    </div>
+                    <div class="managing-team-body">
+                        <p class="managing-team-role">Project Administrator</p>
+                        <h3 class="managing-team-name">Ms. Mac Thi Dieu Trang</h3>
+                        <p class="managing-team-copy">
+                            Responsible for the management of administrative operations, logistical coordination, and supporting the day-to-day execution of project tasks.
+                        </p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
