@@ -56,6 +56,51 @@
             z-index: 2;
         }
 
+        .poster-hero-shell {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .poster-hero-images {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 480px;
+            padding-bottom: 30px;
+        }
+
+        .hero-img-1 {
+            width: 75%;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(10, 25, 50, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s ease;
+            z-index: 1;
+        }
+
+        .hero-img-2 {
+            width: 45%;
+            position: absolute;
+            left: 5%;
+            bottom: 0;
+            border-radius: 14px;
+            box-shadow: 0 30px 60px rgba(10, 25, 50, 0.6);
+            border: 6px solid #fff;
+            transition: transform 0.4s ease;
+            z-index: 2;
+        }
+
+        .hero-img-1:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+
+        .hero-img-2:hover {
+            transform: scale(1.04) translateY(-10px);
+        }
+
         .poster-kicker {
             display: inline-flex;
             align-items: center;
@@ -162,7 +207,7 @@
 
         .poster-heading p {
             margin: 0;
-            max-width: 780px;
+            max-width: 960px;
             color: var(--text-muted);
             line-height: 1.82;
             font-size: 1.02rem;
@@ -213,33 +258,35 @@
         }
 
         .poster-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 22px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
         }
 
         .poster-gallery figure {
+            flex: 0 0 calc(33.333% - 16px);
             margin: 0;
             background: #fff;
-            border-radius: 26px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .poster-gallery figure:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(20, 78, 140, 0.12);
         }
 
         .poster-gallery img {
             width: 100%;
-            aspect-ratio: 4 / 9;
+            height: 100%;
+            aspect-ratio: 1 / 1.414;
             object-fit: cover;
             display: block;
             background: #fff;
-        }
-
-        .poster-gallery figcaption {
-            padding: 16px 20px 20px;
-            color: var(--text-muted);
-            line-height: 1.72;
-            font-size: 0.95rem;
         }
 
         /* Prize & Funding Enhancements */
@@ -333,9 +380,24 @@
                 padding-top: 72px;
                 padding-bottom: 64px;
             }
-            .poster-grid,
-            .poster-gallery {
+            .poster-hero-shell {
                 grid-template-columns: 1fr;
+                gap: 60px;
+                text-align: center;
+            }
+            .poster-hero h1, .poster-intro, .poster-actions {
+                margin-left: auto;
+                margin-right: auto;
+                justify-content: center;
+            }
+            .poster-hero-images {
+                min-height: 400px;
+            }
+            .poster-grid {
+                grid-template-columns: 1fr;
+            }
+            .poster-gallery figure {
+                flex: 0 0 calc(50% - 12px);
             }
         }
 
@@ -358,6 +420,9 @@
             .poster-btn {
                 width: 100%;
             }
+            .poster-gallery figure {
+                flex: 0 0 100%;
+            }
         }
     </style>
 </head>
@@ -376,14 +441,20 @@
 
     <section class="poster-hero">
         <div class="poster-hero-shell">
-            <p class="poster-kicker">Student Programme</p>
-            <h1>FGL Posters Competition 2024</h1>
-            <p class="poster-intro">
-                A student-facing competition launched during FGL Week 2024 at UEL, combining essay writing and collaborative poster design around the themes of feminism, gender, and law.
-            </p>
-            <div class="poster-actions">
-                <a class="poster-btn poster-btn--primary" href="https://forms.gle/ZXkgnVbH4vr2sR7d7" target="_blank" rel="noopener noreferrer">Submission Form</a>
-                <a class="poster-btn poster-btn--outline" href="index.html">Back to Workshops</a>
+            <div class="poster-hero-content">
+                <p class="poster-kicker">Student Programme</p>
+                <h1>FGL Posters Competition 2024</h1>
+                <p class="poster-intro">
+                    A student-facing competition launched during FGL Week 2024 at UEL, combining essay writing and collaborative poster design around the themes of feminism, gender, and law.
+                </p>
+                <div class="poster-actions">
+                    <a class="poster-btn poster-btn--primary" href="https://forms.gle/ZXkgnVbH4vr2sR7d7" target="_blank" rel="noopener noreferrer">Submission Form</a>
+                    <a class="poster-btn poster-btn--outline" href="index.html">Back to Workshops</a>
+                </div>
+            </div>
+            <div class="poster-hero-images">
+                <img class="hero-img-1" src="../../images/workshops/PosterCompetition-2024/Poster FGL week.png" alt="Poster FGL Week">
+                <img class="hero-img-2" src="../../images/workshops/PosterCompetition-2024/Write FGL week.jpg" alt="Write FGL Week">
             </div>
         </div>
     </section>
@@ -501,16 +572,37 @@
 
             <div class="poster-gallery">
                 <figure>
-                    <img src="../../images/workshops/PosterCompetition-2024/1.jpg" alt="Poster competition 2024 poster announcement" loading="lazy">
-                    <figcaption>Visual documentation from the competition activities during FGL Week 2024.</figcaption>
+                    <img src="../../images/workshops/PosterCompetition-2024/1.png" alt="Poster Design 1" loading="lazy">
                 </figure>
                 <figure>
-                    <img src="../../images/workshops/PosterCompetition-2024/2.jpg" alt="Poster competition 2024 campaign poster" loading="lazy">
-                    <figcaption>Student-facing communication materials supporting the feminist legal theory programme.</figcaption>
+                    <img src="../../images/workshops/PosterCompetition-2024/2.png" alt="Poster Design 2" loading="lazy">
                 </figure>
                 <figure>
-                    <img src="../../images/workshops/PosterCompetition-2024/3.png" alt="Poster competition 2024 visual documentation" loading="lazy">
-                    <figcaption>Design outputs and campaign visuals developed within the poster competition stream.</figcaption>
+                    <img src="../../images/workshops/PosterCompetition-2024/3.png" alt="Poster Design 3" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../images/workshops/PosterCompetition-2024/4.png" alt="Poster Design 4" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../images/workshops/PosterCompetition-2024/5.png" alt="Poster Design 5" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../images/workshops/PosterCompetition-2024/6.png" alt="Poster Design 6" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../images/workshops/PosterCompetition-2024/7.png" alt="Poster Design 7" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../images/workshops/PosterCompetition-2024/8.png" alt="Poster Design 8" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../images/workshops/PosterCompetition-2024/9.png" alt="Poster Design 9" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../images/workshops/PosterCompetition-2024/10.png" alt="Poster Design 10" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../images/workshops/PosterCompetition-2024/11.png" alt="Poster Design 11" loading="lazy">
                 </figure>
             </div>
         </div>
