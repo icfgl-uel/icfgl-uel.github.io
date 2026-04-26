@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiên tòa giả định Công lý giới - UEL Feminist Legal Theory Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../header-footer.css">
+    <style>
+        /* Hero Section - synced with home Moot Court banner */
+        .moot-hero {
+            position: relative;
+            min-height: calc(100vh - 74px);
+            min-height: calc(100svh - 74px);
+            display: flex;
+            align-items: center;
+            margin: 0;
+            background: #0f1c2d url('../../../images/mootcourt/1.jpg') no-repeat 15% center / cover;
+            padding: 0;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .hero-gradient {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(3, 13, 31, 0.65) 0%, rgba(8, 26, 55, 0.45) 30%, rgba(12, 43, 76, 0.15) 58%, rgba(12, 43, 76, 0) 100%),
+                linear-gradient(180deg, rgba(3, 13, 31, 0.08) 0%, rgba(3, 13, 31, 0) 48%, rgba(3, 13, 31, 0.15) 100%);
+            z-index: 1;
+        }
+
+        .hero-shell {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: none;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            width: min(680px, 50vw);
+            max-width: none;
+            margin-left: clamp(48px, 8.5vw, 130px);
+        }
+
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            min-height: 38px;
+            padding: 0 24px;
+            margin: 0 0 24px;
+            border-radius: 999px;
+            background: rgba(134, 58, 110, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-family: 'Lato', sans-serif !important;
+            font-size: 0.82rem;
+            font-weight: 700;
+            line-height: 1 !important;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-title-main {
+            font-family: 'Cambria', Georgia, serif !important;
+            font-size: clamp(3.8rem, 6vw, 6.4rem);
+            font-weight: 700 !important;
+            line-height: 1;
+            color: rgba(255, 250, 244, 0.97);
+            margin: 0 0 24px 0;
+        }
+
+        .hero-title-main .highlight-pink {
+            font-family: 'Cambria', Georgia, serif !important;
+            color: white!important;
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 4px;
+            background: var(--pink, #F64183);
+            margin-bottom: 30px;
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            max-width: 560px;
+            margin: 0 0 38px;
+            color: rgba(255, 255, 255, 0.88);
+            font-family: 'Lato', sans-serif !important;
+            font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+            font-weight: 300;
+            line-height: 1.65 !important;
+            text-align: left !important;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 280px;
+            padding: 17px 32px 17px 44px;
+            background: linear-gradient(135deg, var(--pink, #F64183), #c23366);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(179, 53, 93, 0.3);
+        }
+
+        .hero-btn:hover {
+            background: #b3355d;
+            transform: scale(1.05);
+        }
+
+        .hero-btn-arrow {
+            margin-left: 18px;
+            font-size: 1.45em;
+            line-height: 1;
+            transform: translateY(-1px);
+        }
+
+        /* Override moot-specific sections to use global system */
+        .moot-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .benefit-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 28px 32px;
+            border-radius: 18px;
+            box-shadow: 0 12px 28px rgba(20, 78, 140, 0.06);
+            border-top: 4px solid var(--pink, #F64183);
+            width: calc(33.333% - 16px);
+            min-width: 280px;
+            transition: transform 0.3s ease;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-card h4 {
+            color: var(--primary-blue, #144e8c);
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.4;
+        }
+
+        .moot-intro-panel {
+            max-width: 960px;
+            margin: 0 auto 64px;
+            padding: 42px 48px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 20px 48px rgba(20, 78, 140, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moot-intro-title {
+            margin: 0 0 20px;
+            color: #F64183;
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            line-height: 1.1;
+        }
+
+        .moot-intro-copy {
+            margin: 0;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+
+        .eligibility-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 64px;
+            align-items: stretch;
+        }
+
+        .eligibility-title {
+            margin: 0 0 24px;
+            color: var(--primary-blue, #144e8c);
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+            line-height: 1.1;
+        }
+
+        .eligibility-list {
+            list-style: none;
+            padding: 0;
+            margin: 32px 0 0;
+            display: grid;
+            gap: 16px;
+        }
+
+        .eligibility-item {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            padding: 20px 24px;
+            background: #fff;
+            border: 1px solid rgba(20, 78, 140, 0.08);
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .eligibility-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        .eligibility-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--pink, #F64183);
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .eligibility-image-wrap {
+            display: flex;
+            height: 100%;
+        }
+
+        .eligibility-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .structure-timeline {
+            display: grid;
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .structure-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: var(--primary-blue, #144e8c);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        .step-content {
+            background: white;
+            padding: 28px 32px;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+            border-left: 5px solid var(--pink, #F64183);
+        }
+
+        .step-content h4 {
+            margin: 0 0 10px;
+            color: var(--primary-blue, #144e8c);
+            font-size: 1.25rem;
+        }
+
+        .step-content p {
+            margin: 0;
+            color: #55657f;
+            line-height: 1.6;
+        }
+
+        .cta-box {
+            background: white;
+            padding: clamp(48px, 6vw, 72px);
+            border-radius: 24px;
+            box-shadow: 0 24px 64px rgba(20, 78, 140, 0.1);
+            text-align: center;
+            border: 1px solid rgba(20, 78, 140, 0.08);
+        }
+
+        .cta-box h3 {
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(2.2rem, 4vw, 2.8rem);
+            color: var(--primary-blue, #144e8c);
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .moot-hero {
+                min-height: calc(100svh - 64px);
+                align-items: center;
+                background-position: 42% center;
+                padding: 88px 24px 72px;
+            }
+            .hero-gradient {
+                background:
+                    linear-gradient(90deg, rgba(3, 13, 31, 0.7) 0%, rgba(8, 26, 55, 0.5) 54%, rgba(12, 43, 76, 0.1) 100%),
+                    linear-gradient(180deg, rgba(3, 13, 31, 0.1) 0%, rgba(3, 13, 31, 0) 48%, rgba(3, 13, 31, 0.15) 100%);
+            }
+            .hero-content {
+                width: min(100%, 560px);
+                margin-left: 0;
+            }
+            .hero-kicker {
+                min-height: 34px;
+                padding: 0 18px;
+                margin-bottom: 20px;
+                font-size: 0.72rem;
+            }
+            .hero-title-main {
+                font-size: clamp(2.9rem, 11vw, 4rem);
+            }
+            .hero-subtitle {
+                max-width: 100%;
+                font-size: 1.08rem;
+            }
+            .hero-btn {
+                min-width: 250px;
+                padding: 16px 28px 16px 34px;
+            }
+            .eligibility-grid {
+                grid-template-columns: 1fr;
+            }
+            .benefit-card {
+                width: 100%;
+            }
+        }
+
+        /* Standardized Section Padding */
+        .page-section {
+            padding: clamp(64px, 10vw, 100px) 5%;
+            position: relative;
+        }
+
+        /* Hero Eyebrow Styling */
+        .hero-eyebrow {
+            display: inline-block;
+            padding: 8px 18px;
+            margin-bottom: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 999px;
+            color: #fdf2f8;
+            font: 700 0.75rem/1 'Lato', sans-serif;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+
+        /* Anchor Offset */
+        #structure {
+            scroll-margin-top: 100px;
+        }
+    </style>
+    <link rel="alternate" hreflang="en-US" href="../../../works/moot-court/index.html" />
+    <link rel="alternate" hreflang="vi" href="../../../vi/works/moot-court/index.html" />
+    <link rel="alternate" hreflang="x-default" href="../../../works/moot-court/index.html" />
+    <link rel="stylesheet" href="../../vi-typography.css">
+</head>
+
+<body>
+    <div id="global-header"></div>
+    
+    <div class="breadcrumb archive-breadcrumb">
+        <a href="../../index.html">Trang chủ</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../">Hoạt động &amp; Công trình</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Phiên tòa giả định Công lý giới</span>
+    </div>
+
+    <!-- HERO -->
+    <section class="moot-hero">
+        <div class="hero-gradient"></div>
+        
+        <div class="hero-shell">
+            <div class="hero-content">
+                <p class="hero-kicker">Cuộc thi dành cho sinh viên luật</p>
+                <h1 class="hero-title-main">Công lý giới<br><span class="highlight-pink">Phiên tòa giả định</span></h1>
+
+                <div class="hero-divider"></div>
+
+                <p class="hero-subtitle">
+                    Trao quyền cho thế hệ sinh viên luật kế tiếp để đặt câu hỏi về bất bình đẳng mang tính cấu trúc thông qua tranh luận và vận động.
+                </p>
+
+                <a href="#structure" class="hero-btn">
+                    <span>Khám phá phiên tòa giả định</span>
+                    <span class="hero-btn-arrow" aria-hidden="true">&#8594;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT IS MOOT COURT -->
+    <section class="page-section section-ice">
+        <div class="moot-container">
+            <div class="moot-intro-panel">
+                <h3 class="moot-intro-title">Phiên tòa giả định là gì?</h3>
+                <p class="moot-intro-copy">
+                    Phiên tòa giả định Công lý giới là cuộc thi cấp quốc gia dành cho sinh viên đại học ngành Luật trên cả nước; tạo không gian có cấu trúc, gắn thực hành để phát triển nghiên cứu pháp lý, hùng biện bằng văn bản và tranh tụng miệng, đồng thời đưa nguyên tắc công lý giới vào lập luận pháp lý.
+                </p>
+            </div>
+
+            <!-- WHY PARTICIPATE -->
+            <div style="text-align: center; margin-bottom: 56px;">
+                <h2 style="font-family: 'Cambria', Georgia, serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--primary-blue, #144e8c); margin-bottom: 16px;">Vì sao nên tham gia?</h2>
+                <p style="color: #55657f; font-size: 1.1rem;">Người tham dự tích lũy kinh nghiệm và kỹ năng quý giá:</p>
+            </div>
+            
+            <div class="benefit-grid">
+                <div class="benefit-card">
+                    <h4>Rèn nghiên cứu pháp lý và viết memorial</h4>
+                </div>
+                <div class="benefit-card">
+                    <h4>Củng cố hùng biện miệng và thuyết trình</h4>
+                </div>
+                <div class="benefit-card">
+                    <h4>Nhận diện bất bình đẳng dựa trên giới trong pháp luật</h4>
+                </div>
+                <div class="benefit-card">
+                    <h4>Làm quen công cụ tố tụng số (E-Tòa)</h4>
+                </div>
+                <div class="benefit-card">
+                    <h4>Trao đổi với chuyên gia trong và ngoài nước</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ELIGIBILITY -->
+    <section class="page-section section-rose">
+        <div class="moot-container">
+            <div class="eligibility-grid">
+                <div class="eligibility-copy">
+                    <h2 class="eligibility-title">Ai có thể tham gia?</h2>
+                    <p style="font-size: 1.15rem; color: #55657f; line-height: 1.7;">Mở cho sinh viên đại học ngành Luật trên cả nước yêu thích công lý giới và vận động pháp lý.</p>
+                    <ul class="eligibility-list">
+                        <li class="eligibility-item">
+                            <span class="eligibility-icon">✓</span>
+                            <span style="color: #4a5568; font-weight: 600;">Sinh viên đại học ngành Luật</span>
+                        </li>
+                        <li class="eligibility-item">
+                            <span class="eligibility-icon">✓</span>
+                            <span style="color: #4a5568; font-weight: 600;">Đội tuyển từ các trường trên khắp Việt Nam</span>
+                        </li>
+                        <li class="eligibility-item">
+                            <span class="eligibility-icon">✓</span>
+                            <span style="color: #4a5568; font-weight: 600;">Không hạn chế địa lý với các cơ sở đào tạo</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="eligibility-image-wrap">
+                    <img src="../../../images/mootcourt/4.jpg" alt="Hoạt động phiên tòa giả định" class="eligibility-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRUCTURE -->
+    <section id="structure" class="page-section section-ice">
+        <div class="moot-container">
+            <div style="text-align: center; margin-bottom: 56px;">
+                <h2 style="font-family: 'Cambria', Georgia, serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--primary-blue, #144e8c); margin-bottom: 16px;">Cấu trúc cuộc thi</h2>
+                <p style="color: #55657f; font-size: 1.1rem;">Cuộc thi gồm nhiều vòng tương tác:</p>
+            </div>
+
+            <div class="structure-timeline">
+                <div class="structure-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h4>Giai đoạn tập huấn</h4>
+                        <p>Các phiên tập huấn trực tuyến toàn quốc về công lý giới, nghiên cứu pháp lý và vận động.</p>
+                    </div>
+                </div>
+                <div class="structure-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h4>Memorial bằng văn bản</h4>
+                        <p>Nộp và chấm các lập luận pháp lý có cấu trúc của các đội.</p>
+                    </div>
+                </div>
+                <div class="structure-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h4>Phiên ảo (E-Tòa)</h4>
+                        <p>Các vòng tranh tụng miệng trực tuyến trong môi trường tòa số mô phỏng.</p>
+                    </div>
+                </div>
+                <div class="structure-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h4>Chung kết (trực tiếp)</h4>
+                        <p>Vòng chung kết tại cơ sở UEL với hội đồng chuyên gia và tranh luận trực tiếp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOIN -->
+    <section class="page-section section-rose">
+        <div class="moot-container">
+            <div class="cta-box">
+                <h3>Tham gia phiên tòa giả định (đang cập nhật)</h3>
+                <p style="color: #55657f; margin-bottom: 40px; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.8; font-size: 1.1rem;">Sẵn sàng thử thách bản thân và đóng góp cho công lý giới tại Việt Nam? Xem tài liệu bên dưới và đăng ký đội của bạn.</p>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                    <a href="#" class="btn-pink" style="padding: 16px 32px; border-radius: 12px; font-weight: 700;">Đăng ký đội &rarr;</a>
+                    <a href="#" class="btn-dark" style="padding: 16px 32px; border-radius: 12px; font-weight: 600;">Thể lệ cuộc thi</a>
+                    <a href="#" class="btn-dark" style="padding: 16px 32px; border-radius: 12px; font-weight: 600;">Tài liệu tập huấn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="global-footer"></div>
+    <script src="../../../js/components.js"></script>
+</body>
+</html>

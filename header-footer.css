@@ -52,6 +52,70 @@ nav::after {
 .nav-links a { color: #FFFFFF; }
 .nav-links a.nav-current { color: var(--primary, #f64183); }
 
+/* Language switcher dropdown (after Contact Us) */
+.nav-lang-dropdown {
+    margin-left: 4px;
+    padding-left: 16px;
+    border-left: 1px solid rgba(255, 255, 255, 0.28);
+}
+.nav-lang-dropdown .nav-lang-menu {
+    left: auto;
+    right: 0;
+    min-width: min(280px, calc(100vw - 24px));
+    padding: 6px 0;
+}
+.nav-lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 6px 4px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    font: inherit;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #fff !important;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: left;
+}
+.nav-lang-toggle:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.08);
+}
+.nav-lang-toggle:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+.nav-lang-toggle .nav-lang-flag {
+    font-size: 1.25rem;
+    line-height: 1;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
+}
+.nav-lang-toggle-text {
+    letter-spacing: 0.02em;
+}
+.nav-lang-menu a.nav-lang-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+}
+.nav-lang-menu .nav-lang-flag {
+    font-size: 1.35rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+.nav-lang-item-label {
+    font-weight: 600;
+}
+.nav-lang-menu a.nav-lang-item.nav-current {
+    cursor: default;
+}
+
 .logo {
     text-decoration: none;
     color: #FFFFFF;
@@ -194,6 +258,21 @@ nav::after {
         max-height: 320px;
         margin-top: 8px;
         padding: 4px 0 0 12px;
+    }
+    .nav-lang-dropdown {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .nav-lang-toggle {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .nav-lang-dropdown .nav-lang-menu {
+        left: 0;
+        right: 0;
     }
 }
 

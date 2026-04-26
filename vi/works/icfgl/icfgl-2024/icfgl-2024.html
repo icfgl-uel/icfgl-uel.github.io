@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICFGL 2024 - Dự án Lý luận Pháp lý Nữ quyền (UEL)</title>
+    <meta name="description" content="Tài liệu và kho lưu trữ ICFGL 2024: ảnh, handbook, diễn giả, hội đồng biên tập và kêu gọi tóm tắt.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../style.css">
+    <link rel="stylesheet" href="../../../../header-footer.css">
+    <style>
+        .icfgl2024-hero {
+            background: linear-gradient(135deg, #0f3a6e 0%, #144e8c 55%, #1a5faa 100%);
+            padding: 80px 5% 90px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .icfgl2024-hero::before {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 360px;
+            height: 360px;
+            background: radial-gradient(circle, rgba(255,255,255,0.04), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .icfgl2024-hero::after {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: 30%;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(222, 79, 122, 0.12), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .icfgl2024-hero-shell {
+            max-width: 1180px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr minmax(320px, 460px);
+            gap: 60px;
+            align-items: center;
+        }
+
+        .icfgl2024-hero-copy {
+            max-width: 700px;
+        }
+
+        .icfgl2024-hero-art {
+            justify-self: end;
+            width: min(100%, 460px);
+            padding: 12px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 32px 64px rgba(7, 27, 56, 0.35), 0 0 0 1px rgba(255,255,255,0.05);
+            backdrop-filter: blur(8px);
+        }
+
+        .icfgl2024-hero-art img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            box-shadow: 0 12px 32px rgba(6, 22, 48, 0.25);
+        }
+
+        .icfgl2024-kicker {
+            display: block;
+            margin: 0 0 12px;
+            color: #DE4F7A !important;
+            font: 700 0.85rem/1 'Lato', sans-serif;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .icfgl2024-hero-copy h1 {
+            margin: 0 !important;
+            color: #fff;
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-family: 'Cambria', Georgia, serif;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+        }
+
+        .icfgl2024-hero-copy p {
+            margin: 24px 0 0;
+            max-width: 700px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .icfgl2024-hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .icfgl2024-meta-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+
+        .icfgl2024-meta-chip--accent {
+            background: rgba(222,79,122,0.25);
+            border-color: rgba(222,79,122,0.4);
+            color: #ffdced;
+            font-weight: 700;
+        }
+
+        .icfgl2024-section {
+            background: var(--light-blue);
+            padding: 64px 5% 72px;
+        }
+
+        .icfgl2024-section-shell {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .icfgl2024-section-head {
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .icfgl2024-section-head h2 {
+            margin: 0 0 12px;
+            color: var(--dark-blue);
+            font-size: clamp(1.9rem, 3vw, 2.5rem);
+        }
+
+        .icfgl2024-section-head p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: var(--text-dark);
+            line-height: 1.75;
+            font-size: 1rem;
+        }
+
+        .icfgl2024-resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        @media (max-width: 900px) {
+            .icfgl2024-hero-shell {
+                grid-template-columns: 1fr;
+                gap: 26px;
+            }
+
+            .icfgl2024-hero-art {
+                justify-self: start;
+                width: min(100%, 300px);
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .icfgl2024-resource-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .icfgl2024-resource-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .icfgl2024-resource-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 220px;
+            padding: 28px;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(20, 78, 140, 0.11);
+            border-top: 5px solid var(--dark-blue);
+            border-radius: 18px;
+            box-shadow: 0 14px 30px rgba(20, 78, 140, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .icfgl2024-resource-card:visited {
+            color: inherit;
+        }
+
+        .icfgl2024-resource-card:hover,
+        .icfgl2024-resource-card:focus-visible {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 34px rgba(20, 78, 140, 0.12);
+            border-color: rgba(20, 78, 140, 0.2);
+            background: #ffffff;
+        }
+
+        .icfgl2024-resource-card.is-pink {
+            border-top-color: var(--pink);
+        }
+
+        .icfgl2024-resource-card.is-pink:hover,
+        .icfgl2024-resource-card.is-pink:focus-visible {
+            border-top-color: var(--dark-blue);
+        }
+
+        .icfgl2024-resource-index {
+            margin-bottom: 18px;
+            color: var(--pink);
+            font: 700 var(--font-size-xs)/1 'Lato', sans-serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+        }
+
+        .icfgl2024-resource-card h3 {
+            margin: 0 0 14px;
+            color: var(--dark-blue);
+            font-size: 1.25rem;
+            line-height: var(--line-height-tight);
+            transition: color 0.2s ease;
+        }
+
+        .icfgl2024-resource-card p {
+            margin: 0;
+            color: var(--text-dark);
+            line-height: var(--line-height-base);
+            transition: color 0.2s ease;
+        }
+
+        .icfgl2024-resource-arrow {
+            margin-top: auto;
+            padding-top: 20px;
+            color: var(--pink);
+            font-weight: 700;
+            font-size: var(--font-size-sm);
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .icfgl2024-resource-card:hover .icfgl2024-resource-index,
+        .icfgl2024-resource-card:focus-visible .icfgl2024-resource-index,
+        .icfgl2024-resource-card:hover .icfgl2024-resource-arrow,
+        .icfgl2024-resource-card:focus-visible .icfgl2024-resource-arrow {
+            color: var(--dark-blue);
+        }
+
+        .icfgl2024-resource-card:hover h3,
+        .icfgl2024-resource-card:focus-visible h3 {
+            color: var(--pink);
+        }
+
+        .icfgl2024-resource-card:hover .icfgl2024-resource-arrow,
+        .icfgl2024-resource-card:focus-visible .icfgl2024-resource-arrow {
+            transform: translateX(4px);
+        }
+
+
+    </style>
+    <link rel="alternate" hreflang="en-US" href="../../../../works/icfgl/icfgl-2024/icfgl-2024.html" />
+    <link rel="alternate" hreflang="vi" href="../../../../vi/works/icfgl/icfgl-2024/icfgl-2024.html" />
+    <link rel="alternate" hreflang="x-default" href="../../../../works/icfgl/icfgl-2024/icfgl-2024.html" />
+    <link rel="stylesheet" href="../../../vi-typography.css">
+</head>
+
+<body>
+    <div id="global-header"></div>
+
+    <div class="breadcrumb">
+        <a href="../../../index.html">Trang chủ</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <a href="../../index.html">Hoạt động &amp; Công trình</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <span>ICFGL 2024</span>
+    </div>
+
+    <section class="icfgl2024-hero">
+        <div class="icfgl2024-hero-shell">
+            <div class="icfgl2024-hero-copy">
+                <p class="icfgl2024-kicker">Lưu trữ hội thảo</p>
+                <h1>ICFGL 2024</h1>
+                <p>
+                   Tuyển tập tài liệu công khai từ ICFGL 2024: tài liệu hội thảo, ấn phẩm, diễn giả và hình ảnh tiêu biểu.
+                </p>
+                <div class="icfgl2024-hero-meta">
+                    <span class="icfgl2024-meta-chip">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        27 tháng 9 năm 2024
+                    </span>
+                    <span class="icfgl2024-meta-chip">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        TP. Hồ Chí Minh
+                    </span>
+                    <span class="icfgl2024-meta-chip icfgl2024-meta-chip--accent">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        Kho tài liệu
+                    </span>
+                </div>
+            </div>
+            <div class="icfgl2024-hero-art">
+                <img src="../../../../images/icfgl/icfgl2024.JPG" alt="Ảnh hội thảo ICFGL 2024">
+            </div>
+        </div>
+    </section>
+
+    <section class="icfgl2024-section">
+        <div class="icfgl2024-section-shell">
+            <div class="icfgl2024-section-head">
+                <h2>Tài liệu ICFGL 2024</h2>
+                <p>
+                    Chọn một mục dưới đây để mở tài liệu hội thảo tương ứng, gồm trang kêu gọi tóm tắt với thông báo đầy đủ và hướng dẫn nộp bài.
+                </p>
+            </div>
+
+            <div class="icfgl2024-resource-grid">
+                <a class="icfgl2024-resource-card" href="https://drive.google.com/drive/folders/1WWwGzc1-LlcMYxYggsZ-IuUfbrfkVZ4Z" target="_blank" rel="noopener noreferrer">
+                    <div class="icfgl2024-resource-index">01</div>
+                    <h3>Ảnh ICFGL 2024</h3>
+                    <p>Mở thư mục ảnh chung ghi lại các khoảnh khắc, đại biểu và hoạt động của kỳ 2024.</p>
+                    <div class="icfgl2024-resource-arrow">Mở kho ảnh &rarr;</div>
+                </a>
+
+                <a class="icfgl2024-resource-card is-pink" href="https://lkt.uel.edu.vn/Resources/Docs/SubDomain/lkt/ICFGL%202024/Abstract%20Proceedings_Revised.pdf" target="_blank" rel="noopener noreferrer">
+                    <div class="icfgl2024-resource-index">02</div>
+                    <h3>Tuyển tập tóm tắt</h3>
+                    <p>Truy cập tập kỷ yếu tóm tắt đã chỉnh sửa, gồm tóm tắt và đóng góp hội thảo cho ICFGL 2024.</p>
+                    <div class="icfgl2024-resource-arrow">Mở PDF &rarr;</div>
+                </a>
+
+                <a class="icfgl2024-resource-card" href="https://lkt.uel.edu.vn/Resources/Docs/SubDomain/lkt/ICFGL%202024/ICFGL%202024%20Handbook_Final.pdf" target="_blank" rel="noopener noreferrer">
+                    <div class="icfgl2024-resource-index">03</div>
+                    <h3>Sổ tay hội thảo</h3>
+                    <p>Xem sổ tay chính thức với chương trình, lịch và thông tin tham khảo cho đại biểu và độc giả.</p>
+                    <div class="icfgl2024-resource-arrow">Mở PDF &rarr;</div>
+                </a>
+
+                <a class="icfgl2024-resource-card is-pink" href="editorial-board.html">
+                    <div class="icfgl2024-resource-index">04</div>
+                    <h3>Hội đồng biên tập</h3>
+                    <p>Xem trang hội đồng biên tập với đội ngũ học thuật hỗ trợ xuất bản và phản biện.</p>
+                    <div class="icfgl2024-resource-arrow">Mở trang &rarr;</div>
+                </a>
+
+                <a class="icfgl2024-resource-card" href="keynote-speakers.html">
+                    <div class="icfgl2024-resource-index">05</div>
+                    <h3>Diễn giả chính</h3>
+                    <p>Mở trang diễn giả chính để xem các báo cáo viên và vai trò trong chương trình ICFGL 2024.</p>
+                    <div class="icfgl2024-resource-arrow">Mở trang &rarr;</div>
+                </a>
+
+                <a class="icfgl2024-resource-card is-pink" href="icfgl-2024-call-for-abstracts.html">
+                    <div class="icfgl2024-resource-index">06</div>
+                    <h3>Kêu gọi tóm tắt</h3>
+                    <p>Đọc toàn văn kêu gọi tóm tắt: cơ sở hội thảo, gợi ý chủ đề, yêu cầu nộp bài và hạn chót.</p>
+                    <div class="icfgl2024-resource-arrow">Mở trang &rarr;</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+        <div id="global-footer"></div>
+    <script src="../../../../js/components.js"></script>
+</body>
+
+</html>
+

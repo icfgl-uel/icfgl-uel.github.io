@@ -1,0 +1,51 @@
+/**
+ * Vietnamese mirror (html lang="vi"): Roboto for UI and body copy.
+ * Load this stylesheet last in <head> so it overrides page-local rules.
+ */
+html[lang="vi"] {
+    --font-body: "Roboto", system-ui, -apple-system, sans-serif;
+    --font-heading: "Roboto", system-ui, -apple-system, sans-serif;
+}
+
+/* Shared nav/footer still hard-codes Lato in a few selectors */
+html[lang="vi"] .nav-links,
+html[lang="vi"] .nav-lang-toggle {
+    font-family: "Roboto", system-ui, -apple-system, sans-serif !important;
+}
+
+/* Icon fonts: exclude FA classes from Roboto sweep */
+html[lang="vi"] .fas,
+html[lang="vi"] .far,
+html[lang="vi"] .fab,
+html[lang="vi"] .fal,
+html[lang="vi"] .fad {
+    font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", "Font Awesome 6 Free",
+        "Font Awesome 6 Brands" !important;
+}
+
+html[lang="vi"] .fab {
+    font-family: "Font Awesome 5 Brands", "Font Awesome 6 Brands" !important;
+}
+
+html[lang="vi"] .fas,
+html[lang="vi"] .far {
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free" !important;
+}
+
+/* Broad sweep: overrides Lato/Cambria in style.css, header-footer.css, and page <style> */
+html[lang="vi"] body {
+    font-family: "Roboto", system-ui, -apple-system, sans-serif !important;
+}
+
+html[lang="vi"] body *:not(.fas):not(.far):not(.fab):not(.fal):not(.fad) {
+    font-family: "Roboto", system-ui, -apple-system, sans-serif !important;
+}
+
+/* Monospace after broad sweep so code blocks stay readable */
+html[lang="vi"] code,
+html[lang="vi"] pre,
+html[lang="vi"] kbd,
+html[lang="vi"] samp {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace !important;
+}

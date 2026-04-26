@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICFGL – Hội thảo Quốc tế về Nữ quyền, Giới và Pháp luật</title>
+    <meta name="description" content="ICFGL — Hội thảo Quốc tế về Nữ quyền, Giới và Pháp luật do UEL tổ chức với sự tài trợ của Rosa Luxemburg Stiftung.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../header-footer.css">
+    <style>
+        /* === Edition Grid === */
+        .edition-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 50px;
+        }
+
+        .edition-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1.5px solid rgba(20, 78, 140, 0.1);
+            transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .edition-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+        }
+
+        .edition-card--2024:hover { border-color: var(--pink); }
+        .edition-card--2021:hover { border-color: var(--pink); }
+
+        .edition-card-link {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 36px 32px;
+            text-decoration: none;
+            min-height: 180px;
+        }
+
+        .edition-year {
+            font-weight: 800;
+            font-size: 3.4rem;
+            margin: 0;
+            line-height: 1;
+            font-family: 'Cambria', Georgia, serif;
+            letter-spacing: -1px;
+        }
+
+        .edition-divider {
+            width: 32px;
+            height: 2px;
+            margin: 14px 0 10px;
+            border-radius: 2px;
+        }
+
+        .edition-label {
+            font-size: var(--font-size-xs);
+            margin: 0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* 2024 – pink */
+        .edition-card--2024 .edition-year { color: var(--dark-navy); }
+        .edition-card--2024 .edition-divider { background: var(--dark-navy); }
+        .edition-card--2024 .edition-label { color: rgba(20, 78, 140, 0.72); }
+
+        /* 2021 – navy */
+        .edition-card--2021 .edition-year { color: var(--dark-navy); }
+        .edition-card--2021 .edition-divider { background: var(--dark-navy); }
+        .edition-card--2021 .edition-label { color: rgba(20, 78, 140, 0.72); }
+
+
+        /* Coming soon */
+        .edition-card--draft {
+            background: rgba(20, 78, 140, 0.03);
+            border-style: dashed;
+            border-color: rgba(20, 78, 140, 0.15);
+            pointer-events: none;
+        }
+        .edition-card--draft .edition-year { color: rgba(20, 78, 140, 0.22); }
+        .edition-card--draft .edition-divider { background: rgba(20, 78, 140, 0.15); }
+        .edition-card--draft .edition-label { color: rgba(20, 78, 140, 0.2); }
+
+        @media (max-width: 768px) {
+            .edition-grid { grid-template-columns: 1fr; }
+
+        }
+
+        .icfgl-highlight-section {
+            background-color: var(--light-pink);
+            border-radius: 40px;
+            padding: 56px 0 64px;
+            margin: 60px 0 100px;
+            border: none;
+        }
+
+        .icfgl-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 42px;
+            align-items: stretch;
+            margin-bottom: 0;
+        }
+
+        .icfgl-summary-card {
+            background: var(--white);
+            border: none;
+            padding: 48px 50px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(31, 42, 68, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .icfgl-summary-copy {
+            gap: 22px;
+        }
+
+        .icfgl-summary-copy-text {
+            font-size: 1.08rem;
+            line-height: 1.82;
+            color: var(--dark-navy);
+            text-align: left;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .icfgl-summary-image-container {
+            position: relative;
+            display: grid;
+            grid-template-rows: minmax(350px, 1.18fr) auto;
+            gap: 16px;
+            align-content: center;
+            height: 100%;
+        }
+
+        .icfgl-summary-image-main,
+        .icfgl-summary-image-grid {
+            position: relative;
+        }
+
+        .icfgl-summary-image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .icfgl-summary-image-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            display: block;
+            box-shadow: 0 20px 60px rgba(31, 42, 68, 0.15);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            object-fit: cover;
+        }
+
+        .icfgl-summary-image-container:hover img {
+            transform: scale(1.03);
+        }
+
+        .icfgl-summary-image-main img {
+            min-height: 360px;
+        }
+
+        .icfgl-summary-image-grid img {
+            min-height: 182px;
+        }
+
+        @media (max-width: 1024px) {
+            .icfgl-summary-grid {
+                gap: 34px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .icfgl-highlight-section {
+                padding: 40px 0;
+                border-radius: 20px;
+                margin: 40px 0 60px;
+            }
+            .icfgl-summary-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-bottom: 0;
+            }
+            .icfgl-summary-card {
+                padding: 35px;
+            }
+            .icfgl-summary-copy-text {
+                font-size: 1.02rem;
+                line-height: 1.78;
+            }
+            .icfgl-summary-image-main img {
+                min-height: 300px;
+            }
+            .icfgl-summary-image-grid img {
+                min-height: 150px;
+            }
+        }
+
+        /* Unified hero responsive */
+        .unified-hero-section {
+            background: var(--white);
+            border-radius: 36px;
+            padding: 48px;
+            box-shadow: 0 16px 50px rgba(31, 42, 68, 0.05);
+            margin-bottom: 80px;
+            border: 1px solid rgba(20,78,140,0.06);
+        }
+
+        .unified-hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .unified-hero-grid h2 {
+            font-size: 2.85rem;
+            line-height: 1.08;
+            margin: 0 0 18px;
+        }
+
+        @media (max-width: 900px) {
+            .unified-hero-section {
+                padding: 32px 24px;
+                border-radius: 28px;
+            }
+
+            .unified-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .unified-hero-grid .archive-eyebrow {
+                font-size: 0.85rem !important;
+            }
+
+            .unified-hero-grid h2 {
+                font-size: 1.95rem !important;
+            }
+        }
+    </style>
+    <link rel="alternate" hreflang="en-US" href="../../../works/icfgl/index.html" />
+    <link rel="alternate" hreflang="vi" href="../../../vi/works/icfgl/index.html" />
+    <link rel="alternate" hreflang="x-default" href="../../../works/icfgl/index.html" />
+    <link rel="stylesheet" href="../../vi-typography.css">
+</head>
+<body class="archive-page">
+    <div id="global-header"></div>
+
+    <div class="breadcrumb">
+        <a href="../../index.html">Trang chủ</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../">Hoạt động &amp; Công trình</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>ICFGL</span>
+    </div>
+
+    <main class="archive-shell icfgl-shell">
+
+        <!-- ═══════════════ UNIFIED HERO & SUMMARY ═══════════════ -->
+        <section class="unified-hero-section">
+            <div class="unified-hero-grid">
+                
+                <!-- Left: Copy & Text -->
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <p class="archive-eyebrow" style="color: var(--pink); font-size: 0.8rem; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 16px; text-transform: uppercase;">Hội thảo quốc tế</p>
+                    <h2>Hội thảo Quốc tế về Nữ quyền, Giới và Pháp luật</h2>
+                    
+                    <p style="color: var(--dark-navy); font-weight: 600; margin-bottom: 24px; line-height: 1.75;">
+                        Nền tảng học thuật định kỳ, lưu trữ các kỳ hội thảo, tài liệu liên quan và điểm truy cập tài nguyên công khai.
+                    </p>
+
+                    <div style="width: 48px; height: 3px; background: var(--pink); border-radius: 4px; margin-bottom: 24px;"></div>
+
+                    <p style="color: #4a5568; line-height: 1.75; margin-bottom: 18px;">
+                        <b>Hội thảo Quốc tế về Nữ quyền, Giới và Pháp luật (ICFGL)</b> là diễn đàn học thuật hai năm một lần do Trường Đại học Kinh tế – Luật (UEL) phối hợp đối tác quốc tế tổ chức, quy tụ học giả, nhà thực hành và nhà hoạch định chính sách trao đổi các hướng phát triển đương đại của lý luận pháp lý nữ quyền và ứng dụng trên nhiều lĩnh vực pháp luật.
+                    </p>
+                    <p style="color: #4a5568; line-height: 1.75; margin: 0;">
+                        Từ kỳ đầu tiên năm 2021 đến chuẩn bị cho 2026, ICFGL đã hình thành khung trao đổi học thuật bền vững, thúc đẩy đối thoại phê phán và nữ quyền pháp học tại Việt Nam và quốc tế.
+                    </p>
+                </div>
+
+                <!-- Right: Image Grid -->
+                <div style="display: flex; flex-direction: column; gap: 14px; height: 100%;">
+                    <div style="flex: 1; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(31, 42, 68, 0.1);">
+                        <img src="../../../images/icfgl/1.JPG" alt="Hoạt động ICFGL" style="width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block;">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                        <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(31, 42, 68, 0.08);">
+                            <img src="../../../images/icfgl/2.JPG" alt="Khoảnh khắc hội thảo ICFGL" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+                        </div>
+                        <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(31, 42, 68, 0.08);">
+                            <img src="../../../images/icfgl/3.JPG" alt="Đại biểu tham dự ICFGL" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ICFGL Editions -->
+        <section class="archive-section">
+            <div class="section-heading">
+                <p class="section-kicker">Các kỳ hội thảo</p>
+                <h2 style="color: var(--dark-navy);">Lưu trữ theo thời gian</h2>
+            </div>
+
+            <div class="edition-grid">
+                <div class="edition-card edition-card--2024">
+                    <a href="icfgl-2026/icfgl-2026.html" class="edition-card-link">
+                        <p class="edition-year">2026</p>
+                        <div class="edition-divider"></div>
+                        <p class="edition-label">ICFGL 2026 &rarr;</p>
+                    </a>
+                </div>
+                <div class="edition-card edition-card--2024">
+                    <a href="icfgl-2024/icfgl-2024.html" class="edition-card-link">
+                        <p class="edition-year">2024</p>
+                        <div class="edition-divider"></div>
+                        <p class="edition-label">ICFGL 2024 &rarr;</p>
+                    </a>
+                </div>
+                <div class="edition-card edition-card--2021">
+                    <a href="./icfgl-2021/icfgl-2021.html" class="edition-card-link">
+                        <p class="edition-year">2021</p>
+                        <div class="edition-divider"></div>
+                        <p class="edition-label">ICFGL 2021 &rarr;</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <div id="global-footer"></div>
+    <script src="../../../js/components.js"></script>
+</body>
+</html>

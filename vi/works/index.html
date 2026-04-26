@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kho học thuật: Hoạt động &amp; công trình - Dự án Lý luận Pháp lý Nữ quyền (UEL)</title>
+    <meta name="description" content="Kho học thuật UEL: bản án nữ quyền, ICFGL, hội thảo, phiên tòa giả định Công lý giới và ấn phẩm của Dự án Lý luận Pháp lý Nữ quyền.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../header-footer.css">
+    <style>
+        :root {
+            --primary-blue: #144e8c;
+            --accent-pink: #F64183;
+            --bg-light-blue: #f3f9ff;
+            --bg-light-pink: #ffebf2;
+            --glass-white: rgba(255, 255, 255, 0.95);
+            --text-muted: #55657f;
+            --border-light: rgba(20, 78, 140, 0.1);
+        }
+
+        body {
+            background-color: #fff;
+            color: var(--text-dark);
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* Hero Section - Redesigned Premium */
+        .academic-hero {
+            position: relative;
+            min-height: calc(100vh - 74px);
+            min-height: calc(100svh - 74px);
+            display: flex;
+            align-items: center;
+            margin: 0;
+            background: #0f1c2d url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=2000') no-repeat center center / cover;
+            padding: clamp(64px, 8vh, 96px) 0 clamp(132px, 15vh, 168px);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .hero-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(24, 61, 108, 0.74) 0%, rgba(61, 110, 183, 0.62) 100%);
+            z-index: 1;
+        }
+
+        .hero-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: 2;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .hero-blob--pink {
+            top: -10%;
+            right: 0%;
+            width: 35rem;
+            height: 35rem;
+            background: rgba(246, 65, 131, 0.55);
+        }
+
+        .hero-blob--blue {
+            bottom: -20%;
+            left: -10%;
+            width: 35rem;
+            height: 35rem;
+            background: rgba(96, 165, 250, 0.4);
+        }
+
+        .hero-shell {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 clamp(16px, 2.4vw, 32px);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+            grid-template-areas:
+                "copy quote"
+                "description quote";
+            max-width: 1680px;
+            margin: 0 auto;
+            column-gap: clamp(32px, 4vw, 72px);
+            row-gap: 12px;
+            align-items: center;
+        }
+
+        .hero-copy {
+            grid-area: copy;
+            align-self: end;
+            padding-left: clamp(12px, 2vw, 28px);
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            padding: 8px 18px;
+            margin-bottom: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 999px;
+            color: #fdf2f8;
+            font: 700 0.75rem/1 'Lato', sans-serif;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-eyebrow:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-title {
+            font-family: 'Cambria', Georgia, serif !important;
+            font-size: clamp(3.8rem, 7.4vw, 6.1rem);
+            line-height: 1.1; /* leading-[1.1] */
+            font-weight: 700;
+            margin: 0 0 32px 0; /* mb-8 */
+            color: #fff;
+            font-style: normal;
+            letter-spacing: -0.02em;
+            text-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .hero-title-line {
+            display: block;
+        }
+
+        .hero-title-line--top {
+            font-size: 1em;
+            font-family: 'Cambria', Georgia, serif !important;
+            font-weight: inherit;
+            font-style: normal;
+            color: #ffffff;
+            margin-bottom: 0; /* let leading-1.1 handle the gap entirely */
+            letter-spacing: -0.01em;
+            text-transform: none;
+        }
+
+        .hero-title-strong {
+            font-family: 'Cambria', Georgia, serif !important;
+            font-style: normal; /* not-italic */
+            font-weight: inherit;
+            text-transform: uppercase; /* uppercase */
+            letter-spacing: -0.05em; /* tracking-tighter */
+            color: #f9a8d4; /* text-pink-300 */
+        }
+
+        .hero-description {
+            grid-area: description;
+            max-width: 95%;
+            margin: -6px 0 0;
+            padding-left: clamp(12px, 2vw, 28px);
+            color: rgba(255, 255, 255, 0.85);
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(1.05rem, 1.4vw, 1.15rem);
+            line-height: 1.7;
+            font-weight: 400;
+            align-self: start;
+        }
+
+        .hero-quote-wrap {
+            grid-area: quote;
+            align-self: center;
+            justify-self: end;
+            width: 100%;
+        }
+
+        .hero-quote-card {
+            position: relative;
+            overflow: hidden;
+            padding: 32px 36px;
+            border-radius: 20px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+
+        .hero-quote-icon {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            color: rgba(249, 168, 212, 0.15);
+            z-index: 0;
+        }
+
+        .hero-quote-icon svg {
+            width: 70px;
+            height: 70px;
+            display: block;
+        }
+
+        .hero-quote-text {
+            position: relative;
+            z-index: 1;
+            margin: 0 0 20px;
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+            line-height: 1.45;
+            color: #fff;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .hero-quote-text span {
+            color: #f9a8d4;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .hero-quote-source {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-quote-source::before {
+            content: '';
+            display: inline-block;
+            width: 32px;
+            height: 2px;
+            background: var(--accent-pink);
+            margin-right: 16px;
+        }
+
+        /* Pill Navigation - Refined */
+        .pill-nav-container {
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            margin-top: -88px;
+            height: 0; /* Ensures 0 gap between banner and section below */
+            display: flex;
+            justify-content: center;
+        }
+
+        .pill-nav-list {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 0 5%;
+        }
+
+        .pill-item {
+            padding: 10px 22px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pill-item:hover {
+            background: var(--primary-blue);
+            color: #fff;
+            border-color: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(18, 43, 84, 0.15);
+        }
+
+        /* Section Block Styling - Synchronized */
+        .page-section {
+            padding: 80px 5%;
+        }
+
+        .section-shell {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            margin-bottom: 70px;
+            text-align: center;
+        }
+
+        .section-eyebrow {
+            color: var(--accent-pink);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-heading h2 {
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .section-heading hr {
+            width: 80px;
+            height: 4px;
+            background: var(--accent-pink);
+            border: none;
+            margin: 0 auto;
+        }
+
+        .section-intro-text {
+            max-width: 850px;
+            margin: 30px auto 0;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* Card Patterns */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            padding: 38px 36px 34px;
+            border-radius: 28px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 16px 36px rgba(9, 29, 56, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(246, 65, 131, 0.22);
+            box-shadow: 0 22px 46px rgba(9, 29, 56, 0.08);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            inset: 0 auto auto 0;
+            width: 100%;
+            height: 84px;
+            background: linear-gradient(180deg, rgba(20, 78, 140, 0.045) 0%, rgba(20, 78, 140, 0) 100%);
+            pointer-events: none;
+        }
+
+        .card-number {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 62px;
+            height: 62px;
+            background: rgba(20, 78, 140, 0.08);
+            color: var(--primary-blue);
+            border: 1px solid rgba(20, 78, 140, 0.12);
+            border-radius: 50%;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85), 0 10px 24px rgba(20, 78, 140, 0.08);
+            font-weight: 800;
+            font-size: 1.2rem;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .feature-card:nth-child(2) .card-number {
+            background: rgba(246, 65, 131, 0.08);
+            color: var(--accent-pink);
+            border-color: rgba(246, 65, 131, 0.14);
+        }
+
+        .feature-card:nth-child(3) .card-number {
+            background: rgba(20, 78, 140, 0.1);
+            color: #2b4f90;
+            border-color: rgba(43, 79, 144, 0.14);
+        }
+
+        /* Book & Publication Treatment */
+        .publication-row {
+            display: grid;
+            grid-template-columns: minmax(280px, 300px) minmax(0, 1fr);
+            gap: 52px;
+            margin-bottom: 100px;
+            align-items: center;
+        }
+
+        .book-frame {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .book-frame img {
+            width: 100%;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .pub-details {
+            align-self: center;
+            max-width: 920px;
+        }
+
+        .pub-details h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        .meta-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+            display: grid;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .meta-list li strong {
+            color: var(--primary-blue);
+            width: 120px;
+            display: inline-block;
+        }
+
+        .publication-subintro {
+            max-width: 860px;
+            margin: 0 0 40px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .compact-publication-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 36px;
+        }
+
+        .compact-publication-card {
+            background: #fff;
+            padding: 42px;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .compact-publication-card h4 {
+            font-family: Cambria, serif;
+            color: var(--accent-pink);
+            font-size: 1.55rem;
+            margin-bottom: 18px;
+        }
+
+        .compact-publication-card p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 28px;
+            text-align: justify;
+        }
+
+        .compact-publication-grid--single {
+            grid-template-columns: minmax(0, 1fr);
+            max-width: 100%;
+        }
+
+        .compact-publication-card--journal {
+            padding: 32px 42px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+        }
+
+        .compact-publication-card--journal .journal-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .compact-publication-card--journal h4 {
+            margin: 0;
+            font-family: Cambria, Georgia, serif;
+            color: var(--primary-blue);
+            font-size: 1.6rem;
+        }
+
+        .compact-publication-card--journal p {
+            margin: 0;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        .compact-publication-card--journal .compact-publication-btn {
+            flex-shrink: 0;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .fj-showcase {
+            display: grid;
+            gap: 54px;
+        }
+
+        .fj-hero {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 56px;
+            align-items: stretch;
+        }
+
+        .fj-copy {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 18px 0;
+        }
+
+        .fj-copy .section-heading {
+            text-align: left;
+            margin-bottom: 28px;
+        }
+
+        .fj-copy .section-heading hr {
+            margin: 0;
+        }
+
+        .fj-copy .section-intro-text {
+            margin: 24px 0 0;
+            text-align: justify;
+            max-width: none;
+        }
+
+        .fj-body {
+            display: grid;
+            gap: 18px;
+            font-size: 1.02rem;
+            line-height: 1.85;
+            color: var(--text-muted);
+            text-align: justify;
+            margin-top: 8px;
+        }
+
+        .fj-body p {
+            margin: 0;
+        }
+
+        .fj-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 12px;
+        }
+
+        .archive-cta,
+        .compact-publication-btn,
+        .publication-download-btn,
+        .fj-btn-primary,
+        .fj-btn-secondary,
+        .moot-btn-primary,
+        .moot-btn-secondary {
+            min-height: 64px;
+            padding: 20px 32px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1;
+            border: 1px solid transparent;
+            box-shadow: none;
+            transition: all 0.3s ease;
+        }
+
+        .fj-actions a,
+        .moot-actions a {
+            min-width: 260px;
+        }
+
+        .archive-cta,
+        .compact-publication-btn,
+        .publication-download-btn,
+        .fj-btn-primary,
+        .moot-btn-primary {
+            background: var(--accent-pink);
+            color: #fff;
+            border-color: var(--accent-pink);
+        }
+
+        .archive-cta:hover,
+        .compact-publication-btn:hover,
+        .publication-download-btn:hover,
+        .fj-btn-primary:hover,
+        .moot-btn-primary:hover {
+            background: #cf4372;
+            border-color: #cf4372;
+            color: #fff;
+        }
+
+        .archive-cta--compact {
+            padding-left: 24px;
+            padding-right: 24px;
+            width: auto;
+            max-width: 100%;
+        }
+
+        .fj-btn-secondary {
+            background: #fff;
+            color: var(--primary-blue);
+            border-color: rgba(20, 78, 140, 0.18);
+        }
+
+        .fj-btn-secondary:hover {
+            background: #f7faff;
+            color: var(--primary-blue);
+            border-color: rgba(20, 78, 140, 0.24);
+        }
+
+        .fj-visual {
+            position: relative;
+            min-height: 760px;
+        }
+
+        .fj-image-frame {
+            height: 100%;
+            min-height: 760px;
+            overflow: hidden;
+            border-radius: 34px;
+            box-shadow: 0 30px 70px rgba(20, 78, 140, 0.16);
+            background: #dfe6ef;
+        }
+
+        .fj-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .fj-quote-card {
+            position: absolute;
+            left: -42px;
+            bottom: 64px;
+            width: min(410px, 82%);
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 28px;
+            padding: 34px 38px;
+            box-shadow: 0 20px 45px rgba(20, 78, 140, 0.12);
+            border: 1px solid rgba(20, 78, 140, 0.08);
+        }
+
+        .fj-quote-card p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.75;
+        }
+
+        /* Archive Grid - Synchronized with Conference Look */
+        .archive-box-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .archive-item-card {
+            padding: 60px 40px;
+            background: #fff;
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            box-shadow: 0 16px 34px rgba(7, 24, 52, 0.08);
+        }
+
+        .archive-item-card:hover {
+            background: #ffffff;
+            border-color: rgba(222, 79, 122, 0.38);
+            transform: translateY(-12px) scale(1.015);
+            box-shadow: 0 24px 48px rgba(6, 24, 52, 0.18);
+        }
+
+        .archive-item-year {
+            font-family: 'Cambria', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1;
+            margin-bottom: 20px;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .archive-item-card:hover .archive-item-year {
+            color: var(--accent-pink);
+        }
+
+        .archive-item-label {
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .archive-item-card:hover .archive-item-label {
+            color: var(--primary-blue);
+        }
+
+        /* Moot Court Grid */
+        .eligibility-box {
+            background: #fff;
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 20px 60px rgba(15, 58, 110, 0.03);
+        }
+
+        .moot-showcase {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 0.94fr;
+            gap: 72px;
+            align-items: center;
+        }
+
+        .moot-copy {
+            position: relative;
+            z-index: 1;
+        }
+
+        .moot-copy .section-heading {
+            text-align: left;
+            margin-bottom: 28px;
+        }
+
+        .moot-copy .section-heading hr {
+            width: 80px;
+            height: 4px;
+            border: none;
+            border-radius: 999px;
+            background: var(--accent-pink);
+            margin: 0;
+        }
+
+        .moot-copy .section-intro-text {
+            margin: 30px 0 0;
+            max-width: none;
+            text-align: justify;
+            font-size: 1.08rem;
+            line-height: 1.95;
+        }
+
+        .moot-title {
+            font-family: Cambria, serif !important;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.1;
+            margin: 0 0 20px;
+            letter-spacing: 0;
+            color: var(--primary-blue);
+        }
+
+        .moot-title-line {
+            display: block;
+            font-family: Cambria, serif !important;
+            font-size: inherit;
+            font-weight: inherit;
+            font-style: inherit;
+            letter-spacing: inherit;
+            line-height: inherit;
+        }
+
+        .moot-title-line--accent {
+            color: #f64183;
+        }
+
+        .moot-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 42px;
+        }
+
+        .moot-btn-secondary {
+            background: #fff;
+            color: var(--primary-blue);
+            border-color: rgba(20, 78, 140, 0.18);
+        }
+
+        .moot-btn-secondary:hover {
+            background: #fff;
+            color: var(--primary-blue);
+            border-color: rgba(20, 78, 140, 0.24);
+        }
+
+        .moot-eligibility {
+            position: relative;
+            z-index: 1;
+            background: #fff;
+            padding: 46px 48px;
+            border-radius: 34px;
+            border: 1px solid rgba(20, 78, 140, 0.06);
+            box-shadow: 0 24px 60px rgba(222, 79, 122, 0.08);
+        }
+
+        .moot-eligibility h3 {
+            margin: 0 0 24px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(20, 78, 140, 0.1);
+            font-family: Cambria, Georgia, serif;
+            font-size: 2.2rem;
+            color: var(--accent-pink);
+        }
+
+        .moot-eligibility-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 32px;
+        }
+
+        .moot-eligibility-item {
+            display: grid;
+            grid-template-columns: 76px 1fr;
+            gap: 22px;
+            align-items: start;
+        }
+
+        .moot-eligibility-index {
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Cambria, Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #fff;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 10px 24px rgba(20, 78, 140, 0.16);
+        }
+
+        .moot-eligibility-index--pink {
+            background: linear-gradient(135deg, #e7609b 0%, var(--accent-pink) 100%);
+        }
+
+        .moot-eligibility-index--blue {
+            background: linear-gradient(135deg, #456bb0 0%, #2f5698 100%);
+        }
+
+        .moot-eligibility-index--navy {
+            background: linear-gradient(135deg, #315c9f 0%, var(--primary-blue) 100%);
+        }
+
+        .moot-eligibility-copy strong {
+            display: block;
+            color: #25314a;
+            font-size: 1.08rem;
+            margin-bottom: 8px;
+        }
+
+        .moot-eligibility-copy p {
+            margin: 0;
+            color: #7b8aa5;
+            line-height: 1.65;
+            font-size: 0.98rem;
+        }
+
+        .icfgl-overview {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .icfgl-overview-copy {
+            line-height: 1.9;
+            font-size: 1.1rem;
+            text-align: justify;
+            color: var(--text-muted);
+        }
+
+        .icfgl-overview-copy p {
+            margin-bottom: 24px;
+        }
+
+        .icfgl-image-frame {
+            align-self: stretch;
+            min-height: 440px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .icfgl-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .workshops-showcase {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 72px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .workshops-hero-media {
+            align-self: stretch;
+            min-height: 440px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 24px 50px rgba(20, 78, 140, 0.14);
+            background: #dfe7f0;
+        }
+
+        .workshops-hero-media img {
+            width: 100%;
+            height: 100%;
+            min-height: 440px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .workshops-hero-copy {
+            display: grid;
+            gap: 28px;
+            align-content: center;
+        }
+
+        .workshops-hero-copy .section-heading {
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        .workshops-hero-copy .section-heading h2 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+        }
+
+        .workshops-hero-copy .section-heading hr {
+            width: 96px;
+            height: 4px;
+            border: none;
+            border-radius: 999px;
+            background: var(--accent-pink);
+            margin: 0;
+        }
+
+        .workshops-hero-copy .section-intro-text {
+            margin: 26px 0 0;
+            max-width: none;
+            text-align: left;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .workshops-body {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .workshops-hero-copy .archive-cta {
+            justify-self: start;
+        }
+
+        .workshops-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .workshop-card {
+            background: rgba(255, 255, 255, 0.96);
+            padding: 36px;
+            border-radius: 28px;
+            border: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            box-shadow: 0 14px 36px rgba(20, 78, 140, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .workshop-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(222, 79, 122, 0.34);
+            box-shadow: 0 24px 42px rgba(20, 78, 140, 0.1);
+        }
+
+        .workshop-img-container {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            border-radius: 16px;
+            margin-bottom: 26px;
+            background: #e4ebf5;
+        }
+
+        .workshop-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.35s ease;
+        }
+
+        .workshop-card:hover .workshop-img-container img {
+            transform: scale(1.03);
+        }
+
+        .workshop-card h4 {
+            margin: 0;
+            min-height: 3.3rem;
+            display: flex;
+            align-items: center;
+            font-family: Cambria, Georgia, serif;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            line-height: 1.35;
+        }
+
+        .workshop-card p {
+            margin: 14px 0 26px;
+            color: var(--text-muted);
+            font-size: 0.96rem;
+            line-height: 1.75;
+            flex-grow: 1;
+        }
+
+        .workshop-card a {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            color: var(--accent-pink);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 1024px) {
+            .academic-hero {
+                min-height: calc(100svh - 74px);
+                padding-bottom: 120px;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "copy"
+                    "description"
+                    "quote";
+                gap: 32px;
+            }
+            .hero-description {
+                max-width: 100%;
+                padding-left: 0;
+            }
+            .publication-row, .feature-grid, .archive-box-grid, .compact-publication-grid {
+                grid-template-columns: 1fr;
+            }
+            .book-frame {
+                max-width: 300px;
+                margin: 0 auto 30px;
+            }
+            .compact-publication-card {
+                padding: 32px;
+            }
+            .compact-publication-card--journal {
+                padding: 34px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+            .fj-hero {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+            .fj-visual {
+                min-height: auto;
+            }
+            .fj-image-frame {
+                min-height: 560px;
+            }
+            .fj-quote-card {
+                left: 24px;
+                bottom: 24px;
+                width: calc(100% - 48px);
+            }
+            .moot-showcase {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+            .icfgl-overview {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .icfgl-image-frame {
+                min-height: 360px;
+            }
+            .workshops-showcase,
+            .workshops-card-grid {
+                grid-template-columns: 1fr;
+            }
+            .workshops-showcase {
+                gap: 36px;
+            }
+            .workshops-hero-media,
+            .workshops-hero-media img {
+                min-height: 360px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .academic-hero {
+                min-height: calc(100svh - 64px);
+                border-bottom: 3px solid var(--accent-pink);
+                padding: 44px 0 96px;
+            }
+            .hero-shell {
+                padding: 0 16px;
+            }
+            .hero-eyebrow {
+                margin-bottom: 16px;
+                font-size: 0.65rem;
+            }
+            .hero-title {
+                font-size: clamp(3rem, 15vw, 4.2rem);
+            }
+            .hero-quote-card {
+                padding: 28px 24px;
+                border-radius: 16px;
+            }
+            .hero-quote-text {
+                font-size: 1.15rem;
+                margin-bottom: 20px;
+            }
+            .hero-quote-icon {
+                top: 8px;
+                right: 8px;
+            }
+            .hero-quote-icon svg {
+                width: 50px;
+                height: 50px;
+            }
+            .hero-description {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            .hero-grid {
+                gap: 24px;
+            }
+            .hero-copy {
+                padding-left: 0;
+            }
+            .pill-nav-container {
+                margin-top: -32px;
+                padding-bottom: 12px;
+            }
+            .pill-nav-list {
+                max-width: calc(100% - 24px);
+                border-radius: 28px;
+                gap: 8px;
+            }
+            .fj-image-frame {
+                min-height: 460px;
+            }
+            .fj-actions {
+                gap: 14px;
+            }
+            .archive-cta,
+            .compact-publication-btn,
+            .publication-download-btn,
+            .fj-btn-primary,
+            .fj-btn-secondary,
+            .moot-btn-primary,
+            .moot-btn-secondary {
+                width: 100%;
+                min-width: 0;
+            }
+            .fj-quote-card {
+                position: static;
+                width: 100%;
+                margin-top: 18px;
+            }
+            .moot-title {
+                font-size: 2.5rem;
+            }
+            .moot-actions {
+                gap: 14px;
+            }
+            .moot-eligibility {
+                padding: 32px 24px;
+            }
+            .moot-eligibility-item {
+                grid-template-columns: 60px 1fr;
+                gap: 16px;
+            }
+            .icfgl-image-frame {
+                min-height: 280px;
+            }
+            .archive-cta {
+                width: 100%;
+                min-width: 0;
+            }
+            .workshop-card {
+                padding: 26px;
+            }
+        }
+    </style>
+    <link rel="alternate" hreflang="en-US" href="../../works/index.html" />
+    <link rel="alternate" hreflang="vi" href="../../vi/works/index.html" />
+    <link rel="alternate" hreflang="x-default" href="../../works/index.html" />
+    <link rel="stylesheet" href="../vi-typography.css">
+</head>
+
+<body>
+    <div id="global-header"></div>
+
+    
+    <section class="academic-hero" aria-label="Banner Hoạt động và công trình">
+        <div class="hero-gradient"></div>
+        <div class="hero-blob hero-blob--pink"></div>
+        <div class="hero-blob hero-blob--blue"></div>
+        <div class="hero-shell">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <span class="hero-eyebrow">Kho tri thức</span>
+                    <h1 class="hero-title">
+                        <span class="hero-title-line hero-title-line--top"><i>Hoạt động</i></span>
+                        <span class="hero-title-line hero-title-strong">&amp; CÔNG TRÌNH</span>
+                        
+                    </h1>
+                </div>
+
+                <div class="hero-quote-wrap">
+                    <div class="hero-quote-card">
+                        <div class="hero-quote-icon" aria-hidden="true">
+                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4zm-13 0c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4z"/></svg>
+                        </div>
+                        <p class="hero-quote-text">«Nâng tầm pháp lý nhờ phân tích <span>nhạy cảm với giới</span> và phê phán.»</p>
+                        <p class="hero-quote-source">Tuyên bố sứ mệnh dự án</p>
+                    </div>
+                </div>
+
+                <p class="hero-description">
+                    Mục này mở và lưu trữ lâu dài các sản phẩm trọng tâm của dự án: ấn phẩm, học liệu, bản án nữ quyền và các hoạt động học thuật; đồng thời là kho lưu trữ nghiên cứu, hồ sơ hội thảo và tri thức pháp lý do Dự án Lý luận Pháp lý Nữ quyền tại UEL xây dựng.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="pill-nav-container">
+        <div class="pill-nav-list">
+            <a href="#feminist-judgments" class="pill-item">Bản án nữ quyền</a>
+            <a href="#icfgl" class="pill-item">ICFGL</a>
+            <a href="#workshops" class="pill-item">Hội thảo & Tọa đàm</a>
+            <a href="#moot-court" class="pill-item">Phiên tòa giả định</a>
+            <a href="#publications" class="pill-item">Ấn phẩm</a>
+        </div>
+    </div>
+<br/><br/>
+
+    <!-- SECTION 1: Bản án nữ quyền -->
+    <section id="feminist-judgments" class="page-section section-ice">
+        <div class="section-shell">
+            <div class="fj-showcase">
+                <div class="fj-hero">
+                    <div class="fj-copy">
+                        <div class="section-heading">
+                            <span class="section-eyebrow">Tài sản tri thức</span>
+                            <h2>Hướng tới bản án nữ quyền Việt Nam</h2>
+                            <hr>
+                            <p class="section-intro-text">
+                                Luồng công trình trụ cột của dự án, ứng dụng phương pháp bản án nữ quyền vào bối cảnh pháp lý Việt Nam; giới thiệu các bản án được viết lại làm nổi bật góc nhìn giới và bất bình đẳng cấu trúc.
+                            </p>
+                        </div>
+
+                        <div class="fj-body">
+                            <p>
+                                Năm 2022, chúng tôi khởi động dòng công việc «Bản án nữ quyền» với kỳ vọng xuất bản một cuốn sách góp phần vào diễn ngôn toàn cầu về nghiên cứu pháp lý nữ quyền. Dự án may mắn nhận được sự đồng hành của Giáo sư Rosemary Hunter — một trong những người tiên phong của lĩnh vực này — qua hội thảo hướng dẫn về phương pháp luận và triết lý dự án bản án nữ quyền. Kết quả là ấn phẩm <strong>«Hướng tới bản án nữ quyền Việt Nam»</strong> ra mắt cuối 2023; tập II dự kiến năm 2026.
+                            </p>
+                            <p>
+                                Bản tiếng Việt mang tựa «Hướng tới…» vì đây là sự thích ứng dự án toàn cầu với bối cảnh địa phương cụ thể, nơi phương pháp viết bản án thay thế đối mặt những thách thức riêng.
+                            </p>
+                            <p>
+                                Trong khi các dự án quốc tế thường ghép cặp thẩm phán với học giả, thực tiễn Việt Nam khó mời thẩm phán đương nhiệm; vì vậy học giả trong nước thường phải đảm nhận cả hai vai. Không phải ai cũng muốn «khoác áo» tòa án — một số ưu tiên thảo luận phê phán hơn là soạn một bản án hình thức — nên đây là hành trình «hướng tới» lý tưởng hơn là sao chép hoàn hảo mô hình gốc.
+                            </p>
+                        </div>
+<br/>
+                        <div class="fj-actions">
+                            <a href="feminist-judgments/" class="fj-btn-primary">Mở kho bản án &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="fj-visual">
+                        <div class="fj-image-frame">
+                            <img src="../../images/common/7.jpg" alt="Nghiên cứu bản án nữ quyền">
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="feature-grid" style="margin-top: 10px;">
+                    <div class="feature-card">
+                        <div class="card-number">01</div>
+                        <h3 style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">Thể hiện ứng dụng</h3>
+                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">Lý thuyết nữ quyền trong khung pháp lý hiện hành.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-number">02</div>
+                        <h3 style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">Tuân thủ hình thức</h3>
+                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">Giữ phong cách hành văn tư pháp trang trọng.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-number">03</div>
+                        <h3 style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">Làm lộ logic ẩn</h3>
+                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">Phơi bày và xử lý thiên kiến giới tiềm ẩn.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- SECTION 2: Moot Court -->
+    <section id="moot-court" class="page-section section-rose">
+        <div class="section-shell">
+            <div class="moot-showcase">
+                <div class="moot-copy">
+                    <div class="section-heading">
+                        <span class="section-eyebrow">Cuộc thi dành cho sinh viên luật</span>
+                        <h2 class="moot-title">
+                            <span class="moot-title-line">Công lý giới</span>
+                            <span class="moot-title-line moot-title-line--accent">Phiên tòa giả định</span>
+                        </h2>
+                        <hr>
+                        <p class="section-intro-text">
+                            Phiên tòa giả định Công lý giới là cuộc thi cấp quốc gia dành cho sinh viên đại học ngành Luật trên cả nước; cung cấp không gian có cấu trúc, gắn thực hành để rèn nghiên cứu pháp lý, hùng biện bằng văn bản và tranh tụng miệng, đồng thời đưa nguyên tắc công lý giới vào lập luận pháp lý.
+                        </p>
+                    </div>
+
+                    <div class="moot-actions">
+                        <a href="moot-court/" class="moot-btn-primary">Khám phá phiên tòa giả định &rarr;</a>
+                        <a href="moot-court/" class="moot-btn-secondary">Thể lệ kỹ thuật</a>
+                    </div>
+                </div>
+
+                <div class="moot-eligibility">
+                    <h3>Ai có thể tham gia?</h3>
+                    <ul class="moot-eligibility-list">
+                        <li class="moot-eligibility-item">
+                            <span class="moot-eligibility-index moot-eligibility-index--navy">01</span>
+                            <div class="moot-eligibility-copy">
+                                <strong>Sinh viên đại học ngành Luật</strong>
+                                <p>Mở cho mọi khóa và chuyên ngành thuộc khối đào tạo luật trên khắp Việt Nam.</p>
+                            </div>
+                        </li>
+                        <li class="moot-eligibility-item">
+                            <span class="moot-eligibility-index moot-eligibility-index--pink">02</span>
+                            <div class="moot-eligibility-copy">
+                                <strong>Đội tuyển theo trường</strong>
+                                <p>Do sinh viên đại học lập, đại diện cho cơ sở đào tạo của mình.</p>
+                            </div>
+                        </li>
+                        <li class="moot-eligibility-item">
+                            <span class="moot-eligibility-index moot-eligibility-index--navy">03</span>
+                            <div class="moot-eligibility-copy">
+                                <strong>Tham gia toàn quốc</strong>
+                                <p>Không hạn chế địa lý đối với các khoa luật công lập và tư thục tại Việt Nam.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION 3: ICFGL -->
+    <section id="icfgl" class="page-section section-ice">
+        <div class="section-shell">
+            <div class="section-heading">
+                <span class="section-eyebrow">Trung tâm hội thảo quốc tế</span>
+                <h2>Hội thảo về Nữ quyền, Giới và Pháp luật (ICFGL)</h2>
+                <hr>
+                <p class="section-intro-text">
+                    Diễn đàn học thuật hai năm một lần do Trường Đại học Kinh tế – Luật (UEL) chủ trì, ghi nhận đối thoại về nữ quyền pháp học kể từ 2021.
+                </p>
+            </div>
+
+            <div class="icfgl-overview">
+                <div class="icfgl-overview-copy">
+                    <p>
+<b>Hội thảo Quốc tế về Nữ quyền, Giới và Pháp luật (ICFGL)</b> là diễn đàn học thuật hai năm một lần do UEL phối hợp các đối tác quốc tế tổ chức, quy tụ học giả, nhà thực hành và nhà hoạch định chính sách để trao đổi các hướng phát triển đương đại của lý luận pháp lý nữ quyền và ứng dụng trên nhiều lĩnh vực pháp luật.
+Kể từ kỳ đầu tiên năm 2021, tiếp nối ICFGL 2024 và chuẩn bị cho 2026, hội thảo đã trở thành nền tảng trao đổi và hợp tác học thuật bền vững; hỗ trợ phổ biến nghiên cứu, nuôi dưỡng đối thoại phê phán và góp phần thúc đẩy nữ quyền pháp học tại Việt Nam và quốc tế.
+                    </p>
+                    <p style="margin-bottom: 30px;">
+                        Mỗi kỳ hình thành kho bài báo, kỷ yếu và phiên ghi hình phục vụ lưu trữ nghiên cứu dài hạn của dự án.
+                    </p>
+                    <a href="icfgl/" class="archive-cta">Xem kho ICFGL &rarr;</a>
+                </div>
+                <div class="icfgl-image-frame">
+                    <img src="../../images/common/8.jpg" alt="Hoạt động nổi bật ICFGL">
+                </div>
+            </div>
+
+            <div class="archive-box-grid">
+                <a href="icfgl/icfgl-2026/icfgl-2026.html" class="archive-item-card">
+                    <span class="archive-item-year">2026</span>
+                    <hr style="width: 40px; height: 3px; background: var(--accent-pink); border: none; margin: 0 auto 15px;">
+                    <span class="archive-item-label">ICFGL 2026 &rarr;</span>
+                </a>
+                <a href="icfgl/icfgl-2024/icfgl-2024.html" class="archive-item-card">
+                    <span class="archive-item-year">2024</span>
+                    <hr style="width: 40px; height: 3px; background: var(--accent-pink); border: none; margin: 0 auto 15px;">
+                    <span class="archive-item-label">ICFGL 2024 &rarr;</span>
+                </a>
+                <a href="icfgl/icfgl-2021/icfgl-2021.html" class="archive-item-card">
+                    <span class="archive-item-year">2021</span>
+                    <hr style="width: 40px; height: 3px; background: var(--accent-pink); border: none; margin: 0 auto 15px;">
+                    <span class="archive-item-label">ICFGL 2021 &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Hội thảo & Tọa đàm -->
+    <section id="workshops" class="page-section section-rose">
+        <div class="section-shell">
+            <div class="workshops-showcase">
+                <div class="workshops-hero-media">
+                    <img src="../../images/common/9.jpg" alt="Hội thảo nghiên cứu">
+                </div>
+                <div class="workshops-hero-copy">
+                    <div class="section-heading">
+                        <span class="section-eyebrow">Trao đổi học thuật</span>
+                        <h2>Hội thảo & Tọa đàm</h2>
+                        <hr>
+                        <p class="section-intro-text">
+                            Các nền tảng bổ trợ cho trao đổi học thuật, nâng cao năng lực và phát triển lý luận pháp lý nữ quyền trong nghiên cứu cũng như giảng dạy.
+                        </p>
+                    </div>
+                    <p class="workshops-body">
+                        Bên cạnh chuỗi ICFGL, dự án tổ chức nhiều hội thảo, tọa đàm và hoạt động giảng luận; đây là không gian bổ trợ cho trao đổi học thuật, nâng cao năng lực và phát triển lý luận pháp lý nữ quyền trong cả nghiên cứu và giảng dạy.
+                    </p>
+                    <a href="workshops/" class="archive-cta archive-cta--compact">Mở kho hội thảo &rarr;</a>
+                </div>
+            </div>
+
+            <div class="workshops-card-grid">
+                <div class="workshop-card">
+                    <div class="workshop-img-container">
+                        <img src="../../images/common/12.jpg" alt="Lecture">
+                    </div>
+                    <h4>Chuỗi giảng đặc biệt UEL 2022</h4>
+                    <p>Các buổi giảng chuyên sâu về phương pháp luật nữ quyền và góc nhìn quốc tế.</p>
+                    <a href="workshops/">Chi tiết &rarr;</a>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-img-container">
+                        <img src="../../images/common/11.jpg" alt="Trường hè">
+                    </div>
+                    <h4>Trường hè: Nữ quyền và Pháp luật</h4>
+                    <p>Các phiên đào tập trung cho sinh viên đại học và nhà nghiên cứu đầu nghề.</p>
+                    <a href="workshops/">Chi tiết &rarr;</a>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-img-container">
+                        <img src="../../images/common/10.JPG" alt="Hội thảo bản thảo">
+                    </div>
+                    <h4>Hội thảo bản thảo</h4>
+                    <p>Phản biện đồng đẳng và soạn thảo hợp tác cho tập «Hướng tới bản án nữ quyền Việt Nam».</p>
+                    <a href="workshops/">Chi tiết &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Publications -->
+    <section id="publications" class="page-section section-ice">
+        <div class="section-shell">
+            <div class="section-heading">
+                <span class="section-eyebrow">Sản phẩm học thuật</span>
+                <h2>Ấn phẩm</h2>
+                <hr>
+                <p class="section-intro-text">
+                    Mục này tập hợp các kết quả nghiên cứu và xuất bản của dự án: sách, bài báo, chương sách, kỷ yếu hội thảo, báo cáo và tài liệu khác trong khuôn khổ Dự án Lý luận Pháp lý Nữ quyền tại UEL.
+                </p>
+            </div>
+
+            <div style="margin-top: 80px;">
+                <h3 style="margin-bottom: 60px; border-bottom: 2px solid var(--accent-pink); padding-bottom: 15px; display: inline-block; font-family: Cambria, serif; font-size: 2rem;">Sách &amp; kỷ yếu</h3>
+                
+                <!-- Book 1 -->
+                <div class="publication-row">
+                    <div class="book-frame">
+                        <img src="../../images/publications/books-vfj.jpg" alt="Bìa sách Hướng tới bản án nữ quyền Việt Nam">
+                    </div>
+                    <div class="pub-details">
+                        <h4 style="color: var(--accent-pink); margin-bottom: 12px; font-size: 1.6rem; font-family: Cambria, serif;">Hướng tới bản án nữ quyền Việt Nam</h4>
+                        <p style="text-align: justify; line-height: 1.8; color: var(--text-muted);">
+                            Cuốn sách khám phá cách lý luận pháp lý nữ quyền có thể vận dụng vào lập luận tư pháp tại Việt Nam, gồm hình sự, tố tụng hình sự, hôn nhân gia đình và lao động; cho thấy góc nhìn nữ quyền mở rộng cách hiểu pháp luật và làm phong phú bản án bằng văn bản.
+                        </p>
+                        <ul class="meta-list">
+       
+                            <li><strong>Nhà xuất bản:</strong> Nhà xuất bản ĐHQG-HCM</li>
+                            <li><strong>Chủ biên:</strong> Trịnh Thục Hiền</li>
+                            <li><strong>Năm:</strong> 2024 &nbsp;|&nbsp; 375 trang</li>
+                            <li><strong>ISBN:</strong> 9788-604-479-308-5</li>
+                        </ul>
+                        <a href="https://drive.google.com/uc?export=download&id=1MUqudousf1mqTGVUYdyKWrBQOJmHH1Hh" class="publication-download-btn">Tải PDF &darr;</a>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="publication-row">
+                    <div class="book-frame">
+                        <img src="../../images/publications/opac-image (1).png" alt="Ashgate Research Companion Translation">
+                    </div>
+                    <div class="pub-details">
+                        <h4 style="color: var(--accent-pink); margin-bottom: 12px; font-size: 1.6rem; font-family: Cambria, serif;">The Ashgate Research Companion to Feminist Legal Theory</h4>
+                        <span style="font-size: 0.9rem; color: var(--text-muted); display: block; margin-bottom: 15px; font-style: italic;">(Bản dịch tiếng Việt)</span>
+                        <p style="text-align: justify; line-height: 1.8; color: var(--text-muted);">
+                            Tập sách tổng quan lý luận pháp lý nữ quyền, hệ thống hóa khái niệm, tranh luận và phương pháp từ các học giả quốc tế hàng đầu; là tài liệu nền tảng để hiểu cách góc nhìn nữ quyền phê phán và tái cấu trúc hệ thống pháp luật.
+                        </p>
+                        <ul class="meta-list">
+                            <li><strong>Nhà xuất bản:</strong> NXB ĐHQG-HCM</li>
+                            <li><strong>Ngôn ngữ:</strong> Tiếng Việt</li>
+                            <li><strong>Năm:</strong> 2023</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="publication-row">
+                    <div class="book-frame">
+                        <img src="../../images/publications/ICFGL 2024.jpg" alt="ICFGL 2024 Proceedings">
+                    </div>
+                    <div class="pub-details">
+                        <h4 style="color: var(--accent-pink); margin-bottom: 12px; font-size: 1.6rem; font-family: Cambria, serif;">Kỷ yếu ICFGL 2024</h4>
+                        <p style="text-align: justify; line-height: 1.8; color: var(--text-muted);">
+                            Tuyển tập các báo cáo được chọn từ Hội thảo Quốc tế về Nữ quyền, Giới và Pháp luật 2024; xem xét cách lý luận pháp lý nữ quyền phê phán giả định trung lập hình thức của pháp luật và thúc đẩy các cách tiếp cận thực chất về công lý giới.
+                        </p>
+                        <ul class="meta-list">
+                            <li><strong>Tổng chủ biên:</strong> Trịnh Thục Hiền</li>
+                            <li><strong>Năm:</strong> 2025 &nbsp;|&nbsp; 456 trang</li>
+                            <li><strong>ISBN:</strong> 978-632-608-376-7</li>
+                        </ul>
+                        <a href="https://drive.google.com/uc?export=download&id=180EN1OtbAwiWM8McVYCkFzQHFBEYIiDX" class="publication-download-btn">Tải PDF &darr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 80px;">
+                <h3 style="margin-bottom: 24px; border-bottom: 2px solid var(--accent-pink); padding-bottom: 15px; display: inline-block; font-family: Cambria, serif; font-size: 2rem;">Bài báo tạp chí &amp; báo cáo</h3>
+                <div class="compact-publication-grid compact-publication-grid--single">
+                    <div class="compact-publication-card compact-publication-card--journal">
+                        <div class="journal-content">
+                            <h4>Số đặc biệt Tạp chí UEL</h4>
+                            <p>Số đặc biệt: <em>Nữ quyền, Giới và Pháp luật</em> trên Tạp chí Kinh tế, Kinh doanh và Luật UEL.</p>
+                        </div>
+                        <a href="https://ebl.vnuhcmjournal.com.vn/index.php/ebl/issue/view/84" class="compact-publication-btn">Xem số báo &nearrow;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="global-footer"></div>
+    <script src="../../js/components.js"></script>
+    <script>
+        // Smooth scroll for nav pills
+        document.querySelectorAll('.nav-pill').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

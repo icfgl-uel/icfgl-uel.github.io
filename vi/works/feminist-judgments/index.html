@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bản án nữ quyền - Dự án Lý luận Pháp lý Nữ quyền (UEL)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../header-footer.css">
+    <link rel="alternate" hreflang="en-US" href="../../../works/feminist-judgments/index.html" />
+    <link rel="alternate" hreflang="vi" href="../../../vi/works/feminist-judgments/index.html" />
+    <link rel="alternate" hreflang="x-default" href="../../../works/feminist-judgments/index.html" />
+    <link rel="stylesheet" href="../../vi-typography.css">
+</head>
+<body class="archive-page">
+    <div id="global-header"></div>
+
+    <div class="breadcrumb">
+        <a href="../../index.html">Trang chủ</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../">Hoạt động &amp; Công trình</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Bản án nữ quyền</span>
+    </div>
+
+    <main class="archive-shell feminist-shell">
+
+        <!-- --------------- HERO --------------- -->
+        <style>
+            .feminist-shell {
+                padding-top: 0;
+            }
+
+            .academic-hero {
+                position: relative;
+                min-height: calc(100svh - 74px);
+                display: flex;
+                align-items: center;
+                width: 100vw;
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+                background: #0f1c2d url('../../../images/icfgl/2.JPG') no-repeat center center / cover;
+                padding: clamp(32px, 5vh, 56px) 0;
+                box-sizing: border-box;
+                color: #fff;
+                overflow: hidden;
+            }
+
+            .hero-gradient {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(135deg, rgba(24, 61, 108, 0.74) 0%, rgba(61, 110, 183, 0.62) 100%);
+                z-index: 1;
+            }
+
+            .hero-blob {
+                position: absolute;
+                border-radius: 50%;
+                filter: blur(90px);
+                z-index: 2;
+                opacity: 0.6;
+                pointer-events: none;
+            }
+
+            .hero-blob--pink {
+                top: -10%;
+                right: 0%;
+                width: 35rem;
+                height: 35rem;
+                background: rgba(246, 65, 131, 0.55);
+            }
+
+            .hero-blob--blue {
+                bottom: -20%;
+                left: -10%;
+                width: 35rem;
+                height: 35rem;
+                background: rgba(96, 165, 250, 0.4);
+            }
+
+            .hero-shell {
+                position: relative;
+                z-index: 10;
+                width: 100%;
+                margin: 0 auto;
+                padding: 0 clamp(28px, 4vw, 72px);
+                display: flex;
+                align-items: center;
+            }
+
+            .hero-grid {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
+                grid-template-areas:
+                    "copy quote"
+                    "description quote";
+                width: 100%;
+                margin: 0 auto;
+                column-gap: clamp(24px, 3vw, 56px);
+                row-gap: 12px;
+                align-items: center;
+            }
+
+            .hero-copy {
+                grid-area: copy;
+                align-self: end;
+                padding-left: clamp(12px, 2vw, 28px);
+            }
+
+            .archive-eyebrow {
+                display: inline-block;
+                padding: 8px 18px;
+                margin-bottom: 24px;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(4px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 999px;
+                color: #fdf2f8;
+                font: 700 0.85rem/1 'Lato', sans-serif;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .hero-title {
+                font-family: Cambria, serif !important;
+                font-size: clamp(3.2rem, 6vw, 5.5rem);
+                line-height: 1.1;
+                font-weight: 700;
+                margin: 0 0 32px 0;
+                color: #fff;
+            }
+            .hero-title span {
+                display: block;
+                font-family: Cambria, serif !important;
+                font-size: inherit;
+                font-weight: inherit;
+                font-style: inherit;
+                line-height: inherit;
+                letter-spacing: inherit;
+                color: #f9a8d4;
+            }
+            .hero-description {
+                grid-area: description;
+                font-size: clamp(1.05rem, 1.5vw, 1.15rem);
+                line-height: 1.8;
+                color: rgba(255, 255, 255, 0.9);
+                padding-left: clamp(12px, 2vw, 28px);
+                max-width: 920px;
+                margin: 0;
+            }
+
+            .fj-hero-cta {
+                display: inline-block;
+                margin-top: 32px;
+                background: var(--pink);
+                color: #fff;
+                font-size: 0.95rem;
+                font-weight: 700;
+                padding: 16px 42px;
+                border-radius: 4px;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                transition: all 0.3s ease;
+            }
+            .fj-hero-cta:hover {
+                background: #b3355d;
+                transform: translateY(-2px);
+            }
+
+            .hero-quote-wrap {
+                grid-area: quote;
+                position: relative;
+            }
+
+            .hero-quote-card {
+                background: rgba(255, 255, 255, 0.06);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 20px;
+                padding: 40px 48px;
+                box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+                position: relative;
+            }
+
+            .hero-quote-icon {
+                position: absolute;
+                top: 24px;
+                right: 24px;
+                color: rgba(246, 65, 131, 0.2);
+            }
+
+            .hero-quote-icon svg {
+                width: 80px;
+                height: 80px;
+            }
+
+            .hero-quote-text {
+                font-family: 'Cambria', Georgia, serif;
+                font-size: 1.7rem;
+                line-height: 1.5;
+                font-style: italic;
+                color: #fff;
+                margin: 0 0 24px 0;
+                position: relative;
+                z-index: 2;
+            }
+                .hero-quote-text span {
+                    color: #f9a8d4;
+                    font-weight: 700;
+            }
+            .hero-quote-source {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.6);
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 0.85rem;
+                margin: 0;
+            }
+            .hero-quote-source::before {
+                content: "";
+                width: 42px;
+                height: 2px;
+                border-radius: 999px;
+                background: var(--pink);
+                flex: 0 0 auto;
+            }
+
+            @media (max-width: 1024px) {
+                .hero-grid {
+                    grid-template-columns: 1fr;
+                    grid-template-areas:
+                        "copy"
+                        "description"
+                        "quote";
+                    gap: 32px;
+                }
+                .hero-description, .hero-copy {
+                    padding-left: 0;
+                }
+                .academic-hero {
+                    min-height: calc(100svh - 74px);
+                    padding: 36px 0;
+                }
+                .hero-title {
+                    font-size: clamp(2.8rem, 10vw, 4rem);
+                }
+                .hero-quote-card {
+                    padding: 32px 36px;
+                }
+                .hero-quote-text {
+                    font-size: 1.4rem;
+                }
+            }
+
+            @media (max-width: 640px) {
+                .academic-hero {
+                    min-height: calc(100svh - 74px);
+                    padding: 28px 0;
+                }
+                .hero-shell {
+                    padding: 0 12px;
+                }
+                .hero-grid {
+                    gap: 24px;
+                }
+            }
+        </style>
+        <section class="academic-hero" aria-label="Bản án nữ quyền hero banner">
+            <div class="hero-gradient"></div>
+            <div class="hero-blob hero-blob--pink"></div>
+            <div class="hero-blob hero-blob--blue"></div>
+            
+            <div class="hero-shell">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <span class="archive-eyebrow">Tư liệu học thuật</span>
+                        <h1 class="hero-title"><i class="fas fa-gavel" aria-hidden="true"></i><span> Bản án nữ quyền</span></h1>
+                    </div>
+
+                    <div class="hero-quote-wrap">
+                        <div class="hero-quote-card">
+                            <div class="hero-quote-icon" aria-hidden="true">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4zm-13 0c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4z"/></svg>
+                            </div>
+                            <p class="hero-quote-text">"Điều chỉnh phương pháp để viết lại bản án và làm rõ <span>bất bình đẳng mang tính cấu trúc</span> trong bối cảnh Việt Nam."</p>
+                            <p class="hero-quote-source">Sứ mệnh dự án</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-description">
+                        <p style="margin: 0;">
+                            Một trụ cột của dự án, kết nối khung pháp lý nữ quyền lý thuyết với kết quả tư pháp thực tiễn. Khám phá các phiên viết lại bản án, ấn phẩm đã xuất bản và các phân tích học thuật chuyên sâu.
+                        </p>
+                        <a href="#case-database" class="fj-hero-cta">Vào cơ sở dữ liệu &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- --------------- C?U TRC N?I DUNG --------------- -->
+        <section class="archive-section">
+            <div class="section-heading">
+                <p class="section-kicker">Cấu trúc nội dung</p>
+                <h2>Mỗi mục trong bộ sưu tập có thể gồm:</h2>
+            </div>
+            <div class="fj-structure-grid">
+                <article class="fj-structure-card">
+                    <div class="fj-structure-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3>Bản án gốc</h3>
+                    <p>Bối cảnh và các yếu tố chính của quyết định tư pháp được chọn</p>
+                </article>
+                <article class="fj-structure-card">
+                    <div class="fj-structure-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    </div>
+                    <h3>Bản án nữ quyền</h3>
+                    <p>Phiên bản viết lại bản án theo góc nhìn nữ quyền</p>
+                </article>
+                <article class="fj-structure-card">
+                    <div class="fj-structure-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </div>
+                    <h3>Bình luận học thuật</h3>
+                    <p>Phân tích lý thuyết và phương pháp đối với bản án được viết lại</p>
+                </article>
+                <article class="fj-structure-card">
+                    <div class="fj-structure-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/></svg>
+                    </div>
+                    <h3>Phiên bản song ngữ</h3>
+                    <p>Có tiếng Việt và tiếng Anh nhằm hỗ trợ đối thoại học thuật quốc tế</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- --------------- CASE DATABASE --------------- -->
+        <section class="archive-section" id="case-database">
+            <div class="section-heading">
+                <p class="section-kicker">Bộ sưu tập vụ án</p>
+                <h2>Cơ sở dữ liệu bản án nữ quyền</h2>
+                <p class="section-note">Tìm kiếm và khám phá các bản án được viết lại theo góc nhìn pháp lý nữ quyền tại các tòa án Việt Nam.</p>
+            </div>
+
+            <!-- Search & Filters � Academic Style -->
+            <div class="fj-filter-panel">
+                <div class="fj-search-box">
+                    <svg class="fj-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input id="judgmentSearch" class="fj-search-input" type="search" placeholder="Tìm theo tiêu đề, tác giả, tòa án hoặc từ khóa..." autocomplete="off">
+                </div>
+                <div class="fj-controls-row">
+                    <div class="fj-controls-left">
+                        <label class="fj-inline-filter">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                            <div class="fj-select-wrap">
+                                <select id="fieldFilter">
+                                    <option value="all">Tất cả lĩnh vực</option>
+                                    <option value="general">Tổng hợp</option>
+                                    <option value="marriage">Hôn nhân &amp; Gia đình</option>
+                                    <option value="criminal">Hình sự</option>
+                                    <option value="labour">Lao động</option>
+                                    <option value="inheritance">Đất đai &amp; Thừa kế</option>
+                                </select>
+                                <svg class="fj-select-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                            </div>
+                        </label>
+                        <span class="fj-controls-divider"></span>
+                        <label class="fj-inline-filter">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            <div class="fj-select-wrap">
+                                <select id="yearFilter">
+                                    <option value="all">Mọi năm</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                </select>
+                                <svg class="fj-select-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="fj-controls-right">
+                        <label class="fj-inline-filter fj-inline-filter--sort">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="8" y2="18"/></svg>
+                            <div class="fj-select-wrap">
+                                <select id="sortFilter">
+                                    <option value="id">Thứ tự mặc định</option>
+                                    <option value="title">Tiêu đề A–Z</option>
+                                    <option value="year-desc">Năm (mới nhất)</option>
+                                    <option value="year-asc">Năm (cũ nhất)</option>
+                                </select>
+                                <svg class="fj-select-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="fj-pill-row" aria-label="Lọc nhanh theo lĩnh vực pháp luật">
+                    <button type="button" class="fj-pill is-active" data-value="all">Tất cả</button>
+                    <button type="button" class="fj-pill" data-value="general">Tổng hợp</button>
+                    <button type="button" class="fj-pill" data-value="marriage">Hôn nhân &amp; Gia đình</button>
+                    <button type="button" class="fj-pill" data-value="criminal">Hình sự</button>
+                    <button type="button" class="fj-pill" data-value="labour">Lao động</button>
+                    <button type="button" class="fj-pill" data-value="inheritance">Đất đai &amp; Thừa kế</button>
+                </div>
+            </div>
+
+            <!-- Results Status -->
+            <div class="fj-results-bar">
+                <p id="resultsCount" class="fj-results-count">0 vụ án</p>
+                <div id="activeFilters" class="fj-active-filters" hidden>
+                    <span class="fj-active-label">Bộ lọc đang bật:</span>
+                    <div id="activeFilterTags" class="fj-active-tags"></div>
+                    <button type="button" id="clearFilters" class="fj-clear-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                        Xóa bộ lọc
+                    </button>
+                </div>
+            </div>
+
+            <div id="judgmentList" class="fj-case-list" aria-live="polite"></div>
+            <div id="emptyState" class="fj-empty" hidden>Không có kết quả phù hợp với bộ lọc hiện tại.</div>
+        </section>
+
+        <!-- --------------- � NGHIA H?C THU?T --------------- -->
+        <section class="archive-section" id="academic-significance">
+            <div class="section-heading">
+                <p class="section-kicker">Ý nghĩa học thuật</p>
+                <h2>Đóng góp của bộ sưu tập</h2>
+            </div>
+            <div class="fj-significance-grid">
+                <article class="fj-significance-card">
+                    <div class="fj-sig-number">01</div>
+                    <h3>Mở rộng phân tích pháp lý</h3>
+                    <p>Bộ sưu tập mở ra các cách tiếp cận phân tích pháp lý mới về giải thích và áp dụng pháp luật.</p>
+                </article>
+                <article class="fj-significance-card">
+                    <div class="fj-sig-number">02</div>
+                    <h3>Đưa giới vào quá trình giải thích pháp luật</h3>
+                    <p>Đặt yếu tố giới vào trung tâm quá trình diễn giải, giúp nhận diện bất bình đẳng cấu trúc trong hệ thống tư pháp.</p>
+                </article>
+                <article class="fj-significance-card">
+                    <div class="fj-sig-number">03</div>
+                    <h3>Nối lý thuyết với thực tiễn</h3>
+                    <p>Kết nối lý luận pháp lý nữ quyền với thực hành tư pháp, tạo cầu nối giữa nghiên cứu học thuật và xét xử.</p>
+                </article>
+                <article class="fj-significance-card">
+                    <div class="fj-sig-number">04</div>
+                    <h3>Hỗ trợ nghiên cứu và giảng dạy</h3>
+                    <p>Cung cấp tư liệu tham khảo cho sinh viên, giảng viên và nhà nghiên cứu pháp lý tại Việt Nam.</p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+            <div id="global-footer"></div>
+
+    <script>
+        (() => {
+            const FIELD_META = {
+                general: { label: 'Tổng hợp', order: 0 },
+                criminal: { label: 'Hình sự', order: 1 },
+                marriage: { label: 'Hôn nhân & Gia đình', order: 2 },
+                labour: { label: 'Lao động', order: 3 },
+                inheritance: { label: 'Đất đai & Thừa kế', order: 4 }
+            };
+
+            const listEl = document.getElementById('judgmentList');
+            const emptyEl = document.getElementById('emptyState');
+            const countEl = document.getElementById('resultsCount');
+            const activeFiltersEl = document.getElementById('activeFilters');
+            const activeTagsEl = document.getElementById('activeFilterTags');
+            const pillRow = document.querySelector('.fj-pill-row');
+
+            const freshSearchInput = document.getElementById('judgmentSearch').cloneNode(true);
+            document.getElementById('judgmentSearch').replaceWith(freshSearchInput);
+
+            const freshFieldFilter = document.getElementById('fieldFilter').cloneNode(true);
+            document.getElementById('fieldFilter').replaceWith(freshFieldFilter);
+
+            const freshYearFilter = document.getElementById('yearFilter').cloneNode(true);
+            document.getElementById('yearFilter').replaceWith(freshYearFilter);
+
+            const freshSortFilter = document.getElementById('sortFilter').cloneNode(true);
+            document.getElementById('sortFilter').replaceWith(freshSortFilter);
+
+            const freshClearBtn = document.getElementById('clearFilters').cloneNode(true);
+            document.getElementById('clearFilters').replaceWith(freshClearBtn);
+
+            const searchInput = freshSearchInput;
+            const fieldFilter = freshFieldFilter;
+            const yearFilter = freshYearFilter;
+            const sortFilter = freshSortFilter;
+            const clearBtn = freshClearBtn;
+
+            let judgments = [];
+            let pills = [];
+
+            function normalize(text) {
+                return (text || '')
+                    .toLowerCase()
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '')
+                    .replace(/[\u0111\u0110]/g, 'd')
+                    .replace(/[^a-z0-9\s&-]/g, ' ')
+                    .replace(/\s+/g, ' ')
+                    .trim();
+            }
+
+            function normalizeField(value) {
+                const source = normalize(value);
+                if (!source || source === 'general') return 'general';
+                if (source.includes('marriage') || source.includes('family') || source.includes('hon nhan') || source.includes('hngd')) return 'marriage';
+                if (source.includes('criminal') || source.includes('sexual') || source.includes('rape') || source.includes('abuse') || source.includes('hs')) return 'criminal';
+                if (source.includes('labour') || source.includes('labor') || source.includes('lao d') || source.includes('employment') || source.includes('ld')) return 'labour';
+                if (source.includes('inheritance') || source.includes('land') || source.includes('thua ke') || source.includes('dspt')) return 'inheritance';
+                return 'general';
+            }
+
+            function displayField(value) {
+                const field = normalizeField(value);
+                return FIELD_META[field] ? FIELD_META[field].label : FIELD_META.general.label;
+            }
+
+            function syncPills(value) {
+                pills.forEach((pill) => {
+                    pill.classList.toggle('is-active', pill.dataset.value === value);
+                });
+            }
+
+            function populateFieldControls(items) {
+                const availableFields = Array.from(new Set(items.map((item) => item.normalizedField)))
+                    .filter((field) => FIELD_META[field])
+                    .sort((a, b) => FIELD_META[a].order - FIELD_META[b].order);
+
+                fieldFilter.innerHTML = [
+                    '<option value="all">Tất cả lĩnh vực</option>',
+                    ...availableFields.map((field) => `<option value="${field}">${FIELD_META[field].label}</option>`)
+                ].join('');
+
+                pillRow.innerHTML = [
+                    '<button type="button" class="fj-pill is-active" data-value="all">Tất cả</button>',
+                    ...availableFields.map((field) => `<button type="button" class="fj-pill" data-value="${field}">${FIELD_META[field].label}</button>`)
+                ].join('');
+
+                pills = Array.from(pillRow.querySelectorAll('.fj-pill'));
+                pills.forEach((pill) => {
+                    pill.addEventListener('click', () => {
+                        fieldFilter.value = pill.dataset.value;
+                        syncPills(fieldFilter.value);
+                        applyFilters();
+                    });
+                });
+            }
+
+            function populateYearFilter(items) {
+                const years = Array.from(new Set(
+                    items
+                        .map((item) => item.year)
+                        .filter((year) => Number.isFinite(year))
+                )).sort((a, b) => b - a);
+
+                yearFilter.innerHTML = [
+                    '<option value="all">Mọi năm</option>',
+                    ...years.map((year) => `<option value="${year}">${year}</option>`)
+                ].join('');
+            }
+
+            function updateActiveFilters(keyword, field, year, totalCount, filteredCount) {
+                const tags = [];
+                if (keyword) tags.push({ label: `"${searchInput.value.trim()}"`, type: 'search' });
+                if (field !== 'all') tags.push({ label: FIELD_META[field] ? FIELD_META[field].label : field, type: 'field' });
+                if (year !== 'all') tags.push({ label: year, type: 'year' });
+
+                activeFiltersEl.hidden = tags.length === 0;
+
+                if (tags.length) {
+                    activeTagsEl.innerHTML = tags.map((tag) =>
+                        `<span class="fj-active-tag fj-active-tag--${tag.type}">${tag.label}</span>`
+                    ).join('');
+                    countEl.textContent = `${filteredCount} / ${totalCount} kết quả`;
+                } else {
+                    countEl.textContent = `${totalCount} kết quả`;
+                }
+            }
+
+            function renderList(items) {
+                listEl.innerHTML = '';
+                emptyEl.hidden = items.length !== 0;
+
+                items.forEach((item) => {
+                    const originalUrl = item.originalUrl || '#';
+                    const originalUrls = Array.isArray(item.originalUrls) && item.originalUrls.length
+                        ? item.originalUrls
+                        : [originalUrl];
+                    const rewrittenViUrl = item.rewrittenUrlVi || item.rewrittenUrl || '#';
+                    const rewrittenEnUrl = item.rewrittenUrlEn || item.rewrittenUrl || '#';
+                    const card = document.createElement('article');
+                    card.className = 'fj-case-card';
+                    card.innerHTML = `
+                        <div class="fj-case-header">
+                            <div class="fj-case-tags">
+                                <span class="fj-case-tag fj-case-tag--field">${displayField(item.legalField)}</span>
+                                ${item.year ? `<span class="fj-case-tag fj-case-tag--year">${item.year}</span>` : ''}
+                                <span class="fj-case-tag fj-case-tag--pdf ${item.pdfStatus === 'Pending' ? 'fj-case-tag--pending' : ''}">${item.pdfStatus === 'Available' ? 'PDF' : 'Đang cập nhật'}</span>
+                            </div>
+                            <span class="fj-case-id">#${String(item.id).padStart(2, '0')}</span>
+                        </div>
+                        <h3 class="fj-case-title">${item.title}</h3>
+                        <div class="fj-case-meta">
+                            <div class="fj-case-meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <span>${item.author}</span>
+                            </div>
+                            <div class="fj-case-meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M9 21v-4h6v4"/></svg>
+                                <span>${item.court}</span>
+                            </div>
+                        </div>
+                        <div class="fj-case-summaries">
+                            <div class="fj-case-summary">
+                                <div class="fj-case-summary-head">
+                                    <span class="fj-case-summary-label">Bản án gốc</span>
+                                    <div class="fj-case-summary-docs">
+                                        ${originalUrls.map((url, index) => `
+                                            <a href="${url}" class="fj-case-summary-doc ${url === '#' ? 'is-disabled' : ''}">${originalUrls.length > 1 ? `PDF ${index + 1}` : 'Tải PDF'}</a>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                                <p>${item.originalSummary}</p>
+                            </div>
+                            <div class="fj-case-summary fj-case-summary--feminist">
+                                <div class="fj-case-summary-head">
+                                    <span class="fj-case-summary-label">Bản án nữ quyền</span>
+                                    <div class="fj-case-summary-docs">
+                                        <a href="${rewrittenViUrl}" class="fj-case-summary-doc ${rewrittenViUrl === '#' ? 'is-disabled' : ''}">Tiếng Việt</a>
+                                        <a href="${rewrittenEnUrl}" class="fj-case-summary-doc ${rewrittenEnUrl === '#' ? 'is-disabled' : ''}">Tiếng Anh</a>
+                                    </div>
+                                </div>
+                                <p>${item.feministSummary}</p>
+                            </div>
+                        </div>
+                    `;
+                    listEl.appendChild(card);
+                });
+            }
+
+            function applyFilters() {
+                const keyword = normalize(searchInput.value.trim());
+                const field = fieldFilter.value;
+                const year = yearFilter.value;
+                const sort = sortFilter.value;
+
+                const filtered = judgments
+                    .filter((item) => {
+                        const haystack = normalize([
+                            item.title,
+                            item.author,
+                            item.court,
+                            item.legalField,
+                            item.originalSummary,
+                            item.feministSummary
+                        ].join(' '));
+                        const matchKeyword = !keyword || haystack.includes(keyword);
+                        const matchField = field === 'all' || item.normalizedField === field;
+                        const matchYear = year === 'all' || String(item.year) === year;
+                        return matchKeyword && matchField && matchYear;
+                    })
+                    .sort((a, b) => {
+                        if (sort === 'title') return (a.title || '').localeCompare(b.title || '', 'vi');
+                        if (sort === 'year-desc') return (b.year || 0) - (a.year || 0);
+                        if (sort === 'year-asc') return (a.year || 0) - (b.year || 0);
+                        return a.id - b.id;
+                    });
+
+                renderList(filtered);
+                updateActiveFilters(keyword, field, year, judgments.length, filtered.length);
+            }
+
+            function resetFilters() {
+                searchInput.value = '';
+                fieldFilter.value = 'all';
+                yearFilter.value = 'all';
+                sortFilter.value = 'id';
+                syncPills('all');
+                applyFilters();
+            }
+
+            fieldFilter.addEventListener('change', () => {
+                syncPills(fieldFilter.value);
+                applyFilters();
+            });
+            yearFilter.addEventListener('change', applyFilters);
+            sortFilter.addEventListener('change', applyFilters);
+            searchInput.addEventListener('input', applyFilters);
+            clearBtn.addEventListener('click', resetFilters);
+
+            fetch('./data.json')
+                .then((response) => response.json())
+                .then((data) => {
+                    judgments = data.map((item) => ({
+                        ...item,
+                        normalizedField: normalizeField(item.legalField)
+                    }));
+                    populateFieldControls(judgments);
+                    populateYearFilter(judgments);
+                    syncPills('all');
+                    applyFilters();
+                })
+                .catch(() => {
+                    countEl.textContent = '0 kết quả';
+                    emptyEl.hidden = false;
+                    emptyEl.textContent = 'Không tải được dữ liệu. Vui lòng thử lại sau.';
+                });
+        })();
+    </script>
+    <script src="../../../js/components.js"></script>
+</body>
+</html>
+
+

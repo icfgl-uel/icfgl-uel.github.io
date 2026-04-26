@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ấn phẩm - Dự án Lý luận Pháp lý Nữ quyền (UEL)</title>
+    <meta name="description" content="Sách, kỷ yếu và bài báo của Dự án Lý luận Pháp lý Nữ quyền tại UEL: tải PDF và liên kết tạp chí.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../header-footer.css">
+    <style>
+    :root {
+        --pink: #f64183;
+        --dark-blue: #2c4a86;
+        --grad-start: #fdf2f5; 
+        --grad-end: #f5e3e8;
+    }
+
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        background: linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%);
+        margin: 0;
+        padding: 0;
+    }
+
+    .archive-shell {
+        padding-top: 0;
+    }
+
+    /* Khung màu trắng phía trên */
+    .archive-hero {
+        background: #fff;
+        margin: 20px;
+        padding: 60px 50px 30px 50px; 
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        position: relative; /* Đảm bảo lớp nền nằm dưới */
+    }
+
+    .archive-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+        gap: 40px;
+        align-items: center;
+    }
+
+    .archive-hero-art {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .archive-hero-art img {
+        width: min(100%, 360px);
+        height: auto;
+        display: block;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0 14px 30px rgba(44, 74, 134, 0.08);
+    }
+
+    .archive-eyebrow {
+        color: var(--pink);
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        font-size: var(--font-size-xs);
+        margin-bottom: 15px;
+    }
+
+    .archive-main-title {
+        font-family: 'Cambria', Georgia, serif;
+        color: var(--dark-blue);
+        font-size: 4rem;
+        margin: 0 0 25px 0;
+    }
+
+    .archive-hero .archive-title {
+        font-size: 2.85rem !important;
+    }
+
+    .archive-intro {
+        color: #555;
+        max-width: 850px;
+        line-height: 1.7;
+        font-size: 1.1rem;
+    }
+
+    /* Publications hero aligned with the Our Works banner */
+    .archive-hero {
+        position: relative;
+        min-height: calc(100vh - 74px);
+        min-height: calc(100svh - 74px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        margin: 0 calc(50% - 50vw);
+        padding: clamp(64px, 8vh, 96px) clamp(24px, 4vw, 72px) clamp(116px, 13vh, 148px);
+        overflow: hidden;
+        color: #fff;
+        background: #0f1c2d url('../../../images/common/6.png') no-repeat center center / cover;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .archive-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background:
+            linear-gradient(135deg, rgba(24, 61, 108, 0.78) 0%, rgba(61, 110, 183, 0.6) 48%, rgba(246, 65, 131, 0.42) 100%);
+    }
+
+    .archive-hero::after {
+        content: "";
+        position: absolute;
+        top: -18%;
+        right: -8%;
+        z-index: 1;
+        width: 42rem;
+        height: 42rem;
+        border-radius: 999px;
+        background: rgba(246, 65, 131, 0.34);
+        filter: blur(90px);
+        pointer-events: none;
+    }
+
+    .archive-hero-grid {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 860px;
+        min-height: calc(100svh - 74px - 180px);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: clamp(32px, 4vw, 72px);
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .archive-hero-copy {
+        width: min(100%, 760px);
+        max-width: 760px;
+        margin: 0 auto;
+        padding: clamp(28px, 4vw, 46px) clamp(26px, 4vw, 52px);
+        border: 1px solid rgba(255, 255, 255, 0.58);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.64);
+        box-shadow: 0 24px 60px rgba(7, 24, 51, 0.18);
+        backdrop-filter: blur(12px);
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .archive-hero-art {
+        justify-content: stretch;
+    }
+
+    .archive-quote-card {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: clamp(28px, 4vw, 44px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 24px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.05) 100%);
+        box-shadow: 0 24px 60px rgba(5, 16, 33, 0.26);
+        backdrop-filter: blur(14px);
+    }
+
+    .archive-quote-card::after {
+        content: "\201C";
+        position: absolute;
+        top: -18px;
+        right: 26px;
+        font-family: Cambria, Georgia, serif;
+        font-size: 8rem;
+        line-height: 1;
+        color: rgba(249, 168, 212, 0.2);
+        pointer-events: none;
+    }
+
+    .archive-quote-text {
+        position: relative;
+        z-index: 1;
+        margin: 0 0 24px;
+        font-family: Cambria, Georgia, serif;
+        font-size: clamp(1.55rem, 2.3vw, 2.4rem);
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1.35;
+        color: #fff;
+    }
+
+    .archive-quote-text span {
+        color: #f9a8d4;
+    }
+
+    .archive-quote-source {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.9rem;
+        font-style: italic;
+    }
+
+    .archive-quote-source::before {
+        content: "";
+        width: 42px;
+        height: 2px;
+        border-radius: 999px;
+        background: #f9a8d4;
+    }
+
+    .archive-eyebrow {
+        display: inline-block;
+        padding: 8px 18px;
+        margin: 0 0 24px;
+        color: var(--pink);
+        background: rgba(255, 235, 242, 0.92);
+        border: 1px solid rgba(246, 65, 131, 0.16);
+        border-radius: 999px;
+        letter-spacing: 0.3em;
+        font-size: 0.72rem;
+        line-height: 1;
+    }
+
+    .archive-hero .archive-title {
+        margin: 0 0 28px;
+        font-family: Cambria, Georgia, serif !important;
+        color: var(--dark-blue);
+        font-size: clamp(3.6rem, 6.6vw, 5.8rem) !important;
+        font-weight: 700;
+        line-height: 1.03;
+        letter-spacing: -0.045em;
+        text-align: center;
+        transform: translateX(22px);
+        text-shadow: none;
+    }
+
+    .archive-title-rule {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        width: min(100%, 620px);
+        margin: -12px auto 24px;
+        color: rgba(32, 54, 93, 0.86);
+        font-size: clamp(0.9rem, 1.3vw, 1.08rem);
+        font-weight: 500;
+        letter-spacing: 0.02em;
+    }
+
+    .archive-title-rule::before,
+    .archive-title-rule::after {
+        content: "";
+        flex: 1 1 120px;
+        height: 2px;
+        background: rgba(32, 54, 93, 0.72);
+    }
+
+    .archive-intro {
+        max-width: 920px;
+        margin: 0 auto;
+        color: rgba(32, 54, 93, 0.9);
+        line-height: 1.75;
+        font-size: clamp(0.98rem, 1.12vw, 1.08rem);
+        text-align: center;
+        text-shadow: none;
+    }
+
+    /* SỬA LỖI BUTTON: Hiệu ứng đè lên ranh giới */
+     .pub-tabs {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 20px; /* Kéo tabs lên phía trên đè lên khung trắng */
+        margin-bottom: 60px;
+        position: relative;
+        z-index: 10; /* Đảm bảo nút luôn nằm trên cùng */
+    }
+
+
+    .pub-tab {
+        background: #fff; /* Nền trắng mặc định */
+        border: 2px solid var(--pink);
+        color: var(--pink);
+        padding: 14px 35px;
+        border-radius: 6px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 600;
+        font-size: var(--font-size-base);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .pub-tab.is-active, .pub-tab:hover {
+        background: var(--pink);
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(214, 97, 126, 0.3);
+    }
+
+    /* Tiêu đề mục bên dưới */
+    .pub-section {
+        padding: 0 50px;
+        margin-bottom: 60px;
+    }
+
+    .section-kicker {
+        color: var(--pink);
+        text-transform: uppercase;
+        font-size: var(--font-size-xs);
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    .section-title {
+        color: var(--dark-blue);
+        font-size: 2rem;
+        margin-top: 0;
+    }
+
+    /* Book Card & Covers */
+    .book-card {
+        display: grid;
+        grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+        gap: 42px;
+        align-items: start;
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        margin-bottom: 50px;
+        border-top: 4px solid var(--pink);
+    }
+
+    .book-cover {
+        width: 92%;
+        margin-right: auto;
+    }
+    .book-cover img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 520px;
+        object-fit: contain;
+        border-radius: 6px;
+    }
+
+    .book-card--proceedings {
+        grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+        gap: 36px;
+    }
+
+    .book-card--proceedings .book-cover {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .book-card--proceedings .book-cover img {
+        max-height: 560px;
+    }
+
+    .book-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        justify-content: flex-start;
+        min-width: 0;
+    }
+
+    .book-title {
+        font-family: 'Cambria', Georgia, serif;
+        color: var(--pink);
+        font-size: 1.3em;
+        font-weight: 700;
+        line-height: 1.3;
+        margin: 0 0 15px 0;
+    }
+
+    .book-meta {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 0.9em;
+        color: var(--text-dark);
+    }
+
+    .book-meta li {
+        margin-bottom: 5px;
+    }
+
+    .book-meta strong {
+        color: var(--dark-blue);
+    }
+
+    .pub-abstract {
+        margin-bottom: 30px;
+    }
+
+    .pub-abstract-label {
+        display: block;
+        color: var(--pink);
+        text-transform: uppercase;
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 12px;
+    }
+
+    .pub-abstract-copy {
+        color: #4a4a4a;
+        line-height: 1.8;
+        font-size: 1.05rem;
+        text-align: justify;
+        margin: 0 0 15px 0;
+    }
+    
+    .pub-citation {
+        background: transparent;
+        padding: 0;
+        border-left: none;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+
+    .pub-info-label {
+        display: inline-block;
+        color: var(--dark-blue);
+        font-family: 'Cambria', Georgia, serif;
+        font-size: var(--font-size-base);
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+
+    .pub-info-list {
+        display: grid;
+        gap: 10px;
+    }
+
+    .pub-info-row {
+        display: grid;
+        grid-template-columns: 108px minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        padding-top: 10px;
+        border-top: 1px solid rgba(20, 78, 140, 0.08);
+    }
+
+    .pub-info-row:first-child {
+        padding-top: 0;
+        border-top: none;
+    }
+
+    .pub-info-row--download {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 6px;
+        padding: 16px 0 0;
+        border-top: 1px solid rgba(20, 78, 140, 0.08);
+        background: transparent;
+        border-radius: 0;
+    }
+
+    .pub-info-term {
+        color: rgba(20, 78, 140, 0.72);
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .pub-info-value {
+        color: var(--text-dark);
+        font-size: 1rem;
+        line-height: var(--line-height-base);
+        min-width: 0;
+    }
+
+    .pub-download-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .pub-download-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 22px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        background: var(--pink);
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+        box-shadow: none;
+    }
+
+    .pub-download-link::before {
+        content: "↓";
+        font-size: 0.95em;
+        line-height: 1;
+    }
+
+    .pub-download-link--primary {
+        background: linear-gradient(135deg, var(--pink), #f7799c);
+        color: #fff;
+        box-shadow: 0 14px 26px rgba(246, 65, 131, 0.22);
+    }
+
+    .pub-download-link--secondary {
+        background: #f5f8ff;
+        border-color: rgba(20, 78, 140, 0.12);
+    }
+
+    .pub-download-link:hover {
+        color: var(--pink);
+        border-color: rgba(246, 65, 131, 0.2);
+        background: #fff0f6;
+        box-shadow: 0 14px 28px rgba(20, 78, 140, 0.12);
+        transform: translateY(-2px);
+    }
+
+    .pub-download-link--primary:hover {
+        color: #fff;
+        background: linear-gradient(135deg, #ec4a86, #f98aac);
+        box-shadow: 0 16px 30px rgba(246, 65, 131, 0.28);
+    }
+
+    .pub-download-link.is-disabled {
+        color: rgba(20, 78, 140, 0.45);
+        background: #f3f5f8;
+        border-color: rgba(20, 78, 140, 0.06);
+        box-shadow: none;
+        pointer-events: none;
+        font-weight: 600;
+    }
+
+    /* Align the Books section with the calmer presentation on the Our Works page. */
+    .book-card:hover .book-cover img {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .pub-download-link::before {
+        content: none;
+    }
+
+    .pub-download-link--primary,
+    .pub-download-link--secondary,
+    .pub-download-link:hover,
+    .pub-download-link--primary:hover,
+    .pub-download-link--secondary:hover {
+        background: var(--pink);
+        color: #fff;
+        border-color: transparent;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .pub-download-link.is-disabled {
+        color: rgba(255,255,255,0.7);
+    }
+
+    .empty-state {
+        padding: 40px;
+        background: rgba(255,255,255,0.5);
+        border: 2px dashed #ccc;
+        border-radius: 12px;
+        text-align: center;
+        color: #777;
+    }
+
+    .article-card {
+        background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 100%);
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 14px 40px rgba(31, 42, 68, 0.05);
+        margin-bottom: 30px;
+        border: 1px solid rgba(20, 78, 140, 0.05);
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 30px;
+        align-items: center;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .article-card:hover {
+        box-shadow: 0 20px 50px rgba(222, 79, 122, 0.08);
+    }
+
+    .article-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 6px; height: 100%;
+        background: linear-gradient(180deg, var(--pink), #f98aac);
+        border-radius: 6px 0 0 6px;
+    }
+
+    .article-copy {
+        position: relative;
+        z-index: 1;
+        padding-left: 10px;
+    }
+
+    .article-kicker {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 16px;
+        border-radius: 6px;
+        background: linear-gradient(135deg, rgba(246, 65, 131, 0.08), rgba(246, 65, 131, 0.03));
+        border: 1px solid rgba(246, 65, 131, 0.15);
+        color: var(--pink);
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .article-title {
+        color: var(--dark-blue);
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 0 0 12px 0;
+        font-family: 'Cambria', Georgia, serif;
+        line-height: 1.18;
+    }
+
+    .article-summary {
+        color: rgba(47, 47, 47, 0.86);
+        font-size: 1rem;
+        line-height: var(--line-height-base);
+        margin: 0;
+        max-width: 54ch;
+    }
+
+    .article-actions {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        align-self: end;
+    }
+
+    .article-link-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-width: 160px;
+        padding: 16px 28px;
+        border-radius: 6px;
+        background: linear-gradient(135deg, var(--dark-blue), #3a5c9f);
+        color: #fff;
+        font-weight: 700;
+        font-size: var(--font-size-sm);
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        box-shadow: 0 10px 24px rgba(44, 74, 134, 0.2);
+        transition: box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .article-link-btn::after {
+        content: "↗";
+        font-size: 1.1rem;
+        line-height: 1;
+    }
+
+    .article-link-btn:hover {
+        color: #fff;
+        background: linear-gradient(135deg, #1f3661, var(--dark-blue));
+        box-shadow: 0 14px 30px rgba(44, 74, 134, 0.3);
+    }
+
+    @media(max-width: 900px) {
+        .archive-hero {
+            min-height: auto;
+            padding: 58px 24px 92px;
+        }
+        .archive-hero-grid {
+            min-height: auto;
+            grid-template-columns: 1fr;
+            gap: 28px;
+        }
+        .archive-hero-copy {
+            padding: 28px 20px;
+            border-radius: 12px;
+        }
+        .archive-hero-art { justify-content: flex-start; }
+        .archive-quote-card { max-width: 620px; }
+        .archive-hero .archive-title {
+            font-size: clamp(3.4rem, 14vw, 5rem) !important;
+            transform: none;
+        }
+        .archive-title-rule {
+            gap: 12px;
+            margin-top: -8px;
+            font-size: 0.86rem;
+        }
+        .archive-main-title { font-size: 2.5rem; }
+        .book-card {
+            grid-template-columns: 1fr;
+            padding: 30px;
+            gap: 30px;
+        }
+        .book-cover {
+            margin: 0 auto;
+            width: min(100%, 320px);
+            min-height: 0;
+            padding: 0;
+        }
+        .book-cover img {
+            max-height: 420px;
+        }
+        .book-title { font-size: 1.5rem; }
+        .pub-info-row { grid-template-columns: 1fr; gap: 4px; }
+        .pub-info-row--download { padding: 16px 0 0; }
+        .pub-download-link { width: 100%; }
+        .article-card { grid-template-columns: 1fr; padding: 24px; gap: 18px; }
+        .article-title { font-size: 1.6rem; max-width: none; }
+        .article-summary { max-width: none; }
+        .article-link-btn { width: 100%; }
+    }
+</style>
+ 
+    <link rel="alternate" hreflang="en-US" href="../../../works/publications/index.html" />
+    <link rel="alternate" hreflang="vi" href="../../../vi/works/publications/index.html" />
+    <link rel="alternate" hreflang="x-default" href="../../../works/publications/index.html" />
+    <link rel="stylesheet" href="../../vi-typography.css">
+</head>
+<body class="archive-page">
+    <div id="global-header"></div>
+
+    <div class="breadcrumb">
+        <a href="../../index.html">Trang chủ</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../">Hoạt động &amp; Công trình</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Ấn phẩm</span>
+    </div>
+
+    <main class="archive-shell">
+    <section class="archive-hero">
+        <div class="archive-hero-grid">
+            <div class="archive-hero-copy">
+                <p class="archive-eyebrow">Sản phẩm học thuật</p>
+                <h1 class="archive-title">Ấn phẩm</h1>
+                <div class="archive-title-rule">Kho xuất bản</div>
+                <p class="archive-intro">Mục này tập hợp các kết quả nghiên cứu và xuất bản của dự án: sách, bài báo tạp chí, chương sách, kỷ yếu hội thảo, báo cáo và tài liệu khác trong khuôn khổ Dự án Lý luận Pháp lý Nữ quyền tại UEL.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Tab điều hướng -->
+    <div class="pub-tabs-container">
+        <div class="pub-tabs">
+            <button class="pub-tab is-active" data-tab="tab-books">Sách</button>
+            <button class="pub-tab" data-tab="tab-journal">Bài báo tạp chí</button>
+        </div>
+    </div>
+
+    <!-- Nội dung Tab Books -->
+    <div id="tab-books" class="pub-section">
+        <div class="section-heading">
+            <p class="section-kicker">Sách đơn lẻ &amp; kỷ yếu hội thảo</p>
+            <h2>Sách</h2>
+        </div>
+        <div id="books-container">
+            <div class="empty-state">Đang tải dữ liệu...</div>
+        </div>
+    </div>
+
+    <!-- Nội dung Tab Journal Articles -->
+    <div id="tab-journal" class="pub-section" hidden>
+        <div class="section-heading">
+            <p class="section-kicker">Tạp chí học thuật</p>
+            <h2>Bài báo tạp chí</h2>
+        </div>
+        <div class="icfgl-about-content" id="journal-overview">
+            <!-- JS sẽ render nội dung vào đây -->
+        </div>
+        <div id="journal-container"></div>
+    </div>
+</main>
+
+            <div id="global-footer"></div>
+
+    <script>
+        // Tab switching logic
+        const tabs = document.querySelectorAll('.pub-tab');
+        const sections = document.querySelectorAll('.pub-section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab button
+                tabs.forEach(t => t.classList.remove('is-active'));
+                tab.classList.add('is-active');
+
+                // Hide all sections, display the target one
+                const targetId = tab.getAttribute('data-tab');
+                sections.forEach(sec => {
+                    if (sec.id === targetId) {
+                        sec.removeAttribute('hidden');
+                        sec.style.display = '';
+                    } else {
+                        sec.setAttribute('hidden', '');
+                        sec.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Check hash on load
+        if (window.location.hash) {
+            const hash = window.location.hash.replace('#', '');
+            const targetTab = document.querySelector(`.pub-tab[data-tab="tab-${hash}"]`);
+            if (targetTab) {
+                targetTab.click();
+            }
+        }
+
+        const data = {
+            books: [
+                {
+                    id: 'towards-vietnamese-feminist-judgments',
+                    title: 'Hướng tới bản án nữ quyền Việt Nam',
+                    cover: '../../../images/publications/books-vfj.jpg',
+                    abstract: 'Cuốn sách khám phá cách lý luận pháp lý nữ quyền vận dụng vào lập luận tư pháp tại Việt Nam (hình sự, tố tụng hình sự, hôn nhân gia đình, lao động…), cho thấy góc nhìn nữ quyền mở rộng cách hiểu pháp luật và làm phong phú bản án bằng văn bản.\n\nLà sản phẩm trọng tâm của Dự án Lý luận Pháp lý Nữ quyền tại Việt Nam, tập sách phát hành song ngữ Việt–Anh nhằm tiếp cận độc giả trong nước và góp phần vào phong trào bản án nữ quyền toàn cầu.',
+                    publisher: 'Nhà xuất bản ĐHQG-HCM',
+                    editor: 'Trịnh Thục Hiền',
+                    date: '2024',
+                    pages: '375',
+                    isbn: '9788-604-479-308-5',
+                    downloads: [
+                        { label: 'Tải bản PDF', url: 'https://drive.google.com/uc?export=download&id=1MUqudousf1mqTGVUYdyKWrBQOJmHH1Hh' }
+                    ]
+                },
+                {
+                    id: 'ashgate-research-companion-vietnamese',
+                    title: 'The Ashgate Research Companion to Feminist Legal Theory (bản dịch tiếng Việt)',
+                    cover: '../../../images/publications/opac-image (1).png',
+                    abstract: 'Tập sách tổng quan lý luận pháp lý nữ quyền, hệ thống hóa khái niệm, tranh luận và phương pháp từ các học giả quốc tế hàng đầu; là tài liệu nền tảng để hiểu cách góc nhìn nữ quyền phê phán và tái cấu trúc hệ thống pháp luật.\n\nTrong khuôn khổ Dự án tại Việt Nam, bản dịch giúp học thuật toàn cầu đến gần độc giả địa phương và hỗ trợ đưa lý luận pháp lý nữ quyền vào giảng dạy và nghiên cứu.',
+                    publisher: 'Nhà xuất bản ĐHQG-HCM',
+                    language: 'Tiếng Việt (bản dịch)',
+                    date: '2023'
+                },
+                {
+                    id: 'icfgl-2024-proceedings',
+                    title: 'Nữ quyền, Giới và Pháp luật: Kỷ yếu Hội thảo quốc tế 2024 (ICFGL 2024)',
+                    cover: '../../../images/publications/ICFGL 2024.jpg',
+                    abstract: 'Tuyển tập các báo cáo được chọn trình bày tại Hội thảo Quốc tế về Nữ quyền, Giới và Pháp luật 2024 trong khuôn khổ Dự án Lý luận Pháp lý Nữ quyền tại UEL. Kỷ yếu xem xét cách lý luận pháp lý nữ quyền phê phán giả định trung lập hình thức của pháp luật và thúc đẩy các cách tiếp cận thực chất hơn về công lý giới tại Việt Nam; đồng thời đặt nữ quyền pháp học trong bối cảnh lịch sử, hiến pháp và phát triển xã hội–pháp lý, nhấn mạnh nhu cầu cải cách thể chế, đào tạo và diễn giải.\n\nCác chủ đề gồm quyền phụ nữ qua lập pháp, tiếp cận công lý, tài chính số và tín dụng, quyền phụ nữ nông thôn, sở hữu trí tuệ, thuốc và TRIPS, hôn nhân gia đình, quyền sinh sản, lao động di cư nữ, việc làm kinh tế số, phân biệt đối xử với phụ nữ chuyển giới, cải cách pháp luật về mại dâm và dòng tư tưởng nữ quyền ở Việt Nam thuộc địa. Các đóng góp thống nhất nhấn mạnh khoảng cách giữa bình đẳng hình thức và bình đẳng thực chất, kêu gọi thực thi mạnh hơn, phân tích pháp lý nhạy cảm với giới và phản ứng giao nhau tại Việt Nam.',
+                    publisher: 'NXB ĐHQG-HCM (VNUHCM Press), TP. Hồ Chí Minh',
+                    editor: 'Hội đồng biên tập; Tổng chủ biên: Trịnh Thục Hiền',
+                    date: '2025',
+                    pages: '456',
+                    isbn: '978-632-608-376-7',
+                    downloads: [
+                        { label: 'Tải bản PDF', url: 'https://drive.google.com/uc?export=download&id=180EN1OtbAwiWM8McVYCkFzQHFBEYIiDX' }
+                    ]
+                }
+            ],
+            journalArticles: {
+                intro: '',
+                items: [
+                    {
+                        title: 'Số đặc biệt: Nữ quyền, Giới và Pháp luật',
+                        url: 'https://ebl.vnuhcmjournal.com.vn/index.php/ebl/issue/view/84',
+                        description: 'Đăng trên Tạp chí Kinh tế, Kinh doanh và Luật UEL.'
+                    }
+                ]
+            }
+        };
+
+        try {
+                const highlightAbstract = (text) => {
+                    if (!text) return '';
+                    return text
+                        .replace(/\n\n/g, '</p><p class="pub-abstract-copy">')
+                        .replace(/lý luận pháp lý nữ quyền/gi, '<span class="pub-highlight">lý luận pháp lý nữ quyền</span>');
+                };
+
+                // --- Render Books ---
+                const booksContainer = document.getElementById('books-container');
+                if (data.books && data.books.length > 0) {
+                    booksContainer.innerHTML = data.books.map(book => `
+                        <article class="book-card ${book.id === 'icfgl-2024-proceedings' ? 'book-card--proceedings' : ''}">
+                            <div class="book-cover ${book.id === 'icfgl-2024-proceedings' ? 'book-cover--proceedings' : ''}">
+                                <img src="${book.cover}" alt="Bìa: ${book.title}" loading="lazy">
+                            </div>
+                            <div class="book-details">
+                                <h4 style="color: var(--pink); font-size: 1.3em; margin-bottom: 15px;">${book.title}</h4>
+                                <p
+                                    style="font-size: 1.0em; line-height: 1.8; color: var(--text-dark); text-align: justify; margin-bottom: 15px;">
+                                    ${highlightAbstract(book.abstract)}
+                                </p>
+                                <ul class="book-meta">
+                                    ${book.publisher ? `<li><strong>Nhà xuất bản:</strong> ${book.publisher}</li>` : ''}
+                                    ${book.editor ? `<li><strong>Biên tập:</strong> ${book.editor}</li>` : ''}
+                                    ${book.language ? `<li><strong>Ngôn ngữ:</strong> ${book.language}</li>` : ''}
+                                    ${book.date ? `<li><strong>Năm:</strong> ${book.date}</li>` : ''}
+                                    ${book.pages ? `<li><strong>Số trang:</strong> ${book.pages}</li>` : ''}
+                                    ${book.isbn ? `<li><strong>ISBN:</strong> ${book.isbn}</li>` : ''}
+                                </ul>
+                                ${book.downloads && book.downloads.length ? `
+                                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                                    ${book.downloads.map((download, index) => `
+                                        <a href="${download.url}" target="_blank" rel="noopener noreferrer" class="btn-pink" style="font-size: 0.9em;">${download.label}</a>
+                                    `).join('')}
+                                </div>
+                                ` : ''}
+                            </div>
+                        </article>
+                    `).join('');
+                } else {
+                    booksContainer.innerHTML = `<div class="empty-state">Hiện chưa có dữ liệu sách.</div>`;
+                }
+
+                // --- Render Journal Articles ---
+                document.getElementById('journal-overview').innerHTML = data.journalArticles.intro ? `<p>${data.journalArticles.intro}</p>` : '';
+
+                const renderArticle = (item) => `
+                    <article class="article-card">
+                        <div class="article-copy">
+                            <span class="article-kicker">Tạp chí</span>
+                            <h4 class="article-title">${item.title}</h4>
+                            ${item.description ? `<p class="article-summary">${item.description}</p>` : ''}
+                        </div>
+                        <div class="article-actions">
+                            <a href="${item.url}" class="article-link-btn" target="_blank" rel="noopener">Xem tạp chí</a>
+                        </div>
+                    </article>
+                `;
+
+                const journalContainer = document.getElementById('journal-container');
+                if (data.journalArticles.items && data.journalArticles.items.length > 0) {
+                    journalContainer.innerHTML = data.journalArticles.items.map(renderArticle).join('');
+                } else {
+                    journalContainer.innerHTML = `<div class="empty-state">Các bài báo đang được cập nhật…</div>`;
+                }
+        } catch (err) {
+            console.error('Error rendering publications data:', err);
+            document.getElementById('books-container').innerHTML = `<div class="empty-state" style="color:red;">Lỗi tải dữ liệu. Vui lòng thử lại sau.</div>`;
+        }
+    </script>
+    <script src="../../../js/components.js"></script>
+</body>
+</html>
+
+

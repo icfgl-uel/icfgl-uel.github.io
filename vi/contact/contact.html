@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Liên hệ - Dự án Lý luận Pháp lý Nữ quyền (UEL)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../header-footer.css">
+    <style>
+        .contact-page-wrapper {
+            min-height: calc(100vh - 74px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-main {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 5%;
+        }
+
+        .contact-card {
+            max-width: 850px;
+            width: 100%;
+            background: #ffffff;
+            padding: clamp(40px, 8vw, 80px) clamp(24px, 6vw, 60px);
+            border-radius: 32px;
+            text-align: center;
+            box-shadow: 0 32px 80px rgba(15, 58, 110, 0.08);
+            border: 1px solid rgba(20, 78, 140, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--pink), #144e8c);
+        }
+
+        .contact-eyebrow {
+            display: inline-block;
+            color: var(--pink);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.85rem;
+            margin-bottom: 24px;
+        }
+
+        .contact-card h1 {
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            color: var(--dark-navy);
+            margin: 0 0 28px;
+            line-height: 1.1;
+        }
+
+        .contact-description {
+            font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+            color: #55657f;
+            line-height: 1.8;
+            max-width: 640px;
+            margin: 0 auto 48px;
+        }
+
+        .contact-email-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-email-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #94a3b8;
+            font-weight: 700;
+        }
+
+        .contact-email-link {
+            font-family: 'Cambria', serif;
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            color: #f64183;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .contact-email-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 40px;
+            height: 3px;
+            background: var(--pink);
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .contact-email-link:hover {
+            color: var(--pink);
+        }
+
+        .contact-email-link:hover::after {
+            width: 100%;
+        }
+
+        .contact-office {
+            margin-top: 56px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(20, 78, 140, 0.08);
+            font-size: 1rem;
+            color: #64748b;
+        }
+
+        .contact-office strong {
+            color: var(--dark-navy);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 640px) {
+            .contact-card {
+                padding: 48px 24px;
+                border-radius: 24px;
+            }
+            .contact-main {
+                padding: 40px 16px;
+            }
+        }
+    </style>
+    <link rel="alternate" hreflang="en-US" href="../../contact/contact.html" />
+    <link rel="alternate" hreflang="vi" href="../../vi/contact/contact.html" />
+    <link rel="alternate" hreflang="x-default" href="../../contact/contact.html" />
+    <link rel="stylesheet" href="../vi-typography.css">
+</head>
+<body class="section-ice">
+    <div class="contact-page-wrapper">
+        <div id="global-header"></div>
+        
+        <div class="breadcrumb">
+            <a href="../index.html">Trang chủ</a>
+            <span class="breadcrumb-separator">›</span>
+            <span>Liên hệ</span>
+        </div>
+
+        <main class="contact-main">
+            <div class="contact-card">
+                <span class="contact-eyebrow">Kết nối với chúng tôi</span>
+                <h1>Liên hệ dự án</h1>
+                <p class="contact-description">
+                    Để trao đổi về hợp tác nghiên cứu, thông tin hội thảo hoặc tài liệu học thuật, vui lòng liên hệ nhóm điều phối dự án qua email.
+                </p>
+
+                <div class="contact-email-wrap">
+                    <span class="contact-email-label">Email chính thức của dự án</span>
+                    <a href="mailto:feminist.project@uel.edu.vn" class="contact-email-link">feminist.project@uel.edu.vn</a>
+                </div>
+
+                <div class="contact-office">
+                    <strong>Trường Đại học Kinh tế – Luật (ĐHQG-HCM)</strong>
+                    Khoa Luật Kinh tế
+                </div>
+            </div>
+        </main>
+
+        <div id="global-footer"></div>
+    </div>
+
+    <script src="../../js/components.js"></script>
+</body>
+</html>

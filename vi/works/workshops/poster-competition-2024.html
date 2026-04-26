@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FGL Posters Competition 2024 - UEL Feminist Legal Theory Project</title>
+    <meta name="description" content="Essay writing and poster design competition on feminism, gender, and law launched during FGL Week 2024 at UEL.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../header-footer.css">
+    <style>
+        :root {
+            --primary-blue: #144e8c;
+            --accent-pink: #f64183;
+            --soft-pink: #ffebf2;
+            --bg-light: #eef4fb;
+            --text-dark: #34445a;
+            --text-muted: #5b6a80;
+            --border-light: rgba(20, 78, 140, 0.12);
+            --card-shadow: 0 20px 44px rgba(20, 78, 140, 0.08);
+        }
+
+        body {
+            background: linear-gradient(to bottom, #f7fbff 0%, #eef4fb 100%);
+        }
+
+        .poster-hero {
+            position: relative;
+            min-height: calc(100svh - 74px);
+            display: flex;
+            align-items: center;
+            padding: 84px 5% 72px;
+            color: #fff;
+            background-color: var(--primary-blue); /* Fallback for slow loads */
+            /* background-image: url('../../../images/workshops/PosterCompetition-2024/Poster%20FGL%20week.png'); */
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .poster-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at top right, rgba(246, 65, 131, 0.28), transparent 28%),
+                linear-gradient(90deg, rgba(16, 44, 84, 0.9) 0%, rgba(20, 78, 140, 0.74) 48%, rgba(110, 64, 109, 0.5) 100%);
+        }
+
+        .poster-hero-shell,
+        .poster-section-shell {
+            width: min(1240px, 100%);
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .poster-hero-shell {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .poster-hero-images {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 480px;
+            padding-bottom: 30px;
+        }
+
+        .hero-img-1 {
+            width: 75%;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(10, 25, 50, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s ease;
+            z-index: 1;
+        }
+
+        .hero-img-2 {
+            width: 45%;
+            position: absolute;
+            left: 5%;
+            bottom: 0;
+            border-radius: 14px;
+            box-shadow: 0 30px 60px rgba(10, 25, 50, 0.6);
+            border: 6px solid #fff;
+            transition: transform 0.4s ease;
+            z-index: 2;
+        }
+
+        .hero-img-1:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+
+        .hero-img-2:hover {
+            transform: scale(1.04) translateY(-10px);
+        }
+
+        .poster-kicker {
+            display: inline-flex;
+            align-items: center;
+            min-height: 48px;
+            padding: 0 26px;
+            margin: 0 0 20px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffd2e5;
+            font: 700 0.88rem/1 'Lato', sans-serif;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+        }
+
+        .poster-hero h1 {
+            margin: 0 0 22px;
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(2.9rem, 5.3vw, 5rem);
+            line-height: 1.02;
+            color: #fff;
+            max-width: 860px;
+        }
+
+        .poster-intro {
+            max-width: 780px;
+            margin: 0;
+            padding: 18px 22px;
+            border-radius: 20px;
+            background: rgba(17, 52, 95, 0.28);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(14px);
+            font-size: 1.05rem;
+            line-height: 1.82;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .poster-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .poster-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 62px;
+            padding: 16px 32px;
+            border-radius: 18px;
+            text-decoration: none;
+            font: 700 0.9rem/1 'Lato', sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: 0.25s ease;
+        }
+
+        .poster-btn--primary {
+            background: var(--accent-pink);
+            border: 2px solid var(--accent-pink);
+            color: #fff;
+        }
+
+        .poster-btn--primary:hover {
+            background: #d93370;
+            border-color: #d93370;
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .poster-btn--outline {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.72);
+            color: #fff;
+        }
+
+        .poster-btn--outline:hover {
+            background: rgba(255, 255, 255, 0.16);
+            color: #fff;
+        }
+
+        .poster-section {
+            padding: 92px 5%;
+            background: transparent;
+        }
+
+        .poster-section--alt {
+            background: var(--soft-pink);
+        }
+
+        .poster-heading {
+            margin-bottom: 42px;
+        }
+
+        .poster-heading h2 {
+            margin: 0 0 14px;
+            color: var(--primary-blue);
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.08;
+        }
+
+        .poster-heading p {
+            margin: 0;
+            max-width: 960px;
+            color: var(--text-muted);
+            line-height: 1.82;
+            font-size: 1.02rem;
+        }
+
+        .poster-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .poster-card {
+            padding: 34px;
+            border-radius: 28px;
+            background: #fff;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-light);
+        }
+
+        .poster-card h3 {
+            margin: 0 0 18px;
+            color: var(--primary-blue);
+            font-family: 'Cambria', Georgia, serif;
+            font-size: 1.78rem;
+            line-height: 1.18;
+        }
+
+        .poster-card p,
+        .poster-card li {
+            color: var(--text-dark);
+            line-height: 1.82;
+            font-size: 1rem;
+        }
+
+        .poster-card ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .poster-quote {
+            margin: 18px 0 0;
+            padding: 20px 22px;
+            background: var(--soft-pink);
+            border-left: 5px solid var(--accent-pink);
+            border-radius: 0 20px 20px 0;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .poster-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .poster-gallery figure {
+            flex: 0 0 calc(33.333% - 16px);
+            margin: 0;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .poster-gallery figure:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(20, 78, 140, 0.12);
+        }
+
+        .poster-gallery img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 1 / 1.414;
+            object-fit: cover;
+            display: block;
+            background: #fff;
+        }
+
+        /* Prize & Funding Enhancements */
+        .funding-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-pink);
+            margin: 15px 0;
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 0.95rem;
+        }
+
+        .prize-section {
+            margin-top: 40px;
+            padding: 40px;
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-light);
+        }
+
+        .prize-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 15px;
+        }
+
+        .prize-header h3 {
+            margin: 0 !important;
+            font-size: 1.6rem !important;
+        }
+
+        .prize-book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .book-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            padding: 15px;
+            background: var(--bg-light);
+            border-radius: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .book-item:hover {
+            transform: translateY(-2px);
+            background: var(--soft-pink);
+        }
+
+        .book-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--accent-pink);
+            color: #fff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .book-info em {
+            display: block;
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-style: normal;
+            margin-bottom: 4px;
+        }
+
+        .book-info span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 992px) {
+            .poster-hero {
+                min-height: auto;
+                padding-top: 72px;
+                padding-bottom: 64px;
+            }
+            .poster-hero-shell {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                text-align: center;
+            }
+            .poster-hero h1, .poster-intro, .poster-actions {
+                margin-left: auto;
+                margin-right: auto;
+                justify-content: center;
+            }
+            .poster-hero-images {
+                min-height: 400px;
+            }
+            .poster-grid {
+                grid-template-columns: 1fr;
+            }
+            .poster-gallery figure {
+                flex: 0 0 calc(50% - 12px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .poster-hero,
+            .poster-section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .poster-section {
+                padding-top: 72px;
+                padding-bottom: 72px;
+            }
+
+            .poster-actions {
+                flex-direction: column;
+            }
+
+            .poster-btn {
+                width: 100%;
+            }
+            .poster-gallery figure {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+    <link rel="alternate" hreflang="en-US" href="../../../works/workshops/poster-competition-2024.html" />
+    <link rel="alternate" hreflang="vi" href="../../../vi/works/workshops/poster-competition-2024.html" />
+    <link rel="alternate" hreflang="x-default" href="../../../works/workshops/poster-competition-2024.html" />
+    <link rel="stylesheet" href="../../vi-typography.css">
+</head>
+<body>
+    <div id="global-header"></div>
+
+    <div class="breadcrumb">
+        <a href="../../index.html">Trang chủ</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <a href="../../index.html">Hoạt động &amp; Công trình</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <a href="index.html">Hội thảo &amp; Tọa đàm</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <span>FGL Posters Competition 2024</span>
+    </div>
+
+    <section class="poster-hero">
+        <div class="poster-hero-shell">
+            <div class="poster-hero-content">
+                <p class="poster-kicker">Student Programme</p>
+                <h1>FGL Posters Competition 2024</h1>
+                <p class="poster-intro">
+                    A student-facing competition launched during FGL Week 2024 at UEL, combining essay writing and collaborative poster design around the themes of feminism, gender, and law.
+                </p>
+                <div class="poster-actions">
+                    <a class="poster-btn poster-btn--primary" href="https://forms.gle/ZXkgnVbH4vr2sR7d7" target="_blank" rel="noopener noreferrer">Submission Form</a>
+                    <a class="poster-btn poster-btn--outline" href="index.html">Về trang Hội thảo</a>
+                </div>
+            </div>
+            <div class="poster-hero-images">
+                <img class="hero-img-1" src="../../../images/workshops/PosterCompetition-2024/Poster FGL week.png" alt="Poster FGL Week">
+                <img class="hero-img-2" src="../../../images/workshops/PosterCompetition-2024/Write FGL week.jpg" alt="Write FGL Week">
+            </div>
+        </div>
+    </section>
+
+    <section class="poster-section">
+        <div class="poster-section-shell">
+            <div class="poster-heading">
+                <h2>Competition Overview</h2>
+                <p>
+                    Within the framework of FGL Week 2024, the Khoa Luật Kinh tế officially launched an essay writing competition and a poster design activity on feminism, gender, and law for all UEL students.
+                </p>
+            </div>
+
+            <div class="poster-grid">
+                <article class="poster-card">
+                    <h3>1. Essay Writing Competition</h3>
+                    <p>Participants were invited to share their perspective on the following bell hooks statement:</p>
+                    <div class="poster-quote">
+                        "If any female feels she needs anything beyond herself to legitimate and validate her existence, she is already giving away her power to be self-defining, her agency."
+                    </div>
+                    <ul style="margin-top: 20px;">
+                        <li><strong>Length:</strong> 1,500-2,000 words.</li>
+                        <li><strong>Formatting:</strong> Times New Roman, font size 14.</li>
+                        <li><strong>Submission:</strong> Official Google Form.</li>
+                        <li><strong>Deadline:</strong> 30 August 2024.</li>
+                    </ul>
+                </article>
+
+                <article class="poster-card">
+                    <h3>2. Poster Design Competition</h3>
+                    <p>
+                        Students participating in the poster design stream were divided into 12 groups. Each group designed one poster around a topic related to feminism, gender, and law.
+                    </p>
+                    
+                    <div class="funding-badge">
+                        <span style="text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-pink); font-size: 0.75rem; margin-right: 8px;">Institutional Support:</span> 
+                        VND 1,000,000 / group
+                    </div>
+
+                    <p>
+                        To support the design process, each group was provided with resources for the implementation of its poster activity. This format combined collaborative learning and visual communication.
+                    </p>
+                    <p>
+                        Selected posters were displayed during FGL Week, promoting thematic engagement with feminist legal ideas across the university campus.
+                    </p>
+                </article>
+            </div>
+
+            <!-- New Balanced Prize Section -->
+            <div class="prize-section">
+                <div class="prize-header">
+                    <div>
+                        <span style="display: inline-block; padding: 4px 12px; background: var(--accent-pink); color: #fff; border-radius: 6px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">🏆 Award Bundle</span>
+                        <h3>Prize Structure</h3>
+                        <p style="margin: 0; color: var(--text-muted);">The 10 best essay submissions receive a curated set of six foundational books:</p>
+                    </div>
+                </div>
+                
+                <div class="prize-book-grid">
+                    <div class="book-item">
+                        <div class="book-icon">01</div>
+                        <div class="book-info">
+                            <em>The Feminine Mystique</em>
+                            <span>Betty Friedan</span>
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-icon">02</div>
+                        <div class="book-info">
+                            <em>Feminism Is for Everybody</em>
+                            <span>bell hooks</span>
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-icon">03</div>
+                        <div class="book-info">
+                            <em>Gender Equality in the Workplace</em>
+                            <span>ECUE - Stories and Solutions</span>
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-icon">04</div>
+                        <div class="book-info">
+                            <em>Key Concepts in Gender Studies</em>
+                            <span>Jane Pilcher & Imelda Whelehan</span>
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-icon">05</div>
+                        <div class="book-info">
+                            <em>Seeing Gender</em>
+                            <span>Iris Gottlieb</span>
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-icon">06</div>
+                        <div class="book-info">
+                            <em>Toward Bản án nữ quyền Việt Nam</em>
+                            <span>Edited by Trinh Thuc Hien</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="poster-section poster-section--alt">
+        <div class="poster-section-shell">
+            <div class="poster-heading">
+                <h2>Gallery</h2>
+                <p>
+                    Selected visuals from the 2024 competition archive, including the official campaign poster and programme documentation.
+                </p>
+            </div>
+
+            <div class="poster-gallery">
+                <figure>
+                    <img src="../../../images/workshops/PosterCompetition-2024/1.png" alt="Poster Design 1" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../../images/workshops/PosterCompetition-2024/2.png" alt="Poster Design 2" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../../images/workshops/PosterCompetition-2024/3.png" alt="Poster Design 3" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../../images/workshops/PosterCompetition-2024/4.png" alt="Poster Design 4" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../../images/workshops/PosterCompetition-2024/5.png" alt="Poster Design 5" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../../images/workshops/PosterCompetition-2024/6.png" alt="Poster Design 6" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../../images/workshops/PosterCompetition-2024/7.png" alt="Poster Design 7" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../../images/workshops/PosterCompetition-2024/8.png" alt="Poster Design 8" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../../images/workshops/PosterCompetition-2024/9.png" alt="Poster Design 9" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../../images/workshops/PosterCompetition-2024/10.png" alt="Poster Design 10" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="../../../images/workshops/PosterCompetition-2024/11.png" alt="Poster Design 11" loading="lazy">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <div id="global-footer"></div>
+    <script src="../../../js/components.js"></script>
+</body>
+</html>

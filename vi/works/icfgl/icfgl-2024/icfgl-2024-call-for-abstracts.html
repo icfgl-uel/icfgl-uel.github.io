@@ -1,0 +1,554 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kêu gọi tóm tắt - ICFGL 2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../style.css">
+    <link rel="stylesheet" href="../../../../header-footer.css">
+    <style>
+        .cfa-page {
+            background: linear-gradient(180deg, #fff8fb 0%, #f6faff 100%);
+        }
+
+        .cfa-shell {
+            width: min(1160px, 90%);
+            margin: 0 auto;
+        }
+
+        .cfa-hero {
+            padding: 48px 0 24px;
+        }
+
+        .cfa-kicker {
+            margin: 0 0 10px;
+            color: var(--pink);
+            font: 700 0.75rem/1 'Lato', sans-serif;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .cfa-heading {
+            margin: 0 0 36px;
+            color: var(--dark-blue);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+        }
+
+        .cfa-poster {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            background: linear-gradient(180deg, #fffdfa 0%, #fff6f7 52%, #ffffff 100%);
+            border: 1px solid rgba(20, 78, 140, 0.1);
+            box-shadow: 0 22px 50px rgba(20, 78, 140, 0.09);
+        }
+
+        .cfa-poster-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .cfa-poster-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 28px 34px 18px;
+            align-items: flex-start;
+        }
+
+        .cfa-brand-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .cfa-rls-mark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 96px;
+            min-height: 96px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid rgba(235, 79, 46, 0.15);
+            color: #eb4f2e;
+            font: 700 0.8rem/1.12 'Lato', sans-serif;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .cfa-uel-mark {
+            width: 86px;
+            height: 86px;
+            object-fit: contain;
+            filter: saturate(1.05);
+        }
+
+        .cfa-decor {
+            color: rgba(222, 79, 122, 0.18);
+            font-size: 3.2rem;
+            line-height: 1;
+            letter-spacing: 0.1em;
+            user-select: none;
+        }
+
+        .cfa-title-band {
+            padding: 0 34px 26px;
+            text-align: center;
+        }
+
+        .cfa-conference-label {
+            margin: 0 0 12px;
+            color: var(--dark-blue);
+            font: 700 1rem/1.4 'Lato', sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .cfa-main-title {
+            margin: 0;
+            padding: 28px 20px;
+            background: linear-gradient(180deg, rgba(222, 79, 122, 0.08), rgba(222, 79, 122, 0.14));
+            color: #eb4f2e;
+            font-size: clamp(2rem, 4vw, 3.7rem);
+            line-height: 1.12;
+            border-radius: 26px;
+            text-transform: uppercase;
+        }
+
+        .cfa-main-title span {
+            display: block;
+            margin-top: 8px;
+            color: #eb4f2e;
+        }
+
+        .cfa-subtitle {
+            margin: 22px 0 0;
+            color: var(--dark-blue);
+            font-size: clamp(1.7rem, 3.4vw, 3rem);
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .cfa-poster-bottom {
+            display: grid;
+            grid-template-columns: minmax(280px, 1fr) minmax(320px, 0.95fr);
+            gap: 28px;
+            align-items: end;
+            padding: 0 34px 34px;
+        }
+
+        .cfa-illustration-wrap {
+            position: relative;
+            min-height: 300px;
+            padding: 26px;
+        }
+
+        .cfa-illustration-circle {
+            position: absolute;
+            inset: 18px 30px 12px 10px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 30%, rgba(222, 79, 122, 0.12), rgba(222, 79, 122, 0.05));
+        }
+
+        .cfa-illustration {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            display: block;
+            margin: 0 auto;
+            object-fit: contain;
+        }
+
+        .cfa-deadline-card {
+            position: relative;
+            padding: 28px 28px 94px;
+            border-radius: 28px;
+            background: linear-gradient(180deg, #ef5933 0%, #eb4f2e 100%);
+            color: var(--white);
+            box-shadow: 0 18px 35px rgba(235, 79, 46, 0.25);
+        }
+
+        .cfa-deadline-label {
+            margin: 0;
+            text-align: center;
+            font: 700 1rem/1.25 'Lato', sans-serif;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .cfa-deadline-date {
+            margin: 12px 0 0;
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.05;
+            letter-spacing: 0.05em;
+        }
+
+        .cfa-contact-strip {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 22px;
+            background: var(--dark-blue);
+            color: var(--white);
+            font: 600 1rem/1.4 'Lato', sans-serif;
+        }
+
+        .cfa-contact-strip a {
+            color: var(--white);
+        }
+
+        .cfa-contact-lead {
+            margin: 18px 0 10px;
+            color: #eb4f2e;
+            font: 700 1rem/1.5 'Lato', sans-serif;
+            text-align: center;
+        }
+
+        .cfa-content {
+            padding: 18px 0 74px;
+        }
+
+        .cfa-intro-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+            gap: 28px;
+            margin-bottom: 34px;
+        }
+
+        .cfa-card {
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(20, 78, 140, 0.1);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 14px 30px rgba(20, 78, 140, 0.07);
+        }
+
+        .cfa-card h2,
+        .cfa-section-block h2 {
+            margin: 0 0 16px;
+            color: var(--dark-blue);
+            font-size: 1.65rem;
+        }
+
+        .cfa-card p,
+        .cfa-section-block p {
+            margin: 0 0 16px;
+            color: var(--text-dark);
+            line-height: var(--line-height-base);
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        .cfa-card p:last-child,
+        .cfa-section-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cfa-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .cfa-bullets li {
+            padding: 16px 18px;
+            border-radius: 14px;
+            background: rgba(20, 78, 140, 0.05);
+            color: var(--text-dark);
+            line-height: var(--line-height-base);
+        }
+
+        .cfa-bullets li strong {
+            color: var(--dark-blue);
+        }
+
+        .cfa-grid-two {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+
+        .cfa-section-block {
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(20, 78, 140, 0.1);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 14px 30px rgba(20, 78, 140, 0.07);
+        }
+
+        .cfa-topic-list,
+        .cfa-requirement-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 14px;
+        }
+
+        .cfa-topic-list li,
+        .cfa-requirement-list li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 15px 16px;
+            border-radius: 14px;
+            background: rgba(222, 79, 122, 0.06);
+            color: var(--text-dark);
+            line-height: var(--line-height-base);
+        }
+
+        .cfa-topic-list li::before,
+        .cfa-requirement-list li::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            margin-top: 0.55em;
+            border-radius: 50%;
+            background: var(--pink);
+            flex: 0 0 10px;
+        }
+
+        .cfa-highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .cfa-highlight {
+            background: linear-gradient(180deg, rgba(20, 78, 140, 0.05), rgba(20, 78, 140, 0.08));
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(20, 78, 140, 0.08);
+        }
+
+        .cfa-highlight-label {
+            margin: 0 0 8px;
+            color: var(--pink);
+            font: 700 var(--font-size-xs)/1 'Lato', sans-serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .cfa-highlight-value {
+            margin: 0;
+            color: var(--dark-blue);
+            font: 700 1rem/1.4 'Lato', sans-serif;
+        }
+
+        @media (max-width: 980px) {
+            .cfa-poster-bottom,
+            .cfa-intro-grid,
+            .cfa-grid-two,
+            .cfa-highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cfa-poster-top {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .cfa-poster-top,
+            .cfa-title-band,
+            .cfa-poster-bottom,
+            .cfa-card,
+            .cfa-section-block {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .cfa-deadline-card {
+                padding: 22px 20px 88px;
+            }
+
+            .cfa-contact-strip {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+    <link rel="alternate" hreflang="en-US" href="../../../../works/icfgl/icfgl-2024/icfgl-2024-call-for-abstracts.html" />
+    <link rel="alternate" hreflang="vi" href="../../../../vi/works/icfgl/icfgl-2024/icfgl-2024-call-for-abstracts.html" />
+    <link rel="alternate" hreflang="x-default" href="../../../../works/icfgl/icfgl-2024/icfgl-2024-call-for-abstracts.html" />
+    <link rel="stylesheet" href="../../../vi-typography.css">
+</head>
+
+<body class="cfa-page">
+    <div id="global-header"></div>
+
+    <div class="breadcrumb">
+        <a href="../../../index.html">Trang chủ</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <a href="../../index.html">Hoạt động &amp; Công trình</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <a href="icfgl-2024.html">ICFGL 2024</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <span>Kêu gọi tóm tắt</span>
+    </div>
+
+    <section class="cfa-page">
+        <div class="cfa-shell cfa-hero">
+            <p class="cfa-kicker">ICFGL 2024</p>
+            <h1 class="cfa-heading">Kêu gọi tóm tắt</h1>
+            <div class="cfa-poster">
+                <img class="cfa-poster-image" src="../../../../images/icfgl/call4abstracts.jpg" alt="ICFGL 2024 Kêu gọi tóm tắt poster">
+            </div>
+        </div>
+    </section>
+
+    <section class="cfa-content">
+        <div class="cfa-shell">
+            <div class="cfa-intro-grid">
+                <div class="cfa-card">
+                    <h2>Conference Overview</h2>
+                    <p>
+                        Traditional legal approaches often assume that law is unbiased and objective, emphasizing
+                        coherence, consistency, and predictability in legal rules. Feminist legal theory, as discussed
+                        by Bartlett (1990), challenges this assumption by questioning how masculine perspectives have
+                        shaped legal concepts, institutional norms, and legal reasoning.
+                    </p>
+                    <p>
+                        As a social construct, law has historically reflected and reproduced power relations, including
+                        gender inequality, particularly during periods when women had limited opportunities to
+                        participate in legal institutions and professional roles. Although law has sought to address
+                        women's issues in various contexts, feminist legal theory continues to critique the extent to
+                        which women's experiences and perspectives remain underrepresented in legal doctrine and
+                        practice.
+                    </p>
+                    <p>
+                        To advance social justice and gender equality, feminist legal theory has increasingly been
+                        applied across a wide range of legal fields, from rape and sexual work to labour, tort,
+                        contract, property, and company law.
+                    </p>
+                </div>
+
+                <div class="cfa-card">
+                    <h2>ICFGL 2024</h2>
+                    <p>
+                        The International Conference on Feminism, Gender, and Law 2024 is organized by the University
+                        of Economics and Law, Vietnam National University Ho Chi Minh City, following the successful
+                        ICFGL 2021.
+                    </p>
+                    <p>
+                        ICFGL 2024 is sponsored by Rosa-Luxemburg-Stiftung Southeast Asia and aims to bring together
+                        scholars, activists, and policymakers from around the world to discuss and debate the latest
+                        research and developments in the field.
+                    </p>
+
+                    <ul class="cfa-bullets">
+                        <li><strong>Keynote Speaker:</strong> Prof. Rosemary Hunter, Professor of Law and Socio-Legal Studies, Kent Law School, University of Kent, UK.</li>
+                        <li><strong>Keynote Speaker:</strong> Dr. Emma Palmer, Senior Lecturer, Griffith Law School, Griffith University, Australia.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cfa-grid-two">
+                <div class="cfa-section-block">
+                    <h2>Conference Themes</h2>
+                    <ul class="cfa-topic-list">
+                        <li>Theoretical foundations of feminist legal theory.</li>
+                        <li>Impact of law on women and gender equality.</li>
+                        <li>Feminist legal theory and its application in practice.</li>
+                        <li>Effective laws to achieve gender equality and social justice.</li>
+                        <li>Challenges and perspectives for feminist legal reform.</li>
+                    </ul>
+                </div>
+
+                <div class="cfa-section-block">
+                    <h2>Submission Package</h2>
+                    <ul class="cfa-requirement-list">
+                        <li>Abstracts of approximately 200 words each.</li>
+                        <li>Five to seven keywords.</li>
+                        <li>A professional short bio of contributors.</li>
+                        <li>All documents submitted in English.</li>
+                        <li>Microsoft Word format preferred, using Times New Roman 12 and 1.5 line spacing.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cfa-section-block">
+                <h2>Review, Publication, and Format</h2>
+                <p>
+                    A five-member editorial board will carefully review submitted abstracts and select qualified papers
+                    for presentation at the conference and for subsequent publication consideration. Conference papers
+                    will undergo a double-blind peer review process.
+                </p>
+                <p>
+                    Papers selected for publication will have an opportunity to be featured in a special issue of a
+                    leading Scopus-indexed law journal or in a publication affiliated with a QS Top 500 University. The
+                    full paper, including footnotes, references, and tables, should be between 8,000 and 10,000 words
+                    and must follow the OSCOLA reference style.
+                </p>
+
+                <div class="cfa-highlight-grid">
+                    <div class="cfa-highlight">
+                        <p class="cfa-highlight-label">Abstract Deadline</p>
+                        <p class="cfa-highlight-value">15 June 2024</p>
+                    </div>
+                    <div class="cfa-highlight">
+                        <p class="cfa-highlight-label">Notification</p>
+                        <p class="cfa-highlight-value">20 June 2024</p>
+                    </div>
+                    <div class="cfa-highlight">
+                        <p class="cfa-highlight-label">Paper Deadline</p>
+                        <p class="cfa-highlight-value">10 September 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cfa-grid-two" style="margin-top: 28px;">
+                <div class="cfa-section-block">
+                    <h2>Venue and Timing</h2>
+                    <p>
+                        ICFGL 2024 will be held on 27 September 2024 at the campus of the University of Economics and
+                        Law, Ho Chi Minh City, Vietnam, with final venue details to be confirmed.
+                    </p>
+                    <p>
+                        The conference continues the project's effort to foster international exchange on feminist legal
+                        thought while creating a substantive academic platform within Vietnam.
+                    </p>
+                </div>
+
+                <div class="cfa-section-block">
+                    <h2>Contact</h2>
+                    <p>
+                        Information inquiries and submissions should be sent to:
+                    </p>
+                    <p>
+                        <a href="mailto:feminism.uel.conference@uel.edu.vn"><strong>feminism.uel.conference@uel.edu.vn</strong></a>
+                    </p>
+                    <p>
+                        We look forward to receiving your abstracts and to welcoming contributors to ICFGL 2024.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div id="global-footer"></div>
+    <script src="../../../../js/components.js"></script>
+</body>
+
+</html>
+
+
+
+
