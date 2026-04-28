@@ -184,21 +184,21 @@
             <li><a href="${contactHref}">${t.navContact}</a></li>
             <li class="nav-dropdown nav-lang-dropdown" aria-label="${t.langSwitcherLabel}">
                 <button type="button" class="nav-dropdown-toggle nav-lang-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="nav-lang-menu" title="${t.langMenuButton}">
-                    <span class="nav-lang-flag" aria-hidden="true">${vi ? t.langFlagVi : t.langFlagEn}</span>
-                    <span class="nav-lang-toggle-text">${vi ? t.langVi : t.langEn}</span>
+                    <span class="nav-lang-code" aria-hidden="true">${vi ? t.langFlagVi : t.langFlagEn}</span>
+                    <span class="nav-lang-label">${vi ? t.langVi : t.langEn}</span>
                     <span class="nav-caret" aria-hidden="true"></span>
                 </button>
                 <ul class="nav-dropdown-menu nav-lang-menu" id="nav-lang-menu" role="menu">
                     <li role="none">
                         <a href="${enHref}" role="menuitem" class="nav-lang-item${vi ? "" : " nav-current"}" ${vi ? "" : 'aria-current="true"'}>
-                            <span class="nav-lang-flag" aria-hidden="true">${t.langFlagEn}</span>
-                            <span class="nav-lang-item-label">${t.langEn}</span>
+                            <span class="nav-lang-code" aria-hidden="true">${t.langFlagEn}</span>
+                            <span class="nav-lang-label">${t.langEn}</span>
                         </a>
                     </li>
                     <li role="none">
                         <a href="${viHref}" role="menuitem" class="nav-lang-item${vi ? " nav-current" : ""}" ${vi ? 'aria-current="true"' : ""}>
-                            <span class="nav-lang-flag" aria-hidden="true">${t.langFlagVi}</span>
-                            <span class="nav-lang-item-label">${t.langVi}</span>
+                            <span class="nav-lang-code" aria-hidden="true">${t.langFlagVi}</span>
+                            <span class="nav-lang-label">${t.langVi}</span>
                         </a>
                     </li>
                 </ul>

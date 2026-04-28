@@ -54,28 +54,30 @@ nav::after {
 
 /* Language switcher dropdown (after Contact Us) */
 .nav-lang-dropdown {
-    margin-left: 4px;
-    padding-left: 16px;
+    margin-left: 2px;
+    padding-left: 12px;
     border-left: 1px solid rgba(255, 255, 255, 0.28);
 }
 .nav-lang-dropdown .nav-lang-menu {
     left: auto;
     right: 0;
-    min-width: min(280px, calc(100vw - 24px));
+    min-width: min(236px, calc(100vw - 24px));
     padding: 6px 0;
 }
 .nav-lang-toggle {
-    display: inline-flex;
+    display: inline-grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
-    gap: 8px;
+    column-gap: 10px;
     margin: 0;
-    padding: 6px 4px;
+    min-height: 40px;
+    padding: 7px 10px 7px 8px;
     border: none;
-    border-radius: 6px;
-    background: transparent;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.08);
     font: inherit;
     font-family: "Lato", sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.88rem;
     color: #fff !important;
     cursor: pointer;
@@ -84,33 +86,54 @@ nav::after {
 }
 .nav-lang-toggle:hover {
     color: #fff !important;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.14);
 }
 .nav-lang-toggle:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 2px;
 }
-.nav-lang-toggle .nav-lang-flag {
-    font-size: 1.25rem;
-    line-height: 1;
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
-}
-.nav-lang-toggle-text {
-    letter-spacing: 0.02em;
-}
-.nav-lang-menu a.nav-lang-item {
-    display: flex;
+.nav-lang-code {
+    display: inline-flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 18px;
-}
-.nav-lang-menu .nav-lang-flag {
-    font-size: 1.35rem;
+    justify-content: center;
+    min-width: 2.35rem;
+    height: 1.8rem;
+    padding: 0 0.55rem;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
     line-height: 1;
+    text-transform: uppercase;
     flex-shrink: 0;
 }
-.nav-lang-item-label {
-    font-weight: 600;
+.nav-lang-toggle .nav-lang-code {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+.nav-lang-label {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+}
+.nav-lang-menu a.nav-lang-item {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    margin: 0 6px;
+    padding: 10px 14px;
+    border-radius: 12px;
+}
+.nav-lang-menu .nav-lang-code {
+    color: var(--dark-navy, #144e8c);
+    background: rgba(20, 78, 140, 0.08);
+}
+.nav-lang-menu a.nav-lang-item:hover .nav-lang-code,
+.nav-lang-menu a.nav-lang-item.nav-current .nav-lang-code {
+    color: var(--primary, #f64183);
+    background: rgba(246, 65, 131, 0.12);
 }
 .nav-lang-menu a.nav-lang-item.nav-current {
     cursor: default;
@@ -268,7 +291,9 @@ nav::after {
     }
     .nav-lang-toggle {
         width: 100%;
-        justify-content: space-between;
+    }
+    .nav-lang-menu a.nav-lang-item {
+        margin: 0;
     }
     .nav-lang-dropdown .nav-lang-menu {
         left: 0;
