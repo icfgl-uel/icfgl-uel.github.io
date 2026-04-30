@@ -2,6 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ - Dự án Lý luận Pháp lý Nữ quyền (UEL)</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
@@ -410,7 +411,7 @@
         @media (max-width: 900px) {
             .highlights-slider-wrap {
                 height: calc(100svh - 64px);
-                min-height: 560px;
+                min-height: 480px;
                 max-height: none;
             }
             .hero-title-main { font-size: clamp(2.5rem, 8vw, 3.5rem); }
@@ -418,97 +419,36 @@
             .hero-subtitle { font-size: 1.1rem; margin-bottom: 2rem; }
             .highlights-dot { width: 30px; }
             .hl-arrow { display: none; }
-            .highlights-slide--icfgl {
-                align-items: flex-end;
-            }
+            .highlights-slide--icfgl { align-items: flex-end; }
             .highlights-slide--icfgl .slide-overlay {
                 background:
-                    linear-gradient(180deg, rgba(10, 18, 39, 0.15) 0%, rgba(10, 18, 39, 0.45) 36%, rgba(10, 18, 39, 0.85) 100%),
-                    linear-gradient(90deg, rgba(10, 18, 39, 0.35), rgba(10, 18, 39, 0.10));
+                    linear-gradient(180deg, rgba(10,18,39,0.15) 0%, rgba(10,18,39,0.45) 36%, rgba(10,18,39,0.85) 100%),
+                    linear-gradient(90deg, rgba(10,18,39,0.35), rgba(10,18,39,0.10));
             }
-            .highlights-slide--icfgl .slide-bg img {
-                object-position: 58% center;
-            }
-            .highlights-slide--icfgl .slide-content {
-                width: auto;
-                margin: 0;
-                padding: 0 28px 92px;
-            }
-            .highlights-slide--icfgl.active .slide-content {
-                transform: translateY(0);
-            }
-            .highlights-slide--icfgl .hero-kicker {
-                min-height: 34px;
-                padding: 0 18px;
-                margin-bottom: 20px;
-                font-size: 0.72rem;
-            }
-            .highlights-slide--icfgl .hero-title-main {
-                font-size: clamp(3.1rem, 15vw, 5rem);
-                line-height: 0.9;
-                margin-bottom: 20px;
-            }
-            .highlights-slide--icfgl .hero-title-nowrap {
-                margin-top: 14px;
-                font-size: clamp(1.35rem, 6vw, 2rem);
-            }
-            .highlights-slide--icfgl .hero-subtitle {
-                max-width: 100%;
-                padding-top: 22px;
-                margin-bottom: 28px;
-                font-size: 1rem;
-            }
-            .highlights-slide--icfgl .hero-btn {
-                width: min(100%, 280px);
-                min-width: 0;
-                padding: 15px 24px 15px 32px;
-                font-size: 1rem;
-            }
-            .highlights-slide--workshops {
-                align-items: flex-end;
-            }
-            .highlights-slide--workshops .slide-overlay {
-                background: rgba(3, 13, 31, 0.08);
-            }
-            .highlights-slide--workshops::before {
-                background:
-                    linear-gradient(180deg, rgba(10, 18, 39, 0.10) 0%, rgba(10, 18, 39, 0.45) 38%, rgba(10, 18, 39, 0.85) 100%),
-                    linear-gradient(90deg, rgba(10, 18, 39, 0.30), rgba(10, 18, 39, 0.08));
-            }
-            .highlights-slide--workshops .slide-scrim {
-                background:
-                    linear-gradient(180deg, rgba(10, 18, 39, 0.10) 0%, rgba(10, 18, 39, 0.40) 38%, rgba(10, 18, 39, 0.85) 100%),
-                    linear-gradient(90deg, rgba(10, 18, 39, 0.25), rgba(10, 18, 39, 0.05));
-            }
-            .highlights-slide--workshops .slide-bg img {
-                object-position: 64% center;
-            }
-            .highlights-slide--workshops .slide-content {
-                width: auto;
-                margin: 0;
-                padding: 0 28px 92px;
-            }
-            .highlights-slide--workshops.active .slide-content {
-                transform: translateY(0);
-            }
-            .highlights-slide--workshops .hero-title-main {
-                font-size: clamp(3rem, 14vw, 4.8rem);
-                line-height: 1;
-                margin-bottom: 20px;
-            }
-            .highlights-slide--workshops .hero-subtitle {
-                max-width: 100%;
-                padding-top: 22px;
-                margin-bottom: 28px;
-                font-size: 1rem;
-                line-height: 1.6 !important;
-            }
-            .highlights-slide--workshops .hero-btn {
-                width: min(100%, 245px);
-                min-width: 0;
-                padding: 15px 24px 15px 30px;
-                font-size: 1rem;
-            }
+            .highlights-slide--icfgl .slide-bg img { object-position: 58% center; }
+            .highlights-slide--icfgl .slide-content { width: auto; margin: 0; padding: 0 5% 80px; }
+            .highlights-slide--icfgl.active .slide-content { transform: translateY(0); }
+            .highlights-slide--icfgl .hero-title-main { font-size: clamp(2.4rem, 10vw, 4rem); line-height: 1; margin-bottom: 20px; }
+            .highlights-slide--icfgl .hero-title-nowrap { margin-top: 14px; font-size: clamp(1.2rem, 5vw, 1.8rem); }
+            .highlights-slide--icfgl .hero-subtitle { max-width: 100%; padding-top: 22px; margin-bottom: 28px; font-size: 1rem; }
+            .highlights-slide--icfgl .hero-btn { width: min(100%, 280px); min-width: 0; padding: 15px 24px 15px 32px; font-size: 1rem; }
+            .highlights-slide--workshops { align-items: flex-end; }
+            .highlights-slide--workshops .slide-bg img { object-position: 64% center; }
+            .highlights-slide--workshops .slide-content { width: auto; margin: 0; padding: 0 5% 80px; }
+            .highlights-slide--workshops.active .slide-content { transform: translateY(0); }
+            .highlights-slide--workshops .hero-title-main { font-size: clamp(2.4rem, 10vw, 4rem); line-height: 1; margin-bottom: 20px; }
+            .highlights-slide--workshops .hero-subtitle { max-width: 100%; margin-bottom: 28px; font-size: 1rem; line-height: 1.6 !important; }
+            .highlights-slide--workshops .hero-btn { width: min(100%, 245px); min-width: 0; padding: 15px 24px 15px 30px; font-size: 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .highlights-slider-wrap { min-height: 420px; }
+            .highlights-slide--icfgl .slide-content,
+            .highlights-slide--workshops .slide-content,
+            .highlights-slide--mootcourt .slide-content { padding-left: 5%; padding-right: 5%; padding-bottom: 72px; }
+            .hero-title-main { font-size: clamp(2rem, 9vw, 2.8rem); }
+            .hero-btn { width: 100% !important; min-width: 0 !important; }
+            .highlights-dots { bottom: 28px; }
         }
 
         /* ── GIỚI THIỆU section ────────────────────────────── */
@@ -660,7 +600,7 @@
         <div class="container hero-flex">
             <div class="hero-flex-img">
                 <img src="../images/common/hero.png" alt="Hình minh họa"
-                     style="width: 100%; height: 420px; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: block;">
+                     style="width: 100%; height: clamp(220px, 35vw, 420px); object-fit: cover; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: block;">
             </div>
             <div class="hero-flex-text">
                 <h1><a href="about/about.html" class="heading-pink">GIỚI THIỆU</a></h1>
@@ -718,7 +658,7 @@
          BANNER
     ════════════════════════════════════════════════ -->
     <section class="section-full">
-        <img src="../images/common/5.png" alt="Băng rôn" style="width: 100%; height: 500px; display: block;">
+        <img src="../images/common/5.png" alt="Băng rôn" style="width: 100%; height: clamp(180px, 30vw, 500px); display: block; object-fit: cover;">
     </section>
 
     <div id="global-footer"></div>

@@ -301,6 +301,20 @@
             box-shadow: none;
         }
 
+        .about-placeholder-card--poster img {
+            height: auto !important;
+            object-fit: contain !important;
+            aspect-ratio: auto !important;
+            background: #fff;
+        }
+
+        @media (max-width: 760px) {
+            .about-placeholder-card--poster {
+                height: auto !important;
+                aspect-ratio: auto !important;
+            }
+        }
+
         .about-placeholder-card--mini::before {
             display: none;
         }
@@ -783,6 +797,15 @@
             }
         }
 
+        @media (max-width: 600px) {
+            .managing-team-title {
+                font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+            }
+            .about-mini-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 760px) {
             .managing-team-section {
                 padding: 48px 5% 58px;
@@ -794,6 +817,36 @@
 
             .managing-team-photo {
                 aspect-ratio: 4 / 3;
+                min-height: 0;
+                max-height: 260px;
+            }
+
+            .managing-team-body {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .managing-team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .managing-team-photo {
+                aspect-ratio: 16 / 9;
+                max-height: 220px;
+            }
+
+            .managing-team-body {
+                padding: 16px;
+            }
+
+            .managing-team-name {
+                font-size: 1.25rem;
+            }
+
+            .about-footer-bottom-grid {
+                text-align: center;
+                align-items: center;
             }
         }
 

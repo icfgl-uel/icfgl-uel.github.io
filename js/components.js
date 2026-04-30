@@ -14,6 +14,7 @@
             navWorkshops: "Workshops & Seminars",
             navMootCourt: "Gender Justice Moot Court",
             navContact: "Contact Us",
+            navUel: "UEL Website",
             langSwitcherLabel: "Language",
             langMenuButton: "Choose language",
             langEn: "English (US)",
@@ -34,6 +35,8 @@
                 "&copy; 2024 UEL Feminist Legal Theory Project. Supported by Rosa Luxemburg Stiftung Southeast Asia.",
             footerTagline: "Designed for Academic Excellence",
             logoImgAlt: "UEL Logo",
+            navToggleLabel: "Toggle menu",
+            navCloseLabel: "Close menu",
         },
         vi: {
             logoAlt: "UEL & RLS",
@@ -47,6 +50,7 @@
             navWorkshops: "Hội thảo & Tọa đàm",
             navMootCourt: "Phiên tòa giả định Công lý giới",
             navContact: "Liên hệ",
+            navUel: "Website UEL",
             langSwitcherLabel: "Ngôn ngữ",
             langMenuButton: "Chọn ngôn ngữ",
             langEn: "English (US)",
@@ -67,6 +71,8 @@
                 "&copy; 2024 Dự án Lý luận Pháp lý Nữ quyền – UEL. Được hỗ trợ bởi Rosa Luxemburg Stiftung Đông Nam Á.",
             footerTagline: "Thiết kế vì chất lượng học thuật",
             logoImgAlt: "Logo UEL",
+            navToggleLabel: "Mở menu",
+            navCloseLabel: "Đóng menu",
         },
     };
 
@@ -132,14 +138,14 @@
 
         const localePrefix = vi ? "vi/" : "";
 
-        const homeHref = rootPath + localePrefix + "index.html";
-        const aboutHref = rootPath + localePrefix + "about/about.html";
-        const worksHref = rootPath + localePrefix + "works/";
-        const fjHref = rootPath + localePrefix + "works/feminist-judgments/";
-        const icfglHref = rootPath + localePrefix + "works/icfgl/";
-        const pubHref = rootPath + localePrefix + "works/publications/";
-        const wsHref = rootPath + localePrefix + "works/workshops/";
-        const mootHref = rootPath + localePrefix + "works/moot-court/";
+        const homeHref    = rootPath + localePrefix + "index.html";
+        const aboutHref   = rootPath + localePrefix + "about/about.html";
+        const worksHref   = rootPath + localePrefix + "works/";
+        const fjHref      = rootPath + localePrefix + "works/feminist-judgments/";
+        const icfglHref   = rootPath + localePrefix + "works/icfgl/";
+        const pubHref     = rootPath + localePrefix + "works/publications/";
+        const wsHref      = rootPath + localePrefix + "works/workshops/";
+        const mootHref    = rootPath + localePrefix + "works/moot-court/";
         const contactHref = rootPath + localePrefix + "contact/contact.html";
 
         const normalizePath = (path) => {
@@ -168,7 +174,13 @@
         const headerHTML = `
     <nav>
         <a href="${homeHref}" class="logo"><img src="${rootPath}images/common/uel_logo.png" alt="${t.logoAlt}"><span class="logo-text">${t.logoText}</span></a>
-        <ul class="nav-links">
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="${t.navToggleLabel}" aria-expanded="false" aria-controls="nav-links-list">
+            <span class="nav-hamburger-line"></span>
+            <span class="nav-hamburger-line"></span>
+            <span class="nav-hamburger-line"></span>
+        </button>
+        <ul class="nav-links" id="nav-links-list">
+            <button class="nav-close-overlay" id="nav-close-btn" aria-label="${t.navCloseLabel}">&times;</button>
             <li><a href="${homeHref}">${t.navHome}</a></li>
             <li><a href="${aboutHref}">${t.navAbout}</a></li>
             <li class="nav-dropdown">
@@ -215,7 +227,9 @@
                     <div class="site-footer-col site-footer-brand">
                         <h4>${t.footerAboutTitle}</h4>
                         <p>${t.footerAboutBody}</p>
-                        <img src="${rootPath}images/common/uel_logo.png" alt="${t.logoImgAlt}">
+                        <a href="https://www.uel.edu.vn/" target="_blank" rel="noopener noreferrer" style="display: inline-block; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
+                            <img src="${rootPath}images/common/uel_logo.png" alt="${t.logoImgAlt}">
+                        </a>
                     </div>
                     <div class="site-footer-col">
                         <h4>${t.footerQuickTitle}</h4>
@@ -224,6 +238,7 @@
                             <li><a href="${aboutHref}">${t.navAbout}</a></li>
                             <li><a href="${worksHref}">${t.navWorks}</a></li>
                             <li><a href="${contactHref}">${t.navContact}</a></li>
+                            <li><a href="https://www.uel.edu.vn/" target="_blank" rel="noopener noreferrer">${t.navUel}</a></li>
                         </ul>
                     </div>
                     <div class="site-footer-col site-footer-contact">
@@ -256,22 +271,69 @@
         if (headerPlaceholder) {
             headerPlaceholder.innerHTML = headerHTML;
 
+            // ── Hamburger Menu ──────────────────────────────────────
+            const hamburger = headerPlaceholder.querySelector("#nav-hamburger");
+            const navLinksEl = headerPlaceholder.querySelector("#nav-links-list");
+            const closeBtn   = headerPlaceholder.querySelector("#nav-close-btn");
+
+            function openMenu() {
+                if (!hamburger || !navLinksEl) return;
+                hamburger.classList.add("is-open");
+                navLinksEl.classList.add("is-open");
+                hamburger.setAttribute("aria-expanded", "true");
+                document.body.style.overflow = "hidden";
+            }
+            function closeMenu() {
+                if (!hamburger || !navLinksEl) return;
+                hamburger.classList.remove("is-open");
+                navLinksEl.classList.remove("is-open");
+                hamburger.setAttribute("aria-expanded", "false");
+                document.body.style.overflow = "";
+            }
+
+            if (hamburger) {
+                hamburger.addEventListener("click", function () {
+                    if (hamburger.classList.contains("is-open")) closeMenu();
+                    else openMenu();
+                });
+            }
+            if (closeBtn) {
+                closeBtn.addEventListener("click", closeMenu);
+            }
+            // Close menu when a link inside is clicked (navigation)
+            if (navLinksEl) {
+                navLinksEl.querySelectorAll("a").forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        // Only close if it's a real navigation (not dropdown toggle)
+                        if (!link.classList.contains("nav-dropdown-toggle")) {
+                            closeMenu();
+                        }
+                    });
+                });
+            }
+            // Close on Escape key
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") closeMenu();
+            });
+
+            // ── Language dropdown ────────────────────────────────────
             const langDropdown = headerPlaceholder.querySelector(".nav-lang-dropdown");
-            const langToggle = headerPlaceholder.querySelector(".nav-lang-toggle");
+            const langToggle   = headerPlaceholder.querySelector(".nav-lang-toggle");
             if (langDropdown && langToggle) {
                 const setLangExpanded = (open) => {
                     langToggle.setAttribute("aria-expanded", open ? "true" : "false");
                 };
                 langDropdown.addEventListener("mouseenter", () => setLangExpanded(true));
                 langDropdown.addEventListener("mouseleave", () => setLangExpanded(false));
-                langDropdown.addEventListener("focusin", () => setLangExpanded(true));
+                langDropdown.addEventListener("focusin",    () => setLangExpanded(true));
                 langDropdown.addEventListener("focusout", (e) => {
                     if (!langDropdown.contains(e.relatedTarget)) setLangExpanded(false);
                 });
             }
 
-            const navLinks = headerPlaceholder.querySelectorAll(".nav-links a");
-            navLinks.forEach((link) => {
+            // ── Active nav link highlighting ─────────────────────────
+            const allNavLinks = headerPlaceholder.querySelectorAll(".nav-links a");
+            allNavLinks.forEach((link) => {
                 const linkHref = link.getAttribute("href");
                 if (!linkHref || linkHref === "#") return;
                 if (link.closest(".nav-lang-dropdown")) return;

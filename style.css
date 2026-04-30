@@ -2667,3 +2667,136 @@ nav::after {
 /* --- Section Color Utilities --- */
 .section-ice { background-color: #f3f9ff !important; }
 .section-rose { background-color: #ffebf2 !important; }
+
+/* ============================================================
+   GLOBAL RESPONSIVE ADDITIONS – Mobile-First Fixes
+   ============================================================ */
+
+/* ── grid-2 / two-col-grid collapse ─────────────────────────── */
+@media (max-width: 900px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    .grid-2x2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── work-grid (3-col card grid) ─────────────────────────────── */
+@media (max-width: 1040px) {
+    .work-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    }
+}
+@media (max-width: 600px) {
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+    .work-card {
+        padding: 20px;
+    }
+}
+
+/* ── overview-row (WHERE WE LEAD section) ────────────────────── */
+@media (max-width: 640px) {
+    .overview-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .overview-title {
+        flex: none;
+        width: auto;
+    }
+    .overview-content {
+        min-width: 0;
+    }
+}
+
+/* ── overview-flex (About page dark section) ─────────────────── */
+@media (max-width: 900px) {
+    .overview-flex {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .overview-flex-left,
+    .overview-flex-right {
+        width: 100%;
+        padding-top: 0 !important;
+    }
+}
+
+/* ── hero-flex (Home "About Us" section) ─────────────────────── */
+@media (max-width: 760px) {
+    .hero-flex {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .hero-flex-img,
+    .hero-flex-text {
+        width: 100% !important;
+    }
+}
+
+/* ── partner-grid (two-col-grid in About) ────────────────────── */
+@media (max-width: 760px) {
+    .two-col-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .partner-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ── Banner / section-full image ─────────────────────────────── */
+.section-full img {
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    height: clamp(200px, 35vw, 500px);
+}
+
+/* ── Typography global clamp on small screens ────────────────── */
+@media (max-width: 480px) {
+    .heading-pink,
+    .heading-white {
+        font-size: clamp(1.5rem, 7vw, 2rem) !important;
+    }
+    .page-main-title {
+        font-size: clamp(1.6rem, 7vw, 2.4rem) !important;
+    }
+    h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+    h2 { font-size: clamp(1.25rem, 5vw, 1.75rem); }
+    h3 { font-size: clamp(1.1rem, 4.5vw, 1.5rem); }
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .breadcrumb {
+        font-size: 0.82rem;
+        padding: 8px 5%;
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+}
+
+/* ── Misc container fix for very small screens ───────────────── */
+@media (max-width: 360px) {
+    .container {
+        width: 94%;
+    }
+    .work-card,
+    .partner-card,
+    .overview-box {
+        padding: 16px;
+    }
+}
+
+/* Prevent horizontal overflow from fixed-width elements */
+img, iframe, video, table {
+    max-width: 100%;
+}
+table {
+    overflow-x: auto;
+    display: block;
+}
+

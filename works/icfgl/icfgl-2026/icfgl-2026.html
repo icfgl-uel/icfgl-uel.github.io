@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -797,6 +797,10 @@
         }
 
         @media (max-width: 850px) {
+            .icfgl2026-hero {
+                background-position: right center !important;
+            }
+
             .icfgl2026-hero h1 {
                 font-size: 2.2rem;
             }
@@ -804,6 +808,34 @@
             .icfgl2026-hero-meta {
                 flex-direction: column;
                 gap: 15px;
+            }
+
+            .icfgl2026-hero-content {
+                text-align: center;
+                width: 100%;
+            }
+
+            .icfgl2026-hero-actions {
+                justify-content: center;
+                align-items: center;
+            }
+
+            .icfgl2026-theme-box {
+                display: block;
+                width: fit-content;
+                margin: 0 auto 30px;
+                text-align: center;
+                border-left: none;
+                border-top: 6px solid var(--accent-pink);
+            }
+
+            .icfgl2026-hero-meta {
+                align-items: center;
+            }
+
+            .icfgl2026-kicker {
+                display: block;
+                text-align: center;
             }
         }
 
@@ -834,6 +866,26 @@
             .logistics-box,
             .transport-item {
                 padding: 22px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .icfgl2026-hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .icfgl2026-hero .btn-primary,
+            .icfgl2026-hero .btn-outline {
+                width: 100%;
+                text-align: center;
+                padding: 14px 20px;
+            }
+            .icfgl2026-hero h1 {
+                font-size: clamp(1.8rem, 8vw, 2.5rem);
+            }
+            .icfgl2026-theme-box {
+                font-size: 1.1rem;
+                padding: 14px 18px;
             }
         }
 
@@ -882,7 +934,7 @@
             font-family: var(--font-heading) !important;
             font-weight: 700;
             color: var(--dark-navy);
-            font-size: 2.85rem;
+            font-size: clamp(1.6rem, 5vw, 2.85rem);
             line-height: 1.08;
             text-align: center;
         }
