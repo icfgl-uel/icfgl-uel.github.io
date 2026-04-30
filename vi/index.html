@@ -418,7 +418,13 @@
             .hero-title-nowrap { white-space: normal; }
             .hero-subtitle { font-size: 1.1rem; margin-bottom: 2rem; }
             .highlights-dot { width: 30px; }
-            .hl-arrow { display: none; }
+            .hl-arrow {
+                width: 42px;
+                height: 42px;
+                font-size: 1.2rem;
+            }
+            .hl-arrow-prev { left: 15px; }
+            .hl-arrow-next { right: 15px; }
             .highlights-slide--icfgl { align-items: flex-end; }
             .highlights-slide--icfgl .slide-overlay {
                 background:
@@ -442,13 +448,35 @@
         }
 
         @media (max-width: 480px) {
-            .highlights-slider-wrap { min-height: 420px; }
+            .highlights-slider-wrap {
+                min-height: 420px;
+            }
             .highlights-slide--icfgl .slide-content,
             .highlights-slide--workshops .slide-content,
-            .highlights-slide--mootcourt .slide-content { padding-left: 5%; padding-right: 5%; padding-bottom: 72px; }
-            .hero-title-main { font-size: clamp(2rem, 9vw, 2.8rem); }
-            .hero-btn { width: 100% !important; min-width: 0 !important; }
+            .highlights-slide--mootcourt .slide-content {
+                padding-left: 5%;
+                padding-right: 5%;
+                padding-bottom: 72px;
+            }
+            .hero-title-main,
+            .highlights-slide--icfgl .hero-title-main,
+            .highlights-slide--workshops .hero-title-main,
+            .highlights-slide--mootcourt .hero-title-main { 
+                font-size: clamp(1.8rem, 8vw, 2.4rem) !important; 
+                word-wrap: break-word;
+            }
+            .hero-btn {
+                width: auto !important;
+                min-width: 220px !important;
+            }
             .highlights-dots { bottom: 28px; }
+            .hl-arrow {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+            .hl-arrow-prev { left: 10px; }
+            .hl-arrow-next { right: 10px; }
         }
 
         /* ── GIỚI THIỆU section ────────────────────────────── */

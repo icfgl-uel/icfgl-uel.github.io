@@ -740,6 +740,13 @@
         .article-title { font-size: 1.6rem; max-width: none; }
         .article-summary { max-width: none; }
         .article-link-btn { width: 100%; }
+    @media (max-width: 480px) {
+        .archive-hero .archive-title {
+            font-size: clamp(2rem, 11vw, 3rem) !important;
+        }
+        .archive-hero-copy {
+            padding: 24px 12px;
+        }
     }
 </style>
  
