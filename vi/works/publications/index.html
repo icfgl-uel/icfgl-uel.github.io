@@ -236,15 +236,18 @@
     }
 
     .archive-hero .archive-title {
-        margin: 0 0 28px;
+        display: block !important;
+        width: 100% !important;
+        margin: 0 auto 28px !important;
+        padding: 0 !important;
         font-family: Cambria, Georgia, serif !important;
         color: var(--dark-blue);
         font-size: clamp(3.6rem, 6.6vw, 5.8rem) !important;
         font-weight: 700;
         line-height: 1.03;
-        letter-spacing: -0.045em;
-        text-align: center;
-        transform: translateX(22px);
+        letter-spacing: normal !important;
+        text-align: center !important;
+        transform: none !important;
         text-shadow: none;
     }
 
@@ -710,7 +713,10 @@
         .archive-quote-card { max-width: 620px; }
         .archive-hero .archive-title {
             font-size: clamp(3.4rem, 14vw, 5rem) !important;
-            transform: none;
+            text-align: center !important;
+            transform: none !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
         }
         .archive-title-rule {
             gap: 12px;
@@ -740,6 +746,7 @@
         .article-title { font-size: 1.6rem; max-width: none; }
         .article-summary { max-width: none; }
         .article-link-btn { width: 100%; }
+    }
     @media (max-width: 480px) {
         .archive-hero .archive-title {
             font-size: clamp(2rem, 11vw, 3rem) !important;
@@ -864,7 +871,7 @@
                 },
                 {
                     id: 'ashgate-research-companion-vietnamese',
-                    title: 'The Ashgate Research Companion to Feminist Legal Theory (bản dịch tiếng Việt)',
+                    title: 'Tuyển tập nghiên cứu của ASHGATE về lý thuyết pháp luật nữ quyền ',
                     cover: '../../../images/publications/opac-image (1).png',
                     abstract: 'Tập sách tổng quan lý luận pháp lý nữ quyền, hệ thống hóa khái niệm, tranh luận và phương pháp từ các học giả quốc tế hàng đầu; là tài liệu nền tảng để hiểu cách góc nhìn nữ quyền phê phán và tái cấu trúc hệ thống pháp luật.\n\nTrong khuôn khổ Dự án tại Việt Nam, bản dịch giúp học thuật toàn cầu đến gần độc giả địa phương và hỗ trợ đưa lý luận pháp lý nữ quyền vào giảng dạy và nghiên cứu.',
                     publisher: 'Nhà xuất bản ĐHQG-HCM',

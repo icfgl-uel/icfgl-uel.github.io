@@ -300,11 +300,11 @@
             box-shadow: none;
         }
 
+        /* Removed conflicting overrides to ensure posters fill their frames */
         .about-placeholder-card--poster img {
-            height: auto !important;
-            object-fit: contain !important;
-            aspect-ratio: auto !important;
-            background: #fff;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         @media (max-width: 760px) {
@@ -444,8 +444,8 @@
         }
 
         .managing-team-shell {
-            width: 90%;
-            max-width: 1200px;
+            width: 92%;
+            max-width: 1280px;
             margin: 0 auto;
         }
 
@@ -473,12 +473,13 @@
         .managing-team-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 28px;
+            grid-auto-rows: 1fr;
+            gap: 24px;
         }
 
         .managing-team-card {
             display: grid;
-            grid-template-columns: minmax(220px, 0.78fr) minmax(0, 1.22fr);
+            grid-template-columns: 200px 1fr;
             align-items: stretch;
             background: #fff;
             border: 1px solid rgba(20, 78, 140, 0.1);
@@ -501,28 +502,39 @@
             object-position: center top;
         }
 
+        .managing-team-card--hinh .managing-team-photo img {
+            object-position: center 5%;
+        }
+
         .managing-team-card--hien .managing-team-photo img {
             object-position: center 18%;
+            transform: scale(1.15);
+        }
+
+        .managing-team-card--thanh .managing-team-photo img {
+            object-position: center 12%;
+            transform: scale(1.1);
         }
 
         .managing-team-card--trang .managing-team-photo img {
             object-position: center 12%;
+            transform: scale(1.1);
         }
 
         .managing-team-body {
             display: grid;
-            align-content: start;
-            gap: 12px;
-            padding: 28px 28px 30px;
-            border-top: 4px solid rgba(246, 65, 131, 0.18);
+            align-content: center;
+            gap: 8px;
+            padding: 16px 30px 18px;
+            border-top: 3px solid rgba(246, 65, 131, 0.18);
         }
 
         .managing-team-role {
             margin: 0;
             color: var(--pink);
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             font-weight: 700;
-            letter-spacing: 0.16em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
         }
 
@@ -530,15 +542,15 @@
             margin: 0;
             color: var(--dark-blue);
             font-family: Cambria, Georgia, serif;
-            font-size: clamp(1.35rem, 1.6vw, 1.7rem);
-            line-height: 1.2;
+            font-size: clamp(1.25rem, 1.5vw, 1.55rem);
+            line-height: 1.15;
         }
 
         .managing-team-copy {
             margin: 0;
             color: var(--text-dark);
             font-size: 0.98rem;
-            line-height: 1.72;
+            line-height: 1.65;
             text-align: left;
         }
 

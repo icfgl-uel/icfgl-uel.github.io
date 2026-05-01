@@ -1,4 +1,4 @@
-/* js/components.js — shared header/footer with English (US) / Vietnamese */
+/* js/components.js — shared header/footer with English / Vietnamese */
 
 (function () {
     const STRINGS = {
@@ -17,10 +17,12 @@
             navUel: "UEL Website",
             langSwitcherLabel: "Language",
             langMenuButton: "Choose language",
-            langEn: "English (US)",
+            langEn: "English",
+            langToggleEn: "EN",
             langVi: "Tiếng Việt",
-            langFlagEn: "\u{1F1FA}\u{1F1F8}",
-            langFlagVi: "\u{1F1FB}\u{1F1F3}",
+            langToggleVi: "VI",
+            langCodeEn: "EN",
+            langCodeVi: "VI",
             footerAboutTitle: "About The Project",
             footerAboutBody:
                 "Integrating Feminist Legal Theory into Legal Education, Research and Practice. A collaborative initiative to advance social justice and gender equality within the Vietnamese legal landscape.",
@@ -53,10 +55,12 @@
             navUel: "Website UEL",
             langSwitcherLabel: "Ngôn ngữ",
             langMenuButton: "Chọn ngôn ngữ",
-            langEn: "English (US)",
+            langEn: "English",
+            langToggleEn: "EN",
             langVi: "Tiếng Việt",
-            langFlagEn: "\u{1F1FA}\u{1F1F8}",
-            langFlagVi: "\u{1F1FB}\u{1F1F3}",
+            langToggleVi: "VI",
+            langCodeEn: "EN",
+            langCodeVi: "VI",
             footerAboutTitle: "Về dự án",
             footerAboutBody:
                 "Đưa lý luận pháp lý nữ quyền vào đào tạo, nghiên cứu và thực tiễn pháp lý. Sáng kiến hợp tác nhằm thúc đẩy công bằng xã hội và bình đẳng giới trong bối cảnh pháp lý Việt Nam.",
@@ -196,20 +200,20 @@
             <li><a href="${contactHref}">${t.navContact}</a></li>
             <li class="nav-dropdown nav-lang-dropdown" aria-label="${t.langSwitcherLabel}">
                 <button type="button" class="nav-dropdown-toggle nav-lang-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="nav-lang-menu" title="${t.langMenuButton}">
-                    <span class="nav-lang-code" aria-hidden="true">${vi ? t.langFlagVi : t.langFlagEn}</span>
-                    <span class="nav-lang-label">${vi ? t.langVi : t.langEn}</span>
+                    <svg class="nav-lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span class="nav-lang-code" aria-hidden="true">${vi ? t.langCodeVi : t.langCodeEn}</span>
                     <span class="nav-caret" aria-hidden="true"></span>
                 </button>
                 <ul class="nav-dropdown-menu nav-lang-menu" id="nav-lang-menu" role="menu">
                     <li role="none">
                         <a href="${enHref}" role="menuitem" class="nav-lang-item${vi ? "" : " nav-current"}" ${vi ? "" : 'aria-current="true"'}>
-                            <span class="nav-lang-code" aria-hidden="true">${t.langFlagEn}</span>
+                            <span class="nav-lang-code" aria-hidden="true">${t.langCodeEn}</span>
                             <span class="nav-lang-label">${t.langEn}</span>
                         </a>
                     </li>
                     <li role="none">
                         <a href="${viHref}" role="menuitem" class="nav-lang-item${vi ? " nav-current" : ""}" ${vi ? 'aria-current="true"' : ""}>
-                            <span class="nav-lang-code" aria-hidden="true">${t.langFlagVi}</span>
+                            <span class="nav-lang-code" aria-hidden="true">${t.langCodeVi}</span>
                             <span class="nav-lang-label">${t.langVi}</span>
                         </a>
                     </li>

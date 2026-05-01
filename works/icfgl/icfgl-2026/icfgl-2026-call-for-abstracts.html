@@ -672,26 +672,59 @@
             text-justify: inter-word;
         }
 
-        .travel-grant-table-wrap {
+        .travel-grant-table-shell {
             margin: 24px 0 20px;
-            overflow-x: auto;
             border: 1px solid rgba(20, 78, 140, 0.16);
             border-radius: 12px;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .travel-grant-table-wrap {
+            overflow-x: auto;
+            background: #fff;
         }
 
         .travel-grant-table {
+            table-layout: fixed;
             width: 100%;
             min-width: 660px;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
             background: #fff;
+        }
+
+        .travel-grant-table th:nth-child(1),
+        .travel-grant-table td:nth-child(1) {
+            width: 28%;
+        }
+
+        .travel-grant-table th:nth-child(2),
+        .travel-grant-table td:nth-child(2) {
+            width: 18%;
+        }
+
+        .travel-grant-table th:nth-child(3),
+        .travel-grant-table td:nth-child(3) {
+            width: 54%;
         }
 
         .travel-grant-table th,
         .travel-grant-table td {
-            border: 1px solid rgba(20, 78, 140, 0.16);
+            border-bottom: 1px solid rgba(20, 78, 140, 0.16);
+            border-right: 1px solid rgba(20, 78, 140, 0.16);
             padding: 16px 18px;
             text-align: left;
             vertical-align: top;
+        }
+
+        .travel-grant-table th:last-child,
+        .travel-grant-table td:last-child {
+            border-right: none;
+        }
+
+        .travel-grant-table tr:last-child td {
+            border-bottom: none;
         }
 
         .travel-grant-table th {
@@ -712,6 +745,14 @@
             color: var(--accent-pink);
             font-weight: 700;
             text-align: center;
+        }
+
+        .travel-grant-table thead tr:first-child th:first-child {
+            border-top-left-radius: 11px;
+        }
+
+        .travel-grant-table thead tr:first-child th:last-child {
+            border-top-right-radius: 11px;
         }
 
         .travel-grant-note {
@@ -1099,8 +1140,9 @@
                     <p>
                         A total of <strong>19 authors</strong> will receive full travel support, including <strong>12 domestic participants</strong> and <strong>7 international participants</strong>, based on the quality of their final paper submissions.
                     </p>
-                    <div class="travel-grant-table-wrap">
-                        <table class="travel-grant-table">
+                    <div class="travel-grant-table-shell">
+                        <div class="travel-grant-table-wrap">
+                            <table class="travel-grant-table">
                             <thead>
                                 <tr>
                                     <th>Category</th>
@@ -1120,7 +1162,8 @@
                                     <td>Round-trip domestic travel and 2 nights of hotel accommodation</td>
                                 </tr>
                             </tbody>
-                        </table>
+                            </table>
+                        </div>
                     </div>
                     <p class="travel-grant-note">
                         <span class="travel-grant-note-label">Note:</span> Domestic travel support includes two nights of accommodation to enable participation in both the Pre-Conference Seminar and the Main Conference.

@@ -301,11 +301,11 @@
             box-shadow: none;
         }
 
+        /* Removed conflicting overrides to ensure posters fill their frames */
         .about-placeholder-card--poster img {
-            height: auto !important;
-            object-fit: contain !important;
-            aspect-ratio: auto !important;
-            background: #fff;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         @media (max-width: 760px) {
@@ -445,8 +445,8 @@
         }
 
         .managing-team-shell {
-            width: 90%;
-            max-width: 1200px;
+            width: 92%;
+            max-width: 1280px;
             margin: 0 auto;
         }
 
@@ -474,12 +474,13 @@
         .managing-team-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 28px;
+            grid-auto-rows: 1fr;
+            gap: 24px;
         }
 
         .managing-team-card {
             display: grid;
-            grid-template-columns: minmax(220px, 0.78fr) minmax(0, 1.22fr);
+            grid-template-columns: 200px 1fr;
             align-items: stretch;
             background: #fff;
             border: 1px solid rgba(20, 78, 140, 0.1);
@@ -502,20 +503,31 @@
             object-position: center top;
         }
 
+        .managing-team-card--hinh .managing-team-photo img {
+            object-position: center 5%;
+        }
+
         .managing-team-card--hien .managing-team-photo img {
             object-position: center 18%;
+            transform: scale(1.15);
+        }
+
+        .managing-team-card--thanh .managing-team-photo img {
+            object-position: center 12%;
+            transform: scale(1.1);
         }
 
         .managing-team-card--trang .managing-team-photo img {
             object-position: center 12%;
+            transform: scale(1.1);
         }
 
         .managing-team-body {
             display: grid;
-            align-content: start;
-            gap: 12px;
-            padding: 28px 28px 30px;
-            border-top: 4px solid rgba(246, 65, 131, 0.18);
+            align-content: center;
+            gap: 8px;
+            padding: 16px 30px 18px;
+            border-top: 3px solid rgba(246, 65, 131, 0.18);
         }
 
         .managing-team-role {
@@ -531,15 +543,15 @@
             margin: 0;
             color: var(--dark-blue);
             font-family: Cambria, Georgia, serif;
-            font-size: clamp(1.35rem, 1.6vw, 1.7rem);
-            line-height: 1.2;
+            font-size: clamp(1.25rem, 1.5vw, 1.55rem);
+            line-height: 1.15;
         }
 
         .managing-team-copy {
             margin: 0;
             color: var(--text-dark);
             font-size: 0.98rem;
-            line-height: 1.72;
+            line-height: 1.65;
             text-align: left;
         }
 
@@ -1010,9 +1022,9 @@
                     <p style="margin-top: 15px; color:#144e8c">Diễn đàn quy tụ nhà thực hành và nhà nghiên cứu để đối thoại chuyên sâu về phương pháp, lựa chọn vụ án và chính trị của cải cách pháp lý trong bối cảnh lý thuyết nữ quyền vẫn đối mặt với sức ỳ thể chế.
 
                     </p>
-                    <div style="display: flex; gap: 10px; margin-top:20px;">
-                        <a href="../works/icfgl/icfgl-2026/icfgl-2026.html" class="btn-pink" style="flex:1; text-align:center;">ICFGL 2026</a>
-                        <a href="../works/icfgl/" class="btn-dark" style="flex:1; text-align:center;">ICFGL các kỳ trước</a>
+                    <div style="display: flex; gap: 12px; margin-top:20px; flex-wrap: wrap;">
+                        <a href="../works/icfgl/icfgl-2026/icfgl-2026.html" class="btn-pink" style="flex: 1; min-width: 120px; text-align:center; font-size: 0.9rem; padding: 12px 15px;">ICFGL 2026</a>
+                        <a href="../works/icfgl/" class="btn-dark" style="flex: 1.5; min-width: 180px; text-align:center; font-size: 0.9rem; padding: 12px 15px;">ICFGL các kỳ trước</a>
                     </div>
                 </div>
                 <div class="work-card about-animate about-animate-delay-2">
@@ -1118,7 +1130,7 @@
                     </div>
                     <div class="managing-team-body">
                         <p class="managing-team-role">Hành chính dự án</p>
-                        <h3 class="managing-team-name">ThS.Mạc Thị Diệu Trang</h3>
+                        <h3 class="managing-team-name">ThS. Mạc Thị Diệu Trang</h3>
                         <p class="managing-team-copy">
                             Chịu trách nhiệm vận hành hành chính, phối hợp hậu cần và hỗ trợ triển khai các công việc hàng ngày của dự án.
                         </p>

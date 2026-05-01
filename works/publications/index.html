@@ -235,15 +235,18 @@
     }
 
     .archive-hero .archive-title {
-        margin: 0 0 28px;
+        display: block !important;
+        width: 100% !important;
+        margin: 0 auto 28px !important;
+        padding: 0 !important;
         font-family: Cambria, Georgia, serif !important;
         color: var(--dark-blue);
         font-size: clamp(3.6rem, 6.6vw, 5.8rem) !important;
         font-weight: 700;
         line-height: 1.03;
-        letter-spacing: -0.045em;
-        text-align: center;
-        transform: translateX(22px);
+        letter-spacing: normal !important;
+        text-align: center !important;
+        transform: none !important;
         text-shadow: none;
     }
 
@@ -709,7 +712,10 @@
         .archive-quote-card { max-width: 620px; }
         .archive-hero .archive-title {
             font-size: clamp(3.4rem, 14vw, 5rem) !important;
-            transform: none;
+            text-align: center !important;
+            transform: none !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
         }
         .archive-title-rule {
             gap: 12px;
@@ -739,6 +745,7 @@
         .article-title { font-size: 1.6rem; max-width: none; }
         .article-summary { max-width: none; }
         .article-link-btn { width: 100%; }
+    }
     @media (max-width: 480px) {
         .archive-hero .archive-title {
             font-size: clamp(2rem, 11vw, 3rem) !important;
