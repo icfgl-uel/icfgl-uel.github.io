@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICFGL 2026 - Hội thảo Quốc tế về Nữ quyền, Giới và Pháp luật</title>
-    <meta name="description" content="ICFGL 2026 tại TP.HCM: chủ đề lập pháp nữ quyền, kêu gọi tóm tắt, diễn giả chính, chương trình và học bổng đi lại.">
+    <meta name="description"
+        content="ICFGL 2026 tại TP.HCM: chủ đề lập pháp nữ quyền, kêu gọi tóm tắt, diễn giả chính, chương trình và học bổng đi lại.">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../../style.css">
     <link rel="stylesheet" href="../../../../header-footer.css">
@@ -172,7 +173,7 @@
             text-transform: uppercase;
             letter-spacing: 0.12em;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid rgba(255,255,255,0.5);
+            border: 2px solid rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
         }
 
@@ -181,7 +182,7 @@
             color: var(--primary-blue);
             border-color: #fff;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Section Styling */
@@ -321,7 +322,8 @@
         .speaker-card {
             background: #ffffff;
             border: 1px solid #eef2f6;
-            border-radius: 4px; /* More academic sharp-ish corners */
+            border-radius: 4px;
+            /* More academic sharp-ish corners */
             padding: 50px 35px;
             text-align: center;
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -471,9 +473,11 @@
 
         /* Activities Section */
         .activity-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .activity-card {
@@ -481,30 +485,40 @@
             border-radius: 24px;
             overflow: hidden;
             display: flex;
-            flex-direction: column;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(15, 58, 110, 0.08);
-            border-top: 6px solid var(--accent-pink);
-            transition: none;
+            flex-direction: row;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(15, 58, 110, 0.06);
+            border-left: 6px solid var(--accent-pink);
+            border-top: none;
+            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-left-color 0.3s ease;
         }
 
         .activity-grid .activity-card:hover {
-            transform: none;
-            border-color: rgba(15, 58, 110, 0.08);
-            border-top-color: var(--accent-pink);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            transform: translateY(-4px);
+            border-color: rgba(15, 58, 110, 0.06);
+            border-left-color: var(--primary-blue);
+            box-shadow: 0 20px 45px rgba(20, 78, 140, 0.1);
         }
 
         .activity-card-header {
-            padding: 40px;
-            background: #fff;
+            padding: 40px 30px;
+            background: #fdfdfd;
             color: var(--primary-blue);
-            border-bottom: 1px solid #eef2f6;
+            border-right: 1px solid #eef2f6;
+            border-bottom: none;
+            width: 360px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .activity-card-body {
             padding: 40px;
             flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .activity-card h3 {
@@ -520,13 +534,39 @@
             font-size: 0.9rem;
             color: #666;
             opacity: 1;
+            white-space: nowrap;
         }
 
         .activity-card-body p {
             font-size: 1.05rem;
             line-height: 1.7;
             color: #444;
-            margin-bottom: 20px;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .activity-card {
+                flex-direction: column;
+                border-left: none;
+                border-top: 6px solid var(--accent-pink);
+            }
+            .activity-grid .activity-card:hover {
+                border-left-color: transparent;
+                border-top-color: var(--primary-blue);
+            }
+            .activity-card-header {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #eef2f6;
+                padding: 30px;
+            }
+            .activity-card-body {
+                padding: 30px;
+            }
+            .activity-meta {
+                white-space: normal;
+                flex-wrap: wrap;
+            }
         }
 
         /* Outputs Section */
@@ -796,6 +836,7 @@
         .travel-grant-table thead tr:first-child th:first-child {
             border-top-left-radius: 11px;
         }
+
         .travel-grant-table thead tr:first-child th:last-child {
             border-top-right-radius: 11px;
         }
@@ -816,21 +857,29 @@
         }
 
         @media (max-width: 992px) {
-            .about-grid, .activity-grid, .logistics-grid {
+
+            .about-grid,
+            .activity-grid,
+            .logistics-grid {
                 grid-template-columns: 1fr;
             }
+
             .featured-speakers-shell {
                 padding: 40px 28px;
             }
+
             .output-row {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             .logistics-column {
                 gap: 24px;
             }
+
             .transport-list {
                 grid-template-columns: 1fr;
             }
+
             .logistics-intro--transport,
             .transport-list,
             .transport-item--wide {
@@ -885,26 +934,33 @@
             .output-row {
                 grid-template-columns: 1fr;
             }
+
             .featured-speakers-shell {
                 padding: 32px 20px;
                 border-radius: 24px;
             }
+
             .speaker-img {
                 width: 148px;
                 height: 148px;
             }
+
             .icfgl2026-hero-content {
                 text-align: center;
             }
+
             .icfgl2026-theme-box {
                 text-align: left;
             }
+
             .icfgl2026-hero-actions {
                 justify-content: center;
             }
+
             .icfgl2026-hero-meta {
                 justify-content: center;
             }
+
             .logistics-box,
             .transport-item {
                 padding: 22px 20px;
@@ -916,15 +972,18 @@
                 flex-direction: column;
                 align-items: stretch;
             }
+
             .icfgl2026-hero .btn-primary,
             .icfgl2026-hero .btn-outline {
                 width: 100%;
                 text-align: center;
                 padding: 14px 20px;
             }
+
             .icfgl2026-hero h1 {
                 font-size: clamp(1.8rem, 8vw, 2.5rem);
             }
+
             .icfgl2026-theme-box {
                 font-size: 1.1rem;
                 padding: 14px 18px;
@@ -1037,20 +1096,36 @@
             transform: scale(1.05);
         }
 
-        .editorial-member:nth-child(1) img { object-position: center 18%; }
-        .editorial-member:nth-child(2) img { object-position: center 12%; }
-        .editorial-member:nth-child(3) img { object-position: center 10%; }
-        .editorial-member:nth-child(4) img { object-position: center 18%; }
-        .editorial-member:nth-child(5) img { object-position: center 10%; }
-        
+        .editorial-member:nth-child(1) img {
+            object-position: center 18%;
+        }
+
+        .editorial-member:nth-child(2) img {
+            object-position: center 12%;
+        }
+
+        .editorial-member:nth-child(3) img {
+            object-position: center 10%;
+        }
+
+        .editorial-member:nth-child(4) img {
+            object-position: center 18%;
+        }
+
+        .editorial-member:nth-child(5) img {
+            object-position: center 10%;
+        }
+
         /* Member 6: Dr. Cham */
         .editorial-member:nth-child(6) .editorial-photo-wrap {
             background-color: var(--light-blue);
         }
-        .editorial-member:nth-child(6) img { 
+
+        .editorial-member:nth-child(6) img {
             object-position: 15% 42%;
             transform: scale(1.28);
         }
+
         .editorial-member:nth-child(6) .editorial-photo-wrap:hover img {
             transform: scale(1.35);
         }
@@ -1098,7 +1173,7 @@
             font-size: 1.15rem;
             font-weight: 700;
             letter-spacing: 0.02em;
-            border: 1px solid rgba(20,78,140,0.05);
+            border: 1px solid rgba(20, 78, 140, 0.05);
         }
 
         .editorial-board-contact svg {
@@ -1113,13 +1188,16 @@
                 padding: 32px 24px;
                 border-radius: 28px;
             }
+
             .unified-hero-grid {
                 grid-template-columns: 1fr;
                 gap: 36px;
             }
+
             .unified-hero-grid .archive-eyebrow {
                 font-size: 0.85rem !important;
             }
+
             .unified-hero-grid h2 {
                 font-size: 1.95rem !important;
             }
@@ -1190,23 +1268,35 @@
             </div>
             <div class="icfgl2026-hero-meta">
                 <div class="icfgl2026-meta-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                   18 tháng 9 năm 2026
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    18 tháng 9 năm 2026
                 </div>
                 <div class="icfgl2026-meta-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
                     TP. Hồ Chí Minh, Việt Nam
                 </div>
             </div>
             <div class="icfgl2026-hero-actions">
                 <a href="./icfgl-2026-call-for-abstracts.html" class="btn-primary">Kêu gọi tóm tắt</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoxG324zijQqY5rvDXM8fgdgiUOex_SMqmlchd49Ms8sfaKw/viewform" class="btn-outline">Nộp tóm tắt</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoxG324zijQqY5rvDXM8fgdgiUOex_SMqmlchd49Ms8sfaKw/viewform"
+                    class="btn-outline">Nộp tóm tắt</a>
             </div>
-            <p class="icfgl2026-hosted">Đơn vị tổ chức: Trường Đại học Kinh tế – Luật (UEL) &amp; Rosa-Luxemburg-Stiftung (RLS)</p>
+            <p class="icfgl2026-hosted">Đơn vị tổ chức: Trường Đại học Kinh tế – Luật (UEL) &amp;
+                Rosa-Luxemburg-Stiftung (RLS)</p>
         </div>
     </section>
 
-<section class="page-section section-ice">
+    <section class="page-section section-ice">
         <div class="section-shell">
             <div class="section-heading">
                 <h2>Giới thiệu hội thảo</h2>
@@ -1215,15 +1305,23 @@
             <div class="about-grid">
                 <div class="about-text">
                     <p>
-                        ICFGL 2026 là mốc quan trọng trong hợp tác giữa UEL và Rosa-Luxemburg-Stiftung; đóng vai trò cầu nối giữa giai đoạn nền tảng của dự án và định hướng tương lai, đồng thời chính thức mở giai đoạn chiến lược 2027–2030.
+                        ICFGL 2026 là mốc quan trọng trong hợp tác giữa UEL và Rosa-Luxemburg-Stiftung; đóng vai trò cầu
+                        nối giữa giai đoạn nền tảng của dự án và định hướng tương lai, đồng thời chính thức mở giai đoạn
+                        chiến lược 2027–2030.
                     </p>
                     <p>
-                        Chúng tôi mời các học giả hàng đầu để thúc đẩy chuyển dịch phương pháp luật nữ quyền: từ diễn giải tư pháp sang soạn thảo lập pháp. Kể từ 2021, dự án đã đưa Lý luận Pháp lý Nữ quyền (FLT) vào cộng đồng học thuật Việt Nam qua dòng «Bản án nữ quyền» — viết lại quá khứ để điều chỉnh thiên kiến lịch sử.
+                        Chúng tôi mời các học giả hàng đầu để thúc đẩy chuyển dịch phương pháp luật nữ quyền: từ diễn
+                        giải tư pháp sang soạn thảo lập pháp. Kể từ 2021, dự án đã đưa Lý luận Pháp lý Nữ quyền (FLT)
+                        vào cộng đồng học thuật Việt Nam qua dòng «Bản án nữ quyền» — viết lại quá khứ để điều chỉnh
+                        thiên kiến lịch sử.
                     </p>
                 </div>
                 <div class="about-quote">
                     <p>
-                        Trong lộ trình 2027–2030, dự án hướng tới vị trí «thượng nguồn» hơn trong quy trình pháp lý, chuyển trọng tâm sang «Lập pháp nữ quyền» — tức phác thảo tương lai. ICFGL 2026 là điểm xoay trí thức, quy tụ chuyên gia làm rõ mối liên hệ thiết yếu giữa cách pháp luật bị xét xử và cách pháp luật được viết ra.
+                        Trong lộ trình 2027–2030, dự án hướng tới vị trí «thượng nguồn» hơn trong quy trình pháp lý,
+                        chuyển trọng tâm sang «Lập pháp nữ quyền» — tức phác thảo tương lai. ICFGL 2026 là điểm xoay trí
+                        thức, quy tụ chuyên gia làm rõ mối liên hệ thiết yếu giữa cách pháp luật bị xét xử và cách pháp
+                        luật được viết ra.
                     </p>
                 </div>
             </div>
@@ -1241,20 +1339,23 @@
                 <div class="speaker-card">
                     <div class="speaker-img-container">
                         <div class="speaker-img">
-                            <img src="../../../../images/icfgl/icfgl2026/Prof Hunter_photo.jpeg" alt="Prof. Rosemary Hunter">
+                            <img src="../../../../images/icfgl/icfgl2026/Prof Hunter_photo.jpeg"
+                                alt="Prof. Rosemary Hunter">
                         </div>
                     </div>
                     <h3>Prof. Rosemary Hunter</h3>
                     <div class="speaker-affiliation">Loughborough University, UK</div>
                     <div class="speaker-divider"></div>
-                    <p class="speaker-bio">Người tiên phong và tiếng nói hàng đầu toàn cầu trong phong trào bản án nữ quyền.</p>
+                    <p class="speaker-bio">Người tiên phong và tiếng nói hàng đầu toàn cầu trong phong trào bản án nữ
+                        quyền.</p>
                 </div>
 
                 <!-- Speaker 2 -->
                 <div class="speaker-card">
                     <div class="speaker-img-container">
                         <div class="speaker-img">
-                            <img src="../../../../images/icfgl/icfgl2026/Prof Aoife O’Donoghue.jpg" alt="Prof. Aoife O'Donoghue">
+                            <img src="../../../../images/icfgl/icfgl2026/Prof Aoife O’Donoghue.jpg"
+                                alt="Prof. Aoife O'Donoghue">
                         </div>
                     </div>
                     <h3>Prof. Aoife O'Donoghue</h3>
@@ -1287,22 +1388,27 @@
             </div>
             <div class="call-abstracts-shell">
                 <p class="call-abstracts-text">
-                    ICFGL 2026 mời học giả nộp tóm tắt xoay quanh chủ đề <strong>Lập pháp theo tinh thần nữ quyền (Feminist Law-Making)</strong>. Kỳ hội thảo này thảo luận cách tích hợp dần góc nhìn nữ quyền vào học thuật và thực hành pháp lý, hướng vượt ra ngoài lý thuyết phê phán thuần túy tới soạn thảo lập pháp chủ động và cải cách pháp luật kiểu «tự làm» (DIY).
+                    ICFGL 2026 mời học giả nộp tóm tắt xoay quanh chủ đề <strong>Lập pháp theo tinh thần nữ quyền
+                        (Feminist Law-Making)</strong>. Kỳ hội thảo này thảo luận cách tích hợp dần góc nhìn nữ quyền
+                    vào học thuật và thực hành pháp lý, hướng vượt ra ngoài lý thuyết phê phán thuần túy tới soạn thảo
+                    lập pháp chủ động và cải cách pháp luật kiểu «tự làm» (DIY).
                 </p>
                 <div class="call-abstracts-grid">
                     <div class="call-abstracts-item">
-                        <strong>Chủ đề:</strong> Lịch sử, phân chia công/tư, vận động pháp lý, giao nhau (intersectionality) và pháp luật DIY.
+                        <strong>Chủ đề:</strong> Lịch sử, phân chia công/tư, vận động pháp lý, giao nhau
+                        (intersectionality) và pháp luật DIY.
                     </div>
                     <div class="call-abstracts-item">
                         <strong>Hạn chót:</strong> 15 tháng 5 năm 2026 <strong>(đã gia hạn)</strong>
                     </div>
                 </div>
-                <a href="icfgl-2026-call-for-abstracts.html" class="btn-primary" style="display: inline-block;">Xem kêu gọi chi tiết &amp; chủ đề</a>
+                <a href="icfgl-2026-call-for-abstracts.html" class="btn-primary" style="display: inline-block;">Xem kêu
+                    gọi chi tiết &amp; chủ đề</a>
             </div>
         </div>
     </section>
 
-<section class="page-section" style="background: #f3f9ff;">
+    <section class="page-section" style="background: #f3f9ff;">
         <div class="section-shell">
             <div class="section-heading">
                 <h2>Hội đồng biên tập</h2>
@@ -1319,7 +1425,8 @@
 
                 <article class="editorial-member">
                     <div class="editorial-photo-wrap">
-                        <img src="../../../../images/icfgl/EditorBoard/Dr.Nhung.jpg" alt="A/Prof. Dr. Nguyen Thi Hong Nhung">
+                        <img src="../../../../images/icfgl/EditorBoard/Dr.Nhung.jpg"
+                            alt="A/Prof. Dr. Nguyen Thi Hong Nhung">
                     </div>
                     <div class="editorial-name">A/Prof. Dr. Nguyen Thi Hong Nhung</div>
                     <p class="editorial-role">Trưởng Khoa Luật,<br>UEL, ĐHQG&#8209;HCM</p>
@@ -1327,7 +1434,8 @@
 
                 <article class="editorial-member">
                     <div class="editorial-photo-wrap">
-                        <img src="../../../../images/icfgl/EditorBoard/Dr.Diep.jpg" alt="A/Prof. Dr. Doan Thi Phuong Diep">
+                        <img src="../../../../images/icfgl/EditorBoard/Dr.Diep.jpg"
+                            alt="A/Prof. Dr. Doan Thi Phuong Diep">
                     </div>
                     <div class="editorial-name">A/Prof. Dr. Doan Thi Phuong Diep</div>
                     <p class="editorial-role">Trưởng phòng Đào tạo,<br>UEL, ĐHQG&#8209;HCM</p>
@@ -1361,12 +1469,12 @@
                     <div class="editorial-photo-wrap">
                         <img src="../../../../images/icfgl/EditorBoard/Mr.Duc.jpg" alt="Mr. Nguyen Dinh Duc (LLM.)">
                     </div>
-                    <div class="editorial-name">Mr. Nguyen Dinh Duc (LLM.)</div>
+                    <div class="editorial-name">Mr. Nguyen Dinh Duc (LLM)</div>
                     <p class="editorial-role">Điều phối viên biên tập,<br>Khoa Luật Kinh tế, UEL, ĐHQG&#8209;HCM</p>
                 </article>
             </div>
 
-            
+
         </div>
     </section>
 
@@ -1379,23 +1487,46 @@
                 <hr>
             </div>
             <div class="activity-grid">
+                <!-- Card 1 -->
                 <div class="activity-card">
                     <div class="activity-card-header">
-                        <h3>Hội thảo chính</h3>
-                        <div class="activity-meta">18 tháng 9 năm 2026 | TP. Hồ Chí Minh</div>
+                        <h3>Sự kiện bên lề: Hội thảo Học giả trẻ</h3>
+                        <div class="activity-meta">11 tháng 9 năm 2026 | Trực tuyến</div>
                     </div>
                     <div class="activity-card-body">
-                        <p>Chương trình quốc tế một ngày gồm tọa đàm, phát biểu chính và trình bày tóm tắt xoay quanh chủ đề «Lập pháp nữ quyền và phán quyết».</p>
+                        <h4
+                            style="color: var(--primary-blue); font-family: 'Cambria', serif; font-size: 1.2rem; margin-bottom: 12px;">
+                            «Nữ quyền, Giới và Pháp luật»</h4>
+                        <p>Hội thảo trực tuyến này mang lại cho sinh viên đại học và học viên sau đại học một diễn đàn
+                            hỗ trợ để trình bày các ý tưởng nghiên cứu về nữ quyền, giới và pháp luật. Người tham gia sẽ
+                            có cơ hội trình bày công trình của mình và nhận phản hồi mang tính xây dựng từ các chuyên
+                            gia giàu kinh nghiệm trong hội đồng phản biện có chuyên môn về lý thuyết pháp lý nữ quyền và
+                            nghiên cứu xã hội - pháp lý.</p>
                     </div>
                 </div>
+                <!-- Card 2 -->
                 <div class="activity-card">
                     <div class="activity-card-header">
                         <h3>Sự kiện bên lề: Nâng cao năng lực</h3>
                         <div class="activity-meta">17 tháng 9 năm 2026 | TP. Hồ Chí Minh</div>
                     </div>
                     <div class="activity-card-body">
-                        <h4 style="color: var(--primary-blue); font-family: 'Cambria', serif; font-size: 1.2rem; margin-bottom: 12px;">Hội thảo chuyên đề: «Đi trong lĩnh vực: Xuất bản trên tạp chí nữ quyền pháp học»</h4>
-                        <p>Do GS. Rosemary Hunter chủ trì, nhằm trang bị kỹ năng và kiến thức chiến lược để dựng khung, viết và gửi bài tới các tạp chí quốc tế hàng đầu.</p>
+                        <h4
+                            style="color: var(--primary-blue); font-family: 'Cambria', serif; font-size: 1.2rem; margin-bottom: 12px;">
+                            Hội thảo chuyên đề: «Đi trong lĩnh vực: Xuất bản trên tạp chí nữ quyền pháp học»</h4>
+                        <p>Do GS. Rosemary Hunter chủ trì, nhằm trang bị kỹ năng và kiến thức chiến lược để dựng khung,
+                            viết và gửi bài tới các tạp chí quốc tế hàng đầu.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="activity-card">
+                    <div class="activity-card-header">
+                        <h3>Hội thảo chính</h3>
+                        <div class="activity-meta">18 tháng 9 năm 2026 | TP. Hồ Chí Minh</div>
+                    </div>
+                    <div class="activity-card-body">
+                        <p>Chương trình quốc tế một ngày gồm tọa đàm, phát biểu chính và trình bày tóm tắt xoay quanh
+                            chủ đề «Lập pháp nữ quyền và phán quyết».</p>
                     </div>
                 </div>
             </div>
@@ -1436,7 +1567,8 @@
                     <div class="logistics-intro">
                         <h3>Thành phố đăng cai: TP. Hồ Chí Minh</h3>
                         <p>
-                            TP. Hồ Chí Minh là trung tâm kinh tế và văn hóa sôi động của Việt Nam, với năng lượng đô thị, lịch sử phong phú và ẩm thực nổi tiếng — bối cảnh truyền cảm hứng cho kỳ ICFGL 2026.
+                            TP. Hồ Chí Minh là trung tâm kinh tế và văn hóa sôi động của Việt Nam, với năng lượng đô
+                            thị, lịch sử phong phú và ẩm thực nổi tiếng — bối cảnh truyền cảm hứng cho kỳ ICFGL 2026.
                         </p>
                     </div>
                     <div class="logistics-box logistics-box--city">
@@ -1444,7 +1576,8 @@
                         <p>
                             Trường Đại học Kinh tế – Luật (UEL)<br>
                             Đại học Quốc gia TP. Hồ Chí Minh (ĐHQG-HCM)<br>
-                            <strong>[669 Đường Đỗ Mười, Khu phố 6 (trước đây Khu phố 3), Phường Linh Xuân, TP. Hồ Chí Minh, Việt Nam]</strong>
+                            <strong>[669 Đường Đỗ Mười, Khu phố 6 (trước đây Khu phố 3), Phường Linh Xuân, TP. Hồ Chí
+                                Minh, Việt Nam]</strong>
                         </p>
                     </div>
                 </div>
@@ -1459,35 +1592,42 @@
                         <div class="transport-item">
                             <h4>Tuyến Metro số 1 TP.HCM (khuyến nghị)</h4>
                             <p>
-                                Metro số 1 (Bến Thành – Suối Tiên) kết nối trung tâm với Thủ Đức nhanh, tránh kẹt xe, có điều hòa. Xuống ga Đại học Quốc gia hoặc ga Khu công nghệ cao, sau đó taxi hoặc xe buýt 170 ngắn là tới cơ sở UEL.
+                                Metro số 1 (Bến Thành – Suối Tiên) kết nối trung tâm với Thủ Đức nhanh, tránh kẹt xe, có
+                                điều hòa. Xuống ga Đại học Quốc gia hoặc ga Khu công nghệ cao, sau đó taxi hoặc xe buýt
+                                170 ngắn là tới cơ sở UEL.
                             </p>
                         </div>
                         <div class="transport-item">
                             <h4>Xe buýt công cộng</h4>
                             <p>
-                                Mạng lưới buýt nội đô rộng; các tuyến 8, 19, 33, 52 nối trung tâm với khu Đại học Quốc gia. Giá vé thấp (thường dưới 10.000 đồng), trả tiền mặt khi lên xe.
+                                Mạng lưới buýt nội đô rộng; các tuyến 8, 19, 33, 52 nối trung tâm với khu Đại học Quốc
+                                gia. Giá vé thấp (thường dưới 10.000 đồng), trả tiền mặt khi lên xe.
                             </p>
                         </div>
                         <div class="transport-item">
                             <h4>Hàng không</h4>
                             <p>
-                                Sân bay quốc tế Tân Sơn Nhất (SGN) kết nối trung tâm bằng taxi, ứng dụng gọi xe và xe buýt sân bay (tuyến 109 hoặc 152).
+                                Sân bay quốc tế Tân Sơn Nhất (SGN) kết nối trung tâm bằng taxi, ứng dụng gọi xe và xe
+                                buýt sân bay (tuyến 109 hoặc 152).
                             </p>
                         </div>
                         <div class="transport-item">
                             <h4>Xe đưa đón miễn phí của UEL</h4>
                             <p>
-                                UEL bố trí xe đưa đón đại biểu tới địa điểm hội thảo. Điểm đón trung tâm và lịch trình sẽ gửi email cho đại biểu đăng ký gần ngày diễn ra sự kiện.
+                                UEL bố trí xe đưa đón đại biểu tới địa điểm hội thảo. Điểm đón trung tâm và lịch trình
+                                sẽ gửi email cho đại biểu đăng ký gần ngày diễn ra sự kiện.
                             </p>
                         </div>
                         <div class="transport-item transport-item--wide">
                             <h4>Taxi &amp; ứng dụng gọi xe</h4>
                             <p>
-                                <strong>Gọi xe công nghệ:</strong> Grab, Be, Xanh SM (đội xe điện) phổ biến, giá minh bạch; nên cài đặt trước khi đến.<br><br>
-                                <strong>Taxi truyền thống:</strong> Vinasun (xe trắng), Mai Linh (xe xanh) có đồng hồ tính cước, dễ bắt tại khách sạn hoặc sân bay.
+                                <strong>Gọi xe công nghệ:</strong> Grab, Be, Xanh SM (đội xe điện) phổ biến, giá minh
+                                bạch; nên cài đặt trước khi đến.<br><br>
+                                <strong>Taxi truyền thống:</strong> Vinasun (xe trắng), Mai Linh (xe xanh) có đồng hồ
+                                tính cước, dễ bắt tại khách sạn hoặc sân bay.
                             </p>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -1500,38 +1640,43 @@
                 <h2>Học bổng hỗ trợ đi lại xuất sắc ICFGL</h2>
                 <div class="travel-grant-copy">
                     <p class="travel-grant-lead">
-                        Hội thảo Quốc tế về Nữ quyền, Giới và Pháp luật (ICFGL) chào đón các công trình học thuật xuất sắc tại kỳ 2026 tại TP. Hồ Chí Minh. Để hỗ trợ tham dự đa dạng và toàn cầu, Ban Tổ chức trao Học bổng hỗ trợ đi lại xuất sắc ICFGL cho tác giả các bản thảo đầy đủ chất lượng cao được chọn.
+                        Hội thảo Quốc tế về Nữ quyền, Giới và Pháp luật (ICFGL) chào đón các công trình học thuật xuất
+                        sắc tại kỳ 2026 tại TP. Hồ Chí Minh. Để hỗ trợ tham dự đa dạng và toàn cầu, Ban Tổ chức trao Học
+                        bổng hỗ trợ đi lại xuất sắc ICFGL cho tác giả các bản thảo đầy đủ chất lượng cao được chọn.
                     </p>
                     <p>
-                        Tổng cộng <strong>19 tác giả</strong> được hỗ trợ toàn phần chi phí đi lại, gồm <strong>12 đại biểu trong nước</strong> và <strong>7 đại biểu quốc tế</strong>, căn cứ chất lượng bài báo cáo đầy đủ cuối cùng.
+                        Tổng cộng <strong>19 tác giả</strong> được hỗ trợ toàn phần chi phí đi lại, gồm <strong>12 đại
+                            biểu trong nước</strong> và <strong>7 đại biểu quốc tế</strong>, căn cứ chất lượng bài báo
+                        cáo đầy đủ cuối cùng.
                     </p>
                     <div class="travel-grant-table-shell">
                         <div class="travel-grant-table-wrap">
                             <table class="travel-grant-table">
-                            <thead>
-                                <tr>
-                                    <th>Hạng mục</th>
-                                    <th>Số suất</th>
-                                    <th>Phạm vi hỗ trợ</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Quốc tế</td>
-                                    <td>7</td>
-                                    <td>Vé máy bay khứ hồi quốc tế và 1 đêm lưu trú khách sạn</td>
-                                </tr>
-                                <tr>
-                                    <td>Trong nước (ngoài TP.HCM)</td>
-                                    <td>12</td>
-                                    <td>Chi phí đi lại khứ hồi trong nước và 2 đêm lưu trú khách sạn</td>
-                                </tr>
-                            </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Hạng mục</th>
+                                        <th>Số suất</th>
+                                        <th>Phạm vi hỗ trợ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Quốc tế</td>
+                                        <td>7</td>
+                                        <td>Vé máy bay khứ hồi quốc tế và 1 đêm lưu trú khách sạn</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trong nước (ngoài TP.HCM)</td>
+                                        <td>12</td>
+                                        <td>Chi phí đi lại khứ hồi trong nước và 2 đêm lưu trú khách sạn</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
                     <p class="travel-grant-note">
-                        <span class="travel-grant-note-label">Lưu ý:</span> Hỗ trợ trong nước gồm hai đêm lưu trú để tham dự cả Hội thảo chuyên đề trước hội thảo chính và Hội thảo chính.
+                        <span class="travel-grant-note-label">Lưu ý:</span> Hỗ trợ trong nước gồm hai đêm lưu trú để
+                        tham dự cả Hội thảo chuyên đề trước hội thảo chính và Hội thảo chính.
                     </p>
                 </div>
             </div>

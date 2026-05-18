@@ -471,9 +471,11 @@
 
         /* Activities Section */
         .activity-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .activity-card {
@@ -481,30 +483,40 @@
             border-radius: 24px;
             overflow: hidden;
             display: flex;
-            flex-direction: column;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(15, 58, 110, 0.08);
-            border-top: 6px solid var(--accent-pink);
-            transition: none;
+            flex-direction: row;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(15, 58, 110, 0.06);
+            border-left: 6px solid var(--accent-pink);
+            border-top: none;
+            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-left-color 0.3s ease;
         }
 
         .activity-grid .activity-card:hover {
-            transform: none;
-            border-color: rgba(15, 58, 110, 0.08);
-            border-top-color: var(--accent-pink);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            transform: translateY(-4px);
+            border-color: rgba(15, 58, 110, 0.06);
+            border-left-color: var(--primary-blue);
+            box-shadow: 0 20px 45px rgba(20, 78, 140, 0.1);
         }
 
         .activity-card-header {
-            padding: 40px;
-            background: #fff;
+            padding: 40px 30px;
+            background: #fdfdfd;
             color: var(--primary-blue);
-            border-bottom: 1px solid #eef2f6;
+            border-right: 1px solid #eef2f6;
+            border-bottom: none;
+            width: 360px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .activity-card-body {
             padding: 40px;
             flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .activity-card h3 {
@@ -520,13 +532,39 @@
             font-size: 0.9rem;
             color: #666;
             opacity: 1;
+            white-space: nowrap;
         }
 
         .activity-card-body p {
             font-size: 1.05rem;
             line-height: 1.7;
             color: #444;
-            margin-bottom: 20px;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .activity-card {
+                flex-direction: column;
+                border-left: none;
+                border-top: 6px solid var(--accent-pink);
+            }
+            .activity-grid .activity-card:hover {
+                border-left-color: transparent;
+                border-top-color: var(--primary-blue);
+            }
+            .activity-card-header {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #eef2f6;
+                padding: 30px;
+            }
+            .activity-card-body {
+                padding: 30px;
+            }
+            .activity-meta {
+                white-space: normal;
+                flex-wrap: wrap;
+            }
         }
 
         /* Outputs Section */
@@ -1360,7 +1398,7 @@
                     <div class="editorial-photo-wrap">
                         <img src="../../../images/icfgl/EditorBoard/Mr.Duc.jpg" alt="Mr. Nguyen Dinh Duc (LLM.)">
                     </div>
-                    <div class="editorial-name">Mr. Nguyen Dinh Duc (LLM.)</div>
+                    <div class="editorial-name">Mr. Nguyen Dinh Duc (LLM)</div>
                     <p class="editorial-role">Editorial Coordinator,<br>Faculty of Economic Law, UEL, VNU&#8209;HCM</p>
                 </article>
             </div>
@@ -1378,15 +1416,18 @@
                 <hr>
             </div>
             <div class="activity-grid">
+                <!-- Card 1 -->
                 <div class="activity-card">
                     <div class="activity-card-header">
-                        <h3>The Main Conference</h3>
-                        <div class="activity-meta">18 September 2026 | Ho Chi Minh City</div>
+                        <h3>Side Event: Junior Scholars Workshop</h3>
+                        <div class="activity-meta">11 September 2026 | Online</div>
                     </div>
                     <div class="activity-card-body">
-                        <p>A one-day international gathering featuring panel discussions, keynote addresses, and abstract presentations centered on the theme "Feminist Law-making and Judgment."</p>
+                        <h4 style="color: var(--primary-blue); font-family: 'Cambria', serif; font-size: 1.2rem; margin-bottom: 12px;">"Feminism, Gender and Law"</h4>
+                        <p>This online workshop provides undergraduate and postgraduate students with a supportive platform to showcase their research ideas on feminism, gender, and law. Participants will have the opportunity to present their work and receive constructive feedback from experienced panelists with expertise in feminist legal theory and socio-legal research.</p>
                     </div>
                 </div>
+                <!-- Card 2 -->
                 <div class="activity-card">
                     <div class="activity-card-header">
                         <h3>Side Event: Capacity Building</h3>
@@ -1395,6 +1436,16 @@
                     <div class="activity-card-body">
                         <h4 style="color: var(--primary-blue); font-family: 'Cambria', serif; font-size: 1.2rem; margin-bottom: 12px;">Seminar: "Navigating the Field: How to Publish in Feminist Jurisprudence"</h4>
                         <p>Led by Prof. Rosemary Hunter, this seminar aims to equip participants with the skills and strategic knowledge required to structure, write, and successfully submit papers to top-tier international journals.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="activity-card">
+                    <div class="activity-card-header">
+                        <h3>The Main Conference</h3>
+                        <div class="activity-meta">18 September 2026 | Ho Chi Minh City</div>
+                    </div>
+                    <div class="activity-card-body">
+                        <p>A one-day international gathering featuring panel discussions, keynote addresses, and abstract presentations centered on the theme "Feminist Law-making and Judgment."</p>
                     </div>
                 </div>
             </div>
