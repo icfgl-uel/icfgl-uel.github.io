@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICFGL 2026 — Bảng Dữ Liệu Tóm Tắt Tương Tác</title>
+    
+    <!-- Google Fonts with Vietnamese subset explicitly requested -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cambria:ital,wght@0,400;0,700;1,400;1,700&subset=vietnamese&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    
+    <!-- Global Project Stylesheet -->
+    <link rel="stylesheet" href="../../../../style.css">
+    <link rel="stylesheet" href="../../../../header-footer.css">
+    
+    <style>
+        /* Scoped Dashboard Theme variables mapped to global project styles */
+        :root {
+            --pink-bg:    #ffebf2; /* Site's soft pink */
+            --pink-mid:   rgba(246, 65, 131, 0.25);
+            --hot-pink:   #f64183; /* Site's primary pink */
+            --hot-pink-h: #d02c66;
+            --navy:       #144e8c; /* Site's dark navy */
+            --navy-mid:   #0e3868;
+            --white:      #ffffff;
+            --text:       #2c2c2c;
+            --text-mid:   #4a5568;
+            --text-muted: #718096;
+            --border-p:   rgba(246, 65, 131, 0.18);
+            --border-n:   rgba(20, 78, 140, 0.12);
+            --sh-sm:      0 4px 12px rgba(20, 78, 140, 0.04);
+            --sh-md:      0 10px 30px rgba(20, 78, 140, 0.08);
+            --r-sm:       var(--radius-sm, 8px);
+            --r-md:       var(--radius-md, 14px);
+            --r-lg:       var(--radius-lg, 16px);
+        }
+
+        /* Set premium Unicode font-family stack to guarantee beautiful Vietnamese characters */
+        body, p, span, a, div, td, li, select, button {
+            font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+        }
+
+        /* Retain Cambria for beautiful serif headings and numbers */
+        h1, h2, h3, h4, .banner-title, .banner-title span, .dashboard-kpi-n {
+            font-family: 'Cambria', Georgia, serif !important;
+        }
+
+        body {
+            background-color: var(--bg-body, #f3f9ff) !important;
+            color: var(--text) !important;
+            min-height: 100vh;
+        }
+
+        /* PREMIUM GLOWING BANNER (learned from h.html) */
+        .dashboard-hero {
+            max-width: 100% !important;
+            width: 100% !important;
+            margin: 0 0 40px 0 !important;
+            background-image: url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0px !important;
+            border: none !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+            box-shadow: 0 30px 80px rgba(15, 23, 42, 0.25);
+            padding: clamp(60px, 8vh, 110px) 0 !important;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            min-height: 480px;
+        }
+
+        .dashboard-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(3, 7, 23, 0.95), rgba(13, 14, 46, 0.9), rgba(59, 15, 42, 0.95));
+            z-index: -10;
+        }
+
+        .dashboard-hero::after {
+            display: none !important; /* Hide old bar */
+        }
+
+        /* Ambient glowing background */
+        .dashboard-hero-glow {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background-color: rgba(244, 63, 94, 0.2);
+            filter: blur(140px);
+            pointer-events: none;
+            z-index: -5;
+        }
+
+        .globe-svg-overlay {
+            position: absolute;
+            right: -5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: clamp(350px, 45vw, 680px);
+            height: clamp(350px, 45vw, 680px);
+            color: rgba(255, 255, 255, 0.05);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .pulse-dot {
+            animation: ping-dot 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+            transform-origin: center;
+        }
+        @keyframes ping-dot {
+            75%, 100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        .dashboard-hero-in {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 3;
+            width: 100%;
+        }
+
+        .dashboard-hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .dashboard-hero-content {
+            text-align: left;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100%;
+            z-index: 5;
+        }
+
+        /* Pulsing Tag Badge */
+        .kpi-live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(246, 65, 131, 0.25) !important;
+            border: 1px solid rgba(246, 65, 131, 0.45) !important;
+            border-radius: 50px;
+            color: #ffffff !important;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(244, 63, 94, 0.2);
+        }
+
+        .pulse-dot-pink {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #f43f5e;
+            animation: pulse-pink 2s infinite;
+        }
+        @keyframes pulse-pink {
+            0%, 100% { opacity: 0.6; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        /* Title with Gradient Text */
+        .banner-title {
+            font-family: 'Cambria', Georgia, serif !important;
+            font-size: clamp(2.8rem, 6vw, 4.5rem) !important;
+            font-weight: 900 !important;
+            line-height: 1.05 !important;
+            background: linear-gradient(to right, #ffffff, #ffe4e6, #fde68a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 10px !important;
+            text-align: left !important;
+            letter-spacing: -0.02em !important;
+        }
+
+        .banner-title span {
+            font-family: 'Cambria', Georgia, serif !important;
+            font-weight: inherit !important;
+            font-style: normal !important;
+        }
+
+        /* Description with Left Highlight */
+        .banner-desc-card {
+            border-left: 4px solid #f43f5e;
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+            border-radius: 0 16px 16px 0;
+            max-width: 600px;
+            margin-top: 24px !important;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .banner-desc-card p {
+            font-family: 'Lato', sans-serif;
+            font-size: 13.5px;
+            line-height: 1.65;
+            color: #cbd5e1 !important;
+            margin: 0 !important;
+        }
+
+        .banner-desc-card p strong {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        /* Bottom Info Bar in Dark Glassmorphism */
+        .dashboard-info-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.04) !important;
+            border-radius: 20px;
+            padding: 16px 24px !important;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            max-width: 600px !important;
+            width: 100%;
+            margin-top: auto !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex: 1;
+            border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+            white-space: nowrap;
+            flex-shrink: 0;
+            padding: 4px 0;
+        }
+
+        .info-item:last-of-type {
+            border-right: none !important;
+        }
+
+        .info-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: transparent;
+            color: #fca5a5 !important;
+        }
+
+        .info-icon svg {
+            stroke-width: 2.2;
+            width: 22px;
+            height: 22px;
+        }
+
+        .info-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            text-align: center;
+        }
+
+        .info-lbl {
+            font-size: 11px;
+            font-weight: 800;
+            color: #fca5a5 !important;
+            letter-spacing: 0.05em;
+            line-height: 1;
+        }
+
+        .info-val {
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1;
+            color: #ffffff !important;
+        }
+
+        /* KPI GRIDS & GLASSMORPHIC CARDS */
+        .dashboard-kpi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            width: 100%;
+            position: relative;
+            z-index: 5;
+        }
+
+        .dashboard-kpi {
+            background: rgba(255, 255, 255, 0.03) !important;
+            border-radius: 24px;
+            padding: 28px !important;
+            text-align: left;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            cursor: default;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            backdrop-filter: blur(15px);
+        }
+
+        .kpi-circle-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 50%;
+            margin-bottom: 20px !important;
+            transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.05) !important;
+            color: #fca5a5 !important;
+        }
+
+        .dashboard-kpi-n {
+            font-family: 'Cambria', Georgia, serif !important;
+            font-size: clamp(3.8rem, 5.5vw, 4.8rem) !important;
+            font-weight: 900 !important;
+            line-height: 1;
+            display: block;
+            margin-bottom: 2px !important;
+            letter-spacing: -0.01em;
+            transition: transform 0.4s ease;
+        }
+
+        .dashboard-kpi-l {
+            font-size: 10.5px !important;
+            font-weight: 800 !important;
+            letter-spacing: 0.12em !important;
+            color: #ffffff !important;
+            display: block;
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+
+        .kpi-bar {
+            width: 24px;
+            height: 3px;
+            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Color themes & Hover effects matching h.html with soft glows */
+        .kpi-pink .dashboard-kpi-n {
+            background: linear-gradient(135deg, #ffffff, #fecdd3, #fcd34d) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            filter: drop-shadow(0 0 15px rgba(244, 63, 94, 0.5)) !important;
+        }
+        .kpi-pink .kpi-bar { background: var(--hot-pink); }
+        .kpi-pink:hover {
+            border-color: rgba(244, 63, 94, 0.4) !important;
+            background: rgba(255, 255, 255, 0.06) !important;
+            box-shadow: 0 25px 55px rgba(244, 63, 94, 0.15) !important;
+            transform: translateY(-6px) !important;
+        }
+        .kpi-pink:hover .kpi-circle-icon {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(244, 63, 94, 0.2);
+            background: rgba(246, 65, 131, 0.15) !important;
+        }
+        .kpi-pink:hover .kpi-bar {
+            width: 36px;
+        }
+
+        .kpi-purple .dashboard-kpi-n {
+            background: linear-gradient(135deg, #ffffff, #bae6fd, #67e8f9) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            filter: drop-shadow(0 0 15px rgba(14, 165, 233, 0.5)) !important;
+        }
+        .kpi-purple .kpi-bar { background: #0284c7; }
+        .kpi-purple:hover {
+            border-color: rgba(2, 132, 199, 0.4) !important;
+            background: rgba(255, 255, 255, 0.06) !important;
+            box-shadow: 0 25px 55px rgba(2, 132, 199, 0.15) !important;
+            transform: translateY(-6px) !important;
+        }
+        .kpi-purple:hover .kpi-circle-icon {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(2, 132, 199, 0.2);
+            background: rgba(2, 132, 199, 0.15) !important;
+        }
+        .kpi-purple:hover .kpi-bar {
+            width: 36px;
+        }
+
+        .kpi-blue .dashboard-kpi-n {
+            background: linear-gradient(135deg, #ffffff, #c7d2fe, #e9d5ff) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.5)) !important;
+        }
+        .kpi-blue .kpi-bar { background: var(--navy); }
+        .kpi-blue:hover {
+            border-color: rgba(99, 102, 241, 0.3) !important;
+            background: rgba(255, 255, 255, 0.06) !important;
+            box-shadow: 0 25px 55px rgba(20, 78, 140, 0.15) !important;
+            transform: translateY(-6px) !important;
+        }
+        .kpi-blue:hover .kpi-circle-icon {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(20, 78, 140, 0.2);
+            background: rgba(20, 78, 140, 0.15) !important;
+        }
+        .kpi-blue:hover .kpi-bar {
+            width: 36px;
+        }
+
+        .kpi-green .dashboard-kpi-n {
+            background: linear-gradient(135deg, #ffffff, #a7f3d0, #6ee7b7) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.5)) !important;
+        }
+        .kpi-green .kpi-bar { background: #10b981; }
+        .kpi-green:hover {
+            border-color: rgba(16, 185, 129, 0.4) !important;
+            background: rgba(255, 255, 255, 0.06) !important;
+            box-shadow: 0 25px 55px rgba(16, 185, 129, 0.15) !important;
+            transform: translateY(-6px) !important;
+        }
+        .kpi-green:hover .kpi-circle-icon {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+            background: rgba(16, 185, 129, 0.15) !important;
+        }
+        .kpi-green:hover .kpi-bar {
+            width: 36px;
+        }
+
+        /* RESPONSIVE BANNER STYLES */
+        @media (max-width: 1100px) {
+            .dashboard-hero {
+                padding: 40px 24px;
+                border-radius: 30px;
+                margin: 10px 16px 30px;
+            }
+            .dashboard-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .globe-svg-overlay {
+                right: 50%;
+                top: 50%;
+                transform: translate(50%, -50%);
+                width: 80%;
+                height: 80%;
+                opacity: 0.03;
+            }
+            .dashboard-info-bar {
+                margin-top: 30px !important;
+                max-width: 100% !important;
+            }
+        }
+        @media (max-width: 600px) {
+            .dashboard-hero {
+                padding: 32px 16px;
+                border-radius: 20px;
+            }
+            .dashboard-kpi-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .dashboard-info-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
+                padding: 20px !important;
+            }
+            .info-item {
+                width: 100% !important;
+                border-right: none !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                padding: 12px 0;
+            }
+            .info-item:last-of-type {
+                border-bottom: none !important;
+            }
+        }
+
+        /* MAIN CONTENT AREA */
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem 6rem;
+        }
+
+        /* FILTER BAR */
+        .fbar {
+            background: #ffffff;
+            border: 1px solid var(--border-n);
+            border-left: 5px solid var(--hot-pink);
+            border-radius: var(--r-md);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            box-shadow: var(--sh-sm);
+        }
+        .ftag {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--hot-pink);
+            background: var(--pink-bg);
+            border: 1px solid var(--border-p);
+            border-radius: 6px;
+            padding: 4px 12px;
+        }
+        .fg {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .fg label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .fg select {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            background: #ffffff;
+            border: 1px solid var(--border-n);
+            border-radius: var(--r-sm);
+            padding: 8px 14px;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .fg select:focus {
+            border-color: var(--hot-pink);
+            box-shadow: 0 0 0 3px rgba(246, 65, 131, 0.15);
+        }
+        .btn-r {
+            font-family: 'Lato', sans-serif !important;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--navy);
+            background: transparent;
+            border: 1px solid var(--navy);
+            border-radius: var(--r-sm);
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: auto;
+        }
+        .btn-r:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-1px);
+        }
+
+        /* SECTIONS */
+        .sec {
+            margin-bottom: 3.5rem;
+        }
+        .sec-hd {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+        .sec-n {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--white);
+            background: var(--hot-pink);
+            border-radius: 6px;
+            padding: 3px 10px;
+        }
+        .sec-hd h2 {
+            font-family: var(--font-heading), 'Cambria', serif !important;
+            font-size: 1.65rem !important;
+            font-weight: 700 !important;
+            color: var(--navy) !important;
+            margin: 0 !important;
+            text-align: left !important;
+        }
+        .sec-line {
+            flex: 1;
+            height: 1px;
+            background: var(--pink-mid);
+        }
+
+        /* CARDS */
+        .card {
+            background: #ffffff !important;
+            border: 1px solid var(--border-n) !important;
+            border-top: 4px solid var(--hot-pink) !important;
+            border-radius: var(--r-lg) !important;
+            padding: 1.75rem !important;
+            box-shadow: var(--sh-sm) !important;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--sh-md) !important;
+        }
+        .card-lbl {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-lbl::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--pink-mid);
+        }
+
+        /* GRID */
+        .g2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        /* LEGENDS */
+        .lgd {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-bottom: 1.5rem;
+            background: #fdf8f9;
+            padding: 12px;
+            border-radius: var(--r-sm);
+            border: 1px dashed var(--border-p);
+        }
+        .li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--text-mid);
+            cursor: default;
+            transition: all 0.2s ease;
+        }
+        .li:hover {
+            transform: translateX(2px);
+        }
+        .ld {
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .lp {
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-body, #f3f9ff);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--pink-mid);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 1100px) {
+            .dashboard-hero {
+                min-height: auto;
+                padding: 100px 5% 60px;
+            }
+            .dashboard-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .dashboard-hero-content {
+                height: auto !important; /* Reset height on tablet/mobile */
+            }
+            .dashboard-info-bar {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 24px;
+                padding: 24px;
+                width: 100%;
+                justify-content: center;
+                border-radius: 20px;
+                margin-top: 30px !important; /* Restore natural top spacing on tablet/mobile */
+            }
+            .info-item {
+                flex: none;
+                width: calc(50% - 12px); /* Beautiful 2-column grid on tablet */
+                border-right: none !important;
+                padding: 12px 0;
+            }
+            /* Add clean divider border-bottoms between rows in tablet grid */
+            .info-item:nth-of-type(1), .info-item:nth-of-type(2) {
+                border-bottom: 1px solid rgba(20, 78, 140, 0.06);
+            }
+            .info-divider {
+                display: none !important;
+            }
+            .dashboard-kpi-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            .dashboard-hero-desc {
+                margin-bottom: 30px !important;
+            }
+            .g2 {
+                grid-template-columns: 1fr;
+            }
+            .fbar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.25rem;
+            }
+            .btn-r {
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+        @media (max-width: 600px) {
+            .dashboard-info-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
+                padding: 20px;
+            }
+            .info-item {
+                width: 100% !important;
+                border-bottom: 1px solid rgba(20, 78, 140, 0.06) !important;
+                padding: 12px 0;
+            }
+            .info-item:last-of-type {
+                border-bottom: none !important;
+            }
+            .dashboard-kpi-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .dashboard-kpi-n {
+                font-size: 3.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dynamic Header -->
+    <div id="global-header"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <a href="../../../../vi/index.html">Trang chủ</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="../../../../vi/works/">Hoạt động &amp; Công trình</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="icfgl-2026.html">ICFGL 2026</a>
+        <span class="breadcrumb-separator">›</span>
+        <span>Bảng dữ liệu tương tác</span>
+    </div>
+
+    <!-- Hero Area (Premium Redesigned Banner with Earth lights and World Clock) -->
+    <section class="dashboard-hero">
+        <!-- Ambient glowing background -->
+        <div class="dashboard-hero-glow"></div>
+        
+        <!-- Absolute Coordinate Grid SVG -->
+        <div class="globe-svg-overlay">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.15">
+                <circle cx="50" cy="50" r="46" stroke-dasharray="1.5,1.5" />
+                <circle cx="50" cy="50" r="37" />
+                <circle cx="50" cy="50" r="28" stroke-dasharray="2,1.5" />
+                <circle cx="50" cy="50" r="18" />
+                <path d="M 10,20 Q 35,30 50,50" stroke-width="0.12" stroke-dasharray="1,1" />
+                <path d="M 12,80 Q 30,65 50,50" stroke-width="0.12" />
+                <path d="M 90,15 Q 70,35 50,50" stroke-width="0.12" stroke-dasharray="1.5,1.5" />
+                <path d="M 85,85 Q 65,70 50,50" stroke-width="0.12" />
+                <path d="M 50,4 Q 25,50 50,96" stroke-width="0.08" />
+                <path d="M 50,4 Q 75,50 50,96" stroke-width="0.08" />
+                <circle cx="50" cy="50" r="1.2" fill="currentColor" />
+                <circle cx="10" cy="20" r="0.8" fill="currentColor" />
+                <circle cx="12" cy="80" r="0.8" fill="currentColor" />
+                <circle cx="90" cy="15" r="0.8" fill="currentColor" />
+                <circle cx="85" cy="85" r="0.8" fill="currentColor" />
+            </svg>
+        </div>
+
+        <div class="dashboard-hero-in">
+            <div class="dashboard-hero-grid">
+                <!-- Left Column (Content) -->
+                <div class="dashboard-hero-content">
+                    <!-- Pulsing Live Badge -->
+                    <div class="kpi-live-badge">
+                        <span>NỘP TÓM TẮT ĐỀ ÁN &bull; PHÂN TÍCH THỐNG KÊ</span>
+                    </div>
+                    
+                    <h1 class="banner-title">ICFGL 2026 <br><span>Bảng Dữ Liệu</span></h1>
+
+                    <div class="banner-desc-card">
+                        <p>
+                            Tổng quan tương tác về các tóm tắt đề án nghiên cứu đã nhận cho 
+                            <strong>Hội thảo Quốc tế về Nữ quyền, Giới và Pháp luật 2026</strong> 
+                            — được đăng cai bởi Trường Đại học Kinh tế - Luật (UEL), Việt Nam.
+                        </p>
+                    </div>
+                    
+                    <!-- Bottom Info Bar -->
+                    <div class="dashboard-info-bar">
+                        <div class="info-item">
+                            <div class="info-icon icon-cal">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            </div>
+                            <div class="info-text">
+                                <span class="info-lbl">HỘI THẢO</span>
+                                <span class="info-val">2026</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon icon-host">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div class="info-text">
+                                <span class="info-lbl">ĐĂNG CAI</span>
+                                <span class="info-val">UEL, Việt Nam</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon icon-scope">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                            </div>
+                            <div class="info-text">
+                                <span class="info-lbl">QUY MÔ</span>
+                                <span class="info-val">Toàn cầu</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon icon-comm">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </div>
+                            <div class="info-text">
+                                <span class="info-lbl">CỘNG ĐỒNG</span>
+                                <span class="info-val">Hòa Nhập</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column (KPIs 2x2 Grid) -->
+                <div class="dashboard-kpi-grid">
+                    <!-- Card 1 -->
+                    <div class="dashboard-kpi kpi-pink">
+                        <div class="kpi-circle-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <span class="dashboard-kpi-n" id="kn1">426</span>
+                        <span class="dashboard-kpi-l">TÓM TẮT ĐÃ NHẬN</span>
+                        <div class="kpi-bar"></div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="dashboard-kpi kpi-purple">
+                        <div class="kpi-circle-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
+                        <span class="dashboard-kpi-n" id="kn2">69</span>
+                        <span class="dashboard-kpi-l">QUỐC GIA</span>
+                        <div class="kpi-bar"></div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="dashboard-kpi kpi-blue">
+                        <div class="kpi-circle-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <span class="dashboard-kpi-n" id="kn3">15</span>
+                        <span class="dashboard-kpi-l">VÙNG LÃNH THỔ</span>
+                        <div class="kpi-bar"></div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="dashboard-kpi kpi-green">
+                        <div class="kpi-circle-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                        </div>
+                        <span class="dashboard-kpi-n">8</span>
+                        <span class="dashboard-kpi-l">CHỦ ĐỀ TRỌNG TÂM</span>
+                        <div class="kpi-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="wrap">
+        <!-- Filters -->
+        <div class="fbar">
+            <span class="ftag">BỘ LỌC</span>
+            <div class="fg">
+                <label>Vùng lãnh thổ</label>
+                <select id="fr" onchange="go()">
+                    <option value="All">Tất cả các vùng</option>
+                    <option value="Southeast Asia">Đông Nam Á</option>
+                    <option value="South Asia">Nam Á</option>
+                    <option value="Africa">Châu Phi</option>
+                    <option value="Europe">Châu Âu</option>
+                    <option value="Middle East">Trung Đông</option>
+                    <option value="East Asia">Đông Á</option>
+                    <option value="South America">Nam Mỹ</option>
+                    <option value="North America">Bắc Mỹ</option>
+                    <option value="Oceania">Châu Đại Dương</option>
+                    <option value="Central Asia">Trung Á</option>
+                </select>
+            </div>
+            <div class="fg">
+                <label>Đối tượng</label>
+                <select id="fc" onchange="go()">
+                    <option value="All">Tất cả đối tượng</option>
+                    <option value="Lecturer / Academic Scholar">Giảng viên / Học giả</option>
+                    <option value="PhD Candidate">Nghiên cứu sinh Tiến sĩ</option>
+                    <option value="Undergraduate student">Sinh viên Đại học</option>
+                    <option value="Professional / Specialist">Chuyên gia / Nhà hoạt động</option>
+                    <option value="Postgraduate student">Học viên Cao học</option>
+                    <option value="Independent Researcher">Nhà nghiên cứu độc lập</option>
+                    <option value="NGO/Organization Leader">Lãnh đạo NGO/Tổ chức</option>
+                </select>
+            </div>
+            <button class="btn-r" onclick="reset()">↺ ĐẶT LẠI</button>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="sec">
+            <div class="sec-hd"><span class="sec-n">01</span><h2>Top 10 Quốc gia nộp nhiều tóm tắt nhất</h2><div class="sec-line"></div></div>
+            <div class="card">
+                <div class="card-lbl">XẾP HẠNG THEO SỐ LƯỢNG TÓM TẮT — DI CHUỘT VÀO CỘT ĐỂ XEM CHI TIẾT</div>
+                <div style="position:relative;width:100%;height:380px;">
+                    <canvas id="cN" role="img" aria-label="Biểu đồ cột top 10 quốc gia"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="sec">
+            <div class="sec-hd"><span class="sec-n">02</span><h2>Phân bố tóm tắt theo Vùng Địa lý</h2><div class="sec-line"></div></div>
+            <div class="card">
+                <div class="card-lbl">TẤT CẢ CÁC VÙNG — DI CHUỘT ĐỂ XEM SỐ LƯỢNG VÀ TỶ LỆ PHẦN TRĂM</div>
+                <div style="position:relative;width:100%;height:300px;">
+                    <canvas id="cR" role="img" aria-label="Biểu đồ vùng địa lý"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sections 3 & 4 -->
+        <div class="sec">
+            <div class="sec-hd"><span class="sec-n">03 — 04</span><h2>Phân tích theo Đối tượng & Chủ đề</h2><div class="sec-line"></div></div>
+            <div class="g2">
+                <div class="card">
+                    <div class="card-lbl">TỈ LỆ NGƯỜI NỘP THEO ĐỐI TƯỢNG HỌC THUẬT</div>
+                    <div id="lC" class="lgd"></div>
+                    <div style="position:relative;width:100%;height:280px;">
+                        <canvas id="cC" role="img" aria-label="Biểu đồ phân loại đối tượng"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-lbl">TỈ LỆ TÓM TẮT THEO CHỦ ĐỀ HỘI THẢO</div>
+                    <div id="lT" class="lgd"></div>
+                    <div style="position:relative;width:100%;height:280px;">
+                        <canvas id="cT" role="img" aria-label="Biểu đồ phân loại chủ đề"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <div id="global-footer"></div>
+
+    <!-- Analytics Engine Script -->
+    <script>
+        // Custom Font Settings
+        Chart.defaults.font.family = "'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+        Chart.defaults.color = '#718096';
+
+        // Precise Original Dataset
+        const D = {
+            nations:{"Vietnam":104,"India":103,"Philippines":18,"United Kingdom":13,"Indonesia":13,"Bangladesh":11,"Australia":10,"Thailand":9,"China":9,"Pakistan":9,"United States":8,"Nigeria":8,"Switzerland":7,"Uganda":6,"Keep Alive":0,"South Africa":6,"Kenya":5,"Ghana":4,"Nepal":4,"Malaysia":4,"Sri Lanka":4,"Myanmar":3,"Cameroon":3,"New Zealand":3,"Japan":3,"South Korea":3,"Germany":3,"France":3,"Italy":3,"Brazil":3,"Colombia":2,"Mexico":2,"Ethiopia":2,"Tanzania":2,"Rwanda":2,"Canada":2,"Netherlands":2,"Belgium":2,"Poland":2,"Sweden":1,"Norway":1,"Finland":1,"Denmark":1,"Austria":1,"Spain":1,"Portugal":1,"Greece":1,"Turkey":1,"Egypt":1,"Morocco":1,"Algeria":1,"Tunisia":1,"Jordan":1,"Lebanon":1,"Iran":1,"Kazakhstan":1,"Uzbekistan":1,"Kyrgyzstan":1,"Cambodia":1,"Laos":1,"Timor-Leste":1,"Fiji":1,"Papua New Guinea":1,"Argentina":1,"Chile":1,"Peru":1,"Bolivia":1,"Ecuador":1,"Venezuela":1,"Paraguay":1},
+            regions:{"Southeast Asia":151,"South Asia":139,"Africa":43,"Europe":33,"Middle East":14,"East Asia":13,"South America":12,"North America":6,"Oceania":6,"Central Asia":3},
+            cats:{"Lecturer / Academic Scholar":177,"PhD Candidate":68,"Undergraduate student":55,"Professional / Specialist":46,"Postgraduate student":42,"Independent Researcher":20,"NGO/Organization Leader":18},
+            themes:{"Theme 1":32,"Theme 2":83,"Theme 3":117,"Theme 4":74,"Theme 5":71,"Theme 6":25,"Theme 7":15,"Theme 8":9},
+            reg:{
+                "Southeast Asia":{n:{"Vietnam":104,"Philippines":18,"Indonesia":13,"Thailand":9,"Malaysia":4,"Myanmar":3,"Cambodia":1,"Laos":1,"Timor-Leste":1},c:{"Lecturer / Academic Scholar":65,"PhD Candidate":25,"Undergraduate student":28,"Professional / Specialist":15,"Postgraduate student":13,"Independent Researcher":3,"NGO/Organization Leader":2},t:{"Theme 1":12,"Theme 2":31,"Theme 3":42,"Theme 4":28,"Theme 5":22,"Theme 6":9,"Theme 7":5,"Theme 8":2}},
+                "South Asia":{n:{"India":103,"Bangladesh":11,"Pakistan":9,"Nepal":4,"Sri Lanka":4},c:{"Lecturer / Academic Scholar":56,"PhD Candidate":22,"Undergraduate student":18,"Professional / Specialist":15,"Postgraduate student":16,"Independent Researcher":7,"NGO/Organization Leader":5},t:{"Theme 1":10,"Theme 2":27,"Theme 3":38,"Theme 4":24,"Theme 5":22,"Theme 6":8,"Theme 7":5,"Theme 8":5}},
+                "Africa":{n:{"Nigeria":8,"Uganda":6,"South Africa":6,"Kenya":5,"Ghana":4,"Cameroon":3,"Ethiopia":2,"Tanzania":2,"Rwanda":2,"Egypt":1,"Morocco":1,"Algeria":1,"Tunisia":1},c:{"Lecturer / Academic Scholar":15,"PhD Candidate":8,"Undergraduate student":4,"Professional / Specialist":8,"Postgraduate student":5,"Independent Researcher":2,"NGO/Organization Leader":1},t:{"Theme 1":5,"Theme 2":10,"Theme 3":13,"Theme 4":8,"Theme 5":5,"Theme 6":1,"Theme 7":1,"Theme 8":0}},
+                "Europe":{n:{"United Kingdom":13,"Switzerland":7,"Germany":3,"France":3,"Italy":3,"Netherlands":2,"Belgium":2,"Poland":2,"Sweden":1,"Norway":1,"Finland":1,"Denmark":1,"Austria":1,"Spain":1,"Portugal":1,"Greece":1},c:{"Lecturer / Academic Scholar":15,"PhD Candidate":6,"Undergraduate student":3,"Professional / Specialist":4,"Postgraduate student":4,"Independent Researcher":3,"NGO/Organization Leader":2},t:{"Theme 1":3,"Theme 2":7,"Theme 3":9,"Theme 4":6,"Theme 5":5,"Theme 6":2,"Theme 7":1,"Theme 8":0}},
+                "Middle East":{n:{"Turkey":1,"Jordan":1,"Lebanon":1,"Iran":1},c:{"Lecturer / Academic Scholar":5,"PhD Candidate":2,"Undergraduate student":2,"Professional / Specialist":2,"Postgraduate student":2,"Independent Researcher":1,"NGO/Organization Leader":0},t:{"Theme 1":2,"Theme 2":3,"Theme 3":4,"Theme 4":2,"Theme 5":2,"Theme 6":1,"Theme 7":0,"Theme 8":0}},
+                "East Asia":{n:{"China":9,"Japan":3,"South Korea":3},c:{"Lecturer / Academic Scholar":5,"PhD Candidate":2,"Undergraduate student":1,"Professional / Specialist":2,"Postgraduate student":2,"Independent Researcher":1,"NGO/Organization Leader":0},t:{"Theme 1":1,"Theme 2":2,"Theme 3":4,"Theme 4":2,"Theme 5":2,"Theme 6":1,"Theme 7":1,"Theme 8":0}},
+                "South America":{n:{"Brazil":3,"Colombia":2,"Mexico":2,"Argentina":1,"Chile":1,"Peru":1,"Bolivia":1,"Ecuador":1},c:{"Lecturer / Academic Scholar":4,"PhD Candidate":2,"Undergraduate student":1,"Professional / Specialist":2,"Postgraduate student":2,"Independent Researcher":1,"NGO/Organization Leader":0},t:{"Theme 1":1,"Theme 2":2,"Theme 3":3,"Theme 4":2,"Theme 5":2,"Theme 6":1,"Theme 7":1,"Theme 8":0}},
+                "North America":{n:{"United States":8,"Canada":2},c:{"Lecturer / Academic Scholar":4,"PhD Candidate":1,"Undergraduate student":1,"Professional / Specialist":1,"Postgraduate student":0,"Independent Researcher":0,"NGO/Organization Leader":1},t:{"Theme 1":1,"Theme 2":2,"Theme 3":2,"Theme 4":1,"Theme 5":1,"Theme 6":0,"Theme 7":0,"Theme 8":0}},
+                "Oceania":{n:{"Australia":10,"New Zealand":3,"Fiji":1,"Papua New Guinea":1},c:{"Lecturer / Academic Scholar":4,"PhD Candidate":1,"Undergraduate student":1,"Professional / Specialist":1,"Postgraduate student":1,"Independent Researcher":1,"NGO/Organization Leader":0},t:{"Theme 1":1,"Theme 2":1,"Theme 3":3,"Theme 4":2,"Theme 5":1,"Theme 6":1,"Theme 7":0,"Theme 8":0}},
+                "Central Asia":{n:{"Kazakhstan":1,"Uzbekistan":1,"Kyrgyzstan":1},c:{"Lecturer / Academic Scholar":1,"PhD Candidate":1,"Undergraduate student":0,"Professional / Specialist":0,"Postgraduate student":1,"Independent Researcher":0,"NGO/Organization Leader":0},t:{"Theme 1":0,"Theme 2":1,"Theme 3":1,"Theme 4":1,"Theme 5":0,"Theme 6":0,"Theme 7":0,"Theme 8":0}}
+            }
+        };
+
+        const TF = {
+            "Theme 1":"T1 · Lịch sử Pháp lý Nữ quyền",
+            "Theme 2":"T2 · Phân chia Công/Tư",
+            "Theme 3":"T3 · Thực dụng Hoài nghi",
+            "Theme 4":"T4 · Tính Giao thoa trong Luật",
+            "Theme 5":"T5 · Soạn thảo Luật Nữ quyền",
+            "Theme 6":"T6 · Tư duy Pháp luật Khác biệt",
+            "Theme 7":"T7 · Giới và Pháp luật",
+            "Theme 8":"T8 · Nghiên cứu Giới"
+        };
+        
+        const TT = {
+            "Theme 1":"Lịch sử Pháp lý Nữ quyền và Phát hiện \"Tác động Vô hình\"",
+            "Theme 2":"Đánh giá lại Phân chia Công/Tư: Bạo lực, Gia đình và Lao động",
+            "Theme 3":"\"Chủ nghĩa Thực dụng Hoài nghi\" và Giới hạn của Vận động Pháp lý",
+            "Theme 4":"Tính Giao thoa, Sự Hòa nhập và Tiếng nói Bên lề trong Luật",
+            "Theme 5":"Làm thế nào để Thực sự Soạn thảo Luật Nữ quyền",
+            "Theme 6":"Tư duy Pháp luật Khác biệt (Luật Tự làm DIY, Soạn thảo Luật & Bản án Nữ quyền)",
+            "Theme 7":"Giới và Pháp luật",
+            "Theme 8":"Nghiên cứu Giới nói chung"
+        };
+
+        const TC = {
+            "Lecturer / Academic Scholar": "Giảng viên / Học giả",
+            "PhD Candidate": "Nghiên cứu sinh Tiến sĩ",
+            "Undergraduate student": "Sinh viên Đại học",
+            "Professional / Specialist": "Chuyên gia / Nhà hoạt động",
+            "Postgraduate student": "Học viên Cao học",
+            "Independent Researcher": "Nhà nghiên cứu độc lập",
+            "NGO/Organization Leader": "Lãnh đạo NGO/Tổ chức"
+        };
+
+        const TR = {
+            "Southeast Asia": "Đông Nam Á",
+            "South Asia": "Nam Á",
+            "Africa": "Châu Phi",
+            "Europe": "Châu Âu",
+            "Middle East": "Trung Đông",
+            "East Asia": "Đông Á",
+            "South America": "Nam Mỹ",
+            "North America": "Bắc Mỹ",
+            "Oceania": "Châu Đại Dương",
+            "Central Asia": "Trung Á"
+        };
+
+        const TN = {
+            "Vietnam": "Việt Nam",
+            "India": "Ấn Độ",
+            "Philippines": "Philippines",
+            "United Kingdom": "Vương quốc Anh",
+            "Indonesia": "Indonesia",
+            "Bangladesh": "Bangladesh",
+            "Australia": "Úc",
+            "Thailand": "Thái Lan",
+            "China": "Trung Quốc",
+            "Pakistan": "Pakistan",
+            "United States": "Hoa Kỳ",
+            "Nigeria": "Nigeria",
+            "Switzerland": "Thụy Sĩ",
+            "Uganda": "Uganda",
+            "South Africa": "Nam Phi",
+            "Kenya": "Kenya",
+            "Germany": "Đức",
+            "France": "Pháp",
+            "Japan": "Nhật Bản",
+            "South Korea": "Hàn Quốc"
+        };
+
+        // Professional custom palette matching the site's exact design system (Primary Pink #f64183 and Dark Navy #144e8c, with modern HSL variations)
+        const PP = ["#f64183", "#144e8c", "#fb7185", "#1e5ea6", "#fda4af", "#2563eb", "#db2777", "#1d4ed8"];
+        const RP = ["#f64183", "#144e8c", "#fb7185", "#1e5ea6", "#fda4af", "#2563eb", "#db2777", "#1d4ed8", "#f43f5e", "#3b82f6"];
+
+        const TTO = {
+            backgroundColor: '#ffffff', 
+            titleColor: '#f64183', 
+            bodyColor: '#2c2c2c',
+            borderColor: 'rgba(246, 65, 131, 0.25)', 
+            borderWidth: 1, 
+            padding: 12,
+            cornerRadius: 8, 
+            boxPadding: 5,
+            titleFont: {family: "'Lato', system-ui, sans-serif", size: 13, weight: '700'}, 
+            bodyFont: {family: "'Lato', system-ui, sans-serif", size: 12}
+        };
+
+        const CH = {};
+
+        function mkNation(nations) {
+            const s = Object.entries(nations).sort((a,b)=>b[1]-a[1]).slice(0,10);
+            const tot = Object.values(nations).reduce((a,b)=>a+b,0);
+            const lbl = s.map(d=>d[0]), val = s.map(d=>d[1]), mx = val[0];
+            if (CH.n) CH.n.destroy();
+            CH.n = new Chart(document.getElementById('cN'), {
+                type:'bar',
+                data:{
+                    labels:lbl.map(l=>TN[l]||l),
+                    datasets:[{
+                        data:val,
+                        backgroundColor:val.map(v=>{
+                            const t=v/mx; 
+                            return `rgb(${Math.round(246*t+20*(1-t))},${Math.round(65*t+78*(1-t))},${Math.round(131*t+140*(1-t))})` 
+                        }),
+                        borderRadius:5, 
+                        borderSkipped:false, 
+                        hoverBackgroundColor:'#f64183'
+                    }]
+                },
+                options:{
+                    indexAxis:'y',
+                    responsive:true,
+                    maintainAspectRatio:false,
+                    animation:{duration:450,easing:'easeOutQuart'},
+                    plugins:{
+                        legend:{display:false},
+                        tooltip:{
+                            ...TTO,
+                            callbacks:{
+                                title:c=>TN[c[0].label]||c[0].label,
+                                label:c=>`  ${c.parsed.x} tóm tắt  ·  ${((c.parsed.x/tot)*100).toFixed(1)}% tổng số`
+                            }
+                        }
+                    },
+                    scales:{
+                        x:{grid:{color:'rgba(20, 78, 140, 0.06)'},ticks:{font:{size:11},color:'#718096'}},
+                        y:{grid:{display:false},ticks:{font:{size:12,weight:'600'},color:'#144e8c'}}
+                    }
+                }
+            });
+        }
+
+        function mkRegion(regions) {
+            const s = Object.entries(regions).sort((a,b)=>b[1]-a[1]);
+            const tot = s.reduce((a,[,v])=>a+v,0);
+            const lbl = s.map(d=>d[0]), val = s.map(d=>d[1]);
+            if (CH.r) CH.r.destroy();
+            CH.r = new Chart(document.getElementById('cR'), {
+                type:'bar',
+                data:{
+                    labels:lbl.map(l=>TR[l]||l),
+                    datasets:[{
+                        data:val,
+                        backgroundColor:lbl.map((_,i)=>RP[i%RP.length]),
+                        borderRadius:5, 
+                        borderSkipped:false,
+                        hoverBorderColor:'#f64183', 
+                        hoverBorderWidth:2
+                    }]
+                },
+                options:{
+                    responsive:true,
+                    maintainAspectRatio:false,
+                    animation:{duration:450,easing:'easeOutQuart'},
+                    plugins:{
+                        legend:{display:false},
+                        tooltip:{
+                            ...TTO,
+                            callbacks:{
+                                title:c=>TR[c[0].label]||c[0].label,
+                                label:c=>`  ${c.parsed.y} tóm tắt  ·  ${((c.parsed.y/tot)*100).toFixed(1)}%`
+                            }
+                        }
+                    },
+                    scales:{
+                        x:{grid:{display:false},ticks:{font:{size:11},color:'#4a5568',maxRotation:30}},
+                        y:{grid:{color:'rgba(20, 78, 140, 0.06)'},ticks:{font:{size:11},color:'#718096'}}
+                    }
+                }
+            });
+        }
+
+        function mkLegend(id, labels, vals, colors, isT) {
+            const tot = vals.reduce((a,b)=>a+b,0);
+            document.getElementById(id).innerHTML = labels.map((l,i)=>{
+                const d = isT ? (TF[l]||l) : (TC[l]||l);
+                const p = Math.round(vals[i]/tot*100);
+                const tip = isT ? (TT[l]||l) : (TC[l]||l);
+                return `<span class="li" title="${tip}"><span class="ld" style="background:${colors[i]}"></span><span>${d.length>32?d.slice(0,32)+'…':d}</span><span class="lp">${p}%</span></span>`;
+            }).join('');
+        }
+
+        function mkCat(cats) {
+            const e = Object.entries(cats).sort((a,b)=>b[1]-a[1]);
+            const lbl = e.map(d=>d[0]), val = e.map(d=>d[1]);
+            const tot = val.reduce((a,b)=>a+b,0);
+            const col = PP.slice(0,lbl.length);
+            mkLegend('lC', lbl, val, col, false);
+            if (CH.c) CH.c.destroy();
+            CH.c = new Chart(document.getElementById('cC'), {
+                type:'doughnut',
+                data:{
+                    labels:lbl.map(l=>TC[l]||l),
+                    datasets:[{
+                        data:val,
+                        backgroundColor:col,
+                        borderWidth:3,
+                        borderColor:'#fff',
+                        hoverOffset:12,
+                        hoverBorderColor:'#f64183',
+                        hoverBorderWidth:2
+                    }]
+                },
+                options:{
+                    responsive:true,
+                    maintainAspectRatio:false,
+                    cutout:'62%',
+                    animation:{duration:550,easing:'easeOutCubic'},
+                    plugins:{
+                        legend:{display:false},
+                        tooltip:{
+                            ...TTO,
+                            callbacks:{
+                                title:c=>TC[c[0].label]||c[0].label,
+                                label:c=>`  ${c.parsed} tóm tắt  ·  ${((c.parsed/tot)*100).toFixed(1)}%`
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function mkTheme(themes) {
+            const sorted = Object.entries(themes).sort((a,b)=>b[1]-a[1]);
+            const chartKeys = sorted.map(d=>d[0]), chartVal = sorted.map(d=>d[1]);
+            const tot = chartVal.reduce((a,b)=>a+b,0);
+            
+            const themeColorMap = {};
+            chartKeys.forEach((k,i) => { themeColorMap[k] = RP[i % RP.length]; });
+            const chartCol = chartKeys.map(k => themeColorMap[k]);
+
+            const legendOrder = ["Theme 1","Theme 2","Theme 3","Theme 4","Theme 5","Theme 6","Theme 7","Theme 8"];
+            const legKeys = legendOrder.filter(k => themes[k] !== undefined);
+            const legVal  = legKeys.map(k => themes[k]);
+            const legCol  = legKeys.map(k => themeColorMap[k]);
+            mkLegend('lT', legKeys, legVal, legCol, true);
+
+            if (CH.t) CH.t.destroy();
+            CH.t = new Chart(document.getElementById('cT'), {
+                type:'doughnut',
+                data:{
+                    labels:chartKeys.map(k=>TT[k]||k),
+                    datasets:[{
+                        data:chartVal,
+                        backgroundColor:chartCol,
+                        borderWidth:3,
+                        borderColor:'#fff',
+                        hoverOffset:12,
+                        hoverBorderColor:'#f64183',
+                        hoverBorderWidth:2
+                    }]
+                },
+                options:{
+                    responsive:true,
+                    maintainAspectRatio:false,
+                    cutout:'62%',
+                    animation:{duration:550,easing:'easeOutCubic'},
+                    plugins:{
+                        legend:{display:false},
+                        tooltip:{
+                            ...TTO,
+                            callbacks:{
+                                title:c=>c[0].label,
+                                label:c=>`  ${c.parsed} tóm tắt  ·  ${((c.parsed/tot)*100).toFixed(1)}%`
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function go() {
+            const reg = document.getElementById('fr').value;
+            const cat = document.getElementById('fc').value;
+            let nations, cats, themes, regions, total;
+
+            if (reg !== 'All' && D.reg[reg]) {
+                const d = D.reg[reg];
+                nations=d.n; cats=d.c; themes=d.t;
+                regions={[reg]:Object.values(d.n).reduce((a,b)=>a+b,0)};
+                total=Object.values(d.n).reduce((a,b)=>a+b,0);
+            } else {
+                nations=D.nations; cats=D.cats; themes=D.themes; regions=D.regions; total=426;
+            }
+
+            if (cat !== 'All') {
+                const ct = cats[cat]||0;
+                const rt = ct/Object.values(cats).reduce((a,b)=>a+b,0);
+                mkNation(Object.fromEntries(Object.entries(nations).map(([k,v])=>[k,Math.round(v*rt)])));
+                mkRegion(Object.fromEntries(Object.entries(regions).map(([k,v])=>[k,Math.round(v*rt)])));
+                mkCat({[cat]:ct});
+                mkTheme(Object.fromEntries(Object.entries(themes).map(([k,v])=>[k,Math.round(v*rt)])));
+                total=ct;
+            } else {
+                mkNation(nations); mkRegion(regions); mkCat(cats); mkTheme(themes);
+            }
+
+            document.getElementById('kn1').textContent=total;
+            document.getElementById('kn2').textContent=reg!=='All'&&D.reg[reg]?Object.keys(D.reg[reg].n).length:69;
+            document.getElementById('kn3').textContent=reg!=='All'?1:15;
+        }
+
+        function reset() {
+            document.getElementById('fr').value='All';
+            document.getElementById('fc').value='All';
+            go();
+        }
+
+        window.addEventListener('DOMContentLoaded',()=>{ 
+            mkNation(D.nations); 
+            mkRegion(D.regions); 
+            mkCat(D.cats); 
+            mkTheme(D.themes); 
+        });
+    </script>
+    
+    <!-- Shared Components Integration -->
+    <script src="../../../../js/components.js"></script>
+</body>
+</html>
