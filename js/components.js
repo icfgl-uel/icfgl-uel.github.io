@@ -8,6 +8,7 @@
             navHome: "Home",
             navAbout: "About Us",
             navWorks: "Our Works",
+            navWorkWithUs: "Work With Us",
             navFeministJudgments: "Feminist Judgments",
             navIcfgl: "International Conference on Feminism, Gender and Law",
             navPublications: "Publications",
@@ -46,6 +47,7 @@
             navHome: "Trang chủ",
             navAbout: "Giới thiệu",
             navWorks: "Hoạt động & Công trình",
+            navWorkWithUs: "Hợp tác cùng chúng tôi",
             navFeministJudgments: "Bản án nữ quyền",
             navIcfgl: "Hội thảo Quốc tế về Nữ quyền, Giới và Pháp luật",
             navPublications: "Ấn phẩm",
@@ -149,8 +151,9 @@
         const icfglHref   = rootPath + localePrefix + "works/icfgl/";
         const pubHref     = rootPath + localePrefix + "works/publications/";
         const wsHref      = rootPath + localePrefix + "works/workshops/";
-        const mootHref    = rootPath + localePrefix + "works/moot-court/";
-        const contactHref = rootPath + localePrefix + "contact/contact.html";
+        const mootHref        = rootPath + localePrefix + "works/moot-court/";
+        const workWithUsHref  = rootPath + localePrefix + "work-with-us/";
+        const contactHref     = rootPath + localePrefix + "contact/contact.html";
 
         const normalizePath = (path) => {
             let normalized = path.replace(/\\/g, "/").replace(/\/index\.html$/i, "/");
@@ -197,6 +200,7 @@
                     <li><a href="${mootHref}">${t.navMootCourt}</a></li>
                 </ul>
             </li>
+            <li><a href="${workWithUsHref}">${t.navWorkWithUs}</a></li>
             <li><a href="${contactHref}">${t.navContact}</a></li>
             <li class="nav-dropdown nav-lang-dropdown" aria-label="${t.langSwitcherLabel}">
                 <button type="button" class="nav-dropdown-toggle nav-lang-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="nav-lang-menu" title="${t.langMenuButton}">
@@ -241,6 +245,7 @@
                             <li><a href="${homeHref}">${t.navHome}</a></li>
                             <li><a href="${aboutHref}">${t.navAbout}</a></li>
                             <li><a href="${worksHref}">${t.navWorks}</a></li>
+                            <li><a href="${workWithUsHref}">${t.navWorkWithUs}</a></li>
                             <li><a href="${contactHref}">${t.navContact}</a></li>
                             <li><a href="https://www.uel.edu.vn/" target="_blank" rel="noopener noreferrer">${t.navUel}</a></li>
                         </ul>

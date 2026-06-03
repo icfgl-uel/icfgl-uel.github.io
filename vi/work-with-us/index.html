@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cơ hội hợp tác — Dự án Lý thuyết pháp luật nữ quyền UEL</title>
+    <meta name="description" content="Tham gia Dự án Lý thuyết pháp luật nữ quyền UEL. Mở đăng ký cho các chuyên gia, học giả, người hành nghề và tình nguyện viên trong lĩnh vực giáo dục pháp lý, đổi mới và công bằng giới.">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../header-footer.css">
+    <link rel="alternate" hreflang="en-US" href="../../work-with-us/" />
+    <link rel="alternate" hreflang="vi"    href="../work-with-us/" />
+    <link rel="alternate" hreflang="x-default" href="../../work-with-us/" />
+    <style>
+    /* ══════════════════════════════════════════
+       VIETNAMESE FONT FIX — use system-ui to guarantee perfect diacritics
+    ══════════════════════════════════════════ */
+    :root {
+        --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body, p, a, span, div, h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-body) !important;
+    }
+
+    /* ══════════════════════════════════════════
+       HERO  — full-viewport, left-aligned
+       Identical pattern to moot-court/icfgl pages
+    ══════════════════════════════════════════ */
+    .wwu-hero {
+        position: relative;
+        min-height: calc(100vh  - 74px);
+        min-height: calc(100svh - 74px);
+        display: flex;
+        align-items: center;
+        background: #0f1c2d
+            url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=2000')
+            no-repeat center 30% / cover;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    /* Left-to-right gradient — matches moot-court exactly */
+    .wwu-hero-gradient {
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(90deg,
+                rgba(3,13,31,0.65) 0%,
+                rgba(8,26,55,0.45) 30%,
+                rgba(12,43,76,0.15) 58%,
+                rgba(12,43,76,0) 100%),
+            linear-gradient(180deg,
+                rgba(3,13,31,0.08) 0%,
+                rgba(3,13,31,0) 48%,
+                rgba(3,13,31,0.15) 100%);
+        z-index: 1;
+    }
+
+    .wwu-hero-shell {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+    }
+
+    .wwu-hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        width: min(680px, 55vw);
+        margin-left: clamp(48px, 8.5vw, 130px);
+    }
+
+    /* kicker pill — same as .hero-kicker in moot-court */
+    .wwu-kicker {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        min-height: 38px;
+        padding: 0 24px;
+        margin: 0 0 24px;
+        border-radius: 999px;
+        background: rgba(134,58,110,0.45);
+        border: 1px solid rgba(255,255,255,0.3);
+        color: #fff;
+        font-size: 0.82rem;
+        font-weight: 700;
+        line-height: 1 !important;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .wwu-hero-title {
+        font-size: clamp(3.8rem, 6vw, 6.4rem);
+        font-weight: 700 !important;
+        line-height: 1;
+        color: rgba(255,250,244,0.97);
+        margin: 0 0 24px;
+    }
+
+    .wwu-hero-title .pink {
+        color: #f9a8d4;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+    }
+
+    /* pink divider — same as .hero-divider */
+    .wwu-divider {
+        width: 60px;
+        height: 4px;
+        background: var(--pink, #f64183);
+        border-radius: 2px;
+        margin-bottom: 28px;
+        flex-shrink: 0;
+    }
+
+    .wwu-hero-desc {
+        max-width: 520px;
+        margin: 0 0 38px;
+        color: rgba(255,255,255,0.88);
+        font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+        font-weight: 300;
+        line-height: 1.68 !important;
+        text-align: left !important;
+    }
+
+    .wwu-hero-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 260px;
+        padding: 17px 32px 17px 44px;
+        background: linear-gradient(135deg, var(--pink,#f64183), #c23366);
+        color: #fff !important;
+        text-decoration: none;
+        font-weight: 700;
+        border-radius: 12px;
+        font-size: 1rem;
+        transition: all 0.3s cubic-bezier(0.165,0.84,0.44,1);
+        box-shadow: 0 10px 30px rgba(179,53,93,0.3);
+    }
+
+    .wwu-hero-btn:hover {
+        background: #b3355d;
+        color: #fff !important;
+        transform: scale(1.04);
+    }
+
+    .wwu-hero-btn-arrow {
+        margin-left: 18px;
+        font-size: 1.45em;
+        line-height: 1;
+        transform: translateY(-1px);
+    }
+
+    /* ══════════════════════════════════════════
+       PAGE SECTIONS — same padding as moot-court
+    ══════════════════════════════════════════ */
+    .wwu-section {
+        padding: clamp(64px, 10vw, 100px) 5%;
+        border-top: 1px solid rgba(20,78,140,0.1);
+    }
+
+    .wwu-section:first-of-type { border-top: none; }
+
+    .wwu-container      { max-width: 960px;  margin: 0 auto; }
+    .wwu-container-wide { max-width: 1100px; margin: 0 auto; }
+
+    /* Section label / heading / rule */
+    .wwu-label {
+        display: block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--pink, #f64183);
+        margin-bottom: 12px;
+    }
+
+    .wwu-heading {
+        font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+        color: var(--dark-navy, #144e8c);
+        font-weight: 700 !important;
+        line-height: 1.15;
+        margin: 0 0 18px;
+    }
+
+    .wwu-rule {
+        width: 48px;
+        height: 3px;
+        background: var(--pink, #f64183);
+        border: none;
+        border-radius: 2px;
+        margin: 0 0 40px;
+    }
+
+    /* ══════════════════════════════════════════
+       01 ABOUT — prose + value chips
+    ══════════════════════════════════════════ */
+    .wwu-intro-prose {
+        max-width: 860px;
+        margin: 0 auto 48px;
+        text-align: center;
+    }
+
+    .wwu-intro-prose p {
+        font-size: 1.1rem;
+        line-height: 1.85;
+        color: #55657f;
+        margin: 0 0 16px;
+    }
+
+    .wwu-intro-prose p:last-child { margin-bottom: 0; }
+
+    .wwu-intro-prose strong {
+        color: var(--dark-navy, #144e8c);
+        font-weight: 700;
+    }
+
+    /* Values chips — visual grid */
+    .wwu-values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+    }
+
+    .wwu-value-chip {
+        background: #fff;
+        border: 1px solid rgba(20,78,140,0.1);
+        border-radius: 16px;
+        padding: 32px 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .wwu-value-chip:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 28px rgba(20,78,140,0.06);
+        border-color: rgba(246,65,131,0.2);
+    }
+
+    .wwu-val-icon-wrap {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 16px;
+        border-radius: 12px;
+        background: var(--light-blue, #f3f9ff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wwu-val-icon-wrap svg {
+        width: 24px;
+        height: 24px;
+        stroke: var(--dark-navy, #144e8c);
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    .wwu-value-label {
+        font-weight: 700;
+        color: var(--dark-navy, #144e8c);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    /* ══════════════════════════════════════════
+       02 COMMITMENT — 3-column feature grid
+    ══════════════════════════════════════════ */
+    .wwu-commitment-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        align-items: stretch;
+    }
+
+    .wwu-comm-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 40px 32px;
+        box-shadow: 0 4px 20px rgba(20, 78, 140, 0.03);
+        border: 1px solid rgba(20, 78, 140, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .wwu-comm-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(20, 78, 140, 0.06);
+        border-color: rgba(246, 65, 131, 0.2);
+    }
+
+    .wwu-comm-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 24px;
+        background: var(--light-blue, #f3f9ff);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--dark-navy, #144e8c);
+    }
+
+    .wwu-comm-icon svg {
+        width: 24px;
+        height: 24px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    .wwu-comm-card h3 {
+        font-size: 1.25rem;
+        color: var(--dark-navy, #144e8c);
+        margin: 0 0 16px;
+        font-weight: 700 !important;
+        line-height: 1.3;
+    }
+
+    .wwu-comm-card p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #55657f;
+        margin: 0;
+    }
+
+    .wwu-comm-card strong {
+        color: var(--dark-navy, #144e8c);
+        font-weight: 700;
+    }
+
+    /* ══════════════════════════════════════════
+       03 POSITIONS — horizontal job-board rows
+    ══════════════════════════════════════════ */
+    .wwu-team-divider {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin: 0 0 32px;
+    }
+
+    .wwu-team-divider::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(20,78,140,0.15), transparent);
+    }
+
+    .wwu-team-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--dark-navy, #144e8c);
+        background: #fff;
+        border: 1px solid rgba(20,78,140,0.1);
+        box-shadow: 0 4px 12px rgba(20,78,140,0.04);
+        padding: 8px 16px 8px 12px;
+        border-radius: 6px;
+    }
+
+    .wwu-team-badge svg {
+        width: 14px;
+        height: 14px;
+        stroke: var(--pink, #f64183);
+        fill: none;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    .wwu-pos-list {
+        display: grid;
+        gap: 12px;
+    }
+
+    .wwu-pos-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 24px;
+        background: #fff;
+        border: 1px solid rgba(20,78,140,0.1);
+        border-radius: 10px;
+        padding: 22px 28px;
+        transition: border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .wwu-pos-row:hover {
+        border-color: rgba(246,65,131,0.28);
+        box-shadow: 0 6px 20px rgba(20,78,140,0.07);
+        transform: translateY(-2px);
+    }
+
+    .wwu-pos-title {
+        font-size: 1.15rem;
+        color: var(--dark-navy, #144e8c);
+        font-weight: 700 !important;
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    /* ══════════════════════════════════════════
+       04 DEADLINE — elegant centered card
+    ══════════════════════════════════════════ */
+    .wwu-deadline-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 56px 48px;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 12px 36px rgba(20,78,140,0.06);
+        border: 1px solid rgba(20,78,140,0.05);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .wwu-deadline-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 5px;
+        background: var(--pink, #f64183);
+    }
+
+    .wwu-dl-card-icon {
+        width: 56px;
+        height: 56px;
+        background: var(--light-blue, #f3f9ff);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+    }
+
+    .wwu-dl-card-icon svg {
+        width: 28px;
+        height: 28px;
+        stroke: var(--pink, #f64183);
+        fill: none;
+        stroke-width: 1.8;
+    }
+
+    .wwu-dl-card-time {
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        color: var(--dark-navy, #144e8c);
+        margin: 0 0 24px;
+        font-weight: 700 !important;
+        line-height: 1.3;
+    }
+
+    .wwu-dl-card-time span {
+        color: var(--pink, #f64183);
+    }
+
+    .wwu-dl-card-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #55657f;
+        margin: 0 0 16px;
+    }
+
+    .wwu-dl-card-text p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Outline button — navy border, fills on hover */
+    .wwu-dl-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border: 1.5px solid var(--dark-navy, #144e8c);
+        border-radius: 6px;
+        color: var(--dark-navy, #144e8c) !important;
+        font-size: 0.77rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition: all 0.22s ease;
+    }
+
+    .wwu-dl-btn:hover {
+        background: var(--dark-navy, #144e8c);
+        color: #fff !important;
+    }
+
+    .wwu-dl-btn svg {
+        width: 14px; height: 14px;
+        stroke: currentColor; fill: none;
+        stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+        flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════════
+       04 DEADLINE — pink-tinted callout
+    ══════════════════════════════════════════ */
+    .wwu-deadline-box {
+        display: flex;
+        align-items: flex-start;
+        gap: 28px;
+        background: #fff;
+        border: 1px solid rgba(20,78,140,0.1);
+        border-radius: 10px;
+        padding: 36px 40px;
+        box-shadow: 0 4px 16px rgba(20,78,140,0.06);
+    }
+
+    .wwu-deadline-icon-wrap {
+        flex-shrink: 0;
+        width: 52px;
+        height: 52px;
+        border-radius: 10px;
+        background: var(--pink, #f64183);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wwu-deadline-icon-wrap svg {
+        width: 24px; height: 24px;
+        stroke: #fff; fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    .wwu-deadline-body h3 {
+        font-size: 1.2rem;
+        color: var(--dark-navy, #144e8c);
+        margin: 0 0 8px;
+        font-weight: 700 !important;
+    }
+
+    .wwu-deadline-body p {
+        color: #55657f;
+        font-size: 0.97rem;
+        line-height: 1.75;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    .wwu-deadline-body strong {
+        color: var(--dark-navy, #144e8c);
+        font-weight: 700;
+    }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 900px) {
+        .wwu-hero {
+            min-height: calc(100svh - 64px);
+            background-position: 55% center;
+        }
+        .wwu-hero-gradient {
+            background:
+                linear-gradient(180deg,
+                    rgba(10,18,39,0.18) 0%,
+                    rgba(10,18,39,0.55) 42%,
+                    rgba(10,18,39,0.90) 100%);
+        }
+        .wwu-hero-content {
+            width: auto;
+            margin: 0;
+            padding: 0 5% 72px;
+            align-self: flex-end;
+        }
+        .wwu-hero { align-items: flex-end; }
+        .wwu-hero-title { font-size: clamp(2.8rem,10vw,3.8rem); }
+        .wwu-hero-desc  { max-width: 100%; font-size: 1.05rem; }
+        .wwu-hero-btn   { min-width: 230px; padding: 15px 28px 15px 32px; }
+
+        .wwu-intro-prose { text-align: left; margin-bottom: 32px; }
+        .wwu-values-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .wwu-pos-row        { grid-template-columns: 1fr; gap: 14px; }
+        .wwu-dl-btn         { align-self: flex-start; }
+        .wwu-commitment-grid { grid-template-columns: 1fr; gap: 20px; }
+        
+        .wwu-deadline-card { padding: 40px 32px; }
+    }
+
+    @media (max-width: 480px) {
+        .wwu-values-grid      { grid-template-columns: 1fr; }
+        .wwu-pos-row          { padding: 18px 16px; }
+    }
+    </style>
+</head>
+<body>
+    <div id="global-header"></div>
+
+
+
+    <!-- ══════════════════════════════════════════
+         HERO — full-viewport, matches moot-court
+    ══════════════════════════════════════════ -->
+    <section class="wwu-hero" aria-labelledby="wwu-hero-title">
+        <div class="wwu-hero-gradient"></div>
+
+        <div class="wwu-hero-shell">
+            <div class="wwu-hero-content">
+                <p class="wwu-kicker">Cơ Hội &amp; Hợp Tác</p>
+                <h1 class="wwu-hero-title" id="wwu-hero-title">
+                    Cơ Hội<br><span class="pink">Hợp Tác</span>
+                </h1>
+                <div class="wwu-divider"></div>
+                <p class="wwu-hero-desc">
+                    Chúng tôi chào đón các chuyên gia, học giả, người hành nghề và
+                    tình nguyện viên có năng lực tham gia vào dự án nhằm thúc đẩy
+                    lý thuyết pháp luật nữ quyền, tiếp cận công lý và đổi mới pháp lý tại Việt Nam.
+                </p>
+                <a href="#positions" class="wwu-hero-btn">
+                    <span>Xem Các Vị Trí Đang Tuyển</span>
+                    <span class="wwu-hero-btn-arrow" aria-hidden="true">&#8594;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         01 — ABOUT  (light blue — same as Home "About Us")
+    ══════════════════════════════════════════ -->
+    <section class="wwu-section section-ice" id="about">  <!-- 01: #f3f9ff blue -->
+        <div class="wwu-container-wide">
+            <div style="text-align: center; margin-bottom: 32px;">
+                <span class="wwu-label" style="margin:0 auto 12px;">01 — Về Sáng Kiến Này</span>
+                <h2 class="wwu-heading" style="margin:0 auto 18px;">Thư Mời Bày Tỏ Sự Quan Tâm</h2>
+                <hr class="wwu-rule" style="margin:0 auto 40px;">
+            </div>
+
+            <!-- Prose -->
+            <div class="wwu-intro-prose">
+                <p>Chúng tôi hiện đang mời nộp hồ sơ và thư bày tỏ sự quan tâm từ các
+                <strong>chuyên gia, học giả, người hành nghề và tình nguyện viên có năng lực</strong> để tham gia vào dự án và đội ngũ cuộc thi của chúng tôi.</p>
+
+                <p>Chúng tôi cam kết xây dựng một môi trường làm việc bao trùm, hợp tác và
+                chuyên nghiệp, nơi tôn trọng <strong>sự đa dạng, tính chính trực, sự đổi mới và bình đẳng cơ hội</strong>.</p>
+
+                <p>Chúng tôi đặc biệt khuyến khích các ứng viên từ những
+                <strong>nền tảng, giới tính, kinh nghiệm và chuyên ngành</strong> đa dạng tham gia cùng chúng tôi trong việc
+                thúc đẩy giáo dục pháp lý và tiếp cận công lý.</p>
+            </div>
+
+            <!-- Visual Value Chips -->
+            <div class="wwu-values-grid">
+                <div class="wwu-value-chip">
+                    <div class="wwu-val-icon-wrap">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="wwu-value-label">Chính trực</div>
+                </div>
+                <div class="wwu-value-chip">
+                    <div class="wwu-val-icon-wrap">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="wwu-value-label">Hợp tác</div>
+                </div>
+                <div class="wwu-value-chip">
+                    <div class="wwu-val-icon-wrap">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <div class="wwu-value-label">Bao trùm</div>
+                </div>
+                <div class="wwu-value-chip">
+                    <div class="wwu-val-icon-wrap">
+                        <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    </div>
+                    <div class="wwu-value-label">Trách nhiệm</div>
+                </div>
+                <div class="wwu-value-chip">
+                    <div class="wwu-val-icon-wrap">
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <div class="wwu-value-label">Tôn trọng</div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         02 — COMMITMENT  (3-column feature grid)
+    ══════════════════════════════════════════ -->
+    <section class="wwu-section section-rose" id="commitment">
+        <div class="wwu-container-wide">
+            <span class="wwu-label">02 — An Toàn &amp; Đạo Đức</span>
+            <h2 class="wwu-heading">Cam Kết Của Chúng Tôi</h2>
+            <hr class="wwu-rule" style="margin-bottom: 48px;">
+
+            <div class="wwu-commitment-grid">
+                
+                <!-- Card 1 -->
+                <div class="wwu-comm-card">
+                    <div class="wwu-comm-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Môi Trường An Toàn</h3>
+                    <p>Chúng tôi không khoan nhượng với bất kỳ hình thức quấy rối, phân biệt đối xử, bóc lột, lạm quyền, vi phạm đạo đức học thuật hay sai phạm tài chính nào.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="wwu-comm-card">
+                    <div class="wwu-comm-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <h3>Bộ Quy Tắc Ứng Xử</h3>
+                    <p>Tất cả các thành viên, chuyên gia tư vấn và tình nguyện viên phải luôn tuân thủ nghiêm ngặt tính chuyên nghiệp và các nguyên tắc bảo vệ an toàn.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="wwu-comm-card">
+                    <div class="wwu-comm-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Giá Trị Cốt Lõi</h3>
+                    <p>Chúng tôi ưu tiên tuyển dụng những cá nhân thực sự chia sẻ cam kết của chúng tôi về tính chính trực, sự hợp tác, tính bao trùm và sự tôn trọng.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         03 — OPEN POSITIONS  (light blue)
+    ══════════════════════════════════════════ -->
+    <section class="wwu-section section-ice" id="positions">  <!-- 03: #f3f9ff blue -->
+        <div class="wwu-container-wide">
+            <span class="wwu-label">03 — Tuyển Dụng</span>
+            <h2 class="wwu-heading">Các Vị Trí Đang Mở</h2>
+            <hr class="wwu-rule">
+
+            <div class="wwu-team-divider">
+                <div class="wwu-team-badge">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Đội Ngũ Nền Tảng E-Court
+                </div>
+            </div>
+
+            <div class="wwu-pos-list">
+
+                <div class="wwu-pos-row">
+                    <div>
+                        <h3 class="wwu-pos-title">E-Court Platform Project Manager</h3>
+                    </div>
+                    <a href="https://docs.google.com/document/d/1rC439m-MII-w3w2-6STFAepKv3nFL_fi/export?format=docx"
+                       class="wwu-dl-btn" target="_blank" rel="noopener noreferrer"
+                       aria-label="Download – Project Manager JD">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Mô Tả Công Việc
+                    </a>
+                </div>
+
+                <div class="wwu-pos-row">
+                    <div>
+                        <h3 class="wwu-pos-title">E-Court Platform UI/UX Designer</h3>
+                    </div>
+                    <a href="https://docs.google.com/document/d/1TpZe4R8WT2W_W5ALoFvxnZSVwNz1tZfv/export?format=docx"
+                       class="wwu-dl-btn" target="_blank" rel="noopener noreferrer"
+                       aria-label="Download – UI/UX Designer JD">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Mô Tả Công Việc
+                    </a>
+                </div>
+
+                <div class="wwu-pos-row">
+                    <div>
+                        <h3 class="wwu-pos-title">E-Court Platform Front-end Developer</h3>
+                    </div>
+                    <a href="https://docs.google.com/document/d/1yxVhQRuRxyli-UElZgP_J7Xe836Y1kJS/export?format=docx"
+                       class="wwu-dl-btn" target="_blank" rel="noopener noreferrer"
+                       aria-label="Download – Front-end Developer JD">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Mô Tả Công Việc
+                    </a>
+                </div>
+
+                <div class="wwu-pos-row">
+                    <div>
+                        <h3 class="wwu-pos-title">E-Court Platform Back-end Developer</h3>
+                    </div>
+                    <a href="https://docs.google.com/document/d/1RmxSGbrKXY9w3cFOvzAwRGbE7SaeUwnX/export?format=docx"
+                       class="wwu-dl-btn" target="_blank" rel="noopener noreferrer"
+                       aria-label="Download – Back-end Developer JD">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Mô Tả Công Việc
+                    </a>
+                </div>
+
+                <div class="wwu-pos-row">
+                    <div>
+                        <h3 class="wwu-pos-title">E-Court Platform AI Engineer</h3>
+                    </div>
+                    <a href="https://docs.google.com/document/d/1vAdGUeNmM4ETRCM3BWOnA-BaTc6RlLcT/export?format=docx"
+                       class="wwu-dl-btn" target="_blank" rel="noopener noreferrer"
+                       aria-label="Download – AI Engineer JD">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Mô Tả Công Việc
+                    </a>
+                </div>
+
+                <div class="wwu-pos-row">
+                    <div>
+                        <h3 class="wwu-pos-title">E-Court Platform DevOps Engineer</h3>
+                    </div>
+                    <a href="https://docs.google.com/document/d/1wCEgPv1NBGkn_98mbR0rfxU8TKwzlVW7/export?format=docx"
+                       class="wwu-dl-btn" target="_blank" rel="noopener noreferrer"
+                       aria-label="Download – DevOps Engineer JD">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Mô Tả Công Việc
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         04 — DEADLINE  (light pink — same as Home "Our Work")
+    ══════════════════════════════════════════ -->
+    <section class="wwu-section section-rose" id="deadline">
+        <div class="wwu-container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span class="wwu-label" style="margin:0 auto 12px;">04 — Ngày Quan Trọng</span>
+                <h2 class="wwu-heading" style="margin:0 auto 18px;">Hạn Chót Nộp Hồ Sơ</h2>
+                <hr class="wwu-rule" style="margin:0 auto;">
+            </div>
+
+            <div class="wwu-deadline-card">
+                <div class="wwu-dl-card-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8"  y1="2" x2="8"  y2="6"/>
+                        <line x1="3"  y1="10" x2="21" y2="10"/>
+                    </svg>
+                </div>
+                
+                <h3 class="wwu-dl-card-time">17:00, 27 Tháng 04 Năm 2026</h3>
+                
+                <div class="wwu-dl-card-text">
+                    <p>Chi tiết về trách nhiệm, yêu cầu năng lực và hướng dẫn ứng tuyển
+                    đã có sẵn trong các thông báo tuyển dụng tương ứng.</p>
+                    <p>Chúng tôi chào đón những cá nhân nhiệt huyết, có cam kết thúc đẩy giáo dục
+                    pháp lý, sự đổi mới, tiếp cận công lý và hợp tác quốc tế tham gia cùng
+                    chúng tôi trong sáng kiến này.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="global-footer"></div>
+    <script src="../../js/components.js"></script>
+</body>
+</html>
