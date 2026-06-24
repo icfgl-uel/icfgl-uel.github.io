@@ -31,6 +31,13 @@
     --line-height-relaxed: 1.85;  /* đoạn văn dài */
 }
 
+/* ── NATIVE VIETNAMESE FONT FIX ── */
+html[lang="vi"] {
+    --font-body: 'Roboto', 'Segoe UI', Arial, sans-serif;
+    /* Cambria/Georgia typically support VI natively, but if needed we can override here too */
+}
+
+
 *, *::before, *::after {
     box-sizing: border-box;
 }

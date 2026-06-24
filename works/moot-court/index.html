@@ -505,53 +505,781 @@
     </section>
 
     <!-- STRUCTURE -->
-    <section id="structure" class="page-section section-ice">
-        <div class="moot-container">
-            <div style="text-align: center; margin-bottom: 56px;">
-                <h2 style="font-family: 'Cambria', Georgia, serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--primary-blue, #144e8c); margin-bottom: 16px;">Competition Structure</h2>
-                <p style="color: #55657f; font-size: 1.1rem;">The competition is organized in multiple interactive stages:</p>
+    <style>
+        .section-journey {
+            background-color: var(--bg-body, #f3f9ff);
+            padding: 80px 0;
+            font-family: var(--font-body, 'Lato', sans-serif);
+        }
+        .journey-timeline {
+            position: relative;
+            padding-left: 60px; 
+            margin-top: 60px;
+        }
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--dark-navy, #144e8c) 0%, var(--dark-navy, #144e8c) 25%, #f1e6ea 25%, #f1e6ea 100%);
+            z-index: 0;
+        }
+        .journey-stage {
+            position: relative;
+            margin-bottom: 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(20, 78, 140, 0.06);
+            /* Removed overflow: hidden so circle doesn't clip on some browsers */
+        }
+        .journey-stage-circle {
+            position: absolute;
+            left: -60px;
+            top: 12px; 
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #fff;
+            z-index: 1;
+            box-shadow: 0 0 0 4px var(--bg-body, #f3f9ff);
+            border: 4px solid #fff;
+            font-family: var(--font-body, 'Lato', sans-serif);
+        }
+        .stage-1 .journey-stage-circle { background-color: var(--dark-navy, #144e8c); box-shadow: 0 0 0 4px rgba(20, 78, 140, 0.15); }
+        .stage-2 .journey-stage-circle { background-color: var(--primary, #f64183); box-shadow: 0 0 0 4px rgba(246, 65, 131, 0.15); }
+        .stage-3 .journey-stage-circle { background-color: var(--dark-navy, #144e8c); box-shadow: 0 0 0 4px rgba(20, 78, 140, 0.15); }
+        .stage-4 .journey-stage-circle { background-color: var(--primary, #f64183); box-shadow: 0 0 0 4px rgba(246, 65, 131, 0.15); }
+
+        .journey-stage-header {
+            padding: 14px 20px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 12px 12px 0 0;
+        }
+        .stage-1 .journey-stage-header { background-color: var(--dark-navy, #144e8c); }
+        .stage-2 .journey-stage-header { background-color: var(--primary, #f64183); }
+        .stage-3 .journey-stage-header { background-color: var(--dark-navy, #144e8c); }
+        .stage-4 .journey-stage-header { background-color: var(--primary, #f64183); }
+
+        .stage-header-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .stage-badge {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background-color: rgba(255,255,255,0.25);
+        }
+        .stage-header-date {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .journey-stage-content {
+            padding: 5px 20px 15px;
+        }
+        .journey-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px dashed rgba(20, 78, 140, 0.18);
+        }
+        .journey-item:last-child {
+            border-bottom: none;
+        }
+        .item-left {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            max-width: 70%;
+        }
+        .item-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .stage-1 .item-icon { color: var(--dark-navy, #144e8c); }
+        .stage-2 .item-icon { color: var(--primary, #f64183); }
+        .stage-3 .item-icon { color: var(--dark-navy, #144e8c); }
+        .stage-4 .item-icon { color: var(--primary, #f64183); }
+
+        .item-title-col {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: flex-start;
+        }
+        .item-title {
+            font-weight: 600;
+            color: var(--text-dark, #2F2F2F);
+            font-size: 1.05rem;
+            line-height: 1.4;
+        }
+        @keyframes badge-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(246, 65, 131, 0.55); }
+            50%       { box-shadow: 0 0 0 6px rgba(246, 65, 131, 0); }
+        }
+        .item-badge-dark {
+            background-color: var(--primary, #f64183);
+            color: #fff;
+            padding: 4px 12px 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 0.02em;
+            animation: badge-pulse 2s ease-in-out infinite;
+        }
+        .item-badge-dark::before {
+            content: '';
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0.9;
+            animation: badge-pulse 1.5s ease-in-out infinite;
+        }
+        .item-badge-light {
+            background-color: var(--bg-body, #f3f9ff);
+            color: var(--dark-navy, #144e8c);
+            border: 1px solid rgba(20, 78, 140, 0.14);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .item-right {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .item-time {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .stage-1 .item-time { color: var(--dark-navy, #144e8c); }
+        .stage-2 .item-time { color: var(--primary, #f64183); }
+        .stage-3 .item-time { color: var(--dark-navy, #144e8c); }
+        .stage-4 .item-time { color: var(--primary, #f64183); }
+
+        .view-details {
+            background-color: var(--bg-body, #f3f9ff);
+            color: var(--dark-navy, #144e8c);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: opacity 0.3s ease;
+        }
+        .view-details:hover {
+            opacity: 0.8;
+        }
+        .stage-1 .view-details { background-color: rgba(20, 78, 140, 0.08); color: var(--dark-navy, #144e8c); }
+        .stage-2 .view-details { background-color: rgba(246, 65, 131, 0.08); color: var(--primary, #f64183); }
+        .stage-3 .view-details { background-color: rgba(20, 78, 140, 0.08); color: var(--dark-navy, #144e8c); }
+        .stage-4 .view-details { background-color: rgba(246, 65, 131, 0.08); color: var(--primary, #f64183); }
+
+        @media (max-width: 768px) {
+            .journey-timeline {
+                padding-left: 30px;
+            }
+            .journey-timeline::before {
+                left: 10px;
+            }
+            .journey-stage-circle {
+                left: -38px;
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+                border-width: 3px;
+                top: 15px;
+            }
+            .journey-stage-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .journey-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .item-left {
+                max-width: 100%;
+            }
+            .item-right {
+                text-align: left;
+                align-items: flex-start;
+                padding-left: 32px;
+            }
+        }
+
+        /* ── Modal ── */
+        .journey-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 30, 60, 0.45);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .journey-modal-overlay.open {
+            display: flex;
+        }
+        .journey-modal {
+            background: #fff;
+            border-radius: 18px;
+            max-width: 560px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(10, 30, 60, 0.25);
+            overflow: hidden;
+            animation: modalIn 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(24px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .journey-modal-header {
+            padding: 20px 24px 18px;
+            color: #fff;
+            position: relative;
+        }
+        .journey-modal-header.color-1 { background-color: var(--dark-navy, #144e8c); }
+        .journey-modal-header.color-2 { background-color: var(--primary, #f64183); }
+        .journey-modal-header.color-3 { background-color: var(--dark-navy, #144e8c); }
+        .journey-modal-header.color-4 { background-color: var(--primary, #f64183); }
+        .journey-modal-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+        .journey-modal-meta .stage-badge {
+            font-size: 0.8rem;
+            background-color: rgba(255,255,255,0.25);
+            padding: 2px 8px;
+            border-radius: 12px;
+            color: #fff;
+        }
+        .journey-modal-title {
+            font-family: var(--font-body, 'Lato', sans-serif);
+            font-size: 1.35rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin: 0;
+            color: #fff;
+        }
+        .journey-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: #fff;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .journey-modal-close:hover { background: rgba(255,255,255,0.35); }
+        .journey-modal-body {
+            padding: 24px;
+        }
+        .journey-modal-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .journey-modal-list li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            font-size: 1rem;
+            color: var(--text-dark, #2F2F2F);
+            line-height: 1.6;
+        }
+        .journey-modal-list li svg {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .journey-modal-list li .check-icon {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .check-icon.color-1 { color: var(--dark-navy, #144e8c); }
+        .check-icon.color-2 { color: var(--primary, #f64183); }
+        .check-icon.color-3 { color: var(--dark-navy, #144e8c); }
+        .check-icon.color-4 { color: var(--primary, #f64183); }
+    </style>
+
+    <section id="structure" class="section-journey">
+        <div class="moot-container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-family: var(--font-heading, 'Cambria', Georgia, serif); font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--dark-navy, #144e8c); margin-bottom: 20px; font-weight: 700; text-transform: uppercase;">Journey to Justice</h2>
+                <p style="color: var(--text-dark, #2F2F2F); font-size: 1.1rem; max-width: 760px; margin: 0 auto 30px; line-height: 1.85;">
+                    Your journey to justice starts here — explore the 04 stages of the competition below. Mark the key dates as you go so your team never misses a critical milestone.
+                </p>
+                
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; font-size: 0.95rem; font-weight: 600; color: var(--text-dark, #2F2F2F);">
+                    <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 12px; height: 12px; border-radius: 50%; background-color: var(--dark-navy, #144e8c);"></span> Stage 1 &middot; Registration stage</div>
+                    <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 12px; height: 12px; border-radius: 50%; background-color: var(--primary, #f64183);"></span> Stage 2 &middot; Preliminary Round</div>
+                    <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 12px; height: 12px; border-radius: 50%; background-color: var(--dark-navy, #144e8c);"></span> Stage 3 &middot; Semi-Final Round</div>
+                    <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 12px; height: 12px; border-radius: 50%; background-color: var(--primary, #f64183);"></span> Stage 4 &middot; Final Round</div>
+                </div>
             </div>
 
-            <div class="structure-timeline">
-                <div class="structure-step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h4>Training Phase</h4>
-                        <p>National online training sessions on gender justice, legal research, and advocacy.</p>
+            <div class="journey-timeline">
+                
+                <!-- Stage 1 -->
+                <div class="journey-stage stage-1">
+                    <div class="journey-stage-circle">1</div>
+                    <div class="journey-stage-header">
+                        <div class="stage-header-title">
+                            <span class="stage-badge">Stage 1</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            Registration stage
+                        </div>
+                        <div class="stage-header-date">24/06 - 24/07/2026</div>
+                    </div>
+                    <div class="journey-stage-content">
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Registration Opening</span>
+                                    <span class="item-badge-dark">In progress</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">24/06 &rarr; 15/07</span>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Account Issuance on Platform</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">16/07 &rarr; 18/07</span>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Team Information Upload on Platform</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">18/07 &rarr; 22/07</span>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Platform information gate closes</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">23:59, 22/07</span>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Training 1: Platform Usage</span>
+                                    <span class="item-badge-light">Online training</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">19:00, 24/07</span>
+                                <a href="#" class="view-details" onclick="event.preventDefault(); openModal('modal-training-1')">View details</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="structure-step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h4>Written Memorials</h4>
-                        <p>Submission and evaluation of structured legal arguments from teams.</p>
+
+                <!-- Stage 2 -->
+                <div class="journey-stage stage-2">
+                    <div class="journey-stage-circle">2</div>
+                    <div class="journey-stage-header">
+                        <div class="stage-header-title">
+                            <span class="stage-badge">Stage 2</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                            Preliminary Round &middot; Online Platform
+                        </div>
+                        <div class="stage-header-date">25/07 - 20/08/2026</div>
+                    </div>
+                    <div class="journey-stage-content">
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Case materials released</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">08:00, 25/07</span>
+                                <a href="#" class="view-details" onclick="event.preventDefault(); openModal('modal-case-materials')">View details</a>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Training 2: Lawsuit Petition Writing and Advocacy</span>
+                                    <span class="item-badge-light">Online training</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">09:00, 26/07</span>
+                                <a href="#" class="view-details" onclick="event.preventDefault(); openModal('modal-training-2')">View details</a>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Training 3: Gender Justice</span>
+                                    <span class="item-badge-light">Online training</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">19:00, 29/07</span>
+                                <a href="#" class="view-details" onclick="event.preventDefault(); openModal('modal-training-3')">View details</a>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Preliminary submission deadline</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">25/07 &rarr; 17/08</span>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Results, matchups and procedural roles announced</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">20/08</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="structure-step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h4>Virtual Hearings (E-Court)</h4>
-                        <p>Online oral rounds using a simulated digital courtroom environment.</p>
+
+                <!-- Stage 3 -->
+                <div class="journey-stage stage-3">
+                    <div class="journey-stage-circle">3</div>
+                    <div class="journey-stage-header">
+                        <div class="stage-header-title">
+                            <span class="stage-badge">Stage 3</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 12.5-8 8a2.119 2.119 0 1 1-3-3l8-8"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/></svg>
+                            Semi-Final Round
+                        </div>
+                        <div class="stage-header-date">20/08 - 01/09/2026</div>
+                    </div>
+                    <div class="journey-stage-content">
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Role Assignment Sheet submission via Platform</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">20/08 &rarr; 09:00, 27/08</span>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 12.5-8 8a2.119 2.119 0 1 1-3-3l8-8"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Online meeting for inspection of submission, access and disclosure of evidence, and mediation</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">09:00, 30/08</span>
+                                <a href="#" class="view-details" onclick="event.preventDefault(); openModal('modal-online-meeting')">View details</a>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Semi-Final results and Final procedural roles announced</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">01/09</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="structure-step">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h4>Grand Finale (In-person)</h4>
-                        <p>Final round held at UEL campus with expert judges and live argumentation.</p>
+
+                <!-- Stage 4 -->
+                <div class="journey-stage stage-4">
+                    <div class="journey-stage-circle">4</div>
+                    <div class="journey-stage-header">
+                        <div class="stage-header-title">
+                            <span class="stage-badge">Stage 4</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                            Final Round
+                        </div>
+                        <div class="stage-header-date">09:00, 20/09/2026</div>
+                    </div>
+                    <div class="journey-stage-content">
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="12"></rect><polygon points="12 2 20 10 4 10 12 2"></polygon><line x1="12" y1="22" x2="12" y2="10"></line></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">In-person first-instance trial at UEL</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">09:00, 20/09</span>
+                                <a href="#" class="view-details" onclick="event.preventDefault(); openModal('modal-final-round')">View details</a>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="item-left">
+                                <svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                                <div class="item-title-col">
+                                    <span class="item-title">Award ceremony and achievement recognition</span>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <span class="item-time">20/09</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
+
+    <!-- MODALS -->
+    <!-- Modal: Training 1 -->
+    <div id="modal-training-1" class="journey-modal-overlay" onclick="closeModalOnOverlay(event, 'modal-training-1')">
+        <div class="journey-modal">
+            <div class="journey-modal-header color-1">
+                <div class="journey-modal-meta">
+                    <span class="stage-badge">Stage 1</span>
+                    <span>19:00, 24/07</span>
+                </div>
+                <p class="journey-modal-title">Training 1: Platform Usage</p>
+                <button class="journey-modal-close" onclick="closeModal('modal-training-1')">&#215;</button>
+            </div>
+            <div class="journey-modal-body">
+                <ul class="journey-modal-list">
+                    <li>
+                        <svg class="check-icon color-1" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Participating teams will have the opportunity to be trained by judges, jurists, legal experts, and lecturers with extensive research and practical experience in the fields of gender justice and legal proceedings.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Case materials released -->
+    <div id="modal-case-materials" class="journey-modal-overlay" onclick="closeModalOnOverlay(event, 'modal-case-materials')">
+        <div class="journey-modal">
+            <div class="journey-modal-header color-2">
+                <div class="journey-modal-meta">
+                    <span class="stage-badge">Stage 2</span>
+                    <span>08:00, 25/07</span>
+                </div>
+                <p class="journey-modal-title">Case materials released</p>
+                <button class="journey-modal-close" onclick="closeModal('modal-case-materials')">&#215;</button>
+            </div>
+            <div class="journey-modal-body">
+                <ul class="journey-modal-list">
+                    <li>
+                        <svg class="check-icon color-2" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Format: 100% Online via UEL E-Moot Platform.
+                    </li>
+                    <li>
+                        <svg class="check-icon color-2" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Upon receiving the case materials, teams independently choose a side to draft and submit a Lawsuit Petition along with supporting evidence via the Platform.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Training 2 -->
+    <div id="modal-training-2" class="journey-modal-overlay" onclick="closeModalOnOverlay(event, 'modal-training-2')">
+        <div class="journey-modal">
+            <div class="journey-modal-header color-2">
+                <div class="journey-modal-meta">
+                    <span class="stage-badge">Stage 2</span>
+                    <span>09:00, 26/07</span>
+                </div>
+                <p class="journey-modal-title">Training 2: Lawsuit Petition Writing and Advocacy</p>
+                <button class="journey-modal-close" onclick="closeModal('modal-training-2')">&#215;</button>
+            </div>
+            <div class="journey-modal-body">
+                <ul class="journey-modal-list">
+                    <li>
+                        <svg class="check-icon color-2" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Participating teams will have the opportunity to be trained by judges, jurists, legal experts, and lecturers with extensive research and practical experience in the fields of gender justice and legal proceedings.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Training 3 -->
+    <div id="modal-training-3" class="journey-modal-overlay" onclick="closeModalOnOverlay(event, 'modal-training-3')">
+        <div class="journey-modal">
+            <div class="journey-modal-header color-2">
+                <div class="journey-modal-meta">
+                    <span class="stage-badge">Stage 2</span>
+                    <span>19:00, 29/07</span>
+                </div>
+                <p class="journey-modal-title">Training 3: Gender Justice</p>
+                <button class="journey-modal-close" onclick="closeModal('modal-training-3')">&#215;</button>
+            </div>
+            <div class="journey-modal-body">
+                <ul class="journey-modal-list">
+                    <li>
+                        <svg class="check-icon color-2" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Participating teams will have the opportunity to be trained by judges, jurists, legal experts, and lecturers with extensive research and practical experience in the fields of gender justice and legal proceedings.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Online meeting (Stage 3) -->
+    <div id="modal-online-meeting" class="journey-modal-overlay" onclick="closeModalOnOverlay(event, 'modal-online-meeting')">
+        <div class="journey-modal">
+            <div class="journey-modal-header color-3">
+                <div class="journey-modal-meta">
+                    <span class="stage-badge">Stage 3</span>
+                    <span>09:00, 30/08</span>
+                </div>
+                <p class="journey-modal-title">Online meeting for inspection of submission, access and disclosure of evidence, and mediation</p>
+                <button class="journey-modal-close" onclick="closeModal('modal-online-meeting')">&#215;</button>
+            </div>
+            <div class="journey-modal-body">
+                <ul class="journey-modal-list">
+                    <li>
+                        <svg class="check-icon color-3" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Format: 100% Online via UEL E-Moot Platform.
+                    </li>
+                    <li>
+                        <svg class="check-icon color-3" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Four (04) Teams participate in a live, simulated Meeting for the Disclosure and Access of Evidence, and Mediation in accordance with the 2015 Civil Procedure Code (amended 2025) under the direction of a presiding Judge.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Final Round at UEL (Stage 4) -->
+    <div id="modal-final-round" class="journey-modal-overlay" onclick="closeModalOnOverlay(event, 'modal-final-round')">
+        <div class="journey-modal">
+            <div class="journey-modal-header color-4">
+                <div class="journey-modal-meta">
+                    <span class="stage-badge">Stage 4</span>
+                    <span>09:00, 20/09</span>
+                </div>
+                <p class="journey-modal-title">In-person first-instance trial at UEL</p>
+                <button class="journey-modal-close" onclick="closeModal('modal-final-round')">&#215;</button>
+            </div>
+            <div class="journey-modal-body">
+                <ul class="journey-modal-list">
+                    <li>
+                        <svg class="check-icon color-4" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Format: In-person at the University of Economics and Law (UEL).
+                    </li>
+                    <li>
+                        <svg class="check-icon color-4" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        02 teams selected from the Semi-Final Round will compete directly in the Final Round in the form of a first-instance trial, conducted under the Civil Procedure Code.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function closeModalOnOverlay(e, id) {
+            if (e.target === e.currentTarget) closeModal(id);
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.journey-modal-overlay.open').forEach(function(m) {
+                    m.classList.remove('open');
+                    document.body.style.overflow = '';
+                });
+            }
+        });
+    </script>
 
     <!-- JOIN -->
     <section class="page-section section-rose">
         <div class="moot-container">
             <div class="cta-box">
                 <h3>Join the Moot Court ( To Be Updated )</h3>
-<p style="color: #55657f; margin-bottom: 40px; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.8; font-size: 1.1rem; text-align: center;">
-  Ready to challenge yourself and contribute to gender justice in Vietnam? Explore the resources below and register your team.
+<p style="color: #55657f; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8; font-size: 1.1rem; text-align: center !important;">
+  Ready to challenge yourself and contribute to gender justice in Vietnam?<br>
+  Explore the resources below and register your team.
 </p>                <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
                     <a href="#" class="btn-pink" style="padding: 16px 32px; border-radius: 12px; font-weight: 700;">Register your team &rarr;</a>
                     <a href="#" class="btn-dark" style="padding: 16px 32px; border-radius: 12px; font-weight: 600;">Competition Rules</a>
