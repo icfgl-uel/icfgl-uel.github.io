@@ -18,19 +18,74 @@
             display: flex;
             align-items: center;
             margin: 0;
-            background: #0f1c2d url('../../../images/mootcourt/1.jpg') no-repeat 15% center / cover;
+            background: #0f1c2d;
             padding: 0;
             color: #fff;
             overflow: hidden;
+            isolation: isolate;
+        }
+
+        .hero-slides {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0;
+            transform: scale(1.08);
+            animation: heroSlideShow 18s infinite ease-in-out;
+        }
+
+        .hero-slide-1 {
+            background-image: url('../../../images/mootcourt/banner.jpg');
+            animation-delay: 0s;
+        }
+
+        .hero-slide-2 {
+            background-image: url('../../../images/mootcourt/4.jpg');
+            animation-delay: 6s;
+        }
+
+        .hero-slide-3 {
+            background-image: url('../../../images/mootcourt/3.jpg');
+            animation-delay: 12s;
+        }
+
+        @keyframes heroSlideShow {
+            0% {
+                opacity: 1;
+                transform: scale(1.08);
+            }
+
+            27% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            33% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.08);
+            }
         }
 
         .hero-gradient {
             position: absolute;
             inset: 0;
             background:
-                linear-gradient(90deg, rgba(3, 13, 31, 0.65) 0%, rgba(8, 26, 55, 0.45) 30%, rgba(12, 43, 76, 0.15) 58%, rgba(12, 43, 76, 0) 100%),
-                linear-gradient(180deg, rgba(3, 13, 31, 0.08) 0%, rgba(3, 13, 31, 0) 48%, rgba(3, 13, 31, 0.15) 100%);
-            z-index: 1;
+                linear-gradient(115deg, rgba(9, 17, 35, 0.89) 0%, rgba(20, 78, 140, 0.64) 42%, rgba(246, 65, 131, 0.46) 100%),
+                linear-gradient(180deg, rgba(3, 13, 31, 0.28) 0%, rgba(3, 13, 31, 0.12) 46%, rgba(3, 13, 31, 0.4) 100%);
+            z-index: 2;
         }
 
         .hero-shell {
@@ -42,6 +97,16 @@
             padding: 0;
         }
 
+        .hero-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: clamp(32px, 5vw, 72px);
+            min-height: calc(100vh - 74px);
+            min-height: calc(100svh - 74px);
+            padding: 0 clamp(32px, 5vw, 56px) 0 0;
+        }
+
         .hero-content {
             display: flex;
             flex-direction: column;
@@ -50,6 +115,71 @@
             width: min(680px, 50vw);
             max-width: none;
             margin-left: clamp(48px, 8.5vw, 130px);
+        }
+
+        .hero-emblem {
+            position: relative;
+            width: min(25vw, 370px);
+            aspect-ratio: 1;
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: clamp(8px, 3vw, 42px);
+        }
+
+        .hero-emblem-rotor {
+            width: 100%;
+            height: 100%;
+            animation: heroEmblemSpin 26s linear infinite;
+            transform-origin: center;
+            filter: drop-shadow(0 18px 35px rgba(5, 14, 32, 0.22));
+        }
+
+        .hero-emblem-svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .hero-emblem-center {
+            position: absolute;
+            inset: 26%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: radial-gradient(circle at 50% 45%, rgba(255, 235, 242, 0.12), rgba(255, 235, 242, 0.04) 60%, rgba(255, 235, 242, 0));
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .hero-emblem-icon {
+            width: 38%;
+            min-width: 104px;
+            color: var(--light-pink, #ffebf2);
+        }
+
+        .hero-emblem-year {
+            margin-top: 16px;
+            color: #ff9393;
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(2rem, 2.85vw, 2.9rem);
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-indent: 0.14em;
+            text-shadow: 0 0 18px rgba(255, 147, 147, 0.22), 0 10px 26px rgba(255, 147, 147, 0.3);
+        }
+
+        @keyframes heroEmblemSpin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .hero-kicker {
@@ -82,7 +212,10 @@
 
         .hero-title-main .highlight-pink {
             font-family: 'Cambria', Georgia, serif !important;
-            color: white!important;
+            color: #f9a8d4 !important;
+            text-shadow: 0 6px 18px rgba(249, 168, 212, 0.22);
+            display: inline-block;
+            white-space: nowrap;
         }
 
         .hero-divider {
@@ -108,21 +241,22 @@
             display: inline-flex;
             align-items: center;
             justify-content: space-between;
-            min-width: 280px;
-            padding: 17px 32px 17px 44px;
+            min-width: 220px;
+            padding: 14px 24px 14px 30px;
             background: linear-gradient(135deg, var(--pink, #F64183), #c23366);
             color: #fff;
             text-decoration: none;
             font-weight: 700;
-            border-radius: 12px;
-            font-size: 1rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
             transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
             box-shadow: 0 10px 30px rgba(179, 53, 93, 0.3);
         }
 
         .hero-btn:hover {
-            background: #b3355d;
-            transform: scale(1.05);
+            background: #144e8c;
+            box-shadow: 0 12px 28px rgba(20, 78, 140, 0.34);
+            transform: translateY(-2px);
         }
 
         .hero-btn-arrow {
@@ -332,17 +466,20 @@
             .moot-hero {
                 min-height: calc(100svh - 64px);
                 align-items: center;
-                background-position: 42% center;
                 padding: 88px 24px 72px;
             }
             .hero-gradient {
                 background:
-                    linear-gradient(90deg, rgba(3, 13, 31, 0.7) 0%, rgba(8, 26, 55, 0.5) 54%, rgba(12, 43, 76, 0.1) 100%),
-                    linear-gradient(180deg, rgba(3, 13, 31, 0.1) 0%, rgba(3, 13, 31, 0) 48%, rgba(3, 13, 31, 0.15) 100%);
+                    linear-gradient(140deg, rgba(9, 17, 35, 0.89) 0%, rgba(20, 78, 140, 0.64) 52%, rgba(246, 65, 131, 0.38) 100%),
+                    linear-gradient(180deg, rgba(3, 13, 31, 0.28) 0%, rgba(3, 13, 31, 0.12) 48%, rgba(3, 13, 31, 0.38) 100%);
             }
             .hero-content {
                 width: min(100%, 560px);
                 margin-left: 0;
+            }
+            .hero-layout {
+                min-height: auto;
+                padding: 0;
             }
             .hero-kicker {
                 min-height: 34px;
@@ -358,14 +495,59 @@
                 font-size: 1.08rem;
             }
             .hero-btn {
-                min-width: 250px;
-                padding: 16px 28px 16px 34px;
+                min-width: 210px;
+                padding: 13px 22px 13px 28px;
             }
             .eligibility-grid {
                 grid-template-columns: 1fr;
             }
             .benefit-card {
                 width: 100%;
+            }
+        }
+
+        @media (max-width: 1100px) {
+            .hero-layout {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                padding: 0;
+            }
+
+            .hero-emblem {
+                width: min(54vw, 290px);
+                align-self: center;
+                margin: 12px auto 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-emblem {
+                width: min(58vw, 220px);
+            }
+
+            .hero-emblem-icon {
+                min-width: 74px;
+            }
+
+            .hero-emblem-year {
+                font-size: clamp(1.5rem, 6.5vw, 2rem);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-slide {
+                animation: none;
+                opacity: 0;
+                transform: none;
+            }
+
+            .hero-slide-1 {
+                opacity: 1;
+            }
+
+            .hero-emblem-rotor {
+                animation: none;
             }
         }
 
@@ -415,23 +597,55 @@
 
     <!-- HERO -->
     <section class="moot-hero">
+        <div class="hero-slides" aria-hidden="true">
+            <div class="hero-slide hero-slide-1"></div>
+            <div class="hero-slide hero-slide-2"></div>
+            <div class="hero-slide hero-slide-3"></div>
+        </div>
         <div class="hero-gradient"></div>
         
         <div class="hero-shell">
-            <div class="hero-content">
-                <p class="hero-kicker">Cuộc thi dành cho sinh viên luật</p>
-                <h1 class="hero-title-main">Công lý giới<br><span class="highlight-pink">Phiên tòa giả định</span></h1>
+            <div class="hero-layout">
+                <div class="hero-content">
+                    <p class="hero-kicker">Cuộc thi dành cho sinh viên luật</p>
+                    <h1 class="hero-title-main">Công lý giới<br><span class="highlight-pink">Phiên tòa giả định</span></h1>
 
-                <div class="hero-divider"></div>
+                    <div class="hero-divider"></div>
 
-                <p class="hero-subtitle">
-                    Trao quyền cho thế hệ sinh viên luật kế tiếp để đặt câu hỏi về bất bình đẳng mang tính cấu trúc thông qua tranh luận và vận động.
-                </p>
+                    <p class="hero-subtitle">
+                        Trao quyền cho thế hệ sinh viên luật kế tiếp để đặt câu hỏi về bất bình đẳng mang tính cấu trúc thông qua tranh luận và vận động.
+                    </p>
 
-                <a href="#structure" class="hero-btn">
-                    <span>Khám phá phiên tòa giả định</span>
-                    <span class="hero-btn-arrow" aria-hidden="true">&#8594;</span>
-                </a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe7AXGzOp0rrxkAx1ipx3_fq0M0IFRj_i1BSClaQomLHPwlow/viewform" class="hero-btn" target="_blank" rel="noopener noreferrer">
+                        <span>Đăng ký ngay</span>
+                        <span class="hero-btn-arrow" aria-hidden="true">&#8594;</span>
+                    </a>
+                </div>
+
+                <div class="hero-emblem" aria-hidden="true">
+                    <div class="hero-emblem-rotor">
+                        <svg class="hero-emblem-svg" viewBox="0 0 420 420" role="presentation" focusable="false">
+                            <defs>
+                                <path id="hero-emblem-circle" d="M 210,210 m -167,0 a 167,167 0 1,1 334,0 a 167,167 0 1,1 -334,0"></path>
+                            </defs>
+                            <circle cx="210" cy="210" r="188" fill="none" stroke="rgba(255, 147, 147, 0.82)" stroke-width="3"></circle>
+                            <circle cx="210" cy="210" r="146" fill="none" stroke="rgba(255, 147, 147, 0.82)" stroke-width="3"></circle>
+                            <text fill="rgba(255, 255, 255, 0.98)" font-family="Lato, sans-serif" font-size="19" font-weight="800" letter-spacing="5" dominant-baseline="middle">
+                                <textPath href="#hero-emblem-circle" startOffset="7%">GENDER JUSTICE MOOT COURT ✦ 2026 ✦ GENDER JUSTICE MOOT COURT ✦</textPath>
+                            </text>
+                        </svg>
+                    </div>
+                    <div class="hero-emblem-center">
+                        <svg class="hero-emblem-icon" viewBox="0 0 128 128" role="presentation" focusable="false">
+                            <polygon points="64,18 16,44 16,58 112,58 112,44" fill="currentColor"></polygon>
+                            <rect x="28" y="68" width="18" height="36" fill="currentColor"></rect>
+                            <rect x="55" y="68" width="18" height="36" fill="currentColor"></rect>
+                            <rect x="82" y="68" width="18" height="36" fill="currentColor"></rect>
+                            <rect x="14" y="108" width="100" height="14" fill="currentColor"></rect>
+                        </svg>
+                        <div class="hero-emblem-year">2026</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -552,7 +766,7 @@ Phiên tòa giả định là gì?
             font-family: var(--font-body, 'Lato', sans-serif);
         }
         .stage-1 .journey-stage-circle { background-color: var(--dark-navy, #144e8c); box-shadow: 0 0 0 4px rgba(20, 78, 140, 0.15); }
-        .stage-2 .journey-stage-circle { background-color: var(--primary, #f64183); box-shadow: 0 0 0 4px rgba(246, 65, 131, 0.15); }
+        .stage-2 .journey-stage-circle { background-color: #ec6798; box-shadow: 0 0 0 4px rgba(246, 65, 131, 0.1); }
         .stage-3 .journey-stage-circle { background-color: var(--dark-navy, #144e8c); box-shadow: 0 0 0 4px rgba(20, 78, 140, 0.15); }
         .stage-4 .journey-stage-circle { background-color: var(--primary, #f64183); box-shadow: 0 0 0 4px rgba(246, 65, 131, 0.15); }
 
@@ -565,7 +779,11 @@ Phiên tòa giả định là gì?
             border-radius: 12px 12px 0 0;
         }
         .stage-1 .journey-stage-header { background-color: var(--dark-navy, #144e8c); }
-        .stage-2 .journey-stage-header { background-color: var(--primary, #f64183); }
+        .stage-2 .journey-stage-header { background: linear-gradient(135deg, #ee5f97 0%, #e94b87 100%); }
+        .stage-2.journey-stage {
+            border: 1px solid rgba(246, 65, 131, 0.08);
+            box-shadow: 0 10px 24px rgba(246, 65, 131, 0.06);
+        }
         .stage-3 .journey-stage-header { background-color: var(--dark-navy, #144e8c); }
         .stage-4 .journey-stage-header { background-color: var(--primary, #f64183); }
 
@@ -590,6 +808,9 @@ Phiên tòa giả định là gì?
         .journey-stage-content {
             padding: 5px 20px 15px;
         }
+        .stage-2 .journey-stage-content {
+            background: linear-gradient(180deg, rgba(255, 235, 242, 0.26) 0%, rgba(255, 255, 255, 0) 180px);
+        }
         .journey-item {
             display: flex;
             justify-content: space-between;
@@ -613,7 +834,7 @@ Phiên tòa giả định là gì?
             margin-top: 2px;
         }
         .stage-1 .item-icon { color: var(--dark-navy, #144e8c); }
-        .stage-2 .item-icon { color: var(--primary, #f64183); }
+        .stage-2 .item-icon { color: #ef5a93; }
         .stage-3 .item-icon { color: var(--dark-navy, #144e8c); }
         .stage-4 .item-icon { color: var(--primary, #f64183); }
 
@@ -679,7 +900,7 @@ Phiên tòa giả định là gì?
             font-size: 1rem;
         }
         .stage-1 .item-time { color: var(--dark-navy, #144e8c); }
-        .stage-2 .item-time { color: var(--primary, #f64183); }
+        .stage-2 .item-time { color: #e6548f; }
         .stage-3 .item-time { color: var(--dark-navy, #144e8c); }
         .stage-4 .item-time { color: var(--primary, #f64183); }
 
@@ -698,7 +919,11 @@ Phiên tòa giả định là gì?
             opacity: 0.8;
         }
         .stage-1 .view-details { background-color: rgba(20, 78, 140, 0.08); color: var(--dark-navy, #144e8c); }
-        .stage-2 .view-details { background-color: rgba(246, 65, 131, 0.08); color: var(--primary, #f64183); }
+        .stage-2 .view-details {
+            background-color: rgba(246, 65, 131, 0.1);
+            color: #de4b88;
+            border: 1px solid rgba(246, 65, 131, 0.08);
+        }
         .stage-3 .view-details { background-color: rgba(20, 78, 140, 0.08); color: var(--dark-navy, #144e8c); }
         .stage-4 .view-details { background-color: rgba(246, 65, 131, 0.08); color: var(--primary, #f64183); }
 
@@ -1276,14 +1501,14 @@ Phiên tòa giả định là gì?
     <section class="page-section section-rose">
         <div class="moot-container">
             <div class="cta-box">
-                <h3>Tham gia phiên tòa giả định (đang cập nhật)</h3>
+                <h3>Tham gia phiên tòa giả định</h3>
 <p style="color: #55657f; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8; font-size: 1.1rem; text-align: center !important;">
   Sẵn sàng thử thách bản thân và đóng góp cho công lý giới tại Việt Nam?<br>
   Xem tài liệu bên dưới và đăng ký đội của bạn.
 </p>                <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-                    <a href="#" class="btn-pink" style="padding: 16px 32px; border-radius: 12px; font-weight: 700;">Đăng ký đội &rarr;</a>
-                    <a href="#" class="btn-dark" style="padding: 16px 32px; border-radius: 12px; font-weight: 600;">Thể lệ cuộc thi</a>
-                    <a href="#" class="btn-dark" style="padding: 16px 32px; border-radius: 12px; font-weight: 600;">Tài liệu tập huấn</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe7AXGzOp0rrxkAx1ipx3_fq0M0IFRj_i1BSClaQomLHPwlow/viewform" class="btn-pink" style="padding: 16px 32px; border-radius: 12px; font-weight: 700;" target="_blank" rel="noopener noreferrer">Đăng ký đội &rarr;</a>
+                    <a href="https://mootcourt.uel.edu.vn/the-le-cuoc-thi.pdf" class="btn-dark" style="padding: 16px 32px; border-radius: 12px; font-weight: 600;" target="_blank" rel="noopener noreferrer">Thể lệ cuộc thi</a>
+                    <a href="https://mootcourt.uel.edu.vn/" class="btn-dark" style="padding: 16px 32px; border-radius: 12px; font-weight: 600;" target="_blank" rel="noopener noreferrer">Nền tảng E-Moot</a>
                 </div>
             </div>
         </div>
