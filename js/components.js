@@ -32,7 +32,7 @@
             footerOrgTitle:
                 'University of Economics and Law (UEL), <span style="white-space: nowrap;">VNU-HCM</span><br>Feminist Legal Theory Project',
             footerAddress:
-                "669 Do Muoi Street, Quarter 6 (formerly Quarter 3), Linh Xuan Ward, Ho Chi Minh City, Vietnam",
+                "669 Do Muoi, Quarter 3, Linh Xuan Ward, Ho Chi Minh City, Vietnam",
             footerEmailLabel: "Email Inquiries",
             footerCopyright:
                 "&copy; 2024 UEL Feminist Legal Theory Project. Supported by Rosa Luxemburg Stiftung Southeast Asia.",
@@ -43,7 +43,7 @@
         },
         vi: {
             logoAlt: "UEL & RLS",
-            logoText: "Dự án Lý luận Pháp lý Nữ quyền",
+            logoText: "Dự án Lý thuyết pháp luật Nữ quyền",
             navHome: "Trang chủ",
             navAbout: "Giới thiệu",
             navWorks: "Hoạt động & Công trình",
@@ -65,16 +65,16 @@
             langCodeVi: "VI",
             footerAboutTitle: "Về dự án",
             footerAboutBody:
-                "Đưa lý luận pháp lý nữ quyền vào đào tạo, nghiên cứu và thực tiễn pháp lý. Sáng kiến hợp tác nhằm thúc đẩy công bằng xã hội và bình đẳng giới trong bối cảnh pháp lý Việt Nam.",
+                "Đưa lý thuyết pháp luật nữ quyền vào đào tạo, nghiên cứu và thực tiễn pháp lý. Sáng kiến hợp tác nhằm thúc đẩy công bằng xã hội và bình đẳng giới trong bối cảnh pháp lý Việt Nam.",
             footerQuickTitle: "Liên kết nhanh",
             footerContactTitle: "Thông tin liên hệ",
             footerOrgTitle:
-                'Trường Đại học Kinh tế – Luật (UEL), <span style="white-space: nowrap;">ĐHQG-HCM</span><br>Dự án Lý luận Pháp lý Nữ quyền',
+                'Trường Đại học Kinh tế – Luật (UEL), <span style="white-space: nowrap;">ĐHQG-HCM</span><br>Dự án Lý thuyết pháp luật Nữ quyền',
             footerAddress:
-                "669 Đường Đỗ Mười, Khu phố 6 (trước đây là Khu phố 3), Phường Linh Xuân, TP. Hồ Chí Minh, Việt Nam",
+                "Số 669 Đỗ Mười, khu phố 3, phường Linh Xuân, Thành phố Hồ Chí Minh, Việt Nam",
             footerEmailLabel: "Email liên hệ",
             footerCopyright:
-                "&copy; 2024 Dự án Lý luận Pháp lý Nữ quyền – UEL. Được hỗ trợ bởi Rosa Luxemburg Stiftung Đông Nam Á.",
+                "&copy; 2024 Dự án Lý thuyết pháp luật Nữ quyền – UEL. Được hỗ trợ bởi Rosa Luxemburg Stiftung Đông Nam Á.",
             footerTagline: "Thiết kế vì chất lượng học thuật",
             logoImgAlt: "Logo UEL",
             navToggleLabel: "Mở menu",

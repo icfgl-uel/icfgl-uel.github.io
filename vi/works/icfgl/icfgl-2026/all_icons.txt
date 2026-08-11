@@ -1,0 +1,82 @@
+﻿2511: class="btn-outline"><i class="fa-solid fa-pen-to-square" style="margin-right: 8px;"></i>Đăng ký tham dự</a>
+2631: <button class="read-more-btn" onclick="openSpeakerModal('speaker1')">Đọc Tóm tắt & Tiểu sử <i class="fa-solid fa-arrow-right"></i></button>
+2649: <button class="read-more-btn" onclick="openSpeakerModal('speaker2')">Đọc Tóm tắt & Tiểu sử <i class="fa-solid fa-arrow-right"></i></button>
+2667: <button class="read-more-btn" onclick="openSpeakerModal('speaker3')">Đọc Tóm tắt & Tiểu sử <i class="fa-solid fa-arrow-right"></i></button>
+2800: <span><i class="fa-regular fa-calendar"></i> 11 tháng 9, 2026</span>
+2801: <span><i class="fa-solid fa-globe"></i> Trực tuyến</span>
+2806: <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Junior+Scholars+Workshop+-+ICFGL+2026&dates=20260911/20260912&details=Topic:+Feminism,+Gender+and+Law&location=Online" target="_blank" class="prog-btn" style="text-decoration: none;"><i class="fa-regular fa-calendar-plus" style="margin-right: 6px;"></i>Thêm vào Lịch</a>
+2807: <button class="prog-dropdown" onclick="toggleProgDetails(this)"><i class="fa-solid fa-chevron-down"></i></button>
+2830: <span><i class="fa-regular fa-calendar"></i> 17 tháng 9, 2026</span>
+2831: <span><i class="fa-solid fa-location-dot"></i> Thành phố Hồ Chí Minh, Việt Nam</span>
+2836: <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Capacity+Building+Seminar+-+ICFGL+2026&dates=20260917/20260918&details=Seminar:+Navigating+the+Field:+How+to+Publish+in+Feminist+Jurisprudence&location=Ho+Chi+Minh+City,+Vietnam" target="_blank" class="prog-btn" style="text-decoration: none;"><i class="fa-regular fa-calendar-plus" style="margin-right: 6px;"></i>Thêm vào Lịch</a>
+2837: <button class="prog-dropdown" onclick="toggleProgDetails(this)"><i class="fa-solid fa-chevron-down"></i></button>
+2863: <div class="prog-main-header-left"><i class="fa-solid fa-star"></i> SỰ KIỆN CHÍNH</div>
+2872: <span><i class="fa-regular fa-calendar"></i> 18 tháng 9, 2026</span>
+2873: <span><i class="fa-solid fa-location-dot"></i> Trung tâm Hội nghị Grand, TP.HCM</span>
+2876: <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The+Main+Conference+-+ICFGL+2026&dates=20260918/20260919&details=Full-Day+Conference&location=Grand+Convention+Center,+Ho+Chi+Minh+City" target="_blank" class="prog-btn-save" style="text-decoration: none;"><i class="fa-regular fa-bookmark" style="margin-right: 6px;"></i>Lưu ngày hội thảo</a>
+3610: <button class="conf-tab-btn active" onclick="openConfTab(event, 'agenda')"><i class="fa-solid fa-list-check"></i> Chương trình Dự kiến</button>
+3611: <button class="conf-tab-btn" onclick="openConfTab(event, 'abstracts')"><i class="fa-regular fa-file-lines"></i> Kỷ yếu Tóm tắt</button>
+3612: <button class="conf-tab-btn" onclick="openConfTab(event, 'guidelines')"><i class="fa-solid fa-shield-halved"></i> Hướng dẫn & Quy định</button>
+3622: <i class="fa-solid fa-table-list" style="margin-right: 6px;"></i>Xem Chương trình Dự kiến
+3631: <i class="fa-solid fa-layer-group"></i>
+3638: <i class="fa-solid fa-eye"></i> View All Sessions
+3652: <p class="p-accordion-chair"><i class="fa-solid fa-user-tie" style="color: #144e8c; margin-right: 6px;"></i><strong>Chủ tọa:</strong> Professor Aoife O’Donoghue, Queen's University Belfast, UK</p>
+3655: <i class="fa-solid fa-chevron-down" style="color: #cbd5e1;"></i>
+3741: <p class="p-accordion-chair"><i class="fa-solid fa-user-tie" style="color: #144e8c; margin-right: 6px;"></i><strong>Chủ tọa:</strong> Assoc. Prof. Nguyễn Thị Bích Thảo, University of Law, VNU-HN, Vietnam</p>
+3744: <i class="fa-solid fa-chevron-down" style="color: #cbd5e1;"></i>
+3822: <p class="p-accordion-chair"><i class="fa-solid fa-user-tie" style="color: #144e8c; margin-right: 6px;"></i><strong>Chủ tọa:</strong> Assoc. Prof. Phan Thị Lan Hương, Ha Noi Law University, Vietnam</p>
+3825: <i class="fa-solid fa-chevron-down" style="color: #cbd5e1;"></i>
+3903: <p class="p-accordion-chair"><i class="fa-solid fa-user-tie" style="color: #144e8c; margin-right: 6px;"></i><strong>Chủ tọa:</strong> Assoc. Prof. Đoàn Thị Phương Diệp, University of Economics and Law, VNU-HCM, Vietnam</p>
+3906: <i class="fa-solid fa-chevron-down" style="color: #cbd5e1;"></i>
+3976: <p class="p-accordion-chair"><i class="fa-solid fa-user-tie" style="color: #144e8c; margin-right: 6px;"></i><strong>Chủ tọa:</strong> Assoc. Prof. Nguyễn Ngọc Điện, University of Economics and Law, VNU-HCM, Vietnam</p>
+3979: <i class="fa-solid fa-chevron-down" style="color: #cbd5e1;"></i>
+4057: <p class="p-accordion-chair"><i class="fa-solid fa-user-tie" style="color: #144e8c; margin-right: 6px;"></i><strong>Chủ tọa:</strong> Assoc. Prof. Trần Thăng Long, Hochiminh City University of Law, Vietnam</p>
+4060: <i class="fa-solid fa-chevron-down" style="color: #cbd5e1;"></i>
+4138: <p class="p-accordion-chair"><i class="fa-solid fa-user-tie" style="color: #144e8c; margin-right: 6px;"></i><strong>Chủ tọa:</strong> Dr. Nguyễn Phương Châm, University of Law, VNU Hanoi, Vietnam</p>
+4141: <i class="fa-solid fa-chevron-down" style="color: #cbd5e1;"></i>
+4235: <p class="p-accordion-chair"><i class="fa-solid fa-user-tie" style="color: #144e8c; margin-right: 6px;"></i><strong>Chủ tọa:</strong> Dr Claerwen O'Hara, University of Melbourne, Australia</p>
+4238: <i class="fa-solid fa-chevron-down" style="color: #cbd5e1;"></i>
+4316: <p class="p-accordion-chair"><i class="fa-solid fa-user-tie" style="color: #144e8c; margin-right: 6px;"></i><strong>Chủ tọa:</strong> Assoc. Prof. Becky Batagol, Monash University, Australia</p>
+4319: <i class="fa-solid fa-chevron-down" style="color: #cbd5e1;"></i>
+4405: <p class="p-accordion-chair"><i class="fa-solid fa-user-tie" style="color: #144e8c; margin-right: 6px;"></i><strong>Chủ tọa:</strong> Dr. Ho Nhan Ai, University of Law, Hue University, Vietnam</p>
+4408: <i class="fa-solid fa-chevron-down" style="color: #cbd5e1;"></i>
+4478: <p class="p-accordion-chair"><i class="fa-solid fa-user-tie" style="color: #144e8c; margin-right: 6px;"></i><strong>Chủ tọa:</strong> Prof. Rosemary Hunter, Loughborough University, UK</p>
+4481: <i class="fa-solid fa-chevron-down" style="color: #cbd5e1;"></i>
+4599: btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide All Sessions';
+4602: btn.innerHTML = '<i class="fa-solid fa-eye"></i> View All Sessions';
+4627: <i class="fa-solid fa-location-dot"></i>
+4940: <i class="fa-solid fa-city"></i>
+4952: <i class="fa-solid fa-temperature-half ph-stat-icon" style="color: #f43f5e;"></i>
+4957: <i class="fa-solid fa-plane-arrival ph-stat-icon" style="color: #4f46e5;"></i>
+4962: <i class="fa-solid fa-money-bill-wave ph-stat-icon" style="color: #059669;"></i>
+4973: <i class="fa-solid fa-building-columns"></i>
+4990: <i class="fa-solid fa-map-pin"></i>
+5000: <i class="fa-solid fa-arrow-up-right-from-square"></i>
+5005: <i class="fa-regular fa-copy" id="copyVenueIcon"></i>
+5015: <h3 class="v-section-title" style="color: #144e8c;"><i class="fa-solid fa-map-location-dot"></i> Cách thức Di chuyển: Phương tiện Địa phương</h3>
+5040: <i class="fa-solid fa-circle-info"></i>
+5050: <div class="v-t-icon"><i class="fa-solid fa-plane"></i></div>
+5062: <i class="fa-solid fa-bus"></i>
+5072: <div class="v-t-icon"><i class="fa-solid fa-bus-simple"></i></div>
+5097: <div class="v-t-icon"><i class="fa-solid fa-van-shuttle"></i></div>
+5109: <i class="fa-regular fa-envelope"></i>
+5275: <h3 class="v-section-title" style="color: #144e8c;"><i class="fa-solid fa-mobile-screen-button"></i> Các Ứng dụng Di chuyển & Taxi Cần thiết</h3>
+5297: <i class="fa-solid fa-check"></i> Chấp nhận Thẻ & Tiền mặt
+5314: <i class="fa-solid fa-bolt"></i> Êm ái & Thân thiện môi trường
+5331: <i class="fa-solid fa-satellite-dish"></i> Theo dõi Xe buýt Thời gian thực
+5346: <i class="fa-solid fa-qrcode"></i> Vé điện tử mã QR
+5355: <i class="fa-solid fa-car"></i>
+5451: <i class="fa-solid fa-hand-holding-dollar" style="color: #F64183;"></i> Hạng mục Tài trợ
+5459: <i class="fa-solid fa-plane-up" style="position: absolute; bottom: -15px; right: -15px; font-size: 120px; color: rgba(20,78,140,0.03); transform: rotate(-15deg); z-index: 1;"></i>
+5463: <i class="fa-solid fa-earth-asia"></i> QUỐC TẾ
+5477: <i class="fa-solid fa-plane-up"></i>
+5486: <i class="fa-solid fa-building"></i>
+5497: <i class="fa-regular fa-circle-check"></i> Tuyển chọn qua phản biện
+5506: <i class="fa-solid fa-train" style="position: absolute; bottom: -15px; right: -15px; font-size: 120px; color: rgba(246,65,131,0.03); transform: rotate(-15deg); z-index: 1;"></i>
+5510: <i class="fa-solid fa-map-location-dot"></i> TRONG NƯỚC
+5524: <i class="fa-solid fa-ticket"></i>
+5533: <i class="fa-solid fa-building"></i>
+5544: <i class="fa-regular fa-calendar"></i> Tọa đàm tiền đề + Sự kiện chính
+5556: <i class="fa-solid fa-info"></i>
+5642: <div id="v-toast"><i class="fa-solid fa-circle-check"></i> Đã sao chép địa chỉ vào bộ nhớ tạm!</div>
+5678: <button class="sp-modal-close" onclick="closeSpeakerModal()"><i class="fa-solid fa-xmark"></i></button>

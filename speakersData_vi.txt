@@ -1,0 +1,41 @@
+const speakersData = {
+    'speaker1': {
+        img: "../../../../images/icfgl/icfgl2026/Prof Aoife O’Donoghue.jpg",
+        tag: "Chủ nghĩa Hiến pháp",
+        name: "GS. Aoife O'Donoghue",
+        affil: "ĐẠI HỌC QUEEN BELFAST, VƯƠNG QUỐC ANH",
+        bio: "Chuyên gia về chủ nghĩa hiến pháp nữ quyền và luật quốc tế.",
+        date: "18 Tháng 9 2026",
+        time: "9:30 - 9:50",
+        format: "Ireland",
+        title: "“KHÔNG PHẢI NHƯ NÓ ĐÃ TỪNG [ĐANG] MÀ LÀ NHƯ NÓ CÓ THỂ ĐÃ TRỞ THÀNH”: BACKCASTING NHƯ MỘT PHƯƠNG PHÁP NỮ QUYỀN",
+        abstract: "Backcasting (dự báo ngược) là một quá trình mà trong đó một hiện tại/tương lai mong muốn - một thế giới nơi luật pháp lấy phụ nữ làm trung tâm được ban hành - được thiết lập bằng cách làm việc ngược thời gian để xem xét những giai đoạn, hình thức, chính sách và giá trị nào đã tồn tại hoặc bị bỏ qua, nhưng có thể tạo ra kết quả mong muốn. Được phát triển vào năm 1982 như một hình thức phân tích chính sách năng lượng, backcasting yêu cầu chúng ta xem xét lại hệ quả của các lựa chọn cá nhân và tái cấu trúc các quy phạm hiến pháp cho luật nhân quyền quốc tế.",
+        themes: ["Chủ nghĩa Hiến pháp", "Luật Quốc tế", "Phương pháp Backcasting"]
+    },
+    'speaker2': {
+        img: "../../../../images/icfgl/icfgl2026/Prof Hunter_photo.jpeg",
+        tag: "Phong trào Phán quyết",
+        name: "GS. Rosemary Hunter",
+        affil: "ĐẠI HỌC LOUGHBOROUGH, VƯƠNG QUỐC ANH",
+        bio: "Người tiên phong và tiếng nói hàng đầu toàn cầu trong phong trào Phán quyết Nữ quyền.",
+        date: "18 Tháng 9 2026",
+        time: "9:10 - 9:30",
+        format: "Vương quốc Anh",
+        title: "NHỮNG THÁCH THỨC CHO VIỆC LẬP PHÁP NỮ QUYỀN",
+        abstract: "Như lời kêu gọi viết tóm tắt cho hội thảo này đã chỉ ra, lĩnh vực lập pháp nữ quyền là một lĩnh vực đa diện và năng suất, bao gồm nhiều chủ đề và phương pháp khác nhau, cả thực tiễn lẫn mang tính tưởng tượng. Với sự xuất hiện của việc lập pháp nữ quyền, hàng loạt thách thức cũng đã nảy sinh trong việc khái niệm hóa, thực thi và duy trì các đạo luật và quyết định pháp lý lấy cảm hứng từ nữ quyền. Bài viết này sẽ nhận diện và phân tích một số thách thức này đối với thực tiễn nữ quyền. Chúng bao gồm các câu hỏi như: Làm thế nào lập pháp nữ quyền có thể bao hàm được sự đa dạng trong trải nghiệm sống của phụ nữ? Làm thế nào nó có thể quản lý các quan điểm nữ quyền khác biệt? Làm thế nào nó có thể duy trì khía cạnh phản biện nữ quyền và tránh đồng lõa với các lực lượng bảo thủ hoặc áp bức? Liệu nó có thể kết hợp thành công nội dung nữ quyền mang tính chuyển đổi với các hình thức pháp lý truyền thống không? Làm thế nào nó có thể đảm bảo các cải cách pháp lý lấy cảm hứng từ nữ quyền được thực thi đúng đắn? Chúng ta nên phản ứng ra sao trước sự thụt lùi và phản ứng dữ dội chống lại các cải cách nữ quyền? Khi thảo luận về những thách thức đa dạng này, bài viết sẽ xem xét giá trị của các cách tiếp cận mang tính tưởng tượng đối với lập pháp nữ quyền trong việc tạo ra các không gian pháp lý nữ quyền thay thế, cho phép thử nghiệm và khẳng định các cam kết chính trị nữ quyền.",
+        themes: ["Phán quyết Nữ quyền", "Lập pháp", "Thực tiễn"]
+    },
+    'speaker3': {
+        img: "../../../../images/icfgl/icfgl2026/Becky.jpg",
+        tag: "Lập pháp",
+        name: "PGS. Becky Batagol",
+        affil: "ĐẠI HỌC MONASH, ÚC",
+        bio: "Tổng biên tập của Dự án Lập pháp Nữ quyền.",
+        date: "18 Tháng 9 2026",
+        time: "9:50 - 10:10",
+        format: "Úc",
+        title: "SOẠN THẢO LUẬT NỮ QUYỀN: KINH NGHIỆM TỪ ÚC",
+        abstract: "Bài viết này đặt câu hỏi lập pháp nữ quyền nên như thế nào và liệu có thể tạo ra các đạo luật quốc hội theo hướng nữ quyền hay không. Bài viết rút ra từ kinh nghiệm lãnh đạo Dự án Lập pháp Nữ quyền Úc (2024, cùng với Kate Seear, Heli Askola và Jamie Walvisch). Dự án đã tập hợp các học giả, luật sư và nhà hoạt động trên khắp nước Úc để sửa đổi luật hiện hành và dự thảo luật mới với mục đích rõ ràng là thúc đẩy nhu cầu và quyền lợi của phụ nữ, những người phi nhị nguyên giới, đa dạng giới và chuyển giới. Là một dự án cải cách pháp luật tiền định (prefigurative law reform) nằm ở điểm giao thoa giữa công việc học thuật và chủ nghĩa hoạt động, các tác giả đã định vị dự án trong lý thuyết pháp lý nữ quyền như một nỗ lực của 'chủ nghĩa thực dụng hoài nghi' (Armstrong 2004). Sử dụng cách tiếp cận này, các nhà nữ quyền tham gia một cách thận trọng vào hệ thống pháp luật, tận dụng các phương pháp, ngôn ngữ và quy trình của nó, để chứng minh cách thức bình đẳng giới có thể đạt được thông qua cải cách luật pháp.<br><br>Bài trình bày này đề ra các mục tiêu của Dự án Lập pháp Nữ quyền Úc, các quy trình được sử dụng để phát triển và định hình các đóng góp cải cách pháp luật trong dự án, các ý tưởng chính đằng sau dự án và những bài học rút ra. Nó vạch ra các nguyên tắc chỉ đạo và nguyên tắc soạn thảo luật nữ quyền xuất phát từ dự án. Cuối cùng, bài trình bày này ghi nhận những tính phức tạp và thách thức của việc cải cách pháp luật nữ quyền.",
+        themes: ["Soạn thảo Luật", "Cải cách Pháp luật Tiền định", "Chủ nghĩa Thực dụng Hoài nghi"]
+    }
+};

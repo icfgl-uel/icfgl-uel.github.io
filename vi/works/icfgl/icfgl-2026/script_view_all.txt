@@ -1,0 +1,20 @@
+﻿4591:                         }
+4592: 
+4593:                         function toggleAllSessions(btn) {
+4594:                             var container = btn.closest('.conf-tab-pane');
+4595:                             var scrollContainer = container.querySelector('.abstracts-scroll-container');
+4596:                             var isOpening = btn.innerText.includes("View All Sessions");
+4597:                             if (isOpening) {
+4598:                                 scrollContainer.style.display = "block";
+4599:                                 btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide All Sessions';
+4600:                             } else {
+4601:                                 scrollContainer.style.display = "none";
+4602:                                 btn.innerHTML = '<i class="fa-solid fa-eye"></i> View All Sessions';
+4603:                             }
+4604:                         }
+4605:                         function toggleProgDetails(btn) {
+4606:                             var card = btn.closest('.prog-card');
+4607:                             var icon = btn.querySelector('i');
+4608:                             
+4609:                             var isOpen = card.classList.contains('prog-card--open');
+4610:                             card.classList.toggle('prog-card--open', !isOpen);

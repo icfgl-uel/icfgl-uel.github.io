@@ -1,0 +1,3 @@
+﻿3638: <i class="fa-solid fa-eye"></i> View All Sessions
+4596: var isOpening = btn.innerText.includes("View All Sessions");
+4602: btn.innerHTML = '<i class="fa-solid fa-eye"></i> View All Sessions';
