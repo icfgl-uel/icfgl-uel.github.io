@@ -146,13 +146,13 @@
 
         const homeHref    = rootPath + localePrefix + "index.html";
         const aboutHref   = rootPath + localePrefix + "about/about.html";
-        const worksHref   = rootPath + localePrefix + "works/";
-        const fjHref      = rootPath + localePrefix + "works/feminist-judgments/";
-        const icfglHref   = rootPath + localePrefix + "works/icfgl/";
-        const pubHref     = rootPath + localePrefix + "works/publications/";
-        const wsHref      = rootPath + localePrefix + "works/workshops/";
-        const mootHref        = rootPath + localePrefix + "works/moot-court/";
-        const workWithUsHref  = rootPath + localePrefix + "work-with-us/";
+        const worksHref   = rootPath + localePrefix + "works/index.html";
+        const fjHref      = rootPath + localePrefix + "works/feminist-judgments/index.html";
+        const icfglHref   = rootPath + localePrefix + "works/icfgl/index.html";
+        const pubHref     = rootPath + localePrefix + "works/publications/index.html";
+        const wsHref      = rootPath + localePrefix + "works/workshops/index.html";
+        const mootHref    = rootPath + localePrefix + "works/moot-court/index.html";
+        const workWithUsHref  = rootPath + localePrefix + "work-with-us/index.html";
         const contactHref     = rootPath + localePrefix + "contact/contact.html";
 
         const normalizePath = (path) => {
