@@ -32,7 +32,7 @@
             footerOrgTitle:
                 'University of Economics and Law (UEL), <span style="white-space: nowrap;">VNU-HCM</span><br>Feminist Legal Theory Project',
             footerAddress:
-                "669 Do Muoi, Quarter 3, Linh Xuan Ward, Ho Chi Minh City, Vietnam",
+                '669 Do Muoi, Quarter 3, Linh Xuan Ward, <span style="white-space: nowrap;">Ho Chi Minh City</span>, Vietnam',
             footerEmailLabel: "Email Inquiries",
             footerCopyright:
                 "&copy; 2024 UEL Feminist Legal Theory Project. Supported by Rosa Luxemburg Stiftung Southeast Asia.",
@@ -71,7 +71,7 @@
             footerOrgTitle:
                 'Trường Đại học Kinh tế – Luật (UEL), <span style="white-space: nowrap;">ĐHQG-HCM</span><br>Dự án Lý thuyết pháp luật Nữ quyền',
             footerAddress:
-                "Số 669 Đỗ Mười, khu phố 3, phường Linh Xuân, Thành phố Hồ Chí Minh, Việt Nam",
+                'Số 669 Đỗ Mười, khu phố 3, phường Linh Xuân, <span style="white-space: nowrap;">Thành phố Hồ Chí Minh</span>, Việt Nam',
             footerEmailLabel: "Email liên hệ",
             footerCopyright:
                 "&copy; 2024 Dự án Lý thuyết pháp luật Nữ quyền – UEL. Được hỗ trợ bởi Rosa Luxemburg Stiftung Đông Nam Á.",

@@ -12,8 +12,8 @@
         /* Hero Section - synced with home Moot Court banner */
         .moot-hero {
             position: relative;
-            min-height: calc(100vh - 74px);
-            min-height: calc(100svh - 74px);
+            min-height: calc(100vh - 130px);
+            min-height: calc(100svh - 130px);
             display: flex;
             align-items: center;
             margin: 0;
@@ -82,8 +82,8 @@
             position: absolute;
             inset: 0;
             background:
-                linear-gradient(115deg, rgba(9, 17, 35, 0.89) 0%, rgba(20, 78, 140, 0.64) 42%, rgba(246, 65, 131, 0.46) 100%),
-                linear-gradient(180deg, rgba(3, 13, 31, 0.28) 0%, rgba(3, 13, 31, 0.12) 46%, rgba(3, 13, 31, 0.4) 100%);
+                linear-gradient(115deg, rgba(9, 17, 35, 0.7) 0%, rgba(20, 78, 140, 0.5) 42%, rgba(246, 65, 131, 0.4) 100%),
+                linear-gradient(180deg, rgba(3, 13, 31, 0.1) 0%, rgba(3, 13, 31, 0.05) 46%, rgba(3, 13, 31, 0.2) 100%);
             z-index: 2;
         }
 
@@ -101,8 +101,6 @@
             align-items: center;
             justify-content: space-between;
             gap: clamp(32px, 5vw, 72px);
-            min-height: calc(100vh - 74px);
-            min-height: calc(100svh - 74px);
             padding: 0 clamp(32px, 5vw, 56px) 0 0;
         }
 
@@ -132,7 +130,7 @@
             height: 100%;
             animation: heroEmblemSpin 26s linear infinite;
             transform-origin: center;
-            filter: drop-shadow(0 18px 35px rgba(5, 14, 32, 0.22));
+            filter: drop-shadow(0 0 25px rgba(246, 65, 131, 0.55)) drop-shadow(0 0 12px rgba(96, 165, 250, 0.4));
         }
 
         .hero-emblem-svg {
@@ -143,32 +141,44 @@
 
         .hero-emblem-center {
             position: absolute;
-            inset: 26%;
+            inset: 22%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: radial-gradient(circle at 50% 45%, rgba(255, 235, 242, 0.12), rgba(255, 235, 242, 0.04) 60%, rgba(255, 235, 242, 0));
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+            border-right-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 4px 15px rgba(255, 255, 255, 0.6);
             text-align: center;
             pointer-events: none;
+            z-index: 5;
         }
 
         .hero-emblem-icon {
             width: 38%;
-            min-width: 104px;
-            color: var(--light-pink, #ffebf2);
+            min-width: 90px;
+            color: #ffffff;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+            margin-bottom: 2px;
         }
 
         .hero-emblem-year {
-            margin-top: 16px;
-            color: #ff9393;
-            font-family: 'Lato', sans-serif;
-            font-size: clamp(2rem, 2.85vw, 2.9rem);
+            margin-top: 2px;
+            background: linear-gradient(135deg, #FF9393 0%, #F64183 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Cambria', Georgia, serif;
+            font-size: clamp(2rem, 2.9vw, 2.8rem);
             font-weight: 800;
-            letter-spacing: 0.14em;
-            text-indent: 0.14em;
-            text-shadow: 0 0 18px rgba(255, 147, 147, 0.22), 0 10px 26px rgba(255, 147, 147, 0.3);
+            letter-spacing: 0.18em;
+            text-indent: 0.18em;
+            filter: drop-shadow(0 0 15px rgba(246, 65, 131, 0.6));
         }
 
         @keyframes heroEmblemSpin {
@@ -237,23 +247,22 @@
         .hero-btn {
             display: inline-flex;
             align-items: center;
-            justify-content: space-between;
-            min-width: 220px;
-            padding: 14px 24px 14px 30px;
-            background: linear-gradient(135deg, var(--pink, #F64183), #c23366);
+            justify-content: center;
+            width: 280px;
+            background: linear-gradient(135deg, var(--pink, #f64183), #c23366);
             color: #fff;
-            text-decoration: none;
+            font-size: 1.1rem;
             font-weight: 700;
-            border-radius: 10px;
-            font-size: 0.95rem;
+            padding: 16px 24px;
+            border-radius: 4px;
+            text-decoration: none;
             transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
             box-shadow: 0 10px 30px rgba(179, 53, 93, 0.3);
         }
 
         .hero-btn:hover {
-            background: #144e8c;
-            box-shadow: 0 12px 28px rgba(20, 78, 140, 0.34);
-            transform: translateY(-2px);
+            background: #b3355d;
+            transform: scale(1.05);
         }
 
         .hero-btn-arrow {
@@ -628,11 +637,22 @@
                         <svg class="hero-emblem-svg" viewBox="0 0 420 420" role="presentation" focusable="false">
                             <defs>
                                 <path id="hero-emblem-circle" d="M 210,210 m -167,0 a 167,167 0 1,1 334,0 a 167,167 0 1,1 -334,0"></path>
+                                <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FF5E9E" />
+                                    <stop offset="100%" stop-color="#FFDE59" />
+                                </linearGradient>
+                                <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
                             </defs>
-                            <circle cx="210" cy="210" r="188" fill="none" stroke="rgba(255, 147, 147, 0.82)" stroke-width="3"></circle>
-                            <circle cx="210" cy="210" r="146" fill="none" stroke="rgba(255, 147, 147, 0.82)" stroke-width="3"></circle>
-                            <text fill="rgba(255, 255, 255, 0.98)" font-family="Lato, sans-serif" font-size="19" font-weight="800" letter-spacing="5" dominant-baseline="middle">
-                                <textPath href="#hero-emblem-circle" startOffset="7%">GENDER JUSTICE MOOT COURT ✦ 2026 ✦ GENDER JUSTICE MOOT COURT ✦</textPath>
+                            <circle cx="210" cy="210" r="188" fill="none" stroke="url(#ring-grad)" stroke-width="4" filter="url(#neon-glow)"></circle>
+                            <circle cx="210" cy="210" r="144" fill="none" stroke="url(#ring-grad)" stroke-width="2" filter="url(#neon-glow)"></circle>
+                            <text fill="#ffffff" font-family="Lato, sans-serif" font-size="20" font-weight="900" letter-spacing="8" dominant-baseline="middle" filter="drop-shadow(0px 0px 8px rgba(255,255,255,0.8))">
+                                <textPath href="#hero-emblem-circle" startOffset="3%">GENDER JUSTICE MOOT COURT ✦ 2026 ✦ GENDER JUSTICE MOOT COURT ✦</textPath>
                             </text>
                         </svg>
                     </div>
