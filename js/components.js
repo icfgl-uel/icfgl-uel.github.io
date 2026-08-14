@@ -377,5 +377,35 @@
         if (footerPlaceholder) {
             footerPlaceholder.innerHTML = footerHTML;
         }
+
+        // Back to top logic (only for specific pages)
+        const href = window.location.href;
+        const pathname = window.location.pathname;
+        const isWorksPage = href.includes('/works/index.html') || pathname.endsWith('/works/') || pathname.endsWith('/vi/works/');
+        const isIcfglPage = href.includes('icfgl-2026.html');
+
+        if (isWorksPage || isIcfglPage) {
+            document.body.insertAdjacentHTML('beforeend', `
+            <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top" title="Back to top">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+            </button>`);
+
+            const backToTopBtn = document.getElementById("back-to-top");
+            if (backToTopBtn) {
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > 400) {
+                        backToTopBtn.classList.add("show");
+                    } else {
+                        backToTopBtn.classList.remove("show");
+                    }
+                });
+                backToTopBtn.addEventListener("click", () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+            }
+        }
     });
 })();
