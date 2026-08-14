@@ -516,7 +516,7 @@
             left: 0;
             width: 100%;
             height: 6px;
-            background:white;
+            background: white;
         }
 
         .submission-process {
@@ -597,7 +597,7 @@
             align-items: stretch;
         }
 
-        .logistics-grid > div {
+        .logistics-grid>div {
             display: flex;
         }
 
@@ -802,21 +802,42 @@
         }
 
         @media (max-width: 850px) {
-            .themes-grid { grid-template-columns: 1fr; }
-            .abstract-hero h1 { font-size: 2.2rem; }
-            .abstract-hero-meta { flex-direction: column; gap: 15px; }
-            .featured-speakers-shell { padding: 40px 28px; }
+            .themes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .abstract-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .abstract-hero-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .featured-speakers-shell {
+                padding: 40px 28px;
+            }
+
             .methodology-brief,
             .methodology-position {
                 grid-template-columns: 1fr;
                 gap: 22px;
                 padding: 28px;
             }
+
             .methodology-label {
                 position: static;
             }
-            .logistics-grid { grid-template-columns: 1fr; }
-            .submission-process { grid-template-columns: 1fr; gap: 20px; }
+
+            .logistics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .submission-process {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
         }
 
         @media (max-width: 600px) {
@@ -842,6 +863,7 @@
                 justify-content: center;
             }
         }
+
         /* Impressive Numbers Section - Ultra-Premium, Fully Cohesive */
         .stats-section {
             background: #144E8C !important;
@@ -926,11 +948,23 @@
         }
 
         /* Cohesive alternating brand color palettes (Pink & Navy only) */
-        .stat-pink .stat-icon { background: rgba(246, 65, 131, 0.07) !important; color: var(--accent-pink) !important; }
-        .stat-pink .stat-num { color: var(--accent-pink) !important; }
+        .stat-pink .stat-icon {
+            background: rgba(246, 65, 131, 0.07) !important;
+            color: var(--accent-pink) !important;
+        }
 
-        .stat-navy .stat-icon { background: rgba(20, 78, 140, 0.07) !important; color: var(--primary-blue) !important; }
-        .stat-navy .stat-num { color: var(--primary-blue) !important; }
+        .stat-pink .stat-num {
+            color: var(--accent-pink) !important;
+        }
+
+        .stat-navy .stat-icon {
+            background: rgba(20, 78, 140, 0.07) !important;
+            color: var(--primary-blue) !important;
+        }
+
+        .stat-navy .stat-num {
+            color: var(--primary-blue) !important;
+        }
 
         .stats-action {
             text-align: center;
@@ -965,6 +999,7 @@
         .stat-item:hover .stat-icon {
             transform: scale(1.12);
         }
+
         .stat-item:hover .stat-num {
             transform: translateY(-2px);
         }
@@ -973,28 +1008,35 @@
             .stats-card {
                 padding: 30px 20px !important;
             }
+
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 30px 10px;
             }
+
             .stat-item {
                 border-right: none;
             }
+
             /* Clean divider border-bottoms between rows in grid */
-            .stat-item:nth-of-type(1), .stat-item:nth-of-type(2) {
+            .stat-item:nth-of-type(1),
+            .stat-item:nth-of-type(2) {
                 border-bottom: 1px solid rgba(20, 78, 140, 0.06) !important;
                 padding-bottom: 15px;
             }
         }
+
         @media (max-width: 600px) {
             .stats-grid {
                 grid-template-columns: 1fr;
                 gap: 25px;
             }
+
             .stat-item {
                 border-bottom: 1px solid rgba(20, 78, 140, 0.06) !important;
                 padding-bottom: 15px;
             }
+
             .stat-item:last-child {
                 border-bottom: none !important;
                 padding-bottom: 0;
@@ -1003,7 +1045,8 @@
     </style>
     <link rel="alternate" hreflang="en-US" href="../../../works/icfgl/icfgl-2026/icfgl-2026-call-for-abstracts.html" />
     <link rel="alternate" hreflang="vi" href="../../../vi/works/icfgl/icfgl-2026/icfgl-2026-call-for-abstracts.html" />
-    <link rel="alternate" hreflang="x-default" href="../../../works/icfgl/icfgl-2026/icfgl-2026-call-for-abstracts.html" />
+    <link rel="alternate" hreflang="x-default"
+        href="../../../works/icfgl/icfgl-2026/icfgl-2026-call-for-abstracts.html" />
 </head>
 
 <body>
@@ -1030,19 +1073,31 @@
             </div>
             <div class="abstract-hero-meta">
                 <div class="meta-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
                     18 September 2026
                 </div>
                 <div class="meta-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
                     Ho Chi Minh City, Vietnam
                 </div>
             </div>
             <div class="abstract-hero-actions">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoxG324zijQqY5rvDXM8fgdgiUOex_SMqmlchd49Ms8sfaKw/viewform" class="abstract-btn-primary">Submit Abstract</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoxG324zijQqY5rvDXM8fgdgiUOex_SMqmlchd49Ms8sfaKw/viewform"
+                    class="abstract-btn-primary">Submit Abstract</a>
                 <a href="icfgl-2026.html" class="abstract-btn-outline">Back to ICFGL 2026</a>
             </div>
-            <p class="abstract-hosted">Hosted by: University of Economics and Law (UEL) & Rosa-Luxemburg-Stiftung (RLS)</p>
+            <p class="abstract-hosted">Hosted by: University of Economics and Law (UEL) & Rosa-Luxemburg-Stiftung (RLS)
+            </p>
         </div>
     </section>
 
@@ -1056,7 +1111,8 @@
                 <div class="speaker-card">
                     <div class="speaker-img-container">
                         <div class="speaker-img">
-                            <img src="../../../images/icfgl/icfgl2026/Prof Hunter_photo.jpeg" alt="Prof. Rosemary Hunter">
+                            <img src="../../../images/icfgl/icfgl2026/Prof_Hunter_photo.jpeg"
+                                alt="Prof. Rosemary Hunter">
                         </div>
                     </div>
                     <h3>Prof. Rosemary Hunter</h3>
@@ -1068,7 +1124,8 @@
                 <div class="speaker-card">
                     <div class="speaker-img-container">
                         <div class="speaker-img">
-                            <img src="../../../images/icfgl/icfgl2026/Prof Aoife O’Donoghue.jpg" alt="Prof. Aoife O'Donoghue">
+                            <img src="../../../images/icfgl/icfgl2026/Prof_Aoife_ODonoghue.jpg"
+                                alt="Prof. Aoife O'Donoghue">
                         </div>
                     </div>
                     <h3>Prof. Aoife O'Donoghue</h3>
@@ -1099,43 +1156,67 @@
                 <h2>ICFGL 2026 in Numbers</h2>
                 <hr>
             </div>
-            <br/>   
-            <p class="stats-subtitle">A testament to the global interest in Feminist Law-Making, bringing together diverse academic voices from every corner of the world.</p>
+            <br />
+            <p class="stats-subtitle">A testament to the global interest in Feminist Law-Making, bringing together
+                diverse academic voices from every corner of the world.</p>
             <div class="stats-grid">
                 <div class="stat-item stat-pink">
                     <div class="stat-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
                     </div>
                     <span class="stat-num">426</span>
                     <span class="stat-label">Abstracts Received</span>
                 </div>
                 <div class="stat-item stat-navy">
                     <div class="stat-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
                     </div>
                     <span class="stat-num">69</span>
                     <span class="stat-label">Nations Represented</span>
                 </div>
                 <div class="stat-item stat-pink">
                     <div class="stat-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
                     </div>
                     <span class="stat-num">15</span>
                     <span class="stat-label">Regions Worldwide</span>
                 </div>
                 <div class="stat-item stat-navy">
                     <div class="stat-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                            <line x1="7" y1="7" x2="7.01" y2="7" />
+                        </svg>
                     </div>
                     <span class="stat-num">8</span>
                     <span class="stat-label">Core Themes</span>
                 </div>
             </div>
-            <br/>   
+            <br />
             <div class="stats-action">
                 <a href="Dashboard_ICFGL2026.html" class="btn-outline-dark">
                     <span>View Interactive Dashboard</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-left: 4px; vertical-align: middle;">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                    </svg>
                 </a>
             </div>
         </div>
@@ -1150,12 +1231,23 @@
                         <h2>What Feminist Law-Making Means</h2>
                     </div>
                     <div class="methodology-copy">
-                <p>
-                    Feminist law-making can be defined as a legal methodology aimed at reforming the conceptual framework and patriarchal foundations of legal systems by rethinking and applying the law from feminist perspectives (Özsoy, 2023). Like feminist jurisprudence more broadly, it seeks to deconstruct the contemporary legal structure to expose its patriarchal, male-centric underlying ideologies and opinions, which often persist despite gender-neutral discourse (Özsoy, 2023).
-                </p>
-                <p>
-                    Feminist law-making has furthered the development of feminism within law by “experimenting” with the reconstruction of these structures - imagining whether inclusive justice could be better achieved if the law and its application were transformed through feminist lenses (Cooper, 2023; Enright, O'Donoghue, & O'Rourke, 2025; Özsoy, 2023). This methodology reflects a critical shift in feminist legal consciousness, as feminist scholars have moved from standing “before the law” as outside critics to engaging “with the law” as active agents and legal insiders who appropriate and reconfigure legal tools (Hunter, 2026).
-                </p>
+                        <p>
+                            Feminist law-making can be defined as a legal methodology aimed at reforming the conceptual
+                            framework and patriarchal foundations of legal systems by rethinking and applying the law
+                            from feminist perspectives (Özsoy, 2023). Like feminist jurisprudence more broadly, it seeks
+                            to deconstruct the contemporary legal structure to expose its patriarchal, male-centric
+                            underlying ideologies and opinions, which often persist despite gender-neutral discourse
+                            (Özsoy, 2023).
+                        </p>
+                        <p>
+                            Feminist law-making has furthered the development of feminism within law by “experimenting”
+                            with the reconstruction of these structures - imagining whether inclusive justice could be
+                            better achieved if the law and its application were transformed through feminist lenses
+                            (Cooper, 2023; Enright, O'Donoghue, & O'Rourke, 2025; Özsoy, 2023). This methodology
+                            reflects a critical shift in feminist legal consciousness, as feminist scholars have moved
+                            from standing “before the law” as outside critics to engaging “with the law” as active
+                            agents and legal insiders who appropriate and reconfigure legal tools (Hunter, 2026).
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1172,21 +1264,32 @@
                             <div class="marker"></div>
                             <div>
                                 <strong>Feminist judgments:</strong>
-                                Projects that rewrite court decisions by imagining how a feminist judge would have decided the case, for example by “asking the woman question”, and applying feminist practical reasoning and consciousness raising (Hunter, 2010, Cooper, 2023; Enright et al., 2025, Hunter, 2026).
+                                Projects that rewrite court decisions by imagining how a feminist judge would have
+                                decided the case, for example by “asking the woman question”, and applying feminist
+                                practical reasoning and consciousness raising (Hunter, 2010, Cooper, 2023; Enright et
+                                al., 2025, Hunter, 2026).
                             </div>
                         </div>
                         <div class="manifestation-item">
                             <div class="marker"></div>
                             <div>
-                                <strong>Feminist law-writing (e.g. feminist legislation and constitution-writing):</strong>
-                                Projects aimed at integrating feminist perspectives into the drafting process, rethinking core legal concepts, institutions and processes (Dowds, Killean, & Hoyt, 2022; Enright et al., 2025). This includes projects where scholars rewrite statutory laws from feminist perspective, requiring dual impersonation of both statutory drafters and politicians (Hunter 2026).
+                                <strong>Feminist law-writing (e.g. feminist legislation and
+                                    constitution-writing):</strong>
+                                Projects aimed at integrating feminist perspectives into the drafting process,
+                                rethinking core legal concepts, institutions and processes (Dowds, Killean, & Hoyt,
+                                2022; Enright et al., 2025). This includes projects where scholars rewrite statutory
+                                laws from feminist perspective, requiring dual impersonation of both statutory drafters
+                                and politicians (Hunter 2026).
                             </div>
                         </div>
                         <div class="manifestation-item">
                             <div class="marker"></div>
                             <div>
                                 <strong>Prefigurative law reform proposals:</strong>
-                                “DIY” projects initiated by feminist scholars to draft legal texts “as if” progressive feminist demands and perspectives have been fully accomplished and authorized (Cooper, 2023; Enright et al., 2025). An example includes a wage-based scheme for family caregivers (Thompson, 2025).
+                                “DIY” projects initiated by feminist scholars to draft legal texts “as if” progressive
+                                feminist demands and perspectives have been fully accomplished and authorized (Cooper,
+                                2023; Enright et al., 2025). An example includes a wage-based scheme for family
+                                caregivers (Thompson, 2025).
                             </div>
                         </div>
                     </div>
@@ -1204,15 +1307,28 @@
                         <h2>Why This Theme Matters</h2>
                     </div>
                     <div class="methodology-copy">
-                    <p>
-                        The approach of feminist law-making involves the progressive and iterative integration of feminist perspectives into legal scholarship and practice, eventually forcing the legal system to adopt and change its own norms and rules (Özsoy, 2023). Unlike the gender mainstreaming approach, it does not attempt to reconcile with the current legal system to address and advocate for women's issues within an existing patriarchal framework (Özsoy, 2023).
-                    </p>
-                    <p>
-                        Conversely, unlike critical/radical feminism, it does not demand an immediate, forceful replacement of the entire legal structure. Feminist law-making projects may initially be treated as purely academic efforts. However, they generate an “inconspicuous impact” that takes root in academic communities, gradually alters public opinions and legal norms and eventually leads to the piece-by-piece transformation of legislation (Cooper, 2023; Thompson, 2025).
-                    </p>
-                    <p>
-                        The 2026 ICFGL adopts feminist law-making as its main theme. It focuses this methodology as an alternative to both gender mainstreaming - which is currently viewed as a practical way to maintain gender balance in the Vietnamese context and in other jurisdictions - and critical feminism, which often rejects direct engagement with law.
-                    </p>
+                        <p>
+                            The approach of feminist law-making involves the progressive and iterative integration of
+                            feminist perspectives into legal scholarship and practice, eventually forcing the legal
+                            system to adopt and change its own norms and rules (Özsoy, 2023). Unlike the gender
+                            mainstreaming approach, it does not attempt to reconcile with the current legal system to
+                            address and advocate for women's issues within an existing patriarchal framework (Özsoy,
+                            2023).
+                        </p>
+                        <p>
+                            Conversely, unlike critical/radical feminism, it does not demand an immediate, forceful
+                            replacement of the entire legal structure. Feminist law-making projects may initially be
+                            treated as purely academic efforts. However, they generate an “inconspicuous impact” that
+                            takes root in academic communities, gradually alters public opinions and legal norms and
+                            eventually leads to the piece-by-piece transformation of legislation (Cooper, 2023;
+                            Thompson, 2025).
+                        </p>
+                        <p>
+                            The 2026 ICFGL adopts feminist law-making as its main theme. It focuses this methodology as
+                            an alternative to both gender mainstreaming - which is currently viewed as a practical way
+                            to maintain gender balance in the Vietnamese context and in other jurisdictions - and
+                            critical feminism, which often rejects direct engagement with law.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1224,7 +1340,10 @@
             <div class="section-heading">
                 <h2>Conference Themes</h2>
                 <hr>
-                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 25px auto 0; line-height: 1.7;">The 2026 ICFGL invites scholars to submit abstracts related to the following architectural themes of Feminist Law-making:</p>
+                <p
+                    style="color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 25px auto 0; line-height: 1.7;">
+                    The 2026 ICFGL invites scholars to submit abstracts related to the following architectural themes of
+                    Feminist Law-making:</p>
             </div>
 
             <div class="themes-grid">
@@ -1233,7 +1352,9 @@
                     <h3>Feminist Legal History and Uncovering “Inconspicuous Impact”</h3>
                     <div class="theme-concept">
                         <strong>The Concept</strong>
-                        The theme invites scholars to explore the history of feminist legal advocacy and the often-overlooked impacts of women's movements on the law. It raises the question of whether feminist efforts must achieve immediate legislative results to prove their success.
+                        The theme invites scholars to explore the history of feminist legal advocacy and the
+                        often-overlooked impacts of women's movements on the law. It raises the question of whether
+                        feminist efforts must achieve immediate legislative results to prove their success.
                     </div>
                 </div>
 
@@ -1242,7 +1363,9 @@
                     <h3>Re-evaluating the Public/Private Divide: Violence, Family and Labour</h3>
                     <div class="theme-concept">
                         <strong>The Concept</strong>
-                        The way the public/private dichotomy disadvantages women is a central argument of feminist legal critique. It focuses on the question of how the law can transcend the public/private divide to revalue the private sphere of the family, domestic labour, and intimate relationships.
+                        The way the public/private dichotomy disadvantages women is a central argument of feminist legal
+                        critique. It focuses on the question of how the law can transcend the public/private divide to
+                        revalue the private sphere of the family, domestic labour, and intimate relationships.
                     </div>
                 </div>
 
@@ -1251,7 +1374,9 @@
                     <h3>“Sceptical Pragmatism” and the Limits of Legal Mobilization</h3>
                     <div class="theme-concept">
                         <strong>The Concept</strong>
-                        Feminists have long argued whether the law, which has a strong foundation on patriarchal views, can effectively be used to erase inequality. How can feminist lawmaking maintain critical, subversive goals and not simply reproduce or reinforce patriarchal norms?
+                        Feminists have long argued whether the law, which has a strong foundation on patriarchal views,
+                        can effectively be used to erase inequality. How can feminist lawmaking maintain critical,
+                        subversive goals and not simply reproduce or reinforce patriarchal norms?
                     </div>
                 </div>
 
@@ -1260,7 +1385,10 @@
                     <h3>Intersectionality, Inclusion, and Marginalized Voices in Law</h3>
                     <div class="theme-concept">
                         <strong>The Concept</strong>
-                        This theme welcomes research on how feminist lawmaking intersects with diverse identities. For example: How can legislative frameworks accommodate or support non-family structures, LGBT+ individuals and minority groups? How to ensure accessibility and incorporate the “lived experiences” and “common knowledge” of marginalized women into policymaking and law reform?
+                        This theme welcomes research on how feminist lawmaking intersects with diverse identities. For
+                        example: How can legislative frameworks accommodate or support non-family structures, LGBT+
+                        individuals and minority groups? How to ensure accessibility and incorporate the “lived
+                        experiences” and “common knowledge” of marginalized women into policymaking and law reform?
                     </div>
                 </div>
 
@@ -1269,7 +1397,9 @@
                     <h3>How to Actually Write Feminist Laws</h3>
                     <div class="theme-concept">
                         <strong>The Concept</strong>
-                        Feminist law-making is about how law is written. Scholars are invited to explore ways to write laws that directly incorporate stories and daily realities of women, rather than just using abstract legal norms.
+                        Feminist law-making is about how law is written. Scholars are invited to explore ways to write
+                        laws that directly incorporate stories and daily realities of women, rather than just using
+                        abstract legal norms.
                     </div>
                 </div>
 
@@ -1278,7 +1408,8 @@
                     <h3>Imagine the Law Differently (Feminist DIY Law, Law-writing, and Judgments)</h3>
                     <div class="theme-concept">
                         <strong>The Concept</strong>
-                        Feminists do not wait for the government to change the law. They write legal texts and judgments “as if” women's voices and equality were fully respected.
+                        Feminists do not wait for the government to change the law. They write legal texts and judgments
+                        “as if” women's voices and equality were fully respected.
                     </div>
                 </div>
             </div>
@@ -1302,7 +1433,8 @@
                             </div>
                             <div class="data-item">
                                 <span class="data-key">Required Details</span>
-                                <span style="text-align: right; font-size: 0.95rem;">Title, Author Affiliation, Short Bio (max 150 words), and 3-5 Keywords</span>
+                                <span style="text-align: right; font-size: 0.95rem;">Title, Author Affiliation, Short
+                                    Bio (max 150 words), and 3-5 Keywords</span>
                             </div>
                             <div class="data-item">
                                 <span class="data-key">Publication Opportunity</span>
@@ -1338,31 +1470,42 @@
             </div>
 
             <div class="submission-hub">
-                <h3 style="font-family: 'Cambria', serif; color: var(--primary-blue); font-size: 2rem; margin-bottom: 10px;">Submission Hub</h3>
-                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Ready to contribute? Follow the process below to submit your abstract through our official platform.</p>
+                <h3
+                    style="font-family: 'Cambria', serif; color: var(--primary-blue); font-size: 2rem; margin-bottom: 10px;">
+                    Submission Hub</h3>
+                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Ready to
+                    contribute? Follow the process below to submit your abstract through our official platform.</p>
 
                 <div class="submission-process">
                     <div class="step-item" style="border-left: none;">
                         <span class="step-num">Step 01</span>
-                        <p>Prepare your abstract (300-500 words) and short bio according to the requirements listed above.</p>
+                        <p>Prepare your abstract (300-500 words) and short bio according to the requirements listed
+                            above.</p>
                     </div>
                     <div class="step-item">
                         <span class="step-num">Step 02</span>
-                        <p>Access the Online Submission Form and complete all required fields for author information.</p>
+                        <p>Access the Online Submission Form and complete all required fields for author information.
+                        </p>
                     </div>
                     <div class="step-item">
                         <span class="step-num">Step 03</span>
-                        <p>Submit your application before the <strong>15 May 2026 (extended)</strong> deadline to be considered for peer review.</p>
+                        <p>Submit your application before the <strong>15 May 2026 (extended)</strong> deadline to be
+                            considered for peer review.</p>
                     </div>
                 </div>
 
-                <a href="https://forms.gle/reuXs3mMmyVEXPRY9" class="btn-submit" target="_blank" rel="noopener noreferrer">Submit Online Abstract Form</a>
-                
+                <a href="https://forms.gle/reuXs3mMmyVEXPRY9" class="btn-submit" target="_blank"
+                    rel="noopener noreferrer">Submit Online Abstract Form</a>
+
                 <div class="submission-contact">
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 5px;">For inquiries, please contact the Organising Committee</p>
-                    <a href="mailto:feminism.uel.conference@uel.edu.vn" style="color: var(--accent-pink); font-weight: 700; text-decoration: none; font-size: 1.1rem;">feminism.uel.conference@uel.edu.vn</a>
-                    <p style="margin-top: 15px; font-style: italic; font-size: 0.9rem;">We are looking forward to your submission of abstracts.<br>
-                    <strong>ICFGL 2026 Organising Team</strong></p>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 5px;">For inquiries, please
+                        contact the Organising Committee</p>
+                    <a href="mailto:feminism.uel.conference@uel.edu.vn"
+                        style="color: var(--accent-pink); font-weight: 700; text-decoration: none; font-size: 1.1rem;">feminism.uel.conference@uel.edu.vn</a>
+                    <p style="margin-top: 15px; font-style: italic; font-size: 0.9rem;">We are looking forward to your
+                        submission of abstracts.<br>
+                        <strong>ICFGL 2026 Organising Team</strong>
+                    </p>
                 </div>
             </div>
         </div>
@@ -1374,38 +1517,45 @@
                 <h2>The ICFGL Excellence Travel Grant</h2>
                 <div class="travel-grant-copy">
                     <p class="travel-grant-lead">
-                        The International Conference on Feminism, Gender and Law (ICFGL) welcomes outstanding and impactful scholarship for its 2026 conference in Ho Chi Minh City. To support participation from a diverse and global community of scholars, the Conference is pleased to offer the ICFGL Excellence Travel Grant for authors of selected high-quality final manuscripts.
+                        The International Conference on Feminism, Gender and Law (ICFGL) welcomes outstanding and
+                        impactful scholarship for its 2026 conference in Ho Chi Minh City. To support participation from
+                        a diverse and global community of scholars, the Conference is pleased to offer the ICFGL
+                        Excellence Travel Grant for authors of selected high-quality final manuscripts.
                     </p>
                     <p>
-                        A total of <strong>19 authors</strong> will receive full travel support, including <strong>12 domestic participants</strong> and <strong>7 international participants</strong>, based on the quality of their final paper submissions.
+                        A total of <strong>19 authors</strong> will receive full travel support, including <strong>12
+                            domestic participants</strong> and <strong>7 international participants</strong>, based on
+                        the quality of their final paper submissions.
                     </p>
                     <div class="travel-grant-table-shell">
                         <div class="travel-grant-table-wrap">
                             <table class="travel-grant-table">
-                            <thead>
-                                <tr>
-                                    <th>Category</th>
-                                    <th>Number of Awards</th>
-                                    <th>Coverage</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>International</td>
-                                    <td>7</td>
-                                    <td>Round-trip international airfare and 1 night of hotel accommodation</td>
-                                </tr>
-                                <tr>
-                                    <td>Domestic (outside Ho Chi Minh City)</td>
-                                    <td>12</td>
-                                    <td>Round-trip domestic travel and 2 nights of hotel accommodation</td>
-                                </tr>
-                            </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Number of Awards</th>
+                                        <th>Coverage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>International</td>
+                                        <td>7</td>
+                                        <td>Round-trip international airfare and 1 night of hotel accommodation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Domestic (outside Ho Chi Minh City)</td>
+                                        <td>12</td>
+                                        <td>Round-trip domestic travel and 2 nights of hotel accommodation</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
                     <p class="travel-grant-note">
-                        <span class="travel-grant-note-label">Note:</span> Domestic travel support includes two nights of accommodation to enable participation in both the Pre-Conference Seminar and the Main Conference.
+                        <span class="travel-grant-note-label">Note:</span> Domestic travel support includes two nights
+                        of accommodation to enable participation in both the Pre-Conference Seminar and the Main
+                        Conference.
                     </p>
                 </div>
             </div>
@@ -1414,34 +1564,51 @@
 
     <section class="content-section section-ice" style="border-top: 1px solid rgba(20, 78, 140, 0.05);">
         <div class="references-list">
-            <h3 style="color: var(--primary-blue); font-size: 1.2rem; margin-bottom: 25px; border-bottom: 1px solid rgba(20, 78, 140, 0.1); padding-bottom: 10px;">References</h3>
+            <h3
+                style="color: var(--primary-blue); font-size: 1.2rem; margin-bottom: 25px; border-bottom: 1px solid rgba(20, 78, 140, 0.1); padding-bottom: 10px;">
+                References</h3>
 
             <div class="ref-item">
-                Cooper, D. (2023). Crafting prefigurative law in turbulent times: Decertification, DIY law reform, and the dilemmas of feminist prototyping. <em>Feminist Legal Studies</em>, 31, 17-42. <a href="https://doi.org/10.1007/s10691-022-09515-4" target="_blank">https://doi.org/10.1007/s10691-022-09515-4</a>
+                Cooper, D. (2023). Crafting prefigurative law in turbulent times: Decertification, DIY law reform, and
+                the dilemmas of feminist prototyping. <em>Feminist Legal Studies</em>, 31, 17-42. <a
+                    href="https://doi.org/10.1007/s10691-022-09515-4"
+                    target="_blank">https://doi.org/10.1007/s10691-022-09515-4</a>
             </div>
 
             <div class="ref-item">
-                Dowds, E., Killean, R., & Hoyt, M. (2022). <em>New methodologies in feminist legal studies: Legislative drafting project: Workshop report</em>. Queen's University Belfast.
+                Dowds, E., Killean, R., & Hoyt, M. (2022). <em>New methodologies in feminist legal studies: Legislative
+                    drafting project: Workshop report</em>. Queen's University Belfast.
             </div>
 
             <div class="ref-item">
-                Enright, M., O'Donoghue, A., & O'Rourke, C. (2025). Prefiguring feminist constitutions: An experimental legal writing method for Northern Ireland? <em>International Journal of Constitutional Law</em>, 23(3), 693-716. <a href="https://doi.org/10.1093/icon/moaf059" target="_blank">https://doi.org/10.1093/icon/moaf059</a>
+                Enright, M., O'Donoghue, A., & O'Rourke, C. (2025). Prefiguring feminist constitutions: An experimental
+                legal writing method for Northern Ireland? <em>International Journal of Constitutional Law</em>, 23(3),
+                693-716. <a href="https://doi.org/10.1093/icon/moaf059"
+                    target="_blank">https://doi.org/10.1093/icon/moaf059</a>
             </div>
 
             <div class="ref-item">
-                Hunter, R. (2010). ‘An Account of Feminist Judging’ in Rosemary Hunter, Clare Mcglynn, and Erika Rackley (eds), <em>Feminist Judgments: From Theory to Practice</em>. Hart Publishing 2010.
+                Hunter, R. (2010). ‘An Account of Feminist Judging’ in Rosemary Hunter, Clare Mcglynn, and Erika Rackley
+                (eds), <em>Feminist Judgments: From Theory to Practice</em>. Hart Publishing 2010.
             </div>
 
             <div class="ref-item">
-                Hunter, R. (2026). The emergence of feminist lawmaking. <em>Griffith Law Review</em>. <a href="https://doi.org/10.1080/10383441.2026.2643561" target="_blank">https://doi.org/10.1080/10383441.2026.2643561</a>
+                Hunter, R. (2026). The emergence of feminist lawmaking. <em>Griffith Law Review</em>. <a
+                    href="https://doi.org/10.1080/10383441.2026.2643561"
+                    target="_blank">https://doi.org/10.1080/10383441.2026.2643561</a>
             </div>
 
             <div class="ref-item">
-                Özsoy, E. C. (2023). Critical feminist law-making: Imitative spaces and improvised coalitions. <em>Australian Feminist Law Journal</em>, 48(2), 265-294. <a href="https://doi.org/10.1080/13200968.2022.2153490" target="_blank">https://doi.org/10.1080/13200968.2022.2153490</a>
+                Özsoy, E. C. (2023). Critical feminist law-making: Imitative spaces and improvised coalitions.
+                <em>Australian Feminist Law Journal</em>, 48(2), 265-294. <a
+                    href="https://doi.org/10.1080/13200968.2022.2153490"
+                    target="_blank">https://doi.org/10.1080/13200968.2022.2153490</a>
             </div>
 
             <div class="ref-item">
-                Thompson, S. (2025). The inconspicuous impact of feminist pressure through law. <em>Current Legal Problems</em>, 78, 29-64. <a href="https://doi.org/10.1093/clp/cuaf003" target="_blank">https://doi.org/10.1093/clp/cuaf003</a>.
+                Thompson, S. (2025). The inconspicuous impact of feminist pressure through law. <em>Current Legal
+                    Problems</em>, 78, 29-64. <a href="https://doi.org/10.1093/clp/cuaf003"
+                    target="_blank">https://doi.org/10.1093/clp/cuaf003</a>.
             </div>
         </div>
     </section>
