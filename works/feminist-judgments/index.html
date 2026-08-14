@@ -22,9 +22,7 @@
         <span>Feminist Judgments</span>
     </div>
 
-    <main class="archive-shell feminist-shell">
-
-        <!-- --------------- HERO --------------- -->
+    <!-- --------------- HERO --------------- -->
         <style>
             .feminist-shell {
                 padding-top: 0;
@@ -35,9 +33,7 @@
                 min-height: calc(100svh - 74px);
                 display: flex;
                 align-items: center;
-                width: 100vw;
-                margin-left: calc(50% - 50vw);
-                margin-right: calc(50% - 50vw);
+                width: 100%;
                 background: #0f1c2d url('../../images/icfgl/2.JPG') no-repeat center center / cover;
                 padding: clamp(32px, 5vh, 56px) 0;
                 box-sizing: border-box;
@@ -82,20 +78,19 @@
                 z-index: 10;
                 width: 100%;
                 margin: 0 auto;
-                padding: 0 clamp(28px, 4vw, 72px);
-                display: flex;
-                align-items: center;
+                padding: 0;
             }
 
             .hero-grid {
                 display: grid;
-                grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
+                grid-template-columns: minmax(0, 1.05fr) minmax(440px, 0.95fr);
                 grid-template-areas:
                     "copy quote"
                     "description quote";
-                width: 100%;
+                width: 90%;
+                max-width: 1200px;
                 margin: 0 auto;
-                column-gap: clamp(24px, 3vw, 56px);
+                column-gap: clamp(32px, 4vw, 72px);
                 row-gap: 12px;
                 align-items: center;
             }
@@ -103,22 +98,25 @@
             .hero-copy {
                 grid-area: copy;
                 align-self: end;
-                padding-left: clamp(12px, 2vw, 28px);
             }
 
-            .archive-eyebrow {
-                display: inline-block;
-                padding: 8px 18px;
-                margin-bottom: 24px;
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(4px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
+            .hero-eyebrow {
+                display: inline-flex;
+                align-items: center;
+                width: fit-content;
+                min-height: 38px;
+                padding: 0 24px;
+                margin: 0 0 24px;
                 border-radius: 999px;
-                color: #fdf2f8;
-                font: 700 0.85rem/1 'Lato', sans-serif;
-                letter-spacing: 0.25em;
+                background: rgba(134, 58, 110, 0.45);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                color: #fff;
+                font-family: 'Lato', sans-serif !important;
+                font-size: 0.82rem;
+                font-weight: 700;
+                line-height: 1 !important;
                 text-transform: uppercase;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                letter-spacing: 0.05em;
             }
 
             .hero-title {
@@ -144,7 +142,6 @@
                 font-size: clamp(1.05rem, 1.5vw, 1.15rem);
                 line-height: 1.8;
                 color: rgba(255, 255, 255, 0.9);
-                padding-left: clamp(12px, 2vw, 28px);
                 max-width: 920px;
                 margin: 0;
             }
@@ -170,25 +167,29 @@
 
             .hero-quote-wrap {
                 grid-area: quote;
-                position: relative;
+                justify-self: end;
+                width: 100%;
+                transform: translateY(-40px);
             }
 
             .hero-quote-card {
-                background: rgba(255, 255, 255, 0.06);
+                position: relative;
+                overflow: hidden;
+                padding: 32px 36px;
+                border-radius: 20px;
+                background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%);
                 backdrop-filter: blur(16px);
                 -webkit-backdrop-filter: blur(16px);
-                border: 1px solid rgba(255, 255, 255, 0.12);
-                border-radius: 20px;
-                padding: 40px 48px;
-                box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
-                position: relative;
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                box-shadow: 0 32px 64px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
             }
 
             .hero-quote-icon {
                 position: absolute;
-                top: 24px;
-                right: 24px;
-                color: rgba(246, 65, 131, 0.2);
+                top: 10px;
+                right: 14px;
+                color: rgba(249, 168, 212, 0.15);
+                z-index: 0;
             }
 
             .hero-quote-icon svg {
@@ -198,11 +199,11 @@
 
             .hero-quote-text {
                 font-family: 'Cambria', Georgia, serif;
-                font-size: 1.7rem;
+                font-size: 1.35rem;
                 line-height: 1.5;
                 font-style: italic;
                 color: #fff;
-                margin: 0 0 24px 0;
+                margin: 0 0 20px 0;
                 position: relative;
                 z-index: 2;
             }
@@ -240,7 +241,11 @@
                     gap: 32px;
                 }
                 .hero-description, .hero-copy {
-                    padding-left: 0;
+                }
+                .hero-quote-wrap {
+                    transform: none;
+                    justify-self: center;
+                    width: 100%;
                 }
                 .academic-hero {
                     min-height: calc(100svh - 74px);
@@ -278,7 +283,7 @@
             <div class="hero-shell">
                 <div class="hero-grid">
                     <div class="hero-copy">
-                        <span class="archive-eyebrow">Knowledge Assets</span>
+                        <span class="hero-eyebrow">Knowledge Assets</span>
                         <h1 class="hero-title"><i class="fas fa-gavel">Feminist </i> 
                            <span>Judgments</span></h1>
                     </div>
@@ -302,6 +307,8 @@
                 </div>
             </div>
         </section>
+
+    <main class="archive-shell feminist-shell">
         <!-- --------------- C?U TRC N?I DUNG --------------- -->
         <section class="archive-section">
             <div class="section-heading">
