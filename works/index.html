@@ -34,7 +34,7 @@
             align-items: center;
             margin: 0;
             background: #0f1c2d url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=2000') no-repeat center center / cover;
-            padding: clamp(64px, 8vh, 96px) 0 clamp(132px, 15vh, 168px);
+            padding: 40px 0 80px;
             color: #fff;
             overflow: hidden;
         }
@@ -76,16 +76,17 @@
             z-index: 10;
             width: 100%;
             margin: 0 auto;
-            padding: 0 clamp(16px, 2.4vw, 32px);
+            padding: 0;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+            grid-template-columns: minmax(0, 1.05fr) minmax(440px, 0.95fr);
             grid-template-areas:
                 "copy quote"
                 "description quote";
-            max-width: 1680px;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
             column-gap: clamp(32px, 4vw, 72px);
             row-gap: 12px;
@@ -95,22 +96,25 @@
         .hero-copy {
             grid-area: copy;
             align-self: end;
-            padding-left: clamp(12px, 2vw, 28px);
         }
 
         .hero-eyebrow {
-            display: inline-block;
-            padding: 8px 18px;
-            margin-bottom: 24px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            min-height: 38px;
+            padding: 0 24px;
+            margin: 0 0 24px;
             border-radius: 999px;
-            color: #fdf2f8;
-            font: 700 0.75rem/1 'Lato', sans-serif;
-            letter-spacing: 0.25em;
+            background: rgba(134, 58, 110, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-family: 'Lato', sans-serif !important;
+            font-size: 0.82rem;
+            font-weight: 700;
+            line-height: 1 !important;
             text-transform: uppercase;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.05em;
             transition: transform 0.3s ease;
         }
         
@@ -156,9 +160,8 @@
 
         .hero-description {
             grid-area: description;
-            max-width: 95%;
+            max-width: none;
             margin: -6px 0 0;
-            padding-left: clamp(12px, 2vw, 28px);
             color: rgba(255, 255, 255, 0.85);
             font-family: 'Lato', sans-serif;
             font-size: clamp(1.05rem, 1.4vw, 1.15rem);
@@ -172,6 +175,7 @@
             align-self: center;
             justify-self: end;
             width: 100%;
+            transform: translateY(-40px); /* Moved up slightly more */
         }
 
         .hero-quote-card {
@@ -205,8 +209,8 @@
             z-index: 1;
             margin: 0 0 20px;
             font-family: 'Cambria', Georgia, serif;
-            font-size: clamp(1.2rem, 1.7vw, 1.6rem);
-            line-height: 1.45;
+            font-size: clamp(1.15rem, 1.6vw, 1.5rem);
+            line-height: 1.35;
             color: #fff;
             font-style: italic;
             font-weight: 400;
@@ -285,11 +289,12 @@
 
         /* Section Block Styling - Synchronized */
         .page-section {
-            padding: 80px 5%;
+            padding: 80px 0;
         }
 
         .section-shell {
-            max-width: 1240px;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -1091,7 +1096,7 @@
         @media (max-width: 1024px) {
             .academic-hero {
                 min-height: calc(100svh - 74px);
-                padding-bottom: 120px;
+                padding: 40px 0 100px;
             }
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -1164,7 +1169,7 @@
             .academic-hero {
                 min-height: calc(100svh - 64px);
                 border-bottom: 3px solid var(--accent-pink);
-                padding: 44px 0 96px;
+                padding: 30px 0 80px;
             }
             .hero-shell {
                 padding: 0 16px;
@@ -1286,13 +1291,13 @@
                         <div class="hero-quote-icon" aria-hidden="true">
                             <svg fill="currentColor" viewBox="0 0 24 24"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4zm-13 0c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4z"/></svg>
                         </div>
-                        <p class="hero-quote-text">"Empowering the legal landscape through critical <span>gender-sensitive</span> analysis."</p>
+                        <p class="hero-quote-text">"Empowering the legal landscape through critical <span>gender-sensitive</span>&nbsp;analysis."</p>
                         <p class="hero-quote-source">Project Mission Statement</p>
                     </div>
                 </div>
 
                 <p class="hero-description">
-This section provides open and lasting access to the project’s key outputs, including publications, teaching resources, feminist judgments, and academic activities. It serves as a long-term archive of research, conference records, and legal knowledge developed by the UEL Feminist Legal Theory Project.                </p>
+This section provides open and lasting access to the project’s key outputs, including publications, teaching resources, feminist judgments, and academic activities. It serves as a long-term archive of research, conference records, and legal knowledge developed by the UEL Feminist Legal Theory&nbsp;Project.                </p>
             </div>
         </div>
     </section>

@@ -556,18 +556,23 @@
 
         /* Hero Eyebrow Styling */
         .hero-eyebrow {
-            display: inline-block;
-            padding: 8px 18px;
-            margin-bottom: 24px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            min-height: 38px;
+            padding: 0 24px;
+            margin: 0 0 24px;
             border-radius: 999px;
-            color: #fdf2f8;
-            font: 700 0.75rem/1 'Lato', sans-serif;
-            letter-spacing: 0.25em;
+            background: rgba(134, 58, 110, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-family: 'Lato', sans-serif !important;
+            font-size: 0.82rem;
+            font-weight: 700;
+            line-height: 1 !important;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: transform 0.3s ease;
         }
 
         /* Anchor Offset */
