@@ -180,7 +180,7 @@
 
         const headerHTML = `
     <nav>
-        <a href="${homeHref}" class="logo"><img src="${rootPath}images/common/uel_logo.png" alt="${t.logoAlt}"><span class="logo-text">${t.logoText}</span></a>
+        <a href="${homeHref}" class="logo"><img src="${rootPath}images/common/uel_logo.webp" alt="${t.logoAlt}"><span class="logo-text">${t.logoText}</span></a>
         <button class="nav-hamburger" id="nav-hamburger" aria-label="${t.navToggleLabel}" aria-expanded="false" aria-controls="nav-links-list">
             <span class="nav-hamburger-line"></span>
             <span class="nav-hamburger-line"></span>
@@ -236,7 +236,7 @@
                         <h4>${t.footerAboutTitle}</h4>
                         <p>${t.footerAboutBody}</p>
                         <a href="https://www.uel.edu.vn/" target="_blank" rel="noopener noreferrer" style="display: inline-block; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
-                            <img src="${rootPath}images/common/uel_logo.png" alt="${t.logoImgAlt}">
+                            <img src="${rootPath}images/common/uel_logo.webp" alt="${t.logoImgAlt}">
                         </a>
                     </div>
                     <div class="site-footer-col">
@@ -272,7 +272,7 @@
             const favicon = document.createElement("link");
             favicon.rel = "icon";
             favicon.type = "image/png";
-            favicon.href = rootPath + "images/common/UEL_Logo final-09.png";
+            favicon.href = rootPath + "images/common/UEL_Logo final-09.webp";
             document.head.appendChild(favicon);
         }
 
