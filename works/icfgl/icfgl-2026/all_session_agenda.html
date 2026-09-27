@@ -1380,6 +1380,7 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
             #book-container.back-cover-only::after { display: none !important; }
         }
     </style>
+    <link rel="stylesheet" href="agenda-responsive.css?v=mobile-20260927">
 </head>
 <body>
 
@@ -3497,6 +3498,7 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
 
     // Middle arrows
     var midBar = document.createElement('div');
+    midBar.className = 'reader-midbar';
     midBar.style.cssText = 'display:flex; justify-content:space-between; align-items:center; width:100%; padding:0 18px; flex:1;';
 
     var chevronLeft = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>';
@@ -3517,6 +3519,7 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
 
     // Bottom toolbar
     var botBar = document.createElement('div');
+    botBar.className = 'reader-bottom-bar';
     botBar.style.cssText = 'position:fixed; left:0; bottom:0; width:100%; height:58px; display:flex; align-items:center; justify-content:center;';
 
     var toolbar = document.createElement('div');
@@ -3581,13 +3584,19 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
     book.parentNode.insertBefore(bookStage, book);
     bookStage.appendChild(book);
 
-    var SPREAD_ASPECT_RATIO = (793 * 2) / 1122;
+    function getBookAspectRatio() {
+        return window.matchMedia('(max-width: 600px)').matches
+            ? 793 / 1122
+            : (793 * 2) / 1122;
+    }
+
     function fitBookToStage() {
+        var aspectRatio = getBookAspectRatio();
         var horizontalSpace = bookStage.clientWidth >= 900 ? 180 : 24;
         var maxWidth = Math.max(280, bookStage.clientWidth - horizontalSpace);
         var maxHeight = Math.max(200, bookStage.clientHeight - 24);
-        var fittedWidth = Math.min(maxWidth, maxHeight * SPREAD_ASPECT_RATIO);
-        var fittedHeight = fittedWidth / SPREAD_ASPECT_RATIO;
+        var fittedWidth = Math.min(maxWidth, maxHeight * aspectRatio);
+        var fittedHeight = fittedWidth / aspectRatio;
 
         book.style.setProperty('--book-width', Math.round(fittedWidth) + 'px');
         book.style.setProperty('--book-height', Math.round(fittedHeight) + 'px');
@@ -3600,8 +3609,10 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
     var ZOOM_MIN = 0.6, ZOOM_MAX = 1.6, ZOOM_STEP = 0.15;
     function applyZoom() {
         var coverOffset = '0%';
-        if (book.classList.contains('front-cover-only')) coverOffset = '-25%';
-        if (book.classList.contains('back-cover-only')) coverOffset = '25%';
+        if (!window.matchMedia('(max-width: 600px)').matches) {
+            if (book.classList.contains('front-cover-only')) coverOffset = '-25%';
+            if (book.classList.contains('back-cover-only')) coverOffset = '25%';
+        }
         book.style.transform = 'translateX(' + coverOffset + ') scale(' + zoomLevel + ')';
     }
     zoomInBtn.addEventListener('click', () => {
@@ -3666,14 +3677,14 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
         width: 793, // 210mm in px at 96dpi
         height: 1122, // 297mm in px
         size: "stretch", // Auto-scale to fit the container within min/max bounds
-        minWidth: 315,
+        minWidth: 280,
         maxWidth: 4000,
         minHeight: 420,
         maxHeight: 5657,
         maxShadowOpacity: 0.4,
         showCover: true,
-        mobileScrollSupport: false,
-        usePortrait: false // Force spread mode
+        mobileScrollSupport: true,
+        usePortrait: true
     });
 
     // INITIAL COVER STATE V9
@@ -3693,9 +3704,16 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
         applyZoom();
 
         var startPage = current + 1;
-        var endPage = Math.min(current + 2, total);
+        var isPortrait = pageFlip.getOrientation() === 'portrait'
+            || Boolean(book.querySelector('.stf__wrapper.--portrait'));
+        book.classList.toggle('is-portrait', isPortrait);
+        var endPage = isPortrait ? startPage : Math.min(current + 2, total);
 
-        pageInfo.textContent = isFrontCover ? 'Bìa trước · 1 / ' + total : 'Trang ' + startPage + ' - ' + endPage + ' / ' + total;
+        pageInfo.textContent = isFrontCover
+            ? 'Bìa trước · 1 / ' + total
+            : isPortrait
+                ? 'Trang ' + startPage + ' / ' + total
+                : 'Trang ' + startPage + ' - ' + endPage + ' / ' + total;
         jumpInput.max = String(total);
         jumpInput.placeholder = String(startPage);
 
@@ -3710,6 +3728,11 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
     }
 
     pageFlip.on('flip', updateUI);
+    pageFlip.on('changeOrientation', function () {
+        fitBookToStage();
+        applyZoom();
+        updateUI({data: pageFlip.getCurrentPageIndex()});
+    });
     pageFlip.on('changeState', function (event) {
         book.classList.toggle('is-flipping', event.data !== 'read');
     });
@@ -3723,8 +3746,23 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
         if (pageFlip.getCurrentPageIndex() > 0) pageFlip.flipPrev();
     });
 
+    function canTurnToNextPage() {
+        var lastOffset = pageFlip.getOrientation() === 'portrait' ? 1 : 2;
+        return pageFlip.getCurrentPageIndex() < pageFlip.getPageCount() - lastOffset;
+    }
+
     nextBtn.addEventListener('click', () => {
-        if (pageFlip.getCurrentPageIndex() < pageFlip.getPageCount() - 2) pageFlip.flipNext();
+        if (canTurnToNextPage()) pageFlip.flipNext();
+    });
+
+    var resizeFrame = 0;
+    window.addEventListener('resize', function () {
+        window.cancelAnimationFrame(resizeFrame);
+        resizeFrame = window.requestAnimationFrame(function () {
+            fitBookToStage();
+            applyZoom();
+            pageFlip.update();
+        });
     });
 
     // Keyboard navigation (skip when typing in the page-jump box)
@@ -3732,7 +3770,8 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
         if (document.activeElement === jumpInput || e.ctrlKey || e.metaKey) return;
         var idx = pageFlip.getCurrentPageIndex();
         var total = pageFlip.getPageCount();
-        if (e.key === 'ArrowRight' && idx < total - 2) pageFlip.flipNext();
+        var lastOffset = pageFlip.getOrientation() === 'portrait' ? 1 : 2;
+        if (e.key === 'ArrowRight' && idx < total - lastOffset) pageFlip.flipNext();
         if (e.key === 'ArrowLeft' && idx > 0) pageFlip.flipPrev();
         if (e.key === '+' || e.key === '=') { zoomLevel = Math.min(ZOOM_MAX, +(zoomLevel + ZOOM_STEP).toFixed(2)); applyZoom(); }
         if (e.key === '-' || e.key === '_') { zoomLevel = Math.max(ZOOM_MIN, +(zoomLevel - ZOOM_STEP).toFixed(2)); applyZoom(); }

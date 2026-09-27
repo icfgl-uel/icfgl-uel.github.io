@@ -1,0 +1,128 @@
+/* Responsive controls for the standalone ICFGL 2026 agenda reader. */
+
+html,
+body {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+#book-stage,
+#book-container,
+.stf__parent,
+.stf__wrapper {
+    max-width: 100%;
+}
+
+.reader-ui-layer {
+    height: calc(100dvh - 58px) !important;
+}
+
+.reader-bottom-bar {
+    height: calc(58px + env(safe-area-inset-bottom)) !important;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (max-width: 768px) {
+    #book-stage {
+        inset: 0 0 calc(58px + env(safe-area-inset-bottom)) 0 !important;
+        padding: 8px 0;
+    }
+
+    .reader-midbar {
+        padding-inline: 8px !important;
+    }
+
+    .reader-nav-btn {
+        width: 44px !important;
+        height: 44px !important;
+        flex: 0 0 44px;
+    }
+
+    .reader-toolbar {
+        max-width: calc(100vw - 20px);
+        padding: 5px 8px !important;
+        gap: 4px !important;
+    }
+
+    .reader-toolbar-btn {
+        width: 44px !important;
+        height: 44px !important;
+        flex: 0 0 44px;
+    }
+
+    .reader-toolbar-btn svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .reader-page-info {
+        min-width: 68px !important;
+        font-size: 0.72rem !important;
+    }
+
+    .reader-progress-track {
+        width: min(24vw, 110px) !important;
+    }
+
+    .reader-jump-input {
+        width: 38px !important;
+        min-height: 30px !important;
+        font-size: 0.75rem !important;
+    }
+
+    #book-container.front-cover-only,
+    #book-container.back-cover-only {
+        transform-origin: center center;
+    }
+
+}
+
+/* The desktop cover mask hides the empty half of a two-page spread.
+   Portrait mode has no empty half, so the mask must be removed. */
+html body #book-container.is-portrait.front-cover-only::after,
+html body #book-container.is-portrait.back-cover-only::after {
+    content: none !important;
+    display: none !important;
+}
+
+@media (max-width: 520px) {
+    .reader-progress-track,
+    .reader-toolbar-divider:nth-of-type(2) {
+        display: none !important;
+    }
+
+    .reader-toolbar {
+        justify-content: center;
+    }
+
+    .reader-nav-btn {
+        width: 40px !important;
+        height: 40px !important;
+        flex-basis: 40px;
+    }
+}
+
+@media (max-width: 380px) {
+    .reader-toolbar-divider {
+        display: none !important;
+    }
+
+    .reader-page-info {
+        min-width: 60px !important;
+    }
+
+    .reader-jump-input {
+        width: 34px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

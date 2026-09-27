@@ -1,0 +1,1735 @@
+/*
+ * responsive.css
+ * Shared responsive overrides for the public EN/VI website.
+ * Keep this stylesheet last in <head>. Desktop presentation is intentionally
+ * preserved; most changes are scoped to the existing project breakpoints.
+ */
+
+/* Safe defaults --------------------------------------------------------- */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    min-width: 0;
+}
+
+img,
+video,
+iframe,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+.video-responsive,
+.about-placeholder-card--video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.video-responsive iframe,
+.about-placeholder-card--video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.table-responsive,
+.travel-grant-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Laptop and smaller desktops ----------------------------------------- */
+@media (max-width: 1200px) {
+    .container,
+    .section-shell,
+    .archive-shell,
+    .hero-shell,
+    .featured-speakers-shell,
+    .wwu-container-wide,
+    .managing-team-shell,
+    .dashboard-hero-in,
+    .wrap {
+        width: min(100% - 48px, 1200px);
+        margin-inline: auto;
+    }
+
+    .page-section,
+    .content-section,
+    .wwu-section {
+        padding-inline: 24px;
+    }
+
+    .speaker-grid,
+    .themes-grid,
+    .editorial-board-grid,
+    .stats-grid,
+    .dashboard-kpi-grid {
+        gap: 22px;
+    }
+}
+
+/* Tablet landscape ----------------------------------------------------- */
+@media (max-width: 1040px) {
+    .managing-team-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .hero-grid,
+    .archive-hero-grid,
+    .about-grid,
+    .split-layout,
+    .roundtable-layout,
+    .fj-showcase,
+    .moot-showcase,
+    .icfgl-overview,
+    .workshops-showcase,
+    .publication-row,
+    .call-abstracts-grid,
+    .premium-venue-grid,
+    .venue-modern-wrapper,
+    .travel-grant-panel,
+    .methodology-brief,
+    .logistics-grid,
+    .eligibility-grid,
+    .hero-layout {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .speaker-grid,
+    .themes-grid,
+    .benefit-grid,
+    .activity-grid,
+    .archive-box-grid,
+    .feature-grid,
+    .workshops-card-grid,
+    .compact-publication-grid,
+    .editorial-board-grid,
+    .stats-grid,
+    .ph-stats-grid,
+    .v-apps-grid,
+    .v-transport-grid,
+    .dashboard-kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .split-layout.reverse .split-image,
+    .split-layout.reverse .split-content {
+        order: initial;
+    }
+
+    .book-card {
+        grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1fr) !important;
+    }
+
+    .conf-tabs-nav,
+    .pill-nav-list,
+    .pub-tabs {
+        max-width: 100%;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .conf-tab-btn,
+    .pill-item,
+    .pub-tab {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+}
+
+/* Tablet --------------------------------------------------------------- */
+@media (max-width: 900px) {
+    .container,
+    .section-shell,
+    .archive-shell,
+    .hero-shell,
+    .featured-speakers-shell,
+    .wwu-container-wide,
+    .managing-team-shell,
+    .dashboard-hero-in,
+    .wrap {
+        width: min(100% - 36px, 100%);
+    }
+
+    .page-section,
+    .content-section,
+    .wwu-section {
+        padding-inline: 18px;
+    }
+
+    .grid-2,
+    .two-col-grid,
+    .partner-grid,
+    .hero-flex,
+    .overview-flex,
+    .about-phase-layout,
+    .fj-case-summaries,
+    .fj-comparison,
+    .article-card,
+    .prog-main-body,
+    .tg-grid,
+    .g2 {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .hero-flex,
+    .overview-flex {
+        flex-direction: column;
+    }
+
+    .hero-flex-img,
+    .hero-flex-text,
+    .overview-flex-left,
+    .overview-flex-right {
+        width: 100% !important;
+    }
+
+    .fj-controls-row,
+    .fj-controls-left,
+    .fj-controls-right,
+    .fj-results-bar,
+    .abstract-hero-actions,
+    .icfgl2026-hero-actions,
+    .pv-actions,
+    .stats-action,
+    .wwu-pos-row {
+        flex-wrap: wrap;
+    }
+
+    .fj-controls-row,
+    .fj-results-bar,
+    .wwu-pos-row {
+        align-items: stretch;
+    }
+
+    .fj-controls-divider,
+    .fj-comparison-divider {
+        display: none;
+    }
+
+    .fj-inline-filter,
+    .fj-select-wrap,
+    .fj-inline-filter select {
+        min-width: 0;
+        max-width: none;
+    }
+
+    .book-card {
+        grid-template-columns: minmax(160px, 220px) minmax(0, 1fr) !important;
+    }
+
+    .journey-item {
+        grid-template-columns: 64px minmax(0, 1fr) !important;
+    }
+
+    .item-left,
+    .item-right,
+    .item-title-col {
+        min-width: 0;
+    }
+
+    .about-media-column,
+    .about-phase-gallery,
+    .about-mini-gallery,
+    .managing-team-copy,
+    .managing-team-photo {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .sp-modal-content,
+    .journey-modal {
+        width: min(92vw, 760px);
+        max-height: calc(100dvh - 32px);
+        overflow-y: auto;
+    }
+}
+
+/* Mobile navigation and layouts --------------------------------------- */
+@media (max-width: 768px) {
+    :root {
+        --responsive-gutter: 16px;
+    }
+
+    nav {
+        min-height: 64px;
+        padding-inline: var(--responsive-gutter) !important;
+    }
+
+    .nav-links {
+        height: 100dvh;
+        padding-inline: var(--responsive-gutter) !important;
+        padding-bottom: calc(32px + env(safe-area-inset-bottom));
+    }
+
+    .logo {
+        min-width: 0;
+        max-width: calc(100% - 58px);
+    }
+
+    .logo-text {
+        min-width: 0;
+        max-width: calc(100vw - 116px) !important;
+    }
+
+    .nav-hamburger,
+    .nav-close-overlay,
+    .back-to-top-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .site-footer-top,
+    .site-footer-bottom-grid {
+        padding-inline: var(--responsive-gutter) !important;
+    }
+
+    .site-footer-email,
+    .site-footer a {
+        overflow-wrap: anywhere;
+    }
+
+    .container,
+    .section-shell,
+    .archive-shell,
+    .hero-shell,
+    .featured-speakers-shell,
+    .wwu-container-wide,
+    .managing-team-shell,
+    .dashboard-hero-in,
+    .wrap,
+    .moot-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-inline: var(--responsive-gutter) !important;
+    }
+
+    .page-section,
+    .content-section,
+    .wwu-section,
+    .archive-section,
+    .featured-speakers-section,
+    .stats-section {
+        padding-inline: 0;
+    }
+
+    .page-section,
+    .content-section,
+    .wwu-section {
+        padding-block: clamp(44px, 10vw, 64px);
+    }
+
+    .hero-title-main,
+    .hero-title,
+    .archive-title,
+    .wwu-hero-title,
+    .abstract-hero h1,
+    .icfgl2026-hero h1,
+    .dashboard-hero h1,
+    .page-main-title {
+        font-size: clamp(2rem, 9vw, 3rem) !important;
+        line-height: 1.08 !important;
+        overflow-wrap: anywhere;
+    }
+
+    .heading-pink,
+    .heading-white,
+    .section-heading h2,
+    .section-title-center,
+    .wwu-heading {
+        font-size: clamp(1.65rem, 7vw, 2.25rem) !important;
+        line-height: 1.18 !important;
+    }
+
+    .hero-title-nowrap {
+        white-space: normal !important;
+    }
+
+    .hero-subtitle,
+    .hero-description,
+    .archive-intro,
+    .section-intro-text,
+    .wwu-hero-desc,
+    .stats-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.7 !important;
+    }
+
+    .breadcrumb,
+    .archive-breadcrumb {
+        width: 100%;
+        padding-inline: var(--responsive-gutter) !important;
+        gap: 8px;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .speaker-grid,
+    .themes-grid,
+    .benefit-grid,
+    .activity-grid,
+    .archive-box-grid,
+    .feature-grid,
+    .work-grid,
+    .workshops-card-grid,
+    .compact-publication-grid,
+    .editorial-board-grid,
+    .stats-grid,
+    .ph-stats-grid,
+    .v-apps-grid,
+    .v-transport-grid,
+    .dashboard-kpi-grid,
+    .fj-structure-grid,
+    .fj-significance-grid,
+    .fj-related-grid,
+    .meta-pair-grid,
+    .gallery-2col,
+    .speaker-grid--featured,
+    .wwu-values-grid,
+    .wwu-commitment-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .home-work-grid,
+    .about-mini-gallery,
+    .about-phase-gallery,
+    .vfj-asset-gallery,
+    .roundtable-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .book-card,
+    .article-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .book-cover {
+        width: min(72vw, 280px);
+        margin-inline: auto;
+    }
+
+    .book-details,
+    .article-copy,
+    .article-actions {
+        min-width: 0;
+    }
+
+    .pub-tabs-container,
+    .conf-tabs-content,
+    .fj-filter-panel,
+    .stats-card,
+    .card {
+        max-width: 100%;
+    }
+
+    .fj-controls-row,
+    .fj-controls-left,
+    .fj-controls-right {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        gap: 12px;
+    }
+
+    .fj-inline-filter,
+    .fj-select-wrap,
+    .fj-inline-filter select,
+    .fj-search-box,
+    .fj-search-input {
+        width: 100%;
+    }
+
+    .fj-pill-row,
+    .fj-case-tags,
+    .fj-case-meta,
+    .fj-case-summary-docs,
+    .fj-active-tags {
+        flex-wrap: wrap;
+    }
+
+    .fj-case-card,
+    .fj-structure-card,
+    .fj-significance-card,
+    .work-card,
+    .workshop-card,
+    .speaker-card,
+    .theme-card,
+    .benefit-card,
+    .wwu-comm-card {
+        min-width: 0;
+        padding: 20px !important;
+    }
+
+    .fj-case-title,
+    .fj-case-summary p,
+    .speaker-bio,
+    .article-summary,
+    .pub-abstract-copy,
+    .book-details p,
+    .wwu-intro-prose,
+    .journey-modal-body,
+    .sp-modal-body {
+        overflow-wrap: anywhere;
+    }
+
+    .split-image,
+    .split-content,
+    .workshops-hero-media,
+    .workshops-hero-copy,
+    .fj-copy,
+    .fj-visual,
+    .moot-copy,
+    .icfgl-overview-copy {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .journey-item {
+        grid-template-columns: 48px minmax(0, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .item-icon,
+    .journey-stage-circle {
+        transform: none !important;
+    }
+
+    .journey-modal-overlay,
+    .sp-modal-overlay {
+        padding: 12px !important;
+        align-items: center;
+    }
+
+    .journey-modal,
+    .sp-modal-content {
+        width: 100% !important;
+        max-width: none !important;
+        max-height: calc(100dvh - 24px) !important;
+        border-radius: 14px !important;
+    }
+
+    .sp-modal-header,
+    .sp-modal-body,
+    .journey-modal-header,
+    .journey-modal-body {
+        padding-inline: 18px !important;
+    }
+
+    .sp-modal-header {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .sp-modal-img {
+        width: 112px !important;
+        height: 112px !important;
+    }
+
+    .conf-tabs-nav,
+    .pill-nav-list,
+    .pub-tabs {
+        justify-content: flex-start !important;
+        padding-bottom: 6px;
+    }
+
+    .conf-tab-btn,
+    .pub-tab {
+        min-height: 44px;
+    }
+
+    .agenda-btn {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .abstract-hero-actions,
+    .icfgl2026-hero-actions,
+    .pv-actions,
+    .stats-action,
+    .article-actions,
+    .fj-actions,
+    .moot-actions {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        gap: 12px;
+    }
+
+    .abstract-btn-primary,
+    .abstract-btn-outline,
+    .btn-primary,
+    .btn-outline-dark,
+    .btn-submit,
+    .hero-btn,
+    .pv-btn,
+    .article-link-btn,
+    .publication-download-btn,
+    .wwu-dl-btn,
+    .wwu-hero-btn {
+        width: 100%;
+        min-height: 44px;
+        justify-content: center;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .stats-action .btn-outline-dark {
+        width: fit-content !important;
+        min-width: 0 !important;
+        max-width: min(100%, 330px) !important;
+        min-height: 44px !important;
+        height: auto !important;
+        padding: 10px 16px !important;
+        font-size: 0.82rem !important;
+        line-height: 1.25 !important;
+    }
+
+    .icfgl2026-hero .btn-primary,
+    .icfgl2026-hero .btn-outline,
+    .call-for-abstracts-section .btn-primary,
+    .split-content .btn-primary {
+        width: fit-content !important;
+        min-width: 0 !important;
+        max-width: min(100%, 330px) !important;
+        min-height: 44px !important;
+        height: auto !important;
+        padding: 10px 16px !important;
+        font-size: 0.82rem !important;
+        line-height: 1.25 !important;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .travel-grant-table-wrap,
+    .conf-tab-pane,
+    .prog-details-content {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .travel-grant-table,
+    .conf-tab-pane table,
+    .vfj-sub-page table {
+        min-width: 640px;
+    }
+
+    .fbar {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .fg,
+    .fbar select,
+    .fbar button {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .card canvas {
+        max-width: 100% !important;
+    }
+
+    .wwu-pos-row {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .wwu-dl-btn {
+        justify-self: stretch;
+    }
+}
+
+/* Small mobile --------------------------------------------------------- */
+@media (max-width: 600px) {
+    .container,
+    .section-shell,
+    .archive-shell,
+    .hero-shell,
+    .featured-speakers-shell,
+    .wwu-container-wide,
+    .managing-team-shell,
+    .dashboard-hero-in,
+    .wrap,
+    .moot-container {
+        padding-inline: 14px !important;
+    }
+
+    .site-footer-top,
+    .site-footer-bottom-grid,
+    .breadcrumb,
+    .archive-breadcrumb {
+        padding-inline: 14px !important;
+    }
+
+    .highlights-slider-wrap {
+        border-radius: 14px;
+    }
+
+    .highlights-slide,
+    .slide-content {
+        min-height: 430px;
+    }
+
+    .slide-content {
+        padding: 44px 42px !important;
+    }
+
+    .hl-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hl-arrow-prev {
+        left: 4px;
+    }
+
+    .hl-arrow-next {
+        right: 4px;
+    }
+
+    .home-work-grid,
+    .about-mini-gallery,
+    .about-phase-gallery,
+    .vfj-asset-gallery,
+    .roundtable-gallery {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .managing-team-card {
+        padding: 18px !important;
+    }
+
+    .managing-team-photo {
+        width: min(72vw, 240px) !important;
+        margin-inline: auto;
+    }
+
+    .fj-case-card,
+    .fj-filter-panel,
+    .stats-card,
+    .card,
+    .theme-card,
+    .concept-card,
+    .submission-hub,
+    .premium-venue-card,
+    .premium-host-card {
+        padding: 18px !important;
+        border-radius: 14px !important;
+    }
+
+    .fj-case-header,
+    .fj-results-bar,
+    .prog-main-header,
+    .prog-main-top,
+    .v-header,
+    .v-t-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .prog-main-header-right,
+    .prog-meta,
+    .prog-tags,
+    .v-route-tags {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .dashboard-kpi,
+    .stat-item,
+    .ph-stat-item {
+        min-width: 0;
+    }
+
+    .lgd,
+    .li {
+        min-width: 0;
+    }
+
+    .li {
+        grid-template-columns: 12px minmax(0, 1fr) auto !important;
+    }
+
+    .back-to-top-btn {
+        right: 14px !important;
+        bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+    }
+}
+
+/* Very small mobile ---------------------------------------------------- */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 0.84rem !important;
+    }
+
+    .logo img {
+        height: 34px !important;
+    }
+
+    .hero-title-main,
+    .hero-title,
+    .archive-title,
+    .wwu-hero-title,
+    .abstract-hero h1,
+    .icfgl2026-hero h1,
+    .dashboard-hero h1,
+    .page-main-title {
+        font-size: clamp(1.8rem, 10vw, 2.45rem) !important;
+    }
+
+    .slide-content {
+        padding-inline: 36px !important;
+    }
+
+    .hero-btn,
+    .btn-primary,
+    .btn-pink,
+    .btn-dark,
+    .agenda-btn,
+    .pub-tab,
+    .conf-tab-btn {
+        font-size: 0.92rem;
+    }
+
+    .fj-pill-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fj-pill {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .journey-item {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .item-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .item-icon {
+        position: static !important;
+    }
+
+    .sp-modal-img {
+        width: 96px !important;
+        height: 96px !important;
+    }
+}
+
+/* Targeted tablet corrections ----------------------------------------- */
+@media (max-width: 1040px) {
+    /* Keep the ICFGL section navigation swipeable without exposing the
+       browser's native scrollbar as part of the design. */
+    .local-nav {
+        justify-content: flex-start !important;
+        padding-inline: 18px !important;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        overscroll-behavior-inline: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .local-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .local-nav ul {
+        width: max-content;
+        flex: 0 0 auto;
+        gap: 24px !important;
+    }
+}
+
+@media (max-width: 1040px) {
+    /* Home highlight: give the Moot Court copy the full tablet canvas.
+       The page-specific 50vw width otherwise forces every title word and
+       CTA label onto separate lines. */
+    .highlights-slide--mootcourt {
+        align-items: center !important;
+    }
+
+    .highlights-slide--mootcourt .slide-content {
+        width: min(calc(100% - 112px), 600px) !important;
+        max-width: 600px !important;
+        margin-inline: auto !important;
+        padding: 36px 0 96px !important;
+    }
+
+    .highlights-slide--mootcourt .hero-title-main {
+        font-size: clamp(2.7rem, 8vw, 3.8rem) !important;
+        line-height: 1.02 !important;
+        overflow-wrap: normal;
+    }
+
+    .highlights-slide--mootcourt .hero-subtitle {
+        max-width: 540px;
+        line-height: 1.55 !important;
+    }
+
+    .highlights-slide--mootcourt .hero-btn {
+        width: auto !important;
+        min-width: 240px;
+        max-width: 100%;
+        white-space: nowrap;
+    }
+
+    /* Keep the Works hero compact and place its pill navigation in normal
+       document flow so the next section cannot cover half of the pills. */
+    .academic-hero {
+        min-height: auto !important;
+        padding-block: 52px 64px !important;
+    }
+
+    .academic-hero .hero-grid {
+        gap: 22px !important;
+    }
+
+    .academic-hero .hero-quote-wrap {
+        transform: none !important;
+    }
+
+    .academic-hero .hero-quote-card {
+        padding: 24px 28px !important;
+    }
+
+    .pill-nav-container {
+        position: relative !important;
+        top: auto !important;
+        height: auto !important;
+        margin-top: 0 !important;
+        padding: 12px 16px 4px;
+        background: #fff;
+    }
+
+    .pill-nav-list {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 100%;
+        max-width: 100% !important;
+        overflow: visible;
+        padding: 4px 2px 12px !important;
+        gap: 10px;
+    }
+
+    .pill-item {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        min-height: 44px;
+        padding: 9px 12px !important;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        white-space: normal !important;
+        line-height: 1.25;
+    }
+
+    /* Three conference tabs fit as equal columns on tablets. Text may wrap
+       inside its own button instead of being clipped off-screen. */
+    .conf-tabs-nav {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow: visible !important;
+        padding-bottom: 8px !important;
+    }
+
+    .conf-tab-btn {
+        width: 100%;
+        min-width: 0;
+        padding-inline: 10px !important;
+        justify-content: center;
+        text-align: center;
+        white-space: normal !important;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 600px) {
+    .highlights-slide--mootcourt .slide-content {
+        width: calc(100% - 88px) !important;
+        padding: 28px 0 82px !important;
+    }
+
+    .highlights-slide--mootcourt .hero-title-main {
+        font-size: clamp(2.15rem, 11vw, 2.8rem) !important;
+    }
+
+    .highlights-slide--mootcourt .hero-subtitle {
+        font-size: 0.98rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 24px;
+    }
+
+    .highlights-slide--mootcourt .hero-btn {
+        min-width: 0 !important;
+        padding-inline: 18px !important;
+    }
+
+    .conf-tabs-nav {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Compact controls across tablet and mobile --------------------------- */
+@media (max-width: 1040px) {
+    /* A single responsive composition for all three Home banners. */
+    .highlights-slide--icfgl,
+    .highlights-slide--workshops,
+    .highlights-slide--mootcourt {
+        align-items: center !important;
+        text-align: left !important;
+    }
+
+    .highlights-slide--icfgl .slide-content,
+    .highlights-slide--workshops .slide-content,
+    .highlights-slide--mootcourt .slide-content {
+        width: min(calc(100% - 112px), 600px) !important;
+        max-width: 600px !important;
+        height: clamp(420px, 47vw, 440px) !important;
+        min-height: 0 !important;
+        margin: 0 auto !important;
+        padding: 24px 0 72px !important;
+        box-sizing: border-box;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+    }
+
+    .highlights-slide--icfgl.active .slide-content,
+    .highlights-slide--workshops.active .slide-content,
+    .highlights-slide--mootcourt.active .slide-content {
+        transform: translateY(0) !important;
+    }
+
+    .highlights-slide .hero-title-main,
+    .highlights-slide--icfgl .hero-title-main,
+    .highlights-slide--workshops .hero-title-main,
+    .highlights-slide--mootcourt .hero-title-main {
+        font-size: clamp(2.35rem, 6vw, 3.5rem) !important;
+        line-height: 1.02 !important;
+        margin-bottom: 16px !important;
+        overflow-wrap: normal;
+    }
+
+    .highlights-slide--icfgl .hero-title-nowrap {
+        margin-top: 10px !important;
+        font-size: 0.52em !important;
+        line-height: 1.12 !important;
+    }
+
+    .highlights-slide .hero-divider {
+        width: 52px;
+        margin-bottom: 20px;
+    }
+
+    .highlights-slide .hero-subtitle {
+        max-width: 540px !important;
+        font-size: clamp(0.95rem, 2vw, 1.08rem) !important;
+        line-height: 1.55 !important;
+    }
+
+    .abstract-hero-actions,
+    .icfgl2026-hero-actions,
+    .pv-actions,
+    .stats-action,
+    .article-actions,
+    .fj-actions,
+    .moot-actions {
+        display: flex !important;
+        width: auto !important;
+        max-width: 100%;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .abstract-btn-primary,
+    .abstract-btn-outline,
+    .btn-primary,
+    .btn-outline-dark,
+    .btn-submit,
+    .hero-btn,
+    .pv-btn,
+    .article-link-btn,
+    .publication-download-btn,
+    .wwu-dl-btn,
+    .wwu-hero-btn,
+    .agenda-btn {
+        width: fit-content !important;
+        min-width: 0 !important;
+        max-width: 100%;
+        min-height: 44px;
+        padding: 11px 18px !important;
+        justify-content: center;
+        text-align: center;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        line-height: 1.25;
+    }
+
+    .highlights-slide .hero-btn {
+        max-width: min(100%, 240px);
+        font-size: clamp(0.9rem, 1.7vw, 1rem) !important;
+    }
+
+    .highlights-slide .hero-btn-arrow {
+        margin-left: 10px;
+        font-size: 1.2em;
+    }
+
+    .highlights-slide .hero-kicker {
+        width: fit-content !important;
+        max-width: 100%;
+        min-height: 32px;
+        padding: 7px 14px !important;
+        margin-bottom: 16px;
+        font-size: 0.72rem !important;
+        line-height: 1.2 !important;
+        white-space: normal;
+    }
+
+    .highlights-slide .hero-subtitle {
+        margin-bottom: 22px !important;
+    }
+
+    .hl-arrow {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 1.1rem !important;
+    }
+
+    .hl-arrow-prev {
+        left: 10px !important;
+    }
+
+    .hl-arrow-next {
+        right: 10px !important;
+    }
+
+    /* Reserve the landscape poster ratio before lazy-loaded images arrive.
+       Without this, auto height collapses to zero and only a narrow strip is
+       painted when the gallery first enters the viewport. */
+    .roundtable-gallery {
+        display: block !important;
+        min-height: 0 !important;
+        height: auto !important;
+    }
+
+    .roundtable-gallery .vfj-stack {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        height: auto !important;
+    }
+
+    .roundtable-gallery .gallery-item {
+        flex: none !important;
+        min-height: 0 !important;
+        aspect-ratio: 590 / 315;
+    }
+
+    .roundtable-gallery .gallery-item img {
+        width: 100% !important;
+        height: 100% !important;
+        max-height: none !important;
+        object-fit: cover !important;
+    }
+}
+
+@media (max-width: 760px) {
+    .managing-team-card {
+        width: 100%;
+        max-width: 640px;
+        margin-inline: auto;
+    }
+
+    .managing-team-photo {
+        width: min(62vw, 220px) !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        aspect-ratio: 4 / 3 !important;
+        margin-inline: auto;
+        border-radius: 14px;
+        overflow: hidden;
+    }
+
+    .managing-team-photo img {
+        height: 100% !important;
+        min-height: 0 !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .highlights-slider-wrap {
+        height: clamp(500px, calc(100svh - 64px), 760px) !important;
+        min-height: 500px !important;
+        max-height: 760px !important;
+    }
+
+    .highlights-slide--icfgl .slide-content,
+    .highlights-slide--workshops .slide-content,
+    .highlights-slide--mootcourt .slide-content {
+        width: calc(100% - 56px) !important;
+        height: clamp(370px, 50svh, 410px) !important;
+        padding: 12px 0 52px !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .highlights-slide .hero-title-main,
+    .highlights-slide--icfgl .hero-title-main,
+    .highlights-slide--workshops .hero-title-main,
+    .highlights-slide--mootcourt .hero-title-main {
+        width: 100%;
+        font-size: clamp(2.35rem, 10.8vw, 2.75rem) !important;
+        line-height: 1.04 !important;
+        margin-bottom: 12px !important;
+        text-align: left !important;
+    }
+
+    .highlights-slide--workshops .hero-title-main {
+        line-height: 1.1 !important;
+    }
+
+    .highlights-slide .hero-subtitle {
+        font-size: 0.92rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 16px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+    }
+
+    .highlights-slide .slide-bg,
+    .highlights-slide .slide-bg img {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 0 !important;
+    }
+
+    .highlights-slide .slide-bg img {
+        object-fit: cover !important;
+    }
+
+    .highlights-slide--workshops .slide-bg img {
+        object-position: 56% center !important;
+    }
+
+    .pill-nav-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pill-item {
+        font-size: 0.68rem !important;
+        letter-spacing: 0.035em;
+    }
+
+    .abstract-btn-primary,
+    .abstract-btn-outline,
+    .btn-primary,
+    .btn-outline-dark,
+    .btn-submit,
+    .btn-dark,
+    .btn-pink,
+    .btn-r,
+    .hero-btn,
+    .pv-btn,
+    .article-link-btn,
+    .publication-download-btn,
+    .archive-cta,
+    .compact-publication-btn,
+    .fj-btn-primary,
+    .fj-btn-secondary,
+    .moot-btn-primary,
+    .moot-btn-secondary,
+    .poster-btn,
+    .wwu-dl-btn,
+    .wwu-hero-btn,
+    .agenda-btn {
+        display: inline-flex !important;
+        width: fit-content !important;
+        min-width: 0 !important;
+        max-width: 100%;
+        min-height: 44px !important;
+        height: auto !important;
+        padding: 10px 16px !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.875rem !important;
+        line-height: 1.25 !important;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .highlights-slide .hero-btn {
+        max-width: min(100%, 220px);
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .highlights-slide .hero-kicker {
+        min-height: 32px;
+        padding: 6px 12px !important;
+        font-size: 0.67rem !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+    }
+
+    .hl-arrow {
+        top: auto !important;
+        bottom: 14px !important;
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 1rem !important;
+        transform: none !important;
+    }
+
+    .hl-arrow-prev {
+        left: 14px !important;
+    }
+
+    .hl-arrow-next {
+        right: 14px !important;
+    }
+
+    .highlights-dots {
+        bottom: 14px !important;
+        gap: 0 !important;
+    }
+
+    .highlights-dot {
+        position: relative;
+        width: 44px !important;
+        height: 44px !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .highlights-dot::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 7px;
+        width: 30px;
+        height: 3px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.35);
+        transform: translateY(-50%);
+    }
+
+    .highlights-dot.active::before {
+        background: var(--pink, #f64183);
+        box-shadow: 0 0 8px rgba(222, 79, 122, 0.4);
+    }
+
+    .highlights-slide .hero-divider {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .highlights-slide--icfgl .hero-subtitle::before {
+        left: 0 !important;
+        transform: none;
+    }
+
+    .managing-team-card {
+        max-width: 420px;
+        padding: 0 !important;
+        border-radius: 16px !important;
+    }
+
+    .managing-team-photo {
+        width: 100% !important;
+        aspect-ratio: 4 / 3 !important;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .managing-team-body {
+        padding: 20px 18px 22px !important;
+        gap: 7px !important;
+        text-align: center;
+    }
+
+    .managing-team-role {
+        font-size: 0.65rem !important;
+        letter-spacing: 0.09em;
+    }
+
+    .managing-team-name {
+        font-size: clamp(1.08rem, 5vw, 1.28rem) !important;
+    }
+
+    .managing-team-copy {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+    }
+
+    .roundtable-gallery .vfj-stack {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Mobile composition: concise sections, balanced media and controls. */
+    .page-section,
+    .content-section,
+    .wwu-section {
+        padding-block: 44px !important;
+    }
+
+    .academic-hero {
+        padding-block: 36px 44px !important;
+    }
+
+    .academic-hero .hero-grid {
+        gap: 20px !important;
+    }
+
+    .academic-hero .hero-copy,
+    .academic-hero .hero-description,
+    .academic-hero .hero-title,
+    .academic-hero .hero-quote-card {
+        text-align: left !important;
+    }
+
+    .academic-hero .hero-eyebrow,
+    .academic-hero .hero-kicker,
+    .academic-hero .hero-quote-wrap,
+    .academic-hero .fj-hero-cta {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+
+    .academic-hero .fj-hero-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .academic-hero .hero-quote-source {
+        justify-content: flex-start;
+    }
+
+    .archive-hero-grid,
+    .archive-hero-copy,
+    .archive-hero .archive-title,
+    .archive-hero .archive-intro {
+        text-align: left !important;
+    }
+
+    .archive-hero-grid {
+        justify-items: stretch !important;
+    }
+
+    .archive-hero-copy {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+
+    .archive-hero .archive-title {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        font-size: clamp(2rem, 9.4vw, 2.5rem) !important;
+        overflow-wrap: anywhere;
+    }
+
+    .archive-hero .archive-title-rule {
+        justify-content: flex-start !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+    }
+
+    .archive-hero .archive-title-rule::before {
+        flex: 0 0 48px;
+    }
+
+    .archive-hero .archive-title-rule::after {
+        display: none;
+    }
+
+    .publication-row {
+        gap: 26px !important;
+        margin-bottom: 56px !important;
+        align-items: start !important;
+    }
+
+    .book-frame,
+    .book-cover {
+        width: min(76vw, 240px) !important;
+        max-width: 240px !important;
+        margin-inline: auto !important;
+    }
+
+    .fj-visual,
+    .workshops-hero-media {
+        min-height: 0 !important;
+    }
+
+    .fj-image-frame,
+    .workshops-hero-media,
+    .workshops-hero-media img {
+        min-height: 0 !important;
+        height: auto !important;
+        aspect-ratio: 4 / 3;
+    }
+
+    .fj-image-frame img,
+    .workshops-hero-media img {
+        width: 100%;
+        height: 100% !important;
+        object-fit: cover;
+    }
+
+    .abstract-hero-actions,
+    .icfgl2026-hero-actions,
+    .pv-actions,
+    .stats-action,
+    .article-actions,
+    .fj-actions,
+    .moot-actions {
+        align-items: flex-start !important;
+    }
+
+    .abstract-hero-actions,
+    .icfgl2026-hero-actions,
+    .pv-actions,
+    .stats-action,
+    .fj-actions,
+    .moot-actions {
+        width: 100% !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .stats-action .btn-outline-dark {
+        margin-inline: auto !important;
+    }
+
+    .fj-pill {
+        min-height: 40px;
+        padding-block: 8px !important;
+    }
+
+    .reader-toolbar-btn,
+    .sp-modal-close,
+    .journey-modal-close,
+    .fj-clear-btn,
+    .btn-r {
+        min-width: 44px !important;
+        min-height: 44px !important;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+    .local-nav {
+        display: block !important;
+        overflow: visible !important;
+        padding: 10px 14px !important;
+    }
+
+    .local-nav ul {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100% !important;
+        gap: 8px !important;
+    }
+
+    .local-nav a {
+        display: flex;
+        min-width: 0;
+        min-height: 42px;
+        padding: 8px 10px !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.82rem !important;
+        line-height: 1.25;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .pill-nav-container {
+        padding-inline: 14px !important;
+    }
+
+    .pill-nav-list .pill-item:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: calc(50% - 5px);
+        justify-self: center;
+    }
+
+    .section-heading {
+        text-align: center;
+    }
+
+    .section-heading .section-eyebrow,
+    .section-heading .section-kicker,
+    .section-heading hr {
+        margin-inline: auto !important;
+    }
+
+    .section-heading .section-intro-text {
+        text-align: center !important;
+    }
+
+    .site-footer-top {
+        gap: 26px !important;
+        padding: 34px 20px 30px !important;
+        text-align: center;
+    }
+
+    .site-footer-col {
+        justify-items: center;
+        text-align: center;
+    }
+
+    .site-footer-col h4 {
+        margin-bottom: 16px !important;
+        padding-bottom: 12px !important;
+        font-size: 0.84rem !important;
+        letter-spacing: 0.11em !important;
+    }
+
+    .site-footer-col h4::after {
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+
+    .site-footer-brand p,
+    .site-footer-contact p,
+    .site-footer-links a {
+        font-size: 0.92rem !important;
+        line-height: 1.62 !important;
+    }
+
+    .site-footer-brand p {
+        margin-bottom: 18px !important;
+    }
+
+    .site-footer-brand img {
+        height: 58px !important;
+        max-width: min(100%, 250px);
+    }
+
+    .site-footer-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px 14px !important;
+    }
+
+    .site-footer-links a {
+        min-height: 40px;
+        padding-block: 7px;
+        justify-content: center;
+        text-align: center !important;
+    }
+
+    .site-footer-brand p,
+    .site-footer-contact,
+    .site-footer-contact p {
+        margin-inline: auto;
+        text-align: center !important;
+    }
+
+    .site-footer-brand img {
+        margin-inline: auto;
+    }
+
+    .site-footer-contact p + p {
+        margin-top: 12px !important;
+    }
+
+    .site-footer-title {
+        font-size: 0.94rem !important;
+    }
+
+    .site-footer-bottom-grid {
+        gap: 8px !important;
+        padding: 18px 20px calc(20px + env(safe-area-inset-bottom)) !important;
+        align-items: center !important;
+        font-size: 0.8rem !important;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .site-footer-bottom-grid p {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .highlights-slider-wrap {
+        min-height: 500px !important;
+    }
+
+    .highlights-slide--icfgl .slide-content,
+    .highlights-slide--workshops .slide-content,
+    .highlights-slide--mootcourt .slide-content {
+        width: calc(100% - 56px) !important;
+        height: clamp(370px, 50svh, 410px) !important;
+        padding-bottom: 52px !important;
+    }
+
+    .highlights-slide .hero-subtitle {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+
+    .pill-nav-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Accessibility ------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
