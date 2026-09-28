@@ -32,7 +32,7 @@
             display: flex;
             align-items: center;
             margin: 0;
-            background: #0f1c2d url('../../images/workshops/banner.jpg') no-repeat right center / cover;
+            background: #0f1c2d url('../../images/workshops/banner.JPG') no-repeat right center / cover;
             padding: 0;
             color: #fff;
             overflow: hidden;
@@ -304,7 +304,7 @@
             line-height: 1.7;
         }
 
-        .resource-list li + li {
+        .resource-list li+li {
             margin-top: 10px;
         }
 
@@ -436,7 +436,7 @@
             padding: 25px 30px;
             border-radius: 16px;
             border-left: 4px solid var(--accent-pink);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .timeline-item strong {
@@ -552,12 +552,14 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            width: 100%; /* Fill container */
+            width: 100%;
+            /* Fill container */
             margin: 0 auto;
         }
 
         .vfj-stack-small {
-            max-width: 340px; /* Specific to Section 4 */
+            max-width: 340px;
+            /* Specific to Section 4 */
         }
 
         .vfj-stack .gallery-item {
@@ -571,7 +573,8 @@
             width: 100%;
             display: block;
             height: auto;
-            max-height: 380px; /* Increased height limit slightly for better detail */
+            max-height: 380px;
+            /* Increased height limit slightly for better detail */
             object-fit: cover;
             object-position: top;
         }
@@ -680,7 +683,7 @@
             text-align: center;
         }
 
-        .vfj-meta-item + .vfj-meta-item {
+        .vfj-meta-item+.vfj-meta-item {
             border-left: 1px solid var(--border-light);
         }
 
@@ -768,7 +771,7 @@
             text-align: left !important;
         }
 
-        .vfj-highlights .vfj-h-card:nth-child(3) .vfj-h-info > p:nth-of-type(2) {
+        .vfj-highlights .vfj-h-card:nth-child(3) .vfj-h-info>p:nth-of-type(2) {
             display: none;
         }
 
@@ -779,52 +782,67 @@
                 background-position: center;
                 padding: 88px 24px 72px;
             }
+
             .hero-gradient {
                 background:
                     linear-gradient(90deg, rgba(3, 13, 31, 0.88) 0%, rgba(8, 26, 55, 0.72) 54%, rgba(12, 43, 76, 0.24) 100%),
                     linear-gradient(180deg, rgba(3, 13, 31, 0.2) 0%, rgba(3, 13, 31, 0) 48%, rgba(3, 13, 31, 0.26) 100%);
             }
+
             .hero-content {
                 width: min(100%, 520px);
                 margin-left: 0;
             }
+
             .hero-title-main {
                 font-size: clamp(3rem, 11vw, 4rem);
             }
+
             .hero-subtitle {
                 max-width: 100%;
                 font-size: 1.08rem;
             }
+
             .hero-btn {
                 min-width: 230px;
                 padding: 16px 28px 16px 34px;
             }
-            .split-layout, .split-layout.reverse {
+
+            .split-layout,
+            .split-layout.reverse {
                 grid-template-columns: 1fr;
             }
+
             .split-layout.reverse .split-content {
                 order: 2;
             }
+
             .split-layout.reverse .split-image {
                 order: 1;
             }
+
             .public-talk-layout {
                 grid-template-columns: 1fr;
                 gap: 34px;
             }
+
             .public-talk-visual {
                 position: static;
             }
+
             .public-talk-visual .gallery-item img {
                 height: clamp(280px, 58vw, 420px);
             }
+
             .vfj-highlights {
                 grid-template-columns: 1fr;
             }
+
             .vfj-asset-gallery {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
+
             .speaker-grid {
                 grid-template-columns: 1fr;
             }
@@ -836,27 +854,33 @@
                 padding: 18px;
                 border-radius: 20px !important;
             }
+
             .vfj-meta-item {
                 border-left: none !important;
                 padding-left: 0 !important;
                 padding-bottom: 12px;
                 border-bottom: 1px solid var(--border-light);
             }
+
             .vfj-meta-item:last-child {
                 border-bottom: none;
                 padding-bottom: 0;
             }
+
             .vfj-stack {
                 gap: 15px;
             }
+
             .vfj-h-card {
                 padding: 15px;
                 gap: 15px;
             }
+
             .split-image {
                 position: static !important;
                 margin-bottom: 30px;
             }
+
             .meta-pair-grid {
                 grid-template-columns: 1fr;
             }
@@ -870,7 +894,7 @@
 
 <body>
     <div id="global-header"></div>
-    
+
     <div class="breadcrumb archive-breadcrumb">
         <a href="../../index.html">Home</a>
         <span class="breadcrumb-separator">›</span>
@@ -890,7 +914,8 @@
                 <div class="hero-divider"></div>
 
                 <p class="hero-subtitle">
-                    Intensive sessions designed for capacity building, peer-reviewing, and collaborative legal drafting among scholars.
+                    Intensive sessions designed for capacity building, peer-reviewing, and collaborative legal drafting
+                    among scholars.
                 </p>
 
                 <a href="#section1" class="hero-btn">
@@ -908,8 +933,12 @@
                 <div class="split-content">
                     <span class="kicker">Section 1</span>
                     <h2>Conference on Vietnamese Feminist Judgments</h2>
-                    <p>The Conference on Vietnamese Feminist Judgments 2025 (VFJ 2025) is a major national academic event organized by the University of Economics and Law (UEL).</p>
-                    <p>It operates within the framework of the project "Integrating Feminist Legal Theory into Legal Education, Research and Practice", proudly funded by the Rosa-Luxemburg-Stiftung Hanoi Office. The conference aims to push the boundaries of legal interpretation by systematically rewriting historical and contemporary judgments through a feminist lens.</p>
+                    <p>The Conference on Vietnamese Feminist Judgments 2025 (VFJ 2025) is a major national academic
+                        event organized by the University of Economics and Law (UEL).</p>
+                    <p>It operates within the framework of the project "Integrating Feminist Legal Theory into Legal
+                        Education, Research and Practice", proudly funded by the Rosa-Luxemburg-Stiftung Hanoi Office.
+                        The conference aims to push the boundaries of legal interpretation by systematically rewriting
+                        historical and contemporary judgments through a feminist lens.</p>
                     <a href="vfj-2025/index.html" class="btn-primary">View Conference Resources</a>
                 </div>
                 <div class="split-image split-image--balanced">
@@ -924,16 +953,22 @@
         <div class="section-shell">
             <div class="split-layout reverse split-layout--poster">
                 <div class="split-image split-image--balanced split-image--poster">
-                    <img loading="lazy" src="../../images/workshops/PosterCompetition-2024/Poster FGL week.webp" alt="FGL Poster Week 2024">
+                    <img loading="lazy" src="../../images/workshops/PosterCompetition-2024/Poster FGL week.webp"
+                        alt="FGL Poster Week 2024">
                 </div>
                 <div class="split-content">
                     <span class="kicker">Section 2</span>
                     <h2>FGL Posters & Essay Competition</h2>
-                    <p>Launched during FGL Week 2024, the Faculty of Economic Law hosted an essay writing competition and an immersive poster design activity focused on feminism, gender, and law for all UEL students.</p>
+                    <p>Launched during FGL Week 2024, the Faculty of Economic Law hosted an essay writing competition
+                        and an immersive poster design activity focused on feminism, gender, and law for all UEL
+                        students.</p>
                     <div class="quote-block">
-                        "If any female feels she needs anything beyond herself to legitimate and validate her existence, she is already giving away her power to be self-defining, her agency." — bell hooks
+                        "If any female feels she needs anything beyond herself to legitimate and validate her existence,
+                        she is already giving away her power to be self-defining, her agency." — bell hooks
                     </div>
-                    <p>Students participated in groups, producing visuals that merged feminist legal theory with creative communication. High-scoring essays received curated book collections covering essential feminist literature.</p>
+                    <p>Students participated in groups, producing visuals that merged feminist legal theory with
+                        creative communication. High-scoring essays received curated book collections covering essential
+                        feminist literature.</p>
                     <a href="poster-competition-2024.html" class="btn-primary">View Full Competition Details</a>
                 </div>
             </div>
@@ -947,17 +982,23 @@
                 <span class="kicker">Section 3</span>
                 <h2>FGL Week: Feminism, Gender and Law Week</h2>
                 <hr>
-                <p style="max-width: 850px; margin: 20px auto 0; text-align: center; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
-                    Following the vibrant Feminism Week jointly organized by the University of Economics and Law and the Rosa Luxemburg Stiftung, UEL hosted an open lecture series on feminism, gender, and law. Featuring three influential speakers, the programme created a space for participants to gain foundational knowledge, share perspectives, and engage in critical discussion across the sessions.
+                <p
+                    style="max-width: 850px; margin: 20px auto 0; text-align: center; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
+                    Following the vibrant Feminism Week jointly organized by the University of Economics and Law and the
+                    Rosa Luxemburg Stiftung, UEL hosted an open lecture series on feminism, gender, and law. Featuring
+                    three influential speakers, the programme created a space for participants to gain foundational
+                    knowledge, share perspectives, and engage in critical discussion across the sessions.
                 </p>
                 <div class="meta-pair-grid">
                     <div class="meta-pair-card">
                         <strong>Audience</strong>
-                        <p>Open to students and learners across the university with an interest in feminism, gender, and law.</p>
+                        <p>Open to students and learners across the university with an interest in feminism, gender, and
+                            law.</p>
                     </div>
                     <div class="meta-pair-card">
                         <strong>Venue</strong>
-                        <p>UEL Space, with an interactive format designed to encourage discussion and active participant engagement.</p>
+                        <p>UEL Space, with an interactive format designed to encourage discussion and active participant
+                            engagement.</p>
                     </div>
                 </div>
             </div>
@@ -965,19 +1006,24 @@
             <h3 class="section-subtitle section-subtitle--center" style="font-size: 1.8rem;">Featured Speakers</h3>
             <div class="speaker-grid speaker-grid--featured">
                 <div class="speaker-card speaker-card--featured">
-                    <img loading="lazy" src="../../images/workshops/FGLPublicTalkSeries-2024/speaker-pham-quoc-loc.webp" alt="Dr. Pham Quoc Loc">
+                    <img loading="lazy" src="../../images/workshops/FGLPublicTalkSeries-2024/speaker-pham-quoc-loc.webp"
+                        alt="Dr. Pham Quoc Loc">
                     <span class="speaker-label">Speaker 01</span>
                     <h3>Dr. Pham Quoc Loc</h3>
                     <p>Rector, Thai Binh Duong University.</p>
                 </div>
                 <div class="speaker-card speaker-card--featured">
-                    <img loading="lazy" src="../../images/workshops/FGLPublicTalkSeries-2024/speaker-bui-tran-phuong.webp" alt="Dr. Bui Tran Phuong">
+                    <img loading="lazy"
+                        src="../../images/workshops/FGLPublicTalkSeries-2024/speaker-bui-tran-phuong.webp"
+                        alt="Dr. Bui Tran Phuong">
                     <span class="speaker-label">Speaker 02</span>
                     <h3>Dr. Bui Tran Phuong</h3>
                     <p>Former President, Hoa Sen University.</p>
                 </div>
                 <div class="speaker-card speaker-card--featured">
-                    <img loading="lazy" src="../../images/workshops/FGLPublicTalkSeries-2024/speaker-trinh-thuc-hien.webp" alt="Dr. Trinh Thuc Hien">
+                    <img loading="lazy"
+                        src="../../images/workshops/FGLPublicTalkSeries-2024/speaker-trinh-thuc-hien.webp"
+                        alt="Dr. Trinh Thuc Hien">
                     <span class="speaker-label">Speaker 03</span>
                     <h3>Dr. Trinh Thuc Hien</h3>
                     <p>Vice Dean, Faculty of Economic Law.</p>
@@ -989,17 +1035,21 @@
                 <div class="timeline-item">
                     <span>24 September | 7:45 - 9:45</span>
                     <strong>Some Basic Perspectives on Gender</strong>
-                    <p style="margin: 0; color: #555;">Session led by Dr. Pham Quoc Loc, introducing key conceptual approaches to gender from an interdisciplinary perspective.</p>
+                    <p style="margin: 0; color: #555;">Session led by Dr. Pham Quoc Loc, introducing key conceptual
+                        approaches to gender from an interdisciplinary perspective.</p>
                 </div>
                 <div class="timeline-item">
                     <span>25 September | 7:45 - 9:45</span>
                     <strong>Towards Vietnamese Feminist Judgments</strong>
-                    <p style="margin: 0; color: #555;">Session led by Dr. Trinh Thuc Hien, exploring the feminist judgments methodology in the Vietnamese legal context.</p>
+                    <p style="margin: 0; color: #555;">Session led by Dr. Trinh Thuc Hien, exploring the feminist
+                        judgments methodology in the Vietnamese legal context.</p>
                 </div>
                 <div class="timeline-item">
                     <span>26 September | 7:45 - 9:45</span>
-                    <strong>Theoretical Foundations of Vietnamese Feminist Thought in the First Half of the Twentieth Century</strong>
-                    <p style="margin: 0; color: #555;">Session led by Dr. Bui Tran Phuong, focusing on the intellectual foundations of Vietnamese feminist thought.</p>
+                    <strong>Theoretical Foundations of Vietnamese Feminist Thought in the First Half of the Twentieth
+                        Century</strong>
+                    <p style="margin: 0; color: #555;">Session led by Dr. Bui Tran Phuong, focusing on the intellectual
+                        foundations of Vietnamese feminist thought.</p>
                 </div>
             </div>
         </div>
@@ -1010,7 +1060,7 @@
         <div class="section-shell" style="text-align: center;">
             <span class="kicker">Section 4</span>
             <h2 class="section-title-center">Toward Vietnamese Feminist Judgments</h2>
-            
+
             <div class="vfj-meta-box">
                 <div class="vfj-meta-item">
                     <strong>Date</strong>
@@ -1026,31 +1076,40 @@
                 </div>
             </div>
 
-            <p style="max-width: 850px; margin: 0 auto 50px; font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); text-align: center;">On the afternoon of 10 April 2024, the Faculty of Economic Law organized a high-level open talk and international roundtable. This event serves as a foundational milestone in the project's mission to explore the intersection of gender, labor, and legal theory across Vietnamese and European perspectives.</p>
-            
+            <p
+                style="max-width: 850px; margin: 0 auto 50px; font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); text-align: center;">
+                On the afternoon of 10 April 2024, the Faculty of Economic Law organized a high-level open talk and
+                international roundtable. This event serves as a foundational milestone in the project's mission to
+                explore the intersection of gender, labor, and legal theory across Vietnamese and European perspectives.
+            </p>
+
             <h3 class="section-subtitle section-subtitle--center">Programme Highlights</h3>
-            
+
             <div class="vfj-highlights" style="grid-template-columns: repeat(3, 1fr); gap: 28px; text-align: left;">
                 <div class="vfj-h-card">
                     <span class="vfj-h-num">01</span>
                     <div class="vfj-h-info">
                         <h4>Theory & Methodology</h4>
-                        <p>Exploring the historical development of feminist movements and the rewriting of legal judgments through a gender-sensitive methodology.</p>
+                        <p>Exploring the historical development of feminist movements and the rewriting of legal
+                            judgments through a gender-sensitive methodology.</p>
                     </div>
                 </div>
                 <div class="vfj-h-card">
                     <span class="vfj-h-num">02</span>
                     <div class="vfj-h-info">
                         <h4>Judgment Analysis</h4>
-                        <p>Critical commentary on specific judicial decisions, demonstrating how feminist theory reframes the application of the law.</p>
+                        <p>Critical commentary on specific judicial decisions, demonstrating how feminist theory
+                            reframes the application of the law.</p>
                     </div>
                 </div>
                 <div class="vfj-h-card">
                     <span class="vfj-h-num">03</span>
                     <div class="vfj-h-info">
                         <h4>International Dialogue</h4>
-                        <p>Roundtable coverage of household labor division and Germany's experience in regulating unpaid care work.</p>
-                        <p>Roundtable coverage of household labor division and Germany’s experience in regulating unpaid care work.</p>
+                        <p>Roundtable coverage of household labor division and Germany's experience in regulating unpaid
+                            care work.</p>
+                        <p>Roundtable coverage of household labor division and Germany’s experience in regulating unpaid
+                            care work.</p>
                     </div>
                 </div>
             </div>
@@ -1058,13 +1117,16 @@
             <!-- New Conceptual Gallery -->
             <div class="vfj-asset-gallery">
                 <div class="vfj-asset-card">
-                    <img loading="lazy" src="../../images/workshops/UELPublicTalk-2024/1.webp" alt="Toward Vietnamese Feminist Judgments event image 1">
+                    <img loading="lazy" src="../../images/workshops/UELPublicTalk-2024/1.webp"
+                        alt="Toward Vietnamese Feminist Judgments event image 1">
                 </div>
                 <div class="vfj-asset-card">
-                    <img loading="lazy" src="../../images/workshops/UELPublicTalk-2024/2.webp" alt="Toward Vietnamese Feminist Judgments event image 2">
+                    <img loading="lazy" src="../../images/workshops/UELPublicTalk-2024/2.webp"
+                        alt="Toward Vietnamese Feminist Judgments event image 2">
                 </div>
                 <div class="vfj-asset-card">
-                    <img loading="lazy" src="../../images/workshops/UELPublicTalk-2024/5.webp" alt="Toward Vietnamese Feminist Judgments event image 3">
+                    <img loading="lazy" src="../../images/workshops/UELPublicTalk-2024/5.webp"
+                        alt="Toward Vietnamese Feminist Judgments event image 3">
                 </div>
             </div>
         </div>
@@ -1077,12 +1139,20 @@
                 <div class="split-content">
                     <span class="kicker">Section 5</span>
                     <h2>Women in the Law: The Law of Gender Equality in the United States</h2>
-                    <p>The 2022 Special Lecture Series was organized within the framework of the project by the University of Economics and Law (UEL), VNU-HCM, in collaboration with the Rosa Luxemburg Stiftung Southeast Asia Office. The programme introduced key issues concerning women in law and the law of gender equality in the United States, while also creating an academic space for discussion on feminist legal theory and interdisciplinary approaches to legal research.</p>
-                    <p>The programme featured world-class speakers, including <strong>Prof. Elizabeth Porter</strong> (Interim Dean, Law School, University of Washington) and <strong>Ms. Elena Caruso</strong> (PhD Candidate in Law, University of Kent, UK).</p>
-                    <a href="uel-special-lecture-series-2022.html" class="btn-primary">View Full Programme & Speaker Bios</a>
+                    <p>The 2022 Special Lecture Series was organized within the framework of the project by the
+                        University of Economics and Law (UEL), VNU-HCM, in collaboration with the Rosa Luxemburg
+                        Stiftung Southeast Asia Office. The programme introduced key issues concerning women in law and
+                        the law of gender equality in the United States, while also creating an academic space for
+                        discussion on feminist legal theory and interdisciplinary approaches to legal research.</p>
+                    <p>The programme featured world-class speakers, including <strong>Prof. Elizabeth Porter</strong>
+                        (Interim Dean, Law School, University of Washington) and <strong>Ms. Elena Caruso</strong> (PhD
+                        Candidate in Law, University of Kent, UK).</p>
+                    <a href="uel-special-lecture-series-2022.html" class="btn-primary">View Full Programme & Speaker
+                        Bios</a>
                 </div>
                 <div class="split-image">
-                    <img loading="lazy" src="../../images/workshops/UELSpecialSeries-2022/workshops-cangio.webp" alt="Prof. Elizabeth Porter" style="aspect-ratio: 4/3;">
+                    <img loading="lazy" src="../../images/workshops/UELSpecialSeries-2022/workshops-cangio.webp"
+                        alt="Prof. Elizabeth Porter" style="aspect-ratio: 4/3;">
                 </div>
             </div>
         </div>
@@ -1094,19 +1164,24 @@
             <div class="split-layout reverse">
                 <div class="split-image" style="background: none; box-shadow: none;">
                     <div class="gallery-2col" style="margin-top: 0; gap: 20px;">
-                        <div class="gallery-item"><img loading="lazy" src="../../images/workshops/WorkshoponFJM-2022/1.webp" alt="FJM Workshop 1" style="height: 100%;"></div>
-                        <div class="gallery-item"><img loading="lazy" src="../../images/workshops/WorkshoponFJM-2022/2.webp" alt="FJM Workshop 2" style="height: 100%;"></div>
+                        <div class="gallery-item"><img loading="lazy"
+                                src="../../images/workshops/WorkshoponFJM-2022/1.webp" alt="FJM Workshop 1"
+                                style="height: 100%;"></div>
+                        <div class="gallery-item"><img loading="lazy"
+                                src="../../images/workshops/WorkshoponFJM-2022/2.webp" alt="FJM Workshop 2"
+                                style="height: 100%;"></div>
                     </div>
                 </div>
                 <div class="split-content">
                     <span class="kicker">Section 6</span>
                     <h2>Workshop on Feminist Judgment Methodology 2022</h2>
-                    
+
                     <div class="resource-card">
                         <h4>Objectives for Feminist Judgments</h4>
                         <ul class="resource-list">
                             <li>Provide the feminist approach for original court decisions.</li>
-                            <li>Enhance the quality of judicial methods by demonstrating how to apply theoretical knowledge for legal reasoning and making a decision.</li>
+                            <li>Enhance the quality of judicial methods by demonstrating how to apply theoretical
+                                knowledge for legal reasoning and making a decision.</li>
                         </ul>
                     </div>
                 </div>
@@ -1121,21 +1196,35 @@
                 <div class="split-content">
                     <span class="kicker">Section 7</span>
                     <h2 style="margin-bottom: 25px;">2021 Feminist Legal Theory Workshop</h2>
-                    <p>The 2021 Feminist Legal Theory Workshop was an early academic activity of the project, bringing together scholars, researchers, and practitioners to explore the theoretical foundations of feminist legal thought and its emerging applications within the Vietnamese legal context. The workshop provided a space for participants to engage with international feminist legal scholarship and to connect its frameworks with the realities of Vietnamese law and gender equality.</p>
-                    
+                    <p>The 2021 Feminist Legal Theory Workshop was an early academic activity of the project, bringing
+                        together scholars, researchers, and practitioners to explore the theoretical foundations of
+                        feminist legal thought and its emerging applications within the Vietnamese legal context. The
+                        workshop provided a space for participants to engage with international feminist legal
+                        scholarship and to connect its frameworks with the realities of Vietnamese law and gender
+                        equality.</p>
+
                     <div class="resource-card">
                         <h4>Workshop Materials</h4>
-                        <p>Proceedings from the Roundtable Discussion on Feminist Legal Theory held in May 2021 are available in the archive below.</p>
+                        <p>Proceedings from the Roundtable Discussion on Feminist Legal Theory held in May 2021 are
+                            available in the archive below.</p>
                         <a href="https://drive.google.com/file/d/1T34MeV4QqB0xfoi3BnrjbvwtC2mrY_Z_/view?pli=1">
                             <span>Open the May 2021 roundtable proceedings</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
                     </div>
                 </div>
                 <div class="split-image roundtable-gallery">
                     <div class="vfj-stack">
-                        <div class="gallery-item"><img loading="lazy" src="../../images/workshops/Roundtable-2021/Toạ đàm 2021_FGL(2).webp" alt="Roundtable 2021 Session"></div>
-                        <div class="gallery-item"><img loading="lazy" src="../../images/workshops/Roundtable-2021/Toạ đàm 2021_FGL.webp" alt="Roundtable 2021 Group"></div>
+                        <div class="gallery-item"><img loading="lazy"
+                                src="../../images/workshops/Roundtable-2021/Toạ đàm 2021_FGL(2).webp"
+                                alt="Roundtable 2021 Session"></div>
+                        <div class="gallery-item"><img loading="lazy"
+                                src="../../images/workshops/Roundtable-2021/Toạ đàm 2021_FGL.webp"
+                                alt="Roundtable 2021 Group"></div>
                     </div>
                 </div>
             </div>
