@@ -52,8 +52,18 @@ nav::after {
 .nav-links a { color: #FFFFFF; }
 .nav-links a.nav-current { color: var(--primary, #f64183); }
 
+@media (min-width: 901px) {
+    .nav-links {
+        margin-right: 24px;
+    }
+}
+
 /* Language switcher dropdown (after Contact Us) */
 /* Language switcher redesign (Minimalist & International) */
+.english-only .nav-lang-dropdown {
+    display: none !important;
+}
+
 .nav-lang-dropdown {
     margin-left: 10px;
     padding-left: 14px;

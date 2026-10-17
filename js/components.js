@@ -1,6 +1,11 @@
 /* js/components.js — shared header/footer with English / Vietnamese */
 
 (function () {
+    // Temporarily publish the English site only. Set this back to `true` when
+    // the Vietnamese version is ready to be exposed again.
+    const ENABLE_LANGUAGE_SWITCHER = false;
+    document.documentElement.classList.toggle('english-only', !ENABLE_LANGUAGE_SWITCHER);
+
     const STRINGS = {
         en: {
             logoAlt: "UEL & RLS",
@@ -177,6 +182,17 @@
         const alt = alternateLocaleHref(rootPath, currentRelativePath);
         const enHref = alt.en;
         const viHref = alt.vi;
+
+        // Keep old/bookmarked Vietnamese URLs working while the Vietnamese
+        // version is temporarily unavailable by sending them to the matching
+        // English page.
+        if (!ENABLE_LANGUAGE_SWITCHER && vi) {
+            const englishUrl = new URL(enHref, window.location.href);
+            englishUrl.search = window.location.search;
+            englishUrl.hash = window.location.hash;
+            window.location.replace(englishUrl.href);
+            return;
+        }
 
         const headerHTML = `
     <nav>
