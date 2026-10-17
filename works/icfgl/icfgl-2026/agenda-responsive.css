@@ -23,7 +23,43 @@ body {
     padding-bottom: env(safe-area-inset-bottom);
 }
 
+.reader-back-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 220;
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 9px 14px;
+    border: 1px solid rgba(26, 77, 124, 0.18);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #1a4d7c;
+    box-shadow: 0 8px 22px rgba(15, 40, 65, 0.16);
+    font: 700 0.82rem/1.2 'Lato', Arial, sans-serif;
+    text-decoration: none;
+    pointer-events: auto;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.reader-back-link:hover,
+.reader-back-link:focus-visible {
+    background: #1a4d7c;
+    color: #fff;
+}
+
 @media (max-width: 768px) {
+    .reader-back-link {
+        top: 8px;
+        left: 8px;
+        min-height: 40px;
+        max-width: calc(100vw - 16px);
+        padding: 8px 12px;
+        font-size: 0.76rem;
+    }
+
     #book-stage {
         inset: 0 0 calc(58px + env(safe-area-inset-bottom)) 0 !important;
         padding: 8px 0;
