@@ -875,6 +875,7 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
             #book-stage { position: static; inset: auto; display: block; overflow: visible; }
             .reader-ui-layer { display: none !important; }
             .page:last-child { page-break-after: auto; }
+
         }
     </style>
 
@@ -1387,7 +1388,7 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
     <div id="book-container">
         <!-- FRONT COVER -->
         <div class="page full-cover-page" data-density="hard">
-            <img class="full-cover-image" src="../../../images/icfgl/agenda/A3%20(3).png" alt="Bìa trước ICFGL 2026">
+            <img class="full-cover-image" src="../../../images/icfgl/agenda/AGENDA_cover.png" alt="Bìa trước ICFGL 2026">
         </div>
 <div class="page page-spacious">
             
@@ -3485,24 +3486,24 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
 <script>
     var agendaLocale = new URLSearchParams(window.location.search).get('lang') === 'vi' ? 'vi' : 'en';
     var readerText = agendaLocale === 'vi' ? {
-        back: '← Trở lại website',
         previous: 'Trang trước',
         next: 'Trang sau',
         zoomOut: 'Thu nhỏ',
         zoomIn: 'Phóng to',
         fullscreen: 'Toàn màn hình',
+        savePdf: 'Tải chương trình PDF',
         jumpAria: 'Nhập số trang để đến',
         jumpTitle: 'Nhấn Enter để đến trang',
         frontCover: 'Bìa trước',
         page: 'Trang',
         loadError: 'Không tải được thư viện lật trang (page-flip). Vui lòng tải lại trang.'
     } : {
-        back: '← Back to website',
         previous: 'Previous page',
         next: 'Next page',
         zoomOut: 'Zoom out',
         zoomIn: 'Zoom in',
         fullscreen: 'Full screen',
+        savePdf: 'Download agenda PDF',
         jumpAria: 'Enter a page number',
         jumpTitle: 'Press Enter to go to page',
         frontCover: 'Front cover',
@@ -3520,14 +3521,6 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
     var uiLayer = document.createElement('div');
     uiLayer.className = 'reader-ui-layer';
     uiLayer.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:calc(100vh - 70px); pointer-events:none; display:flex; flex-direction:column; justify-content:space-between; z-index:100;';
-
-    var backLink = document.createElement('a');
-    backLink.className = 'reader-back-link';
-    backLink.href = agendaLocale === 'vi'
-        ? '../../../vi/works/icfgl/icfgl-2026/icfgl-2026.html'
-        : 'icfgl-2026.html';
-    backLink.textContent = readerText.back;
-    document.body.appendChild(backLink);
 
     // Top bar (empty spacer)
     var topBar = document.createElement('div');
@@ -3573,6 +3566,7 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
 
     var zoomOutBtn = makeToolBtn('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6"/></svg>', readerText.zoomOut);
     var zoomInBtn = makeToolBtn('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>', readerText.zoomIn);
+    var savePdfBtn = makeToolBtn('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>', readerText.savePdf);
     var fullscreenBtn = makeToolBtn('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3M16 3h3a2 2 0 012 2v3M8 21H5a2 2 0 01-2-2v-3M16 21h3a2 2 0 002-2v-3"/></svg>', readerText.fullscreen);
 
     var pageInfo = document.createElement('div');
@@ -3605,6 +3599,7 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
     toolbar.appendChild(divider());
     toolbar.appendChild(jumpInput);
     toolbar.appendChild(divider());
+    toolbar.appendChild(savePdfBtn);
     toolbar.appendChild(fullscreenBtn);
 
     botBar.appendChild(toolbar);
@@ -3792,6 +3787,9 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
         if (canTurnToNextPage()) pageFlip.flipNext();
     });
 
+    savePdfBtn.addEventListener('click', function () {
+        window.location.href = '../../../images/%5BICFGL2026%5D%20Agenda.pdf';
+    });
     var resizeFrame = 0;
     window.addEventListener('resize', function () {
         window.cancelAnimationFrame(resizeFrame);

@@ -117,7 +117,7 @@
             letter-spacing: 0.05em;
             transition: transform 0.3s ease;
         }
-        
+
         .hero-eyebrow:hover {
             transform: translateY(-2px);
         }
@@ -125,13 +125,15 @@
         .hero-title {
             font-family: 'Cambria', Georgia, serif !important;
             font-size: clamp(3.8rem, 7.4vw, 6.1rem);
-            line-height: 1.25; /* Increased from 1.1 */
+            line-height: 1.25;
+            /* Increased from 1.1 */
             font-weight: 700;
-            margin: 0 0 32px 0; /* mb-8 */
+            margin: 0 0 32px 0;
+            /* mb-8 */
             color: #fff;
             font-style: normal;
             letter-spacing: -0.02em;
-            text-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            text-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
 
         .hero-title-line {
@@ -144,18 +146,23 @@
             font-weight: inherit;
             font-style: normal;
             color: #ffffff;
-            margin-bottom: 0; /* let leading-1.1 handle the gap entirely */
+            margin-bottom: 0;
+            /* let leading-1.1 handle the gap entirely */
             letter-spacing: -0.01em;
             text-transform: none;
         }
 
         .hero-title-strong {
             font-family: 'Cambria', Georgia, serif !important;
-            font-style: normal; /* not-italic */
+            font-style: normal;
+            /* not-italic */
             font-weight: inherit;
-            text-transform: uppercase; /* uppercase */
-            letter-spacing: -0.05em; /* tracking-tighter */
-            color: #f9a8d4; /* text-pink-300 */
+            text-transform: uppercase;
+            /* uppercase */
+            letter-spacing: -0.05em;
+            /* tracking-tighter */
+            color: #f9a8d4;
+            /* text-pink-300 */
         }
 
         .hero-description {
@@ -175,7 +182,8 @@
             align-self: center;
             justify-self: end;
             width: 100%;
-            transform: translateY(-40px); /* Moved up slightly more */
+            transform: translateY(-40px);
+            /* Moved up slightly more */
         }
 
         .hero-quote-card {
@@ -187,7 +195,7 @@
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
         .hero-quote-icon {
@@ -250,7 +258,8 @@
             top: 20px;
             z-index: 100;
             margin-top: -88px;
-            height: 0; /* Ensures 0 gap between banner and section below */
+            height: 0;
+            /* Ensures 0 gap between banner and section below */
             display: flex;
             justify-content: center;
         }
@@ -421,7 +430,7 @@
             background: #fff;
             padding: 15px;
             border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
         }
 
         .book-frame img {
@@ -529,6 +538,103 @@
             flex-shrink: 0;
             margin: 0;
             white-space: nowrap;
+        }
+
+        .publications-portal-card {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 36px;
+            padding: 34px 38px;
+            border: 1px solid rgba(20, 78, 140, 0.1);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.86);
+            box-shadow: 0 8px 24px rgba(9, 29, 56, 0.04);
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .publications-portal-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(246, 65, 131, 0.28);
+            box-shadow: 0 14px 30px rgba(9, 29, 56, 0.07);
+        }
+
+        .publications-portal-content {
+            min-width: 0;
+        }
+
+        .publications-portal-eyebrow {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-pink);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .publications-portal-card h3 {
+            margin: 0 0 8px;
+            color: var(--primary-blue);
+            font-family: Cambria, Georgia, serif;
+            font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+            line-height: 1.2;
+        }
+
+        .publications-portal-card p {
+            max-width: 700px;
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.65;
+        }
+
+        .publications-portal-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--primary-blue);
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .publications-portal-arrow {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: #fff;
+            font-size: 1.15rem;
+            line-height: 1;
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+
+        .publications-portal-card:hover .publications-portal-arrow {
+            transform: translateX(3px);
+            background: var(--accent-pink);
+        }
+
+        @media (max-width: 760px) {
+            .publications-portal-card {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 22px;
+                padding: 28px 24px;
+                border-radius: 16px;
+            }
+
+            .publications-portal-action {
+                width: 100%;
+                justify-content: space-between;
+                padding-top: 20px;
+                border-top: 1px solid rgba(20, 78, 140, 0.08);
+            }
         }
 
         .fj-showcase {
@@ -657,12 +763,12 @@
 
         .fj-visual {
             position: relative;
-            min-height: 760px;
+            min-height: 0;
         }
 
         .fj-image-frame {
             height: 100%;
-            min-height: 760px;
+            min-height: 0;
             overflow: hidden;
             border-radius: 34px;
             box-shadow: 0 30px 70px rgba(20, 78, 140, 0.16);
@@ -674,6 +780,15 @@
             height: 100%;
             object-fit: cover;
             display: block;
+        }
+
+        @media (min-width: 901px) {
+            .fj-visual {
+                width: 100%;
+                height: clamp(500px, 45vw, 560px);
+                align-self: center;
+                justify-self: stretch;
+            }
         }
 
         .fj-quote-card {
@@ -881,7 +996,7 @@
             font-weight: 800;
             letter-spacing: -0.03em;
             color: #fff;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 10px 24px rgba(20, 78, 140, 0.16);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 10px 24px rgba(20, 78, 140, 0.16);
         }
 
         .moot-eligibility-index--pink {
@@ -934,7 +1049,7 @@
             min-height: 440px;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -1098,6 +1213,7 @@
                 min-height: calc(100svh - 74px);
                 padding: 40px 0 100px;
             }
+
             .hero-grid {
                 grid-template-columns: 1fr;
                 grid-template-areas:
@@ -1106,63 +1222,82 @@
                     "quote";
                 gap: 32px;
             }
+
             .hero-description {
                 max-width: 100%;
                 padding-left: 0;
             }
+
             .hero-quote-wrap {
                 transform: none;
                 justify-self: center;
             }
-            .publication-row, .feature-grid, .archive-box-grid, .compact-publication-grid {
+
+            .publication-row,
+            .feature-grid,
+            .archive-box-grid,
+            .compact-publication-grid {
                 grid-template-columns: 1fr;
             }
+
             .book-frame {
                 max-width: 300px;
                 margin: 0 auto 30px;
             }
+
             .compact-publication-card {
                 padding: 32px;
             }
+
             .compact-publication-card--journal {
                 padding: 34px;
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 24px;
             }
+
             .fj-hero {
                 grid-template-columns: 1fr;
                 gap: 34px;
             }
+
             .fj-visual {
                 min-height: auto;
             }
+
             .fj-image-frame {
                 min-height: 560px;
             }
+
             .fj-quote-card {
                 left: 24px;
                 bottom: 24px;
                 width: calc(100% - 48px);
             }
+
             .moot-showcase {
                 grid-template-columns: 1fr;
                 gap: 36px;
             }
+
             .icfgl-overview {
                 grid-template-columns: 1fr;
                 gap: 32px;
             }
+
             .icfgl-image-frame {
                 min-height: 360px;
             }
+
             .workshops-showcase,
             .workshops-card-grid {
                 grid-template-columns: 1fr;
             }
+
             .workshops-showcase {
                 gap: 36px;
             }
+
             .workshops-hero-media,
             .workshops-hero-media img {
                 min-height: 360px;
@@ -1175,57 +1310,72 @@
                 border-bottom: 3px solid var(--accent-pink);
                 padding: 30px 0 80px;
             }
+
             .hero-shell {
                 padding: 0 16px;
             }
+
             .hero-eyebrow {
                 margin-bottom: 16px;
                 font-size: 0.65rem;
             }
+
             .hero-title {
                 font-size: clamp(3rem, 15vw, 4.2rem);
             }
+
             .hero-quote-card {
                 padding: 28px 24px;
                 border-radius: 16px;
             }
+
             .hero-quote-text {
                 font-size: 1.15rem;
                 margin-bottom: 20px;
             }
+
             .hero-quote-icon {
                 top: 8px;
                 right: 8px;
             }
+
             .hero-quote-icon svg {
                 width: 50px;
                 height: 50px;
             }
+
             .hero-description {
                 font-size: 1rem;
                 line-height: 1.6;
             }
+
             .hero-grid {
                 gap: 24px;
             }
+
             .hero-copy {
                 padding-left: 0;
             }
+
             .pill-nav-container {
                 margin-top: -32px;
                 padding-bottom: 12px;
             }
+
             .pill-nav-list {
                 max-width: calc(100% - 24px);
                 border-radius: 28px;
                 gap: 8px;
             }
+
             .fj-image-frame {
                 min-height: 460px;
             }
+
             .fj-actions {
                 gap: 14px;
             }
+
             .archive-cta,
             .compact-publication-btn,
             .publication-download-btn,
@@ -1236,31 +1386,39 @@
                 width: 100%;
                 min-width: 0;
             }
+
             .fj-quote-card {
                 position: static;
                 width: 100%;
                 margin-top: 18px;
             }
+
             .moot-title {
                 font-size: 2.5rem;
             }
+
             .moot-actions {
                 gap: 14px;
             }
+
             .moot-eligibility {
                 padding: 32px 24px;
             }
+
             .moot-eligibility-item {
                 grid-template-columns: 60px 1fr;
                 gap: 16px;
             }
+
             .icfgl-image-frame {
                 min-height: 280px;
             }
+
             .archive-cta {
                 width: 100%;
                 min-width: 0;
             }
+
             .workshop-card {
                 padding: 26px;
             }
@@ -1275,7 +1433,7 @@
 <body>
     <div id="global-header"></div>
 
-    
+
     <section class="academic-hero" aria-label="Our Works hero banner">
         <div class="hero-gradient"></div>
         <div class="hero-blob hero-blob--pink"></div>
@@ -1287,22 +1445,29 @@
                     <h1 class="hero-title">
                         <span class="hero-title-line hero-title-line--top"><i>Our</i></span>
                         <span class="hero-title-line hero-title-strong">WORKS</span>
-                        
+
                     </h1>
                 </div>
 
                 <div class="hero-quote-wrap">
                     <div class="hero-quote-card">
                         <div class="hero-quote-icon" aria-hidden="true">
-                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4zm-13 0c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4z"/></svg>
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4zm-13 0c0-5.141 3.892-10.519 10-11.725l.998 1.965c-3.231.87-5.498 3.06-5.998 5.088h4v8.672h-9v-4z" />
+                            </svg>
                         </div>
-                        <p class="hero-quote-text">"Empowering the legal landscape through critical <span>gender-sensitive</span>&nbsp;analysis."</p>
+                        <p class="hero-quote-text">"Empowering the legal landscape through critical
+                            <span>gender-sensitive</span>&nbsp;analysis."</p>
                         <p class="hero-quote-source">Project Mission Statement</p>
                     </div>
                 </div>
 
                 <p class="hero-description">
-This section provides open and lasting access to the project’s key outputs, including publications, teaching resources, feminist judgments, and academic activities. It serves as a long-term archive of research, conference records, and legal knowledge developed by the UEL Feminist Legal Theory&nbsp;Project.                </p>
+                    This section provides open and lasting access to the project’s key outputs, including publications,
+                    teaching resources, feminist judgments, and academic activities. It serves as a long-term archive of
+                    research, conference records, and legal knowledge developed by the UEL Feminist Legal
+                    Theory&nbsp;Project. </p>
             </div>
         </div>
     </section>
@@ -1313,10 +1478,10 @@ This section provides open and lasting access to the project’s key outputs, in
             <a href="#icfgl" class="pill-item">ICFGL</a>
             <a href="#workshops" class="pill-item">Workshops & Seminars</a>
             <a href="#moot-court" class="pill-item">Moot Court</a>
-            <a href="#publications" class="pill-item">Publications</a>
+            <a href="publications/index.html" class="pill-item">Publications</a>
         </div>
     </div>
-<br/><br/>
+    <br /><br />
 
     <!-- SECTION 1: Feminist Judgments -->
     <section id="feminist-judgments" class="page-section section-ice">
@@ -1329,22 +1494,25 @@ This section provides open and lasting access to the project’s key outputs, in
                             <h2>Towards a Vietnamese Feminist Judgment</h2>
                             <hr>
                             <p class="section-intro-text">
-                                A flagship stream of the project that adapts feminist judgment methodology to the Vietnamese legal context. Explore rewritten judicial decisions that highlight gendered perspectives and structural inequalities.
+                                A flagship stream of the project that adapts feminist judgment methodology to the
+                                Vietnamese legal context. Explore rewritten judicial decisions that highlight gendered
+                                perspectives and structural inequalities.
                             </p>
                         </div>
 
                         <div class="fj-body">
                             <p>
-                                In 2022, we began a new project called "Feminist Judgments" with the expectation of publishing a book to contribute to the global discourse on feminist legal research. We were fortunate to receive the support of Professor Rosemary Hunter, arguably one of the pioneers of this research area. We had a seminar with her to receive guidance on the methodology and philosophy of the feminist judgments project. As a result, the book <strong>"Towards a Vietnamese Feminist Judgment"</strong> was published at the end of 2023. We are expecting volume II of the book in 2026.
+                                In 2022, we began a new project called "Feminist Judgments" with the expectation of
+                                publishing a book to contribute to the global discourse on feminist legal research. We
+                                were fortunate to receive the support of Professor Rosemary Hunter, arguably one of the
+                                pioneers of this research area. We had a seminar with her to receive guidance on the
+                                methodology and philosophy of the feminist judgments project. As a result, the book
+                                <strong>"Towards a Vietnamese Feminist Judgment"</strong> was published at the end of
+                                2023. We are expecting volume II of the book in 2026.
                             </p>
-                            <p>
-                                The Vietnamese edition is titled "Towards a Vietnamese Feminist Judgment" because it represents an adaptation of the global project to a specific local context, where the core methodology of alternative judgment writing faces unique challenges.
-                            </p>
-                            <p>
-                                While international projects pair a judge with an academic, the Vietnamese legal landscape makes it difficult to recruit sitting judges. Consequently, Vietnamese scholars must bridge this gap by performing both roles. However, because not all contributors feel comfortable adopting the judicial mantle, some preferring critical discussion over drafting a formal verdict, the project is a journey "towards" the ideal rather than a complete mirror of the original format.
-                            </p>
+
                         </div>
-<br/>
+                        <br />
                         <div class="fj-actions">
                             <a href="feminist-judgments/" class="fj-btn-primary">Open the Archive &rarr;</a>
                         </div>
@@ -1354,31 +1522,43 @@ This section provides open and lasting access to the project’s key outputs, in
                         <div class="fj-image-frame">
                             <img loading="lazy" src="../images/common/7.jpg" alt="Feminist Judgments Research">
                         </div>
-                        
+
                     </div>
                 </div>
 
                 <div class="feature-grid" style="margin-top: 10px;">
                     <div class="feature-card">
                         <div class="card-number">01</div>
-                        <h3 style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">Demonstrate Application</h3>
-                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">Feminist theory in existing legal framework.</p>
+                        <h3
+                            style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">
+                            Demonstrate Application</h3>
+                        <p
+                            style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">
+                            Feminist theory in existing legal framework.</p>
                     </div>
                     <div class="feature-card">
                         <div class="card-number">02</div>
-                        <h3 style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">Adhere to Form</h3>
-                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">Maintain formal judicial writing style.</p>
+                        <h3
+                            style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">
+                            Adhere to Form</h3>
+                        <p
+                            style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">
+                            Maintain formal judicial writing style.</p>
                     </div>
                     <div class="feature-card">
                         <div class="card-number">03</div>
-                        <h3 style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">Uncover Hidden Logic</h3>
-                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">Reveal and address hidden gender biases.</p>
+                        <h3
+                            style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">
+                            Uncover Hidden Logic</h3>
+                        <p
+                            style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">
+                            Reveal and address hidden gender biases.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<!-- SECTION 2: Moot Court -->
+    <!-- SECTION 2: Moot Court -->
     <section id="moot-court" class="page-section section-rose">
         <div class="section-shell">
             <div class="moot-showcase">
@@ -1391,7 +1571,10 @@ This section provides open and lasting access to the project’s key outputs, in
                         </h2>
                         <hr>
                         <p class="section-intro-text">
-                            The Gender Justice Moot Court is a national-level competition for undergraduate law students across Vietnam. It provides a structured and practice-oriented platform for developing legal research, written advocacy, and oral argumentation skills, while integrating gender justice principles into legal reasoning.
+                            The Gender Justice Moot Court is a national-level competition for undergraduate law students
+                            across Vietnam. It provides a structured and practice-oriented platform for developing legal
+                            research, written advocacy, and oral argumentation skills, while integrating gender justice
+                            principles into legal reasoning.
                         </p>
                     </div>
 
@@ -1438,18 +1621,27 @@ This section provides open and lasting access to the project’s key outputs, in
                 <h2>Conference on Feminism, Gender and Law (ICFGL)</h2>
                 <hr>
                 <p class="section-intro-text">
-                    A biennial academic forum hosted by the University of Economics and Law (UEL) documenting scholarly dialogue on feminist jurisprudence since 2021.
+                    A biennial academic forum hosted by the University of Economics and Law (UEL) documenting scholarly
+                    dialogue on feminist jurisprudence since 2021.
                 </p>
             </div>
 
             <div class="icfgl-overview">
                 <div class="icfgl-overview-copy">
                     <p>
-<b>The International Conference on Feminism, Gender and Law (ICFGL)</b> is a biennial academic forum hosted by the University of Economics and Law (UEL) in collaboration with international partners. The conference brings together scholars, practitioners, and policymakers to engage with contemporary developments in feminist legal theory and its application across diverse areas of law.
-Since its inaugural edition in 2021, followed by the 2024 conference and the upcoming 2026 edition, ICFGL has developed into a sustained platform for scholarly exchange and collaboration. It supports the dissemination of research, fosters critical dialogue, and contributes to the advancement of feminist jurisprudence in Vietnam and beyond.
+                        <b>The International Conference on Feminism, Gender and Law (ICFGL)</b> is a biennial academic
+                        forum hosted by the University of Economics and Law (UEL) in collaboration with international
+                        partners. The conference brings together scholars, practitioners, and policymakers to engage
+                        with contemporary developments in feminist legal theory and its application across diverse areas
+                        of law.
+                        Since its inaugural edition in 2021, followed by the 2024 conference and the upcoming 2026
+                        edition, ICFGL has developed into a sustained platform for scholarly exchange and collaboration.
+                        It supports the dissemination of research, fosters critical dialogue, and contributes to the
+                        advancement of feminist jurisprudence in Vietnam and beyond.
                     </p>
                     <p style="margin-bottom: 30px;">
-                        Each edition produces a repository of papers, proceedings, and recorded sessions that contribute to the project's long-term research archive.
+                        Each edition produces a repository of papers, proceedings, and recorded sessions that contribute
+                        to the project's long-term research archive.
                     </p>
                     <a href="icfgl/" class="archive-cta">Browse the ICFGL Archive &rarr;</a>
                 </div>
@@ -1461,17 +1653,20 @@ Since its inaugural edition in 2021, followed by the 2024 conference and the upc
             <div class="archive-box-grid">
                 <a href="icfgl/icfgl-2026/icfgl-2026.html" class="archive-item-card">
                     <span class="archive-item-year">2026</span>
-                    <hr style="width: 40px; height: 3px; background: var(--accent-pink); border: none; margin: 0 auto 15px;">
+                    <hr
+                        style="width: 40px; height: 3px; background: var(--accent-pink); border: none; margin: 0 auto 15px;">
                     <span class="archive-item-label">ICFGL 2026 &rarr;</span>
                 </a>
                 <a href="icfgl/icfgl-2024/icfgl-2024.html" class="archive-item-card">
                     <span class="archive-item-year">2024</span>
-                    <hr style="width: 40px; height: 3px; background: var(--accent-pink); border: none; margin: 0 auto 15px;">
+                    <hr
+                        style="width: 40px; height: 3px; background: var(--accent-pink); border: none; margin: 0 auto 15px;">
                     <span class="archive-item-label">ICFGL 2024 &rarr;</span>
                 </a>
                 <a href="icfgl/icfgl-2021/icfgl-2021.html" class="archive-item-card">
                     <span class="archive-item-year">2021</span>
-                    <hr style="width: 40px; height: 3px; background: var(--accent-pink); border: none; margin: 0 auto 15px;">
+                    <hr
+                        style="width: 40px; height: 3px; background: var(--accent-pink); border: none; margin: 0 auto 15px;">
                     <span class="archive-item-label">ICFGL 2021 &rarr;</span>
                 </a>
             </div>
@@ -1491,11 +1686,15 @@ Since its inaugural edition in 2021, followed by the 2024 conference and the upc
                         <h2>Workshops & Seminars</h2>
                         <hr>
                         <p class="section-intro-text">
-                            Complementary platforms for scholarly exchange, capacity building, and the development of feminist legal theory in both research and teaching contexts.
+                            Complementary platforms for scholarly exchange, capacity building, and the development of
+                            feminist legal theory in both research and teaching contexts.
                         </p>
                     </div>
                     <p class="workshops-body">
-                        In addition to the ICFGL conference series, the project also organises a range of academic workshops, seminars, and lecture-based activities. These initiatives provide a complementary platform for scholarly exchange, capacity building, and the development of feminist legal theory in both research and teaching contexts.
+                        In addition to the ICFGL conference series, the project also organises a range of academic
+                        workshops, seminars, and lecture-based activities. These initiatives provide a complementary
+                        platform for scholarly exchange, capacity building, and the development of feminist legal theory
+                        in both research and teaching contexts.
                     </p>
                     <a href="workshops/" class="archive-cta archive-cta--compact">Open Workshops Archive &rarr;</a>
                 </div>
@@ -1507,8 +1706,8 @@ Since its inaugural edition in 2021, followed by the 2024 conference and the upc
                         <img loading="lazy" src="../images/common/12.webp" alt="Lecture">
                     </div>
                     <h4>UEL Special Lecture Series 2022</h4>
-                    <p>A series of specialized lectures on feminist legal methodology and international perspectives.</p>
-                    <a href="workshops/">Details &rarr;</a>
+                    <p>A series of specialized lectures on feminist legal methodology and international perspectives.
+                    </p>
                 </div>
                 <div class="workshop-card">
                     <div class="workshop-img-container">
@@ -1516,15 +1715,14 @@ Since its inaugural edition in 2021, followed by the 2024 conference and the upc
                     </div>
                     <h4>Summer School: Feminism and Law</h4>
                     <p>Intensive training sessions for undergraduate students and early-career researchers.</p>
-                    <a href="workshops/">Details &rarr;</a>
                 </div>
                 <div class="workshop-card">
                     <div class="workshop-img-container">
                         <img loading="lazy" src="../images/common/10.webp" alt="Manuscript Workshop">
                     </div>
                     <h4>Manuscript Workshop</h4>
-                    <p>Peer-review sessions and collaborative drafting for the "Towards Vietnamese Feminist Judgment" volume.</p>
-                    <a href="workshops/">Details &rarr;</a>
+                    <p>Peer-review sessions and collaborative drafting for the "Towards Vietnamese Feminist Judgment"
+                        volume.</p>
                 </div>
             </div>
         </div>
@@ -1538,85 +1736,23 @@ Since its inaugural edition in 2021, followed by the 2024 conference and the upc
                 <h2>Publications</h2>
                 <hr>
                 <p class="section-intro-text">
-This section brings together the project’s research and publication outputs, including books, journal articles, book chapters, conference proceedings, reports, and other materials developed within the broader framework of the UEL Feminist Legal Theory Project.
+                    Visit the dedicated archive for books, conference proceedings, journal articles, reports, and
+                    other academic outputs from the UEL Feminist Legal Theory Project.
                 </p>
             </div>
 
-            <div style="margin-top: 80px;">
-                <h3 style="margin-bottom: 60px; border-bottom: 2px solid var(--accent-pink); padding-bottom: 15px; display: inline-block; font-family: Cambria, serif; font-size: 2rem;">Books & Proceedings</h3>
-                
-                <!-- Book 1 -->
-                <div class="publication-row">
-                    <div class="book-frame">
-                        <img loading="lazy" src="../images/publications/books-vfj.webp" alt="Towards Vietnamese Feminist Judgments">
-                    </div>
-                    <div class="pub-details">
-                        <h4 style="color: var(--accent-pink); margin-bottom: 12px; font-size: 1.6rem; font-family: Cambria, serif;">Towards Vietnamese Feminist Judgments</h4>
-                        <p style="text-align: justify; line-height: 1.8; color: var(--text-muted);">
-                            This book explores how feminist legal theory can be applied to judicial reasoning in Vietnam. Covering areas such as criminal law, criminal procedure, marriage and family law, and labour law, it shows how feminist perspectives can broaden legal interpretation and enrich written judgments.
-                        </p>
-                        <ul class="meta-list">
-       
-                            <li><strong>Publisher:</strong> Vietnam National University Ho Chi Minh Publishing House</li>
-                            <li><strong>Editor:</strong> Trịnh Thục Hiền</li>
-                            <li><strong>Year:</strong> 2024 &nbsp;|&nbsp; 375 Pages</li>
-                            <li><strong>ISBN:</strong> 9788-604-479-308-5</li>
-                        </ul>
-                        <a href="https://drive.google.com/uc?export=download&id=1MUqudousf1mqTGVUYdyKWrBQOJmHH1Hh" class="publication-download-btn">Download PDF &darr;</a>
-                    </div>
+            <a href="publications/index.html" class="publications-portal-card"
+                aria-label="Open the Publications archive">
+                <div class="publications-portal-content">
+                    <span class="publications-portal-eyebrow">Publication Archive</span>
+                    <h3>Browse the complete collection</h3>
+                    <p>Books, conference proceedings, journal articles, and project reports.</p>
                 </div>
-
-                <!-- Book 2 -->
-                <div class="publication-row">
-                    <div class="book-frame">
-                        <img loading="lazy" src="../images/publications/opac-image (1).webp" alt="Ashgate Research Companion Translation">
-                    </div>
-                    <div class="pub-details">
-                        <h4 style="color: var(--accent-pink); margin-bottom: 12px; font-size: 1.6rem; font-family: Cambria, serif;">The Ashgate Research Companion to Feminist Legal Theory</h4>
-                        <span style="font-size: 0.9rem; color: var(--text-muted); display: block; margin-bottom: 15px; font-style: italic;">(Vietnamese Translation)</span>
-                        <p style="text-align: justify; line-height: 1.8; color: var(--text-muted);">
-                            This volume provides a comprehensive overview of feminist legal theory, bringing together key concepts, debates, and methodological approaches from leading international scholars. It serves as a foundational resource for understanding how feminist perspectives critique and reshape legal systems.
-                        </p>
-                        <ul class="meta-list">
-                            <li><strong>Publisher:</strong> VNUHCM Publishing House</li>
-                            <li><strong>Language:</strong> Vietnamese</li>
-                            <li><strong>Year:</strong> 2023</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Book 3 -->
-                <div class="publication-row">
-                    <div class="book-frame">
-                        <img loading="lazy" src="../images/publications/ICFGL 2024.webp" alt="ICFGL 2024 Proceedings">
-                    </div>
-                    <div class="pub-details">
-                        <h4 style="color: var(--accent-pink); margin-bottom: 12px; font-size: 1.6rem; font-family: Cambria, serif;">ICFGL 2024 Proceedings</h4>
-                        <p style="text-align: justify; line-height: 1.8; color: var(--text-muted);">
-                            This edited volume brings together selected papers from the 2024 International Conference on Feminism, Gender and Law. The proceedings examine how feminist legal theory can be used to critique formal assumptions of neutrality and to advance substantive approaches to gender justice.
-                        </p>
-                        <ul class="meta-list">
-                            <li><strong>Editor-in-chief:</strong> Trịnh Thục Hiền</li>
-                            <li><strong>Year:</strong> 2025 &nbsp;|&nbsp; 456 Pages</li>
-                            <li><strong>ISBN:</strong> 978-632-608-376-7</li>
-                        </ul>
-                        <a href="https://drive.google.com/uc?export=download&id=180EN1OtbAwiWM8McVYCkFzQHFBEYIiDX" class="publication-download-btn">Download PDF &darr;</a>
-                    </div>
-                </div>
-            </div>
-
-            <div style="margin-top: 80px;">
-                <h3 style="margin-bottom: 24px; border-bottom: 2px solid var(--accent-pink); padding-bottom: 15px; display: inline-block; font-family: Cambria, serif; font-size: 2rem;">Journal Articles & Reports</h3>
-                <div class="compact-publication-grid compact-publication-grid--single">
-                    <div class="compact-publication-card compact-publication-card--journal">
-                        <div class="journal-content">
-                            <h4>UEL Journal Special Issue</h4>
-                            <p>Special issue: <em>Feminism, Gender and Law</em> published in the UEL Journal.</p>
-                        </div>
-                        <a href="https://ebl.vnuhcmjournal.com.vn/index.php/ebl/issue/view/84" class="compact-publication-btn">View Issue &nearrow;</a>
-                    </div>
-                </div>
-            </div>
+                <span class="publications-portal-action">
+                    Open Archive
+                    <span class="publications-portal-arrow" aria-hidden="true">&rarr;</span>
+                </span>
+            </a>
         </div>
     </section>
 
@@ -1626,7 +1762,7 @@ This section brings together the project’s research and publication outputs, i
         // Smooth scroll for nav pills
         document.querySelectorAll('.nav-pill').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                if(this.getAttribute('href').startsWith('#')) {
+                if (this.getAttribute('href').startsWith('#')) {
                     e.preventDefault();
                     document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'

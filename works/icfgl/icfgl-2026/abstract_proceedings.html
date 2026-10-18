@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#eaf4fb">
+    <meta name="description" content="ICFGL 2026 Abstract Proceedings interactive flip book.">
+    <title>ICFGL 2026 Abstract Proceedings</title>
+    <link rel="preload" as="image" href="../../../images/icfgl/icfgl2026/images/page-001.webp" fetchpriority="high">
+    <link rel="stylesheet" href="abstract-proceedings.css?v=20261017b">
+</head>
+<body>
+    <main id="book-stage" aria-label="ICFGL 2026 Abstract Proceedings flip book">
+        <div id="book-container" aria-live="polite"></div>
+    </main>
+
+    <div class="loading-card" id="loading-card" role="status">
+        <span class="loading-spinner" aria-hidden="true"></span>
+        <span data-i18n="loading">Preparing the proceedings...</span>
+    </div>
+
+    <div class="reader-ui-layer">
+        <div class="reader-top-spacer"></div>
+        <div class="reader-midbar">
+            <button class="reader-nav-btn" id="prev-button" type="button" aria-label="Previous page">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="reader-nav-btn" id="next-button" type="button" aria-label="Next page">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+        </div>
+        <div class="reader-bottom-bar">
+            <nav class="reader-toolbar" aria-label="Book controls">
+                <button class="reader-toolbar-btn" id="zoom-out-button" type="button" aria-label="Zoom out">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6"/></svg>
+                </button>
+                <button class="reader-toolbar-btn" id="zoom-in-button" type="button" aria-label="Zoom in">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+                </button>
+                <span class="reader-toolbar-divider" aria-hidden="true"></span>
+                <span class="reader-page-info" id="page-info">Front cover · 1 / 116</span>
+                <span class="reader-progress-track" aria-hidden="true"><span class="reader-progress-bar" id="progress-bar"></span></span>
+                <span class="reader-toolbar-divider responsive-divider" aria-hidden="true"></span>
+                <label class="reader-jump-label">
+                    <span class="sr-only" data-i18n="jump">Go to page</span>
+                    <input class="reader-jump-input" id="page-input" type="number" min="1" max="116" inputmode="numeric" aria-label="Go to page">
+                </label>
+                <span class="reader-toolbar-divider" aria-hidden="true"></span>
+                <a class="reader-toolbar-btn" id="pdf-link" href="../../../images/%5BICFGL2026_Abstract%20Proceedings%20(ver%20f1.0).pdf" target="_blank" rel="noopener" aria-label="Open PDF" title="Open PDF">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>
+                </a>
+                <button class="reader-toolbar-btn" id="fullscreen-button" type="button" aria-label="Full screen">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3M16 3h3a2 2 0 012 2v3M8 21H5a2 2 0 01-2-2v-3M16 21h3a2 2 0 002-2v-3"/></svg>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <noscript>This flip book requires JavaScript. Please open the original PDF instead.</noscript>
+    <script src="page-flip.browser.js"></script>
+    <script src="abstract-proceedings.js?v=20261017b"></script>
+</body>
+</html>
