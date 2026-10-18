@@ -537,11 +537,36 @@
             padding: 32px 5% 40px 5%;
         }
 
-        /* ── OUR WORK section ────────────────────────────── */
+        /* ── FEATURED section ────────────────────────────── */
+        .section-pink-bg > .container {
+            width: min(92%, 1800px);
+            max-width: 1800px;
+        }
+
         .home-work-grid {
             margin-top: 12px;
         }
 
+        .home-work-grid .work-card {
+            min-width: 0;
+        }
+
+
+        .featured-card-image {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            height: auto !important;
+            border-radius: 8px;
+            object-fit: cover !important;
+        }
+
+        .featured-card-copy {
+            margin-top: 15px;
+            text-wrap: pretty;
+            color: #144e8c !important;
+            line-height: 1.72;
+        }
         /* work card title as link */
         .work-card-title-link {
             color: var(--dark-blue);
@@ -554,11 +579,38 @@
         }
 
         .home-work-grid .work-card h3 {
-            min-height: 3.2em;
-            align-items: flex-end;
-            margin-bottom: 12px;
+            min-height: 0;
+            align-items: flex-start;
+            margin: 0 0 16px;
+            font-size: clamp(1.2rem, 1.45vw, 1.6rem);
+            line-height: 1.28;
         }
 
+        /* Keep titles, images and descriptions aligned across each card row. */
+        @supports (grid-template-rows: subgrid) {
+            .home-work-grid {
+                align-items: start;
+                row-gap: 18px;
+            }
+
+            .home-work-grid .work-card {
+                display: grid;
+                grid-row: span 3;
+                grid-template-rows: subgrid;
+            }
+
+            .home-work-grid .work-card h3,
+            .home-work-grid .featured-card-image,
+            .home-work-grid .featured-card-copy {
+                margin: 0 !important;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .home-work-grid .featured-title-nowrap {
+                white-space: nowrap;
+            }
+        }
         /* heading-pink for HOME: no redundant underline bar */
         .section-pink-bg .heading-pink {
             /* colour + uppercase already handled by .heading-pink */
@@ -646,7 +698,7 @@
             <!-- Slide 3 – Moot Court -->
             <div class="highlights-slide highlights-slide--mootcourt" role="group" aria-label="Slide 3 of 3">
                 <div class="slide-bg">
-                    <img loading="lazy" src="images/mootcourt/1.webp" alt="Gender Justice Moot Court">
+                    <img loading="lazy" src="images/common/mc_2026.jpg" alt="Gender Justice Moot Court">
                     <div class="slide-overlay"></div>
                 </div>
                 <div class="slide-content">
@@ -697,38 +749,41 @@
     <br/>
 
     <!-- ════════════════════════════════════════════════
-         OUR WORK  (light pink)
+         FEATURED  (light pink)
     ════════════════════════════════════════════════ -->
-    <section class="section-pink-bg">
+    <section class="section-pink-bg" aria-labelledby="featured-heading">
         <div class="container">
             <br/>
-            <h1 class="heading-pink home-work-heading" style="text-align: center;"><a href="works/index.html" class="heading-pink">OUR WORK</a></h1>
+            <h1 id="featured-heading" class="heading-pink home-work-heading" style="text-align: center;"><a href="works/index.html" class="heading-pink">FEATURED</a></h1><br/>
             <div class="work-grid home-work-grid">
 
-                <!-- Card 1 – ICFGL -->
-                <div class="work-card">
-                    <h3><a href="works/icfgl/" class="work-card-title-link">International Conference on Feminism, Gender and Law</a></h3>
-                    <img loading="lazy" src="images/common/3.webp" alt="International Conference on Feminism, Gender and Law" style="height: 180px; width: 100%; object-fit: cover; border-radius: 8px;">
-                    <p style="margin-top: 15px; color:#144e8c">Forums gather practitioners and researchers for intensive dialogue on methodology, case selection, and the politics of legal reform in contexts where feminist theory still meets institutional resistance.</p>
-                    <div style="display: flex; gap: 10px; margin-top:20px;">
-                        <a href="works/icfgl/icfgl-2026/icfgl-2026.html" class="btn-pink" style="flex:1; text-align:center;">ICFGL 2026</a>
-                        <a href="works/icfgl/" class="btn-dark" style="flex:1; text-align:center;">Past ICFGL</a>
-                    </div>
-                </div>
+                <!-- Card 1 – ICFGL 2026 -->
+                <article class="work-card">
+                    <h3><a href="works/icfgl/icfgl-2026/icfgl-2026.html" class="work-card-title-link">International Conference on <br/> Feminism, Gender and <br/> Law (ICFGL) 2026</a></h3>
+                    <img loading="lazy" src="images/icfgl/icfgl2026/Day%2017.09/UEL03123.jpg"
+                        alt="Participants at ICFGL 2026"
+                        class="featured-card-image">
+                    <p class="featured-card-copy">Forums gather practitioners and researchers for intensive dialogue on methodology, case selection, and the politics of legal reform in contexts where feminist theory still meets institutional resistance.</p>
+                </article>
 
-                <!-- Card 2 – Feminist Judgments -->
-                <div class="work-card">
-                    <h3><a href="works/feminist-judgments/" class="work-card-title-link">Feminist Judgments</a></h3>
-                    <img loading="lazy" src="images/common/6.webp" alt="International Conference on Feminism, Gender and Law" style="height: 180px; width: 100%; object-fit: cover; border-radius: 8px;">
-                    <p style="margin-top: 15px;color:#144e8c">Through the selection and rewriting of judgments, contributing authors offer alternative interpretations of the law, highlighting the role of gender, women's experiences, and broader social factors in judicial reasoning and legal application.</p>
-                </div>
+                <!-- Card 2 – GJMC 2026 -->
+                <article class="work-card">
+                    <h3 class="featured-title-nowrap"><a href="works/moot-court/" class="work-card-title-link">Gender Justice Moot Court 2026: E-litigation - Live hearings
+</a></h3>
+                    <img loading="lazy" src="images/common/mc_2026.jpg"
+                        alt="GJMC 2026 Gender Justice Moot Court"
+                        class="featured-card-image">
+                    <p class="featured-card-copy">Through a hybrid E-Court model combining virtual hearings and a live Grand Finale, the Gender Justice Moot Court equips law students with practical, digital, and analytical competencies for modern legal practice.</p>
+                </article>
 
-                <!-- Card 3 – Moot Court -->
-                <div class="work-card">
-                    <h3><a href="works/moot-court/" class="work-card-title-link">Gender Justice Moot Court</a></h3>
-                    <img loading="lazy" src="images/mootcourt/1.webp" alt="International Conference on Feminism, Gender and Law" style="height: clamp(140px, 20vw, 180px); width: 100%; object-fit: cover; border-radius: 8px;">
-                    <p style="margin-top: 15px; color:#144e8c">Through a hybrid E-Court model combining virtual hearings and a live Grand Finale, the programme equips law students with practical, digital, and analytical competencies for modern legal practice.</p>
-                </div>
+                <!-- Card 3 – PWG initiative -->
+                <article class="work-card">
+                    <h3><span class="work-card-title-link">Promoting Decent Work for Women through Climate-Resilient Shrimp-Seaweed Farming in Ca Mau</span></h3>
+                    <img loading="lazy" src="images/common/%5BPWG2026%5D%20Photos/1.jpg"
+                        alt="PWG Project activities in Dam Doi Commune, Ca Mau Province"
+                        class="featured-card-image">
+                    <p class="featured-card-copy">We have received funding under Oxfam Vietnam&rsquo;s PWG Project (Call 2) to promote decent work and climate&#8209;resilient livelihoods for low&#8209;income women in <br/> Dam Doi, Ca Mau.</p>
+                </article>
 
             </div>
         </div>
