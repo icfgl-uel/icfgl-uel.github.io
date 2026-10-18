@@ -19,6 +19,7 @@
             navPublications: "Publications",
             navWorkshops: "Workshops & Seminars",
             navMootCourt: "Gender Justice Moot Court",
+            navCommunityOutreach: "Community Outreach",
             navContact: "Contact Us",
             navUel: "UEL Website",
             langSwitcherLabel: "Language",
@@ -58,6 +59,7 @@
             navPublications: "Ấn phẩm",
             navWorkshops: "Hội thảo & Tọa đàm",
             navMootCourt: "Phiên tòa giả định Công lý giới",
+            navCommunityOutreach: "Community Outreach",
             navContact: "Liên hệ",
             navUel: "Website UEL",
             langSwitcherLabel: "Ngôn ngữ",
@@ -157,6 +159,7 @@
         const pubHref     = rootPath + localePrefix + "works/publications/index.html";
         const wsHref      = rootPath + localePrefix + "works/workshops/index.html";
         const mootHref    = rootPath + localePrefix + "works/moot-court/index.html";
+        const communityHref = rootPath + "works/community-outreach/index.html";
         const workWithUsHref  = rootPath + localePrefix + "work-with-us/index.html";
         const contactHref     = rootPath + localePrefix + "contact/contact.html";
 
@@ -214,6 +217,7 @@
                     <li><a href="${pubHref}">${t.navPublications}</a></li>
                     <li><a href="${wsHref}">${t.navWorkshops}</a></li>
                     <li><a href="${mootHref}">${t.navMootCourt}</a></li>
+                    <li><a href="${communityHref}">${t.navCommunityOutreach}</a></li>
                 </ul>
             </li>
             <li><a href="${workWithUsHref}">${t.navWorkWithUs}</a></li>

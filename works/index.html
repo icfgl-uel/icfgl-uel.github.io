@@ -1423,6 +1423,110 @@
                 padding: 26px;
             }
         }
+        /* Community Outreach */
+        .community-outreach-section {
+            padding-block: 64px;
+            background: #f3f9ff;
+        }
+
+        .community-outreach-showcase {
+            display: grid;
+            grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+            align-items: center;
+            gap: clamp(40px, 6vw, 72px);
+        }
+
+        .community-outreach-copy {
+            min-width: 0;
+        }
+
+        .community-outreach-copy .section-heading {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .community-outreach-copy .section-heading hr {
+            margin-left: 0;
+        }
+
+        .community-project-title {
+            margin: 0 0 18px;
+            color: var(--primary-blue);
+            font-family: Cambria, Georgia, serif;
+            font-size: clamp(1.4rem, 2vw, 1.8rem);
+            line-height: 1.28;
+        }
+
+        .community-outreach-body {
+            display: grid;
+            gap: 12px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.72;
+        }
+
+        .community-outreach-body p {
+            margin: 0;
+            text-align: left;
+        }
+
+        .community-outreach-actions {
+            margin-top: 24px;
+        }
+
+        .community-outreach-actions .archive-cta {
+            min-height: 54px;
+            padding: 16px 24px;
+        }
+
+        .community-outreach-media {
+            aspect-ratio: 3 / 2;
+            overflow: hidden;
+            border-radius: 24px;
+            background: #dfe6ef;
+            box-shadow: 0 22px 52px rgba(20, 78, 140, .14);
+        }
+
+        .community-outreach-media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media (max-width: 900px) {
+            .community-outreach-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .community-outreach-media {
+                width: min(100%, 680px);
+                justify-self: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .community-outreach-copy .section-intro-text,
+            .community-project-title {
+                overflow-wrap: anywhere;
+            }
+
+            .community-outreach-media {
+                border-radius: 16px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .community-outreach-copy .section-heading h2 {
+                font-size: 1.7rem !important;
+                letter-spacing: -.01em;
+            }
+
+            .community-title-break {
+                display: block;
+            }
+        }
     </style>
     <link rel="alternate" hreflang="en-US" href="../works/index.html" />
     <link rel="alternate" hreflang="vi" href="../vi/works/index.html" />
@@ -1478,6 +1582,7 @@
             <a href="#icfgl" class="pill-item">ICFGL</a>
             <a href="#workshops" class="pill-item">Workshops & Seminars</a>
             <a href="#moot-court" class="pill-item">Moot Court</a>
+            <a href="#community-outreach" class="pill-item">Community Outreach</a>
             <a href="publications/index.html" class="pill-item">Publications</a>
         </div>
     </div>
@@ -1727,9 +1832,36 @@
             </div>
         </div>
     </section>
+    <!-- SECTION 5: Community Outreach -->
+    <section id="community-outreach" class="page-section community-outreach-section">
+        <div class="section-shell">
+            <div class="community-outreach-showcase">
+                <div class="community-outreach-copy">
+                    <div class="section-heading">
+                        <span class="section-eyebrow">Community Initiative</span>
+                        <h2>Community <span class="community-title-break">Outreach</span></h2>
+                        <hr>
+                    </div>
 
-    <!-- SECTION 5: Publications -->
-    <section id="publications" class="page-section section-ice">
+                    <h3 class="community-project-title">Promoting Decent Work for Women through Climate-Resilient Shrimp-Seaweed Farming in Ca Mau</h3>
+                    <div class="community-outreach-body">
+                        <p>We are selected to receive funding under the second call of the PWG Project implemented by Oxfam in Vietnam.</p>
+                        <p>Through this support, we are implementing an initiative in Dam Doi Commune, Ca Mau Province, aimed at promoting decent work and climate-resilient livelihoods for low-income women.</p>
+                    </div>
+                    <div class="community-outreach-actions">
+                        <a href="community-outreach/" class="archive-cta archive-cta--compact">Explore Community Outreach &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="community-outreach-media">
+                    <img loading="lazy" src="../images/%5BPWG2026%5D%20Photos/1.jpg" alt="PWG initiative supported by Oxfam in Vietnam">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Publications -->
+    <section id="publications" class="page-section section-rose">
         <div class="section-shell">
             <div class="section-heading">
                 <span class="section-eyebrow">Academic Outputs</span>

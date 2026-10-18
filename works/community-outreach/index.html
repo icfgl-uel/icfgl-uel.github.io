@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Community Outreach initiatives of the UEL Feminist Legal Theory Project, including the PWG Project initiative in Dam Doi, Ca Mau.">
+    <title>Community Outreach | UEL Feminist Legal Theory Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../header-footer.css">
+    <style>
+        :root {
+            --primary-blue: #144e8c;
+            --dark-blue: #0f3d6b;
+            --accent-pink: #f64183;
+            --text-muted: #55657f;
+            --border-light: rgba(20, 78, 140, 0.1);
+        }
+
+        body {
+            background: #fff;
+            color: #333;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .outreach-hero {
+            position: relative;
+            display: flex;
+            min-height: clamp(500px, calc(100vh - 116px), 700px);
+            min-height: clamp(500px, calc(100svh - 116px), 700px);
+            align-items: center;
+            overflow: hidden;
+            background: #0f1c2d url('../../images/%5BPWG2026%5D%20Photos/2.png') no-repeat center 45% / cover;
+            color: #fff;
+        }
+
+        .outreach-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background:
+                linear-gradient(90deg, rgba(3, 20, 43, .92) 0%, rgba(8, 41, 77, .82) 38%, rgba(11, 54, 91, .3) 68%, rgba(11, 54, 91, .08) 100%),
+                linear-gradient(180deg, rgba(3, 20, 43, .08), rgba(3, 20, 43, .28));
+        }
+
+        .hero-shell {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 56px 5%;
+        }
+
+        .hero-content {
+            width: min(700px, 58vw);
+            margin-left: clamp(24px, 3.5vw, 58px);
+        }
+
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            min-height: 38px;
+            margin: 0 0 24px;
+            padding: 0 22px;
+            border: 1px solid rgba(255, 255, 255, .3);
+            border-radius: 999px;
+            background: rgba(134, 58, 110, .48);
+            color: #fff;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+
+        .hero-title-main {
+            margin: 0 0 22px;
+            color: rgba(255, 250, 244, .98);
+            font-family: Cambria, Georgia, serif;
+            font-size: clamp(2.8rem, 4.8vw, 4.6rem);
+            font-weight: 700;
+            line-height: 1.02;
+            text-wrap: balance;
+        }
+
+        .hero-divider {
+            width: 62px;
+            height: 4px;
+            margin-bottom: 26px;
+            border-radius: 2px;
+            background: var(--accent-pink);
+        }
+
+        .hero-subtitle {
+            max-width: 610px;
+            margin: 0 0 34px;
+            color: rgba(255, 255, 255, .9);
+            font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .hero-btn,
+        .outreach-btn {
+            display: inline-flex;
+            min-height: 56px;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 28px;
+            border: 1px solid var(--accent-pink);
+            border-radius: 8px;
+            background: var(--accent-pink);
+            color: #fff;
+            font-size: .85rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background .25s ease, border-color .25s ease, transform .25s ease;
+        }
+
+        .hero-btn:hover,
+        .outreach-btn:hover {
+            border-color: #cf4372;
+            background: #cf4372;
+            transform: translateY(-2px);
+        }
+
+        .page-section {
+            padding: 68px 5%;
+        }
+
+        .section-shell {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .section-ice {
+            background: #f3f9ff;
+        }
+
+        .section-rose {
+            background: #ffebf2;
+        }
+
+        .initiative-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+            align-items: center;
+            gap: clamp(40px, 5vw, 64px);
+        }
+
+        .section-kicker {
+            display: block;
+            margin-bottom: 14px;
+            color: var(--accent-pink);
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .initiative-copy h2,
+        .section-heading h2 {
+            margin: 0;
+            color: var(--primary-blue);
+            font-family: Cambria, Georgia, serif;
+        }
+
+        .initiative-copy h2 {
+            max-width: 720px;
+            font-size: clamp(1.85rem, 2.7vw, 2.55rem) !important;
+            line-height: 1.16 !important;
+            overflow-wrap: anywhere;
+            text-wrap: pretty;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 3.4vw, 3rem) !important;
+            line-height: 1.15 !important;
+        }
+
+        .section-rule {
+            width: 80px;
+            height: 4px;
+            margin: 18px 0 24px;
+            border: 0;
+            background: var(--accent-pink);
+        }
+
+        .initiative-copy p {
+            margin: 0 0 15px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        .initiative-visual {
+            width: min(100%, 420px);
+            justify-self: end;
+        }
+
+        .initiative-visual img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 18px;
+            object-fit: cover;
+            box-shadow: 0 22px 55px rgba(20, 78, 140, .15);
+        }
+
+        .section-heading {
+            max-width: 820px;
+            margin: 0 auto 46px;
+            text-align: center;
+        }
+
+        .section-heading .section-rule {
+            margin-inline: auto;
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 1.06rem;
+            line-height: 1.75;
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .focus-card {
+            min-width: 0;
+            padding: 30px 26px;
+            border: 1px solid var(--border-light);
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: 0 14px 34px rgba(20, 78, 140, .06);
+        }
+
+        .focus-number {
+            display: block;
+            margin-bottom: 18px;
+            color: var(--accent-pink);
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+        }
+
+        .focus-card h3 {
+            margin: 0 0 12px;
+            color: var(--primary-blue);
+            font-family: Cambria, Georgia, serif;
+            font-size: 1.35rem;
+            line-height: 1.25;
+        }
+
+        .focus-card p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: .96rem;
+            line-height: 1.7;
+        }
+
+        .coming-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 36px;
+        }
+
+        .coming-copy h2 {
+            margin: 0 0 10px;
+            color: var(--primary-blue);
+            font-family: Cambria, Georgia, serif;
+            font-size: clamp(2rem, 3vw, 2.7rem);
+        }
+
+        .coming-copy p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 980px) {
+            .hero-content {
+                width: min(760px, 76vw);
+            }
+
+            .initiative-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .initiative-visual {
+                width: min(100%, 420px);
+                margin: 0 auto;
+            }
+
+            .focus-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .outreach-hero {
+                min-height: calc(100svh - 108px);
+                background-position: center;
+            }
+
+            .outreach-hero::before {
+                background: linear-gradient(90deg, rgba(3, 20, 43, .9), rgba(8, 41, 77, .78));
+            }
+
+            .hero-shell {
+                padding: 48px 20px;
+            }
+
+            .hero-content {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .hero-kicker {
+                min-height: 34px;
+                padding: 0 16px;
+                font-size: .7rem;
+            }
+
+            .hero-title-main {
+                font-size: clamp(2.35rem, 11vw, 2.9rem);
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .page-section {
+                padding: 48px 20px;
+            }
+
+            .initiative-copy h2 {
+                font-size: 1.75rem !important;
+                line-height: 1.2 !important;
+            }
+
+            .section-heading h2 {
+                font-size: 1.9rem !important;
+            }
+
+            .initiative-copy p {
+                text-align: left;
+            }
+
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .coming-row {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .outreach-btn {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="alternate" hreflang="en-US" href="../../works/community-outreach/index.html">
+    <link rel="alternate" hreflang="x-default" href="../../works/community-outreach/index.html">
+    <link rel="stylesheet" href="../../responsive.css">
+</head>
+<body>
+    <div id="global-header"></div>
+
+    <div class="breadcrumb archive-breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <a href="../index.html">Our Works</a>
+        <span class="breadcrumb-separator">&rsaquo;</span>
+        <span>Community Outreach</span>
+    </div>
+
+    <main>
+        <section class="outreach-hero" aria-label="Community Outreach hero banner">
+            <div class="hero-shell">
+                <div class="hero-content">
+                    <p class="hero-kicker">Community Initiative &middot; PWG Project</p>
+                    <h1 class="hero-title-main">Community<br>Outreach</h1>
+                    <div class="hero-divider"></div>
+                    <p class="hero-subtitle">Promoting decent work and climate-resilient livelihoods for low-income women in Dam Doi Commune, Ca Mau Province.</p>
+                    <a href="#initiative" class="hero-btn">View Current Initiative &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section section-ice" id="initiative">
+            <div class="section-shell">
+                <div class="initiative-grid">
+                    <div class="initiative-copy">
+                        <span class="section-kicker">PWG Project &middot; Call 2</span>
+                        <h2>Promoting Decent Work for Women through Climate-Resilient Shrimp-Seaweed Farming in Ca Mau</h2>
+                        <hr class="section-rule">
+                        <p>We are selected to receive funding under the second call of the PWG Project implemented by Oxfam in Vietnam.</p>
+                        <p>Through this support, we are implementing an initiative in Dam Doi Commune, Ca Mau Province, aimed at promoting decent work and climate-resilient livelihoods for low-income women.</p>
+                        <p>The initiative focuses on piloting an integrated model of extensive shrimp farming and <em>Gracilaria</em> seaweed cultivation on floating rafts, while also strengthening women&rsquo;s capacities, market linkages, and participation in household and community economic decision-making.</p>
+                    </div>
+                    <div class="initiative-visual">
+                        <img src="../../images/%5BPWG2026%5D%20Photos/full1.jpg" alt="PWG Project initiative in Dam Doi, Ca Mau">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section section-rose">
+            <div class="section-shell">
+                <div class="section-heading">
+                    <span class="section-kicker">Project Focus</span>
+                    <h2>An integrated, women-centred livelihood model</h2>
+                    <hr class="section-rule">
+                    <p>The initiative connects climate resilience, local livelihoods, and women&rsquo;s participation through one practical community-based model.</p>
+                </div>
+
+                <div class="focus-grid">
+                    <article class="focus-card">
+                        <span class="focus-number">01</span>
+                        <h3>Decent Work</h3>
+                        <p>Expanding sustainable economic opportunities for low-income women in Dam Doi.</p>
+                    </article>
+                    <article class="focus-card">
+                        <span class="focus-number">02</span>
+                        <h3>Climate Resilience</h3>
+                        <p>Supporting livelihoods that can adapt to changing environmental conditions.</p>
+                    </article>
+                    <article class="focus-card">
+                        <span class="focus-number">03</span>
+                        <h3>Integrated Farming</h3>
+                        <p>Combining extensive shrimp farming with <em>Gracilaria</em> cultivation on floating rafts.</p>
+                    </article>
+                    <article class="focus-card">
+                        <span class="focus-number">04</span>
+                        <h3>Women&rsquo;s Participation</h3>
+                        <p>Strengthening capacities, market linkages, and economic decision-making.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section section-ice">
+            <div class="section-shell coming-row">
+                <div class="coming-copy">
+                    <span class="section-kicker">Community Outreach</span>
+                    <h2>More initiatives coming soon</h2>
+                    <p>New outreach activities and project updates will be added here as they become available.</p>
+                </div>
+                <a class="outreach-btn" href="../index.html#community-outreach">Back to Our Works &rarr;</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="global-footer"></div>
+    <script src="../../js/components.js"></script>
+</body>
+</html>
