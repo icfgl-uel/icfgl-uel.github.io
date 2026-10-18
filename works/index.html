@@ -1527,6 +1527,119 @@
                 display: block;
             }
         }
+
+        /* Section navigation sits below the hero; sticks under the global header on scroll. */
+        .pill-nav-container {
+            position: sticky;
+            top: var(--works-header-height, 0px);
+            z-index: 900;
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0 18px;
+            background: #ffffff;
+            border-bottom: 1px solid #e3eaf2;
+            box-shadow: 0 3px 13px rgba(20,78,140,.065);
+        }
+        .pill-nav-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: clamp(8px, 2.1vw, 32px);
+            width: 100%;
+            max-width: 1320px;
+            min-height: 75px;
+            margin: 0 auto;
+            padding: 8px 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .pill-nav-list::-webkit-scrollbar { display: none; }
+        .pill-item {
+            display: inline-flex;
+            flex: 0 0 auto;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 4px;
+            border: 0;
+            border-bottom: 2px solid transparent;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+            backdrop-filter: none;
+            color: #144e8c;
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(.85rem, 1.15vw, 1.15rem);
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: none;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: color .2s ease, border-color .2s ease;
+        }
+        .pill-item:hover, .pill-item:focus-visible, .pill-item.is-active {
+            transform: none;
+            color: #f64183;
+            background: transparent;
+            border-color: #f64183;
+            box-shadow: none;
+        }
+        .pill-item:focus-visible { outline: 2px solid #144e8c; outline-offset: 2px; }
+        section[id] { scroll-margin-top: calc(var(--works-header-height, 0px) + 88px); }
+        @media (max-width: 900px) {
+            .pill-nav-container { padding: 0 12px; }
+            .pill-nav-list { justify-content: flex-start; min-height: 60px; gap: 22px; }
+            .pill-item { font-size: .93rem; padding: 11px 2px; }
+            section[id] { scroll-margin-top: calc(var(--works-header-height, 0px) + 73px); }
+        }
+    </style>
+    <style>
+        /* Publications archive action: match the other section CTA buttons. */
+        .publications-portal-action {
+            min-height: 64px;
+            padding: 20px 32px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--accent-pink);
+            color: #fff;
+            border: 1px solid var(--accent-pink);
+            font-family: 'Lato', sans-serif;
+            font-size: .85rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            transition: background .3s ease, border-color .3s ease;
+        }
+        .publications-portal-arrow {
+            display: inline;
+            width: auto;
+            height: auto;
+            background: none;
+            border-radius: 0;
+            color: inherit;
+            font-size: 1.1rem;
+            transition: none;
+        }
+        .publications-portal-card:hover .publications-portal-action {
+            background: #cf4372;
+            border-color: #cf4372;
+        }
+        .publications-portal-card:hover .publications-portal-arrow {
+            background: none;
+            transform: none;
+        }
+        @media (max-width: 760px) {
+            .publications-portal-action {
+                width: 100%;
+                border-top: 1px solid var(--accent-pink);
+                padding: 20px 24px;
+            }
+        }
     </style>
     <link rel="alternate" hreflang="en-US" href="../works/index.html" />
     <link rel="alternate" hreflang="vi" href="../vi/works/index.html" />
@@ -1576,17 +1689,16 @@
         </div>
     </section>
 
-    <div class="pill-nav-container">
+    <nav class="pill-nav-container" aria-label="Our Works section navigation">
         <div class="pill-nav-list">
             <a href="#feminist-judgments" class="pill-item">Feminist Judgments</a>
             <a href="#icfgl" class="pill-item">ICFGL</a>
-            <a href="#workshops" class="pill-item">Workshops & Seminars</a>
+            <a href="#workshops" class="pill-item">Workshops &amp; Seminars</a>
             <a href="#moot-court" class="pill-item">Moot Court</a>
             <a href="#community-outreach" class="pill-item">Community Outreach</a>
-            <a href="publications/index.html" class="pill-item">Publications</a>
+            <a href="#publications" class="pill-item">Publications</a>
         </div>
-    </div>
-    <br /><br />
+    </nav>
 
     <!-- SECTION 1: Feminist Judgments -->
     <section id="feminist-judgments" class="page-section section-ice">
@@ -1631,35 +1743,7 @@
                     </div>
                 </div>
 
-                <div class="feature-grid" style="margin-top: 10px;">
-                    <div class="feature-card">
-                        <div class="card-number">01</div>
-                        <h3
-                            style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">
-                            Demonstrate Application</h3>
-                        <p
-                            style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">
-                            Feminist theory in existing legal framework.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="card-number">02</div>
-                        <h3
-                            style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">
-                            Adhere to Form</h3>
-                        <p
-                            style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">
-                            Maintain formal judicial writing style.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="card-number">03</div>
-                        <h3
-                            style="font-family: Cambria, serif; color: var(--primary-blue); font-size: 1.55rem; margin-bottom: 16px;">
-                            Uncover Hidden Logic</h3>
-                        <p
-                            style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; text-align: justify;">
-                            Reveal and address hidden gender biases.</p>
-                    </div>
-                </div>
+           
             </div>
         </div>
     </section>
@@ -1890,17 +1974,60 @@
     <div id="global-footer"></div>
     <script src="../js/components.js"></script>
     <script>
-        // Smooth scroll for nav pills
-        document.querySelectorAll('.nav-pill').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href').startsWith('#')) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+        (() => {
+            const nav = document.querySelector('.pill-nav-container');
+            const headerMount = document.getElementById('global-header');
+            const links = [...nav.querySelectorAll('a[href^="#"]')];
+            const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+            // When the global header is sticky/fixed, place the section bar directly underneath it.
+            // When it scrolls away naturally, the section bar pins to the top of the viewport.
+            function syncTop() {
+                const bar = headerMount?.firstElementChild || headerMount;
+                let offset = 0;
+                if (bar) {
+                    const rect = bar.getBoundingClientRect();
+                    const style = getComputedStyle(bar);
+                    const parentStyle = headerMount ? getComputedStyle(headerMount) : null;
+                    if (['fixed','sticky'].includes(style.position) ||
+                        (parentStyle && ['fixed','sticky'].includes(parentStyle.position))) {
+                        offset = Math.max(0, Math.min(rect.bottom, rect.height));
+                    } else if (rect.bottom > 0 && rect.top <= 1) {
+                        offset = Math.max(0, rect.bottom);
+                    }
                 }
-            });
-        });
+                document.documentElement.style.setProperty('--works-header-height', Math.round(offset) + 'px');
+            }
+            function markCurrent() {
+                const threshold = nav.getBoundingClientRect().bottom + 30;
+                let active = sections[0];
+                for (const section of sections) {
+                    if (section.getBoundingClientRect().top <= threshold) active = section;
+                }
+                links.forEach(a => {
+                    const selected = a.getAttribute('href') === '#' + active?.id;
+                    a.classList.toggle('is-active', selected);
+                    if (selected) a.setAttribute('aria-current', 'location');
+                    else a.removeAttribute('aria-current');
+                });
+            }
+            links.forEach(a => a.addEventListener('click', e => {
+                const section = document.querySelector(a.getAttribute('href'));
+                if (!section) return;
+                e.preventDefault();
+                section.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block:'start'});
+                history.replaceState(null, '', a.getAttribute('href'));
+            }));
+            let raf = false;
+            function update() {
+                if (raf) return;
+                raf = true;
+                requestAnimationFrame(() => { syncTop(); markCurrent(); raf = false; });
+            }
+            window.addEventListener('scroll', update, {passive:true});
+            window.addEventListener('resize', update);
+            new MutationObserver(update).observe(headerMount, {childList:true,subtree:false});
+            update();
+        })();
     </script>
 </body>
 

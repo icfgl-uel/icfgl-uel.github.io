@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ICFGL 2026 conference insights: sessions, Vietnam and international reach, regions and universities.">
+<meta name="theme-color" content="#144e8c">
+<title>ICFGL 2026 | Conference Insights</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../header-footer.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../../responsive.css">
+<style>
+html{scroll-behavior:smooth}
+.ix{
+  --brand:#144e8c;--pink:#f64183;--violet:#8a64a3;
+  --r0:#144e8c;--r1:#f64183;--r2:#8a64a3;--r3:#19a7a1;--r4:#f0a23b;--r5:#5bb36b;--r6:#7a8aa3;
+  --bg:#f7faff;--surface:#fff;--ink:#223449;--muted:#60728a;--line:#e6edf5;--soft:#edf3fa;
+  --shadow:0 1px 2px rgba(16,42,76,.05),0 10px 30px rgba(16,42,76,.07);
+  --r:18px;
+  font-family:Lato,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;
+}
+.ix[data-theme="dark"]{
+  --brand:#5aa2f0;--pink:#ff6aa2;--violet:#b18ad0;--r0:#5aa2f0;--r1:#ff6aa2;--r2:#b18ad0;
+  --bg:#0a1524;--surface:#10223a;--ink:#e8eef7;--muted:#9db0c8;--line:#1e3552;--soft:#16304d;--shadow:none;
+}
+.ix *,.ix *::before,.ix *::after{box-sizing:border-box}
+.ix button,.ix input,.ix select{font:inherit;color:inherit}
+.ix button{cursor:pointer;background:none;border:0;padding:0;text-align:inherit}
+.ix h1,.ix h2,.ix h3,.ix p,.ix ul{margin:0;padding:0}
+.ix ul{list-style:none}
+.ix :focus-visible{outline:3px solid color-mix(in srgb,var(--pink) 70%,transparent);outline-offset:2px;border-radius:8px}
+.ix-wrap{max-width:1170px;margin:auto;padding:0 clamp(14px,4vw,24px)}
+.vn{--c:var(--brand)}.intl{--c:var(--pink)}.mixed{--c:var(--violet)}
+
+/* hero — synced with icfgl-2026.html and call-for-abstracts.html, fitted to viewport */
+.ix-hero{position:relative;min-height:calc(100vh - 120px);min-height:calc(100svh - 120px);display:flex;align-items:center;background:url('../../../images/icfgl/icfgl2026-hero.webp') no-repeat center center/cover;padding:clamp(32px,5vh,60px) 5%;color:#fff;overflow:hidden;box-sizing:border-box}
+.ix-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(15,58,110,.85),rgba(15,58,110,.4));z-index:1}
+.ix-hero-inner{position:relative;z-index:2;max-width:1100px;width:100%}
+.ix-kicker,.ix-eyebrow{display:block;margin-bottom:14px;color:var(--pink);font:700 .92rem/1 'Lato',sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.ix-nobrk{display:inline-block;white-space:nowrap}
+.ix-hero h1{font-family:'Cambria',Georgia,serif;font-size:clamp(1.75rem,3.4vw,2.75rem);font-weight:900;line-height:1.18;margin:0 0 16px;letter-spacing:-.015em;background:linear-gradient(to right,#ffffff,#ffe4e6,#fde68a);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ix-theme-box{display:inline-block;padding:10px 22px;background:rgba(222,79,122,.2);border-left:5px solid var(--pink);margin-bottom:18px;font-size:clamp(1.05rem,1.4vw,1.2rem);font-weight:700;line-height:1.3;backdrop-filter:blur(5px);white-space:nowrap}
+.ix-hero-copy{max-width:820px;line-height:1.6;color:#e6eef8;font-size:1.02rem;margin:0 0 20px;text-wrap:pretty}
+.ix-hero-meta{display:flex;flex-wrap:wrap;gap:24px;margin-bottom:28px;font-size:1.05rem;color:rgba(255,255,255,.9)}
+.ix-hero-meta .meta-item{display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+.ix-hero-actions{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:24px}
+.ix-hero-actions .btn-primary,
+.ix-hero-actions .btn-outline{padding:15px 30px;border-radius:8px;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:.1em;transition:all .3s ease;border:2px solid;font-size:0.98rem;display:inline-flex;align-items:center;white-space:nowrap}
+.ix-hero-actions .btn-primary{background:var(--pink);color:#fff;border-color:var(--pink)}
+.ix-hero-actions .btn-primary:hover{background:transparent;color:var(--pink);transform:translateY(-2px);box-shadow:none}
+.ix-hero-actions .btn-outline{background:transparent;color:#fff;border-color:#fff}
+.ix-hero-actions .btn-outline:hover{background:#fff;color:var(--brand);border-color:#fff;transform:translateY(-2px);box-shadow:none}
+.ix-hosted{margin-top:0;font-size:1.02rem;opacity:.85;color:rgba(255,255,255,.9);text-wrap:pretty}
+.ix-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);color:var(--brand);padding:8px 14px;border-radius:999px;font-size:.84rem;font-weight:700;text-decoration:none;transition:background .2s}
+.ix-btn:hover{background:var(--soft)}
+.ix-btn[hidden]{display:none}
+@media(max-width:530px){.ix-hero{min-height:auto;padding:36px 5%}.ix-theme-box{white-space:normal}.ix-hero-actions .btn-primary,.ix-hero-actions .btn-outline{width:100%;justify-content:center}}
+
+/* layout */
+.ix-main{margin-top:-38px;position:relative;padding-bottom:64px}
+.ix-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,24px);min-width:0}
+.ix-ch{margin-bottom:14px}
+.ix-ch h3{font-family:Cambria,Georgia,serif;font-size:1.15rem;color:var(--brand);line-height:1.25}
+.ix-ch p{font-size:.78rem;color:var(--muted);margin-top:2px}
+.ix-bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px;margin-top:16px}
+.ix-c12{grid-column:span 12}.ix-c8{grid-column:span 8}.ix-c7{grid-column:span 7}.ix-c5{grid-column:span 5}.ix-c4{grid-column:span 4}
+.ix-note{margin-top:12px;font-size:.76rem;color:var(--muted)}
+.ix-sec{padding-top:26px;scroll-margin-top:calc(var(--ix-top,8px) + 60px)}
+.ix-sec>header{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin-bottom:2px}
+.ix-sec h2{font-family:Cambria,Georgia,serif;font-size:1.6rem;color:var(--brand);line-height:1.2}
+.ix-sec>header p{font-size:.86rem;color:var(--muted)}
+
+/* metrics */
+.ix-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.ix-metric{padding:18px 20px;position:relative;overflow:hidden}
+.ix-metric::after{content:"";position:absolute;right:-26px;top:-26px;width:90px;height:90px;border-radius:50%;background:var(--c);opacity:.08}
+.ix-metric strong{display:block;font-size:clamp(2rem,3.6vw,2.6rem);line-height:1.05;color:var(--c);font-weight:900;font-variant-numeric:tabular-nums}
+.ix-metric span{display:block;margin-top:6px;font-weight:700;font-size:.88rem}
+.ix-metric small{display:block;color:var(--muted);font-size:.76rem}
+
+/* ticker */
+.ix-ticker{overflow:hidden;margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.ix-track{display:flex;width:max-content;animation:tick 50s linear infinite}
+.ix-ticker:hover .ix-track{animation-play-state:paused}
+.ix-tk{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;font-size:.8rem;white-space:nowrap;color:var(--muted)}
+.ix-tk i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.ix-tk b{color:var(--ink)}
+@keyframes tick{to{translate:-50% 0}}
+
+/* sticky nav */
+.ix-nav{position:sticky;top:var(--ix-top,8px);z-index:20;margin-top:16px;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow)}
+.ix-navin{display:flex;gap:4px;overflow-x:auto;padding:5px;scrollbar-width:none}
+.ix-nav a{flex:none;padding:7px 16px;border-radius:999px;font-size:.84rem;font-weight:700;color:var(--muted);text-decoration:none;transition:background .2s,color .2s}
+.ix-nav a:hover{color:var(--brand)}
+.ix-nav a.on{background:var(--brand);color:#fff}
+.ix[data-theme="dark"] .ix-nav a.on{color:#06101d}
+
+/* legend */
+.ix-legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.78rem;color:var(--muted);margin-bottom:10px}
+.ix-legend i,.ix-dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;background:var(--c)}
+
+/* session bars */
+.ix-sessions{display:grid;gap:2px}
+.ix-srow{display:grid;grid-template-columns:1fr auto;gap:3px 12px;padding:6px 10px;margin:0 -10px;border-radius:10px;transition:background .15s}
+.ix-srow:hover{background:var(--soft)}
+.ix-sl{font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ix-sl b{display:inline-block;min-width:34px;color:var(--brand)}
+.ix-n{font-weight:900;color:var(--brand);font-variant-numeric:tabular-nums;font-size:.86rem}
+.ix-trk{grid-column:1/-1;height:9px;border-radius:99px;background:var(--soft);overflow:hidden}
+.ix-stack{display:flex;height:100%;border-radius:99px;overflow:hidden;gap:2px;width:var(--w)}
+.ix-stack i{background:var(--c);min-width:3px}
+
+/* donut */
+.ix-donut-area{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px 26px}
+.ix-donut-box{position:relative;width:190px;height:190px}
+.ix-donut{width:100%;height:100%;transform:rotate(-90deg)}
+.ix-donut circle{fill:none;stroke-width:22;stroke:var(--c);stroke-dasharray:var(--len) var(--C);transition:opacity .25s}
+.ix-donut circle.bg{stroke:var(--soft);stroke-dasharray:none}
+.ix-donut circle.dim{opacity:.22}
+.ix-donut-center{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}
+.ix-donut-center b{font-size:2.1rem;line-height:1;color:var(--brand);font-weight:900}
+.ix-donut-center small{color:var(--muted);font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;max-width:90px}
+.ix-key{display:grid;gap:4px}
+.ix-key button{display:block;padding:7px 12px;border-radius:12px;border:1px solid transparent;font-size:.84rem;transition:background .15s,border-color .15s}
+.ix-key button:hover{background:var(--soft);border-color:var(--line)}
+.ix-key strong{display:block;font-size:1.2rem;color:var(--c);line-height:1.2}
+.ix-key strong small{color:var(--muted);font-size:.78rem;font-weight:700}
+
+/* bubbles */
+.ix-bubbles{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;padding:6px 0}
+.ix-bub{width:var(--sz);height:var(--sz);border-radius:50%;display:grid;place-content:center;text-align:center;line-height:1.1;padding:4px;
+  background:color-mix(in srgb,var(--c) 15%,var(--surface));border:2px solid var(--c);transition:background .2s}
+.ix-bub b{font-size:max(.95rem,calc(var(--sz)*.22));font-weight:900;color:var(--c)}
+.ix-bub span{font-size:max(.6rem,calc(var(--sz)*.085));font-weight:700;color:var(--ink)}
+.ix-bub:hover{background:color-mix(in srgb,var(--c) 28%,var(--surface))}
+
+/* regions */
+.ix-rbar{display:flex;height:18px;border-radius:99px;overflow:hidden;gap:2px}
+.ix-rbar i{background:var(--c);min-width:4px}
+.ix-rlist{display:grid;gap:2px;margin-top:12px}
+.ix-rrow{display:grid;grid-template-columns:12px 1fr auto auto;align-items:center;gap:10px;padding:6px 10px;margin:0 -10px;border-radius:10px;font-size:.84rem;transition:background .15s}
+.ix-rrow:hover{background:var(--soft)}
+.ix-rrow i{width:10px;height:10px;border-radius:3px;background:var(--c)}
+.ix-rrow strong{color:var(--ink);font-variant-numeric:tabular-nums}
+.ix-rrow em{font-style:normal;color:var(--muted);font-size:.76rem;min-width:44px;text-align:right}
+
+/* session x region matrix */
+.ix-matrix-card{margin-top:0}
+.ix-hscroll{overflow-x:auto;padding:2px 0 6px;scrollbar-width:thin}
+.ix-matrix{width:100%;border-collapse:separate;border-spacing:5px;table-layout:fixed}
+.ix-matrix th,.ix-matrix td{padding:0}
+.ix-matrix thead th:first-child{width:320px;text-align:left;padding:0 8px;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
+.ix-matrix thead th:not(:first-child){width:84px}
+.ix-matrix thead button{width:100%;min-height:56px;padding:6px 4px;border-radius:8px;text-align:center;color:var(--ink);font-size:.71rem;font-weight:800;line-height:1.15}
+.ix-matrix thead button:hover{background:var(--soft)}
+.ix-matrix thead small{display:block;margin-top:4px;color:var(--muted);font-size:.67rem;font-weight:600}
+.ix-matrix tbody th{position:sticky;left:0;z-index:2;background:var(--surface)}
+.ix-matrix tbody th button{width:100%;display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:7px;align-items:center;padding:6px 8px;border-radius:7px;text-align:left}
+.ix-matrix tbody th button:hover{background:var(--soft)}
+.ix-matrix tbody th b{color:var(--brand);font-size:.82rem}
+.ix-matrix tbody th span{white-space:nowrap;color:var(--ink);font-size:.72rem;font-weight:700}
+.ix-matrix tbody th small{color:var(--muted);font-size:.64rem;font-weight:600;white-space:nowrap}
+.ix-mcell{display:grid;place-items:center;width:100%;height:36px;border:1px solid color-mix(in srgb,var(--brand) 15%,var(--line))!important;border-radius:7px!important;background:rgba(20,78,140,var(--a))!important;color:var(--ink);font-size:.78rem;font-weight:900;font-variant-numeric:tabular-nums}
+.ix-mcell:hover{outline:2px solid var(--brand);outline-offset:1px}
+.ix-mcell.is-zero{background:var(--soft)!important;border-color:transparent!important;color:color-mix(in srgb,var(--muted) 50%,transparent)}
+
+.ix-flowcap{margin-top:10px;font-size:.82rem;color:var(--muted);min-height:1.4em}
+.ix-flowcap b{color:var(--ink)}
+
+/* universities */
+.ix-unis{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:4px 14px;max-height:440px;overflow-y:auto;padding-right:6px;scrollbar-width:thin}
+.ix-uni{display:grid;grid-template-columns:10px minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 10px;border-radius:10px;border:1px solid transparent;transition:background .15s,border-color .15s}
+.ix-uni:hover{background:var(--soft);border-color:var(--line)}
+.ix-uni i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.ix-uni span{font-size:.84rem;line-height:1.25}
+.ix-uni small{display:block;font-size:.7rem;color:var(--muted)}
+.ix-uni b{min-width:28px;text-align:center;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--brand);font-size:.78rem}
+
+.ix-oth{margin-top:12px;font-size:.78rem;color:var(--muted)}
+.ix-oth summary{cursor:pointer;font-weight:700;color:var(--brand)}
+.ix-oth p{margin-top:6px}
+
+/* columns */
+.ix-cols{display:flex;gap:16px;align-items:flex-end;justify-content:center;padding-top:6px}
+.ix-col{display:grid;justify-items:center;gap:4px;text-align:center;flex:1;max-width:80px}
+.ix-colbar{height:130px;width:100%;display:flex;align-items:flex-end}
+.ix-colbar i{display:block;width:100%;border-radius:10px 10px 4px 4px;background:linear-gradient(to top,var(--brand),color-mix(in srgb,var(--brand) 55%,var(--pink)));height:var(--h)}
+.ix-col b{font-size:1.05rem;color:var(--brand)}
+.ix-col span{font-size:.74rem;color:var(--muted)}
+
+/* highlights */
+.ix-hls{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.ix-hl2{padding:14px 16px;border-radius:14px;background:var(--soft);transition:translate .2s}
+.ix-hl2:hover{background:color-mix(in srgb,var(--soft) 80%,var(--brand))}
+.ix-hl2 strong{display:block;font-size:1.8rem;font-weight:900;color:var(--brand);line-height:1.1;font-variant-numeric:tabular-nums}
+.ix-hl2 strong small{font-size:.8rem;color:var(--muted);font-weight:700;margin-left:4px}
+.ix-hl2 p{font-size:.78rem;color:var(--muted);margin-top:4px}
+
+/* explorer */
+.ix-tools{display:grid;gap:10px;margin-bottom:14px}
+.ix-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ix-search{position:relative;flex:1 1 240px}
+.ix-search svg{position:absolute;left:13px;top:50%;translate:0 -50%;width:18px;height:18px;color:var(--muted);pointer-events:none}
+.ix-search input,.ix-select{width:100%;border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:8px 12px;min-height:38px;font-size:.78rem}
+.ix-search input{padding-left:40px}
+.ix-select{width:auto;flex:0 1 190px}
+
+/* session picker */
+.ix-sess{display:grid;grid-template-columns:1.5fr repeat(11,minmax(0,1fr));gap:6px}
+.ix-st{position:relative;display:grid;justify-items:center;padding:9px 4px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;transition:translate .15s,border-color .15s,background .15s}
+.ix-st b{font-size:.95rem;color:var(--brand);line-height:1.2}
+.ix-st small{font-size:.7rem;color:var(--muted)}
+.ix-st .mini{position:absolute;left:0;right:0;bottom:0;height:4px;display:flex;gap:1px}
+.ix-st .mini i{background:var(--c)}
+.ix-st:hover{border-color:var(--brand);translate:0 -2px}
+.ix-st[aria-pressed="true"]{background:var(--brand);border-color:var(--brand)}
+.ix-st[aria-pressed="true"] b,.ix-st[aria-pressed="true"] small{color:#fff}
+.ix[data-theme="dark"] .ix-st[aria-pressed="true"] b,.ix[data-theme="dark"] .ix-st[aria-pressed="true"] small{color:#06101d}
+.ix-sesscap{font-size:.82rem;color:var(--muted);margin-top:8px;min-height:1.4em}
+.ix-sesscap b{color:var(--brand)}
+
+.ix-seg{display:inline-flex;background:var(--soft);border-radius:12px;padding:3px;gap:2px;flex-wrap:wrap}
+.ix-seg button{padding:6px 11px;border-radius:9px;font-size:.78rem;font-weight:700;color:var(--muted)}
+.ix-seg button[aria-pressed="true"]{background:var(--surface);color:var(--brand);box-shadow:0 1px 3px rgba(16,42,76,.12)}
+.ix-info{font-size:.8rem;color:var(--muted);margin:0 0 10px}
+.ix-list{display:grid;gap:8px}
+.ix-item{border:1px solid var(--line);border-left:4px solid var(--c);border-radius:12px;background:var(--surface);transition:box-shadow .2s}
+.ix-item:hover{box-shadow:var(--shadow)}
+.ix-item summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:68px minmax(0,1fr) auto 14px;gap:4px 14px;padding:11px 14px;align-items:start}
+.ix-item summary::-webkit-details-marker{display:none}
+.ix-item summary::after{content:"";width:7px;height:7px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);rotate:45deg;margin-top:6px;transition:rotate .2s}
+.ix-item[open] summary::after{rotate:-135deg}
+.ix-code b{display:block;color:var(--c);font-weight:900;font-size:.9rem}
+.ix-code span{color:var(--muted);font-size:.7rem}
+.ix-item h3{font-size:.93rem;line-height:1.4;font-weight:700;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ix-item[open] h3{-webkit-line-clamp:unset}
+.ix-by{font-size:.8rem;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ix-item[open] .ix-by{white-space:normal}
+.ix-tags{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end;max-width:190px}
+.ix-tag{padding:2px 8px;border-radius:7px;font-size:.7rem;font-weight:700;background:var(--soft);color:var(--brand);white-space:nowrap}
+.ix-tag.is-vn{background:color-mix(in srgb,var(--pink) 14%,transparent);color:var(--pink)}
+.ix-aff{padding:0 14px 12px 96px;font-size:.78rem;color:var(--muted)}
+.ix-aff b{color:var(--ink)}
+.ix-empty{padding:30px 10px;text-align:center;color:var(--muted)}
+.ix-empty .ix-btn{margin-top:10px}
+.ix-moreb{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px}
+#ix-showmore,#ix-showless{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:999px;font-size:.86rem;font-weight:700;border:1px solid var(--line);background:var(--surface);color:var(--brand);transition:background .2s,color .2s,border-color .2s;cursor:pointer}
+#ix-showmore:hover,#ix-showless:not(:disabled):hover{background:var(--soft);color:var(--brand)}
+#ix-showless{color:var(--muted)}
+#ix-showless:disabled{opacity:.45;cursor:not-allowed;background:var(--surface);color:var(--muted);border-color:var(--line)}
+
+/* dark mode toggle bar */
+.ix-toolbar{max-width:1170px;margin:8px auto 0;padding:0 clamp(14px,4vw,24px);display:flex;justify-content:flex-end}
+
+@media(max-width:960px){.ix-bento>*{grid-column:1/-1}.ix-sess{grid-template-columns:repeat(6,minmax(0,1fr))}.ix-st.all{grid-column:span 2}.ix-matrix{width:920px}}
+@media(max-width:640px){
+  .ix-item summary{grid-template-columns:minmax(0,1fr) 14px}
+  .ix-item summary::after{grid-column:2;grid-row:1}
+  .ix-code{display:flex;gap:10px;align-items:baseline}
+  .ix-item .ix-body,.ix-item .ix-tags{grid-column:1/-1}
+  .ix-tags{justify-content:flex-start;max-width:none}
+  .ix-aff{padding-left:14px}
+  .ix-select{flex:1 1 100%}
+  .ix-sess{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+/* Simplified presentation: static, flat and consistent with the ICFGL 2026 pages. */
+html{scroll-behavior:auto}
+.ix{
+  --bg:#f7f9fc;--surface:#fff;--ink:#1f3146;--muted:#637287;--line:#dfe6ef;--soft:#edf2f7;
+  --shadow:0 2px 10px rgba(20,78,140,.06);--r:10px;
+}
+.ix-main{margin-top:0;padding-top:44px;padding-bottom:72px}
+.ix-card{border-radius:var(--r);box-shadow:var(--shadow)}
+.ix-metric{overflow:visible;border-top:4px solid var(--c)}
+.ix-metric::after{display:none}
+.ix-ticker,.ix-toolbar{display:none!important}
+.ix-nav{position:static;margin:20px 0 6px;background:var(--surface);backdrop-filter:none;-webkit-backdrop-filter:none;border-radius:8px;box-shadow:none}
+.ix-navin{padding:4px}
+.ix-nav a{border-radius:5px}
+.ix-nav a.on{background:var(--brand);color:#fff}
+.ix-srow,.ix-rrow,.ix-statbar,.ix-uni{border-radius:6px}
+.ix-srow:hover,.ix-rrow:hover,.ix-uni:hover{background:transparent}
+.ix-trk,.ix-statbar-track{border-radius:2px}
+.ix-stack{border-radius:2px;gap:1px}
+.ix-bars{display:grid;gap:12px}
+.ix-statbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 14px;width:100%;padding:5px 0;color:var(--ink)}
+.ix-statbar-label{font-size:.84rem;font-weight:700}
+.ix-statbar-value{font-size:.82rem;font-weight:900;color:var(--brand);font-variant-numeric:tabular-nums}
+.ix-statbar-value small{color:var(--muted);font-weight:700;margin-left:5px}
+.ix-statbar-track{grid-column:1/-1;height:10px;background:var(--soft);overflow:hidden}
+.ix-statbar-fill{display:block;width:var(--w);height:100%;background:var(--c,var(--brand))}
+.ix-country-bars{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 24px}
+.ix-rlist{gap:10px;margin-top:0}
+.ix-rrow{grid-template-columns:minmax(120px,1fr) 3fr auto auto;padding:4px 0;margin:0;gap:10px}
+.ix-rrow>i{grid-column:2;width:100%;height:10px;border-radius:2px;background:linear-gradient(to right,var(--c) 0 var(--w),var(--soft) var(--w) 100%)}
+.ix-rrow>i::after{content:none}
+.ix-rrow>span{grid-column:1;grid-row:1}
+.ix-rrow>strong{grid-column:3;grid-row:1}
+.ix-rrow>em{grid-column:4;grid-row:1}
+.ix-cols{display:grid;gap:12px;padding:0}
+.ix-col{display:grid;grid-template-columns:minmax(105px,1fr) 3fr auto;gap:10px;align-items:center;max-width:none;text-align:left}
+.ix-colbar{grid-column:2;height:10px;width:100%;background:var(--soft);display:block}
+.ix-colbar i{height:100%;width:var(--w);border-radius:2px;background:var(--brand)}
+.ix-col b{grid-column:3;grid-row:1;font-size:.9rem}
+.ix-col span{grid-column:1;grid-row:1;font-size:.8rem;color:var(--ink)}
+.ix-hl2{border-radius:6px;border-left:3px solid var(--brand);background:var(--soft)}
+.ix-hl2:hover{background:var(--soft)}
+.ix-st:hover{border-color:var(--line);translate:none}
+.ix-item:hover{box-shadow:none}
+
+/* Reduced information architecture: keep only the essential reading path. */
+.ix-hero{min-height:360px;padding:48px 5%}
+.ix-hero h1{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:16px}
+.ix-theme-box{padding:10px 18px;margin-bottom:16px;font-size:1rem}
+.ix-hero-copy{font-size:.98rem!important;line-height:1.55!important}
+.ix-hero-meta{margin:16px 0 22px;font-size:.95rem}
+.ix-main{padding-top:32px}
+.ix-metrics{gap:10px}
+.ix-metric{padding:16px 18px;border-top:1px solid var(--line)}
+.ix-metric strong{color:var(--brand)!important;font-size:2rem}
+.ix-nav{display:none}
+.ix-sec{padding-top:38px}
+#sessions .ix-bento .ix-card:first-child{display:none}
+#sessions .ix-bento .ix-card:last-child{grid-column:1/-1}
+#sessions .ix-legend{display:none}
+.ix-stack{gap:0}
+.ix-stack i{background:var(--brand)!important}
+#geography .ix-bento .ix-card:first-child{grid-column:1/-1}
+#geography .ix-bento .ix-card:last-child{display:none}
+.ix-country-bars{grid-template-columns:1fr;gap:7px}
+#insights{display:none}
+.ix-tools>div:nth-child(2),#ix-kinds{display:none}
+.ix-card{padding:20px;box-shadow:none}
+.ix-ch{margin-bottom:18px}
+.ix-sessions{gap:8px}
+.ix-srow{padding:3px 0;margin:0}
+.ix-hls{display:none}
+
+/* Balanced report layout: full information without decorative charts. */
+.ix-hero{min-height:420px;padding:56px 5%}
+.ix-main{padding-top:40px}
+.ix-metrics{gap:14px}
+.ix-metric{padding:20px;border-top:3px solid var(--c)}
+.ix-metric strong{color:var(--c)!important;font-size:clamp(2rem,3.6vw,2.5rem)}
+.ix-sec{padding-top:56px}
+.ix-sec>header{display:block;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.ix-sec h2{font-size:1.75rem}
+.ix-sec>header p{margin-top:4px;max-width:760px}
+.ix-card{padding:24px;border-radius:14px;box-shadow:0 4px 18px rgba(20,78,140,.06)}
+.ix-ch{margin-bottom:18px}
+.ix-ch h3{font-size:1.2rem}
+.ix-ch p{font-size:.82rem;margin-top:4px}
+#sessions .ix-bento .ix-card:first-child{display:block;grid-column:span 4}
+#sessions .ix-bento .ix-card:last-child{grid-column:span 8}
+#sessions .ix-legend{display:flex}
+.ix-stack{gap:1px}
+.ix-stack i{background:var(--c)!important}
+#geography .ix-bento .ix-card:first-child{grid-column:span 7}
+#geography .ix-bento .ix-card:nth-child(2){grid-column:span 5}
+#geography .ix-bento .ix-card:last-child.ix-matrix-card{display:block;grid-column:1/-1}
+.ix-country-bars{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px}
+#insights{display:block}
+.ix-unis{max-height:360px}
+.ix-uni i{background:var(--brand)}
+#ix-unileg{display:none}
+.ix-hls{display:grid}
+#ix-kinds{display:inline-flex}
+.ix-hl2{background:#f4f7fb;border-left:3px solid var(--brand)}
+.ix-hl2 strong{font-size:1.55rem}
+.ix-toolbar{display:none!important}
+
+/* Geography */
+.ix-geo-lead{margin:-4px 0 18px;padding:12px 14px;border-left:3px solid var(--pink);background:#fff3f7;color:var(--ink);font-size:.86rem}
+.ix-geo-lead strong{color:var(--brand);font-size:1.15rem;margin-right:5px}
+.ix-rank{display:inline-grid;place-items:center;width:22px;height:22px;margin-right:8px;border-radius:50%;background:var(--soft);color:var(--muted);font-size:.7rem}
+.ix-country-bars .ix-statbar:first-child .ix-rank{background:var(--pink);color:#fff}
+.ix-country-bars .ix-statbar:first-child .ix-statbar-fill{background:var(--pink)}
+.ix-rbar{height:14px;margin:0 0 18px;border-radius:3px;gap:1px;background:var(--soft)}
+.ix-rlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:0}
+.ix-rrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px 10px;margin:0;padding:10px 11px;border:1px solid var(--line);background:#fff;border-radius:8px}
+.ix-rrow>span{grid-column:1;grid-row:1;font-weight:700;font-size:.78rem}
+.ix-rrow>strong{grid-column:2;grid-row:1;color:var(--brand)}
+.ix-rrow>em{grid-column:1/-1;grid-row:2;text-align:left;font-size:.7rem}
+.ix-rrow>i{grid-column:1/-1;grid-row:3;height:6px;background:linear-gradient(to right,var(--c) 0 var(--w),var(--soft) var(--w) 100%)}
+
+/* Insights */
+.ix-topunis{display:grid;gap:9px}
+.ix-topuni{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:7px 10px;align-items:center;width:100%;padding:3px 0}
+.ix-topuni-rank{grid-row:1/3;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-size:.72rem;font-weight:900}
+.ix-topuni-name{font-size:.83rem;font-weight:700;line-height:1.2}
+.ix-topuni-name small{display:block;color:var(--muted);font-size:.7rem;font-weight:400;margin-top:2px}
+.ix-topuni-value{font-size:.84rem;font-weight:900;color:var(--brand)}
+.ix-topuni-track{grid-column:2/-1;height:7px;background:var(--soft);border-radius:2px;overflow:hidden}
+.ix-topuni-track i{display:block;width:var(--w);height:100%;background:var(--pink)}
+.ix-moreunis{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.ix-moreunis summary,.ix-oth summary{cursor:pointer;color:var(--brand);font-size:.8rem;font-weight:700}
+.ix-moreunis .ix-unis{margin-top:10px;grid-template-columns:repeat(2,minmax(0,1fr));max-height:300px}
+
+/* Professional profile */
+.ix-prof{display:grid;grid-template-columns:230px minmax(0,1fr);gap:26px;align-items:stretch}
+.ix-prof-summary{padding-right:26px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+.ix-prof-total{display:flex;align-items:baseline;gap:8px}
+.ix-prof-total strong{font-family:Cambria,Georgia,serif;font-size:3.4rem;line-height:.9;color:var(--brand);font-variant-numeric:tabular-nums}
+.ix-prof-total span{max-width:110px;color:var(--muted);font-size:.72rem;font-weight:700;line-height:1.3}
+.ix-prof-facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.ix-prof-facts p{color:var(--muted);font-size:.7rem;line-height:1.3}
+.ix-prof-facts b{display:block;color:var(--pink);font-family:Cambria,Georgia,serif;font-size:1.55rem;line-height:1}
+.ix-prof-facts p:last-child b{color:var(--brand)}
+.ix-prof-list{display:grid;gap:9px}
+.ix-prof-row{display:grid;grid-template-columns:minmax(135px,180px) minmax(100px,1fr) 28px 46px;gap:10px;align-items:center;font-size:.76rem}
+.ix-prof-row span{color:var(--ink);font-weight:700}
+.ix-prof-row i{display:block;height:7px;background:linear-gradient(to right,var(--c) 0 var(--w),var(--soft) var(--w) 100%)}
+.ix-prof-row b{color:var(--brand);text-align:right;font-variant-numeric:tabular-nums}
+.ix-prof-row small{color:var(--muted);text-align:right;font-size:.68rem;font-variant-numeric:tabular-nums}
+
+.ix-prof-qual{margin-top:9px;color:var(--muted);font-size:.68rem;line-height:1.4}
+.ix-prof-qual b{color:var(--ink)}
+.ix-prof-note{margin-top:12px;color:var(--muted);font-size:.7rem;line-height:1.45}
+
+.ix-findings-card{overflow:hidden}
+.ix-findings-card .ix-ch{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:14px}
+.ix-findings-card .ix-ch p{max-width:440px;text-align:right}
+.ix-hls{grid-template-columns:repeat(12,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.ix-hl2{grid-column:span 4;min-height:104px;padding:15px 18px;border:0;border-right:1px solid var(--line);border-radius:0;background:#f8fafc;display:flex;flex-direction:column;justify-content:space-between}
+.ix-hl2:nth-child(3),.ix-hl2:nth-child(6){border-right:0}
+.ix-hl2:nth-child(n+4){border-top:1px solid var(--line)}
+.ix-hl2:hover{background:#f8fafc}
+.ix-hl2 .ix-hl-kicker{display:block;margin-bottom:8px;color:var(--muted);font-size:.61rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.ix-hl2 strong{display:flex;align-items:baseline;gap:4px;font-family:Cambria,Georgia,serif;font-size:clamp(1.9rem,3vw,2.65rem);font-weight:700;line-height:.9;color:var(--brand);font-variant-numeric:tabular-nums}
+.ix-hl2 strong small{font-family:Arial,sans-serif;font-size:.64rem;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+.ix-hl2 h4{margin-top:8px;color:var(--ink);font-family:inherit;font-size:.82rem;font-weight:800;line-height:1.32}
+.ix-hl2 p{max-width:40ch;margin-top:3px;color:var(--muted);font-size:.68rem;line-height:1.4}
+.ix-hl2.is-feature{min-height:148px;padding:17px 18px;background:#fff;box-shadow:inset 0 3px 0 var(--accent)}
+.ix-hl2.is-feature:hover{background:#fff}
+.ix-hl2.is-feature .ix-hl-kicker{color:var(--accent)}
+.ix-hl2.is-feature strong{font-size:clamp(2.85rem,4.3vw,3.85rem);color:var(--accent)}
+.ix-hl2.is-feature h4{font-size:.88rem}
+.ix-hl2.tone-blue{--accent:var(--brand)}
+.ix-hl2.tone-pink{--accent:var(--pink)}
+.ix-hl2.tone-light{--accent:#99711d}
+
+/* Explore */
+.ix-tools>.ix-row:first-child{display:grid;grid-template-columns:minmax(240px,1fr) minmax(140px,170px) minmax(140px,170px) minmax(190px,220px);align-items:stretch}
+.ix-select{width:100%}
+.ix-item{border-left-width:3px}
+.ix-entry{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:8px 16px;padding:15px 16px}
+.ix-entry .ix-code{grid-row:1}
+.ix-session-name{display:block;color:var(--brand);font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.ix-entry h3{font-size:.95rem;line-height:1.4}
+.ix-entry .ix-by,.ix-entry-aff{white-space:normal;font-size:.78rem;color:var(--muted);margin-top:5px;line-height:1.4}
+.ix-entry .ix-by b,.ix-entry-aff b{color:var(--ink)}
+.ix-entry .ix-tags{align-self:start}
+.ix-kind-tag{border:1px solid var(--line);background:#fff;color:var(--muted)}
+.ix-method{margin-top:12px;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--muted);font-size:.76rem}
+.ix-method strong{color:var(--ink)}
+.ix-srow{grid-template-columns:minmax(0,1fr) auto auto}
+.ix-split{display:flex;gap:9px;align-items:center;font-size:.72rem;font-weight:700;white-space:nowrap}
+.ix-split .vn{color:var(--brand)}
+.ix-split .intl{color:var(--pink)}
+@media(max-width:960px){
+  #geography .ix-bento .ix-card:nth-child(2){grid-column:1/-1}
+}
+@media(max-width:720px){
+  .ix-hero{min-height:380px;padding:44px 5%}
+  #sessions .ix-bento .ix-card:first-child,
+  #sessions .ix-bento .ix-card:last-child,
+  #geography .ix-bento .ix-card:first-child,
+  #geography .ix-bento .ix-card:last-child{grid-column:1/-1}
+  .ix-country-bars{grid-template-columns:1fr}
+  .ix-rlist{grid-template-columns:1fr}
+  .ix-findings-card .ix-ch{display:block}
+  .ix-findings-card .ix-ch p{margin-top:5px;text-align:left}
+  .ix-prof{grid-template-columns:1fr;gap:18px}
+  .ix-prof-summary{padding:0 0 16px;border-right:0;border-bottom:1px solid var(--line)}
+  .ix-prof-row{grid-template-columns:minmax(118px,1fr) minmax(70px,1fr) 24px 42px;gap:7px}
+  .ix-hls{display:block}
+  .ix-hl2{min-height:102px;border-right:0;border-top:1px solid var(--line)}
+  .ix-hl2:first-child{border-top:0}
+  .ix-hl2.is-feature{min-height:140px}
+  .ix-moreunis .ix-unis{grid-template-columns:1fr}
+  .ix-tools>.ix-row:first-child{grid-template-columns:1fr}
+  .ix-entry{grid-template-columns:1fr;padding:14px}
+  .ix-entry .ix-tags{justify-content:flex-start;max-width:none}
+  .ix-srow{grid-template-columns:minmax(0,1fr) auto}
+  .ix-split{grid-column:1/-1;grid-row:2;justify-content:flex-start}
+  .ix-rrow{grid-template-columns:minmax(0,1fr) auto}
+  .ix-rrow>em{display:block}
+}
+
+/* === Targeted visual refresh: Regional reach, Key findings, Explore pagination === */
+#geography .ix-matrix-card{background:linear-gradient(140deg,#fff 70%,#f4f8ff);border-color:#d9e6f4}
+#geography .ix-matrix-card .ix-ch h3{font-size:1.3rem}
+#geography .ix-matrix{border-spacing:6px 7px;min-width:790px}
+#geography .ix-matrix thead th:not(:first-child) button{background:#f0f6fd;border:1px solid #e0eaf6;border-radius:9px;color:#244365;transition:background .18s,transform .18s}
+#geography .ix-matrix thead th:not(:first-child) button:hover{background:#e0effe;transform:translateY(-1px)}
+#geography .ix-matrix tbody th button{border-radius:8px}
+#geography .ix-mcell:not(.is-zero){background:color-mix(in srgb,var(--region-color) calc(16% + var(--a)*66%),white)!important;border-color:color-mix(in srgb,var(--region-color) 45%,white)!important;color:#142e47;font-weight:900;box-shadow:inset 0 0 0 1px rgba(255,255,255,.24);transition:transform .18s,box-shadow .18s,filter .18s}
+#geography .ix-mcell:not(.is-zero):hover{transform:scale(1.08);filter:saturate(1.3);box-shadow:0 4px 12px rgba(20,78,140,.16)}
+#geography .ix-mcell.is-zero{background:#f2f5f9!important;color:#a8b4c3;border:1px solid #edf1f7!important}
+#geography .ix-flowcap{padding:10px 12px;border-radius:9px;background:#f1f6fc;line-height:1.55}
+.ix-findings-card{background:linear-gradient(135deg,#fff 63%,#fff5fa);border:1px solid #e7e8f4}
+.ix-findings-card .ix-ch h3{font-size:1.35rem}
+.ix-findings-card .ix-hls{gap:12px;border:0;background:transparent;border-radius:0;overflow:visible}
+.ix-findings-card .ix-hl2{grid-column:span 4;min-height:158px;padding:20px;border:1px solid #e7e9f2;border-radius:15px;background:#fff;box-shadow:0 5px 14px rgba(20,78,140,.045);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.ix-findings-card .ix-hl2::before{content:'';position:absolute;inset:0 auto 0 0;width:4px;background:var(--accent,var(--brand))}
+.ix-findings-card .ix-hl2:nth-child(3n+2){--accent:var(--pink)}
+.ix-findings-card .ix-hl2:nth-child(3n){--accent:#19a7a1}
+.ix-findings-card .ix-hl2:hover{transform:translateY(-3px);background:#fff;box-shadow:0 12px 24px rgba(20,78,140,.1)}
+.ix-findings-card .ix-hl2 strong,.ix-findings-card .ix-hl2.is-feature strong{font-size:clamp(2.1rem,3vw,3.05rem);color:var(--accent,var(--brand));line-height:1.05}
+.ix-findings-card .ix-hl2 .ix-hl-kicker{color:var(--accent,var(--brand));font-size:.67rem}
+.ix-findings-card .ix-hl2 h4{font-size:.9rem}
+.ix-findings-card .ix-hl2 p{font-size:.75rem;line-height:1.55}
+.ix-moreb{margin-top:18px;gap:10px}
+#ix-showmore,#ix-showless{min-height:40px;padding:9px 22px;border-radius:10px;font-size:.83rem;justify-content:center}
+#ix-showmore{background:var(--brand);color:#fff;border-color:var(--brand)}
+#ix-showmore:hover{background:#0b3766;color:#fff;border-color:#0b3766}
+#ix-showmore[hidden],#ix-showless[hidden]{display:none!important}
+@media(max-width:960px){.ix-findings-card .ix-hl2{grid-column:span 6}#geography .ix-matrix{min-width:790px}}
+@media(max-width:640px){
+ #geography .ix-matrix-card{padding:16px}
+ #geography .ix-hscroll{margin-right:-8px}
+ #geography .ix-matrix{min-width:770px;border-spacing:4px 6px}
+ #geography .ix-matrix thead th:first-child{width:175px}
+ #geography .ix-matrix tbody th button{grid-template-columns:28px minmax(0,1fr);gap:4px;padding:6px 3px}
+ #geography .ix-matrix tbody th small{grid-column:2}
+ #geography .ix-matrix tbody th span{overflow:hidden;text-overflow:ellipsis}
+ .ix-findings-card .ix-hls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .ix-findings-card .ix-hl2{grid-column:auto;min-height:145px;padding:14px;border:1px solid #e7e9f2}
+ .ix-findings-card .ix-hl2 strong,.ix-findings-card .ix-hl2.is-feature strong{font-size:2rem}
+ .ix-findings-card .ix-hl2 h4{font-size:.8rem}
+ .ix-findings-card .ix-hl2 p{font-size:.7rem}
+ .ix-moreb{flex-direction:row;align-items:stretch}
+ #ix-showmore,#ix-showless{flex:1 1 auto;min-width:0}
+}
+@media(max-width:390px){.ix-findings-card .ix-hls{grid-template-columns:1fr}.ix-findings-card .ix-hl2{min-height:120px}}
+@media(prefers-reduced-motion:reduce){.ix-findings-card .ix-hl2,#geography .ix-mcell{transition:none!important}}
+
+/* Compact, editorial Key Findings: quiet palette, aligned content, no feature hierarchy. */
+.ix-findings-card{background:var(--surface);border:1px solid var(--line)}
+.ix-findings-card .ix-ch{align-items:baseline;margin-bottom:16px}
+.ix-findings-card .ix-hls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.ix-findings-card .ix-hl2,
+.ix-findings-card .ix-hl2.is-feature{
+  grid-column:auto;display:grid;grid-template-columns:94px minmax(0,1fr);
+  grid-template-rows:auto 1fr;column-gap:16px;align-items:center;
+  min-height:100px;padding:17px 20px;border:0;border-radius:0;
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--surface);box-shadow:none;transform:none;transition:background .15s;
+}
+.ix-findings-card .ix-hl2:nth-child(2n){border-right:0}
+.ix-findings-card .ix-hl2:nth-last-child(-n+2){border-bottom:0}
+.ix-findings-card .ix-hl2::before{display:none}
+.ix-findings-card .ix-hl2:hover,.ix-findings-card .ix-hl2.is-feature:hover{background:var(--soft);transform:none;box-shadow:none}
+.ix-findings-card .ix-hl2 .ix-hl-kicker,
+.ix-findings-card .ix-hl2.is-feature .ix-hl-kicker{
+ grid-column:2;grid-row:1;margin:0 0 5px;color:var(--muted);
+ font-size:.65rem;font-weight:800;letter-spacing:.05em;
+}
+.ix-findings-card .ix-hl2 strong,
+.ix-findings-card .ix-hl2.is-feature strong{
+ grid-column:1;grid-row:1/3;display:flex;align-items:baseline;flex-wrap:wrap;
+ gap:3px;font-family:Cambria,Georgia,serif;font-size:clamp(1.85rem,2.6vw,2.5rem);
+ font-weight:700;line-height:1.1;color:var(--brand);overflow-wrap:anywhere;
+}
+.ix-findings-card .ix-hl2 strong small{font-size:.58rem;line-height:1.2}
+.ix-findings-card .ix-hl2 > div{grid-column:2;grid-row:2;align-self:start}
+.ix-findings-card .ix-hl2 h4,.ix-findings-card .ix-hl2.is-feature h4{margin:0;color:var(--ink);font-size:.83rem;line-height:1.35}
+.ix-findings-card .ix-hl2 p{margin-top:3px;font-size:.72rem;line-height:1.45}
+@media(max-width:740px){
+ .ix-findings-card .ix-hls{grid-template-columns:1fr}
+ .ix-findings-card .ix-hl2,.ix-findings-card .ix-hl2.is-feature{
+   grid-template-columns:84px minmax(0,1fr);column-gap:12px;min-height:88px;
+   padding:14px 15px;border-right:0;border-bottom:1px solid var(--line)}
+ .ix-findings-card .ix-hl2:nth-last-child(2){border-bottom:1px solid var(--line)}
+ .ix-findings-card .ix-hl2:last-child{border-bottom:0}
+}
+@media(max-width:390px){.ix-findings-card .ix-hl2,.ix-findings-card .ix-hl2.is-feature{grid-template-columns:72px minmax(0,1fr);padding:12px}}
+/* Refined Key Findings: restrained blue/pink accents and non-wrapping values. */
+.ix-findings-card .ix-hl2,
+.ix-findings-card .ix-hl2.is-feature{
+  --finding:#144e8c;
+  background:var(--surface);
+  box-shadow:inset 3px 0 0 rgba(20,78,140,.38);
+  grid-template-columns:minmax(112px,auto) minmax(0,1fr);
+  column-gap:14px;
+}
+.ix-findings-card .ix-hl2:nth-child(2),
+.ix-findings-card .ix-hl2:nth-child(5){
+  --finding:#d63f7c;
+  box-shadow:inset 3px 0 0 rgba(246,65,131,.55);
+}
+.ix-findings-card .ix-hl2 strong,
+.ix-findings-card .ix-hl2.is-feature strong{
+  display:inline-flex;
+  flex-wrap:nowrap;
+  align-items:baseline;
+  gap:0;
+  width:max-content;
+  max-width:100%;
+  font-size:clamp(1.7rem,2.3vw,2.25rem);
+  line-height:1.15;
+  white-space:nowrap;
+  overflow-wrap:normal;
+  word-break:normal;
+  color:var(--finding);
+}
+.ix-findings-card .ix-hl2 strong > span{white-space:nowrap;flex-shrink:0}
+.ix-findings-card .ix-hl2 strong small{margin-left:5px;white-space:nowrap;font-size:.58rem}
+.ix-findings-card .ix-hl2 .ix-hl-kicker,
+.ix-findings-card .ix-hl2.is-feature .ix-hl-kicker{color:var(--muted)}
+.ix-findings-card .ix-hl2:hover,
+.ix-findings-card .ix-hl2.is-feature:hover{background:var(--soft);filter:none}
+@media(max-width:740px){
+ .ix-findings-card .ix-hl2,.ix-findings-card .ix-hl2.is-feature{
+   grid-template-columns:minmax(100px,auto) minmax(0,1fr);
+   column-gap:12px;
+ }
+ .ix-findings-card .ix-hl2 strong,.ix-findings-card .ix-hl2.is-feature strong{font-size:2rem}
+}
+@media(max-width:390px){
+ .ix-findings-card .ix-hl2,.ix-findings-card .ix-hl2.is-feature{grid-template-columns:94px minmax(0,1fr)}
+ .ix-findings-card .ix-hl2 strong,.ix-findings-card .ix-hl2.is-feature strong{font-size:1.75rem}
+ .ix-findings-card .ix-hl2 strong small{font-size:.54rem}
+}
+</style>
+</head>
+<body><div id="global-header"></div>
+
+<div class="breadcrumb">
+    <a href="../../../index.html">Home</a>
+    <span class="breadcrumb-separator">&rsaquo;</span>
+    <a href="../../index.html">Our Works</a>
+    <span class="breadcrumb-separator">&rsaquo;</span>
+    <a href="../index.html">ICFGL</a>
+    <span class="breadcrumb-separator">&rsaquo;</span>
+    <a href="icfgl-2026.html">ICFGL 2026</a>
+    <span class="breadcrumb-separator">&rsaquo;</span>
+    <span>Conference Insights</span>
+</div>
+
+<div class="ix" id="ix" data-theme="light">
+
+  <section class="ix-hero">
+    <div class="ix-hero-inner">
+      <span class="ix-kicker">International Conference 2026</span>
+      <h1><span class="ix-nobrk">ICFGL 2026</span> <span class="ix-nobrk">Conference Insights</span></h1>
+      <div class="ix-theme-box">Feminist Law-making</div>
+      <p class="ix-hero-copy">A data summary of the final programme on 18 September 2026, covering presenters, sessions and country representation.</p>
+      <div class="ix-hero-meta">
+        <div class="meta-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          18 September 2026
+        </div>
+        <div class="meta-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ho Chi Minh City, Vietnam
+        </div>
+      </div>
+      <div class="ix-hero-actions">
+        <a href="#overview" class="btn-primary">Explore Insights</a>
+        <a href="icfgl-2026.html#numbers" class="btn-outline">← Back to ICFGL 2026</a>
+      </div>
+      <p class="ix-hosted">Hosted by: <span style="white-space:nowrap">University of Economics and Law (UEL)</span> &amp; <span style="white-space:nowrap">Rosa-Luxemburg-Stiftung (RLS)</span></p>
+    </div>
+  </section>
+
+  <main class="ix-wrap ix-main">
+    <section id="overview">
+      <div class="ix-metrics" id="ix-metrics"></div>
+    </section>
+
+    <nav class="ix-nav" id="ix-nav" aria-label="Sections">
+      <div class="ix-navin"><a href="#overview">Overview</a><a href="#geography">Geography</a><a href="#insights">Insights</a><a href="#explore">Explore</a></div>
+    </nav>
+
+    <section class="ix-sec" id="sessions">
+      <header><h2>Programme</h2><p>Presentation totals by session and affiliation profile.</p></header>
+      <div class="ix-bento" style="margin-top:0">
+        <div class="ix-card ix-c4">
+          <div class="ix-ch"><h3>Vietnam &amp; international reach</h3><p>Every presentation is grouped as Vietnam-linked or international-only.</p></div>
+          <div id="ix-donut"></div>
+          <p class="ix-note">Papers with both Vietnamese and international affiliations count as <strong>collaboration</strong>, not twice.</p>
+        </div>
+        <div class="ix-card ix-c8">
+          <div class="ix-ch"><h3>Presentations  session</h3><p>One Plenary Session with 3 presentations and 10 thematic sessions with 72 presentations. Click a row to filter.</p></div>
+          <div class="ix-legend" aria-hidden="true"><span><i class="vn"></i>Vietnam-linked</span><span><i class="intl"></i>International-only</span></div>
+          <div class="ix-sessions" id="ix-sessions"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ix-sec" id="geography">
+      <header><h2>Geography</h2><p>Country credits are counted per paper; one co-authored paper can credit several countries.</p></header>
+      <div class="ix-bento">
+        <div class="ix-card ix-c7">
+          <div class="ix-ch"><h3>Presentations by country</h3><p>Click a country to filter the presentation list.</p></div>
+          <p class="ix-geo-lead" id="ix-country-lead"></p>
+          <div class="ix-bubbles" id="ix-bubbles"></div>
+        </div>
+        <div class="ix-card ix-c5">
+          <div class="ix-ch"><h3>Presentations by world region</h3><p>Each paper is counted once in every represented region. Click a row to filter.</p></div>
+          <div class="ix-rbar" id="ix-rbar" aria-hidden="true"></div>
+          <div class="ix-rlist" id="ix-rlist"></div>
+        </div>
+        <div class="ix-card ix-c12 ix-matrix-card">
+          <div class="ix-ch"><h3>Regional reach by session</h3><p>Scan each row to see which world regions are represented in a session. Darker cells mean more presentations.</p></div>
+          <div class="ix-hscroll"><div id="ix-flow"></div></div>
+          <p class="ix-flowcap" id="ix-flowcap"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ix-sec" id="insights">
+      <header><h2>Insights</h2><p>Institutions, professional profiles and authorship across the conference community.</p></header>
+      <div class="ix-bento">
+        <div class="ix-card ix-c8">
+          <div class="ix-ch"><h3>Leading universities</h3><p id="ix-unisub"></p></div>
+          <div class="ix-topunis" id="ix-topunis"></div>
+          <details class="ix-moreunis"><summary id="ix-moreunis-summary"></summary><div class="ix-unis" id="ix-unis"></div></details>
+          <details class="ix-oth"><summary id="ix-othsum"></summary><p id="ix-othlist"></p></details>
+        </div>
+        <div class="ix-card ix-c4">
+          <div class="ix-ch"><h3>Presenters per paper</h3><p>Number of listed presenters.</p></div>
+          <div class="ix-cols" id="ix-cols"></div>
+        </div>
+        <div class="ix-card ix-c12 ix-prof-card">
+          <div class="ix-ch"><h3>Professional profile</h3><p>Occupational categories across 39 Vietnam-group participant profiles.</p></div>
+          <div class="ix-prof">
+            <div class="ix-prof-summary">
+              <div class="ix-prof-total"><strong>39</strong><span>participant profiles reviewed</span></div>
+              <div class="ix-prof-facts"><p><b>74%</b>teaching roles</p><p><b>13</b>confirmed doctorates</p></div>
+            </div>
+            <div>
+              <div class="ix-prof-list" id="ix-prof-list"></div>
+              <p class="ix-prof-qual"><b>Qualifications:</b> 13 doctorate · 10 master's or doctoral candidate · 16 unverified or unknown</p>
+            </div>
+          </div>
+          <p class="ix-prof-note">Scope: the supplied Vietnam-group profile file. Each person is counted once by their primary occupational category.</p>
+        </div>
+        <div class="ix-card ix-c12 ix-findings-card">
+          <div class="ix-ch"><h3>Key findings</h3><p>Six standout patterns across 75 presentations.</p></div>
+          <div class="ix-hls" id="ix-hls"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ix-sec" id="explore">
+      <header>
+        <h2>Explore presentations</h2>
+        <p>Search and filter the full programme. Every result includes session, presenters, affiliations, countries and participation type.</p>
+      </header>
+      <div class="ix-card" style="margin-top:14px">
+        <div class="ix-tools">
+          <div class="ix-row">
+            <label class="ix-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input id="ix-q" type="search" placeholder="Search presentations…" aria-label="Search presentations" autocomplete="off">
+            </label>
+            <select class="ix-select" id="ix-country" aria-label="Filter by country"><option value="all">All countries</option></select>
+            <select class="ix-select" id="ix-region" aria-label="Filter by region"><option value="all">All regions</option></select>
+            <select class="ix-select" id="ix-session-select" aria-label="Filter by session"><option value="all">All sessions</option></select>
+          </div>
+          <div>
+            <div class="ix-sess" id="ix-chips" role="group" aria-label="Filter by session"></div>
+            <p class="ix-sesscap" id="ix-sesscap" aria-live="polite"></p>
+          </div>
+          <div class="ix-row">
+            <div class="ix-seg" id="ix-kinds" role="group" aria-label="Filter by type"></div>
+            <button class="ix-btn" id="ix-reset" type="button" hidden>Clear filters</button>
+            <button class="ix-btn" id="ix-csv" type="button" style="margin-left:auto">⤓ Export CSV</button>
+          </div>
+        </div>
+        <p class="ix-info" id="ix-info" role="status" aria-live="polite"></p>
+        <ul class="ix-list" id="ix-list"></ul>
+        <div class="ix-moreb">
+          <button class="ix-btn" id="ix-showmore" type="button" hidden></button>
+          <button class="ix-btn" id="ix-showless" type="button" hidden>Show less</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="global-footer"></div>
+<script src="../../../js/components.js"></script>
+<script>
+(()=>{
+"use strict";
+
+const SESSIONS=["Plenary","Feminist Law-Making Methods","Family, Marriage, Inheritance and Property","Gender-Based Violence and Criminal Justice","Labour Law and Care Work","Reproductive Justice and Health Law","Kinship, Gender Identity and Family","Digital Governance and Data","International Economic Law","Marginality and the Carceral State","Environmental Law and Climate Justice"];
+const SESSION_SHORT=["Plenary","Feminist Law-Making","Family & Inheritance","Gender-Based Violence","Labour & Care Work","Reproductive Justice","Kinship, Gender & Family","Digital Governance","International Economic Law","Marginality & Care","Environmental & Climate Law"];
+const DATA=[
+{id:"PL-01",s:0,t:"Challenges for Feminist Law-Making",p:["Rosemary Hunter"],c:["United Kingdom"],a:["Loughborough University, UK"]},
+{id:"PL-02",s:0,t:"Replacement presentation — title to be confirmed",p:["Replacement presenter (name to be confirmed)"],c:["United Kingdom"],a:["Queen’s University, UK (organizer-provided replacement affiliation)"]},
+{id:"PL-03",s:0,t:"Drafting Feminist Legislation: The Australian Experience",p:["Becky Batagol"],c:["Australia"],a:["Monash University, Australia"]},
+{id:"S1-01",s:1,t:"From Ideas to Statutes: French Feminist Thought and the Reshaping of Vietnamese Law in the Colonial Era",p:["Le Ngoc Phu","Nguyen Thi Hoai"],c:["Vietnam"],a:["University of Law, Hue University, Vietnam"]},
+{id:"S1-02",s:1,t:"From State Feminism to Grassroots Legal Consciousness: Feminist Law-Making and Gender Equality in Contemporary China",p:["Shuxi Yin"],c:["China"],a:["Hefei University of Technology, China"]},
+{id:"S1-03",s:1,t:"Deferred Equality and Feminist Law-Making in India: Women's Reservation, Parliamentary Exclusion, and Gender Diversity in the Higher Judiciary",p:["Naresh Prajapati"],c:["India"],a:["School of Law, Bennett University, India"]},
+{id:"S1-04",s:1,t:"Can Law Reform Listen with a Feminist Ear? Law Reform and the Future of Feminist Lawmaking",p:["Sarah Ailwood"],c:["Australia"],a:["University of Wollongong, NSW, Australia"]},
+{id:"S1-05",s:1,t:"Fighting Fire with Fire: How Female Students Use Symbolic Power to Fight Predator Professors in China",p:["Eileen YH Tsang"],c:["Hong Kong"],a:["City University of Hong Kong, Hong Kong"]},
+{id:"S1-06",s:1,t:"From Care to Co-Design: Women's Activism as Feminist Law-Making in Thai Environmental Governance",p:["Chomkate Ngamkaiwan"],c:["Thailand"],a:["Institute of Human Rights and Peace Studies, Mahidol University, Thailand"]},
+{id:"S1-07",s:1,t:"Feminist Law-Making Outside Institutions: A Domestic Workers' Union and Its Women's Court in India",p:["Shubham Yadav"],c:["India"],a:["Jawaharlal Nehru University, New Delhi, India"]},
+{id:"S1-08",s:1,t:"Beyond the Right Values: A Pragmatic Feminist Reorientation of Child Marriage Prevention Law in Indonesia",p:["Agus Pratiwi"],c:["Australia"],a:["Griffith Law School, Griffith University, Australia"]},
+{id:"S1-09",s:1,t:"Judging Girlhood: Feminist Judicial Reasoning in Child Marriage Dispensation Cases in Indonesia",p:["Vera Bararah Barid"],c:["Indonesia"],a:["Research Center for Law, National Research and Innovation Agency (BRIN), Indonesia"]},
+{id:"S2-01",s:2,t:"How Feminist is Vietnam's Inheritance Law? Revisiting the Public-Private Divide in Inheritance Disputes",p:["Bui Thi Bich Lien"],c:["Vietnam"],a:["FPT University, Vietnam"]},
+{id:"S2-02",s:2,t:"Rewriting Inheritance Law from a Feminist Perspective: Women's Land Claims and Legal Recognition in Vietnam",p:["Nguyen Thi Kim Chung"],c:["Vietnam"],a:["FPT University, Hanoi campus, Vietnam"]},
+{id:"S2-03",s:2,t:"Rethinking Women's Inheritance Rights in Vietnam: Law, Gender, and the Dynamics of Legal Change",p:["Bach Thi Nha Nam","Le Nguyen Hong Nhung","Ngo Minh Phuong Thao"],c:["Vietnam"],a:["University of Economics and Law, VNU-HCM, Vietnam"]},
+{id:"S2-04",s:2,t:"Valuing Non-Financial Contributions in Marital Property Division: A Comparative Study of Australian and Singaporean Law and Implications for Vietnam",p:["Tran Thien Trang"],c:["Vietnam"],a:["University of Economics and Law, VNU-HCM, Vietnam"]},
+{id:"S2-05",s:2,t:"Recognizing Women's Economic Contributions in the Division of Marital Property upon Divorce: A Feminist Legal Analysis of a Vietnamese Court Judgment",p:["Nguyen Thuy Linh","Tran Ngoc Hoang Quan"],c:["Vietnam"],a:["Ho Chi Minh City University of Law","People’s Court of Region 2 in Ho Chi Minh City"]},
+{id:"S2-06",s:2,t:"From Recognition to Redistribution: Addressing the Absence of Matrimonial Property Rights for Unpaid Care Work in India",p:["Kartavi Satyarthi"],c:["India"],a:["Vidhi Centre for Legal Policy, India"]},
+{id:"S2-07",s:2,t:"Writing Cohabitation Contracts as Feminist Law: A Legislative Design for Vietnamese Family Law",p:["Huynh Thi Nam Hai","Frédérique Le Doujet","Christine Desnoyer","Le Bich Thuy"],c:["France","Vietnam"],a:["University of Economics and Law, VNU-HCM, Vietnam","Faculty of Legal, Political and Social Sciences, University of Lille, France","University of Lille, France. Researcher at the CRDP–L’ERADP Laboratory"]},
+{id:"S2-08",s:2,t:"The Private is Political, But the Law is Not: Rethinking the Public/Private Divide in Vietnamese and Nepali Legal Frameworks Through Feminist Law-Making",p:["Nisha Khatri"],c:["Nepal"],a:["Kathmandu School of Law, Nepal"]},
+{id:"S3-01",s:3,t:"Violence Within Narratives: A Feminist Critical Discourse Analysis of Philippine Supreme Court Decisions on Rape and Sexual Assault",p:["Kelly Camille Alair"],c:["Philippines"],a:["University of the Philippines Mindanao"]},
+{id:"S3-02",s:3,t:"Recognising the Unrecognised: Femicide and the Pursuit of Gender-Responsive Law in Southeast Asia",p:["Sita Sumrit"],c:["Thailand"],a:["Senior Consultant, UN Women, Thailand"]},
+{id:"S3-03",s:3,t:"From Private Harm to Public Justice: A Feminist Mixed-Methods Analysis of Procedural Challenges and Legal Disengagement",p:["Jevilyn G. Pas-iwen-Madalang"],c:["Philippines"],a:["University of the Cordilleras, Philippines"]},
+{id:"S3-04",s:3,t:"Domestic Violence, Evidentiary Dilemmas, and Divorce Adjudication in the Era of the Chinese Smart Court",p:["Kangxin"],c:["Hong Kong"],a:["City University of Hong Kong, Hong Kong"]},
+{id:"S3-05",s:3,t:"The Principle of Full and Timely Compensation through a Feminist Lens: Legal Improvements for Protecting Vulnerable Women in Tort Law",p:["Tran Thi Hanh Dung"],c:["Vietnam"],a:["University of Economics and Law, VNU-HCM; Dong Nai Provincial Political School, Vietnam"]},
+{id:"S4-01",s:4,t:"Recognizing Unpaid Care Work as Labor: A Human Rights-Based Approach to Legal Reform in Vietnam",p:["Le Thu Trang","Luong Vu Khanh Ly"],c:["Vietnam"],a:["Independent Researcher","Diplomatic Academy of Vietnam"]},
+{id:"S4-02",s:4,t:"From Private Obligation to Legal Status: The Public - Private Divide and the Recognition of Women's Unpaid Care Work in Vietnamese Law",p:["Ta Nguyen Anh Thu","Nguyễn Phương Linh","Nguyen Viet Bach","Nguyen Ho Phuong Uyen"],c:["Vietnam"],a:["Hanoi Law University"]},
+{id:"S4-03",s:4,t:"How Vietnamese Working Mothers Experience and Negotiate the Motherhood Penalty in the Public/Private Divide",p:["Nguyen Bich Dien An"],c:["Vietnam"],a:["Dentsu Creative Vietnam"]},
+{id:"S4-04",s:4,t:"Indirect Discrimination and Recruitment Criteria in Vietnam's Feminist Perspective",p:["Lu Thi Thuy"],c:["Vietnam"],a:["Techmiles Company, Vietnam"]},
+{id:"S4-06",s:4,t:"Dismantling the Spatial Locus: A Feminist Legal Reconstruction of the “Workplace” to Address Sexual Harassment in Decentralized Labor.",p:["Dang Hoang Minh"],c:["Vietnam"],a:["FPT University, Vietnam"]},
+{id:"S4-07",s:4,t:"Legislating Leave Entitlements for In Vitro Fertilization (IVF) Treatment Through a Feminist Law-making Perspective Toward Substantive Gender Equality",p:["La Minh Trang"],c:["Vietnam"],a:["Hanoi Law University, Vietnam"]},
+{id:"S5-01",s:5,t:"The Right to Bleed: Menstrual Leave and the Feminist Reconstruction of Labor Law",p:["Debora Natasia Gunawan"],c:["United States"],a:["University of Michigan Law School, United States of America"]},
+{id:"S5-02",s:5,t:"From Welfare to Rights: A Feminist Legal Analysis of Menstrual Health Governance in India",p:["Abhilasha Khare"],c:["India"],a:["Symbiosis Law School, Nagpur, Symbiosis International (Deemed University), Pune, India"]},
+{id:"S5-03",s:5,t:"Fit-to-Work as a Barrier to Reproductive Justice: Pregnancy, Labour Migration, and Filipino Women Migrant Workers in Japan",p:["Masako Tanaka"],c:["Japan"],a:["Sophia University, Japan"]},
+{id:"S5-04",s:5,t:"The Protection of Reproductive Health Rights of Women and LGBTQIAN+ Persons in the Context of Thailand",p:["Chattrika Napatanapong","Nichakorn Khonthong"],c:["Thailand"],a:["Faculty of Law, University of the Thai Chamber of Commerce, Thailand"]},
+{id:"S5-05",s:5,t:"The Rights Dose: Feminist Law-Making and a Gender-Affirming Healthcare Framework in the Philippines",p:["Atty. Arianne Christian G. Tapao"],c:["Philippines"],a:["Supreme Court of the Philippines"]},
+{id:"S5-06",s:5,t:"Reshaping Motherhood in Reciprocal IVF: Legal Vacuums and Reform Recommendations in Vietnam",p:["Pham Thi Minh Anh","Mai Hoang Phuoc"],c:["Vietnam"],a:["University of Economics and Law, VNU-HCM, Vietnam"]},
+{id:"S5-07",s:5,t:"Protecting the Surrogate Rights under Illegal Commercial Surrogacy Agreements: A Legal Perspective from Vietnam",p:["Phan Thi Huong Giang"],c:["Vietnam"],a:["University of Economics and Law, VNU-HCM, Vietnam"]},
+{id:"S5-08",s:5,t:"Rethinking Pronatalism: A Feminist Legal Critique of the Historical Development of Population Governance in Vietnam",p:["Nguyen Dinh Duc"],c:["Hong Kong"],a:["City University of Hong Kong, Hong Kong"]},
+{id:"S5-09",s:5,t:"From private choice to public obligation: pronatalism and reproductive governance in Viet Nam’s Population Law",p:["Nguyen Trinh Thien Kim"],c:["Vietnam"],a:["Independent Researcher, Vietnam"]},
+{id:"S6-01",s:6,t:"Invisible in the State's Eyes: The Absence of Legal Gender Recognition in Thai National ID Law and Its Impact on Transgender Persons Through a Feminist Legal Lens",p:["Chunipha Poedloknimit"],c:["Thailand"],a:["Western University, Thailand"]},
+{id:"S6-02",s:6,t:"State, Nation, and Patriarchy: Gendered Inequality in the Evolution of Thai Nationality Law Affecting Thai Mothers and Wives",p:["Assist.Prof.Kamonwan Yoowattana","Chonruitai Kaewrungrueng","Khamphiou Vilayphone"],c:["Laos","Thailand"],a:["Faculty of Law, SSRU, Bangkok, Thailand","Faculty of Law, Suan Sunandha Rajabhat University, Bangkok, Thailand","Faculty of Law and Political Science, NUOL, Laos PDR"]},
+{id:"S6-03",s:6,t:"Self-Identification Vs Certification: A Feminist Study of Gender Recognition Laws in India and Argentina",p:["Priyanka Gangwar"],c:["India"],a:["G D Goenka University, Gurugram, India"]},
+{id:"S6-04",s:6,t:"Rethinking Use and Design of Gendered Categories in Family Law",p:["Mihika Poddar"],c:["India","United Kingdom"],a:["National Law School, India; University of Oxford, United Kingdom"]},
+{id:"S6-05",s:6,t:"The World of the Unmarried: Modern Family Models in the Philippine Legal Framework",p:["Louise Aubrey P. Mejia"],c:["Philippines"],a:["University of the Philippines Law Complex - Gender Law and Policy Program, Philippines"]},
+{id:"S6-06",s:6,t:"Towards Equality: Reimagining Equal Marriage Rights Through 'Suyamariyadhai Marriages'",p:["Sangeetha Sriraam","Malavika Anil"],c:["India"],a:["Central University of Tamil Nadu, India"]},
+{id:"S6-07",s:6,t:"Queering Intimate Recognition: From Contractual Imitation to Prefigurative Feminist Law-Making in Chinese Private Law",p:["Haojin Duan"],c:["Hong Kong"],a:["City University of Hong Kong, Hong Kong"]},
+{id:"S7-01",s:7,t:"Algorithmic Voyeurism and the Collapse of Consent: Redefining Women's Privacy in the Age of AI",p:["Dr Ivneet Kaur Walia","Aastha Tiwari"],c:["India"],a:["Rajiv Gandhi National University of Law, Punjab, India","Maharashtra National Law University Mumbai"]},
+{id:"S7-02",s:7,t:"Privacy in Cyberspace and Legal Intervention into the Private Sphere: Assessing the Legal Framework for the Protection of Women's Personal Data from a Feminist Perspective",p:["Nguyen Thu Hien"],c:["Vietnam"],a:["Faculty of Law, National Economics University, Vietnam"]},
+{id:"S7-03",s:7,t:"Reimagining the Data Fiduciary in Privacy Law: Towards a Feminist Duty for Digital Healthcare Providers in India",p:["Mohd Rameez Raza","Anushka Chaturvedi"],c:["India"],a:["Symbiosis Law School, Nagpur, Symbiosis International University, India","Study Hall Education Foundation, India"]},
+{id:"S7-04",s:7,t:"How to Write Feminist Digital Credit Laws: Reimagining Creditworthiness Through Women’s Lived Experiences",p:["Le Thi Thao"],c:["Vietnam"],a:["University of Law, Hue University, Vietnam"]},
+{id:"S7-05",s:7,t:"Social Scoring using Personal Data: Threats and Challenges of Gender Inequality",p:["Pham Thi Thanh Tam"],c:["Vietnam"],a:["University of Economics and Law, VNU-HCM, Vietnam"]},
+{id:"S7-06",s:7,t:"Beyond Formal Consent: Feminist Legal Perspectives on Informed Consent and Artificial Intelligence in Vietnamese Health Law",p:["Nguyen Thi Phuong Cham"],c:["Vietnam"],a:["University of Law, VNU-Hanoi, Vietnam"]},
+{id:"S8-01",s:8,t:"The Gendered Architecture of Article XX GATT: A Feminist Law-Making Critique from EC – Seal Products and Implications for Vietnam",p:["Vu Kim Hanh Dung"],c:["Vietnam"],a:["University of Economics and Law, VNU-HCM, Vietnam"]},
+{id:"S8-02",s:8,t:"Feminist Economic Law-Making in South–South Cooperation: Reconfiguring Chinese Investment Rules in Latin America and Asia",p:["Nancy Carolina Fabara Verdezoto"],c:["China"],a:["Institute of International and Regional Studies, Sun Yat Sen University, China"]},
+{id:"S8-03",s:8,t:"Opening the Black Box of 'Work of Equal Value': A Feminist Law-Making Approach to Pay Transparency in the EU & Implications for Vietnam",p:["Nguyen Tien Dung"],c:["Hungary","Vietnam"],a:["University of Debrecen, Hanoi Law University, Vietnam"]},
+{id:"S8-04",s:8,t:"The Legal Architecture of Gender Legibility: Binary Categories, Single-Axis Logic, and the Limits of Gender-Responsive Law-Making",p:["Tasnia Alam Hannan"],c:["Australia"],a:["Western Sydney University, School of Law, Australia"]},
+{id:"S8-05",s:8,t:"The Art of International Economic Law and Its Rivals: Reflections on Law-Making, Visuality and Feminist Political Economy",p:["Dr Claerwen O'Hara"],c:["Australia"],a:["Melbourne Law School, University of Melbourne, Australia"]},
+{id:"S8-06",s:8,t:"From the body to the WIPO: Intellectual Property as a Feminist Geolegality",p:["Dr Jenny Kanellopoulou"],c:["United Kingdom"],a:["Manchester Metropolitan University, Manchester Law School, United Kingdom"]},
+{id:"S8-07",s:8,t:"Feminist Anti-Corruption Law-Making: Rewriting Integrity Frameworks Around Women's Lived Experiences in Euro-Mediterranean Cooperation",p:["Elias El Hayek"],c:["Lebanon","United Kingdom"],a:["Lawyer, PhD Candidate at Lebanese University, Associate Researcher, University of Sussex"]},
+{id:"S9-01",s:9,t:"Writing Gender Apartheid into Asylum Law: A Feminist Judgment of the ECJ Joined Cases C-608/22 and C-609/22, AH & FN v. Federal Office for Immigration and Asylum",p:["Lara-Zuzan Golesorkhi"],c:["United States"],a:["University of Portland, United States of America"]},
+{id:"S9-02",s:9,t:"Rewriting the Subject of Law: Tribal Women, Intersectionality, and the Reform of India's Gender Legal Framework",p:["Garima Sidar"],c:["India"],a:["National Law School of India University, Bangalore, Karnataka, India"]},
+{id:"S9-03",s:9,t:"Muslim Women Rights as Multicultural Claims",p:["Jyoti Bharti"],c:["India"],a:["Delhi University, India"]},
+{id:"S9-04",s:9,t:"International Refugee Law: from queer exclusion to queer reconstruction",p:["Jaba Kaplanishvili"],c:["United Kingdom"],a:["University of Westminster, UK"]},
+{id:"S9-05",s:9,t:"When Protection Is Not Enough: Re-Conceptualizing Trauma in Vietnam's Juvenile Justice Law for Girl Child Victims",p:["Trinh Thi Yen"],c:["Vietnam"],a:["Vietnam Women's Academy, Vietnam"]},
+{id:"S9-06",s:9,t:"The Paradox of Protection: Criminalization of Morality in Indonesia’s New Criminal Code and the Absence of Legal Protection for Female Sex Workers",p:["Zenny Rezania Dewantary"],c:["Indonesia"],a:["President University, Indonesia"]},
+{id:"S9-07",s:9,t:"Gender Neutrality and The Invisible Needs of Female Prisoners: A Feminist Critique of Vietnamese Prison Sentence Enforcement Law",p:["Hoang Thi Bich Ngoc","Nguyen Duc Tam"],c:["Vietnam"],a:["Criminal Law Department - Procuratorate University, Vietnam"]},
+{id:"S10-01",s:10,t:"Rethinking Water Governance in the Lower Mekong: A Feminist Law-Making Approach to Gendered Insecurity",p:["Nguyen Hai Duyen","Vu Thi Ngoc Trang"],c:["Vietnam"],a:["Diplomatic Academy of Viet Nam, Vietnam"]},
+{id:"S10-02",s:10,t:"Feminist Law-Making and Water Justice in the Lower Mekong Basin: Women’s Agency and Climate-Inclusive Peacebuilding in Vietnam and Cambodia",p:["Phan Thanh Thanh","Tran Chi Thanh"],c:["Vietnam"],a:["Institute of Human, Family and Gender Studies, Vietnam Academy of Social Sciences","University of Medicine and Pharmacy at Ho Chi Minh city, Vietnam"]},
+{id:"S10-03",s:10,t:"From Carbon to Care: Feminist Rewriting of Climate Adaptation Governance in Vietnam",p:["Do Viet Cuong"],c:["Vietnam"],a:["University of Law, Vietnam National University, Hanoi, Vietnam"]},
+{id:"S10-04",s:10,t:"Towards a Gender-Responsive Framework for Disaster Evacuation Governance in Vietnam",p:["Do Hong Minh"],c:["Vietnam"],a:["University of Economics and Law, Vietnam"]},
+{id:"S10-05",s:10,t:"Assessing Law on Natural Disaster Prevention and Control through a Feminist Lens: Including Marginalised Women in Law Reform",p:["Ta Khanh Linh","Nguyen Han Giang"],c:["Netherlands","Vietnam"],a:["Green Path Migrants","Utrecht University, Netherlands"]},
+{id:"S10-06",s:10,t:"Between Commitment and Transformation: The Limits of Legal Mobilization at the Intersection of Women's Economic Rights and Environmental Justice in Vietnam and Norway",p:["Ngo Thi Minh Huong"],c:["Vietnam"],a:["University of Law, Vietnam National University, Hanoi, Vietnam"]},
+{id:"S10-07",s:10,t:"Reimagining Marine Environmental Protection Law through Feminist Law-Making: A Vietnamese and International Law Perspective",p:["Ho Nhan Ai"],c:["Vietnam"],a:["University of Law, Hue University, Vietnam"]},
+{id:"S10-08",s:10,t:"What the Law Refuses to See: Gender, Slow Violence, and Extractivism in Indonesia",p:["Yogi Paramitha Dewi"],c:["Australia","Indonesia"],a:["Indo-Pacific Research Centre (IPRC), Murdoch University, Australia; Faculty of Law, Universitas Atma Jaya Yogyakarta, Indonesia"]}
+];
+
+/*U-START*/
+const U={
+lou:["Loughborough University","United Kingdom"],qub:["Queen’s University","United Kingdom"],mon:["Monash University","Australia"],
+hue:["Hue University (University of Law)","Vietnam"],hef:["Hefei University of Technology","China"],ben:["Bennett University","India"],
+wol:["University of Wollongong","Australia"],cityu:["City University of Hong Kong","Hong Kong"],mah:["Mahidol University","Thailand"],
+jnu:["Jawaharlal Nehru University","India"],gri:["Griffith University","Australia"],fpt:["FPT University","Vietnam"],
+uel:["University of Economics and Law (VNU-HCM)","Vietnam"],hcmul:["Ho Chi Minh City University of Law","Vietnam"],lille:["University of Lille","France"],
+ksl:["Kathmandu School of Law","Nepal"],upm:["University of the Philippines Mindanao","Philippines"],cord:["University of the Cordilleras","Philippines"],
+dav:["Diplomatic Academy of Vietnam","Vietnam"],hlu:["Hanoi Law University","Vietnam"],mich:["University of Michigan","United States"],
+sym:["Symbiosis Law School","India"],sophia:["Sophia University","Japan"],utcc:["University of the Thai Chamber of Commerce","Thailand"],
+wu:["Western University","Thailand"],ssru:["Suan Sunandha Rajabhat University","Thailand"],nuol:["National University of Laos","Laos"],
+gdg:["G D Goenka University","India"],nls:["National Law School (India)","India"],oxf:["University of Oxford","United Kingdom"],
+uplaw:["University of the Philippines (Law Complex)","Philippines"],cutn:["Central University of Tamil Nadu","India"],
+rgnul:["Rajiv Gandhi National University of Law","India"],mnlu:["Maharashtra National Law University Mumbai","India"],
+neu:["National Economics University","Vietnam"],vnuhn:["VNU Hanoi (University of Law)","Vietnam"],sysu:["Sun Yat-sen University","China"],
+deb:["University of Debrecen","Hungary"],wsu:["Western Sydney University","Australia"],mel:["University of Melbourne","Australia"],
+mmu:["Manchester Metropolitan University","United Kingdom"],leb:["Lebanese University","Lebanon"],sus:["University of Sussex","United Kingdom"],
+por:["University of Portland","United States"],nlsiu:["National Law School of India University","India"],del:["Delhi University","India"],
+wmin:["University of Westminster","United Kingdom"],vwa:["Vietnam Women’s Academy","Vietnam"],pres:["President University","Indonesia"],
+proc:["Procuratorate University","Vietnam"],ump:["University of Medicine and Pharmacy at Ho Chi Minh City","Vietnam"],
+utr:["Utrecht University","Netherlands"],mur:["Murdoch University","Australia"],aj:["Universitas Atma Jaya Yogyakarta","Indonesia"]
+};
+const O={
+brin:"BRIN (National Research and Innovation Agency)",court:"People’s Court of Region 2, Ho Chi Minh City",vidhi:"Vidhi Centre for Legal Policy",
+unw:"UN Women",dongnai:"Dong Nai Provincial Political School",indep:"Independent researcher",dentsu:"Dentsu Creative Vietnam",
+tech:"Techmiles Company",scp:"Supreme Court of the Philippines",shef:"Study Hall Education Foundation",
+vass:"Vietnam Academy of Social Sciences",gpm:"Green Path Migrants"
+};
+const AFF={
+"PL-01":["lou"],"PL-02":["qub"],"PL-03":["mon"],"S1-01":["hue"],"S1-02":["hef"],"S1-03":["ben"],"S1-04":["wol"],"S1-05":["cityu"],"S1-06":["mah"],"S1-07":["jnu"],"S1-08":["gri"],"S1-09":["brin"],
+"S2-01":["fpt"],"S2-02":["fpt"],"S2-03":["uel"],"S2-04":["uel"],"S2-05":["hcmul","court"],"S2-06":["vidhi"],"S2-07":["uel","lille"],"S2-08":["ksl"],
+"S3-01":["upm"],"S3-02":["unw"],"S3-03":["cord"],"S3-04":["cityu"],"S3-05":["uel","dongnai"],
+"S4-01":["indep","dav"],"S4-02":["hlu"],"S4-03":["dentsu"],"S4-04":["tech"],"S4-06":["fpt"],"S4-07":["hlu"],
+"S5-01":["mich"],"S5-02":["sym"],"S5-03":["sophia"],"S5-04":["utcc"],"S5-05":["scp"],"S5-06":["uel"],"S5-07":["uel"],"S5-08":["cityu"],"S5-09":["indep"],
+"S6-01":["wu"],"S6-02":["ssru","nuol"],"S6-03":["gdg"],"S6-04":["nls","oxf"],"S6-05":["uplaw"],"S6-06":["cutn"],"S6-07":["cityu"],
+"S7-01":["rgnul","mnlu"],"S7-02":["neu"],"S7-03":["sym","shef"],"S7-04":["hue"],"S7-05":["uel"],"S7-06":["vnuhn"],
+"S8-01":["uel"],"S8-02":["sysu"],"S8-03":["deb","hlu"],"S8-04":["wsu"],"S8-05":["mel"],"S8-06":["mmu"],"S8-07":["leb","sus"],
+"S9-01":["por"],"S9-02":["nlsiu"],"S9-03":["del"],"S9-04":["wmin"],"S9-05":["vwa"],"S9-06":["pres"],"S9-07":["proc"],
+"S10-01":["dav"],"S10-02":["vass","ump"],"S10-03":["vnuhn"],"S10-04":["uel"],"S10-05":["gpm","utr"],"S10-06":["vnuhn"],"S10-07":["hue"],"S10-08":["mur","aj"]
+};
+/*U-END*/
+
+/* ---------- Helpers ---------- */
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/đ/g,"d");
+const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const KIND={vn:"Vietnam only",intl:"International only",mixed:"Collaboration"};
+const kindOf=d=>d.c.includes("Vietnam")?(d.c.length>1?"mixed":"vn"):"intl";
+const code=k=>k?"S"+k:"PL";
+
+const REGIONS=["Southeast Asia","South Asia","East Asia","Oceania","Europe","North America","Middle East"];
+const REGION={"Vietnam":0,"Thailand":0,"Indonesia":0,"Philippines":0,"Laos":0,"India":1,"Nepal":1,"China":2,"Hong Kong":2,"Japan":2,"Australia":3,"United Kingdom":4,"France":4,"Hungary":4,"Netherlands":4,"United States":5,"Lebanon":6};
+
+DATA.forEach(d=>{
+  const keys=AFF[d.id]||[];
+  d.k=kindOf(d);
+  d.rg=[...new Set(d.c.map(c=>REGION[c]))];
+  d.inst=keys.filter(k=>U[k]).map(k=>U[k][0]);
+  d.oth=keys.filter(k=>O[k]).map(k=>O[k]);
+  d.blob=norm([d.id,d.t,...d.p,...d.a,...d.inst,...d.c,...d.rg.map(i=>REGIONS[i])].join(" "));
+});
+
+/* ---------- Stats ---------- */
+const total=DATA.length;
+const presenterTotal=DATA.reduce((n,d)=>n+d.p.length,0);
+const credits={};DATA.forEach(d=>d.c.forEach(c=>credits[c]=(credits[c]||0)+1));
+const countries=Object.keys(credits).sort((a,b)=>credits[b]-credits[a]||a.localeCompare(b));
+const totalCredits=Object.values(credits).reduce((a,b)=>a+b,0);
+const by=k=>DATA.filter(d=>d.k===k).length;
+const nVn=by("vn"),nIntl=by("intl"),nMixed=by("mixed"),nVnLinked=nVn+nMixed;
+const nBy=SESSIONS.map((_,k)=>DATA.filter(d=>d.s===k).length);
+
+/* ---------- Ticker ---------- */
+
+/* ---------- Universities ---------- */
+const uniCount={};DATA.forEach(d=>d.inst.forEach(n=>uniCount[n]=(uniCount[n]||0)+1));
+const uniCountry={};Object.values(U).forEach(([n,c])=>uniCountry[n]=c);
+const uniList=Object.entries(uniCount).map(([n,v])=>[n,uniCountry[n],v]).sort((a,b)=>b[2]-a[2]||a[0].localeCompare(b[0]));
+const uniCountries=new Set(uniList.map(u=>u[1])).size;
+
+/* ---------- Metrics ---------- */
+$("#ix-metrics").innerHTML=[
+  [presenterTotal,"Presenters","final agenda, with PL-02 corrected","r0"],
+  [total,"Presentations","3 plenary + "+(total-3)+" thematic","r1"],
+  [countries.length,"Nations represented","countries and reporting regions","r2"],
+  [SESSIONS.length,"Conference sessions","1 plenary + 10 thematic","r3"]
+].map(([n,l,s,c])=>`<article class="ix-card ix-metric" style="--c:var(--${c})"><strong>${n}</strong><span>${l}</span><small>${s}</small></article>`).join("");
+
+/* ---------- Session bars ---------- */
+const maxS=Math.max(...nBy);
+$("#ix-sessions").innerHTML=SESSIONS.map((name,k)=>{
+  const g=DATA.filter(d=>d.s===k),n=g.length,vn=g.filter(d=>d.k!=="intl").length,intl=n-vn,seg=(cls,v)=>v?`<i class="${cls}" style="flex:${v}"></i>`:"";
+  return `<button type="button" class="ix-srow" data-s="${k}" title="${esc(name)}"><span class="ix-sl"><b>${code(k)}</b>${esc(name)}</span><span class="ix-split"><b class="vn">VN ${vn}</b><b class="intl">Intl ${intl}</b></span><span class="ix-n">${n}</span><span class="ix-trk"><span class="ix-stack" style="--w:${(100*n/maxS).toFixed(1)}%">${seg("vn",vn)}${seg("intl",intl)}</span></span></button>`;
+}).join("");
+
+/* ---------- Donut ---------- */
+(()=>{
+  const R=78,C=2*Math.PI*R;let off=0;
+  const simple=[["vn",nVnLinked,"Vietnam-linked"],["intl",nIntl,"International-only"]];
+  $("#ix-donut").innerHTML=`<div class="ix-bars">${simple.map(([k,n,label])=>`<div class="ix-statbar ${k}"><span class="ix-statbar-label">${label}</span><span class="ix-statbar-value">${n}<small>${(100*n/total).toFixed(1)}%</small></span><span class="ix-statbar-track"><i class="ix-statbar-fill" style="--w:${(100*n/total).toFixed(1)}%"></i></span></div>`).join("")}</div>`;
+  return;
+  const segs=[["vn",nVn],["intl",nIntl],["mixed",nMixed]];
+  const circles=segs.map(([k,n])=>{const part=C*n/total,len=Math.max(0,part-3);const el=`<circle class="${k}" r="${R}" cx="100" cy="100" style="--len:${len.toFixed(2)};stroke-dashoffset:${(-off).toFixed(2)}"/>`;off+=part;return el}).join("");
+  const key=segs.map(([k,n])=>`<button type="button" class="${k}" data-k="${k}"><span class="ix-dot"></span>${KIND[k]}<strong>${n} <small>(${(100*n/total).toFixed(1)}%)</small></strong></button>`).join("");
+  $("#ix-donut").innerHTML=`<div class="ix-donut-area"><div class="ix-donut-box"><svg class="ix-donut" viewBox="0 0 200 200" style="--C:${C.toFixed(2)}" role="img" aria-label="Vietnam only ${nVn}, international only ${nIntl}, collaboration ${nMixed}"><circle class="bg" r="${R}" cx="100" cy="100"/>${circles}</svg><div class="ix-donut-center"><b>${total}</b><small>papers</small></div></div><div class="ix-key">${key}</div></div>`;
+  const cb=$(".ix-donut-center b"),cl=$(".ix-donut-center small"),ring=$$(".ix-donut circle:not(.bg)"),N={vn:nVn,intl:nIntl,mixed:nMixed};
+  const focus=k=>{ring.forEach(c=>c.classList.toggle("dim",!!k&&!c.classList.contains(k)));cb.textContent=k?N[k]:total;cl.textContent=k?KIND[k]:"papers"};
+  const key$=$(".ix-key");
+  key$.addEventListener("mouseover",e=>{const b=e.target.closest("button");if(b)focus(b.dataset.k)});
+  key$.addEventListener("focusin",e=>{const b=e.target.closest("button");if(b)focus(b.dataset.k)});
+  key$.addEventListener("mouseleave",()=>focus(null));
+  key$.addEventListener("focusout",()=>focus(null));
+})();
+
+/* ---------- Country bubbles ---------- */
+(()=>{
+  const max=credits[countries[0]];
+  $("#ix-bubbles").classList.add("ix-bars","ix-country-bars");
+  $("#ix-country-lead").innerHTML=`<strong>${credits[countries[0]]}</strong> presentations (${(100*credits[countries[0]]/total).toFixed(1)}%) include ${esc(countries[0])}; ${esc(countries[1])} follows with ${credits[countries[1]]} (${(100*credits[countries[1]]/total).toFixed(1)}%).`;
+  $("#ix-bubbles").innerHTML=countries.map((c,i)=>{const n=credits[c];return `<button type="button" class="ix-statbar" data-c="${esc(c)}" style="--c:var(--brand)"><span class="ix-statbar-label"><span class="ix-rank">${i+1}</span>${esc(c)}</span><span class="ix-statbar-value">${n}<small>${(100*n/total).toFixed(1)}%</small></span><span class="ix-statbar-track"><i class="ix-statbar-fill" style="--w:${(100*n/max).toFixed(1)}%"></i></span></button>`}).join("");
+  return;
+  $("#ix-bubbles").innerHTML=countries.map((c,i)=>{const n=credits[c],sz=Math.round(58+92*Math.sqrt(n/max));
+    return `<button type="button" class="ix-bub" data-c="${esc(c)}" title="${esc(c)}: ${n} presentation${n>1?"s":""} · ${(100*n/totalCredits).toFixed(1)}% of credits" style="--sz:${sz}px;--c:var(--r${REGION[c]});--i:${i}"><b>${n}</b><span>${esc(c)}</span></button>`}).join("");
+})();
+
+/* ---------- Regions ---------- */
+const rCred=REGIONS.map((_,i)=>DATA.filter(d=>d.rg.includes(i)).length);
+const maxRegion=Math.max(...rCred);
+$("#ix-rbar").innerHTML=REGIONS.map((_,i)=>`<i style="flex:${rCred[i]};--c:var(--r${i})"></i>`).join("");
+$("#ix-rlist").innerHTML=REGIONS.map((r,i)=>({r,i})).sort((a,b)=>rCred[b.i]-rCred[a.i]).map(({r,i})=>`<button type="button" class="ix-rrow" data-r="${i}" style="--c:var(--r${i});--w:${(100*rCred[i]/maxRegion).toFixed(1)}%"><i></i><span>${r}</span><strong>${rCred[i]}</strong><em>${(100*rCred[i]/total).toFixed(1)}% of presentations</em></button>`).join("");
+
+/* ---------- Session x region matrix ---------- */
+(()=>{
+  if(!$("#ix-flow"))return;
+  const m=SESSIONS.map((_,k)=>REGIONS.map((_,j)=>DATA.filter(d=>d.s===k&&d.rg.includes(j)).length));
+  const maxCell=Math.max(...m.flat());
+  const rTot=REGIONS.map((_,j)=>m.reduce((sum,row)=>sum+row[j],0));
+  const head=REGIONS.map((r,j)=>`<th scope="col"><button type="button" data-r="${j}" title="Filter by ${esc(r)}">${esc(r)}<small>${rTot[j]} papers</small></button></th>`).join("");
+  const rows=SESSIONS.map((name,k)=>{
+    const cells=m[k].map((n,j)=>{
+      const alpha=n?(0.12+0.72*n/maxCell).toFixed(2):0;
+      const label=`${code(k)}, ${REGIONS[j]}: ${n} presentation${n===1?"":"s"}`;
+      return n
+        ?`<td><button type="button" class="ix-mcell" data-s="${k}" data-r="${j}" style="--a:${alpha};--region-color:var(--r${j})" aria-label="${label}" title="${label}">${n}</button></td>`
+        :`<td><span class="ix-mcell is-zero" aria-label="${label}" title="${label}">—</span></td>`;
+    }).join("");
+    return `<tr><th scope="row"><button type="button" data-s="${k}" title="${esc(name)}" aria-label="${code(k)} — ${esc(name)}, ${nBy[k]} papers"><b>${code(k)}</b><span>${esc(SESSION_SHORT[k])}</span><small>${nBy[k]} papers</small></button></th>${cells}</tr>`;
+  }).join("");
+  $("#ix-flow").innerHTML=`<table class="ix-matrix" aria-label="Number of presentations by session and world region"><thead><tr><th scope="col">Session</th>${head}</tr></thead><tbody>${rows}</tbody></table>`;
+  $("#ix-flowcap").textContent="Click a session, region or cell to filter the presentation list. A cross-region paper appears in each relevant region.";
+})();
+
+/* ---------- Universities card ---------- */
+(()=>{
+  const topN=10,topMax=uniList[0][2];
+  $("#ix-unisub").textContent=`Top ${topN} of ${uniList.length} universities across ${uniCountries} countries and regions. Click a university to filter.`;
+  $("#ix-topunis").innerHTML=uniList.slice(0,topN).map(([n,c,v],i)=>`<button type="button" class="ix-topuni" data-i="${esc(n)}"><span class="ix-topuni-rank">${i+1}</span><span class="ix-topuni-name">${esc(n)}<small>${esc(c)}</small></span><span class="ix-topuni-value">${v}</span><span class="ix-topuni-track"><i style="--w:${(100*v/topMax).toFixed(1)}%"></i></span></button>`).join("");
+  $("#ix-moreunis-summary").textContent=`View ${uniList.length-topN} more universities`;
+  $("#ix-unis").innerHTML=uniList.slice(topN).map(([n,c,v],i)=>`<button type="button" class="ix-uni" data-i="${esc(n)}"><i></i><span>${esc(n)}<small>${esc(c)}</small></span><b>${v}</b></button>`).join("");
+  const oc={};DATA.forEach(d=>d.oth.forEach(n=>oc[n]=(oc[n]||0)+1));
+  const ol=Object.entries(oc).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+  $("#ix-othsum").textContent=`Other affiliations (${ol.length}): courts, agencies, companies, NGOs, independent researchers`;
+  $("#ix-othlist").textContent=ol.map(([n,v])=>n+(v>1?` (${v})`:"")).join(" · ");
+})();
+
+/* ---------- Presenters per paper ---------- */
+(()=>{
+  const c=[1,2,3,4].map(n=>DATA.filter(d=>n<4?d.p.length===n:d.p.length>=4).length),mx=Math.max(...c);
+  $("#ix-cols").innerHTML=c.map((n,i)=>`<div class="ix-col"><div class="ix-colbar"><i style="--w:${Math.max(4,100*n/mx).toFixed(0)}%"></i></div><b>${n}</b><span>${i<3?i+1:"4+"} presenter${i?"s":""}</span></div>`).join("");
+})();
+
+/* ---------- Professional profile: supplied Vietnam-group research ---------- */
+(()=>{
+  const totalProfiles=39;
+  const roles=[
+    ["Lecturer",24,"var(--brand)"],
+    ["Associate professor",5,"var(--pink)"],
+    ["Practitioner / other",5,"#687d93"],
+    ["Researcher",3,"#2f8a82"],
+    ["PhD candidate / student",1,"#a6762b"],
+    ["Undergraduate student",1,"#9a6c8f"]
+  ];
+  const maxRole=Math.max(...roles.map(x=>x[1]));
+  $("#ix-prof-list").innerHTML=roles.map(([label,n,color])=>`<div class="ix-prof-row" style="--w:${(100*n/maxRole).toFixed(1)}%;--c:${color}"><span>${label}</span><i aria-hidden="true"></i><b>${n}</b><small>${(100*n/totalProfiles).toFixed(1)}%</small></div>`).join("");
+})();
+
+/* ---------- Highlights ---------- */
+(()=>{
+  const ss=SESSIONS.map((_,k)=>{const g=DATA.filter(d=>d.s===k);return{k,n:g.length,vl:g.filter(d=>d.k!=="intl").length,it:g.filter(d=>d.k==="intl").length}}).filter(x=>x.k>0);
+  const maxN=Math.max(...ss.map(x=>x.n)),busy=ss.filter(x=>x.n===maxN);
+  const mVn=ss.reduce((a,b)=>b.vl/b.n>a.vl/a.n?b:a),mIt=ss.reduce((a,b)=>b.it/b.n>a.it/a.n?b:a);
+  const multi=DATA.filter(d=>d.p.length>1).length,avg=DATA.reduce((a,d)=>a+d.p.length,0)/total;
+  const [tn,,tv]=uniList[0];
+  const T=[
+    {v:Math.round(100*mVn.vl/mVn.n),s:"%",k:"Vietnam-linked session",h:code(mVn.k)+" · "+SESSION_SHORT[mVn.k],p:`All ${mVn.n} papers are Vietnam-linked.`,cls:"is-feature tone-blue"},
+    {v:Math.round(100*mIt.it/mIt.n),s:"%",k:"International session",h:code(mIt.k)+" · "+SESSION_SHORT[mIt.k],p:`All ${mIt.n} papers are international-only.`,cls:"is-feature tone-pink"},
+    {v:maxN,u:"papers",k:"Busiest sessions",h:busy.map(x=>code(x.k)).join(" & "),p:"Highest thematic-session count.",cls:"is-feature tone-light"},
+    {v:Math.round(100*multi/total),s:"%",k:"Collaborative authorship",h:"Papers with 2+ presenters",p:`${multi} of ${total} papers.`},
+    {v:avg.toFixed(1),k:"Average team size",h:"Presenters per paper",p:"Across all presenter listings.",dec:1},
+    {v:tv,u:"papers",k:"Leading institution",h:tn,p:"Most-presented university."}
+  ];
+  $("#ix-hls").innerHTML=T.map(({v,s="",u="",k,h,p,cls="",dec})=>`<article class="ix-hl2 ${cls}"><span class="ix-hl-kicker">${esc(k)}</span><strong><span data-to="${v}"${dec?` data-dec="${dec}"`:""}>${v}</span>${s}${u?`<small>${u}</small>`:""}</strong><div><h4>${esc(h)}</h4><p>${esc(p)}</p></div></article>`).join("");
+})();
+
+/* ---------- Explorer ---------- */
+const PAGE=6;
+const st={s:"all",c:"all",r:"all",k:"all",i:"all",q:""};
+let shown=PAGE,view=DATA;
+const qEl=$("#ix-q"),cEl=$("#ix-country"),rEl=$("#ix-region"),sEl=$("#ix-session-select"),list=$("#ix-list"),moreB=$("#ix-showmore"),lessB=$("#ix-showless"),sesscap=$("#ix-sesscap");
+countries.forEach(c=>cEl.insertAdjacentHTML("beforeend",`<option value="${esc(c)}">${esc(c)} (${credits[c]})</option>`));
+REGIONS.forEach((r,i)=>rEl.insertAdjacentHTML("beforeend",`<option value="${i}">${r}</option>`));
+SESSIONS.forEach((s,i)=>sEl.insertAdjacentHTML("beforeend",`<option value="${i}" title="${esc(s)}">${code(i)} — ${esc(SESSION_SHORT[i])} (${nBy[i]})</option>`));
+
+/* session picker tiles */
+$("#ix-chips").innerHTML=["all",...SESSIONS.map((_,k)=>k)].map(v=>{
+  const all=v==="all",g=all?DATA:DATA.filter(d=>d.s===v),seg=t=>{const x=g.filter(d=>d.k===t).length;return x?`<i class="${t}" style="flex:${x}"></i>`:""};
+  return `<button type="button" class="ix-st${all?" all":""}" data-s="${v}" aria-pressed="false" aria-label="${all?"All sessions":esc(SESSIONS[v])}"><b>${all?"All":v===0?"PL":"S"+v}</b><small>${g.length}</small><span class="mini">${seg("vn")}${seg("mixed")}${seg("intl")}</span></button>`}).join("");
+$("#ix-kinds").innerHTML=[["all","All types"],...Object.entries(KIND)].map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="false">${l}</button>`).join("");
+
+const capFor=v=>v==="all"?`<b>All sessions</b> · ${total} presentations`:`<b>${code(v)}</b> ${esc(SESSIONS[v])} · ${nBy[v]} paper${nBy[v]>1?"s":""}`;
+const capNow=()=>{sesscap.innerHTML=capFor(st.s)};
+const chips=$("#ix-chips");
+const capHover=e=>{const b=e.target.closest("[data-s]");if(b)sesscap.innerHTML=capFor(b.dataset.s==="all"?"all":+b.dataset.s)};
+chips.addEventListener("mouseover",capHover);chips.addEventListener("focusin",capHover);
+chips.addEventListener("mouseleave",capNow);chips.addEventListener("focusout",capNow);
+
+try{
+  const p=new URLSearchParams(location.search);
+  if(p.has("s")&&SESSIONS[+p.get("s")]!==undefined)st.s=+p.get("s");
+  if(countries.includes(p.get("c")))st.c=p.get("c");
+  if(p.has("r")&&REGIONS[+p.get("r")]!==undefined)st.r=+p.get("r");
+  if(KIND[p.get("k")])st.k=p.get("k");
+  if(uniCount[p.get("i")])st.i=p.get("i");
+  if(p.get("q"))st.q=p.get("q");
+}catch(e){}
+qEl.value=st.q;
+
+const item=d=>`<li><article class="ix-item ${d.k}"><div class="ix-entry"><div class="ix-code"><b>${esc(d.id)}</b><span>${code(d.s)}</span></div><div class="ix-body"><span class="ix-session-name">${esc(SESSIONS[d.s])}</span><h3>${esc(d.t)}</h3><p class="ix-by"><b>Presenters:</b> ${esc(d.p.join(", "))}</p><p class="ix-entry-aff"><b>Affiliations:</b> ${esc(d.a.join(" · "))}</p></div><div class="ix-tags">${d.c.map(c=>`<span class="ix-tag${c==="Vietnam"?" is-vn":""}">${esc(c)}</span>`).join("")}<span class="ix-tag ix-kind-tag">${KIND[d.k]}</span></div></div></article></li>`;
+
+function update(keep){
+  if(!keep)shown=PAGE;
+  const words=norm(st.q).split(/\s+/).filter(Boolean);
+  view=DATA.filter(d=>(st.s==="all"||d.s===st.s)&&(st.c==="all"||d.c.includes(st.c))&&(st.r==="all"||d.rg.includes(st.r))&&(st.k==="all"||d.k===st.k)&&(st.i==="all"||d.inst.includes(st.i))&&words.every(w=>d.blob.includes(w)));
+  list.innerHTML=view.length?view.slice(0,shown).map(item).join(""):`<li class="ix-empty">No presentations match these filters.<br><button type="button" class="ix-btn" data-reset>Clear filters</button></li>`;
+  const rest=view.length-shown;moreB.hidden=rest<=0;if(rest>0)moreB.textContent=`Show ${Math.min(PAGE,rest)} more`;
+  if(lessB){lessB.hidden=view.length<=PAGE;lessB.disabled=shown<=PAGE}
+
+  const parts=[];
+  if(st.s!=="all")parts.push(code(st.s)+" — "+SESSIONS[st.s]);
+  if(st.c!=="all")parts.push(st.c);
+  if(st.r!=="all")parts.push(REGIONS[st.r]);
+  if(st.k!=="all")parts.push(KIND[st.k]);
+  if(st.i!=="all")parts.push(st.i);
+  $("#ix-info").textContent=`Showing ${Math.min(shown,view.length)} of ${view.length} matching · ${total} presentations in total`+(parts.length?" · "+parts.join(" · "):"");
+
+  $$("#ix-chips [data-s]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.s===String(st.s))));
+  $$("#ix-kinds [data-k]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===st.k)));
+  cEl.value=st.c;rEl.value=st.r;sEl.value=String(st.s);capNow();
+  $("#ix-reset").hidden=!(parts.length||st.q);
+
+  try{
+    const p=new URLSearchParams();
+    Object.entries(st).forEach(([k,v])=>{if(v!=="all"&&v!=="")p.set(k,v)});
+    const qs=p.toString();history.replaceState(null,"",location.pathname+(qs?"?"+qs:"")+location.hash);
+  }catch(e){}
+}
+const clear=()=>{st.s=st.c=st.r=st.k=st.i="all";st.q="";qEl.value=""};
+const reset=()=>{clear();update()};
+
+let timer;
+qEl.addEventListener("input",()=>{clearTimeout(timer);timer=setTimeout(()=>{st.q=qEl.value.trim();update()},120)});
+cEl.addEventListener("change",()=>{st.c=cEl.value;update()});
+rEl.addEventListener("change",()=>{st.r=rEl.value==="all"?"all":+rEl.value;update()});
+sEl.addEventListener("change",()=>{st.s=sEl.value==="all"?"all":+sEl.value;update()});
+$("#ix-reset").onclick=reset;
+moreB.onclick=()=>{shown+=PAGE;update(true)};
+if(lessB){
+  lessB.onclick=()=>{
+    if(shown<=PAGE)return;
+    shown=PAGE;
+    update(false);
+    // Collapse the list in place; do not navigate to the section heading.
+  };
+}
+
+document.addEventListener("click",e=>{
+  if(!e.target.closest(".ix"))return;
+  if(e.target.closest("[data-reset]")){reset();return}
+  const b=e.target.closest("[data-s],[data-c],[data-k],[data-r],[data-i]");if(!b)return;
+  const outside=!b.closest("#explore");
+  if(outside)clear();
+  const d=b.dataset;
+  if(d.s!==undefined)st.s=d.s==="all"?"all":+d.s;
+  if(d.c!==undefined)st.c=d.c;
+  if(d.r!==undefined)st.r=d.r==="all"?"all":+d.r;
+  if(d.k!==undefined)st.k=d.k;
+  if(d.i!==undefined)st.i=d.i;
+  update();
+  if(outside)$("#explore").scrollIntoView({behavior:"auto",block:"start"});
+});
+
+/* CSV export */
+$("#ix-csv").onclick=()=>{
+  const rows=[["Code","Session","Title","Presenters","Affiliations","Universities","Countries","Regions","Type"],...view.map(d=>[d.id,SESSIONS[d.s],d.t,d.p.join("; "),d.a.join("; "),d.inst.join("; "),d.c.join("; "),d.rg.map(i=>REGIONS[i]).join("; "),KIND[d.k]])];
+  const csv="﻿"+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(",")).join("\r\n");
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));a.download="icfgl2026-presentations.csv";a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+
+/* Theme */
+const root=$("#ix"),tBtn=$("#ix-theme");
+function setTheme(t){root.dataset.theme=t;if(tBtn){tBtn.setAttribute("aria-pressed",String(t==="dark"));tBtn.textContent=t==="dark"?"☀ Light mode":"☾ Dark mode";}try{localStorage.setItem("ix-theme",t)}catch(e){}}
+root.dataset.theme="light";
+if(tBtn)tBtn.onclick=()=>setTheme(root.dataset.theme==="dark"?"light":"dark");
+
+/* Keep the sticky nav below site header and fit hero to viewport */
+(()=>{
+  const gh=$("#global-header"), hero=document.querySelector(".ix-hero"), bc=document.querySelector(".breadcrumb");
+  const fit=()=>{
+    let off=8;const el=gh&&gh.firstElementChild;
+    if(el){const p=getComputedStyle(el).position;if(p==="fixed"||p==="sticky")off=Math.round(el.getBoundingClientRect().height)+8}
+    root.style.setProperty("--ix-top",off+"px");
+
+    if(hero){
+      const ghH = el ? el.getBoundingClientRect().height : (gh ? gh.getBoundingClientRect().height : 74);
+      const bcH = bc ? bc.getBoundingClientRect().height : 46;
+      const topOffset = ghH + bcH;
+      const targetH = window.innerHeight - topOffset;
+      if(targetH > 320){
+        hero.style.minHeight = Math.round(targetH) + "px";
+      }
+    }
+  };
+  fit();addEventListener("resize",fit);addEventListener("load",fit);
+  if(gh&&"MutationObserver" in window)new MutationObserver(fit).observe(gh,{childList:true,subtree:true});
+})();
+
+/* Active nav section highlight */
+const links=$$("#ix-nav a");
+if("IntersectionObserver" in window){
+  const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id==="sessions"?"overview":e.target.id;links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+id))}}),{rootMargin:"-30% 0px -60% 0px"});
+  ["overview","sessions","geography","insights","explore"].forEach(id=>so.observe($("#"+id)));
+}
+
+update();
+})();
+</script>
+</body>
+</html>

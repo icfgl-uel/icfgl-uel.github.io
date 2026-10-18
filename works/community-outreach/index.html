@@ -30,7 +30,7 @@
             min-height: clamp(500px, calc(100svh - 116px), 700px);
             align-items: center;
             overflow: hidden;
-            background: #0f1c2d url('../../images/%5BPWG2026%5D%20Photos/2.png') no-repeat center 45% / cover;
+            background: #144e8c url('../../images/%5BPWG2026%5D%20Photos/2.png') no-repeat center 45% / cover;
             color: #fff;
         }
 
@@ -40,8 +40,8 @@
             inset: 0;
             z-index: 1;
             background:
-                linear-gradient(90deg, rgba(3, 20, 43, .92) 0%, rgba(8, 41, 77, .82) 38%, rgba(11, 54, 91, .3) 68%, rgba(11, 54, 91, .08) 100%),
-                linear-gradient(180deg, rgba(3, 20, 43, .08), rgba(3, 20, 43, .28));
+                linear-gradient(90deg, rgba(10, 44, 84, 0.78) 0%, rgba(15, 60, 110, 0.6) 32%, rgba(20, 78, 140, 0.18) 62%, rgba(20, 78, 140, 0) 86%),
+                linear-gradient(180deg, rgba(10, 44, 84, 0.08) 0%, transparent 40%, rgba(10, 44, 84, 0.14) 100%);
         }
 
         .hero-shell {
@@ -62,9 +62,12 @@
             min-height: 38px;
             margin: 0 0 24px;
             padding: 0 22px;
-            border: 1px solid rgba(255, 255, 255, .3);
+            border: 1px solid rgba(255, 255, 255, .4);
             border-radius: 999px;
-            background: rgba(134, 58, 110, .48);
+            background: rgba(246, 65, 131, 0.25);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 4px 14px rgba(10, 44, 84, 0.18);
             color: #fff;
             font-size: .8rem;
             font-weight: 700;
@@ -74,12 +77,13 @@
 
         .hero-title-main {
             margin: 0 0 22px;
-            color: rgba(255, 250, 244, .98);
+            color: #ffffff;
             font-family: Cambria, Georgia, serif;
             font-size: clamp(2.8rem, 4.8vw, 4.6rem);
             font-weight: 700;
             line-height: 1.02;
             text-wrap: balance;
+            text-shadow: 0 2px 14px rgba(6, 26, 50, 0.5);
         }
 
         .hero-divider {
@@ -88,15 +92,17 @@
             margin-bottom: 26px;
             border-radius: 2px;
             background: var(--accent-pink);
+            box-shadow: 0 2px 8px rgba(246, 65, 131, 0.4);
         }
 
         .hero-subtitle {
             max-width: 610px;
             margin: 0 0 34px;
-            color: rgba(255, 255, 255, .9);
+            color: rgba(255, 255, 255, .96);
             font-size: clamp(1.05rem, 1.5vw, 1.22rem);
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.7;
+            text-shadow: 0 1px 8px rgba(6, 26, 50, 0.45);
         }
 
         .hero-btn,
@@ -313,7 +319,7 @@
             }
 
             .outreach-hero::before {
-                background: linear-gradient(90deg, rgba(3, 20, 43, .9), rgba(8, 41, 77, .78));
+                background: linear-gradient(180deg, rgba(10, 44, 84, 0.74) 0%, rgba(15, 60, 110, 0.58) 55%, rgba(15, 60, 110, 0.38) 100%);
             }
 
             .hero-shell {

@@ -354,6 +354,36 @@
             margin: 0 auto;
         }
 
+        .numbers-heading-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .numbers-heading-row h2 {
+            margin: 0;
+        }
+
+        .insights-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border: 1px solid #144e8c;
+            border-radius: 7px;
+            color: #144e8c;
+            text-decoration: none;
+            font: 700 .86rem Lato, Arial, sans-serif;
+        }
+
+        .insights-link:hover {
+            background: #144e8c;
+            color: #fff;
+        }
+
         .speaker-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -2632,6 +2662,23 @@
             }
         }
 
+
+        /* Agenda highlight numbers – separated from submission statistics */
+        #numbers .agenda-numbers-block{margin:6px 0 8px;padding:26px 22px 20px;border:1px solid rgba(20,78,140,.12);border-radius:15px;background:linear-gradient(120deg,#f7fbff 0%,#fff8fb 100%)}
+        #numbers .agenda-numbers-heading{display:flex;align-items:center;justify-content:center;gap:14px}
+        #numbers .agenda-numbers-heading h3{margin:0;color:#144e8c;font:700 clamp(1.15rem,2.5vw,1.45rem)/1.25 Cambria,Georgia,serif;text-align:center}
+        #numbers .agenda-numbers-line{width:30px;height:2px;background:#f64183;border-radius:10px;flex:none}
+        #numbers .agenda-numbers-subtitle{text-align:center;color:#60728a;font:400 .8rem/1.5 Lato,Arial,sans-serif;margin:5px 0 21px}
+        #numbers .agenda-numbers-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+        #numbers .agenda-number{min-width:0;padding:5px 12px;display:flex;flex-direction:column;align-items:center;text-align:center;border-right:1px solid rgba(20,78,140,.12)}
+        #numbers .agenda-number:last-child{border-right:0}
+        #numbers .agenda-number-value{color:#144e8c;font:700 clamp(2rem,4vw,2.75rem)/1 Cambria,Georgia,serif;font-variant-numeric:tabular-nums}
+        #numbers .agenda-number:nth-child(2) .agenda-number-value,#numbers .agenda-number:nth-child(4) .agenda-number-value{color:#f64183}
+        #numbers .agenda-number-label{display:block;margin-top:9px;color:#24344d;font:700 .73rem/1.4 Lato,Arial,sans-serif;letter-spacing:.045em;text-transform:uppercase}
+        #numbers .agenda-number small{display:block;margin-top:5px;color:#61738b;font:400 .69rem/1.4 Lato,Arial,sans-serif}
+        #numbers .agenda-numbers-note{margin:19px 0 0;text-align:center;color:#64748b;font:.72rem/1.5 Lato,Arial,sans-serif}
+        @media(max-width:700px){#numbers .agenda-numbers-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}#numbers .agenda-number:nth-child(2){border-right:0}#numbers .agenda-number:nth-child(-n+2){padding-bottom:18px;border-bottom:1px solid rgba(20,78,140,.1)}#numbers .agenda-numbers-block{padding:21px 12px 18px}}
+        @media(max-width:370px){#numbers .agenda-number{padding-inline:6px}#numbers .agenda-number-label{font-size:.66rem}#numbers .agenda-numbers-line{width:16px}}
         .local-nav {
             position: sticky;
             top: 73px;
@@ -3477,6 +3524,55 @@
                 justify-content: center;
             }
         }
+
+        /* Unified Numbers section: restrained two-tier editorial layout */
+        #numbers.stats-section{background:#f3f8fd!important;padding:clamp(42px,6vw,78px) 5%!important}
+        #numbers .numbers-redesign{max-width:1120px!important;padding:clamp(24px,4vw,50px)!important;background:#fff!important;background-image:none!important;border:1px solid #e2eaf3!important;border-radius:24px!important;box-shadow:0 14px 40px rgba(20,78,140,.055)!important}
+        #numbers .numbers-intro{text-align:center;margin:0 auto 34px;max-width:760px}
+        #numbers .numbers-kicker{display:block;font:800 .72rem/1.5 Lato,Arial,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:#f64183;margin-bottom:10px}
+        #numbers .numbers-intro h2{font:700 clamp(2rem,3.6vw,2.9rem)/1.15 Cambria,Georgia,serif;letter-spacing:-.015em;color:#144e8c;margin:0 0 12px;text-wrap:balance}
+        #numbers .numbers-intro p{margin:0;color:#64748b;font:400 .98rem/1.6 Lato,Arial,sans-serif}
+        #numbers .numbers-group{border:1px solid #e5edf5;border-radius:16px;overflow:hidden;background:#fff;margin-top:16px}
+        #numbers .numbers-group--agenda{background:#f7faff;border-color:#dbe8f5}
+        #numbers .numbers-group-head{display:flex;align-items:end;justify-content:space-between;gap:16px;padding:20px 26px 15px;border-bottom:1px solid #e6edf5}
+        #numbers .numbers-group-index{font:800 .66rem/1.5 Lato,Arial,sans-serif;letter-spacing:.12em;color:#f64183}
+        #numbers .numbers-group-head h3{font:700 clamp(1.2rem,2vw,1.5rem)/1.3 Cambria,Georgia,serif;color:#144e8c;margin:3px 0 0}
+        #numbers .numbers-group-head>p{margin:0;color:#70829a;font:600 .76rem/1.5 Lato,Arial,sans-serif;text-align:right}
+        #numbers .numbers-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:26px 12px 28px}
+        #numbers .numbers-metric{min-width:0;padding:4px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;border-right:1px solid #e5ebf3}
+        #numbers .numbers-metric:last-child{border-right:0}
+        #numbers .numbers-value{display:block;font:700 clamp(2.25rem,4vw,3.4rem)/1 Cambria,Georgia,serif;letter-spacing:-.03em;color:#144e8c;font-variant-numeric:tabular-nums;white-space:nowrap}
+        #numbers .numbers-value--pink{color:#f64183}
+        #numbers .numbers-label{display:block;margin-top:12px;color:#263c57;font:800 .73rem/1.35 Lato,Arial,sans-serif;letter-spacing:.055em;text-transform:uppercase}
+        #numbers .numbers-metric small{display:block;margin-top:6px;color:#718198;font:.7rem/1.4 Lato,Arial,sans-serif}
+        #numbers .numbers-footer{text-align:center;margin-top:26px}
+        #numbers .numbers-footer>p{max-width:810px;margin:0 auto 20px;color:#718198;font:.77rem/1.6 Lato,Arial,sans-serif}
+        /* Numbers — paired dashboard actions */
+        #numbers .numbers-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:660px;margin:0 auto;align-items:stretch}
+        #numbers .numbers-actions a{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:58px;padding:14px 18px 14px 22px;border-radius:12px;text-decoration:none;font:800 .83rem/1.35 Lato,Arial,sans-serif;letter-spacing:.005em;transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease;white-space:normal;text-align:left}
+        #numbers .numbers-cta{background:#144e8c;color:#fff;border:1.5px solid #144e8c;box-shadow:0 5px 15px rgba(20,78,140,.12)}
+        #numbers .numbers-secondary-link{background:#fff;color:#144e8c;border:1.5px solid #bdd0e5}
+        #numbers .numbers-actions a i{display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;margin:0;border-radius:9px;font-size:.85rem;transition:background .2s ease,transform .2s ease}
+        #numbers .numbers-cta i{background:rgba(255,255,255,.16);color:#fff}
+        #numbers .numbers-secondary-link i{background:#eef5fc;color:#144e8c}
+        #numbers .numbers-cta:hover{background:#0e3b70;border-color:#0e3b70;color:#fff;box-shadow:0 9px 22px rgba(20,78,140,.18);transform:translateY(-2px)}
+        #numbers .numbers-secondary-link:hover{background:#f5f9ff;border-color:#144e8c;color:#144e8c;box-shadow:0 7px 18px rgba(20,78,140,.08);transform:translateY(-2px);text-decoration:none}
+        #numbers .numbers-actions a:hover i{transform:translateX(2px)}
+        #numbers .numbers-actions a:focus-visible{outline:3px solid #f64183;outline-offset:3px}
+        @media(max-width:720px){#numbers .numbers-actions{grid-template-columns:1fr;max-width:430px;gap:10px}#numbers .numbers-actions a{width:100%;min-height:56px;padding:12px 15px 12px 18px}}
+        @media(prefers-reduced-motion:reduce){#numbers .numbers-actions a,#numbers .numbers-actions a i{transition:none}#numbers .numbers-actions a:hover,#numbers .numbers-actions a:hover i{transform:none}}
+        /* Section-scoped dashboard actions: pink for conference-wide, blue for agenda. */
+        #numbers .numbers-actions{display:flex;justify-content:center;max-width:none;margin:0 auto}
+        #numbers .numbers-actions a{width:min(100%,340px);min-height:54px}
+        #numbers .numbers-actions--inside{padding:0 18px 24px}
+        #numbers .numbers-secondary-link{background:#f64183;color:#fff;border-color:#f64183;box-shadow:0 5px 15px rgba(246,65,131,.15)}
+        #numbers .numbers-secondary-link i{background:rgba(255,255,255,.18);color:#fff}
+        #numbers .numbers-secondary-link:hover{background:#d92f6e;border-color:#d92f6e;color:#fff;box-shadow:0 9px 22px rgba(246,65,131,.19)}
+        #numbers .numbers-footer{margin-top:20px}
+        @media(max-width:720px){#numbers .numbers-actions{display:flex;max-width:none}#numbers .numbers-actions a{width:min(100%,340px)}}
+        @media(max-width:720px){#numbers .numbers-redesign{padding:24px 16px!important;border-radius:17px!important}#numbers .numbers-intro{margin-bottom:25px}#numbers .numbers-group-head{padding:16px 17px 12px;align-items:start}#numbers .numbers-group-head>p{max-width:100px}#numbers .numbers-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding:10px 12px}#numbers .numbers-metric{padding:18px 8px;border-right:0}#numbers .numbers-metric:nth-child(odd){border-right:1px solid #e5ebf3}#numbers .numbers-metric:nth-child(-n+2){border-bottom:1px solid #e5ebf3}#numbers .numbers-value{font-size:clamp(2.3rem,9vw,3.1rem)}}
+        @media(max-width:380px){#numbers .numbers-group-head{flex-direction:column;gap:4px}#numbers .numbers-group-head>p{text-align:left;max-width:none}#numbers .numbers-label{font-size:.68rem}}
+
     </style>
     <link rel="alternate" hreflang="en-US" href="../../../works/icfgl/icfgl-2026/icfgl-2026.html" />
     <link rel="alternate" hreflang="vi" href="../../../vi/works/icfgl/icfgl-2026/icfgl-2026.html" />
@@ -6536,77 +6632,50 @@
         </div>
     </section>
 
-    <!-- Impressive Stats Section - Redesigned as Ultra-Premium -->
+    <!-- ICFGL 2026 numbers: distinct submission and final-programme scopes -->
     <section id="numbers" class="page-section stats-section">
-        <div class="stats-card">
-            <div class="speaker-heading" style="margin-bottom: 30px;">
-                <h2>ICFGL 2026 in Numbers</h2>
-                <hr>
-            </div>
-            <br />
-            <p class="stats-subtitle">A testament to the global interest in Feminist Law-Making, bringing together
-                diverse academic voices from every corner of the world.</p>
-            <div class="stats-grid">
-                <div class="stat-item stat-pink">
-                    <div class="stat-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                            <polyline points="14 2 14 8 20 8" />
-                        </svg>
-                    </div>
-                    <span class="stat-num">426</span>
-                    <span class="stat-label">Abstracts Received</span>
-                </div>
-                <div class="stat-item stat-navy">
-                    <div class="stat-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <line x1="2" y1="12" x2="22" y2="12" />
-                            <path
-                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                        </svg>
-                    </div>
-                    <span class="stat-num">69</span>
-                    <span class="stat-label">Nations Represented</span>
-                </div>
-                <div class="stat-item stat-pink">
-                    <div class="stat-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z" />
-                            <circle cx="12" cy="10" r="3" />
-                        </svg>
-                    </div>
-                    <span class="stat-num">15</span>
-                    <span class="stat-label">Regions Worldwide</span>
-                </div>
-                <div class="stat-item stat-navy">
-                    <div class="stat-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
-                            <line x1="7" y1="7" x2="7.01" y2="7" />
-                        </svg>
-                    </div>
-                    <span class="stat-num">8</span>
-                    <span class="stat-label">Core Themes</span>
-                </div>
-            </div>
-            <br />
-            <div class="stats-action">
-                <a href="Dashboard_ICFGL2026.html" class="btn-outline-dark">
-                    <span>View Interactive Dashboard</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round"
-                        style="margin-left: 4px; vertical-align: middle;">
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                </a>
-            </div>
+      <div class="stats-card numbers-redesign">
+        <div class="numbers-intro">
+          <span class="numbers-kicker">Conference at a glance</span>
+          <h2>ICFGL 2026 in Numbers</h2>
+          <p>From international interest to the final conference programme.</p>
         </div>
+
+        <div class="numbers-group numbers-group--submissions">
+          <div class="numbers-group-head">
+            <div><span class="numbers-group-index">01 / CONFERENCE REACH</span><h3>Submissions &amp; global interest</h3></div>
+            <p>Conference-wide figures</p>
+          </div>
+          <div class="numbers-metrics">
+            <div class="numbers-metric"><span class="numbers-value numbers-value--pink">426</span><span class="numbers-label">Abstracts received</span></div>
+            <div class="numbers-metric"><span class="numbers-value">69</span><span class="numbers-label">Nations represented</span></div>
+            <div class="numbers-metric"><span class="numbers-value">15</span><span class="numbers-label">Regions worldwide</span></div>
+            <div class="numbers-metric"><span class="numbers-value">8</span><span class="numbers-label">Core themes</span></div>
+          </div>
+          <div class="numbers-actions numbers-actions--inside">
+            <a href="Dashboard_ICFGL2026.html" class="numbers-secondary-link">View interactive dashboard <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="numbers-group numbers-group--agenda">
+          <div class="numbers-group-head">
+            <div><span class="numbers-group-index">02 / FINAL PROGRAMME</span><h3>Agenda highlights</h3></div>
+            <p>18 September 2026</p>
+          </div>
+          <div class="numbers-metrics">
+            <div class="numbers-metric"><span class="numbers-value numbers-value--pink">75</span><span class="numbers-label">Presentations</span></div>
+            <div class="numbers-metric"><span class="numbers-value">11</span><span class="numbers-label">Sessions</span><small>1 plenary · 10 thematic</small></div>
+            <div class="numbers-metric"><span class="numbers-value">17</span><span class="numbers-label">Countries &amp; regions</span><small>Based on affiliations</small></div>
+            <div class="numbers-metric"><span class="numbers-value">32</span><span class="numbers-label">Vietnam-linked papers</span></div>
+          </div>
+        </div>
+
+        <div class="numbers-footer">
+          <div class="numbers-actions">
+            <a href="icfgl2026-insights.html" class="numbers-cta">Explore agenda insights <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <div id="global-footer"></div>
